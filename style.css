@@ -177,9 +177,9 @@ h2 {
     width: 100%;
     max-width: 300px;
     height: auto;
-    border-radius: 50%; /* Opsi: Kotak dengan sudut lembut juga bagus untuk otoritas */
+    border-radius: 50%; 
     border: 5px solid var(--color-secondary);
-    filter: grayscale(10%); /* Opsi: Filter untuk kesan serius */
+    filter: grayscale(10%); 
 }
 
 /* --- 5. Sections Umum --- */
@@ -229,6 +229,7 @@ h2 {
     font-weight: 700;
     display: block;
     text-transform: uppercase;
+    color: var(--color-primary); /* Pastikan teks di box stat berwarna gelap agar kontras */
 }
 
 /* --- 7. Service Section --- */
