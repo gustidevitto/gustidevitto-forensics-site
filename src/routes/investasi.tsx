@@ -71,7 +71,7 @@ function Offerings() {
     }
 
     return (
-        <div className="container py-20">
+        <div className="container px-4 md:px-8 py-20 mx-auto overflow-hidden">
             <div className="text-center mb-16 max-w-3xl mx-auto">
                 <h1 className="text-4xl font-bold mb-4 tracking-tight">Investasi Profitabilitas</h1>
                 <p className="text-xl text-muted-foreground">
@@ -79,35 +79,35 @@ function Offerings() {
                 </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center mx-auto max-w-7xl">
                 {plans.map((plan) => (
                     <div
                         key={plan.name}
                         className={`relative flex flex-col p-8 rounded-xl border bg-card text-card-foreground shadow-sm ${plan.highlight
-                            ? 'border-secondary ring-1 ring-secondary dark:border-secondary dark:ring-secondary scale-105 shadow-xl z-10'
+                            ? 'border-secondary ring-1 ring-secondary dark:border-primary dark:ring-primary md:scale-105 shadow-xl z-10'
                             : 'hover:border-primary/50 transition-colors'
                             }`}
                     >
                         {plan.highlight && (
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground dark:bg-primary dark:text-primary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
                                 Best Value
                             </div>
                         )}
                         <div className="mb-8">
                             <h3 className="font-semibold text-lg mb-2">{plan.name}</h3>
-                            <div className="text-3xl font-bold mb-2 text-primary dark:text-secondary">{plan.price}</div>
+                            <div className="text-3xl font-bold mb-2 text-primary">{plan.price}</div>
                             <p className="text-sm text-muted-foreground">{plan.desc}</p>
                         </div>
                         <ul className="space-y-4 mb-8 flex-1">
                             {plan.features.map((feature) => (
                                 <li key={feature} className="flex items-start gap-3 text-sm">
-                                    <Check className={`h-4 w-4 mt-1 ${plan.highlight ? 'text-secondary' : 'text-primary'}`} />
+                                    <Check className={`h-4 w-4 mt-1 ${plan.highlight ? 'text-secondary dark:text-primary' : 'text-primary'}`} />
                                     <span>{feature}</span>
                                 </li>
                             ))}
                         </ul>
                         <Button
-                            className={`w-full font-bold ${plan.highlight ? 'bg-secondary text-secondary-foreground hover:bg-secondary/90' : ''}`}
+                            className={`w-full font-bold ${plan.highlight ? 'bg-secondary text-secondary-foreground hover:bg-secondary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90' : ''}`}
                             variant={plan.highlight ? 'default' : 'outline'}
                             onClick={() => {
                                 if (plan.name === "The Turnaround Protocol") {

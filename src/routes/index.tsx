@@ -68,17 +68,17 @@ function Index() {
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
                             {
-                                icon: <Activity className="w-10 h-10 text-primary" />,
+                                icon: <Activity className="w-10 h-10 text-secondary dark:text-primary" />,
                                 title: "Operational Efficiency",
                                 desc: "Stop pemborosan payroll dan idle time yang tersembunyi (Phantom Costs)."
                             },
                             {
-                                icon: <PieChart className="w-10 h-10 text-primary" />,
+                                icon: <PieChart className="w-10 h-10 text-secondary dark:text-primary" />,
                                 title: "Margin Integrity",
                                 desc: "Bedah struktur HPP & Gross Margin untuk memisahkan biaya murni vs kebocoran."
                             },
                             {
-                                icon: <LineChart className="w-10 h-10 text-primary" />,
+                                icon: <LineChart className="w-10 h-10 text-secondary dark:text-primary" />,
                                 title: "Growth Economics",
                                 desc: "Pastikan Unit Economics (CAC:LTV) sehat sebelum Anda burning money untuk scale-up."
                             }
