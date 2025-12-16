@@ -286,23 +286,49 @@ footer {
     padding: 30px 0;
     background-color: var(--color-primary);
     border-top: 1px solid var(--color-background-contrast);
-    text-align: center;
     font-size: 0.9rem;
 }
 
-footer .container {
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Info di kiri, Link di kanan */
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    color: var(--color-text-light);
+}
+
+.footer-links.social-links {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .footer-links a {
     color: var(--color-text-light);
-    margin-left: 15px;
+    margin: 5px 0; /* Mengganti margin-left */
+    padding: 2px 0;
 }
 
 .footer-links a:hover {
     color: var(--color-accent);
+}
+
+/* Penyesuaian Responsiveness Footer */
+@media (max-width: 900px) {
+    /* ... (kode media query yang lain tetap ada) */
+    .footer-grid {
+        grid-template-columns: 1fr; /* Jadi satu kolom di mobile */
+        text-align: center;
+        gap: 20px;
+    }
+    .footer-links.social-links {
+        align-items: center; /* Pindahkan link sosial ke tengah di mobile */
+    }
+    /* ... (lanjutan kode media query) */
 }
 
 /* --- 10. Responsiveness (Mobile First) --- */
