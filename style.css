@@ -1,10 +1,10 @@
-/* --- 0. Variabel Warna dan Font (Dark Mode, Otoritatif) --- */
+/* --- 0. Variabel Warna dan Font (Dark Mode, Otoritatif Final) --- */
 :root {
     --color-primary: #121212; /* Hampir Hitam */
-    --color-secondary: #004d40; /* Teal Gelap (Aksen Pertumbuhan) */
-    --color-accent: #ffd700; /* Emas (Aksen Premium/Kualitas) */
+    --color-secondary: #252525; /* Abu-abu Gelap untuk Kontras Section (Serius) */
+    --color-accent: #e5b900; /* Emas yang Lebih Solid */
     --color-text-light: #e0e0e0; /* Teks Utama di Background Gelap */
-    --color-text-dark: #333333; /* Teks Kontras */
+    --color-text-dark: #121212; /* Teks Kontras */
     --color-background-contrast: #1e1e1e; /* Untuk kontras bagian */
 
     --font-heading: 'Playfair Display', serif;
@@ -67,8 +67,8 @@ h2 {
     letter-spacing: 3px;
     font-size: 1.2rem;
     font-weight: 400;
-    color: var(--color-secondary);
-    border-bottom: 2px solid var(--color-secondary);
+    color: var(--color-accent); /* Emas/Kuning */
+    border-bottom: 2px solid var(--color-accent); /* Emas/Kuning */
     display: inline-block;
     padding-bottom: 5px;
     margin-bottom: 3rem;
@@ -164,7 +164,7 @@ h2 {
     font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 30px;
-    color: var(--color-secondary);
+    color: var(--color-accent); /* Tagline juga dibuat Emas/Kuning */
 }
 
 .hero-image {
@@ -178,7 +178,7 @@ h2 {
     max-width: 300px;
     height: auto;
     border-radius: 50%; 
-    border: 5px solid var(--color-secondary);
+    border: 5px solid var(--color-accent); /* Border foto dibuat Emas */
     filter: grayscale(10%); 
 }
 
@@ -205,10 +205,10 @@ h2 {
 
 .about-stats {
     flex: 2;
-    background-color: var(--color-secondary);
+    background-color: var(--color-background-contrast); /* Abu-abu Gelap (Bukan Teal) */
     padding: 30px;
     border-radius: 8px;
-    color: var(--color-primary);
+    color: var(--color-text-light);
 }
 
 .stat-item {
@@ -229,7 +229,7 @@ h2 {
     font-weight: 700;
     display: block;
     text-transform: uppercase;
-    color: var(--color-primary); /* Pastikan teks di box stat berwarna gelap agar kontras */
+    color: var(--color-text-light); /* Teks label dibuat terang agar kontras di box gelap */
 }
 
 /* --- 7. Service Section --- */
@@ -244,7 +244,7 @@ h2 {
     background-color: var(--color-primary);
     padding: 30px;
     border-radius: 8px;
-    border: 1px solid var(--color-secondary);
+    border: 1px solid var(--color-background-contrast); /* Border dibuat abu-abu gelap */
     transition: transform 0.3s ease;
 }
 
@@ -263,7 +263,7 @@ h2 {
 
 /* --- 8. CTA Section --- */
 .cta-section {
-    background-color: var(--color-secondary);
+    background-color: var(--color-background-contrast); /* Abu-abu Gelap */
     color: var(--color-primary);
     padding: 60px 0;
     text-align: center;
