@@ -47,7 +47,7 @@ function ForensicsPillars() {
     ]
 
     return (
-        <div className="container py-12 md:py-20 max-w-6xl">
+        <div className="container py-12 md:py-20 max-w-6xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
                 <h1 className="text-4xl font-bold tracking-tight">7 Pilar Forensik Bisnis</h1>
                 <p className="text-xl text-muted-foreground">

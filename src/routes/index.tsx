@@ -41,7 +41,7 @@ function Index() {
 
                 <div className="relative w-full aspect-square md:aspect-video lg:aspect-square max-w-lg mx-auto lg:mr-0 rounded-2xl overflow-hidden shadow-2xl border border-border/50 bg-gradient-to-br from-primary/5 to-secondary/5 grid place-items-center group">
                     {/* Placeholder for Hero Image */}
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
+                    <div className="absolute inset-0 bg-[url('/assets/images/hero-image.jpg')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
                     <div className="relative z-10 p-8 text-center">
                         <div className="bg-background/80 backdrop-blur-md p-6 rounded-xl border border-primary/20 shadow-xl">

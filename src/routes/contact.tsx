@@ -12,7 +12,7 @@ export const Route = createFileRoute('/contact')({
 
 function Contact() {
     return (
-        <div className="container py-20 max-w-5xl">
+        <div className="container py-20 max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12">
                 <div className="space-y-8">
                     <div>
