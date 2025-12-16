@@ -1,13 +1,13 @@
 /* --- 0. Variabel Warna dan Font (Dark Mode, Otoritatif Final) --- */
 :root {
-    --color-primary: #121212; /* Hampir Hitam */
-    --color-secondary: #252525; /* Abu-abu Gelap untuk Kontras Section (Serius) */
-    --color-accent: #e5b900; /* Emas yang Lebih Solid */
+    --color-primary: #1a1a1a; /* Hampir Hitam */
+    --color-secondary: #171624; /* Navi Gelap untuk Kontras Section (Serius) */
+    --color-accent: #e5b700c2; /* Emas yang Lebih Solid */
     --color-text-light: #e0e0e0; /* Teks Utama di Background Gelap */
     --color-text-dark: #121212; /* Teks Kontras */
     --color-background-contrast: #1e1e1e; /* Untuk kontras bagian */
 
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Noto Sans', sans-serif;
     --font-body: 'Roboto', sans-serif;
 }
 
