@@ -1,0 +1,333 @@
+/* --- 0. Variabel Warna dan Font (Dark Mode, Otoritatif) --- */
+:root {
+    --color-primary: #121212; /* Hampir Hitam */
+    --color-secondary: #004d40; /* Teal Gelap (Aksen Pertumbuhan) */
+    --color-accent: #ffd700; /* Emas (Aksen Premium/Kualitas) */
+    --color-text-light: #e0e0e0; /* Teks Utama di Background Gelap */
+    --color-text-dark: #333333; /* Teks Kontras */
+    --color-background-contrast: #1e1e1e; /* Untuk kontras bagian */
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* --- 1. Global Reset dan Body --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-text-light);
+    background-color: var(--color-primary);
+    scroll-behavior: smooth;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-text-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 2. Typography --- */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-text-light);
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-accent); /* Headline Utama dengan Aksen Emas */
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 3rem;
+}
+
+/* --- 3. Buttons --- */
+.btn-primary, .btn-secondary, .btn-cta-nav {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-primary); /* Teks gelap di tombol emas */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #ffeb3b;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.btn-cta-nav {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.btn-cta-nav:hover {
+    background-color: var(--color-text-light);
+    color: var(--color-primary);
+}
+
+/* --- 4. Header & Hero Section --- */
+.hero {
+    background-color: var(--color-background-contrast);
+    padding: 20px 0 80px 0;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.nav-links a {
+    margin-left: 20px;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+
+.hero-text {
+    max-width: 60%;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: var(--color-secondary);
+}
+
+.hero-image {
+    max-width: 35%;
+    position: relative;
+    text-align: center;
+}
+
+.profile-photo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%; /* Opsi: Kotak dengan sudut lembut juga bagus untuk otoritas */
+    border: 5px solid var(--color-secondary);
+    filter: grayscale(10%); /* Opsi: Filter untuk kesan serius */
+}
+
+/* --- 5. Sections Umum --- */
+.section {
+    padding: 80px 0;
+    background-color: var(--color-primary);
+}
+
+.service-section {
+    background-color: var(--color-background-contrast);
+}
+
+/* --- 6. About Section --- */
+.about-grid {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.about-text {
+    flex: 3;
+}
+
+.about-stats {
+    flex: 2;
+    background-color: var(--color-secondary);
+    padding: 30px;
+    border-radius: 8px;
+    color: var(--color-primary);
+}
+
+.stat-item {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.stat-number {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    display: block;
+    color: var(--color-accent);
+}
+
+.stat-label {
+    font-size: 1rem;
+    font-weight: 700;
+    display: block;
+    text-transform: uppercase;
+}
+
+/* --- 7. Service Section --- */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.service-item {
+    background-color: var(--color-primary);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--color-secondary);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
+}
+
+.service-item h3 {
+    color: var(--color-accent);
+}
+
+.service-item p {
+    color: var(--color-text-light);
+}
+
+/* --- 8. CTA Section --- */
+.cta-section {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    color: var(--color-text-light);
+    font-size: 2rem;
+}
+
+.cta-subtitle {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* --- 9. Footer --- */
+footer {
+    padding: 30px 0;
+    background-color: var(--color-primary);
+    border-top: 1px solid var(--color-background-contrast);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: var(--color-text-light);
+    margin-left: 15px;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent);
+}
+
+/* --- 10. Responsiveness (Mobile First) --- */
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+    .hero-image {
+        max-width: 50%;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .about-grid {
+        flex-direction: column;
+    }
+    footer .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .footer-links {
+        margin-top: 10px;
+    }
+}
