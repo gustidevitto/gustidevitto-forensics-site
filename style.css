@@ -1,13 +1,13 @@
 /* --- 0. Variabel Warna dan Font (Dark Mode, Otoritatif Final) --- */
 :root {
-    --color-primary: #1a1a1a; /* Hampir Hitam */
-    --color-secondary: #171624; /* Navi Gelap untuk Kontras Section (Serius) */
-    --color-accent: #e5b700c2; /* Emas yang Lebih Solid */
+    --color-primary: #1a1a1a; /* Hampir Hitam (Versi Anda) */
+    --color-secondary: #171624; /* Navi Gelap untuk Kontras Section (Versi Anda) */
+    --color-accent: #e5b700c2; /* Emas yang Lebih Solid (Versi Anda) */
     --color-text-light: #e0e0e0; /* Teks Utama di Background Gelap */
     --color-text-dark: #121212; /* Teks Kontras */
     --color-background-contrast: #1e1e1e; /* Untuk kontras bagian */
 
-    --font-heading: 'Noto Sans', sans-serif;
+    --font-heading: 'Noto Sans', sans-serif; /* DIUBAH KE NOTO SANS */
     --font-body: 'Roboto', sans-serif;
 }
 
@@ -177,8 +177,8 @@ h2 {
     width: 100%;
     max-width: 300px;
     height: auto;
-    border-radius: 50%; 
-    border: 5px solid var(--color-accent); /* Border foto dibuat Emas */
+    border-radius: 0; /* TIDAK BULAT (POLOS) */
+    border: none; /* TIDAK ADA OUTLINE */
     filter: grayscale(10%); 
 }
 
@@ -205,7 +205,7 @@ h2 {
 
 .about-stats {
     flex: 2;
-    background-color: var(--color-background-contrast); /* Abu-abu Gelap (Bukan Teal) */
+    background-color: var(--color-background-contrast);
     padding: 30px;
     border-radius: 8px;
     color: var(--color-text-light);
@@ -229,7 +229,7 @@ h2 {
     font-weight: 700;
     display: block;
     text-transform: uppercase;
-    color: var(--color-text-light); /* Teks label dibuat terang agar kontras di box gelap */
+    color: var(--color-text-light); 
 }
 
 /* --- 7. Service Section --- */
@@ -244,7 +244,7 @@ h2 {
     background-color: var(--color-primary);
     padding: 30px;
     border-radius: 8px;
-    border: 1px solid var(--color-background-contrast); /* Border dibuat abu-abu gelap */
+    border: 1px solid var(--color-background-contrast);
     transition: transform 0.3s ease;
 }
 
@@ -253,8 +253,19 @@ h2 {
     border-color: var(--color-accent);
 }
 
-.service-item h3 {
+.service-item .service-icon {
+    font-size: 3rem; /* UKURAN BESAR */
     color: var(--color-accent);
+    display: block; /* Pindah ke baris baru */
+    margin-bottom: 1rem; /* Jarak dengan judul */
+    text-align: center;
+}
+
+.service-item h3 {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    margin-top: 0; /* Hilangkan jarak atas */
+    margin-bottom: 0.5rem;
 }
 
 .service-item p {
@@ -263,7 +274,7 @@ h2 {
 
 /* --- 8. CTA Section --- */
 .cta-section {
-    background-color: var(--color-background-contrast); /* Abu-abu Gelap */
+    background-color: var(--color-background-contrast);
     color: var(--color-primary);
     padding: 60px 0;
     text-align: center;
@@ -309,7 +320,7 @@ footer {
 
 .footer-links a {
     color: var(--color-text-light);
-    margin: 5px 0; /* Mengganti margin-left */
+    margin: 5px 0;
     padding: 2px 0;
 }
 
@@ -317,21 +328,7 @@ footer {
     color: var(--color-accent);
 }
 
-/* Penyesuaian Responsiveness Footer */
-@media (max-width: 900px) {
-    /* ... (kode media query yang lain tetap ada) */
-    .footer-grid {
-        grid-template-columns: 1fr; /* Jadi satu kolom di mobile */
-        text-align: center;
-        gap: 20px;
-    }
-    .footer-links.social-links {
-        align-items: center; /* Pindahkan link sosial ke tengah di mobile */
-    }
-    /* ... (lanjutan kode media query) */
-}
-
-/* --- 10. Responsiveness (Mobile First) --- */
+/* --- 10. Responsiveness --- */
 @media (max-width: 900px) {
     .hero-content {
         flex-direction: column;
@@ -350,11 +347,12 @@ footer {
     .about-grid {
         flex-direction: column;
     }
-    footer .container {
-        flex-direction: column;
-        gap: 15px;
+    .footer-grid {
+        grid-template-columns: 1fr; /* Jadi satu kolom di mobile */
+        text-align: center;
+        gap: 20px;
     }
-    .footer-links {
-        margin-top: 10px;
+    .footer-links.social-links {
+        align-items: center; /* Pindahkan link sosial ke tengah di mobile */
     }
 }
