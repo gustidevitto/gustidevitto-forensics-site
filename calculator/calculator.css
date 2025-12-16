@@ -53,6 +53,7 @@ body {
 .calc-form-section {
     background-color: var(--color-primary);
     padding: 20px 0 50px 0;
+    text-align: center;
 }
 
 #calculator-app {
