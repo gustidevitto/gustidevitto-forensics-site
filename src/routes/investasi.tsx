@@ -56,6 +56,20 @@ function Offerings() {
         }
     ]
 
+    const handlePayment = (plan: typeof plans[0]) => {
+        // Placeholder for Midtrans Snap JS Call
+        // In real implementation, this would call backend to get snapToken
+        console.log(`Initiating Midtrans payment for: ${plan.name} (${plan.price})`)
+        alert(`[Midtrans Sandbox Placeholder]\n\nProcessing Payment for: ${plan.name}\nPrice: ${plan.price}\n\n(Snap Popup would appear here)`)
+    }
+
+    const handleConsultation = (plan: typeof plans[0]) => {
+        // High-ticket items use WhatsApp for personal touch
+        const message = `Halo Gusti Devitto, saya tertarik untuk program *${plan.name}* (Price: ${plan.price}).\n\nMohon info prosedur aplikasinya.`
+        const url = `https://wa.me/628895440515?text=${encodeURIComponent(message)}`
+        window.open(url, '_blank')
+    }
+
     return (
         <div className="container py-20">
             <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -95,6 +109,13 @@ function Offerings() {
                         <Button
                             className={`w-full font-bold ${plan.highlight ? 'bg-secondary text-secondary-foreground hover:bg-secondary/90' : ''}`}
                             variant={plan.highlight ? 'default' : 'outline'}
+                            onClick={() => {
+                                if (plan.name === "The Turnaround Protocol") {
+                                    handleConsultation(plan)
+                                } else {
+                                    handlePayment(plan)
+                                }
+                            }}
                         >
                             {plan.cta}
                         </Button>

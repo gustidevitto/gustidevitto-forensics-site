@@ -57,6 +57,14 @@ export const Route = createRootRoute({
                     </main>
                     <footer className="border-t bg-card py-6 md:px-8 md:py-0">
                         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+                            <div className="flex gap-6 mt-4 md:mt-0">
+                                <a href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                                    Terms & Conditions
+                                </a>
+                                <a href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                                    Privacy Policy
+                                </a>
+                            </div>
                             <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
                                 © 2025 Gusti Devitto™. All rights reserved.
                             </p>
