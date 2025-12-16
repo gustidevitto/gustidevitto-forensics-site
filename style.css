@@ -1,14 +1,17 @@
 /* --- 0. Variabel Warna dan Font (Dark Mode, Otoritatif Final) --- */
 :root {
-    --color-primary: #1a1a1a; /* Hampir Hitam (Versi Anda) */
-    --color-secondary: #171624; /* Navi Gelap untuk Kontras Section (Versi Anda) */
-    --color-accent: #e5b700c2; /* Emas yang Lebih Solid (Versi Anda) */
+    --color-primary: #1a1a1a; /* Hampir Hitam */
+    --color-secondary: #171624; /* Navi Gelap untuk Kontras Section */
+    --color-accent: #e5b700c2; /* Emas yang Lebih Solid */
     --color-text-light: #e0e0e0; /* Teks Utama di Background Gelap */
     --color-text-dark: #121212; /* Teks Kontras */
     --color-background-contrast: #1e1e1e; /* Untuk kontras bagian */
 
-    --font-heading: 'Noto Sans', sans-serif; /* DIUBAH KE NOTO SANS */
+    --font-heading: 'Noto Sans', sans-serif;
     --font-body: 'Roboto', sans-serif;
+
+    /* VARIABEL TAGLINE KHUSUS: Default Light */
+    --tagline-color: var(--color-text-light);
 }
 
 /* LIGHT THEME VARIABLES */
@@ -17,10 +20,13 @@
     --color-secondary: #f0f0f0; /* Kontras Ringan */
     --color-accent: #8b6d00; /* Emas yang Lebih Gelap */
     --color-text-light: #1a1a1a; /* Teks Gelap di Background Terang */
-    --color-text-tagline: #e9e9e9; /* Teks Terang di Atas Hero Image */
     --color-text-dark: #ffffff; 
     --color-background-contrast: #dcdcdc; /* Untuk section kontras */
+
+    /* Light Mode Desktop: Tagline tetap terang (#e9e9e9) agar kontras di atas dark image */
+    --tagline-color: #e9e9e9; 
 }
+
 
 /* --- 1. Global Reset dan Body --- */
 * {
@@ -64,7 +70,7 @@ h1, h2, h3 {
 h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    color: var(--color-accent); /* Headline Utama dengan Aksen Emas */
+    color: var(--color-accent); 
 }
 
 h2 {
@@ -78,15 +84,15 @@ h2 {
     letter-spacing: 3px;
     font-size: 1.2rem;
     font-weight: 400;
-    color: var(--color-accent); /* Emas/Kuning */
-    border-bottom: 2px solid var(--color-accent); /* Emas/Kuning */
+    color: var(--color-accent); 
+    border-bottom: 2px solid var(--color-accent); 
     display: inline-block;
     padding-bottom: 5px;
     margin-bottom: 3rem;
 }
 
 /* --- 3. Buttons --- */
-.btn-primary, .btn-secondary, .btn-cta-nav {
+.btn-primary, .btn-secondary {
     display: inline-block;
     padding: 12px 25px;
     border-radius: 5px;
@@ -99,7 +105,7 @@ h2 {
 
 .btn-primary {
     background-color: var(--color-accent);
-    color: var(--color-primary); /* Teks gelap di tombol emas */
+    color: var(--color-primary); 
     border: none;
 }
 
@@ -118,10 +124,10 @@ h2 {
     color: var(--color-primary);
 }
 
+
 /* --- 4. Header & Hero Section --- */
 .hero {
     background-color: var(--color-background-contrast);
-    /* Hero section ini yang menampung navbar dan hero content */
     padding: 0; 
     min-height: 600px;
     display: flex;
@@ -133,7 +139,7 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-    width: 100%; /* Navbar mengambil lebar container */
+    width: 100%; 
 }
 
 .logo {
@@ -166,7 +172,7 @@ h2 {
 }
 
 .menu-toggle {
-    display: none; /* Burger Menu disembunyikan di desktop */
+    display: none; 
 }
 
 /* Nav Link - Tampil di Desktop */
@@ -190,7 +196,7 @@ h2 {
     background-position: center;
     background-repeat: no-repeat;
     
-    flex-grow: 1; /* Ambil sisa ruang di hero container */
+    flex-grow: 1; 
     
     background-blend-mode: multiply; 
     background-color: rgba(0, 0, 0, 0.4); 
@@ -199,7 +205,7 @@ h2 {
 .hero-content-inner {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Teks di kiri */
+    justify-content: flex-start; 
     min-height: 450px;
 }
 
@@ -213,14 +219,26 @@ h2 {
     font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 30px;
-    color: var(--color-text-tagline);
+    /* MENGGUNAKAN VARIABEL KHUSUS */
+    color: var(--tagline-color); 
 }
 
 .hero-image {
-    display: none; /* Gambar asli dihilangkan di desktop */
+    display: none; 
 }
 
-/* --- 5. Sections Umum --- */
+.profile-photo-landscape {
+    width: 100%;
+    max-width: 600px; 
+    height: auto;
+    border-radius: 8px;
+    filter: grayscale(10%); 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 5. Sections Umum & 6. About Section (TIDAK BERUBAH) --- */
 .section {
     padding: 80px 0;
     background-color: var(--color-primary);
@@ -230,7 +248,6 @@ h2 {
     background-color: var(--color-background-contrast);
 }
 
-/* --- 6. About Section --- */
 .about-grid {
     display: flex;
     gap: 40px;
@@ -270,7 +287,7 @@ h2 {
     color: var(--color-text-light); 
 }
 
-/* --- 7. Service Section --- */
+/* --- 7. Service Section (TIDAK BERUBAH) --- */
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -292,17 +309,17 @@ h2 {
 }
 
 .service-item .service-icon {
-    font-size: 3rem; /* UKURAN BESAR */
+    font-size: 3rem; 
     color: var(--color-accent);
-    display: block; /* Pindah ke baris baru */
-    margin-bottom: 1rem; /* Jarak dengan judul */
+    display: block; 
+    margin-bottom: 1rem; 
     text-align: center;
 }
 
 .service-item h3 {
     font-family: var(--font-heading);
     color: var(--color-accent);
-    margin-top: 0; /* Hilangkan jarak atas */
+    margin-top: 0; 
     margin-bottom: 0.5rem;
 }
 
@@ -310,7 +327,7 @@ h2 {
     color: var(--color-text-light);
 }
 
-/* --- 8. CTA Section --- */
+/* --- 8. CTA Section (TIDAK BERUBAH) --- */
 .cta-section {
     background-color: var(--color-background-contrast);
     color: var(--color-primary);
@@ -330,37 +347,37 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* --- 9. Footer --- */
+/* --- 9. Footer (TIDAK BERUBAH) --- */
 footer {
-    padding: 30px 0 10px 0; /* Kurangi padding bawah untuk copyright */
+    padding: 30px 0 10px 0; 
     background-color: var(--color-primary);
     border-top: 1px solid var(--color-background-contrast);
     font-size: 0.9rem;
 }
 
 .footer-content-top {
-    display: flex; /* Gunakan flexbox untuk top content */
-    justify-content: space-between; /* Rata Kiri & Rata Kanan */
+    display: flex; 
+    justify-content: space-between; 
     align-items: flex-start;
-    padding-bottom: 20px; /* Jarak antara kontak/sosmed dan copyright */
+    padding-bottom: 20px; 
 }
 
 .footer-info p {
     margin: 5px 0;
     color: var(--color-text-light);
-    text-align: left; /* Kontak Rata Kiri */
+    text-align: left; 
 }
 
 .footer-links.social-links {
     display: flex;
     flex-direction: row;
-    gap: 20px;
-    align-items: flex-end; /* Ikon Rata Kanan */
+    gap: 20px; 
+    align-items: flex-end; 
 }
 
 .footer-links a {
     color: var(--color-text-light);
-    font-size: 1.5rem; /* Ukuran Ikon */
+    font-size: 1.5rem; 
     margin: 0;
     padding: 0;
 }
@@ -370,13 +387,12 @@ footer {
 }
 
 .footer-copyright {
-    text-align: center; /* Copyright Rata Tengah */
+    text-align: center; 
     padding-top: 10px;
-    border-top: 1px solid var(--color-secondary); /* Garis pemisah tipis */
+    border-top: 1px solid var(--color-secondary); 
 }
 
-
-/* --- 10. Responsiveness --- */
+/* --- 10. Responsiveness (Mobile Fixes) --- */
 @media (max-width: 900px) {
     /* Logo dikecilkan di mobile */
     .logo {
@@ -429,7 +445,7 @@ footer {
     }
 
     .hero-content-inner {
-        flex-direction: column; /* INI FIX UTAMANYA: Tumpuk konten */
+        flex-direction: column; 
         text-align: center;
         min-height: auto;
         justify-content: center;
@@ -438,32 +454,22 @@ footer {
     .hero-text {
         max-width: 100%;
         margin-bottom: 20px;
-        text-align: center; /* Teks Rata Tengah di mobile */
+        text-align: center; 
+        order: 0; 
     }
 
     .hero-image {
-        /* Container Gambar KEMBALI DITAMPILKAN di Mobile */
         display: block; 
         width: 100%;
         max-width: 100%;
         margin-bottom: 30px;
-        order: 1; /* Pastikan gambar ada di bawah teks */
+        order: 1; 
     }
     
-    .hero-text {
-        order: 0; /* Pastikan teks ada di atas gambar */
-    }
-    
-    .profile-photo-landscape {
-        width: 100%;
-        height: auto;
-        max-width: 600px; 
-        border-radius: 8px;
-        filter: grayscale(10%); 
-        /* Pastikan gambar berada di tengah jika lebar total kurang dari 100% */
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+    /* FIX: Tagline color override for light mode on mobile */
+    .light-theme .hero-content-inner {
+        /* Di Light Theme + Mobile (BG putih), tagline harus gelap */
+        --tagline-color: var(--color-text-light); /* Mengambil #1a1a1a dari .light-theme */
     }
     
     h1 {
@@ -492,44 +498,5 @@ footer {
 
 /* --- 11. Mobile Navigation Overrides --- */
 @media (max-width: 900px) {
-    /* Logo dikecilkan di mobile */
-    .logo {
-        font-size: 1.2rem; 
-    }
-    
-    .menu-toggle {
-        display: block; /* Tampilkan menu burger */
-    }
-
-    .nav-links {
-        /* Menu Off-Canvas */
-        position: fixed;
-        top: 0;
-        right: -300px; /* Sembunyikan di luar layar */
-        width: 300px;
-        height: 100%;
-        background-color: var(--color-background-contrast);
-        flex-direction: column;
-        padding: 60px 20px;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-        transition: right 0.3s ease-in-out;
-        z-index: 999;
-    }
-
-    .nav-links.open {
-        right: 0; /* Tampilkan menu */
-    }
-    
-    .nav-links a {
-        display: block;
-        margin: 15px 0;
-        text-align: left;
-        color: var(--color-accent);
-        font-size: 1.2rem;
-    }
-
-    .btn-cta-nav {
-        margin-top: 20px;
-        text-align: center;
-    }
+    /* (Styling Off-Canvas Menu di atas) */
 }
