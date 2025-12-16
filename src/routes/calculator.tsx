@@ -46,7 +46,17 @@ function Calculator() {
             ["HASIL ANALISIS", ""],
             ["Kerugian Bahan Baku (Est. 12.5%)", kerugianBahanBaku],
             ["Kerugian Produktivitas (Idle Time)", kerugianJamKosong],
-            ["TOTAL PHANTOM COST", totalPhantomCost]
+            ["TOTAL PHANTOM COST", totalPhantomCost],
+            ["", ""],
+            ["", ""],
+            ["TINDAKAN DARURAT DIPERLUKAN", ""],
+            ["Hentikan kebocoran ini SEBELUM terlambat!", ""],
+            ["Bisnis kompetitor Anda sudah bergerak cepat memperbaiki unit economics mereka.", ""],
+            ["Semakin lama Anda menunda, semakin besar profit yang hilang percuma.", ""],
+            ["", ""],
+            ["Konsultasi & Analisis Mendalam:", ""],
+            ["gustidevitto.com/investasi", ""],
+            ["Program Terbatas. Slot Hanya untuk 10 Klien Pertama Bulan Ini.", ""]
         ].map(e => e.join(",")).join("\n");
 
         const encodedUri = "data:text/csv;charset=utf-8," + encodeURIComponent(csvContent);
@@ -59,7 +69,7 @@ function Calculator() {
     }
 
     return (
-        <div className="container py-10 max-w-4xl">
+        <div className="container py-10 max-w-6xl mx-auto">
             <div className="mb-8 text-center space-y-2">
                 <h1 className="text-3xl font-bold tracking-tight">Phantom Cost Calculator</h1>
                 <p className="text-muted-foreground">
@@ -143,7 +153,7 @@ function Calculator() {
                         </CardContent>
                         <CardFooter>
                             <Button onClick={handleExport} variant="secondary" className="w-full font-bold text-primary">
-                                <Download className="mr-2 h-4 w-4" /> Download Laporan PDF/CSV
+                                <Download className="mr-2 h-4 w-4" /> Download Laporan CSV
                             </Button>
                         </CardFooter>
                     </Card>
