@@ -119,6 +119,13 @@ body {
     font-size: 1.1rem;
 }
 
+/* Placeholder Styling for UX */
+.input-prefix input::placeholder,
+.input-suffix input::placeholder {
+    color: #999; /* Abu-abu terang */
+    opacity: 0.6; /* Membuat teks samar */
+}
+
 .form-group input:focus {
     border: 1px solid var(--color-accent);
 }
