@@ -1,5 +1,4 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { createFileRoute } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 
@@ -9,90 +8,108 @@ export const Route = createFileRoute('/investasi')({
 })
 
 function Offerings() {
-    const tiers = [
+    const plans = [
         {
-            name: "Basic Audit",
-            price: "Mulai Rp 15 Juta",
-            desc: "Cocok untuk UMKM yang ingin merapikan sistem dasar.",
+            name: "The Vital Sign Check",
+            price: "Rp 500.000",
+            desc: "Diagnosis awal dan cepat untuk menemukan \"pendarahan\" utama dalam operasional bisnis Anda.",
             features: [
-                "Audit Laporan Keuangan",
-                "Cek Kepatuhan Pajak Dasar",
-                "Rekomendasi SOP Sederhana",
-                "Laporan Risiko High-Level"
+                "1x 45 Menit Rapid Consultation (Online)",
+                "Single Metric Forensics Analysis (Fokus Kebocoran Terbesar)",
+                "The \"Red Flag\" Report (3 Kebocoran Utama)",
+                "Quick Win Action Plan (1 Langkah Instan)"
             ],
-            cta: "Pilih Basic",
-            popular: false
+            cta: "Amankan Slot Diagnosa",
+            variant: "outline",
+            highlight: false
         },
         {
-            name: "Full Forensic",
-            price: "Mulai Rp 45 Juta",
-            desc: "Deep dive untuk bisnis yang mencurigai adanya kebocoran.",
+            name: "The Surgical Blueprint",
+            price: "Rp 2.000.000",
+            desc: "Peta jalan strategis yang mendalam untuk perbaikan struktur cost dan peningkatan margin.",
             features: [
-                "Semua fitur Basic",
-                "Investigasi Fraud Mendalam",
-                "Audit Stok & Aset Fisik",
-                "Wawancara Karyawan & Intelijen",
-                "Pendampingan Implementasi SOP"
+                "Total 180 Menit Strategy Session (2x Sesi @90 Menit)",
+                "Forensic Data Review (Analisa Data 3 Bulan Terakhir)",
+                "7-Pillars Business Health Score",
+                "The Roadmap to Profit (Dokumen Strategi)",
+                "Rekaman Sesi dan Materi Presentasi"
             ],
-            cta: "Pilih Full Forensic",
-            popular: true
+            cta: "Jadwalkan Bedah Bisnis",
+            variant: "default",
+            highlight: true
         },
         {
-            name: "Retainer Partner",
-            price: "Custom",
-            desc: "Pendampingan bulanan untuk menjaga kesehatan bisnis jangka panjang.",
+            name: "The Turnaround Protocol",
+            price: "Rp 19.900.000",
+            desc: "Pendampingan intensif 30 hari penuh untuk perombakan sistem total dan coaching implementasi.",
             features: [
-                "Monitoring Transaksi Bulanan",
-                "Sesi Konsultasi Strategis Rutin",
-                "Akses Prioritas Tim Forensik",
-                "Setup Sistem ERP & Kontrol",
-                "Training & Integritas Karyawan"
+                "30-Day Full System Audit & Mentoring",
+                "4x Sesi Tatap Muka Mingguan (@90 Menit)",
+                "Custom SOP & KPI Architecture Development",
+                "Team Alignment Workshop Online",
+                "Financial Dashboard Setup",
+                "Akses Prioritas Harian via Chat/Teks"
             ],
-            cta: "Hubungi Kami",
-            popular: false
+            cta: "Apply for Mentoring",
+            variant: "outline",
+            highlight: false
         }
     ]
 
     return (
         <div className="container py-20">
-            <div className="text-center mb-16 space-y-4">
-                <h1 className="text-4xl font-bold tracking-tight">Layanan & Investasi</h1>
-                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                    Pilih paket yang sesuai dengan skala bisnis dan urgensi masalah Anda.
-                    Investasi pada keamanan profit, bukan biaya.
+            <div className="text-center mb-16 max-w-3xl mx-auto">
+                <h1 className="text-4xl font-bold mb-4 tracking-tight">Investasi Profitabilitas</h1>
+                <p className="text-xl text-muted-foreground">
+                    Pilih tingkat kedalaman forensik yang sesuai dengan urgensi dan skala bisnis Anda saat ini.
                 </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                {tiers.map((tier, index) => (
-                    <Card key={index} className={`flex flex-col relative ${tier.popular ? 'border-primary shadow-2xl scale-105 z-10' : 'border-muted'}`}>
-                        {tier.popular && (
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                                Paling Populer
+            <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                {plans.map((plan) => (
+                    <div
+                        key={plan.name}
+                        className={`relative flex flex-col p-8 rounded-xl border bg-card text-card-foreground shadow-sm ${plan.highlight
+                            ? 'border-secondary ring-1 ring-secondary dark:border-secondary dark:ring-secondary scale-105 shadow-xl z-10'
+                            : 'hover:border-primary/50 transition-colors'
+                            }`}
+                    >
+                        {plan.highlight && (
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                                Best Value
                             </div>
                         )}
-                        <CardHeader>
-                            <CardTitle className="text-2xl">{tier.name}</CardTitle>
-                            <div className="text-3xl font-bold mt-2">{tier.price}</div>
-                            <CardDescription className="mt-2">{tier.desc}</CardDescription>
-                        </CardHeader>
-                        <CardContent className="flex-1">
-                            <ul className="space-y-3">
-                                {tier.features.map((feature, i) => (
-                                    <li key={i} className="flex items-center gap-2">
-                                        <Check className="h-4 w-4 text-primary shrink-0" />
-                                        <span className="text-sm text-muted-foreground">{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </CardContent>
-                        <CardFooter>
-                            <Button asChild className="w-full" variant={tier.popular ? "default" : "outline"}>
-                                <Link to="/contact">{tier.cta}</Link>
-                            </Button>
-                        </CardFooter>
-                    </Card>
+                        <div className="mb-8">
+                            <h3 className="font-semibold text-lg mb-2">{plan.name}</h3>
+                            <div className="text-3xl font-bold mb-2 text-primary dark:text-secondary">{plan.price}</div>
+                            <p className="text-sm text-muted-foreground">{plan.desc}</p>
+                        </div>
+                        <ul className="space-y-4 mb-8 flex-1">
+                            {plan.features.map((feature) => (
+                                <li key={feature} className="flex items-start gap-3 text-sm">
+                                    <Check className={`h-4 w-4 mt-1 ${plan.highlight ? 'text-secondary' : 'text-primary'}`} />
+                                    <span>{feature}</span>
+                                </li>
+                            ))}
+                        </ul>
+                        <Button
+                            className={`w-full font-bold ${plan.highlight ? 'bg-secondary text-secondary-foreground hover:bg-secondary/90' : ''}`}
+                            variant={plan.highlight ? 'default' : 'outline'}
+                        >
+                            {plan.cta}
+                        </Button>
+                    </div>
                 ))}
+            </div>
+
+            <div className="mt-16 text-center bg-muted/50 p-8 rounded-xl border max-w-4xl mx-auto">
+                <h3 className="font-semibold text-lg mb-2">Butuh solusi khusus?</h3>
+                <p className="text-muted-foreground mb-6">
+                    Kami menyediakan layanan audit korporasi (Enterprise) untuk bisnis dengan omzet &gt;10M/tahun.
+                </p>
+                <Button variant="link" className="text-primary" asChild>
+                    <a href="/contact">Hubungi Tim Kami &rarr;</a>
+                </Button>
             </div>
         </div>
     )

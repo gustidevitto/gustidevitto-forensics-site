@@ -15,7 +15,7 @@ export const Route = createRootRoute({
                         <div className="container flex h-16 items-center justify-between px-4 md:px-8">
                             {/* Logo */}
                             <div className="flex items-center gap-2">
-                                <img src="/assets/logo.png" alt="Gusti Devitto Logo" className="h-8 w-8 rounded-full" />
+                                <img src="/assets/images/android-chrome-192x192.png" alt="Gusti Devitto Logo" className="h-8 w-8" />
                                 <a className="font-bold text-xl tracking-tight" href="/">
                                     Gusti Devitto<span className="text-secondary dark:text-primary">™</span>
                                 </a>
