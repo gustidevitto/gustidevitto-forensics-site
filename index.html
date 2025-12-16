@@ -17,10 +17,20 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">Gusti Devitto™</a>
-                <div class="nav-links">
+                
+                <div class="nav-links" id="navLinks">
                     <a href="#about">Forensics</a>
                     <a href="#services">Layanan</a>
                     <a href="/calculator/index.html" class="btn-cta-nav">DASHBOARD PCC</a>
+                </div>
+
+                <div class="nav-controls">
+                    <button id="theme-toggle" class="nav-icon-btn" title="Toggle Dark/Light Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="nav-icon-btn menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
             </nav>
             <div class="hero-content">
@@ -90,9 +100,8 @@
     </section>
 
     <footer>
-        <div class="container footer-grid">
+        <div class="container footer-content-top">
             <div class="footer-info">
-                <p>&copy; 2026 Gusti Devitto™ | Financial Forensics Specialist. All rights reserved.</p>
                 <p>Plamongan Indah H7, Semarang</p>
                 <p>Email: <a href="mailto:gustidevitto@gmail.com">gustidevitto@gmail.com</a></p>
                 <p>WA: <a href="https://wa.me/628895440515">+62 889 544 0515</a></p>
@@ -102,6 +111,10 @@
                 <a href="https://instagram.com/gustievitto" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://youtube.com/@gustidevitto" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
+        </div>
+        
+        <div class="container footer-copyright">
+            <p>&copy; <span id="currentYear">2026</span> Gusti Devitto™ | Financial Forensics Specialist. All rights reserved.</p>
         </div>
     </footer>
 

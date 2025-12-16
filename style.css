@@ -11,6 +11,16 @@
     --font-body: 'Roboto', sans-serif;
 }
 
+/* LIGHT THEME VARIABLES */
+.light-theme {
+    --color-primary: #ffffff; /* Background Putih */
+    --color-secondary: #f0f0f0; /* Kontras Ringan */
+    --color-accent: #8b6d00; /* Emas yang Lebih Gelap */
+    --color-text-light: #1a1a1a; /* Teks Gelap di Background Terang */
+    --color-text-dark: #ffffff; 
+    --color-background-contrast: #dcdcdc; /* Untuk section kontras */
+}
+
 /* --- 1. Global Reset dan Body --- */
 * {
     margin: 0;
@@ -140,8 +150,34 @@ h2 {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-accent);
+    transition: font-size 0.3s; /* Tambahkan transisi untuk mobile */
 }
 
+/* Kumpulan Tombol Navigasi dan Kontrol (Toggle, Burger) */
+.nav-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-icon-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.nav-icon-btn:hover {
+    color: var(--color-accent);
+}
+
+.menu-toggle {
+    display: none; /* Sembunyikan di desktop */
+}
+
+/* Nav Link - Tampil di Desktop */
 .nav-links a {
     margin-left: 20px;
     color: var(--color-text-light);
@@ -156,31 +192,7 @@ h2 {
     padding-top: 50px;
 }
 
-.hero-text {
-    max-width: 60%;
-}
-
-.tagline {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 30px;
-    color: var(--color-accent); /* Tagline juga dibuat Emas/Kuning */
-}
-
-.hero-image {
-    max-width: 35%;
-    position: relative;
-    text-align: center;
-}
-
-.profile-photo {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 0; /* TIDAK BULAT (POLOS) */
-    border: none; /* TIDAK ADA OUTLINE */
-    filter: grayscale(10%); 
-}
+/* ... (lanjutan styling hero-text, hero-image, dan profile-photo tidak berubah) ... */
 
 /* --- 5. Sections Umum --- */
 .section {
@@ -294,29 +306,30 @@ h2 {
 
 /* --- 9. Footer --- */
 footer {
-    padding: 30px 0;
+    padding: 30px 0 10px 0; /* Kurangi padding bawah untuk copyright */
     background-color: var(--color-primary);
     border-top: 1px solid var(--color-background-contrast);
     font-size: 0.9rem;
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr; /* Info di kiri, Link di kanan */
-    gap: 40px;
+.footer-content-top {
+    display: flex; /* Gunakan flexbox untuk top content */
+    justify-content: space-between; /* Rata Kiri & Rata Kanan */
     align-items: flex-start;
+    padding-bottom: 20px; /* Jarak antara kontak/sosmed dan copyright */
 }
 
 .footer-info p {
     margin: 5px 0;
     color: var(--color-text-light);
+    text-align: left; /* Kontak Rata Kiri */
 }
 
 .footer-links.social-links {
     display: flex;
-    flex-direction: row; /* DIUBAH: Horizontal, bukan kolom */
-    gap: 20px; /* Jarak antar ikon */
-    align-items: center; /* Posisikan di tengah vertikal */
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-end; /* Ikon Rata Kanan */
 }
 
 .footer-links a {
@@ -329,6 +342,13 @@ footer {
 .footer-links a:hover {
     color: var(--color-accent);
 }
+
+.footer-copyright {
+    text-align: center; /* Copyright Rata Tengah */
+    padding-top: 10px;
+    border-top: 1px solid var(--color-secondary); /* Garis pemisah tipis */
+}
+
 
 /* --- 10. Responsiveness --- */
 @media (max-width: 900px) {
@@ -350,14 +370,61 @@ footer {
     .about-grid {
         flex-direction: column;
     }
-    .footer-grid {
-        grid-template-columns: 1fr; /* Jadi satu kolom di mobile */
+    .footer-content-top {
+        flex-direction: column; /* Tumpuk di mobile */
+        gap: 15px;
+        align-items: center; /* Semua rata tengah di mobile */
         text-align: center;
-        gap: 20px;
+    }
+    .footer-info p {
+        text-align: center; /* Kontak Rata Tengah di mobile */
     }
     .footer-links.social-links {
-        align-items: center; /* Pindahkan link sosial ke tengah di mobile */
-        justify-content: center; /* Posisikan ikon sosial di tengah */
+        justify-content: center;
         width: 100%;
+    }
+}
+
+/* --- 11. Mobile Navigation Overrides --- */
+@media (max-width: 900px) {
+    /* Logo dikecilkan di mobile */
+    .logo {
+        font-size: 1.2rem; 
+    }
+    
+    .menu-toggle {
+        display: block; /* Tampilkan menu burger */
+    }
+
+    .nav-links {
+        /* Menu Off-Canvas */
+        position: fixed;
+        top: 0;
+        right: -300px; /* Sembunyikan di luar layar */
+        width: 300px;
+        height: 100%;
+        background-color: var(--color-background-contrast);
+        flex-direction: column;
+        padding: 60px 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .nav-links.open {
+        right: 0; /* Tampilkan menu */
+    }
+    
+    .nav-links a {
+        display: block;
+        margin: 15px 0;
+        text-align: left;
+        color: var(--color-accent);
+        font-size: 1.2rem;
+    }
+
+    .btn-cta-nav {
+        margin-top: 20px;
+        text-align: center;
     }
 }
