@@ -78,7 +78,7 @@ function ForensicsPillars() {
                 <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
                     Jangan biarkan asumsi menghancurkan bisnis Anda. Dapatkan kepastian data sekarang.
                 </p>
-                <div className="flex justify-center gap-4">
+                <div className="flex flex-col md:flex-row justify-center gap-4">
                     <Button asChild size="lg" className="bg-primary text-primary-foreground font-bold">
                         <Link to="/get-access">
                             Mulai Audit Awal (Gratis di Calculator)

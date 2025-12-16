@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
+import { PAYMENT_LINKS } from "@/config/paymentLinks"
 
 // @ts-ignore
 export const Route = createFileRoute('/investasi')({
@@ -57,10 +58,16 @@ function Offerings() {
     ]
 
     const handlePayment = (plan: typeof plans[0]) => {
-        // Placeholder for Midtrans Snap JS Call
-        // In real implementation, this would call backend to get snapToken
-        console.log(`Initiating Midtrans payment for: ${plan.name} (${plan.price})`)
-        alert(`[Midtrans Sandbox Placeholder]\n\nProcessing Payment for: ${plan.name}\nPrice: ${plan.price}\n\n(Snap Popup would appear here)`)
+        let link = ""
+        if (plan.name === "The Vital Sign Check") link = PAYMENT_LINKS.TIER_1
+        else if (plan.name === "The Surgical Blueprint") link = PAYMENT_LINKS.TIER_2
+
+        if (link) {
+            window.open(link, '_blank')
+        } else {
+            // Fallback if link is not set yet (Pre-Midtrans)
+            alert(`[System Info]\n\nPayment Link for ${plan.name} is currently being generated.\n\nPlease contact Admin via WhatsApp for manual invoice.`)
+        }
     }
 
     const handleConsultation = (plan: typeof plans[0]) => {
