@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Microscope, Scale, FileSearch, ShieldAlert, BarChart3, Users, LockKeyhole } from 'lucide-react'
+import { Activity, PieChart, Banknote, LineChart, HeartHandshake, Tags, Anchor } from 'lucide-react'
 
 export const Route = createFileRoute('/forensics-pillars')({
     component: ForensicsPillars,
@@ -10,39 +10,39 @@ export const Route = createFileRoute('/forensics-pillars')({
 function ForensicsPillars() {
     const pillars = [
         {
-            title: "Auditing Operasional",
-            icon: <Microscope className="h-10 w-10 text-primary mb-4" />,
-            desc: "Kami menyelidiki setiap proses dari gudang hingga kasir untuk menemukan inefisiensi tersembunyi."
+            title: "Operational Efficiency (Phantom Cost)",
+            icon: <Activity className="h-10 w-10 text-primary mb-4" />,
+            desc: "Mendeteksi biaya tersembunyi (Cost of Idleness) dan inefisiensi tenaga kerja yang tidak tercatat di laporan laba rugi."
         },
         {
-            title: "Analisis Kecurangan (Fraud)",
-            icon: <ShieldAlert className="h-10 w-10 text-primary mb-4" />,
-            desc: "Mendeteksi pola pencurian, penggelapan, atau manipulasi data oleh pihak internal maupun eksternal."
+            title: "Margin Integrity (COGS)",
+            icon: <PieChart className="h-10 w-10 text-primary mb-4" />,
+            desc: "Membedah struktur HPP dan Gross Margin untuk memisahkan biaya murni dari pemborosan dan shrinkage."
         },
         {
-            title: "Forensik Data Digital",
-            icon: <FileSearch className="h-10 w-10 text-primary mb-4" />,
-            desc: "Mengembalikan data yang dihapus dan melacak jejak digital transaksi yang mencurigakan."
+            title: "Liquidity Velocity (CCC)",
+            icon: <Banknote className="h-10 w-10 text-primary mb-4" />,
+            desc: "Mengoptimalkan Cash Conversion Cycle agar modal tidak mati di stok, memastikan profit kertas jadi uang tunai."
         },
         {
-            title: "Kepatuhan Hukum (Compliance)",
-            icon: <Scale className="h-10 w-10 text-primary mb-4" />,
-            desc: "Memastikan bisnis Anda berjalan sesuai regulasi untuk menghindari denda dan sanksi hukum."
+            title: "Growth Economics (LTV:CAC)",
+            icon: <LineChart className="h-10 w-10 text-primary mb-4" />,
+            desc: "Memastikan biaya akuisisi (CAC) jauh lebih kecil dari nilai jangka panjang pelanggan (LTV) sebelum scale-up."
         },
         {
-            title: "Efisiensi Sumber Daya Manusia",
-            icon: <Users className="h-10 w-10 text-primary mb-4" />,
-            desc: "Mengukur produktivitas riil vs gaji yang dibayarkan. Apakah tim Anda aset atau beban?"
+            title: "Retention & Loyalty Gap",
+            icon: <HeartHandshake className="h-10 w-10 text-primary mb-4" />,
+            desc: "Menutup \"ember bocor\" dengan menganalisis celah antara akuisisi pelanggan baru dan retensi pelanggan lama."
         },
         {
-            title: "Keamanan Aset",
-            icon: <LockKeyhole className="h-10 w-10 text-primary mb-4" />,
-            desc: "Sistem kontrol stok dan aset fisik untuk mencegah penyusutan (shrinkage) yang tidak wajar."
+            title: "Transaction Quality (AOV)",
+            icon: <Tags className="h-10 w-10 text-primary mb-4" />,
+            desc: "Strategi menaikkan Average Order Value untuk meningkatkan margin tanpa menambah biaya marketing."
         },
         {
-            title: "Profitabilitas & Cashflow",
-            icon: <BarChart3 className="h-10 w-10 text-primary mb-4" />,
-            desc: "Analisis mendalam arus kas untuk memastikan profit di atas kertas menjadi uang tunai di bank."
+            title: "Survival Threshold (BEP)",
+            icon: <Anchor className="h-10 w-10 text-primary mb-4" />,
+            desc: "Analisis titik impas dinamis untuk mengetahui batas aman penurunan omzet sebelum bisnis merugi."
         }
     ]
 

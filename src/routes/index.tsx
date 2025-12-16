@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ShieldCheck, TrendingUp, AlertTriangle } from "lucide-react"
+import { ArrowRight, ShieldCheck, Activity, PieChart, LineChart, AlertTriangle } from "lucide-react"
 
 export const Route = createFileRoute('/')({
     component: Index,
@@ -68,19 +68,19 @@ function Index() {
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
                             {
-                                icon: <AlertTriangle className="w-10 h-10 text-primary" />,
-                                title: "Deteksi Dini",
-                                desc: "Temukan 'Phantom Costs' sebelum menjadi kerugian permanen dalam neraca Anda."
+                                icon: <Activity className="w-10 h-10 text-primary" />,
+                                title: "Operational Efficiency",
+                                desc: "Stop pemborosan payroll dan idle time yang tersembunyi (Phantom Costs)."
                             },
                             {
-                                icon: <TrendingUp className="w-10 h-10 text-primary" />,
-                                title: "Optimasi Profit",
-                                desc: "Ubah biaya terbuang menjadi profit margin yang sehat tanpa menambah penjualan."
+                                icon: <PieChart className="w-10 h-10 text-primary" />,
+                                title: "Margin Integrity",
+                                desc: "Bedah struktur HPP & Gross Margin untuk memisahkan biaya murni vs kebocoran."
                             },
                             {
-                                icon: <ShieldCheck className="w-10 h-10 text-primary" />,
-                                title: "Keamanan Sistem",
-                                desc: "Bangun sistem kontrol yang tahan terhadap kebocoran dan fraud internal."
+                                icon: <LineChart className="w-10 h-10 text-primary" />,
+                                title: "Growth Economics",
+                                desc: "Pastikan Unit Economics (CAC:LTV) sehat sebelum Anda burning money untuk scale-up."
                             }
                         ].map((feature, idx) => (
                             <div key={idx} className="bg-card p-8 rounded-xl border hover:border-primary/50 transition-colors shadow-sm">
