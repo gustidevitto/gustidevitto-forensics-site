@@ -117,18 +117,6 @@ h2 {
     color: var(--color-primary);
 }
 
-.btn-cta-nav {
-    background-color: var(--color-secondary);
-    color: var(--color-text-light);
-    padding: 8px 15px;
-    font-size: 0.9rem;
-}
-
-.btn-cta-nav:hover {
-    background-color: var(--color-text-light);
-    color: var(--color-primary);
-}
-
 /* --- 4. Header & Hero Section --- */
 .hero {
     background-color: var(--color-background-contrast);
@@ -224,7 +212,7 @@ h2 {
     font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 30px;
-    color: var(--color-accent);
+    color: var(--color-text-light);
 }
 
 .hero-image {
@@ -389,25 +377,67 @@ footer {
 
 /* --- 10. Responsiveness --- */
 @media (max-width: 900px) {
-    /* ... (Kode Navbar, Logo, Nav-controls, dll. tetap sama) ... */
+    /* Logo dikecilkan di mobile */
+    .logo {
+        font-size: 1.2rem; 
+    }
     
+    .menu-toggle {
+        display: block; /* Tampilkan menu burger */
+    }
+
+    /* Nav links (Menu Off-Canvas) */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -300px; 
+        width: 300px;
+        height: 100%;
+        background-color: var(--color-background-contrast);
+        flex-direction: column;
+        padding: 60px 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+    
+    .nav-links a {
+        display: block;
+        margin: 15px 0;
+        text-align: left;
+        color: var(--color-accent);
+        font-size: 1.2rem;
+    }
+
+    .btn-cta-nav {
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    /* FIX MOBILE HERO STACKING */
     .hero-content {
-        /* Hapus background dan kembalikan ke tata letak tumpuk */
         background-image: none;
         background-color: transparent;
         background-blend-mode: normal;
-        flex-direction: column;
-        text-align: center;
         min-height: auto;
         padding-top: 20px;
-        border-radius: 0;
     }
 
+    .hero-content-inner {
+        flex-direction: column; /* INI FIX UTAMANYA: Tumpuk konten */
+        text-align: center;
+        min-height: auto;
+        justify-content: center;
+    }
+    
     .hero-text {
         max-width: 100%;
         margin-bottom: 20px;
         text-align: center; /* Teks Rata Tengah di mobile */
-        padding-left: 0;
     }
 
     .hero-image {
@@ -416,22 +446,47 @@ footer {
         width: 100%;
         max-width: 100%;
         margin-bottom: 30px;
+        order: 1; /* Pastikan gambar ada di bawah teks */
+    }
+    
+    .hero-text {
+        order: 0; /* Pastikan teks ada di atas gambar */
     }
     
     .profile-photo-landscape {
         width: 100%;
         height: auto;
-        /* Batasi gambar agar tidak terlalu besar di mobile */
         max-width: 600px; 
         border-radius: 8px;
         filter: grayscale(10%); 
+        /* Pastikan gambar berada di tengah jika lebar total kurang dari 100% */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     h1 {
         font-size: 2.5rem;
     }
+
+    .about-grid {
+        flex-direction: column;
+    }
     
-    /* ... (Lanjutan kode mobile untuk about dan footer tidak berubah) ... */
+    /* Footer Fixes */
+    .footer-content-top {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-info p {
+        text-align: center;
+    }
+    .footer-links.social-links {
+        justify-content: center;
+        width: 100%;
+    }
 }
 
 /* --- 11. Mobile Navigation Overrides --- */
