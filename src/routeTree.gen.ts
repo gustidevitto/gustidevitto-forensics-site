@@ -9,7 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as OfferingsRouteImport } from './routes/offerings'
+import { Route as InvestasiRouteImport } from './routes/investasi'
 import { Route as GetAccessRouteImport } from './routes/get-access'
 import { Route as ForensicsPillarsRouteImport } from './routes/forensics-pillars'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -18,9 +18,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 
-const OfferingsRoute = OfferingsRouteImport.update({
-  id: '/offerings',
-  path: '/offerings',
+const InvestasiRoute = InvestasiRouteImport.update({
+  id: '/investasi',
+  path: '/investasi',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GetAccessRoute = GetAccessRouteImport.update({
@@ -65,7 +65,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
   '/get-access': typeof GetAccessRoute
-  '/offerings': typeof OfferingsRoute
+  '/investasi': typeof InvestasiRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
 }
@@ -75,7 +75,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
   '/get-access': typeof GetAccessRoute
-  '/offerings': typeof OfferingsRoute
+  '/investasi': typeof InvestasiRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
 }
@@ -86,7 +86,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
   '/get-access': typeof GetAccessRoute
-  '/offerings': typeof OfferingsRoute
+  '/investasi': typeof InvestasiRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -98,7 +98,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/forensics-pillars'
     | '/get-access'
-    | '/offerings'
+    | '/investasi'
     | '/blog/$slug'
     | '/blog'
   fileRoutesByTo: FileRoutesByTo
@@ -108,7 +108,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/forensics-pillars'
     | '/get-access'
-    | '/offerings'
+    | '/investasi'
     | '/blog/$slug'
     | '/blog'
   id:
@@ -118,7 +118,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/forensics-pillars'
     | '/get-access'
-    | '/offerings'
+    | '/investasi'
     | '/blog/$slug'
     | '/blog/'
   fileRoutesById: FileRoutesById
@@ -129,18 +129,18 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ForensicsPillarsRoute: typeof ForensicsPillarsRoute
   GetAccessRoute: typeof GetAccessRoute
-  OfferingsRoute: typeof OfferingsRoute
+  InvestasiRoute: typeof InvestasiRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/offerings': {
-      id: '/offerings'
-      path: '/offerings'
-      fullPath: '/offerings'
-      preLoaderRoute: typeof OfferingsRouteImport
+    '/investasi': {
+      id: '/investasi'
+      path: '/investasi'
+      fullPath: '/investasi'
+      preLoaderRoute: typeof InvestasiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/get-access': {
@@ -201,7 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ForensicsPillarsRoute: ForensicsPillarsRoute,
   GetAccessRoute: GetAccessRoute,
-  OfferingsRoute: OfferingsRoute,
+  InvestasiRoute: InvestasiRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
 }

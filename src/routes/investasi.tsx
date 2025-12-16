@@ -3,7 +3,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 
-export const Route = createFileRoute('/offerings')({
+// @ts-ignore
+export const Route = createFileRoute('/investasi')({
     component: Offerings,
 })
 

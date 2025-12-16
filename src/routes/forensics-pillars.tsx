@@ -11,37 +11,37 @@ function ForensicsPillars() {
     const pillars = [
         {
             title: "Operational Efficiency (Phantom Cost)",
-            icon: <Activity className="h-10 w-10 text-primary mb-4" />,
+            icon: <Activity className="h-10 w-10 text-secondary dark:text-primary mb-4" />,
             desc: "Mendeteksi biaya tersembunyi (Cost of Idleness) dan inefisiensi tenaga kerja yang tidak tercatat di laporan laba rugi."
         },
         {
             title: "Margin Integrity (COGS)",
-            icon: <PieChart className="h-10 w-10 text-primary mb-4" />,
+            icon: <PieChart className="h-10 w-10 text-secondary dark:text-primary mb-4" />,
             desc: "Membedah struktur HPP dan Gross Margin untuk memisahkan biaya murni dari pemborosan dan shrinkage."
         },
         {
             title: "Liquidity Velocity (CCC)",
-            icon: <Banknote className="h-10 w-10 text-primary mb-4" />,
+            icon: <Banknote className="h-10 w-10 text-secondary dark:text-primary mb-4" />,
             desc: "Mengoptimalkan Cash Conversion Cycle agar modal tidak mati di stok, memastikan profit kertas jadi uang tunai."
         },
         {
             title: "Growth Economics (LTV:CAC)",
-            icon: <LineChart className="h-10 w-10 text-primary mb-4" />,
+            icon: <LineChart className="h-10 w-10 text-secondary dark:text-primary mb-4" />,
             desc: "Memastikan biaya akuisisi (CAC) jauh lebih kecil dari nilai jangka panjang pelanggan (LTV) sebelum scale-up."
         },
         {
             title: "Retention & Loyalty Gap",
-            icon: <HeartHandshake className="h-10 w-10 text-primary mb-4" />,
+            icon: <HeartHandshake className="h-10 w-10 text-secondary dark:text-primary mb-4" />,
             desc: "Menutup \"ember bocor\" dengan menganalisis celah antara akuisisi pelanggan baru dan retensi pelanggan lama."
         },
         {
             title: "Transaction Quality (AOV)",
-            icon: <Tags className="h-10 w-10 text-primary mb-4" />,
+            icon: <Tags className="h-10 w-10 text-secondary dark:text-primary mb-4" />,
             desc: "Strategi menaikkan Average Order Value untuk meningkatkan margin tanpa menambah biaya marketing."
         },
         {
             title: "Survival Threshold (BEP)",
-            icon: <Anchor className="h-10 w-10 text-primary mb-4" />,
+            icon: <Anchor className="h-10 w-10 text-secondary dark:text-primary mb-4" />,
             desc: "Analisis titik impas dinamis untuk mengetahui batas aman penurunan omzet sebelum bisnis merugi."
         }
     ]

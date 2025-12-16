@@ -38,8 +38,8 @@ function GetAccess() {
 
     return (
         <div className="container relative flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0 min-h-[calc(100vh-4rem)]">
-            <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
-                <div className="absolute inset-0 bg-primary/90" />
+            <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r bg-[url('/assets/images/devitto-forensics.jpg')] bg-cover bg-center no-repeat">
+                <div className="absolute inset-0 bg-primary/90 mix-blend-multiply transition-opacity hover:opacity-90" />
                 <div className="relative z-20 flex items-center text-lg font-medium">
                     Gusti Devitto Forensics
                 </div>
