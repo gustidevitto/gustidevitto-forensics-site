@@ -30,12 +30,27 @@ export function usePhantomCalculator() {
     const totalPhantomCost = kerugianBahanBaku + kerugianJamKosong
 
     return {
-        data,
-        setData,
-        results: {
-            kerugianBahanBaku,
-            kerugianJamKosong,
-            totalPhantomCost,
-        },
+        omzet: data.omzetKotor,
+        setOmzet: (val: number) => setData(d => ({ ...d, omzetKotor: val })),
+
+        biayaBaku: data.biayaBaku,
+        setBiayaBaku: (val: number) => setData(d => ({ ...d, biayaBaku: val })),
+
+        gaji: data.gajiTotal,
+        setGaji: (val: number) => setData(d => ({ ...d, gajiTotal: val })),
+
+        jamKosong: data.avgJamKosong,
+        setJamKosong: (val: number) => setData(d => ({ ...d, avgJamKosong: val })),
+
+        kerugianBahanBaku,
+        kerugianJamKosong,
+        totalPhantomCost,
+
+        reset: () => setData({
+            omzetKotor: 0,
+            biayaBaku: 0,
+            gajiTotal: 0,
+            avgJamKosong: 0
+        })
     }
 }

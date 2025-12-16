@@ -1,13 +1,15 @@
 import { createFileRoute, redirect } from '@tanstack/react-router'
-import { usePhantomCalculator } from '@/hooks/use-phantom-calculator'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Label } from '@/components/ui/label'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
 import { CurrencyInput } from '@/components/ui/currency-input'
+import { usePhantomCalculator } from '@/hooks/use-phantom-calculator'
 import { formatRupiah } from '@/lib/format'
+import { AlertTriangle, Download, RefreshCcw } from 'lucide-react'
 
 export const Route = createFileRoute('/calculator')({
+    component: Calculator,
     beforeLoad: ({ location }) => {
         const token = localStorage.getItem('pcc_session_token')
         if (!token) {
@@ -19,161 +21,137 @@ export const Route = createFileRoute('/calculator')({
             })
         }
     },
-    component: CalculatorComponent,
 })
 
-function CalculatorComponent() {
-    const { data, setData, results } = usePhantomCalculator()
+function Calculator() {
+    const {
+        omzet, setOmzet,
+        biayaBaku, setBiayaBaku,
+        gaji, setGaji,
+        jamKosong, setJamKosong,
+        kerugianBahanBaku,
+        kerugianJamKosong,
+        totalPhantomCost,
+        reset
+    } = usePhantomCalculator()
 
     const handleExport = () => {
-        const date = new Date().toLocaleDateString('id-ID')
-        let csvContent = "data:text/csv;charset=utf-8,"
-        csvContent += "PHANTOM COST CALCULATOR REPORT\n"
-        csvContent += `Tanggal Report,${date}\n\n`
+        const csvContent = [
+            ["Parameter", "Nilai (IDR)"],
+            ["Omzet Bulanan", omzet],
+            ["Total Biaya Bahan Baku", biayaBaku],
+            ["Total Gaji Karyawan", gaji],
+            ["Rata-rata Jam Kosong/Hari", jamKosong],
+            ["", ""],
+            ["HASIL ANALISIS", ""],
+            ["Kerugian Bahan Baku (Est. 12.5%)", kerugianBahanBaku],
+            ["Kerugian Produktivitas (Idle Time)", kerugianJamKosong],
+            ["TOTAL PHANTOM COST", totalPhantomCost]
+        ].map(e => e.join(",")).join("\n");
 
-        csvContent += "INPUT DATA\n"
-        csvContent += `Omzet Kotor (Est),${data.omzetKotor}\n`
-        csvContent += `Biaya Bahan Baku,${data.biayaBaku}\n`
-        csvContent += `Gaji Total Karyawan,${data.gajiTotal}\n`
-        csvContent += `Rata-rata Jam Kosong (Jam/Hari),${String(data.avgJamKosong).replace('.', ',')}\n\n`
-
-        csvContent += "HASIL ANALISIS\n"
-        csvContent += `Kerugian Bahan Baku (Est 12.5%),${Math.round(results.kerugianBahanBaku)}\n`
-        csvContent += `Kerugian Jam Kosong,${Math.round(results.kerugianJamKosong)}\n`
-        csvContent += `TOTAL PHANTOM COST,${Math.round(results.totalPhantomCost)}\n`
-
-        // Or encodeURIComponent wrapper if needed, but encodeURI handles commas usually. 
-        // Better safely:
-        const safeEncodedContent = "data:text/csv;charset=utf-8," + encodeURIComponent(csvContent.replace("data:text/csv;charset=utf-8,", ""))
-
-        const link = document.createElement("a")
-        link.setAttribute("href", safeEncodedContent)
-        link.setAttribute("download", `PCC_Report_${new Date().toISOString().slice(0, 10)}.csv`)
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
+        const encodedUri = "data:text/csv;charset=utf-8," + encodeURIComponent(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "laporan_phantom_cost.csv");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
 
     return (
         <div className="container py-10 max-w-4xl">
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="mb-8 text-center space-y-2">
+                <h1 className="text-3xl font-bold tracking-tight">Phantom Cost Calculator</h1>
+                <p className="text-muted-foreground">
+                    Hitung potensi kebocoran finansial bisnis Anda dengan metodologi forensik.
+                </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
                 {/* Input Section */}
                 <Card className="h-fit">
                     <CardHeader>
-                        <CardTitle>Input Data Bisnis</CardTitle>
-                        <CardDescription>
-                            Masukkan estimasi angka bulanan Anda.
-                        </CardDescription>
+                        <CardTitle>Input Data Operasional</CardTitle>
+                        <CardDescription>Masukkan angka rata-rata bulanan.</CardDescription>
                     </CardHeader>
-                    <CardContent className="space-y-4">
+                    <CardContent className="space-y-6">
                         <div className="space-y-2">
-                            <Label>Omzet Kotor Bulanan</Label>
-                            <div className="relative">
-                                <span className="absolute left-3 top-2.5 text-sm text-muted-foreground">Rp</span>
-                                <CurrencyInput
-                                    className="pl-9"
-                                    value={data.omzetKotor}
-                                    onValueChange={(v) => setData(prev => ({ ...prev, omzetKotor: v }))}
-                                />
-                            </div>
+                            <Label>Omzet Bulanan (Rata-rata)</Label>
+                            <CurrencyInput value={omzet} onValueChange={setOmzet} placeholder="Contoh: 100.000.000" />
                         </div>
-
                         <div className="space-y-2">
-                            <Label>Biaya Bahan Baku Total</Label>
-                            <div className="relative">
-                                <span className="absolute left-3 top-2.5 text-sm text-muted-foreground">Rp</span>
-                                <CurrencyInput
-                                    className="pl-9"
-                                    value={data.biayaBaku}
-                                    onValueChange={(v) => setData(prev => ({ ...prev, biayaBaku: v }))}
-                                />
-                            </div>
+                            <Label>Total Biaya Bahan Baku (HPP) / Bulan</Label>
+                            <CurrencyInput value={biayaBaku} onValueChange={setBiayaBaku} placeholder="Contoh: 40.000.000" />
                         </div>
-
                         <div className="space-y-2">
-                            <Label>Gaji Total Karyawan</Label>
-                            <div className="relative">
-                                <span className="absolute left-3 top-2.5 text-sm text-muted-foreground">Rp</span>
-                                <CurrencyInput
-                                    className="pl-9"
-                                    value={data.gajiTotal}
-                                    onValueChange={(v) => setData(prev => ({ ...prev, gajiTotal: v }))}
-                                />
-                            </div>
+                            <Label>Total Gaji Karyawan / Bulan</Label>
+                            <CurrencyInput value={gaji} onValueChange={setGaji} placeholder="Contoh: 25.000.000" />
                         </div>
-
                         <div className="space-y-2">
-                            <Label>Rata-rata Jam Kosong / Hari</Label>
-                            <Input
-                                type="number"
-                                step="0.1"
-                                value={data.avgJamKosong}
-                                onChange={(e) => setData(prev => ({ ...prev, avgJamKosong: parseFloat(e.target.value) || 0 }))}
-                            />
-                            <p className="text-xs text-muted-foreground">Total jam tidak produktif di semua outlet.</p>
+                            <Label>Rata-rata Jam Nganggur (Idle) Karyawan / Hari</Label>
+                            <div className="relative">
+                                <CurrencyInput value={jamKosong} onValueChange={setJamKosong} placeholder="Contoh: 2" />
+                                <span className="absolute right-3 top-2.5 text-sm text-muted-foreground">Jam</span>
+                            </div>
+                            <p className="text-[0.8rem] text-muted-foreground">Est. waktu main HP, merokok, menunggu order, dll.</p>
                         </div>
                     </CardContent>
+                    <CardFooter>
+                        <Button variant="outline" onClick={reset} className="w-full">
+                            <RefreshCcw className="mr-2 h-4 w-4" /> Reset Data
+                        </Button>
+                    </CardFooter>
                 </Card>
 
                 {/* Result Section */}
                 <div className="space-y-6">
-                    <Card className="bg-destructive/10 border-destructive">
+                    <Card className="border-primary/20 bg-primary/5">
                         <CardHeader>
-                            <CardTitle className="text-destructive">Potensi Kebocoran (Phantom Cost)</CardTitle>
-                            <CardDescription>
-                                Total uang yang mungkin hilang setiap bulan tanpa terlacak.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="text-4xl font-bold text-destructive">
-                                {formatRupiah(results.totalPhantomCost)}
-                            </div>
-                            <p className="text-sm text-muted-foreground mt-2">
-                                Per Bulan
-                            </p>
-                        </CardContent>
-                    </Card>
-
-                    <div className="grid gap-4 sm:grid-cols-2">
-                        <Card>
-                            <CardHeader className="pb-2">
-                                <CardTitle className="text-sm font-medium">Kerugian Bahan Baku</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <div className="text-2xl font-bold">{formatRupiah(results.kerugianBahanBaku)}</div>
-                                <p className="text-xs text-muted-foreground">Est. 12.5% Inefisiensi</p>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <CardHeader className="pb-2">
-                                <CardTitle className="text-sm font-medium">Kerugian Jam Kosong</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <div className="text-2xl font-bold">{formatRupiah(results.kerugianJamKosong)}</div>
-                                <p className="text-xs text-muted-foreground">Labor Efficiency Loss</p>
-                            </CardContent>
-                        </Card>
-                    </div>
-
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Rekomendasi</CardTitle>
+                            <CardTitle className="flex items-center gap-2">
+                                <AlertTriangle className="h-5 w-5 text-destructive" />
+                                Analisis Risiko
+                            </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
-                            <p className="text-sm text-muted-foreground">
-                                Angka ini menunjukkan inisiatif perbaikan yang harus dilakukan segera.
-                                Forensik lebih dalam diperlukan untuk menutup celah ini.
-                            </p>
-                            <div className="flex flex-col gap-2">
-                                <Button className="w-full" size="lg" onClick={() => window.open('https://wa.me/6281234567890', '_blank')}>
-                                    Jadwalkan Bedah Bisnis (Audit)
-                                </Button>
-                                <Button variant="outline" className="w-full" onClick={handleExport}>
-                                    Export Laporan (CSV)
-                                </Button>
+                            <div className="flex justify-between items-center">
+                                <span className="text-sm font-medium text-muted-foreground">Kerugian Bahan Baku (Waste/Theft)</span>
+                                <span className="font-mono font-bold text-destructive">{formatRupiah(kerugianBahanBaku)}</span>
                             </div>
+                            <p className="text-xs text-muted-foreground -mt-3">*Estimasi standar industri (12.5% dari HPP) tanpa kontrol ketat.</p>
+
+                            <Separator className="bg-primary/20" />
+
+                            <div className="flex justify-between items-center">
+                                <span className="text-sm font-medium text-muted-foreground">Kerugian Produktivitas (Idle Time)</span>
+                                <span className="font-mono font-bold text-destructive">{formatRupiah(kerugianJamKosong)}</span>
+                            </div>
+                            <p className="text-xs text-muted-foreground -mt-3">*Biaya gaji yand dibayar untuk waktu tidak produktif.</p>
                         </CardContent>
                     </Card>
+
+                    <Card className="bg-primary text-primary-foreground border-none shadow-xl">
+                        <CardHeader className="pb-2">
+                            <CardTitle className="text-lg opacity-90">Total Phantom Cost / Bulan</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="text-4xl font-bold tracking-tight">
+                                {formatRupiah(totalPhantomCost)}
+                            </div>
+                            <p className="text-sm opacity-80 mt-2">
+                                Uang ini hilang dari profit bersih Anda setiap bulan.
+                            </p>
+                        </CardContent>
+                        <CardFooter>
+                            <Button onClick={handleExport} variant="secondary" className="w-full font-bold text-primary">
+                                <Download className="mr-2 h-4 w-4" /> Download Laporan PDF/CSV
+                            </Button>
+                        </CardFooter>
+                    </Card>
+
+                    <div className="bg-muted p-4 rounded-lg text-sm text-muted-foreground italic">
+                        "Angka ini baru perkiraan konservatif. Dalam audit lapangan, kami sering menemukan kebocoran hingga 2x lipat dari hitungan di atas."
+                        <div className="mt-2 font-bold not-italic">— Gusti Devitto</div>
+                    </div>
                 </div>
             </div>
         </div>

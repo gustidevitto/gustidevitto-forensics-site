@@ -1,102 +1,92 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button"
 import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 export const Route = createFileRoute('/get-access')({
-    component: GatingComponent,
+    component: GetAccess,
 })
 
-function GatingComponent() {
+function GetAccess() {
     const navigate = useNavigate()
-    const [formData, setFormData] = useState({
-        name: '',
-        phone: '',
-        email: ''
-    })
+    const [isLoading, setIsLoading] = useState(false)
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value })
-    }
-
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        setIsLoading(true)
 
-        // Simulate API Call & Storage
-        const leadData = {
-            ...formData,
-            timestamp: new Date().toISOString(),
-            id: crypto.randomUUID()
-        }
+        const formData = new FormData(e.currentTarget)
+        const data = Object.fromEntries(formData)
 
-        // Store in LocalStorage (Mock API)
-        const existingLeads = JSON.parse(localStorage.getItem('LEAD_STORAGE_MOCK_API') || '[]')
-        existingLeads.push(leadData)
-        localStorage.setItem('LEAD_STORAGE_MOCK_API', JSON.stringify(existingLeads))
+        // Simulating API Call / Lead Capture
+        // In real app, send this data to Supabase/Email service
+        console.log('Lead Captured:', data)
+        localStorage.setItem('LEAD_STORAGE_MOCK_API', JSON.stringify(data))
 
-        // Set Session Token
-        const sessionToken = btoa(JSON.stringify({ user: leadData.email, exp: Date.now() + 3600000 }))
+        // Create Session Token
+        const sessionToken = 'access-' + Math.random().toString(36).substr(2, 9)
         localStorage.setItem('pcc_session_token', sessionToken)
 
-        // Redirect
-        navigate({ to: '/calculator' })
+        // Artificial Delay for UX
+        setTimeout(() => {
+            setIsLoading(false)
+            navigate({ to: '/calculator' })
+        }, 800)
     }
 
     return (
-        <div className="flex items-center justify-center min-h-[calc(100vh-200px)] py-12 px-4">
-            <Card className="w-full max-w-md shadow-2xl border-primary/20">
-                <CardHeader className="space-y-1 text-center">
-                    <CardTitle className="text-2xl font-bold text-primary">Unlock the Calculator</CardTitle>
-                    <CardDescription>
-                        Tidak ada yang perlu diunduh. Dapatkan hasil perhitungan akurat Anda secara instan di website ini.
-                        Mohon isi data untuk melanjutkan akses kalkulator.
-                    </CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                        <div className="space-y-2">
-                            <Label htmlFor="name">Nama Lengkap</Label>
-                            <Input
-                                id="name"
-                                name="name"
-                                placeholder="Gusti Devitto"
-                                required
-                                value={formData.name}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="phone">Nomor HP (WhatsApp)</Label>
-                            <Input
-                                id="phone"
-                                name="phone"
-                                type="tel"
-                                placeholder="08123456789"
-                                required
-                                value={formData.phone}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="email">Email Bisnis</Label>
-                            <Input
-                                id="email"
-                                name="email"
-                                type="email"
-                                placeholder="nama@perusahaan.com"
-                                required
-                                value={formData.email}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <Button type="submit" className="w-full text-lg font-bold py-6 mt-4">
-                            Lanjutkan ke Kalkulator &rarr;
-                        </Button>
-                    </form>
-                </CardContent>
-            </Card>
+        <div className="container relative flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0 min-h-[calc(100vh-4rem)]">
+            <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
+                <div className="absolute inset-0 bg-primary/90" />
+                <div className="relative z-20 flex items-center text-lg font-medium">
+                    Gusti Devitto Forensics
+                </div>
+                <div className="relative z-20 mt-auto">
+                    <blockquote className="space-y-2">
+                        <p className="text-lg">
+                            "Biaya paling mahal dalam bisnis adalah ketidaktahuan. Phantom Cost Calculator membuka mata saya tentang kebocoran 15% profit setiap bulan."
+                        </p>
+                        <footer className="text-sm">Budi Santoso - CEO Retailindo</footer>
+                    </blockquote>
+                </div>
+            </div>
+            <div className="lg:p-8">
+                <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+                    <div className="flex flex-col space-y-2 text-center">
+                        <h1 className="text-2xl font-semibold tracking-tight">Kalkulator Forensik</h1>
+                        <p className="text-sm text-muted-foreground">
+                            Masukkan detail Anda untuk akses kalkulator premium (Gratis).
+                        </p>
+                    </div>
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Akses Kalkulator</CardTitle>
+                            <CardDescription>Data Anda aman. Kami tidak melakukan spam.</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <form onSubmit={handleSubmit} className="space-y-4">
+                                <div className="space-y-2">
+                                    <Label htmlFor="name">Nama Lengkap</Label>
+                                    <Input id="name" name="name" placeholder="John Doe" required />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="phone">Nomor WhatsApp</Label>
+                                    <Input id="phone" name="phone" type="tel" placeholder="081234567890" required />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="email">Email Bisnis</Label>
+                                    <Input id="email" name="email" type="email" placeholder="nama@perusahaan.com" required />
+                                </div>
+                                <Button type="submit" className="w-full" disabled={isLoading}>
+                                    {isLoading ? "Memproses..." : "Buka Kalkulator"}
+                                </Button>
+                            </form>
+                        </CardContent>
+                    </Card>
+                </div>
+            </div>
         </div>
     )
 }
