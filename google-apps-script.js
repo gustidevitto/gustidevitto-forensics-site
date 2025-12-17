@@ -1,28 +1,25 @@
 /**
- * GOOGLE APPS SCRIPT - LEAD CAPTURE API
+ * GOOGLE APPS SCRIPT - LEAD CAPTURE API (FIXED CORS)
  * 
  * INSTRUCTIONS:
- * 1. Open your Google Sheet
- * 2. Go to Extensions → Apps Script
- * 3. Paste this entire code
- * 4. Click "Deploy" → "New Deployment"
- * 5. Select type: "Web app"
- * 6. Execute as: "Me"
- * 7. Who has access: "Anyone"
- * 8. Click "Deploy" and copy the Web App URL
- * 9. Add URL to .env.local as VITE_GOOGLE_SHEETS_URL
- * 
- * SHEET SETUP:
- * Ensure Row 1 has headers: Timestamp | Nama | WhatsApp | Email | Source
+ * 1. Replace ALL code in Google Apps Script editor with this
+ * 2. Click "Deploy" → "Manage deployments"
+ * 3. Click Edit (pencil icon) → "New version"
+ * 4. Click "Deploy"
  */
 
 function doPost(e) {
     try {
-        // Get the active spreadsheet
-        const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-
         // Parse request data
-        const data = JSON.parse(e.postData.contents);
+        let data;
+        try {
+            data = JSON.parse(e.postData.contents);
+        } catch (parseError) {
+            return createResponse(400, {
+                success: false,
+                error: 'Invalid JSON format'
+            });
+        }
 
         // Validate required fields
         if (!data.name || !data.phone || !data.email) {
@@ -41,6 +38,9 @@ function doPost(e) {
             });
         }
 
+        // Get the active spreadsheet
+        const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
         // Prepare row data
         const timestamp = new Date();
         const rowData = [
@@ -54,6 +54,9 @@ function doPost(e) {
         // Append to sheet
         sheet.appendRow(rowData);
 
+        // Log success
+        Logger.log('Lead captured: ' + data.email);
+
         // Return success response
         return createResponse(200, {
             success: true,
@@ -63,7 +66,7 @@ function doPost(e) {
 
     } catch (error) {
         // Log error for debugging
-        Logger.log('Error: ' + error.toString());
+        Logger.log('Error in doPost: ' + error.toString());
 
         return createResponse(500, {
             success: false,
@@ -79,18 +82,16 @@ function doPost(e) {
 function doGet(e) {
     return createResponse(200, {
         success: true,
-        message: 'Google Sheets API is running',
+        message: 'Google Sheets API is running. Use POST to submit leads.',
         timestamp: new Date().toISOString()
     });
 }
 
 /**
- * Create standardized response with CORS headers
+ * Create standardized JSON response
  */
 function createResponse(statusCode, data) {
     const output = ContentService.createTextOutput(JSON.stringify(data));
     output.setMimeType(ContentService.MimeType.JSON);
-
-    // Add CORS headers
     return output;
 }
