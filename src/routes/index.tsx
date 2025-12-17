@@ -20,12 +20,10 @@ function Index() {
                         <span>Metodologi Forensik Teruji</span>
                     </div>
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
-                        Profit Bisnis Anda <span className="text-primary italic">Bocor</span> Tanpa Jejak?
-                        <br />
-                        Temukan "Phantom Cost" dalam 5 Menit.
+                        Jaringan Outlet Anda Mencetak Omzet, Tapi Di Mana <span className="text-primary italic">Profit Bersihnya</span>?
                     </h1>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Jangan biarkan Omzet Semu menipu Anda. Diagnosa kesehatan finansial bisnis Anda sekarang dengan metodologi forensik, tanpa install software apapun.
+                        Diagnosa kesehatan finansial sistem multi-cabang Anda sekarang. Kami dirancang untuk Owner yang sedang bertransisi dari Owner-Operator menjadi Pemimpin Sistem.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 mt-4">
                         <Button asChild size="lg" className="text-lg h-12 px-8 shadow-lg shadow-primary/20 bg-primary hover:bg-primary/90 text-primary-foreground">
@@ -39,8 +37,8 @@ function Index() {
                 <div className="relative w-full aspect-square md:aspect-video lg:aspect-square max-w-lg mx-auto lg:mr-0 rounded-2xl overflow-hidden shadow-2xl border border-border/50 bg-gradient-to-br from-primary/5 to-secondary/5 grid place-items-center group">
                     <div className="absolute inset-0 bg-[url('/assets/images/hero-image.jpg')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
-                    <div className="relative z-10 p-8 text-center">
-                        <div className="bg-background/80 backdrop-blur-md p-6 rounded-xl border border-primary/20 shadow-xl">
+                    <div className="relative z-10 p-8 text-center flex items-end">
+                        <div className="bg-background/60 backdrop-blur-md p-6 rounded-xl border border-primary/20 shadow-xl">
                             <AlertTriangle className="w-12 h-12 text-primary mx-auto mb-4" />
                             <h3 className="text-xl font-bold mb-2">90% Bisnis Merugi Tanpa Sadar</h3>
                             <p className="text-muted-foreground text-sm">
@@ -83,18 +81,18 @@ function Index() {
                         {[
                             {
                                 icon: <TrendingDown className="w-12 h-12 text-secondary dark:text-primary" />,
-                                title: "Invisible Shrinkage",
-                                desc: "Stok hilang, bahan baku terbuang, dan 'kecelakaan' kecil yang jika diakumulasi setahun setara dengan profit 1 cabang baru."
+                                title: "Inkonsistensi & Kebocoran Multi-Lokasi",
+                                desc: "Stok hilang yang berbeda signifikan antar outlet. Cabang A kehilangan 8%, Cabang B 15%. Ini bukan kebetulan—ini menunjukkan kegagalan sistem pengawasan cross-branch."
                             },
                             {
                                 icon: <Users className="w-12 h-12 text-secondary dark:text-primary" />,
-                                title: "Labor Inefficiency",
-                                desc: "Menggaji karyawan untuk 'idle time'. Tanpa pengukuran produktivitas yang presisi, payroll Anda hanya menjadi beban tetap tanpa ROI."
+                                title: "Disparitas Efisiensi Tenaga Kerja",
+                                desc: "Efisiensi Tenaga Kerja tidak merata. Idle time tinggi di Outlet A, sementara Outlet B kekurangan orang. Tanpa standardisasi SOP, payroll membengkak tanpa output yang sepadan."
                             },
                             {
                                 icon: <DollarSign className="w-12 h-12 text-secondary dark:text-primary" />,
-                                title: "Pricing Errors",
-                                desc: "Menjual produk dengan margin yang salah karena gagal menghitung HPP aktual (termasuk overhead & variable cost tersembunyi)."
+                                title: "Phantom Discounting (Margin Killing)",
+                                desc: "Marketing dan Discounting yang tidak terkontrol. Omzet naik, tapi margin terbunuh karena kebijakan harga yang inkonsisten antar cabang. Diskon silang membingungkan pelanggan dan merusak brand value."
                             }
                         ].map((feature, idx) => (
                             <div key={idx} className="bg-card p-8 rounded-xl border hover:border-primary/50 transition-colors shadow-sm text-center md:text-left">
@@ -114,7 +112,7 @@ function Index() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Apa bedanya Gusti Devitto Forensics dengan Akuntan/Konsultan Pajak?</AccordionTrigger>
                         <AccordionContent className="text-muted-foreground leading-relaxed">
-                            Akuntan merapikan catatan masa lalu untuk kepatuhan (pajak/laporan). Kami adalah <strong>Auditor Forensik Operasional</strong>. Kami membedah "masa depan" profit Anda dengan mencari kebocoran dlam operasional harian yang tidak tercatat di jurnal akuntansi standar.
+                            Akuntan merapikan catatan masa lalu untuk kepatuhan (pajak/laporan). Kami adalah <strong>Auditor Forensik Operasional</strong>. Kami membedah "masa depan" profit Anda dengan mencari kebocoran dalam operasional harian yang tidak tercatat di jurnal akuntansi standar.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
