@@ -34,10 +34,11 @@ function Index() {
                     </div>
                 </div>
 
-                <div className="relative w-full aspect-square md:aspect-video lg:aspect-square max-w-lg mx-auto lg:mr-0 rounded-2xl overflow-hidden shadow-2xl border border-border/50 bg-gradient-to-br from-primary/5 to-secondary/5 grid place-items-center group">
+                <div className="relative w-full aspect-square md:aspect-video lg:aspect-square max-w-lg mx-auto lg:mr-0 rounded-2xl overflow-hidden shadow-2xl border border-border/50 bg-gradient-to-br from-primary/5 to-secondary/5 group">
                     <div className="absolute inset-0 bg-[url('/assets/images/hero-image.jpg')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
-                    <div className="relative z-10 p-8 text-center flex items-end">
+                    {/* Box positioned at bottom-right with slide-up animation */}
+                    <div className="absolute bottom-6 right-6 left-6 md:left-auto md:max-w-md animate-slide-up">
                         <div className="bg-background/60 backdrop-blur-md p-6 rounded-xl border border-primary/20 shadow-xl">
                             <AlertTriangle className="w-12 h-12 text-primary mx-auto mb-4" />
                             <h3 className="text-xl font-bold mb-2">90% Bisnis Merugi Tanpa Sadar</h3>
