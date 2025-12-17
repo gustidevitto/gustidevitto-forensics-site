@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { useState } from 'react'
+import { submitLead } from '@/lib/googleSheetsAPI'
 
 export const Route = createFileRoute('/get-access')({
     component: GetAccess,
@@ -18,22 +19,36 @@ function GetAccess() {
         setIsLoading(true)
 
         const formData = new FormData(e.currentTarget)
-        const data = Object.fromEntries(formData)
+        const leadData = {
+            name: formData.get('name') as string,
+            phone: formData.get('phone') as string,
+            email: formData.get('email') as string,
+        }
 
-        // Simulating API Call / Lead Capture
-        // In real app, send this data to Supabase/Email service
-        console.log('Lead Captured:', data)
-        localStorage.setItem('LEAD_STORAGE_MOCK_API', JSON.stringify(data))
+        try {
+            // Submit to Google Sheets
+            const result = await submitLead(leadData)
 
-        // Create Session Token
-        const sessionToken = 'access-' + Math.random().toString(36).substr(2, 9)
-        localStorage.setItem('pcc_session_token', sessionToken)
+            if (!result.success) {
+                console.warn('Lead submission warning:', result.error)
+                // Continue anyway - fallback saved to localStorage
+            }
 
-        // Artificial Delay for UX
-        setTimeout(() => {
+            // Create Session Token (only after successful submission or fallback)
+            const sessionToken = 'access-' + Math.random().toString(36).substr(2, 9)
+            localStorage.setItem('pcc_session_token', sessionToken)
+
+            // Navigate to calculator
+            setTimeout(() => {
+                setIsLoading(false)
+                navigate({ to: '/calculator' })
+            }, 800)
+
+        } catch (error) {
             setIsLoading(false)
-            navigate({ to: '/calculator' })
-        }, 800)
+            console.error('Unexpected error:', error)
+            alert('Terjadi kesalahan. Silakan coba lagi.')
+        }
     }
 
     return (
