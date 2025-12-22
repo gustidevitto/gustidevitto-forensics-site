@@ -31,11 +31,12 @@ export async function submitLead(data: LeadData): Promise<ApiResponse> {
 
     // Fallback if API is disabled or URL is missing
     if (!isEnabled || !apiUrl || apiUrl.includes('YOUR_DEPLOYMENT_ID')) {
-        console.warn('Lead capture disabled or not configured. Using localStorage fallback.')
+        console.warn('Lead capture disabled or not configured.')
         localStorage.setItem('LEAD_STORAGE_FALLBACK', JSON.stringify(data))
         return {
-            success: true,
-            message: 'Lead saved locally (API not configured)',
+            success: false,
+            error: 'API_NOT_CONFIGURED',
+            message: 'Alamat API belum terpasang dengan benar di .env.local',
         }
     }
 
