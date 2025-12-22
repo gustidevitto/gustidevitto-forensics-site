@@ -43,7 +43,9 @@ export async function submitLead(data: LeadData): Promise<ApiResponse> {
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                // Using text/plain to avoid CORS preflight (OPTIONS request) 
+                // which Google Apps Script doesn't handle natively.
+                'Content-Type': 'text/plain',
             },
             body: JSON.stringify({
                 ...data,
