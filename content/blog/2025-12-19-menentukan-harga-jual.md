@@ -13,23 +13,23 @@ Padahal, ini adalah awal dari bencana keuangan. Dalam dunia **Financial Forensic
 
 ### Apa Itu COGS dan Kenapa Anda Harus Peduli?
 
-**COGS (Cost of Goods Sold)** atau Harga Pokok Penjualan (HPP) adalah total biaya langsung yang dikeluarkan untuk menghasilkan satu unit produk. Bayangkan COGS sebagai "bahan bakar" utama bisnis Anda. [cite_start]Jika harga jual Anda tidak mampu menutup COGS dan memberikan margin, maka setiap kali Anda berjualan, Anda sebenarnya sedang "nombok" secara sukarela. [cite: 4, 6]
+**COGS (Cost of Goods Sold)** atau Harga Pokok Penjualan (HPP) adalah total biaya langsung yang dikeluarkan untuk menghasilkan satu unit produk. Bayangkan COGS sebagai "bahan bakar" utama bisnis Anda. Jika harga jual Anda tidak mampu menutup COGS dan memberikan margin, maka setiap kali Anda berjualan, Anda sebenarnya sedang "nombok" secara sukarela.
 
 ### Analogi Nasi Goreng: Membedah Biaya yang Tak Terlihat
 
-Mari kita gunakan analogi sederhana. Jika Anda berjualan Nasi Goreng, COGS Anda bukan cuma beras dan telur. [cite_start]Ada banyak **biaya variabel** yang sering terlupakan: [cite: 4]
+Mari kita gunakan analogi sederhana. Jika Anda berjualan Nasi Goreng, COGS Anda bukan cuma beras dan telur. Ada banyak **biaya variabel** yang sering terlupakan:
 
 1. **Bahan Baku Utama:** Beras, bensin motor untuk ke pasar, telur, kecap, dan minyak goreng.
-2. [cite_start]**Kemasan (Packaging):** Styrofoam atau kertas bungkus, karet, sendok plastik, hingga kantong kresek. [cite: 4]
+2. **Kemasan (Packaging):** Styrofoam atau kertas bungkus, karet, sendok plastik, hingga kantong kresek.
 3. **Hidden Costs:** Gas elpiji dan bumbu rahasia yang seringkali tidak dihitung per porsinya.
 
 Jika total biaya di atas adalah Rp8.000 dan Anda menjualnya seharga Rp10.000, Anda pikir Anda untung Rp2.000? **Salah besar.**
 
 ### Menjaga Margin Integrity dari Serangan Phantom Cost
 
-Di sinilah peran **Financial Forensics** masuk. [cite_start]Anda masih punya **Biaya Tetap** seperti sewa tempat, gaji karyawan, dan listrik yang harus dibayar. [cite: 3] Jika margin per produk Anda terlalu tipis karena salah hitung COGS, maka keuntungan Anda akan habis "dimakan hantu".
+Di sinilah peran **Financial Forensics** masuk. Anda masih punya **Biaya Tetap** seperti sewa tempat, gaji karyawan, dan listrik yang harus dibayar. Jika margin per produk Anda terlalu tipis karena salah hitung COGS, maka keuntungan Anda akan habis "dimakan hantu".
 
-[cite_start]Inilah yang saya sebut sebagai **Phantom Cost**—biaya siluman yang membuat omzet Anda terlihat miliaran, tapi saldo bank tetap jutaan karena efisiensi operasional yang buruk. [cite: 29, 31]
+Inilah yang saya sebut sebagai **Phantom Cost**—biaya siluman yang membuat omzet Anda terlihat miliaran, tapi saldo bank tetap jutaan karena efisiensi operasional yang buruk.
 
 ### Cara Menentukan Harga Jual yang Sehat
 
@@ -45,6 +45,6 @@ Jika setelah dihitung harga jual Anda menjadi terlalu mahal dibanding pasar, jan
 
 Menentukan harga berdasarkan perhitungan COGS yang akurat adalah bentuk kejujuran Anda terhadap kesehatan bisnis sendiri. Jangan biarkan bisnis Anda menjadi "Misi Amal" tak berujung karena Anda takut menghitung angka.
 
->> Ingin tahu apakah harga jual Anda sudah aman dari kebocoran? Gunakan [**Phantom Cost Calculator**](/get-access) saya untuk mendeteksi kesehatan margin bisnis Anda secara instan.
+> Ingin tahu apakah harga jual Anda sudah aman dari kebocoran? Gunakan [**Phantom Cost Calculator**](/get-access) saya untuk mendeteksi kesehatan margin bisnis Anda secara instan.
 
-"Omzet itu ego, profit itu realita. Jangan biarkan ego menghancurkan realita keuangan Anda."
+*"Omzet itu ego, profit itu realita. Jangan biarkan ego menghancurkan realita keuangan Anda."*
