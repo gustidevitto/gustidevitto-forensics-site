@@ -1,71 +1,50 @@
 /**
- * GOOGLE APPS SCRIPT - LEAD CAPTURE API (ROBUST VERSION)
+ * GOOGLE APPS SCRIPT - LEAD CAPTURE API (FINAL ROBUST)
  * 
  * INSTRUCTIONS:
- * 1. Replace ALL code in Google Apps Script editor with this
- * 2. Click "Deploy" -> "New deployment" (PENTING: Selalu buat deployment baru)
- * 3. Configure:
- *    - Type: Web App
- *    - Execute as: Me
- *    - Who has access: Anyone
- *    - Click "Deploy"
+ * 1. HAPUS SEMUA kode lama di Google Apps Script.
+ * 2. PASTE kode ini seluruhnya.
+ * 3. Klik "Deploy" -> "New deployment".
+ * 4. Pilih Type: "Web App".
+ * 5. Execute as: "Me".
+ * 6. Who has access: "Anyone" (PENTING!).
+ * 7. Klik "Deploy" & Copy URL barunya.
  */
 
 function doPost(e) {
     const lock = LockService.getScriptLock();
-    lock.tryLock(10000); // Wait for 10 seconds to avoid collisions
+    lock.tryLock(10000);
 
     try {
-        // 1. Parse Data
-        let data;
-        if (e.postData && e.postData.contents) {
-            data = JSON.parse(e.postData.contents);
-        } else {
-            throw new Error("No data received in postData");
-        }
+        let contents = e.postData.contents;
+        let data = JSON.parse(contents);
 
-        // 2. Validate Data
-        if (!data.name || !data.phone || !data.email) {
-            throw new Error("Missing required fields (name, phone, email)");
-        }
-
-        // 3. Select Sheet (By name is safer)
+        // Ambil Spreadsheet & Sheet pertama
         const ss = SpreadsheetApp.getActiveSpreadsheet();
-        let sheet = ss.getSheetByName("Leads") || ss.getSheets()[0];
+        const sheet = ss.getSheets()[0];
 
-        // Ensure headers exist if sheet is empty
-        if (sheet.getLastRow() === 0) {
-            sheet.appendRow(["Timestamp", "Nama", "WhatsApp", "Email", "Source"]);
-        }
-
-        // 4. Append Data
+        // Masukkan Data
         const timestamp = new Date();
         sheet.appendRow([
             timestamp,
-            data.name,
-            data.phone,
-            data.email,
-            data.source || "Website Form"
+            data.name || "No Name",
+            data.phone || "No Phone",
+            data.email || "No Email",
+            data.source || "Website"
         ]);
 
-        // 5. Return Success
-        return ContentService.createTextOutput(JSON.stringify({
-            success: true,
-            message: "Data saved to Google Sheets",
-            row: sheet.getLastRow()
-        })).setMimeType(ContentService.MimeType.JSON);
+        return ContentService.createTextOutput(JSON.stringify({ success: true }))
+            .setMimeType(ContentService.MimeType.JSON);
 
     } catch (error) {
-        return ContentService.createTextOutput(JSON.stringify({
-            success: false,
-            error: error.toString()
-        })).setMimeType(ContentService.MimeType.JSON);
-
+        Logger.log("Error: " + error.toString());
+        return ContentService.createTextOutput(JSON.stringify({ success: false, error: error.toString() }))
+            .setMimeType(ContentService.MimeType.JSON);
     } finally {
         lock.releaseLock();
     }
 }
 
 function doGet(e) {
-    return ContentService.createTextOutput("API is running! Mode: GET").setMimeType(ContentService.MimeType.TEXT);
+    return ContentService.createTextOutput("API Aktif!").setMimeType(ContentService.MimeType.TEXT);
 }
