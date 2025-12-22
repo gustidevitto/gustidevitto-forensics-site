@@ -27,7 +27,7 @@ export interface ApiResponse {
  */
 export async function submitLead(data: LeadData): Promise<ApiResponse> {
     // Priority: .env.local > Hardcoded Fallback
-    const apiUrl = import.meta.env.VITE_GOOGLE_SHEETS_URL || 'https://script.google.com/macros/s/AKfycbyVcrRj4sNEQC5jtParEPultCdImFBghbY5fuy-bH8JvzR5W3I_6EtvhtoLAXAJUZjj/exec'
+    const apiUrl = import.meta.env.VITE_GOOGLE_SHEETS_URL || 'https://script.google.com/macros/s/AKfycbyzb_6V43PUrCpD18qOlIqmoOnXXt9OgNTmD2woVBrqKp8VOmJjCtwafXU_BvK5U-L2/exec'
     const isEnabled = import.meta.env.VITE_ENABLE_LEAD_CAPTURE !== 'false'
 
     // Fallback if API is disabled or URL is missing
