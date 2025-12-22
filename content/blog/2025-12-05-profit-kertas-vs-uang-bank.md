@@ -30,4 +30,4 @@ CCC adalah metrik yang mengukur berapa lama waktu yang dibutuhkan perusahaan unt
 * **Optimasi Stok:** Gunakan metode Just-In-Time atau minimal stok untuk menghindari uang mati di gudang.
 * **Negotiate Terms:** Coba negosiasikan jangka waktu pembayaran yang lebih lama dengan supplier.
 
-Jika Anda ingin tahu apakah bisnis Anda sedang terancam krisis likuiditas meskipun terlihat untung, gunakan **Phantom Cost Calculator** untuk melihat di mana kebocoran uang kas Anda terjadi.
+Jika Anda ingin tahu apakah bisnis Anda sedang terancam krisis likuiditas meskipun terlihat untung, gunakan [**Phantom Cost Calculator**](/get-access) untuk melihat di mana kebocoran uang kas Anda terjadi.

@@ -9,19 +9,46 @@ export const Route = createFileRoute('/blog/$slug')({
 
 // Simple Markdown to HTML converter (for basic tags used in blog)
 const mdToHtml = (md: string) => {
-    return md
-        .replace(/^### (.*$)/gim, '<h3 class="text-xl font-bold mt-8 mb-4">$1</h3>')
-        .replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold mt-10 mb-6">$1</h2>')
-        .replace(/^# (.*$)/gim, '<h1 class="text-3xl font-extrabold mt-12 mb-8">$1</h1>')
-        .replace(/^\* (.*$)/gim, '<li class="ml-4 list-disc">$1</li>')
-        .replace(/^\- (.*$)/gim, '<li class="ml-4 list-disc">$1</li>')
-        .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
-        .replace(/\*(.*)\*/gim, '<em>$1</em>')
-        .replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" alt="$1" class="rounded-lg my-8 w-full" />')
-        .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" class="text-primary underline">$1</a>')
-        .replace(/\n\n/gim, '</p><p class="mb-4">')
-        .replace(/> (.*$)/gim, '<blockquote class="border-l-4 border-primary pl-4 italic my-6 text-muted-foreground">$1</blockquote>')
-        // Clean up citation markers or other specific patterns if needed
+    // Process line-by-line for block elements
+    const lines = md.split('\n')
+    const processedLines = lines.map(line => {
+        let trimmed = line.trim()
+
+        // Blockquotes
+        if (trimmed.startsWith('>')) {
+            return `<blockquote class="border-l-4 border-primary pl-4 italic my-6 text-muted-foreground">${trimmed.substring(1).trim()}</blockquote>`
+        }
+
+        // Headings
+        if (trimmed.startsWith('###')) return `<h3 class="text-xl font-bold mt-8 mb-4">${trimmed.substring(3).trim()}</h3>`
+        if (trimmed.startsWith('##')) return `<h2 class="text-2xl font-bold mt-10 mb-6">${trimmed.substring(2).trim()}</h2>`
+        if (trimmed.startsWith('#')) return `<h1 class="text-3xl font-extrabold mt-12 mb-8">${trimmed.substring(1).trim()}</h1>`
+
+        // Lists
+        if (trimmed.startsWith('*') || trimmed.startsWith('-')) {
+            return `<li class="ml-4 list-disc mb-2">${trimmed.substring(1).trim()}</li>`
+        }
+
+        // Horizontal Rule
+        if (trimmed === '---') return '<hr class="my-8 border-border" />'
+
+        // Paragraphs (only if not empty)
+        if (trimmed.length > 0) {
+            return `<p class="mb-4">${trimmed}</p>`
+        }
+
+        return ''
+    })
+
+    let html = processedLines.join('\n')
+
+    // Inline elements (apply to the whole thing)
+    return html
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="rounded-lg my-8 w-full shadow-md" />')
+        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary underline font-medium hover:text-primary/80 transition-colors">$1</a>')
+        // Clean up citation markers or other specific patterns
         .replace(/\[cite_start\].*?\[cite:.*?\]/g, '')
 }
 
@@ -129,7 +156,7 @@ function BlogPost() {
                 {/* Content Rendering */}
                 <div
                     className="blog-content prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-li:text-muted-foreground"
-                    dangerouslySetInnerHTML={{ __html: `<p class="mb-4">${post.content}</p>` }}
+                    dangerouslySetInnerHTML={{ __html: post.content }}
                 />
             </article>
 
