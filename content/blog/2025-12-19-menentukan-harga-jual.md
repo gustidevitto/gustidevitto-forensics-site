@@ -35,9 +35,9 @@ Di sinilah peran **Financial Forensics** masuk. [cite_start]Anda masih punya **B
 
 Untuk menentukan harga jual yang membuat bisnis Anda bertahan lama, ikuti langkah ini:
 
-* [cite_start]**Hitung COGS secara Rinci:** Jangan lewatkan satu butir garam pun dalam hitungan Anda. [cite: 7]
+* **Hitung COGS secara Rinci:** Jangan lewatkan satu butir garam pun dalam hitungan Anda.
 * **Tentukan Target Profit:** Berapa keuntungan bersih yang ingin Anda bawa pulang setelah semua biaya operasional tertutup?
-* [cite_start]**Gunakan Kalkulator BEP:** Hitung berapa porsi yang harus terjual untuk mencapai titik impas (Break-Even Point). [cite: 1, 9]
+* **Gunakan Kalkulator BEP:** Hitung berapa porsi yang harus terjual untuk mencapai titik impas (Break-Even Point).
 
 Jika setelah dihitung harga jual Anda menjadi terlalu mahal dibanding pasar, jangan langsung turunkan harga. Sebaliknya, cari kebocoran di sisi produksi atau tingkatkan nilai tambah produk Anda.
 
@@ -45,8 +45,6 @@ Jika setelah dihitung harga jual Anda menjadi terlalu mahal dibanding pasar, jan
 
 Menentukan harga berdasarkan perhitungan COGS yang akurat adalah bentuk kejujuran Anda terhadap kesehatan bisnis sendiri. Jangan biarkan bisnis Anda menjadi "Misi Amal" tak berujung karena Anda takut menghitung angka.
 
-Ingin tahu apakah harga jual Anda sudah aman dari kebocoran? Gunakan **Phantom Cost Calculator** saya untuk mendeteksi kesehatan margin bisnis Anda secara instan.
+Ingin tahu apakah harga jual Anda sudah aman dari kebocoran? Gunakan [**Phantom Cost Calculator**](gustidevitto.com/get-access) saya untuk mendeteksi kesehatan margin bisnis Anda secara instan.
 
-> "Omzet itu ego, profit itu realita. Jangan biarkan ego menghancurkan realita keuangan Anda."
-
----
+"Omzet itu ego, profit itu realita. Jangan biarkan ego menghancurkan realita keuangan Anda."
