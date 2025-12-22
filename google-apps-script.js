@@ -1,97 +1,71 @@
 /**
- * GOOGLE APPS SCRIPT - LEAD CAPTURE API (FIXED CORS)
+ * GOOGLE APPS SCRIPT - LEAD CAPTURE API (ROBUST VERSION)
  * 
  * INSTRUCTIONS:
  * 1. Replace ALL code in Google Apps Script editor with this
- * 2. Click "Deploy" → "Manage deployments"
- * 3. Click Edit (pencil icon) → "New version"
- * 4. Click "Deploy"
+ * 2. Click "Deploy" -> "New deployment" (PENTING: Selalu buat deployment baru)
+ * 3. Configure:
+ *    - Type: Web App
+ *    - Execute as: Me
+ *    - Who has access: Anyone
+ *    - Click "Deploy"
  */
 
 function doPost(e) {
+    const lock = LockService.getScriptLock();
+    lock.tryLock(10000); // Wait for 10 seconds to avoid collisions
+
     try {
-        // Parse request data
+        // 1. Parse Data
         let data;
-        try {
+        if (e.postData && e.postData.contents) {
             data = JSON.parse(e.postData.contents);
-        } catch (parseError) {
-            return createResponse(400, {
-                success: false,
-                error: 'Invalid JSON format'
-            });
+        } else {
+            throw new Error("No data received in postData");
         }
 
-        // Validate required fields
+        // 2. Validate Data
         if (!data.name || !data.phone || !data.email) {
-            return createResponse(400, {
-                success: false,
-                error: 'Missing required fields: name, phone, email'
-            });
+            throw new Error("Missing required fields (name, phone, email)");
         }
 
-        // Basic email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(data.email)) {
-            return createResponse(400, {
-                success: false,
-                error: 'Invalid email format'
-            });
+        // 3. Select Sheet (By name is safer)
+        const ss = SpreadsheetApp.getActiveSpreadsheet();
+        let sheet = ss.getSheetByName("Leads") || ss.getSheets()[0];
+
+        // Ensure headers exist if sheet is empty
+        if (sheet.getLastRow() === 0) {
+            sheet.appendRow(["Timestamp", "Nama", "WhatsApp", "Email", "Source"]);
         }
 
-        // Get the active spreadsheet
-        const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-
-        // Prepare row data
+        // 4. Append Data
         const timestamp = new Date();
-        const rowData = [
+        sheet.appendRow([
             timestamp,
             data.name,
             data.phone,
             data.email,
-            data.source || 'PCC Calculator'
-        ];
+            data.source || "Website Form"
+        ]);
 
-        // Append to sheet
-        sheet.appendRow(rowData);
-
-        // Log success
-        Logger.log('Lead captured: ' + data.email);
-
-        // Return success response
-        return createResponse(200, {
+        // 5. Return Success
+        return ContentService.createTextOutput(JSON.stringify({
             success: true,
-            message: 'Lead captured successfully',
-            timestamp: timestamp.toISOString()
-        });
+            message: "Data saved to Google Sheets",
+            row: sheet.getLastRow()
+        })).setMimeType(ContentService.MimeType.JSON);
 
     } catch (error) {
-        // Log error for debugging
-        Logger.log('Error in doPost: ' + error.toString());
-
-        return createResponse(500, {
+        return ContentService.createTextOutput(JSON.stringify({
             success: false,
-            error: 'Internal server error',
-            details: error.toString()
-        });
+            error: error.toString()
+        })).setMimeType(ContentService.MimeType.JSON);
+
+    } finally {
+        lock.releaseLock();
     }
 }
 
-/**
- * Handle GET requests (for testing)
- */
 function doGet(e) {
-    return createResponse(200, {
-        success: true,
-        message: 'Google Sheets API is running. Use POST to submit leads.',
-        timestamp: new Date().toISOString()
-    });
-}
-
-/**
- * Create standardized JSON response
- */
-function createResponse(statusCode, data) {
-    const output = ContentService.createTextOutput(JSON.stringify(data));
-    output.setMimeType(ContentService.MimeType.JSON);
-    return output;
+    return ContentService.createTextOutput("API is running! Mode: GET").setMimeType(ContentService.MimeType.TEXT);
 }

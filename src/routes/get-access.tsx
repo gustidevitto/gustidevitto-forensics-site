@@ -30,8 +30,9 @@ function GetAccess() {
             const result = await submitLead(leadData)
 
             if (!result.success) {
-                console.warn('Lead submission warning:', result.error)
-                // Continue anyway - fallback saved to localStorage
+                console.error('Lead submission failed:', result.error)
+                // If it fails, we alert the user with the specific error to help debugging
+                alert(`Gagal mengirim data ke Google Sheets: ${result.error || 'Unknown Error'}. Data akan disimpan secara lokal.`)
             }
 
             // Create Session Token (only after successful submission or fallback)
