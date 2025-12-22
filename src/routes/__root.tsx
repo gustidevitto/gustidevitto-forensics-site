@@ -1,5 +1,4 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { ModeToggle } from '@/components/mode-toggle'
 import { ThemeProvider } from "@/components/theme-provider"
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
@@ -73,7 +72,6 @@ export const Route = createRootRoute({
                         </div>
                     </footer>
                 </div>
-                {import.meta.env.DEV && <TanStackRouterDevtools />}
             </div>
         </ThemeProvider>
     ),
