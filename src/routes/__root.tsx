@@ -23,7 +23,8 @@ export const Route = createRootRoute({
 
                             {/* Desktop Navigation */}
                             <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
-                                <a href="/calculator" className="transition-colors hover:text-primary">Calculator</a>
+                                <a href="/get-access" className="transition-colors hover:text-primary">Calculator</a>
+                                <a href="/blog" className="transition-colors hover:text-primary">Blog</a>
                                 <a href="/forensics-pillars" className="transition-colors hover:text-primary">7 Pillars</a>
                                 <a href="/investasi" className="transition-colors hover:text-primary">Investasi</a>
                                 <a href="/contact" className="transition-colors hover:text-primary">Contact</a>
@@ -42,7 +43,8 @@ export const Route = createRootRoute({
                                     </SheetTrigger>
                                     <SheetContent side="right">
                                         <div className="flex flex-col space-y-6 mt-6">
-                                            <a href="/calculator" className="text-lg font-medium hover:text-primary">Calculator</a>
+                                            <a href="/get-access" className="text-lg font-medium hover:text-primary">Calculator</a>
+                                            <a href="/blog" className="text-lg font-medium hover:text-primary">Blog</a>
                                             <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">7 Pillars</a>
                                             <a href="/investasi" className="text-lg font-medium hover:text-primary">Investasi</a>
                                             <a href="/contact" className="text-lg font-medium hover:text-primary">Contact</a>

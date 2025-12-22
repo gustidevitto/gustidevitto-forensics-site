@@ -7,41 +7,85 @@ export const Route = createFileRoute('/blog/$slug')({
     component: BlogPost,
 })
 
+// Simple Markdown to HTML converter (for basic tags used in blog)
+const mdToHtml = (md: string) => {
+    return md
+        .replace(/^### (.*$)/gim, '<h3 class="text-xl font-bold mt-8 mb-4">$1</h3>')
+        .replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold mt-10 mb-6">$1</h2>')
+        .replace(/^# (.*$)/gim, '<h1 class="text-3xl font-extrabold mt-12 mb-8">$1</h1>')
+        .replace(/^\* (.*$)/gim, '<li class="ml-4 list-disc">$1</li>')
+        .replace(/^\- (.*$)/gim, '<li class="ml-4 list-disc">$1</li>')
+        .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+        .replace(/\*(.*)\*/gim, '<em>$1</em>')
+        .replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" alt="$1" class="rounded-lg my-8 w-full" />')
+        .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" class="text-primary underline">$1</a>')
+        .replace(/\n\n/gim, '</p><p class="mb-4">')
+        .replace(/> (.*$)/gim, '<blockquote class="border-l-4 border-primary pl-4 italic my-6 text-muted-foreground">$1</blockquote>')
+        // Clean up citation markers or other specific patterns if needed
+        .replace(/\[cite_start\].*?\[cite:.*?\]/g, '')
+}
+
+// Parsing function for Frontmatter (Duplicate from index for now or move to lib later)
+const parseFrontmatter = (content: string) => {
+    const lines = content.split('\n')
+    const data: any = {}
+    let isFrontmatter = false
+
+    for (let i = 0; i < lines.length; i++) {
+        if (lines[i].trim() === '---') {
+            if (!isFrontmatter) {
+                isFrontmatter = true
+            } else {
+                return { data, content: lines.slice(i + 1).join('\n') }
+            }
+        } else if (isFrontmatter) {
+            const [key, ...valueParts] = lines[i].split(':')
+            if (key && valueParts.length > 0) {
+                data[key.trim()] = valueParts.join(':').trim().replace(/^["']|["']$/g, '')
+            }
+        }
+    }
+    return { data, content }
+}
+
 function BlogPost() {
     // @ts-ignore
     const { slug } = Route.useParams()
 
-    // MOCK DATA FETCHING based on Slug
-    // Nanti di sini kita fetch content MDX atau data dari CMS beneran
-    const post = {
-        title: "Apa itu Phantom Costs? Musuh Tersembunyi Profit Bisnis",
-        date: "16 Dec 2025",
-        author: "Gusti Devitto",
-        category: "Financial Forensics",
-        content: `
-            <p>Pernahkah Anda merasa omzet naik terus tapi uang di rekening segitu-gitu saja? Hati-hati, mungkin bisnis Anda sedang dimakan oleh <strong>Phantom Costs</strong>.</p>
-            
-            <h2>Apa itu Phantom Cost?</h2>
-            <p>Phantom Cost adalah biaya-biaya yang tidak tercatat secara eksplisit dalam laporan laba rugi standar (P&L), namun secara nyata mengurangi uang kas yang Anda bawa pulang.</p>
-            
-            <h3>Contoh Paling Umum:</h3>
-            <ul>
-                <li><strong>Idle Time:</strong> Karyawan digaji 8 jam, tapi efektif kerja hanya 4 jam. Sisa 4 jam adalah biaya hangus.</li>
-                <li><strong>Shrinkage:</strong> Bahan baku yang hilang, rusak, atau dicuri sebelum jadi produk.</li>
-                <li><strong>Waste:</strong> Porsi yang terlalu besar atau reject produk yang tidak dicatat.</li>
-            </ul>
+    // Load Blogs Dynamically
+    const rawBlogs = import.meta.glob('../../../content/blog/*.md', { query: '?raw', import: 'default', eager: true })
 
-            <div class="bg-muted p-4 rounded-lg my-8 border-l-4 border-primary">
-                "Jika Anda tidak bisa mengukurnya, Anda tidak bisa memperbaikinya."
+    // Find the blog with matching slug
+    const blogEntry = Object.entries(rawBlogs).find(([path, _]) => {
+        const filename = path.split('/').pop()?.replace('.md', '') || ''
+        const fileSlug = filename.replace(/[\s\W]+/g, '-').toLowerCase()
+        return fileSlug === slug
+    })
+
+    if (!blogEntry) {
+        return (
+            <div className="container py-20 text-center">
+                <h1 className="text-2xl font-bold mb-4">Artikel Tidak Ditemukan</h1>
+                <Button asChild variant="outline">
+                    <Link to="/blog">Kembali ke Blog</Link>
+                </Button>
             </div>
+        )
+    }
 
-            <h2>Solusi Forensik</h2>
-            <p>Langkah pertama adalah audit operasional. Gunakan stopwatch, timbang ulang bahan baku, dan cek CCTV. Bandingkan output teoritis dengan output aktual.</p>
-       `
+    const { data, content } = parseFrontmatter(blogEntry[1] as string)
+
+    const post = {
+        title: data.title || 'Untitled',
+        date: data.date || 'Unknown Date',
+        author: data.author || 'Gusti Devitto',
+        category: data.category || 'Financial Forensics',
+        image: data.image || '',
+        content: mdToHtml(content)
     }
 
     return (
-        <div className="container py-20 max-w-3xl">
+        <div className="container py-20 max-w-3xl mx-auto px-4">
             <Button variant="ghost" asChild className="mb-8 -ml-4 text-muted-foreground hover:text-foreground">
                 {/* @ts-ignore */}
                 <Link to="/blog">
@@ -71,9 +115,22 @@ function BlogPost() {
                     </div>
                 </div>
 
+                {post.image && (
+                    <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full aspect-video object-cover rounded-2xl mb-12 shadow-xl border border-muted"
+                        onError={(e) => {
+                            (e.target as HTMLImageElement).style.display = 'none'
+                        }}
+                    />
+                )}
+
                 {/* Content Rendering */}
-                {/* Note: In real app, use a Markdown parser like react-markdown */}
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                <div
+                    className="blog-content prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-li:text-muted-foreground"
+                    dangerouslySetInnerHTML={{ __html: `<p class="mb-4">${post.content}</p>` }}
+                />
             </article>
 
             <div className="mt-16 pt-8 border-t border-border">
@@ -83,7 +140,7 @@ function BlogPost() {
                         Jangan biarkan Phantom Costs berlarut-larut. Cek kesehatan finansial bisnis Anda sekarang.
                     </p>
                     <Button asChild size="lg" className="bg-primary text-primary-foreground font-bold">
-                        <Link to="/calculator">
+                        <Link to="/get-access">
                             Buka Calculator Forensik
                         </Link>
                     </Button>
