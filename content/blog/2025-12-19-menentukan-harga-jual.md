@@ -45,6 +45,6 @@ Jika setelah dihitung harga jual Anda menjadi terlalu mahal dibanding pasar, jan
 
 Menentukan harga berdasarkan perhitungan COGS yang akurat adalah bentuk kejujuran Anda terhadap kesehatan bisnis sendiri. Jangan biarkan bisnis Anda menjadi "Misi Amal" tak berujung karena Anda takut menghitung angka.
 
-Ingin tahu apakah harga jual Anda sudah aman dari kebocoran? Gunakan [**Phantom Cost Calculator**](gustidevitto.com/get-access) saya untuk mendeteksi kesehatan margin bisnis Anda secara instan.
+Ingin tahu apakah harga jual Anda sudah aman dari kebocoran? Gunakan [**Phantom Cost Calculator**](https://gustidevitto.com/get-access) saya untuk mendeteksi kesehatan margin bisnis Anda secara instan.
 
 "Omzet itu ego, profit itu realita. Jangan biarkan ego menghancurkan realita keuangan Anda."
