@@ -5,6 +5,7 @@ export interface PhantomData {
     biayaBaku: number
     gajiTotal: number
     avgJamKosong: number
+    biayaLain: number
 }
 
 export function usePhantomCalculator() {
@@ -13,6 +14,7 @@ export function usePhantomCalculator() {
         biayaBaku: 0,
         gajiTotal: 0,
         avgJamKosong: 3.5,
+        biayaLain: 0,
     })
 
     // Calculation Logic (Derived State)
@@ -27,7 +29,7 @@ export function usePhantomCalculator() {
     const dailyLoss = idleHoursRatio * dailySalary
     const kerugianJamKosong = dailyLoss * 25
 
-    const totalPhantomCost = kerugianBahanBaku + kerugianJamKosong
+    const totalPhantomCost = kerugianBahanBaku + kerugianJamKosong + data.biayaLain
 
     return {
         omzet: data.omzetKotor,
@@ -42,6 +44,9 @@ export function usePhantomCalculator() {
         jamKosong: data.avgJamKosong,
         setJamKosong: (val: number) => setData(d => ({ ...d, avgJamKosong: val })),
 
+        biayaLain: data.biayaLain,
+        setBiayaLain: (val: number) => setData(d => ({ ...d, biayaLain: val })),
+
         kerugianBahanBaku,
         kerugianJamKosong,
         totalPhantomCost,
@@ -50,7 +55,8 @@ export function usePhantomCalculator() {
             omzetKotor: 0,
             biayaBaku: 0,
             gajiTotal: 0,
-            avgJamKosong: 0
+            avgJamKosong: 0,
+            biayaLain: 0
         })
     }
 }
