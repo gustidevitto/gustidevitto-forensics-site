@@ -1,5 +1,6 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router"
 import { Button } from "@/components/ui/button"
+import { Helmet } from 'react-helmet-async'
 import { Check, Clock, ShieldCheck, ArrowRight } from "lucide-react"
 import { PAYMENT_LINKS } from "@/config/paymentLinks"
 
@@ -85,32 +86,17 @@ function Offerings() {
     }
 
     return (
-        <div className="container py-12 md:px-8">
-            <title>Investasi Diagnosa & Mentoring - Gusti Devitto™</title>
-            <meta name="description" content="Pilih level diagnosa untuk bisnis Anda. Dari Rapid MRI 15 menit hingga Bedah Bisnis Mendalam. Khusus untuk Phantom Cost Hunting." />
-
-            {/* Product/Service Structured Data */}
-            <script type="application/ld+json">
-                {JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "ItemList",
-                    "itemListElement": plans.map((plan, index) => ({
-                        "@type": "ListItem",
-                        "position": index + 1,
-                        "name": plan.name,
-                        "description": plan.desc
-                    }))
-                })}
-            </script>
-            <div className="flex flex-col items-center text-center mb-16 animate-fade-in">
+        <div className="container px-4 md:px-8 py-20 mx-auto overflow-hidden">
+            {/* Header */}
+            <div className="text-center mb-8 max-w-3xl mx-auto">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
                     <Clock className="w-4 h-4" />
                     <span>3 dari 5 slot tersisa bulan ini</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Pilih Level Diagnosa</h1>
-                <p className="text-xl text-muted-foreground max-w-2xl">
-                    Tidak ada paket "all-in-one" karena setiap bisnis punya tingkat urgensi berbeda.
-                    <strong className="text-foreground block mt-1">Pilih yang sesuai kebutuhan Anda.</strong>
+                <p className="text-xl text-muted-foreground">
+                    Tidak ada paket "all-in-one" karena setiap bisnis punya tingkat urgensi berbeda. <br className="hidden md:block" />
+                    <strong className="text-foreground">Pilih yang sesuai kebutuhan Anda.</strong>
                 </p>
             </div>
 

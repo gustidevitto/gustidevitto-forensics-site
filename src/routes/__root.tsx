@@ -8,6 +8,32 @@ import { Button } from '@/components/ui/button'
 export const Route = createRootRoute({
     component: () => (
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+            {/* Global Base Meta */}
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta property="og:type" content="website" />
+            <meta property="og:site_name" content="Gusti Devitto Forensics" />
+            <meta name="twitter:card" content="summary_large_image" />
+
+            {/* JSON-LD for Local Business / Professional Service */}
+            <script type="application/ld+json">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "ProfessionalService",
+                    "name": "Gusti Devitto Forensics",
+                    "image": "https://www.gustidevitto.com/assets/images/android-chrome-192x192.png",
+                    "description": "Spesialis Business Forensics & Phantom Cost Hunting. Kami bukan mencari fraud atau penipuan (Fraud Hunting), melainkan mendeteksi kebocoran profit (Phantom Cost Hunting) yang tersembunyi di operasional multi-outlet.",
+                    "url": "https://www.gustidevitto.com",
+                    "telephone": "+6281234567890",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Semarang",
+                        "addressRegion": "Jawa Tengah",
+                        "addressCountry": "ID"
+                    },
+                    "knowsAbout": ["Business Forensics", "Phantom Cost Analysis", "Profit Optimization", "Multi-outlet Operations"],
+                    "priceRange": "$$$"
+                })}
+            </script>
             <div className="min-h-screen bg-background font-sans antialiased">
                 <div className="relative flex min-h-screen flex-col">
                     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

@@ -84,15 +84,31 @@ function Calculator() {
     }
 
     return (
-        <div className="container py-10 max-w-6xl mx-auto px-4">
-            {/* Header */}
-            <div className="mb-10 text-center space-y-3">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
-                    <TrendingDown className="w-4 h-4" />
-                    <span>Phantom Cost Calculator</span>
+        <div className="container py-8 md:px-8 space-y-8 animate-fade-in">
+            <title>Phantom Cost Calculator - Diagnosa Kebocoran Profit</title>
+            <meta name="description" content="Gunakan kalkulator forensik kami untuk mendeteksi Phantom Cost di bisnis Anda. Temukan kebocoran profit tersembunyi dalam hitungan menit." />
+
+            {/* SoftwareApplication Structured Data */}
+            <script type="application/ld+json">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "SoftwareApplication",
+                    "name": "Phantom Cost Calculator",
+                    "operatingSystem": "Web",
+                    "applicationCategory": "BusinessApplication",
+                    "description": "Kalkulator diagnostik profit untuk mendeteksi biaya siluman (Phantom Costs) pada bisnis multi-outlet."
+                })}
+            </script>
+
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="space-y-1">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
+                        <TrendingDown className="w-4 h-4" />
+                        <span>Phantom Cost Calculator</span>
+                    </div>
+                    <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Hitung "Uang Siluman" Anda</h1>
                 </div>
-                <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Hitung "Uang Siluman" Anda</h1>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
+                <p className="text-muted-foreground max-w-2xl">
                     Masukkan data operasional bulanan. Dalam hitungan detik, Anda akan melihat seberapa besar <strong className="text-foreground">uang yang diam-diam bocor</strong> setiap bulan.
                 </p>
             </div>

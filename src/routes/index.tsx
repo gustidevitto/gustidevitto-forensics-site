@@ -75,6 +75,25 @@ function Index() {
 
     return (
         <div className="flex flex-col min-h-[calc(100vh-4rem)]">
+            <title>Gusti Devitto™ - Business Forensics & Phantom Cost Hunter</title>
+            <meta name="description" content="Deteksi kebocoran profit bisnis multi-outlet Anda. Kami bukan mencari fraud, melainkan memburu Phantom Cost yang memakan margin operasional Anda." />
+            <meta property="og:title" content="Gusti Devitto™ - Stop Kebocoran Profit Bisnis Anda" />
+            <meta property="og:description" content="Spesialis Phantom Cost Hunting untuk owner multi-outlet. Diagnosa gratis 15 menit." />
+
+            <script type="application/ld+json">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [{
+                        "@type": "Question",
+                        "name": "Apa itu Business Forensics di sini?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Business Forensics kami berfokus pada Phantom Cost Hunting (pencarian biaya siluman), bukan audit fraud kriminal. Kami mencari inefisiensi sistem yang memakan profit."
+                        }
+                    }]
+                })}
+            </script>
             {/* Hero Section - Storyselling */}
             <section className="relative grid place-items-center lg:grid-cols-2 gap-8 py-16 md:py-24 px-4 md:px-8 overflow-hidden">
                 {/* Animated Background */}

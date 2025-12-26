@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /calculator
+Allow: /investasi
+Allow: /blog
+
+# LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+Sitemap: https://www.gustidevitto.com/sitemap.xml
