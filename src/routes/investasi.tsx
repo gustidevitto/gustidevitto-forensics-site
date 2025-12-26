@@ -114,7 +114,7 @@ function Offerings() {
                         key={plan.name}
                         className={`relative flex flex-col p-8 rounded-2xl border transition-all duration-300 ${plan.highlight
                             ? 'border-primary ring-2 ring-primary/20 md:scale-105 shadow-2xl shadow-primary/10 z-10 bg-card text-card-foreground'
-                            : 'border-border/50 hover:border-primary/50 hover:shadow-lg bg-card text-card-foreground light:bg-amber-500/5 light:border-amber-200/50'
+                            : 'border-amber-200/50 dark:border-border/50 hover:border-primary/50 hover:shadow-lg bg-amber-500/5 dark:bg-card text-card-foreground'
                             }`}
                     >
                         {plan.highlight && (

@@ -47,21 +47,21 @@ function Index() {
             id: 'dachicken',
             type: 'image',
             title: 'Real World Experience',
-            src: 'C:/Users/DEVITO/.gemini/antigravity/brain/a5f5747b-41b7-44f6-b151-23f3b108712c/dachicken_restaurant_interior_1766739630907.png',
+            src: '/assets/images/dachicken.png',
             desc: 'Dachicken Indonesia: 7 years of operational mastery and the hard lessons of cashflow.'
         },
         {
             id: 'forensics',
             type: 'image',
             title: 'Deep-Dive Analytics',
-            src: 'C:/Users/DEVITO/.gemini/antigravity/brain/a5f5747b-41b7-44f6-b151-23f3b108712c/financial_forensics_dashboard_detail_1766739648612.png',
+            src: '/assets/images/forensics.png',
             desc: 'The Scenario Simulator: Predicting your business future with surgical precision.'
         },
         {
             id: 'audit',
             type: 'image',
             title: 'Expert Diagnosis',
-            src: 'C:/Users/DEVITO/.gemini/antigravity/brain/a5f5747b-41b7-44f6-b151-23f3b108712c/forensic_auditor_at_work_1766739668523.png',
+            src: '/assets/images/audit.png',
             desc: 'We don\'t just look at numbers. We hunt for the "Phantom Costs" that standard accounting misses.'
         }
     ]
