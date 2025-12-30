@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ShieldCheck, TrendingDown, Users, DollarSign, Clock, Target, Stethoscope, BadgeCheck } from "lucide-react"
+import { ArrowRight, ShieldCheck, TrendingDown, Users, DollarSign, Clock, Target, BadgeCheck } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export const Route = createFileRoute('/')({
