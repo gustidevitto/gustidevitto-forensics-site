@@ -105,9 +105,9 @@ function Index() {
 
                 <div className="flex flex-col gap-6 max-w-2xl animate-fade-in">
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium w-fit border border-primary/20 backdrop-blur-sm">
-                        <Stethoscope className="w-4 h-4" />
-                        <span>Financial Forensics Specialist</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] sm:text-xs font-black tracking-[0.2em] w-fit border border-primary/20 backdrop-blur-sm uppercase">
+                        <ShieldCheck className="w-4 h-4" />
+                        <span>Auth Level: L-7 // BUY BACK YOUR SLEEP. BUY BACK YOUR TIME. BUY BACK YOUR MONEY.</span>
                     </div>
 
                     {/* Headline - The Pain */}
@@ -263,21 +263,24 @@ function Index() {
 
                         {/* Story */}
                         <div className="md:col-span-3 space-y-4">
-                            <h2 className="text-2xl md:text-3xl font-bold">Kenapa Saya Membangun Ini?</h2>
+                            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight">Kenapa Saya Membangun Ini?</h2>
                             <p className="text-muted-foreground leading-relaxed">
-                                Saya pernah berada di posisi Anda. Founder <strong className="text-foreground">Dachicken Indonesia</strong> — bisnis ayam panggang utuh pertama di Semarang dengan 9 varian rasa. Kita menggebrak pasar, menjadi pioneer, dan meroket tajam.
+                                Saya pernah berada di posisi Anda. Founder <strong className="text-foreground">Dachicken Indonesia</strong> — pioneer ayam panggang utuh 9 rasa pertama di Semarang. Saat pandemi menghantam dan banyak bisnis tumbang, Dachicken justru <strong className="text-primary">meroket</strong>.
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
-                                Bahkan saat pandemi Covid-19 menghantam dan banyak bisnis tumbang, Dachicken justru <strong className="text-primary italic">meroket</strong>. Antrean panjang, omzet meledak. Dari luar, saya terlihat seperti pemenang.
+                                Seminggu sekali saya bisa belanja aset perhiasan emas hasil dari antrean yang tak putus. Saya merasa telah menaklukkan badai.
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
-                                Tapi di balik layar? <strong className="text-destructive">Cashflow seret.</strong> Setelah 7 tahun berjuang, bisnis yang saya bangun dengan keringat itu kolaps. Bukan karena kurang pelanggan, tapi karena "Uang Siluman" yang memakan profit dari dalam tanpa terdeteksi.
+                                <strong className="text-destructive uppercase tracking-wide font-bold">Tapi saya membangun istana di atas pasir.</strong> Saat kompetitor raksasa datang membanting harga secara tidak masuk akal, saya sadar: saya tidak punya pertahanan finansial.
                             </p>
-                            <p className="text-foreground leading-relaxed font-medium">
-                                Kegagalan itu mahal harganya. Itulah alasan saya mendirikan FFD™ — agar tidak ada Founder lain yang harus kehilangan mimpinya karena lubang finansial yang tak terlihat.
+                            <p className="text-muted-foreground leading-relaxed">
+                                Aset perhiasan yang saya kumpulkan habis ludes demi menyelamatkan usaha yang hancur, tapi tetap gagal.
+                            </p>
+                            <p className="text-foreground leading-relaxed font-medium bg-primary/5 p-4 border-l-4 border-primary italic">
+                                "Saya kehilangan mimpi itu bukan karena produk yang buruk, tapi karena saya buta terhadap pendarahan finansial di dalam. Itulah alasan saya mendirikan FFD™—agar Anda tidak perlu membayar harga semahal yang saya bayar."
                             </p>
                             <div className="pt-4">
-                                <p className="text-sm text-muted-foreground">— <strong>Gusti Devitto (Vitto)</strong>, 43 tahun | Financial Forensics Specialist</p>
+                                <p className="text-sm text-muted-foreground">— <strong>Gusti Devitto (Vitto)</strong> | Financial Surgeon</p>
                             </div>
                         </div>
                     </div>
@@ -298,21 +301,21 @@ function Index() {
                         {[
                             {
                                 icon: <TrendingDown className="w-10 h-10 text-destructive" />,
-                                title: "Omzet Naik, Saldo Turun",
-                                symptom: "Sudah sering denger ini?",
-                                desc: "Penjualan bulan ini lebih besar dari bulan lalu. Tapi akhir bulan, saldo bank malah lebih tipis. Kemana perginya selisihnya?"
+                                title: "OBESE GROWTH.",
+                                symptom: "HIGH ALERT",
+                                desc: "Omzet naik, tapi kas tiris. Semakin besar kamu tumbuh, semakin besar kamu merampok dirimu sendiri."
                             },
                             {
                                 icon: <Users className="w-10 h-10 text-destructive" />,
-                                title: "Kerja Keras, Sisa Dikit",
-                                symptom: "Merasa jadi relawan di bisnis sendiri?",
-                                desc: "Tim Anda gajian tepat waktu. Supplier dibayar. Tapi Anda sendiri? Ambil sisa. Atau malah nombok dari kantong pribadi."
+                                title: "LABOR TRAP ANALYSIS.",
+                                symptom: "EFFICIENCY LEAK",
+                                desc: "Tim terlihat sibuk, tapi profit per jam kerja nol. Kamu sedang menjalankan panti sosial berkedok bisnis."
                             },
                             {
                                 icon: <DollarSign className="w-10 h-10 text-destructive" />,
-                                title: "Profit di Laporan, Bukan di Rekening",
-                                symptom: "Ilusi yang berbahaya.",
-                                desc: "Laporan keuangan bilang untung. Tapi coba cek saldo bank — tidak pernah sinkron. Ada jurang antara 'profit kertas' dan 'profit tunai'."
+                                title: "PHANTOM PROFIT REVELATION.",
+                                symptom: "FINANCIAL ILLUSION",
+                                desc: "Profit di laporan hanyalah angka ego. Jika uangnya tidak ada di rekening, itu bukan profit, itu ilusi."
                             }
                         ].map((item, idx) => (
                             <div
@@ -320,9 +323,9 @@ function Index() {
                                 className="group bg-card p-8 rounded-xl border border-border/50 hover:border-destructive/50 transition-all duration-300 hover:shadow-lg hover:shadow-destructive/5 hover:-translate-y-1"
                             >
                                 <div className="mb-6 bg-destructive/10 w-fit p-4 rounded-xl group-hover:scale-110 transition-transform">{item.icon}</div>
-                                <p className="text-sm text-primary font-medium mb-2">{item.symptom}</p>
-                                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                                <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                                <p className="text-[10px] tracking-widest text-primary font-black mb-2 uppercase">{item.symptom}</p>
+                                <h3 className="text-xl font-bold mb-3 tracking-tight">{item.title}</h3>
+                                <p className="text-muted-foreground leading-relaxed text-sm">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -448,21 +451,24 @@ function Index() {
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
                         Siap Berhenti <span className="text-primary">Menebak-nebak</span>?
                     </h2>
-                    <p className="text-lg text-muted-foreground mb-8">
+                    <p className="text-lg text-muted-foreground mb-4">
                         Dalam 15 menit, Anda akan tahu persis kondisi kesehatan finansial bisnis Anda. <br />
                         <strong className="text-foreground">Bukan opini. Data.</strong>
                     </p>
+                    <p className="text-sm text-muted-foreground mb-8 max-w-xl mx-auto italic">
+                        "Jika dalam 15 menit saya tidak menemukan potensi kebocoran minimal Rp10 Juta di bisnis Anda, sesi selesai. Saya tidak akan membuang waktu Anda."
+                    </p>
                     <Button asChild size="lg" className="text-lg h-14 px-10 shadow-lg shadow-primary/30 bg-primary hover:bg-primary/90 text-primary-foreground group">
                         <Link to="/get-access">
-                            <span className="flex items-center">
-                                Jadwalkan Diagnosa Gratis
+                            <span className="flex items-center font-black">
+                                STOP THE BLEEDING NOW
                                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
                         </Link>
                     </Button>
                     <p className="text-sm text-muted-foreground mt-4">
                         <Clock className="w-4 h-4 inline mr-1" />
-                        Slot terbatas. Hanya 5 diagnosa per bulan.
+                        Slot terbatas. <strong className="text-foreground">No Find, No Pitch</strong> Guarantee.
                     </p>
                 </div>
             </section>
