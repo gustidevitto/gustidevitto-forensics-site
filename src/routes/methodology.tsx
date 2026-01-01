@@ -82,7 +82,7 @@ function MethodologyPage() {
                         <Link to="/forensics-pillars">Pelajari 15 Pilar</Link>
                     </Button>
                     <Button asChild variant="outline">
-                        <Link to="/index_">Buka Master Index</Link>
+                        <Link to="/master-index">Buka Master Index</Link>
                     </Button>
                 </div>
             </section>

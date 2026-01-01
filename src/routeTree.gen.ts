@@ -9,8 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as MasterIndexRouteImport } from './routes/master-index'
+import { Route as VerdictRouteImport } from './routes/verdict'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as MethodologyRouteImport } from './routes/methodology'
 import { Route as InvestasiRouteImport } from './routes/investasi'
 import { Route as GetAccessRouteImport } from './routes/get-access'
 import { Route as ForensicsPillarsRouteImport } from './routes/forensics-pillars'
@@ -21,6 +24,16 @@ import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as PilarSlugRouteImport } from './routes/pilar/$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 
+const MasterIndexRoute = MasterIndexRouteImport.update({
+  id: '/master-index',
+  path: '/master-index',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerdictRoute = VerdictRouteImport.update({
+  id: '/verdict',
+  path: '/verdict',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -29,6 +42,11 @@ const TermsRoute = TermsRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MethodologyRoute = MethodologyRouteImport.update({
+  id: '/methodology',
+  path: '/methodology',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InvestasiRoute = InvestasiRouteImport.update({
@@ -84,8 +102,11 @@ export interface FileRoutesByFullPath {
   '/forensics-pillars': typeof ForensicsPillarsRoute
   '/get-access': typeof GetAccessRoute
   '/investasi': typeof InvestasiRoute
+  '/master-index': typeof MasterIndexRoute
+  '/methodology': typeof MethodologyRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/verdict': typeof VerdictRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/pilar/$slug': typeof PilarSlugRoute
   '/blog': typeof BlogIndexRoute
@@ -97,8 +118,11 @@ export interface FileRoutesByTo {
   '/forensics-pillars': typeof ForensicsPillarsRoute
   '/get-access': typeof GetAccessRoute
   '/investasi': typeof InvestasiRoute
+  '/master-index': typeof MasterIndexRoute
+  '/methodology': typeof MethodologyRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/verdict': typeof VerdictRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/pilar/$slug': typeof PilarSlugRoute
   '/blog': typeof BlogIndexRoute
@@ -111,8 +135,11 @@ export interface FileRoutesById {
   '/forensics-pillars': typeof ForensicsPillarsRoute
   '/get-access': typeof GetAccessRoute
   '/investasi': typeof InvestasiRoute
+  '/master-index': typeof MasterIndexRoute
+  '/methodology': typeof MethodologyRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/verdict': typeof VerdictRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/pilar/$slug': typeof PilarSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -126,8 +153,11 @@ export interface FileRouteTypes {
     | '/forensics-pillars'
     | '/get-access'
     | '/investasi'
+    | '/master-index'
+    | '/methodology'
     | '/privacy'
     | '/terms'
+    | '/verdict'
     | '/blog/$slug'
     | '/pilar/$slug'
     | '/blog'
@@ -139,8 +169,11 @@ export interface FileRouteTypes {
     | '/forensics-pillars'
     | '/get-access'
     | '/investasi'
+    | '/master-index'
+    | '/methodology'
     | '/privacy'
     | '/terms'
+    | '/verdict'
     | '/blog/$slug'
     | '/pilar/$slug'
     | '/blog'
@@ -152,8 +185,11 @@ export interface FileRouteTypes {
     | '/forensics-pillars'
     | '/get-access'
     | '/investasi'
+    | '/master-index'
+    | '/methodology'
     | '/privacy'
     | '/terms'
+    | '/verdict'
     | '/blog/$slug'
     | '/pilar/$slug'
     | '/blog/'
@@ -166,8 +202,11 @@ export interface RootRouteChildren {
   ForensicsPillarsRoute: typeof ForensicsPillarsRoute
   GetAccessRoute: typeof GetAccessRoute
   InvestasiRoute: typeof InvestasiRoute
+  MasterIndexRoute: typeof MasterIndexRoute
+  MethodologyRoute: typeof MethodologyRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
+  VerdictRoute: typeof VerdictRoute
   BlogSlugRoute: typeof BlogSlugRoute
   PilarSlugRoute: typeof PilarSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -175,6 +214,20 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/master-index': {
+      id: '/master-index'
+      path: '/master-index'
+      fullPath: '/master-index'
+      preLoaderRoute: typeof MasterIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verdict': {
+      id: '/verdict'
+      path: '/verdict'
+      fullPath: '/verdict'
+      preLoaderRoute: typeof VerdictRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -187,6 +240,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/methodology': {
+      id: '/methodology'
+      path: '/methodology'
+      fullPath: '/methodology'
+      preLoaderRoute: typeof MethodologyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/investasi': {
@@ -262,8 +322,11 @@ const rootRouteChildren: RootRouteChildren = {
   ForensicsPillarsRoute: ForensicsPillarsRoute,
   GetAccessRoute: GetAccessRoute,
   InvestasiRoute: InvestasiRoute,
+  MasterIndexRoute: MasterIndexRoute,
+  MethodologyRoute: MethodologyRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
+  VerdictRoute: VerdictRoute,
   BlogSlugRoute: BlogSlugRoute,
   PilarSlugRoute: PilarSlugRoute,
   BlogIndexRoute: BlogIndexRoute,

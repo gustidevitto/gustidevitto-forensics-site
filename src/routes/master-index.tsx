@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { BookOpen, Layers, ShieldAlert, Target } from "lucide-react"
 import pillarsData from '@/data/pillarsData.json'
 
-export const Route = createFileRoute('/index_')({
+export const Route = createFileRoute('/master-index')({
     component: MasterIndex,
 })
 
