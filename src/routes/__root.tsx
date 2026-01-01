@@ -50,7 +50,7 @@ export const Route = createRootRoute({
                             <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
                                 <a href="/get-access" className="transition-colors hover:text-primary">Calculator</a>
                                 <a href="/blog" className="transition-colors hover:text-primary">Blog</a>
-                                <a href="/forensics-pillars" className="transition-colors hover:text-primary">7 Pillars</a>
+                                <a href="/forensics-pillars" className="transition-colors hover:text-primary">15 Pillars</a>
                                 <a href="/investasi" className="transition-colors hover:text-primary">Investasi</a>
                                 <a href="/contact" className="transition-colors hover:text-primary">Contact</a>
                                 <ModeToggle />
@@ -70,7 +70,7 @@ export const Route = createRootRoute({
                                         <div className="flex flex-col space-y-6 mt-6">
                                             <a href="/get-access" className="text-lg font-medium hover:text-primary">Calculator</a>
                                             <a href="/blog" className="text-lg font-medium hover:text-primary">Blog</a>
-                                            <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">7 Pillars</a>
+                                            <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">15 Pillars</a>
                                             <a href="/investasi" className="text-lg font-medium hover:text-primary">Investasi</a>
                                             <a href="/contact" className="text-lg font-medium hover:text-primary">Contact</a>
                                         </div>
