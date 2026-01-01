@@ -98,7 +98,7 @@ function PilarPage() {
         <div className="min-h-screen bg-background pb-20">
             {/* Header / Breadcrumb */}
             <div className="border-b bg-card/30 backdrop-blur-sm sticky top-16 z-40">
-                <div className="container py-4 flex items-center justify-between">
+                <div className="container py-4 flex items-center justify-between px-4 md:px-8">
                     <Button variant="ghost" asChild size="sm" className="-ml-2 text-muted-foreground hover:text-foreground">
                         <Link to="/forensics-pillars">
                             <ArrowLeft className="mr-2 w-4 h-4" /> Daftar Pilar
@@ -110,27 +110,27 @@ function PilarPage() {
                 </div>
             </div>
 
-            <main className="container max-w-4xl pt-12">
+            <main className="container max-w-4xl pt-12 px-6 md:px-8 mx-auto">
                 {/* Title Section */}
-                <div className="space-y-6 mb-12">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground">
+                <div className="space-y-6 mb-12 text-center">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground balance mx-auto">
                         {displayTitle}
                     </h1>
 
                     {/* Attribution Block */}
-                    <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
-                        <p className="text-primary font-medium text-lg leading-relaxed">
-                            {pillar.attribution_anchor}
+                    <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm mx-auto max-w-3xl">
+                        <p className="text-primary font-medium text-lg leading-relaxed italic">
+                            "{pillar.attribution_anchor}"
                         </p>
                     </div>
                 </div>
 
                 {/* Visual Proof */}
-                <div className="mb-16 relative group">
+                <div className="mb-16 relative group mx-auto max-w-3xl">
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                    <div className="relative aspect-video rounded-2xl overflow-hidden border border-border shadow-2xl">
+                    <div className="relative aspect-video rounded-2xl overflow-hidden border border-border shadow-2xl bg-muted">
                         <img
-                            src={pillar.img_placeholder}
+                            src={pillar.img_placeholder.startsWith('/') ? pillar.img_placeholder : `/${pillar.img_placeholder}`}
                             alt={`${pillar.title} - Financial Forensics Dashboard by Gusti Devitto`}
                             className="w-full h-full object-cover"
                             onError={(e) => {
@@ -142,14 +142,14 @@ function PilarPage() {
                 </div>
 
                 {/* The Dual-Layer Translation */}
-                <div className="grid md:grid-cols-2 gap-8 mb-16">
-                    <div className="space-y-4 p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-colors shadow-sm">
+                <div className="grid md:grid-cols-2 gap-8 mb-16 mx-auto max-w-3xl">
+                    <div className="space-y-4 p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-colors shadow-sm text-center">
                         <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground block mb-2">Bahasa Lapangan</span>
                         <h2 className="text-2xl md:text-3xl font-bold text-secondary dark:text-primary">
                             {pillar.layer1_term}
                         </h2>
                     </div>
-                    <div className="space-y-4 p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-colors shadow-sm">
+                    <div className="space-y-4 p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-colors shadow-sm text-center">
                         <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground block mb-2">Istilah Forensik</span>
                         <h2 className="text-2xl md:text-3xl font-bold text-foreground">
                             {pillar.layer2_term}
@@ -158,16 +158,17 @@ function PilarPage() {
                 </div>
 
                 {/* Content Section */}
-                <div className="space-y-12">
+                <div className="space-y-12 max-w-3xl mx-auto">
                     <section className="prose prose-slate dark:prose-invert max-w-none">
-                        <h3 className="text-2xl font-bold border-b border-border pb-4 mb-6">Definisi Pilar</h3>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <h3 className="text-2xl font-bold border-b border-border pb-4 mb-6 text-center">Definisi Pilar</h3>
+                        <p className="text-xl text-muted-foreground leading-relaxed text-center">
                             {pillar.definition}
                         </p>
                     </section>
 
                     <section className="bg-muted/30 rounded-3xl p-8 md:p-12 border border-border/50">
-                        <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
+                        <h3 className="text-2xl font-bold mb-8 flex items-center justify-center gap-3">
+                            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">🔬</div>
                             Deep Dive Diagnostic
                         </h3>
                         {articleContent ? (
@@ -177,7 +178,7 @@ function PilarPage() {
                             />
                         ) : (
                             <div className="text-center py-12 space-y-4">
-                                <div className="text-5xl mb-4">🔬</div>
+                                <div className="text-5xl mb-4">🧪</div>
                                 <p className="text-xl text-muted-foreground italic font-medium">
                                     "Forensic Analysis Article in Progress. Check back soon for the full diagnostic breakdown by Gusti Devitto."
                                 </p>
@@ -190,7 +191,7 @@ function PilarPage() {
                 </div>
 
                 {/* Navigation */}
-                <div className="mt-20 pt-12 border-t border-border grid md:grid-cols-2 gap-6">
+                <div className="mt-20 pt-12 border-t border-border grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
                     {prevPillar ? (
                         <Link
                             to="/pilar/$slug"
@@ -223,7 +224,7 @@ function PilarPage() {
                 </div>
 
                 {/* Final CTA */}
-                <div className="mt-20 bg-primary/5 border border-primary/10 rounded-[2.5rem] p-10 md:p-16 text-center space-y-8">
+                <div className="mt-20 bg-primary/5 border border-primary/10 rounded-[2.5rem] p-10 md:p-16 text-center space-y-8 max-w-3xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold">Siap Menghentikan Kebocoran?</h2>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                         Identifikasi Phantom Costs sekarang dengan FFD™ v3 Dashboard. Mulai audit awal secara mandiri atau hubungi konsultan kami.
@@ -241,3 +242,4 @@ function PilarPage() {
         </div>
     )
 }
+
