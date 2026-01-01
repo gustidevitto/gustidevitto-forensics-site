@@ -14,7 +14,7 @@ function Index() {
         {
             id: 'dashboard',
             type: 'component',
-            title: 'FFD™ v2 — 15-Minute MRI',
+            title: 'FFD™ v3 — 15-Minute MRI',
             content: (
                 <div className="p-6 space-y-4">
                     <div className="flex justify-between items-center p-4 rounded-lg bg-destructive/10 border border-destructive/20">
@@ -277,7 +277,7 @@ function Index() {
                                 Aset perhiasan yang saya kumpulkan habis ludes demi menyelamatkan usaha yang hancur, tapi tetap gagal.
                             </p>
                             <p className="text-foreground leading-relaxed font-medium bg-primary/5 p-4 border-l-4 border-primary italic">
-                                "Saya kehilangan mimpi itu bukan karena produk yang buruk, tapi karena saya buta terhadap pendarahan finansial di dalam. Itulah alasan saya mendirikan FFD™—agar Anda tidak perlu membayar harga semahal yang saya bayar."
+                                "Saya kehilangan mimpi itu bukan karena produk yang buruk, tapi karena saya buta terhadap pendarahan finansial di dalam. Itulah alasan saya mendirikan FFD™ v3—agar Anda tidak perlu membayar harga semahal yang saya bayar."
                             </p>
                             <div className="pt-4">
                                 <p className="text-sm text-muted-foreground">— <strong>Gusti Devitto (Vitto)</strong> | Financial Surgeon</p>
@@ -348,9 +348,9 @@ function Index() {
                             <Target className="w-4 h-4" />
                             <span>The Solution</span>
                         </div>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">FFD™ v2: Financial Forensics Dashboard</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">FFD™ v3: Financial Forensics Dashboard</h2>
                         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                            Bukan spreadsheet biasa. Ini adalah <strong className="text-foreground">MRI untuk bisnis Anda</strong> — melihat apa yang tidak bisa dilihat di permukaan.
+                            Bukan spreadsheet biasa. Ini adalah <strong className="text-foreground">Sistem Operasi Finansial</strong> — infrastruktur modular untuk mengunci setiap rupiah di tempatnya.
                         </p>
                     </div>
 
@@ -362,9 +362,9 @@ function Index() {
                                 desc: "Prediksi masa depan. Lihat apa yang terjadi pada profit dan cash runway jika Anda naikkan harga 5%, tekan COGS, atau tambah volume."
                             },
                             {
-                                title: "7-Pillar Health Radar",
-                                aka: "Full Body Check-up",
-                                desc: "Diagnosa visual kesehatan bisnis: Margin, Inventory, Cashflow, Risk, dan lainnya. Dalam satu layar, Anda tahu mana yang 'merah'."
+                                title: "15-Pillar Modular System",
+                                aka: "Advanced Diagnosis",
+                                desc: "Dari Inventory Decay hingga LTGP Velocity. Framework 15 pilar ini memedah anatomi bisnis dari sudut pandang yang paling brutal sekalipun."
                             },
                             {
                                 title: "Phantom Cost Detector",
@@ -398,7 +398,7 @@ function Index() {
                     <ShieldCheck className="w-16 h-16 text-primary mx-auto mb-6" />
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">"No Find, No Pitch" Guarantee</h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-                        Saya tidak menjual harapan kosong. Jika dashboard FFD™ v2 bilang bisnis Anda <strong className="text-green-500">sehat (hijau)</strong>, konsultasi selesai. <strong className="text-foreground">Gratis. Tanpa pitch apapun.</strong>
+                        Saya tidak menjual harapan kosong. Jika dashboard FFD™ v3 bilang bisnis Anda <strong className="text-green-500">sehat (hijau)</strong>, konsultasi selesai. <strong className="text-foreground">Gratis. Tanpa pitch apapun.</strong>
                     </p>
                     <p className="text-muted-foreground">
                         Saya hanya menawarkan solusi berbayar jika saya <em>benar-benar menemukan</em> kebocoran yang bisa diselamatkan. <br />
@@ -432,7 +432,7 @@ function Index() {
                     <AccordionItem value="item-4">
                         <AccordionTrigger className="text-left">Cocok untuk bisnis saya yang masih kecil?</AccordionTrigger>
                         <AccordionContent className="text-muted-foreground leading-relaxed">
-                            Jujur? <strong className="text-foreground">Belum tentu.</strong> FFD™ v2 paling efektif untuk bisnis dengan omzet minimal Rp 100 Juta/bulan dan sudah multi-outlet atau punya tim. Jika bisnis Anda masih solopreneur, mungkin belum saatnya.
+                            Jujur? <strong className="text-foreground">Belum tentu.</strong> FFD™ v3 paling efektif untuk bisnis dengan omzet minimal Rp 100 Juta/bulan dan sudah multi-outlet atau punya tim. Jika bisnis Anda masih solopreneur, mungkin belum saatnya.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
