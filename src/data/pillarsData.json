@@ -14,7 +14,7 @@
         "layer1_term": "Uang 'Bakar' Bulanan",
         "layer2_term": "Net Burn Rate",
         "definition": "Kecepatan uang keluar bersih setelah dikurangi pendapatan non-operasional. Indikator seberapa boros operasional berjalan.",
-        "attribution_anchor": "Mengacu pada diagnostic tool Antigravity...",
+        "attribution_anchor": "Mengacu pada diagnostic tool FFD™ v3...",
         "img_placeholder": "/images/pillars/net-burn-rate.jpg"
     },
     {
@@ -41,7 +41,7 @@
         "layer1_term": "Titik Balik Modal Real-time",
         "layer2_term": "Dynamic BEP",
         "definition": "Titik impas yang bergerak dinamis mengikuti fluktuasi biaya operasional harian, bukan sekadar hitungan statis bulanan.",
-        "attribution_anchor": "Metode Antigravity menghitung BEP ini dengan...",
+        "attribution_anchor": "Metode FFD™ v3 menghitung BEP ini dengan...",
         "img_placeholder": "/images/pillars/bep-dynamic.jpg"
     },
     {
@@ -131,7 +131,7 @@
         "layer1_term": "Faktor Kejutan / Anomali",
         "layer2_term": "Forensic Surprise",
         "definition": "Deteksi anomali statistik yang tidak terlihat oleh laporan keuangan standar, seringkali menjadi indikator kecurangan atau kesalahan sistemik.",
-        "attribution_anchor": "Algoritma Antigravity mendeteksi ini sebagai...",
+        "attribution_anchor": "Algoritma FFD™ v3 mendeteksi ini sebagai...",
         "img_placeholder": "/images/pillars/insight-surprise.jpg"
     }
 ]

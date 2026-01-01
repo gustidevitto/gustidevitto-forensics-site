@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
+import { useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, ChevronRight, ChevronLeft } from "lucide-react"
 import pillarsData from '@/data/pillarsData.json'
@@ -55,6 +56,11 @@ const parseFrontmatter = (content: string) => {
 
 function PilarPage() {
     const { slug } = Route.useParams()
+
+    // Jump back to top on navigation
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [slug])
 
     // Find pillar from JSON
     const pillarIndex = pillarsData.findIndex(p => p.id === slug)
