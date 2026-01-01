@@ -15,7 +15,7 @@ function Offerings() {
         {
             id: "tier1",
             name: "Vital Sign Check",
-            subtitle: "Diagnosa Awal",
+            subtitle: "Diagnosis Awal",
             price: "Rp 500.000",
             oneTime: true,
             desc: "15-Minute MRI. Cukup satu sesi untuk melihat \"pendarahan\" terbesar di bisnis Anda.",
@@ -26,7 +26,7 @@ function Offerings() {
                 "1 Quick Win Action Plan"
             ],
             ideal: "Ideal untuk: validasi cepat, second opinion",
-            cta: "Pesan Slot Diagnosa",
+            cta: "Pesan Slot Diagnosis",
             variant: "outline" as const,
             highlight: false
         },
@@ -56,7 +56,7 @@ function Offerings() {
             subtitle: "Mentoring 30 Hari",
             price: "Rp 19.900.000",
             oneTime: false,
-            desc: "Pendampingan intensif. Bukan hanya diagnosa — implementasi sampai tuntas.",
+            desc: "Pendampingan intensif. Bukan hanya diagnosis — implementasi sampai tuntas.",
             features: [
                 "30 Hari Full System Audit",
                 "4x Sesi Tatap Muka (@90 Menit)",
@@ -95,8 +95,8 @@ function Offerings() {
 
     return (
         <div className="container py-12 md:px-8 relative">
-            <title>Investasi Diagnosa & Mentoring - Gusti Devitto™</title>
-            <meta name="description" content="Pilih level diagnosa untuk bisnis Anda. Dari Rapid MRI 15 menit hingga Bedah Bisnis Mendalam. Khusus untuk Phantom Cost Hunting." />
+            <title>Investasi Diagnosis & Mentoring - Gusti Devitto™</title>
+            <meta name="description" content="Pilih level diagnosis untuk bisnis Anda. Dari Rapid MRI 15 menit hingga Bedah Bisnis Mendalam. Khusus untuk Phantom Cost Hunting." />
 
             {/* Product/Service Structured Data */}
             <script type="application/ld+json">
@@ -117,7 +117,7 @@ function Offerings() {
                     <Clock className="w-4 h-4" />
                     <span>3 dari 5 slot tersisa bulan ini</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Pilih Level Diagnosa</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Pilih Level Diagnosis</h1>
                 <p className="text-xl text-muted-foreground max-w-2xl text-balance">
                     Tidak ada paket "all-in-one" karena setiap bisnis punya tingkat urgensi berbeda.
                     <strong className="text-foreground block mt-1">Pilih yang sesuai kebutuhan Anda.</strong>

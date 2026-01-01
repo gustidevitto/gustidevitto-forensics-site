@@ -62,7 +62,7 @@ function GetAccess() {
 
                 {/* Logo */}
                 <div className="relative z-20 flex items-center text-lg font-medium">
-                    <span className="text-foreground">FFD™ v2 — Financial Forensics Dashboard</span>
+                    <span className="text-foreground">FFD™ v3 — Financial Forensics Dashboard</span>
                 </div>
 
                 {/* Hero Content */}
@@ -109,7 +109,7 @@ function GetAccess() {
                 <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
                     {/* Header */}
                     <div className="flex flex-col space-y-2 text-center">
-                        <h1 className="text-2xl font-bold tracking-tight">Mulai Diagnosa Gratis</h1>
+                        <h1 className="text-2xl font-bold tracking-tight">Mulai Diagnosis Gratis</h1>
                         <p className="text-muted-foreground">
                             Satu langkah untuk melihat apa yang selama ini tersembunyi.
                         </p>
@@ -151,7 +151,7 @@ function GetAccess() {
                                         required
                                         className="h-12"
                                     />
-                                    <p className="text-xs text-muted-foreground">Untuk konfirmasi jadwal diagnosa</p>
+                                    <p className="text-xs text-muted-foreground">Untuk konfirmasi jadwal diagnosis</p>
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="email">Email Bisnis</Label>

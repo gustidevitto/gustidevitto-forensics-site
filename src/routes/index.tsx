@@ -78,7 +78,7 @@ function Index() {
             <title>Gusti Devitto™ - Business Forensics & Phantom Cost Hunter</title>
             <meta name="description" content="Deteksi kebocoran profit bisnis multi-outlet Anda. Kami bukan mencari fraud, melainkan memburu Phantom Cost yang memakan margin operasional Anda." />
             <meta property="og:title" content="Gusti Devitto™ - Stop Kebocoran Profit Bisnis Anda" />
-            <meta property="og:description" content="Spesialis Phantom Cost Hunting untuk owner multi-outlet. Diagnosa gratis 15 menit." />
+            <meta property="og:description" content="Spesialis Phantom Cost Hunting untuk owner multi-outlet. Diagnosis gratis 15 menit." />
 
             <script type="application/ld+json">
                 {JSON.stringify({
@@ -131,7 +131,7 @@ function Index() {
                         <Button asChild size="lg" className="text-lg h-14 px-8 shadow-lg shadow-primary/30 bg-primary hover:bg-primary/90 text-primary-foreground group relative overflow-hidden">
                             <Link to="/get-access">
                                 <span className="relative z-10 flex items-center">
-                                    Diagnosa Gratis (15 Menit)
+                                    Diagnosis Gratis (15 Menit)
                                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </span>
                                 <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -228,7 +228,7 @@ function Index() {
                     </div>
                     <div className="group cursor-default">
                         <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">43+</div>
-                        <div className="text-sm text-muted-foreground">Bisnis Terdiagnosa</div>
+                        <div className="text-sm text-muted-foreground">Bisnis Terdiagnosis</div>
                     </div>
                     <div className="group cursor-default">
                         <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">15 min</div>
@@ -364,7 +364,7 @@ function Index() {
                             {
                                 title: "15-Pillar Modular System",
                                 aka: "Advanced Diagnosis",
-                                desc: "Dari Inventory Decay hingga LTGP Velocity. Framework 15 pilar ini memedah anatomi bisnis dari sudut pandang yang paling brutal sekalipun."
+                                desc: "Dari Inventory Decay hingga LTGP Velocity. Framework 15 pilar ini membedah anatomi bisnis dari sudut pandang yang paling brutal sekalipun."
                             },
                             {
                                 title: "Phantom Cost Detector",
@@ -426,7 +426,7 @@ function Index() {
                     <AccordionItem value="item-3">
                         <AccordionTrigger className="text-left">Kenapa cuma 5 slot per bulan?</AccordionTrigger>
                         <AccordionContent className="text-muted-foreground leading-relaxed">
-                            Saya solopreneur. Setiap diagnosa saya kerjakan sendiri — <strong className="text-foreground">tidak didelegasikan ke asisten</strong>. Kualitas lebih penting dari kuantitas. Jika Anda ingin dihandle oleh saya langsung, ini batasannya.
+                            Setiap diagnosis saya kerjakan sendiri — <strong className="text-foreground">tidak didelegasikan ke asisten</strong>. Kualitas lebih penting dari kuantitas. Jika Anda ingin dihandle oleh saya langsung, ini batasannya.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">

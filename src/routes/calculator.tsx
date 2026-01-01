@@ -85,7 +85,7 @@ function Calculator() {
 
     return (
         <div className="container py-8 md:px-8 space-y-8 animate-fade-in">
-            <title>Phantom Cost Calculator - Diagnosa Kebocoran Profit</title>
+            <title>Phantom Cost Calculator - Diagnosis Kebocoran Profit</title>
             <meta name="description" content="Gunakan kalkulator forensik kami untuk mendeteksi Phantom Cost di bisnis Anda. Temukan kebocoran profit tersembunyi dalam hitungan menit." />
 
             {/* SoftwareApplication Structured Data */}
