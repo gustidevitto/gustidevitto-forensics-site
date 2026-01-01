@@ -52,7 +52,7 @@ Satu keputusan buruk bisa langsung berujung fatal.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Cash Runway](/images/cash-runway.jpg)
+![Dashboard FFD™ v3 – Cash Runway](/images/pillars/cash-runway.jpg)
 
 Pada Dashboard **FFD™ (Financial Forensics Dashboard) v3** karya Gusti Devitto, Cash Runway ditampilkan dalam gradasi warna yang jelas: hijau (aman), kuning (waspada), dan merah (kritis).
 
