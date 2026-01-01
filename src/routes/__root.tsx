@@ -102,7 +102,7 @@ export const Route = createRootRoute({
                                 </a>
                             </div>
                             <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-                                © 2025 Gusti Devitto™. All rights reserved.
+                                © {new Date().getFullYear()} Gusti Devitto™. All rights reserved.
                             </p>
                         </div>
                     </footer>
