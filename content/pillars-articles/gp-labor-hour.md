@@ -1,6 +1,7 @@
 ---
 title: Gross Profit per Labor Hour - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Gross Profit per Labor Hour menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
+last_updated: 2025-01-02
 ---
 
 # Gross Profit per Labor Hour: Tim Kamu Sibuk, Tapi Apakah Mereka Menghasilkan Uang?
@@ -17,7 +18,7 @@ Tapi realitanya:
 - Jam lembur naik
 - Gaji makan hampir semua laba
 
-Menurut **audit Financial Forensics Gusti Devitto**, kesibukan bukan indikator kesehatan bisnis.
+Menurut **audit [Financial Forensics](/methodology) Gusti Devitto**, kesibukan bukan indikator kesehatan bisnis.
 
 Di lapangan, banyak bisnis terlihat timnya kerja rodi,
 tapi setiap jam kerja justru **tidak menghasilkan laba kotor yang cukup**.
@@ -50,7 +51,7 @@ tapi di desain operasional.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Gross Profit per Labor Hour](/images/pillars/gp-labor-hour.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – Gross Profit per Labor Hour](/images/pillars/gp-labor-hour.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini menunjukkan apakah jam kerja benar-benar mencetak laba.
 

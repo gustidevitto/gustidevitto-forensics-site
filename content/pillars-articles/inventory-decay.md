@@ -1,6 +1,6 @@
----
 title: Inventory Decay - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Inventory Decay menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
+last_updated: 2025-01-02
 ---
 
 # Inventory Decay: Ketika Stok Terlihat Kaya Tapi Sebenarnya Membusuk Pelan-Pelan
@@ -49,7 +49,7 @@ Inilah sebabnya banyak bisnis terlihat kaya di kertas, tapi miskin di kas.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Inventory Decay](/images/pillars/inventory-decay.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – Inventory Decay](/images/pillars/inventory-decay.jpg)
 
 Dalam **Dashboard FFD™ v3** karya Gusti Devitto, Inventory Decay divisualisasikan dengan segmentasi usia stok.
 

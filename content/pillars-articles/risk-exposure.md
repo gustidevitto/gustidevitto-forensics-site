@@ -1,6 +1,6 @@
----
 title: Risk Exposure (Quick Ratio) - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Risk Exposure menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
+last_updated: 2025-01-02
 ---
 
 # Risk Exposure: Mengapa Bisnis Anda Terlihat Hidup Tapi Sebenarnya Rentan Mati Mendadak
@@ -46,7 +46,7 @@ Satu gangguan kecil bisa memicu reaksi berantai: keterlambatan bayar, denda, rus
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Risk Exposure](/images/pillars/risk-exposure.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – Risk Exposure](/images/pillars/risk-exposure.jpg)
 
 Pada Dashboard **FFD™ (Financial Forensics Dashboard) v3** karya Gusti Devitto, Risk Exposure ditampilkan dalam zona warna yang tegas untuk memudahkan pembacaan risiko.
 

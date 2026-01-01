@@ -1,6 +1,6 @@
----
 title: Net Cash Lock Period - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Net Cash Lock Period menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
+last_updated: 2025-01-02
 ---
 
 # Net Cash Lock Period: Berapa Lama Uang Kamu Disandera Sebelum Pulang ke Rekening?
@@ -52,7 +52,7 @@ semakin besar risiko bisnis mati walau terlihat hidup.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Net Cash Lock Period](/images/pillars/net-cash-lock.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – Net Cash Lock Period](/images/pillars/net-cash-lock.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini ditampilkan dalam satuan hari.
 

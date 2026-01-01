@@ -1,6 +1,7 @@
 ---
 title: Forensic Insight & Surprise Detection - Panduan Financial Forensics Gusti Devitto
 description: Pilar anomali dan deteksi kejutan menurut framework Financial Forensics Gusti Devitto untuk membongkar pola tak wajar yang lolos dari laporan keuangan standar.
+last_updated: 2025-01-02
 ---
 
 # Forensic Insight: Saat Angka Diam, Polanya Berteriak
@@ -46,9 +47,9 @@ ini adalah **alarm dini** sebelum kerugian berubah jadi krisis.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Forensic Insight](/images/pillars/insight-surprise.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – Forensic Insight](/images/pillars/insight-surprise.jpg)
 
-Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini tidak selalu merah.
+Dalam **[Dashboard FFD™ v3](/get-access) milik Gusti Devitto**, pilar ini tidak selalu merah.
 
 Kadang hanya tanda kecil:
 - Transaksi jam 02.17 pagi

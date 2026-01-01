@@ -1,6 +1,6 @@
----
 title: Gross Profit Leakage Rate - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Gross Profit Leakage Rate menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
+last_updated: 2025-01-02
 ---
 
 # Gross Profit Leakage Rate: Ke Mana Perginya Profit yang Seharusnya Ada?
@@ -19,7 +19,7 @@ Tapi ada rasa aneh:
 - Setiap bulan ada selisih tak bisa dijelaskan
 - Kerja keras tidak pernah terasa sebanding
 
-Menurut **audit Financial Forensics Gusti Devitto**, ini adalah gejala klasik *phantom cost*.
+Menurut **audit [Financial Forensics](/methodology) Gusti Devitto**, ini adalah gejala klasik *phantom cost*.
 
 Bukan biaya yang tercatat.
 Bukan fraud terang-terangan.
@@ -53,7 +53,7 @@ tapi nyata terasa di kas.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Gross Profit Leakage Rate](/images/pillars/gp-leakage.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – Gross Profit Leakage Rate](/images/pillars/gp-leakage.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini sering menjadi titik kejut.
 
@@ -105,4 +105,4 @@ Mereka mati karena ribuan kebocoran kecil yang dibiarkan.
 
 Gross Profit Leakage Rate adalah alat untuk melihat hantu sebelum ia membunuh bisnis kamu.
 
-Pantau pilar ini bersama indikator vital lain di Dashboard FFD™, atau lakukan audit Financial Forensics jika profitmu selalu terasa lebih kecil dari yang seharusnya.
+Pantau pilar ini bersama indikator vital lain di [Dashboard FFD™](/get-access), atau lakukan audit Financial Forensics jika profitmu selalu terasa lebih kecil dari yang seharusnya.

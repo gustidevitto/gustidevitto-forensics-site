@@ -1,6 +1,6 @@
----
 title: Opex to Gross Profit Ratio - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Opex to Gross Profit Ratio menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
+last_updated: 2025-01-02
 ---
 
 # Opex to Gross Profit Ratio: Saat Biaya Tetap Diam-Diam Merampok Laba Kamu
@@ -49,7 +49,7 @@ Dalam sistem Financial Forensics Gusti Devitto, rasio ini adalah **indikator nap
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Opex to Gross Profit Ratio](/images/pillars/opex-to-gp.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – Opex to Gross Profit Ratio](/images/pillars/opex-to-gp.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini ditampilkan per outlet dan tren bulanannya.
 

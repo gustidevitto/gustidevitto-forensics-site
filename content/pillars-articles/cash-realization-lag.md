@@ -1,6 +1,6 @@
----
 title: Cash Realization Lag - Panduan Financial Forensics Gusti Devitto
-description: Diagnosis mendalam mengenai Cash Realization Lag menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
+description: Diagnosis mendalam mengenai Cash Realization Lag menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet.
+last_updated: 2025-01-02
 ---
 
 # Cash Realization Lag: Kenapa Jualan Laku Tapi Rekening Selalu Kosong?
@@ -49,7 +49,7 @@ Masalah ini sangat umum di:
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Cash Realization Lag](/images/pillars/cash-realization-lag.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – Cash Realization Lag](/images/pillars/cash-realization-lag.jpg)
 
 Dalam **Dashboard FFD™ v3** milik Gusti Devitto, Cash Realization Lag ditampilkan sebagai distribusi hari, bukan angka rata-rata.
 

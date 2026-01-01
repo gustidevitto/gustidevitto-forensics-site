@@ -1,6 +1,6 @@
----
 title: LTGP Velocity - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai LTGP Velocity menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
+last_updated: 2025-01-02
 ---
 
 # LTGP Velocity: Bisnis Anda Tumbuh, atau Cuma Jalan di Tempat?
@@ -50,7 +50,7 @@ Ia mendeteksi kematian bisnis **sebelum** laporan rugi muncul.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – LTGP Velocity](/images/pillars/ltgp-velocity.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – LTGP Velocity](/images/pillars/ltgp-velocity.jpg)
 
 Dalam **Dashboard FFD™ v3** milik Gusti Devitto, LTGP Velocity divisualisasikan sebagai grafik percepatan, bukan angka tunggal.
 

@@ -1,6 +1,6 @@
----
 title: Cash Runway - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Cash Runway menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
+last_updated: 2025-01-02
 ---
 
 # Cash Runway: Mengapa Napas Pendek Bisa Membunuh Bisnis Anda
@@ -52,9 +52,9 @@ Satu keputusan buruk bisa langsung berujung fatal.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Cash Runway](/images/pillars/cash-runway.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – Cash Runway](/images/pillars/cash-runway.jpg)
 
-Pada Dashboard **FFD™ (Financial Forensics Dashboard) v3** karya Gusti Devitto, Cash Runway ditampilkan dalam gradasi warna yang jelas: hijau (aman), kuning (waspada), dan merah (kritis).
+Pada Dashboard **[FFD™ (Financial Forensics Dashboard) v3](/get-access)** karya Gusti Devitto, Cash Runway ditampilkan dalam gradasi warna yang jelas: hijau (aman), kuning (waspada), dan merah (kritis).
 
 Dalam satu kasus audit Financial Forensics Gusti Devitto terhadap bisnis F&B dengan lima outlet, owner merasa perusahaannya sehat karena omzet bulanan tinggi. Namun setelah seluruh kas dan pengeluaran dihitung, Cash Runway mereka hanya **18 hari**.
 

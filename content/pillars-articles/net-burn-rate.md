@@ -1,6 +1,6 @@
----
 title: Net Burn Rate - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Net Burn Rate menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
+last_updated: 2025-01-02
 ---
 
 # Net Burn Rate: Mengapa Uang Terbakar Lebih Cepat dari yang Anda Sadari
@@ -38,7 +38,7 @@ Jika hasilnya positif, berarti bisnis membakar kas.
 Jika hasilnya nol, bisnis berada di titik impas kas.  
 Jika negatif, bisnis mulai menghasilkan surplus kas.
 
-Dalam sistem diagnostik Gusti Devitto, Net Burn Rate selalu dibaca berpasangan dengan Cash Runway. Burn Rate menjelaskan **kecepatan pendarahan**, sementara Runway menjelaskan **berapa lama tubuh masih bertahan sebelum kolaps**.
+Dalam sistem diagnostik Gusti Devitto, Net Burn Rate selalu dibaca berpasangan dengan [Cash Runway](/pilar/cash-runway). Burn Rate menjelaskan **kecepatan pendarahan**, sementara Runway menjelaskan **berapa lama tubuh masih bertahan sebelum kolaps**.
 
 Banyak owner terjebak ilusi profit karena melihat laba kotor atau laba bersih di laporan. Padahal secara kas, bisnis mereka tetap defisit. Net Burn Rate membuka ilusi ini dengan angka yang tidak bisa ditawar.
 
@@ -46,9 +46,9 @@ Banyak owner terjebak ilusi profit karena melihat laba kotor atau laba bersih di
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Net Burn Rate](/images/pillars/net-burn-rate.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – Net Burn Rate](/images/pillars/net-burn-rate.jpg)
 
-Pada Dashboard **FFD™ (Financial Forensics Dashboard) v3** karya Gusti Devitto, Net Burn Rate ditampilkan sebagai angka absolut yang menunjukkan berapa rupiah kas yang terbakar setiap bulan.
+Pada Dashboard **[FFD™ (Financial Forensics Dashboard) v3](/get-access)** karya Gusti Devitto, Net Burn Rate ditampilkan sebagai angka absolut yang menunjukkan berapa rupiah kas yang terbakar setiap bulan.
 
 Dalam salah satu audit Financial Forensics Gusti Devitto terhadap bisnis ritel dengan beberapa outlet, laporan laba rugi menunjukkan profit tipis. Namun Net Burn Rate menunjukkan pembakaran kas sebesar puluhan juta per bulan.
 

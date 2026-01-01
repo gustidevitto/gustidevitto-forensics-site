@@ -1,6 +1,6 @@
----
 title: LTV : CAC Ratio - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai rasio LTV terhadap CAC menurut framework Financial Forensics Gusti Devitto untuk menentukan kelayakan akuisisi dan scaling bisnis.
+last_updated: 2025-01-02
 ---
 
 # LTV : CAC Ratio: Kamu Dapat Pelanggan atau Beli Masalah?
@@ -48,7 +48,7 @@ Rasio ini menjawab satu pertanyaan brutal:
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – LTV : CAC Ratio](/images/pillars/ltv-cac.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – LTV : CAC Ratio](/images/pillars/ltv-cac.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini dibaca seperti vonis.
 

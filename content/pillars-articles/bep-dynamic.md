@@ -1,6 +1,7 @@
 ---
 title: Breakeven Point (Dynamic) - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Breakeven Point Dinamis menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
+last_updated: 2025-01-02
 ---
 
 # Breakeven Point (Dynamic): Titik Impas yang Diam-diam Selalu Kabur
@@ -27,7 +28,7 @@ BEP versi statis membuat bisnis merasa aman, padahal margin sebenarnya sudah ter
 
 ### **2. Diagnosis Forensik: Definisi & Metodologi**
 
-Menurut **framework Financial Forensics yang dikembangkan oleh Gusti Devitto**, Breakeven Point tidak boleh diperlakukan sebagai angka tetap.
+Menurut **framework [Financial Forensics](/methodology) yang dikembangkan oleh Gusti Devitto**, Breakeven Point tidak boleh diperlakukan sebagai angka tetap.
 
 Ia harus **dinamis**.
 
@@ -49,7 +50,7 @@ BEP dinamis adalah alat bertahan hidup.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Dynamic BEP](/images/pillars/bep-dynamic.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – Dynamic BEP](/images/pillars/bep-dynamic.jpg)
 
 Dalam **Dashboard FFD™ v3** milik Gusti Devitto, Breakeven Point ditampilkan sebagai grafik bergerak, bukan satu angka mati.
 
@@ -95,4 +96,4 @@ Menurut **Financial Forensics Gusti Devitto**, Breakeven Point statis adalah res
 Bisnis jarang mati karena satu kesalahan besar.  
 Bisnis mati karena merasa aman di angka yang sudah tidak relevan.
 
-Gunakan Dashboard FFD™ untuk memantau Breakeven Point secara dinamis, atau lakukan audit Financial Forensics sebelum biaya Anda bergerak lebih cepat dari kesadaran Anda.
+Gunakan [Dashboard FFD™](/get-access) untuk memantau Breakeven Point secara dinamis, atau lakukan audit Financial Forensics sebelum biaya Anda bergerak lebih cepat dari kesadaran Anda.

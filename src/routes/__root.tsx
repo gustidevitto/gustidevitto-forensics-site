@@ -84,12 +84,21 @@ export const Route = createRootRoute({
                     </main>
                     <footer className="border-t bg-card py-6 md:px-8 md:py-0">
                         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-                            <div className="flex gap-6 mt-4 md:mt-0">
+                            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 md:mt-0">
+                                <a href="/index" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                                    Framework Index
+                                </a>
+                                <a href="/methodology" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                                    Methodology
+                                </a>
+                                <a href="/verdict" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                                    Verdict
+                                </a>
                                 <a href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                                    Terms & Conditions
+                                    Terms
                                 </a>
                                 <a href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                                    Privacy Policy
+                                    Privacy
                                 </a>
                             </div>
                             <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">

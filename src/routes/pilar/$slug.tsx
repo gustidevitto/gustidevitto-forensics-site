@@ -100,8 +100,72 @@ function PilarPage() {
     const prevPillar = pillarIndex > 0 ? pillarsData[pillarIndex - 1] : null
     const nextPillar = pillarIndex < pillarsData.length - 1 ? pillarsData[pillarIndex + 1] : null
 
+    // Breadcrumb Data for Schema
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://gustidevitto.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Financial Forensics",
+                "item": "https://gustidevitto.com/forensics-pillars"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": pillar.title,
+                "item": `https://gustidevitto.com/pilar/${slug}`
+            }
+        ]
+    }
+
+    // Article Schema
+    const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": displayTitle,
+        "description": (metadata as any).description || pillar.definition,
+        "image": `https://gustidevitto.com${pillar.img_placeholder}`,
+        "author": {
+            "@type": "Person",
+            "name": "Gusti Devitto",
+            "url": "https://gustidevitto.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "gustidevitto.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://gustidevitto.com/assets/images/android-chrome-192x192.png"
+            }
+        },
+        "datePublished": (metadata as any).last_updated || "2025-01-02",
+        "dateModified": (metadata as any).last_updated || "2025-01-02",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://gustidevitto.com/pilar/${slug}`
+        }
+    }
+
     return (
         <div className="min-h-screen bg-background pb-20">
+            <title>{`${displayTitle} - Financial Forensics Pillar`}</title>
+            <meta name="description" content={(metadata as any).description || pillar.definition} />
+
+            <script type="application/ld+json">
+                {JSON.stringify(breadcrumbSchema)}
+            </script>
+            <script type="application/ld+json">
+                {JSON.stringify(articleSchema)}
+            </script>
+
             {/* Header / Breadcrumb */}
             <div className="border-b bg-card/30 backdrop-blur-sm sticky top-16 z-40">
                 <div className="container py-4 flex items-center justify-between px-4 md:px-8">
@@ -110,8 +174,17 @@ function PilarPage() {
                             <ArrowLeft className="mr-2 w-4 h-4" /> Daftar Pilar
                         </Link>
                     </Button>
-                    <div className="text-sm font-medium text-muted-foreground truncate max-w-[200px] md:max-w-none">
-                        Pilar {pillarIndex + 1} of {pillarsData.length}: {pillar.title}
+                    <div className="text-sm font-medium text-muted-foreground hidden md:block">
+                        <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+                        <span className="mx-2">/</span>
+                        <Link to="/forensics-pillars" className="hover:text-primary transition-colors">Financial Forensics</Link>
+                        <span className="mx-2">/</span>
+                        <span className="text-foreground">{pillar.title}</span>
+                    </div>
+                    <div className="text-xs font-mono text-muted-foreground/60 uppercase tracking-tighter">
+                        Last updated: <time dateTime={(metadata as any).last_updated || "2025-01-02"}>
+                            {new Date((metadata as any).last_updated || "2025-01-02").toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                        </time>
                     </div>
                 </div>
             </div>

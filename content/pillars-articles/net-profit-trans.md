@@ -1,6 +1,6 @@
----
 title: Net Profit per Transaction - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Net Profit per Transaction menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
+last_updated: 2025-01-02
 ---
 
 # Net Profit per Transaction: Kenapa Setiap Struk Kamu Sebenarnya Miskin?
@@ -46,7 +46,7 @@ lari kencang, tapi tidak ke mana-mana.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Net Profit per Transaction](/images/pillars/net-profit-trans.jpg)
+![Dashboard FFD™ v3 by Gusti Devitto – Net Profit per Transaction](/images/pillars/net-profit-trans.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, metrik ini ditampilkan per outlet dan per channel.
 
