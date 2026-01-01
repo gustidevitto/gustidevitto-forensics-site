@@ -49,7 +49,7 @@ Inilah sebabnya banyak bisnis terlihat kaya di kertas, tapi miskin di kas.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Inventory Decay](images/pillars/inventory-decay.jpg)
+![Dashboard FFD™ v3 – Inventory Decay](/images/pillars/inventory-decay.jpg)
 
 Dalam **Dashboard FFD™ v3** karya Gusti Devitto, Inventory Decay divisualisasikan dengan segmentasi usia stok.
 

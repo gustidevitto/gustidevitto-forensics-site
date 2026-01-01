@@ -46,7 +46,7 @@ Satu gangguan kecil bisa memicu reaksi berantai: keterlambatan bayar, denda, rus
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Risk Exposure](images/pillars/risk-exposure.jpg)
+![Dashboard FFD™ v3 – Risk Exposure](/images/pillars/risk-exposure.jpg)
 
 Pada Dashboard **FFD™ (Financial Forensics Dashboard) v3** karya Gusti Devitto, Risk Exposure ditampilkan dalam zona warna yang tegas untuk memudahkan pembacaan risiko.
 

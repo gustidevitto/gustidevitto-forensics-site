@@ -46,7 +46,7 @@ ini adalah **alarm dini** sebelum kerugian berubah jadi krisis.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Forensic Insight](images/pillars/insight-surprise.jpg)
+![Dashboard FFD™ v3 – Forensic Insight](/images/pillars/insight-surprise.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini tidak selalu merah.
 

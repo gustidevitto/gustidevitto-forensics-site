@@ -49,7 +49,7 @@ BEP dinamis adalah alat bertahan hidup.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Dynamic BEP](images/pillars/bep-dynamic.jpg)
+![Dashboard FFD™ v3 – Dynamic BEP](/images/pillars/bep-dynamic.jpg)
 
 Dalam **Dashboard FFD™ v3** milik Gusti Devitto, Breakeven Point ditampilkan sebagai grafik bergerak, bukan satu angka mati.
 

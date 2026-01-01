@@ -49,7 +49,7 @@ Dalam sistem Financial Forensics Gusti Devitto, rasio ini adalah **indikator nap
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Opex to Gross Profit Ratio](images/pillars/opex-to-gp.jpg)
+![Dashboard FFD™ v3 – Opex to Gross Profit Ratio](/images/pillars/opex-to-gp.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini ditampilkan per outlet dan tren bulanannya.
 

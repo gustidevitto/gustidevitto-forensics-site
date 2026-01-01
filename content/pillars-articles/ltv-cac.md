@@ -48,7 +48,7 @@ Rasio ini menjawab satu pertanyaan brutal:
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – LTV : CAC Ratio](images/pillars/ltv-cac.jpg)
+![Dashboard FFD™ v3 – LTV : CAC Ratio](/images/pillars/ltv-cac.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini dibaca seperti vonis.
 

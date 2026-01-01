@@ -53,7 +53,7 @@ tapi dari **seberapa efisien ia mencetak laba**.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Net Contribution per SKU](images/pillars/contribution-sku.jpg)
+![Dashboard FFD™ v3 – Net Contribution per SKU](/images/pillars/contribution-sku.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, setiap SKU dipetakan:
 

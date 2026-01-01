@@ -46,7 +46,7 @@ lari kencang, tapi tidak ke mana-mana.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Net Profit per Transaction](images/pillars/net-profit-trans.jpg)
+![Dashboard FFD™ v3 – Net Profit per Transaction](/images/pillars/net-profit-trans.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, metrik ini ditampilkan per outlet dan per channel.
 

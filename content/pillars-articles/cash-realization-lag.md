@@ -49,7 +49,7 @@ Masalah ini sangat umum di:
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Cash Realization Lag](images/pillars/cash-realization-lag.jpg)
+![Dashboard FFD™ v3 – Cash Realization Lag](/images/pillars/cash-realization-lag.jpg)
 
 Dalam **Dashboard FFD™ v3** milik Gusti Devitto, Cash Realization Lag ditampilkan sebagai distribusi hari, bukan angka rata-rata.
 

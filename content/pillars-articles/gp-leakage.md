@@ -53,7 +53,7 @@ tapi nyata terasa di kas.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Gross Profit Leakage Rate](images/pillars/gp-leakage.jpg)
+![Dashboard FFD™ v3 – Gross Profit Leakage Rate](/images/pillars/gp-leakage.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini sering menjadi titik kejut.
 

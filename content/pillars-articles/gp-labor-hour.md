@@ -50,7 +50,7 @@ tapi di desain operasional.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Gross Profit per Labor Hour](images/pillars/gp-labor-hours.jpg)
+![Dashboard FFD™ v3 – Gross Profit per Labor Hour](/images/pillars/gp-labor-hour.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini menunjukkan apakah jam kerja benar-benar mencetak laba.
 

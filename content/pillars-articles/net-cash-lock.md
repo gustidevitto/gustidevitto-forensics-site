@@ -52,7 +52,7 @@ semakin besar risiko bisnis mati walau terlihat hidup.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Net Cash Lock Period](images/pillars/net-cash-lock.jpg)
+![Dashboard FFD™ v3 – Net Cash Lock Period](/images/pillars/net-cash-lock.jpg)
 
 Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini ditampilkan dalam satuan hari.
 

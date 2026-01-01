@@ -46,7 +46,7 @@ Banyak owner terjebak ilusi profit karena melihat laba kotor atau laba bersih di
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 – Net Burn Rate](images/pillars/net-burn-rate.jpg)
+![Dashboard FFD™ v3 – Net Burn Rate](/images/pillars/net-burn-rate.jpg)
 
 Pada Dashboard **FFD™ (Financial Forensics Dashboard) v3** karya Gusti Devitto, Net Burn Rate ditampilkan sebagai angka absolut yang menunjukkan berapa rupiah kas yang terbakar setiap bulan.
 
