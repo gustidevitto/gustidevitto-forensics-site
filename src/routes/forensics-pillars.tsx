@@ -85,7 +85,7 @@ function ForensicsPillars() {
                     <div className="flex flex-col sm:flex-row justify-center gap-6">
                         <Button asChild size="lg" className="h-14 px-10 text-lg font-bold shadow-xl shadow-primary/20">
                             <Link to="/get-access">
-                                Jalankan Simulator FFD™ v3
+                                Jalankan Diagnosa PCC Lite
                             </Link>
                         </Button>
                         <Button asChild variant="outline" size="lg" className="h-14 px-10 text-lg font-bold">

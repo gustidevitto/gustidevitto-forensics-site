@@ -141,7 +141,7 @@ function Index() {
                         <Button asChild size="lg" className="text-lg h-14 px-8 shadow-lg shadow-primary/30 bg-primary hover:bg-primary/90 text-primary-foreground group relative overflow-hidden">
                             <Link to="/get-access">
                                 <span className="relative z-10 flex items-center">
-                                    Diagnosis Gratis (15 Menit)
+                                    Diagnosis Gratis: PCC Lite
                                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </span>
                                 <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -245,7 +245,7 @@ function Index() {
                             {
                                 step: "02",
                                 title: "Input Data",
-                                desc: "Ketik 3 variabel dasar bisnis Anda ke dalam FFD™ v3 Simulator.",
+                                desc: "Ketik variabel dasar bisnis Anda ke dalam PCC Lite Diagnostic.",
                                 icon: <Microscope className="w-5 h-5" />
                             },
                             {

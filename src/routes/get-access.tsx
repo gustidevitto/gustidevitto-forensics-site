@@ -62,7 +62,7 @@ function GetAccess() {
 
                 {/* Logo */}
                 <div className="relative z-20 flex items-center text-lg font-medium">
-                    <span className="text-foreground">FFD™ v3 — Financial Forensics Dashboard</span>
+                    <span className="text-foreground">PCC Lite — by FFD™ v3 Core</span>
                 </div>
 
                 {/* Hero Content */}
@@ -173,7 +173,7 @@ function GetAccess() {
                                         "Memproses..."
                                     ) : (
                                         <>
-                                            Lanjut ke Phantom Cost Calculator
+                                            Lanjut ke PCC Lite Diagnostic
                                             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                         </>
                                     )}

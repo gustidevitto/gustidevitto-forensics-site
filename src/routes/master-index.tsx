@@ -99,11 +99,11 @@ function MasterIndex() {
                 <div className="bg-primary/5 rounded-[2rem] p-8 md:p-12 text-center space-y-6">
                     <h2 className="text-2xl md:text-3xl font-bold">Mulai Diagnosa Bisnis Anda</h2>
                     <p className="text-muted-foreground">
-                        Gunakan FFD™ v3 Dashboard untuk memetakan pilar-pilar ini secara otomatis dari data Anda.
+                        Gunakan PCC Lite untuk diagnosa awal, atau FFD™ v3 untuk pemetaan 15 pilar secara sistemik.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button asChild size="lg" className="h-12 px-8 font-bold">
-                            <Link to="/get-access">Buka Dashboard</Link>
+                            <Link to="/get-access">Buka PCC Lite</Link>
                         </Button>
                         <Button asChild variant="outline" size="lg" className="h-12 px-8 font-bold">
                             <Link to="/investasi">Lihat Tier Investasi</Link>

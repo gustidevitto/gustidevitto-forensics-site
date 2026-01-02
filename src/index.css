@@ -235,4 +235,18 @@
     .animate-subtle-glow {
         animation: subtle-glow 20s ease-in-out infinite;
     }
+
+    @keyframes scanline {
+        from {
+            transform: translateX(-100%);
+        }
+
+        to {
+            transform: translateX(100%);
+        }
+    }
+
+    .animate-scanline {
+        animation: scanline 2s linear infinite;
+    }
 }
