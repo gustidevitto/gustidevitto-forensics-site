@@ -54,7 +54,7 @@ function Terms() {
 
                     <h3>5. Hak Kekayaan Intelektual</h3>
                     <p>
-                        Seluruh materi, template, framework (termasuk 7-Pillars), dan laporan yang diberikan adalah hak cipta Gusti Devitto Forensics.
+                        Seluruh materi, template, framework (termasuk 15-Pillars), dan laporan yang diberikan adalah hak cipta Gusti Devitto Forensics.
                         Klien diberikan lisensi penggunaan internal, namun dilarang keras menjual kembali, menyebarkan, atau menggunakan materi tersebut untuk kepentingan komersial pihak ketiga tanpa izin tertulis.
                     </p>
 

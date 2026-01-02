@@ -36,12 +36,13 @@ export const Route = createRootRoute({
                 })}
             </script>
             <div className="min-h-screen bg-background font-sans antialiased relative overflow-hidden">
-                {/* Tactical Scanline Overlay */}
-                <div className="pointer-events-none fixed inset-0 z-50 opacity-[0.03] overflow-hidden">
-                    <div className="h-[200%] w-full bg-[linear-gradient(to_bottom,transparent_50%,#000_50%)] bg-[length:100%_4px] animate-scanline"></div>
+                {/* Subtle Moving Background Lights */}
+                <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+                    <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] animate-subtle-glow"></div>
+                    <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 rounded-full blur-[120px] animate-subtle-glow [animation-delay:-5s]"></div>
                 </div>
 
-                <div className="relative flex min-h-screen flex-col">
+                <div className="relative flex min-h-screen flex-col z-10">
                     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
                         <div className="container flex h-16 items-center justify-between px-4 md:px-8">
                             {/* Logo */}

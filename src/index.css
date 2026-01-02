@@ -195,21 +195,6 @@
         animation: gradient-shift 4s ease infinite;
     }
 
-    /* Tactical Scanline Effect */
-    @keyframes scanline {
-        0% {
-            transform: translateY(-100%);
-        }
-
-        100% {
-            transform: translateY(100%);
-        }
-    }
-
-    .animate-scanline {
-        animation: scanline 8s linear infinite;
-    }
-
     /* Status Blink */
     @keyframes status-blink {
 
@@ -225,5 +210,29 @@
 
     .animate-status-blink {
         animation: status-blink 2s ease-in-out infinite;
+    }
+
+    /* Subtle Moving Light Background */
+    @keyframes subtle-glow {
+
+        0%,
+        100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.3;
+        }
+
+        33% {
+            transform: translate(5%, 10%) scale(1.1);
+            opacity: 0.4;
+        }
+
+        66% {
+            transform: translate(-5%, 5%) scale(0.9);
+            opacity: 0.2;
+        }
+    }
+
+    .animate-subtle-glow {
+        animation: subtle-glow 20s ease-in-out infinite;
     }
 }

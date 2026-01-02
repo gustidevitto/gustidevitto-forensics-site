@@ -162,48 +162,50 @@ function Index() {
                 </div>
 
                 {/* Hero Visual - The Carousel */}
-                <div className="relative w-full max-w-xl mx-auto lg:mr-0 animate-slide-up h-[400px]">
-                    {slides.map((slide, index) => (
-                        <div
-                            key={slide.id}
-                            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
-                        >
-                            <div className="relative rounded-2xl overflow-hidden border border-border/50 bg-card/80 backdrop-blur-md shadow-2xl h-full flex flex-col">
-                                {/* Header Bar */}
-                                <div className="bg-primary/10 px-6 py-4 border-b border-border/50 flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <div className="flex gap-1.5">
-                                            <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
-                                            <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
-                                            <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
-                                        </div>
-                                        <span className="ml-4 text-xs font-semibold text-primary tracking-widest uppercase">{slide.title}</span>
-                                    </div>
-                                    <span className="text-[10px] text-muted-foreground font-mono">{index + 1} / {slides.length}</span>
-                                </div>
-
-                                {/* Slide Content */}
-                                <div className="flex-1 overflow-hidden relative">
-                                    {slide.type === 'component' ? (
-                                        slide.content
-                                    ) : (
-                                        <div className="h-full relative group">
-                                            <img
-                                                src={slide.src}
-                                                alt={slide.title}
-                                                className="w-full h-full object-cover"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent flex items-end p-6">
-                                                <p className="text-sm font-medium text-foreground leading-relaxed">
-                                                    {slide.desc}
-                                                </p>
+                <div className="relative w-full max-w-xl mx-auto lg:mr-0 animate-slide-up h-[400px] flex items-center">
+                    <div className="relative w-full h-[360px] overflow-hidden rounded-2xl border border-border/50 bg-card/80 backdrop-blur-md shadow-2xl">
+                        {slides.map((slide, index) => (
+                            <div
+                                key={slide.id}
+                                className={`absolute inset-0 transition-transform duration-700 ease-in-out ${index === currentSlide ? 'translate-x-0' : index < currentSlide ? '-translate-x-full' : 'translate-x-full'}`}
+                            >
+                                <div className="h-full flex flex-col">
+                                    {/* Header Bar */}
+                                    <div className="bg-primary/10 px-6 py-4 border-b border-border/50 flex items-center justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <div className="flex gap-1.5">
+                                                <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                                                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                                                <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
                                             </div>
+                                            <span className="ml-4 text-xs font-semibold text-primary tracking-widest uppercase">{slide.title}</span>
                                         </div>
-                                    )}
+                                        <span className="text-[10px] text-muted-foreground font-mono">{index + 1} / {slides.length}</span>
+                                    </div>
+
+                                    {/* Slide Content */}
+                                    <div className="flex-1 overflow-hidden relative">
+                                        {slide.type === 'component' ? (
+                                            slide.content
+                                        ) : (
+                                            <div className="h-full relative">
+                                                <img
+                                                    src={slide.src}
+                                                    alt={slide.title}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent flex items-end p-6">
+                                                    <p className="text-sm font-medium text-foreground leading-relaxed">
+                                                        {slide.desc}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
 
                     {/* Navigation Dots */}
                     <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
@@ -217,12 +219,12 @@ function Index() {
                     </div>
 
                     {/* Floating Badge (stays outside carousel) */}
-                    <div className="absolute -bottom-4 -right-4 md:-right-8 bg-card border border-border/50 rounded-xl px-4 py-3 shadow-lg animate-float z-20">
+                    <div className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 bg-card border border-border/50 rounded-xl px-4 py-3 shadow-lg animate-float z-20 hidden sm:block">
                         <div className="flex items-center gap-2">
                             <Clock className="w-5 h-5 text-primary" />
                             <div>
-                                <p className="text-xs text-muted-foreground">Kapasitas Bulan Ini</p>
-                                <p className="text-sm font-bold">3 dari 5 slot tersisa</p>
+                                <p className="text-[10px] uppercase font-bold text-muted-foreground leading-none mb-1">Kapasitas</p>
+                                <p className="text-sm font-black whitespace-nowrap">3 / 5 SLOT TERSEDIA</p>
                             </div>
                         </div>
                     </div>
