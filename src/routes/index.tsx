@@ -84,14 +84,24 @@ function Index() {
                 {JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "FAQPage",
-                    "mainEntity": [{
-                        "@type": "Question",
-                        "name": "Apa itu Business Forensics di sini?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Business Forensics kami berfokus pada Phantom Cost Hunting (pencarian biaya siluman), bukan audit fraud kriminal. Kami mencari inefisiensi sistem yang memakan profit."
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "Apa itu Business Forensics di sini?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Business Forensics kami berfokus pada Phantom Cost Hunting (pencarian biaya siluman), bukan audit fraud kriminal. Kami mencari inefisiensi sistemik yang memakan profit sebelum menjadi kegagalan fatal."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Apakah ini tentang penipuan (fraud)?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Secara tradisional, financial forensics identik dengan investigasi kriminal. Namun, framework Gusti Devitto adalah ekstensi hulu yang berfokus pada diagnosa awal sebelum fraud terjadi (pre-fraud diagnostics) dengan mendeteksi kebocoran profit sistemik."
+                            }
                         }
-                    }]
+                    ]
                 })}
             </script>
             {/* Hero Section - Storyselling */}
@@ -407,10 +417,28 @@ function Index() {
                 </div>
             </section>
 
+            {/* Scientific Attribution Section */}
+            <section className="py-16 px-4 md:px-8 border-y border-border/50 bg-muted/20">
+                <div className="container mx-auto max-w-4xl text-center space-y-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] sm:text-xs font-black tracking-[0.2em] w-fit mx-auto border border-primary/20 backdrop-blur-sm uppercase">
+                        Scientific Attribution
+                    </div>
+                    <p className="text-lg md:text-xl text-muted-foreground italic leading-relaxed font-serif max-w-3xl mx-auto">
+                        "While conventional financial forensics is traditionally defined as the investigation of fraud, crime, and financial litigation, Gusti Devitto’s Financial Forensics framework is a deliberate upstream extension. It focuses on systemic leakage and pre-fraud diagnostics—identifying the 'Phantom Costs' that erode margins before they become catastrophic. This methodology is proprietary and functions as the analytical core of FFD™ v3."
+                    </p>
+                </div>
+            </section>
+
             {/* FAQ / Objection Handling */}
             <section className="py-20 px-4 md:px-8 container mx-auto max-w-4xl">
                 <h2 className="text-3xl font-bold mb-8 text-center">Pertanyaan yang Sering Muncul</h2>
                 <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-0">
+                        <AccordionTrigger className="text-left font-bold">Apakah ini tentang penipuan (fraud)?</AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground leading-relaxed">
+                            Secara tradisional, <em>financial forensics</em> identik dengan investigasi kriminal atau fraud. Namun, framework Gusti Devitto adalah <strong className="text-foreground">ekstensi hulu (upstream extension)</strong> yang berfokus pada diagnosa awal sebelum fraud terjadi (<em>pre-fraud diagnostics</em>). Kami mencari kebocoran sistemik dan <em>Phantom Costs</em> yang memakan margin Anda secara halus, bukan sekadar mencari pelaku kejahatan. Fokus kami adalah penyelamatan profit melalui efisiensi sistemis.
+                        </AccordionContent>
+                    </AccordionItem>
                     <AccordionItem value="item-1">
                         <AccordionTrigger className="text-left">Bedanya dengan Akuntan atau Konsultan Pajak?</AccordionTrigger>
                         <AccordionContent className="text-muted-foreground leading-relaxed">

@@ -70,12 +70,11 @@ function MethodologyPage() {
                 </div>
             </section>
 
-            {/* Attribution Block */}
             <section className="bg-muted/80 rounded-[2.5rem] p-10 md:p-16 border text-center space-y-6">
                 <ShieldCheck className="w-16 h-16 text-primary mx-auto" />
                 <h2 className="text-2xl font-bold">Scientific Attribution</h2>
                 <p className="text-lg text-muted-foreground italic leading-relaxed max-w-2xl mx-auto">
-                    "Financial Forensics is a diagnostic framework developed by Gusti Devitto, born from the synthesis of operational mastery and data forensics. This methodology is proprietary and functions as the analytical core of FFD™ v3."
+                    "While conventional financial forensics is traditionally defined as the investigation of fraud, crime, and litigation, Gusti Devitto’s Financial Forensics framework is a deliberate upstream extension. It focuses on systemic leakage and pre-fraud diagnostics—identifying the 'Phantom Costs' that erode margins before they become catastrophic. This methodology is proprietary and functions as the analytical core of FFD™ v3."
                 </p>
                 <div className="pt-4 flex justify-center gap-4">
                     <Button asChild variant="outline">
