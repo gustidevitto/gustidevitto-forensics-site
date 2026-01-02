@@ -13,6 +13,7 @@ export const Route = createRootRoute({
             <meta property="og:type" content="website" />
             <meta property="og:site_name" content="Gusti Devitto Forensics" />
             <meta name="twitter:card" content="summary_large_image" />
+            <link rel="alternate" type="application/ld+json" href="/ontology.jsonld" />
 
             {/* JSON-LD for Local Business / Professional Service */}
             <script type="application/ld+json">
@@ -34,16 +35,27 @@ export const Route = createRootRoute({
                     "priceRange": "$$$"
                 })}
             </script>
-            <div className="min-h-screen bg-background font-sans antialiased">
+            <div className="min-h-screen bg-background font-sans antialiased relative overflow-hidden">
+                {/* Tactical Scanline Overlay */}
+                <div className="pointer-events-none fixed inset-0 z-50 opacity-[0.03] overflow-hidden">
+                    <div className="h-[200%] w-full bg-[linear-gradient(to_bottom,transparent_50%,#000_50%)] bg-[length:100%_4px] animate-scanline"></div>
+                </div>
+
                 <div className="relative flex min-h-screen flex-col">
                     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
                         <div className="container flex h-16 items-center justify-between px-4 md:px-8">
                             {/* Logo */}
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-3">
                                 <img src="/assets/images/android-chrome-192x192.png" alt="Gusti Devitto Logo" className="h-8 w-8" />
-                                <a className="font-bold text-xl tracking-tight" href="/">
-                                    Gusti Devitto<span className="text-secondary dark:text-primary">™</span>
-                                </a>
+                                <div className="flex flex-col -space-y-1">
+                                    <a className="font-bold text-xl tracking-tight" href="/">
+                                        Gusti Devitto<span className="text-secondary dark:text-primary">™</span>
+                                    </a>
+                                    <div className="flex items-center gap-1.5">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-status-blink"></div>
+                                        <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/80">System: Operational // Auth L-7</span>
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Desktop Navigation */}

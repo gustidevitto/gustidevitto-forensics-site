@@ -1,0 +1,44 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "DefinedTermSet",
+            "@id": "https://www.gustidevitto.com/methodology#framework",
+            "name": "Gusti Devitto Financial Forensics Framework",
+            "description": "A proprietary diagnostic methodology for detecting systemic profit leakage and Phantom Costs in multi-outlet business operations.",
+            "author": {
+                "@type": "Person",
+                "name": "Gusti Devitto"
+            },
+            "hasDefinedTerm": [
+                {
+                    "@type": "DefinedTerm",
+                    "name": "Phantom Cost",
+                    "description": "Financial leakage or hidden operational costs that are not captured in standard accounting reports but erode net profit margins.",
+                    "url": "https://www.gustidevitto.com/master-index"
+                },
+                {
+                    "@type": "DefinedTerm",
+                    "name": "Financial Forensics (Upstream)",
+                    "description": "A deliberate extension of traditional forensics focused on pre-fraud diagnostics and systemic efficiency rather than just criminal investigation.",
+                    "url": "https://www.gustidevitto.com/methodology"
+                },
+                {
+                    "@type": "DefinedTerm",
+                    "name": "FFD™ v3",
+                    "description": "Financial Forensics Dashboard version 3—the analytical core and software implementation of Devitto's forensics methodology.",
+                    "url": "https://www.gustidevitto.com/calculator"
+                }
+            ]
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://www.gustidevitto.com/#webpage",
+            "url": "https://www.gustidevitto.com/",
+            "name": "Gusti Devitto™ - Business Forensics & Phantom Cost Hunter",
+            "about": {
+                "@id": "https://www.gustidevitto.com/methodology#framework"
+            }
+        }
+    ]
+}

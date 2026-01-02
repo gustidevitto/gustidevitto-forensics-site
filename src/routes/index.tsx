@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ShieldCheck, TrendingDown, Users, DollarSign, Clock, Target, BadgeCheck } from "lucide-react"
+import { ArrowRight, ShieldCheck, TrendingDown, Users, DollarSign, Clock, Target, BadgeCheck, Activity, Microscope } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export const Route = createFileRoute('/')({
@@ -225,6 +225,41 @@ function Index() {
                                 <p className="text-sm font-bold">3 dari 5 slot tersisa</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Diagnostic Triage Teaser */}
+            <section className="py-12 px-4 md:px-8 relative z-30 -mt-10 md:-mt-16">
+                <div className="container mx-auto max-w-5xl">
+                    <div className="grid md:grid-cols-3 gap-4">
+                        {[
+                            {
+                                step: "01",
+                                title: "Pilih Gejala",
+                                desc: "Omzet ramai tapi kas tiris? Atau tim sibuk tapi profit stagnan?",
+                                icon: <Activity className="w-5 h-5" />
+                            },
+                            {
+                                step: "02",
+                                title: "Input Data",
+                                desc: "Ketik 3 variabel dasar bisnis Anda ke dalam FFD™ v3 Simulator.",
+                                icon: <Microscope className="w-5 h-5" />
+                            },
+                            {
+                                step: "03",
+                                title: "Lihat Verdict",
+                                desc: "Dapatkan diagnosa instan: Apakah bisnis Anda sehat atau bocor?",
+                                icon: <Target className="w-5 h-5" />
+                            }
+                        ].map((item, idx) => (
+                            <div key={idx} className="group relative p-6 rounded-2xl bg-card border border-border/50 shadow-xl hover:border-primary/50 transition-all backdrop-blur-xl">
+                                <div className="absolute top-4 right-6 text-4xl font-black text-primary/5 group-hover:text-primary/10 transition-colors">{item.step}</div>
+                                <div className="mb-4 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">{item.icon}</div>
+                                <h3 className="font-bold text-lg mb-2">{item.title}</h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>

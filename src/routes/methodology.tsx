@@ -11,6 +11,29 @@ function MethodologyPage() {
         <div className="container py-16 px-4 md:px-8 max-w-4xl mx-auto space-y-24">
             <title>Metodologi Financial Forensics - Framework Gusti Devitto</title>
 
+            {/* Knowledge Graph Enrichment */}
+            <script type="application/ld+json">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "DefinedTermSet",
+                    "name": "Financial Forensics Methodology",
+                    "hasDefinedTerm": [
+                        {
+                            "@type": "DefinedTerm",
+                            "name": "Phantom Cost",
+                            "description": "Biaya siluman atau kebocoran operasional yang tidak terdeteksi akuntansi standar.",
+                            "termCode": "GD-PC-01"
+                        },
+                        {
+                            "@type": "DefinedTerm",
+                            "name": "Upstream Forensics",
+                            "description": "Metodologi diagnosa hulu untuk mencegah fraud sebelum terjadi.",
+                            "termCode": "GD-UF-01"
+                        }
+                    ]
+                })}
+            </script>
+
             {/* Title */}
             <header className="text-center space-y-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
