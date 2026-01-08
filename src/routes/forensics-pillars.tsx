@@ -23,6 +23,46 @@ function ForensicsPillars() {
                 </p>
             </div>
 
+            {/* FFD™ v3 Visual Context */}
+            <div className="mb-20">
+                <div className="relative rounded-[2rem] border border-primary/20 bg-muted/30 overflow-hidden shadow-2xl group">
+                    <div className="grid lg:grid-cols-2 gap-8 items-center p-8 md:p-12">
+                        <div className="space-y-6">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/20">
+                                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                                Practical Implementation
+                            </div>
+                            <h2 className="text-3xl font-black tracking-tight leading-tight">
+                                Integrated MRI: <br />
+                                <span className="text-primary text-4xl">FFD™ v3 Digital Mirror</span>
+                            </h2>
+                            <p className="text-muted-foreground leading-relaxed">
+                                Ke-15 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <strong className="text-foreground">FFD™ v3 Dashboard</strong> — sebuah mesin diagnosis yang memetakan kesehatan finansial Anda secara real-time.
+                            </p>
+                            <div className="pt-2">
+                                <Button asChild variant="outline" className="border-primary/50 text-primary hover:bg-primary/5 h-12 px-6 font-bold">
+                                    <Link to="/get-access">Lihat Demo Diagnostic</Link>
+                                </Button>
+                            </div>
+                        </div>
+                        <div className="relative">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition duration-700"></div>
+                            <div className="relative rounded-xl border border-white/10 overflow-hidden shadow-2xl">
+                                <img
+                                    src="/assets/images/ffd.png"
+                                    alt="FFD™ v3 Interface"
+                                    className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                <p className="absolute bottom-4 left-4 text-[10px] font-mono text-white/70 uppercase tracking-widest">
+                                    Auth Level: L-7 // Visual Matrix
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {pillarsData.map((pillar, index) => (
                     <Link

@@ -62,7 +62,7 @@ function AboutGustiDevitto() {
                             </div>
 
                             {/* Experience Badge */}
-                            <div className="absolute -top-6 -right-6 md:top-12 md:-right-8 bg-card border border-primary/30 p-4 rounded-xl shadow-xl animate-float hidden sm:block">
+                            <div className="absolute -top-6 -left-6 md:top-12 md:-left-8 bg-card border border-primary/30 p-4 rounded-xl shadow-xl animate-float hidden sm:block">
                                 <Activity className="w-8 h-8 text-primary mb-2" />
                                 <p className="text-[10px] font-bold text-muted-foreground uppercase">Diagnosis Core</p>
                                 <p className="text-xl font-black text-foreground">FFD™ v3</p>
@@ -175,16 +175,30 @@ function AboutGustiDevitto() {
                         </div>
                     </div>
 
-                    <div className="mt-12 p-8 rounded-2xl bg-primary/5 border border-primary/20 flex flex-col md:flex-row items-center gap-8 shadow-inner">
-                        <div className="flex-1 space-y-4 text-center md:text-left">
-                            <p className="text-sm font-mono text-primary uppercase font-bold tracking-[0.3em]">Proprietary Engine // FFD™ v3</p>
-                            <p className="text-muted-foreground">
-                                Sistem ini bukan sekadar spreadsheet, melainkan kerangka kerja audit yang dilengkapi dengan <strong className="text-foreground">Neural Engine</strong> untuk diagnosis deterministik tingkat tinggi.
-                            </p>
+                    <div className="mt-12 space-y-6">
+                        <div className="p-8 rounded-2xl bg-primary/5 border border-primary/20 flex flex-col md:flex-row items-center gap-8 shadow-inner">
+                            <div className="flex-1 space-y-4 text-center md:text-left">
+                                <p className="text-sm font-mono text-primary uppercase font-bold tracking-[0.3em]">Proprietary Engine // FFD™ v3</p>
+                                <p className="text-muted-foreground">
+                                    Sistem ini bukan sekadar spreadsheet, melainkan kerangka kerja audit yang dilengkapi dengan <strong className="text-foreground">Neural Engine</strong> untuk diagnosis deterministik tingkat tinggi.
+                                </p>
+                            </div>
+                            <Button variant="secondary" className="px-8 h-12 font-bold cursor-default">
+                                Neural Pattern Auditing ACTIVE
+                            </Button>
                         </div>
-                        <Button variant="secondary" className="px-8 h-12 font-bold cursor-default">
-                            Neural Pattern Auditing ACTIVE
-                        </Button>
+
+                        <div className="relative rounded-2xl border border-border/50 overflow-hidden shadow-2xl group">
+                            <img
+                                src="/assets/images/ffd.png"
+                                alt="Dashboard Preview"
+                                className="w-full h-auto grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-[1.01]"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
+                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] font-mono text-muted-foreground uppercase tracking-[0.4em] bg-background/50 backdrop-blur-sm px-4 py-1 rounded-full border border-border/50">
+                                Visual Interface: FFD™ v3 Surgical MRI
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

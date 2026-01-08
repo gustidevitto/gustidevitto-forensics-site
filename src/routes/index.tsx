@@ -392,54 +392,79 @@ function Index() {
                 </div>
             </section>
 
-            {/* The Solution - FFD v2 */}
-            <section className="py-20 px-4 md:px-8">
-                <div className="container mx-auto max-w-5xl">
+            {/* The Solution - FFD v3 Dashboard Visual */}
+            <section className="py-24 px-4 md:px-8 bg-muted/20">
+                <div className="container mx-auto max-w-6xl">
                     <div className="text-center mb-16">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
                             <Target className="w-4 h-4" />
-                            <span>The Solution</span>
+                            <span>The Surgical Tool</span>
                         </div>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">FFD™ v3: Financial Forensics Dashboard</h2>
+                        <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight">FFD™ v3: The Ultimate Dashboard</h2>
                         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                            Bukan spreadsheet biasa. Ini adalah <strong className="text-foreground">Sistem Operasi Finansial</strong> — infrastruktur modular untuk mengunci setiap rupiah di tempatnya.
+                            Bukan sekadar spreadsheet. Ini adalah <strong className="text-foreground">Sistem Operasi Finansial</strong> — infrastruktur modular untuk mengunci setiap rupiah di tempatnya.
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {[
-                            {
-                                title: "Scenario Simulator",
-                                aka: "Mode 'Dukun'",
-                                desc: "Prediksi masa depan. Lihat apa yang terjadi pada profit dan cash runway jika Anda naikkan harga 5%, tekan COGS, atau tambah volume."
-                            },
-                            {
-                                title: "15-Pillar Modular System",
-                                aka: "Advanced Diagnosis",
-                                desc: "Dari Inventory Decay hingga LTGP Velocity. Framework 15 pilar ini membedah anatomi bisnis dari sudut pandang yang paling brutal sekalipun."
-                            },
-                            {
-                                title: "Phantom Cost Detector",
-                                aka: "Pemburu Uang Siluman",
-                                desc: "Menemukan kebocoran halus yang tidak tercatat: pungli, waste bahan baku, inefisiensi tim yang 'terlihat sibuk' tapi tidak produktif."
-                            },
-                            {
-                                title: "Real-time Cash Runway",
-                                aka: "Sisa Napas Bisnis",
-                                desc: "Menghitung berapa bulan lagi bisnis Anda bisa bertahan dengan burn rate saat ini. Bukan dihitung manual — otomatis dari data."
-                            }
-                        ].map((feature, idx) => (
-                            <div
-                                key={idx}
-                                className="group p-6 rounded-xl border border-border/50 bg-card/50 hover:bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
-                            >
-                                <div className="flex justify-between items-start mb-3">
-                                    <h3 className="font-bold text-lg">{feature.title}</h3>
-                                    <span className="text-xs text-primary bg-primary/10 px-2 py-1 rounded-full">{feature.aka}</span>
+                    <div className="grid lg:grid-cols-12 gap-12 items-center">
+                        {/* Features List */}
+                        <div className="lg:col-span-5 space-y-4">
+                            {[
+                                {
+                                    title: "Scenario Simulator",
+                                    aka: "Mode 'Dukun'",
+                                    desc: "Prediksi masa depan. Lihat apa yang terjadi pada profit jika Anda naikkan harga 5% atau tekan COGS."
+                                },
+                                {
+                                    title: "15-Pillar Modular System",
+                                    aka: "Advanced Diagnosis",
+                                    desc: "Membedah anatomi bisnis dari Inventory Decay hingga LTGP Velocity secara brutal."
+                                },
+                                {
+                                    title: "Phantom Cost Detector",
+                                    aka: "Pemburu Uang Siluman",
+                                    desc: "Menemukan kebocoran halus yang tidak tercatat: pungli, waste, dan inefisiensi tim."
+                                },
+                                {
+                                    title: "Real-time Cash Runway",
+                                    aka: "Sisa Napas Bisnis",
+                                    desc: "Menghitung berapa bulan lagi bisnis Anda bisa bertahan dengan burn rate saat ini."
+                                }
+                            ].map((feature, idx) => (
+                                <div
+                                    key={idx}
+                                    className="group p-5 rounded-2xl border border-border/50 bg-card/50 hover:bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-xl"
+                                >
+                                    <div className="flex justify-between items-start mb-2">
+                                        <h3 className="font-bold text-base">{feature.title}</h3>
+                                        <span className="text-[10px] text-primary bg-primary/10 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">{feature.aka}</span>
+                                    </div>
+                                    <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
                                 </div>
-                                <p className="text-muted-foreground">{feature.desc}</p>
+                            ))}
+                        </div>
+
+                        {/* Dashboard Visual */}
+                        <div className="lg:col-span-7 relative group">
+                            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-[2.5rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+                            <div className="relative rounded-2xl border border-primary/20 overflow-hidden shadow-2xl bg-background">
+                                <img
+                                    src="/assets/images/ffd.png"
+                                    alt="FFD™ v3 Financial Forensics Dashboard"
+                                    className="w-full h-auto object-cover transform scale-100 group-hover:scale-[1.02] transition-transform duration-700"
+                                />
+                                {/* Scanning Overlay Effect */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent h-1/2 w-full animate-scan pointer-events-none"></div>
+
+                                {/* UI Tags */}
+                                <div className="absolute top-4 left-4 flex gap-2">
+                                    <div className="bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
+                                        <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                                        <span className="text-[10px] font-mono text-white/90">LIVE FEED: DIAGNOSTIC ACTIVE</span>
+                                    </div>
+                                </div>
                             </div>
-                        ))}
+                        </div>
                     </div>
                 </div>
             </section>
