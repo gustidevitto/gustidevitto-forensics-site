@@ -19,6 +19,7 @@ import { Route as GetAccessRouteImport } from './routes/get-access'
 import { Route as ForensicsPillarsRouteImport } from './routes/forensics-pillars'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CalculatorRouteImport } from './routes/calculator'
+import { Route as AboutGustiDevittoRouteImport } from './routes/about-gusti-devitto'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as PilarSlugRouteImport } from './routes/pilar/$slug'
@@ -74,6 +75,11 @@ const CalculatorRoute = CalculatorRouteImport.update({
   path: '/calculator',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutGustiDevittoRoute = AboutGustiDevittoRouteImport.update({
+  id: '/about-gusti-devitto',
+  path: '/about-gusti-devitto',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -97,6 +103,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-gusti-devitto': typeof AboutGustiDevittoRoute
   '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
@@ -113,6 +120,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-gusti-devitto': typeof AboutGustiDevittoRoute
   '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
@@ -130,6 +138,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-gusti-devitto': typeof AboutGustiDevittoRoute
   '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
@@ -148,6 +157,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about-gusti-devitto'
     | '/calculator'
     | '/contact'
     | '/forensics-pillars'
@@ -164,6 +174,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about-gusti-devitto'
     | '/calculator'
     | '/contact'
     | '/forensics-pillars'
@@ -180,6 +191,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about-gusti-devitto'
     | '/calculator'
     | '/contact'
     | '/forensics-pillars'
@@ -197,6 +209,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutGustiDevittoRoute: typeof AboutGustiDevittoRoute
   CalculatorRoute: typeof CalculatorRoute
   ContactRoute: typeof ContactRoute
   ForensicsPillarsRoute: typeof ForensicsPillarsRoute
@@ -284,6 +297,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about-gusti-devitto': {
+      id: '/about-gusti-devitto'
+      path: '/about-gusti-devitto'
+      fullPath: '/about-gusti-devitto'
+      preLoaderRoute: typeof AboutGustiDevittoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -317,6 +337,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutGustiDevittoRoute: AboutGustiDevittoRoute,
   CalculatorRoute: CalculatorRoute,
   ContactRoute: ContactRoute,
   ForensicsPillarsRoute: ForensicsPillarsRoute,
