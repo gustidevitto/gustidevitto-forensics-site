@@ -13,20 +13,43 @@ function AboutGustiDevitto() {
             <title>Profile | Gusti Devitto</title>
             <meta name="description" content="Gusti Devitto (Vitto) adalah spesialis Financial Forensics untuk bisnis multi-outlet. Kreator FFD™ v3 dan Neural Pattern Auditing yang berfokus mendiagnosis Phantom Cost dan inefisiensi operasional." />
 
-            {/* JSON-LD Person Schema */}
+            {/* JSON-LD Schemas */}
             <script type="application/ld+json">
                 {JSON.stringify({
                     "@context": "https://schema.org",
-                    "@type": "Person",
-                    "name": "Gusti Devitto",
-                    "alternateName": "Vitto",
-                    "jobTitle": "Financial Forensics Specialist",
-                    "description": "Gusti Devitto (Vitto) adalah spesialis Financial Forensics untuk bisnis multi-outlet. Kreator FFD™ v3 dan Neural Pattern Auditing yang berfokus mendiagnosis Phantom Cost dan inefisiensi operasional.",
-                    "image": "https://www.gustidevitto.com/assets/images/aboutme.jpg",
-                    "knowsAbout": ["Financial Auditing", "Neural Pattern Auditing", "Business Intelligence", "Phantom Cost", "Unit Economics", "Profit Optimization"],
-                    "url": "https://www.gustidevitto.com/about-gusti-devitto",
-                    "sameAs": [
-                        "https://www.gustidevitto.com"
+                    "@graph": [
+                        {
+                            "@type": "Person",
+                            "@id": "https://www.gustidevitto.com/#person",
+                            "name": "Gusti Devitto",
+                            "alternateName": "Vitto",
+                            "jobTitle": "Financial Forensics Specialist",
+                            "description": "Gusti Devitto (Vitto) adalah spesialis Financial Forensics untuk bisnis multi-outlet. Kreator FFD™ v3 dan Neural Pattern Auditing yang berfokus mendiagnosis Phantom Cost dan inefisiensi operasional.",
+                            "image": "https://www.gustidevitto.com/assets/images/aboutme.jpg",
+                            "knowsAbout": ["Financial Auditing", "Neural Pattern Auditing", "Business Intelligence", "Phantom Cost", "Unit Economics", "Profit Optimization"],
+                            "url": "https://www.gustidevitto.com/about-gusti-devitto",
+                            "founder": {
+                                "@type": "Organization",
+                                "name": "LAPA"
+                            }
+                        },
+                        {
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://www.gustidevitto.com/"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "About Gusti Devitto",
+                                    "item": "https://www.gustidevitto.com/about-gusti-devitto"
+                                }
+                            ]
+                        }
                     ]
                 })}
             </script>

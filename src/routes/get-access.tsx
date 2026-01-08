@@ -54,6 +54,30 @@ function GetAccess() {
 
     return (
         <div className="container relative flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0 min-h-[calc(100vh-4rem)]">
+            <title>Get Access | PCC Lite Diagnostic</title>
+            <meta name="description" content="Mulailah diagnosa gratis bisnis multi-outlet Anda dengan PCC Lite. Deteksi Phantom Costs dalam 15 menit." />
+
+            {/* JSON-LD Service Schema */}
+            <script type="application/ld+json">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    "serviceType": "Financial Forensics Diagnosis",
+                    "provider": {
+                        "@id": "https://www.gustidevitto.com/#organization"
+                    },
+                    "name": "PCC Lite (Phantom Cost Calculator)",
+                    "description": "Diagnosa awal 15 menit untuk mendeteksi kebocoran profit dan Phantom Costs pada bisnis multi-outlet.",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "IDR",
+                        "availability": "https://schema.org/InStock",
+                        "validFor": "2026"
+                    },
+                    "areaServed": "ID"
+                })}
+            </script>
             {/* Left Panel - Storyselling */}
             <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
                 {/* Background Image with Overlay */}

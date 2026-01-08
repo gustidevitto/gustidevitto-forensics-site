@@ -2,79 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.gustidevitto.com/</loc>
-    <lastmod>2026-01-02</lastmod>
+    <lastmod>2026-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.gustidevitto.com/calculator</loc>
-    <lastmod>2026-01-02</lastmod>
+    <loc>https://www.gustidevitto.com/about-gusti-devitto</loc>
+    <lastmod>2026-01-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gustidevitto.com/investasi</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gustidevitto.com/forensics-pillars</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.gustidevitto.com/forensics-pillars</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gustidevitto.com/get-access</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gustidevitto.com/blog</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gustidevitto.com/investasi</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.gustidevitto.com/master-index</loc>
-    <lastmod>2026-01-02</lastmod>
+    <lastmod>2026-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.gustidevitto.com/methodology</loc>
-    <lastmod>2026-01-02</lastmod>
+    <lastmod>2026-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.gustidevitto.com/verdict</loc>
-    <lastmod>2026-01-02</lastmod>
+    <lastmod>2026-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://www.gustidevitto.com/blog</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gustidevitto.com/contact</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- Pillars Deep Links -->
-  <url><loc>https://www.gustidevitto.com/pilar/cash-runway</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/net-burn-rate</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/risk-exposure</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/inventory-decay</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/bep-dynamic</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/ltgp-velocity</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/cash-realization-lag</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/net-profit-trans</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/opex-to-gp</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/net-cash-lock</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/contribution-sku</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/gp-labor-hour</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/gp-leakage</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/ltv-cac</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/pilar/insight-surprise</loc><lastmod>2026-01-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-
-  <!-- Blog Posts Deep Links -->
-  <url><loc>https://www.gustidevitto.com/blog/profit-kertas-vs-uang-bank</loc><lastmod>2025-12-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/blog/menentukan-harga-jual</loc><lastmod>2025-12-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/blog/2025-12-23-</loc><lastmod>2025-12-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.gustidevitto.com/blog/dachicken</loc><lastmod>2025-12-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

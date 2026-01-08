@@ -15,26 +15,39 @@ export const Route = createRootRoute({
             <meta name="twitter:card" content="summary_large_image" />
             <link rel="alternate" type="application/ld+json" href="/ontology.jsonld" />
 
-            {/* JSON-LD for Local Business / Professional Service */}
+            {/* JSON-LD Global Schema */}
             <script type="application/ld+json">
                 {JSON.stringify({
                     "@context": "https://schema.org",
-                    "@type": "ProfessionalService",
-                    "name": "Gusti Devitto Forensics",
-                    "image": "https://www.gustidevitto.com/assets/images/android-chrome-192x192.png",
-                    "description": "Spesialis Business Forensics & Phantom Cost Hunting. Kami bukan mencari fraud atau penipuan (Fraud Hunting), melainkan mendeteksi kebocoran profit (Phantom Cost Hunting) yang tersembunyi di operasional multi-outlet.",
-                    "url": "https://www.gustidevitto.com",
-                    "telephone": "+6281234567890",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressLocality": "Semarang",
-                        "addressRegion": "Jawa Tengah",
-                        "addressCountry": "ID"
-                    },
-                    "knowsAbout": ["Business Forensics", "Phantom Cost Analysis", "Profit Optimization", "Multi-outlet Operations"],
-                    "priceRange": "$$$"
+                    "@graph": [
+                        {
+                            "@type": "WebSite",
+                            "@id": "https://www.gustidevitto.com/#website",
+                            "url": "https://www.gustidevitto.com",
+                            "name": "Gusti Devitto Forensics",
+                            "publisher": { "@id": "https://www.gustidevitto.com/#organization" }
+                        },
+                        {
+                            "@type": "ProfessionalService",
+                            "@id": "https://www.gustidevitto.com/#organization",
+                            "name": "Gusti Devitto Forensics",
+                            "image": "https://www.gustidevitto.com/assets/images/android-chrome-192x192.png",
+                            "description": "Spesialis Business Forensics & Phantom Cost Hunting. Kami bukan mencari fraud atau penipuan (Fraud Hunting), melainkan mendeteksi kebocoran profit (Phantom Cost Hunting) yang tersembunyi di operasional multi-outlet.",
+                            "url": "https://www.gustidevitto.com",
+                            "telephone": "+6281234567890",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "addressLocality": "Semarang",
+                                "addressRegion": "Jawa Tengah",
+                                "addressCountry": "ID"
+                            },
+                            "knowsAbout": ["Business Forensics", "Phantom Cost Analysis", "Profit Optimization", "Multi-outlet Operations"],
+                            "priceRange": "$$$"
+                        }
+                    ]
                 })}
             </script>
+            <link rel="alternate" type="application/ld+json" href="/ontology.jsonld" title="Semantic Knowledge Graph" />
             <div className="min-h-screen bg-background font-sans antialiased relative overflow-hidden">
                 {/* Subtle Moving Background Lights */}
                 <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">

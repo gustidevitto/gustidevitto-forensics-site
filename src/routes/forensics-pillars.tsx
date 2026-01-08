@@ -11,6 +11,25 @@ export const Route = createFileRoute('/forensics-pillars')({
 function ForensicsPillars() {
     return (
         <div className="container py-12 md:py-20 max-w-7xl mx-auto px-4">
+            <title>15 Pillars | Financial Forensics Framework</title>
+            <meta name="description" content="Pelajari 15 pilar metodologi Financial Forensics untuk membedah kebocoran profit bisnis multi-outlet." />
+
+            {/* JSON-LD DefinedTermSet Schema */}
+            <script type="application/ld+json">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "DefinedTermSet",
+                    "@id": "https://www.gustidevitto.com/#methodology",
+                    "name": "15 Pillars of Financial Forensics",
+                    "creator": { "@id": "https://www.gustidevitto.com/#person" },
+                    "hasDefinedTerm": pillarsData.map((p, i) => ({
+                        "@type": "DefinedTerm",
+                        "name": p.title,
+                        "description": p.definition,
+                        "termCode": `PILLAR-${(i + 1).toString().padStart(2, '0')}`
+                    }))
+                })}
+            </script>
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wider uppercase">
                     Core Methodology
