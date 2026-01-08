@@ -326,8 +326,13 @@ function Index() {
                             <p className="text-foreground leading-relaxed font-medium bg-primary/5 p-4 border-l-4 border-primary italic">
                                 "Saya kehilangan mimpi itu bukan karena produk yang buruk, tapi karena saya buta terhadap pendarahan finansial di dalam. Itulah alasan saya mendirikan FFD™ v3—agar Anda tidak perlu membayar harga semahal yang saya bayar."
                             </p>
-                            <div className="pt-4">
+                            <div className="pt-4 flex items-center justify-between">
                                 <p className="text-sm text-muted-foreground">— <strong>Gusti Devitto (Vitto)</strong> | Financial Surgeon</p>
+                                <Button asChild variant="link" className="text-primary hover:text-primary/80 p-0 h-auto">
+                                    <Link to="/about-gusti-devitto" className="flex items-center gap-1">
+                                        Read Full Story <ArrowRight className="w-3 h-3" />
+                                    </Link>
+                                </Button>
                             </div>
                         </div>
                     </div>

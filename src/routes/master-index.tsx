@@ -34,7 +34,7 @@ function MasterIndex() {
                 </div>
                 <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
                     Financial Forensics Framework <br />
-                    <span className="text-primary">by Gusti Devitto</span>
+                    <Link to="/about-gusti-devitto" className="text-primary hover:underline">by Gusti Devitto</Link>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                     Indeks kanonikal untuk semua terminologi, metrik, dan metodologi diagnostik dalam ekosistem Financial Forensics.

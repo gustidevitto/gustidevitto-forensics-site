@@ -62,6 +62,7 @@ export const Route = createRootRoute({
                             {/* Desktop Navigation */}
                             <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
                                 <a href="/get-access" className="transition-colors hover:text-primary">Calculator</a>
+                                <a href="/about-gusti-devitto" className="transition-colors hover:text-primary">About</a>
                                 <a href="/blog" className="transition-colors hover:text-primary">Blog</a>
                                 <a href="/forensics-pillars" className="transition-colors hover:text-primary">15 Pillars</a>
                                 <a href="/investasi" className="transition-colors hover:text-primary">Investasi</a>
@@ -82,6 +83,7 @@ export const Route = createRootRoute({
                                     <SheetContent side="right">
                                         <div className="flex flex-col space-y-6 mt-6">
                                             <a href="/get-access" className="text-lg font-medium hover:text-primary">Calculator</a>
+                                            <a href="/about-gusti-devitto" className="text-lg font-medium hover:text-primary">About</a>
                                             <a href="/blog" className="text-lg font-medium hover:text-primary">Blog</a>
                                             <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">15 Pillars</a>
                                             <a href="/investasi" className="text-lg font-medium hover:text-primary">Investasi</a>
@@ -98,6 +100,9 @@ export const Route = createRootRoute({
                     <footer className="border-t bg-card py-6 md:px-8 md:py-0">
                         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
                             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 md:mt-0">
+                                <a href="/about-gusti-devitto" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                                    About
+                                </a>
                                 <a href="/master-index" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
                                     Framework Index
                                 </a>
