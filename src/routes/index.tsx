@@ -63,6 +63,13 @@ function Index() {
             title: 'Expert Diagnosis',
             src: '/assets/images/audit.png',
             desc: 'We don\'t just look at numbers. We hunt for the "Phantom Costs" that standard accounting misses.'
+        },
+        {
+            id: 'neural-matrix',
+            type: 'image',
+            title: 'Neural Matrix',
+            src: '/assets/images/ffd1.png',
+            desc: 'The Neural Matrix: Advanced pattern recognition to detect hidden financial anomalies.'
         }
     ]
 

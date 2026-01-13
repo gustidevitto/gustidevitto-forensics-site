@@ -28,17 +28,28 @@ function MasterIndex() {
             <title>Master Index - Financial Forensics Framework by Gusti Devitto</title>
 
             {/* Hero */}
-            <header className="text-center space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
-                    <BookOpen className="w-4 h-4" /> Single Source of Truth
+            <header className="text-center space-y-8 relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-transparent rounded-[3rem] blur-2xl opacity-50"></div>
+                <div className="relative mx-auto max-w-2xl h-48 rounded-2xl overflow-hidden border border-border shadow-xl mb-8">
+                    <img
+                        src="/assets/images/ffd.png"
+                        alt="FFD Framework Visual"
+                        className="w-full h-full object-cover grayscale-[0.2] transition-all duration-700 group-hover:grayscale-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
                 </div>
-                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-                    Financial Forensics Framework <br />
-                    <Link to="/about-gusti-devitto" className="text-primary hover:underline">by Gusti Devitto</Link>
-                </h1>
-                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                    Indeks kanonikal untuk semua terminologi, metrik, dan metodologi diagnostik dalam ekosistem Financial Forensics.
-                </p>
+                <div className="space-y-4">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+                        <BookOpen className="w-4 h-4" /> Single Source of Truth
+                    </div>
+                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-balance">
+                        Financial Forensics Framework <br />
+                        <Link to="/about-gusti-devitto" className="text-primary hover:underline">by Gusti Devitto</Link>
+                    </h1>
+                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                        Indeks kanonikal untuk semua terminologi, metrik, dan metodologi diagnostik dalam ekosistem Financial Forensics.
+                    </p>
+                </div>
             </header>
 
             {/* Pillar Index */}

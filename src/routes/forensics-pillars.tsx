@@ -68,7 +68,7 @@ function ForensicsPillars() {
                             <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition duration-700"></div>
                             <div className="relative rounded-xl border border-white/10 overflow-hidden shadow-2xl">
                                 <img
-                                    src="/assets/images/ffd.png"
+                                    src="/assets/images/ffd1.png"
                                     alt="FFD™ v3 Interface"
                                     className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
                                 />

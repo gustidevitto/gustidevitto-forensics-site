@@ -213,7 +213,7 @@ function AboutGustiDevitto() {
 
                         <div className="relative rounded-2xl border border-border/50 overflow-hidden shadow-2xl group">
                             <img
-                                src="/assets/images/ffd.png"
+                                src="/assets/images/ffd1.png"
                                 alt="Dashboard Preview"
                                 className="w-full h-auto grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-[1.01]"
                             />
