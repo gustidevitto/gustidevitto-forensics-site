@@ -536,73 +536,145 @@ function Index() {
             </section>
 
             {/* Pricing Transparency Section */}
-            <section id="pricing" className="py-24 px-4 md:px-8 border-t border-border/50 bg-background relative overflow-hidden">
-                <div className="container mx-auto max-w-6xl">
+            <section id="pricing" className="py-24 px-4 md:px-8 border-t border-border/50 bg-[#0a0a0a] relative overflow-hidden">
+                <div className="container mx-auto max-w-7xl">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight uppercase">Transparent Intelligence Economics</h2>
                         <p className="text-muted-foreground text-lg">Predictable pricing for precise forensic intervention.</p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {/* SME Tier */}
-                        <div className="p-8 rounded-2xl border border-border/50 bg-card/50 flex flex-col">
-                            <div className="mb-6">
-                                <h3 className="text-xl font-black uppercase mb-1">SME Tier</h3>
-                                <p className="text-xs text-primary font-bold tracking-widest uppercase">CFO-as-a-Service</p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-y-6 md:gap-8 items-stretch relative">
+                        {/* SME Group Decoration Background - Desktop Only */}
+                        <div className="hidden md:block absolute col-start-1 row-start-1 row-span-3 -inset-4 border border-primary/10 bg-primary/5 rounded-[2.5rem] pointer-events-none" />
+
+                        {/* 1. SME STARTER */}
+                        <div className="md:col-start-1 md:row-start-1 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-10 hover:border-primary/30 transition-all group">
+                            <div className="mb-4">
+                                <h3 className="text-xl font-black uppercase text-white">Starter</h3>
+                                <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">Fundamental Audit</p>
                             </div>
                             <div className="mb-8">
-                                <p className="text-3xl font-black">Rp 3jt - 5jt</p>
-                                <p className="text-xs text-muted-foreground">per month / engagement</p>
+                                <p className="text-3xl font-black text-white">Rp 3jt<span className="text-xs font-normal text-muted-foreground ml-1">/mo</span></p>
                             </div>
                             <ul className="space-y-4 mb-8 flex-1">
-                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Phantom Cost Hunting</li>
-                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Monthly Operational MRI</li>
-                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Margin Optimization</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> Phantom Cost Hunting (Monthly)</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> Dashboard Access (Read-Only)</li>
                             </ul>
-                            <Button asChild className="w-full bg-primary text-primary-foreground font-black">
-                                <Link to="/get-access">ACTIVATE SME AUDIT</Link>
-                            </Button>
+                            <div className="pt-6 border-t border-border/10">
+                                <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">Powered by FFD™ v3 Neural Engine</p>
+                                <Button asChild className="w-full bg-primary/10 text-primary hover:bg-primary hover:text-black font-black transition-all">
+                                    <Link to="/get-access">ACTIVATE STARTER</Link>
+                                </Button>
+                            </div>
                         </div>
 
-                        {/* Enterprise Tier */}
-                        <div className="p-8 rounded-2xl border-2 border-amber-500 bg-black text-white relative flex flex-col scale-105 shadow-2xl">
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-black text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-tighter">Recommended for Investors</div>
-                            <div className="mb-6">
-                                <h3 className="text-xl font-black uppercase mb-1 text-amber-500">Enterprise Tier</h3>
-                                <p className="text-xs text-amber-500/80 font-bold tracking-widest uppercase">Due Diligence Intelligence</p>
+                        {/* 2. SME GROWTH */}
+                        <div className="md:col-start-1 md:row-start-2 p-8 rounded-2xl border border-primary/30 bg-[#121212] flex flex-col relative z-10 shadow-xl shadow-primary/5 hover:border-primary/60 transition-all">
+                            <div className="absolute -top-3 right-4 bg-[#FF0080] px-3 py-1 rounded-full text-[10px] font-black text-white uppercase tracking-wider shadow-lg z-20">POPULAR CHOICE</div>
+                            <div className="mb-4">
+                                <h3 className="text-xl font-black uppercase text-white">Growth</h3>
+                                <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">Advanced Diagnosis</p>
                             </div>
                             <div className="mb-8">
-                                <p className="text-3xl font-black">$10,000</p>
-                                <p className="text-xs text-gray-400">per Audit Engagement</p>
+                                <p className="text-3xl font-black text-white">Rp 4jt<span className="text-xs font-normal text-muted-foreground ml-1">/mo</span></p>
                             </div>
                             <ul className="space-y-4 mb-8 flex-1">
-                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-amber-500" /> Full M&A Due Diligence</li>
-                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-amber-500" /> Revenue Integrity Verification</li>
-                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-amber-500" /> Deep-Layer Neural Scan</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium whitespace-nowrap"><ShieldCheck className="w-4 h-4 text-primary" /> Everything in Starter</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium whitespace-nowrap"><ShieldCheck className="w-4 h-4 text-primary" /> 2x Monthly Check-ins</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium whitespace-nowrap"><ShieldCheck className="w-4 h-4 text-primary" /> 30-min Strategy Call</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium whitespace-nowrap"><ShieldCheck className="w-4 h-4 text-primary" /> Full Dashboard Simulation</li>
                             </ul>
-                            <Button asChild className="w-full bg-amber-500 text-black font-black hover:bg-amber-600">
+                            <div className="pt-6 border-t border-border/10">
+                                <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">Powered by FFD™ v3 Neural Engine</p>
+                                <Button asChild className="w-full bg-primary text-black hover:bg-primary/90 font-black shadow-lg shadow-primary/20">
+                                    <Link to="/get-access">ACTIVATE GROWTH</Link>
+                                </Button>
+                            </div>
+                        </div>
+
+                        {/* 3. SME SCALE */}
+                        <div className="md:col-start-1 md:row-start-3 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-10 hover:border-primary/30 transition-all group">
+                            <div className="mb-4">
+                                <h3 className="text-xl font-black uppercase text-white">Scale</h3>
+                                <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">Deep Oversight</p>
+                            </div>
+                            <div className="mb-8">
+                                <p className="text-3xl font-black text-white">Rp 5jt<span className="text-xs font-normal text-muted-foreground ml-1">/mo</span></p>
+                            </div>
+                            <ul className="space-y-4 mb-8 flex-1">
+                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> Everything in Growth</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> Weekly Pulse Monitoring</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> Neural Pattern Training</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> WhatsApp Priority Line</li>
+                            </ul>
+                            <div className="pt-6 border-t border-border/10">
+                                <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">Powered by FFD™ v3 Neural Engine</p>
+                                <Button asChild className="w-full bg-primary/10 text-primary hover:bg-primary hover:text-black font-black transition-all">
+                                    <Link to="/get-access">ACTIVATE SCALE</Link>
+                                </Button>
+                            </div>
+                        </div>
+
+                        {/* 4. ENTERPRISE TIER - ANCHOR */}
+                        <div className="md:col-start-2 md:row-start-1 md:row-span-3 p-10 rounded-[2.5rem] border-2 border-primary bg-[#121212] flex flex-col relative z-20 shadow-[0_0_50px_rgba(255,215,0,0.1)] ring-1 ring-primary/20 md:scale-[1.05] overflow-hidden group">
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-black text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-[0.2em] shadow-2xl whitespace-nowrap z-30">RECOMMENDED FOR INVESTORS</div>
+
+                            {/* Visual Glow Layer */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-50 group-hover:opacity-80 transition-opacity pointer-events-none"></div>
+
+                            <div className="mb-8 mt-6 relative z-10">
+                                <h3 className="text-4xl font-black uppercase mb-1 text-primary tracking-tighter">Enterprise</h3>
+                                <p className="text-xs text-primary/80 font-bold tracking-[0.3em] uppercase">Due Diligence Intelligence Unit</p>
+                            </div>
+
+                            <div className="mb-12 relative z-10">
+                                <div className="flex items-baseline gap-2">
+                                    <p className="text-6xl font-black text-white">$10,000</p>
+                                    <span className="text-[#FF0080] font-black text-xs animate-pulse">L-7 AUTH</span>
+                                </div>
+                                <p className="text-xs text-muted-foreground mt-2 uppercase font-bold tracking-widest bg-white/5 w-fit px-2 py-1 rounded">per Audit Engagement</p>
+                            </div>
+
+                            <ul className="space-y-8 mb-16 flex-1 relative z-10">
+                                <li className="flex items-start gap-4 text-gray-100 font-bold text-lg leading-tight">
+                                    <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30 shadow-lg shadow-primary/20"><ShieldCheck className="w-6 h-6 text-primary" /></div>
+                                    <span>Full M&A Due Diligence</span>
+                                </li>
+                                <li className="flex items-start gap-4 text-gray-100 font-bold text-lg leading-tight">
+                                    <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30 shadow-lg shadow-primary/20"><ShieldCheck className="w-6 h-6 text-primary" /></div>
+                                    <span>Revenue Integrity Verification</span>
+                                </li>
+                                <li className="flex items-start gap-4 text-gray-100 font-bold text-lg leading-tight">
+                                    <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30 shadow-lg shadow-primary/20"><ShieldCheck className="w-6 h-6 text-primary" /></div>
+                                    <span>Deep-Layer Neural Scan</span>
+                                </li>
+                            </ul>
+
+                            <Button asChild className="w-full bg-primary text-black font-black hover:bg-white hover:scale-105 transition-all h-20 text-xl shadow-[0_15px_30px_rgba(255,215,0,0.3)] relative z-10">
                                 <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">BOOK ENTERPRISE AUDIT</a>
                             </Button>
                         </div>
 
-                        {/* Franchise Tier */}
-                        <div className="p-8 rounded-2xl border border-border/50 bg-card/50 flex flex-col">
-                            <div className="mb-6">
-                                <h3 className="text-xl font-black uppercase mb-1">Franchise Tier</h3>
-                                <p className="text-xs text-primary font-bold tracking-widest uppercase">Network Monitoring License</p>
+                        {/* 5. FRANCHISE TIER - OUTLIER */}
+                        <div className="md:col-start-3 md:row-start-1 md:row-span-3 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-20 hover:border-primary/30 transition-all opacity-80 hover:opacity-100 group">
+                            <div className="mb-6 pointer-events-none">
+                                <h3 className="text-2xl font-black uppercase mb-1 text-white">Franchise</h3>
+                                <p className="text-xs text-primary font-bold tracking-[0.2em] uppercase font-mono">Network Monitoring</p>
                             </div>
-                            <div className="mb-8">
-                                <p className="text-3xl font-black">Custom</p>
-                                <p className="text-xs text-muted-foreground">Annual License Arrangement</p>
+                            <div className="mb-10">
+                                <p className="text-4xl font-black text-white">Custom</p>
+                                <p className="text-[10px] text-muted-foreground uppercase font-black tracking-widest mt-1">Annual License Arrangement</p>
                             </div>
-                            <ul className="space-y-4 mb-8 flex-1">
-                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Multi-Outlet Neural Guard</li>
-                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Automated Fraud Flagging</li>
-                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Royalty Integrity Units</li>
+                            <ul className="space-y-6 mb-12 flex-1">
+                                <li className="text-sm flex items-center gap-3 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-5 h-5 text-primary/70" /> Multi-Outlet Neural Guard</li>
+                                <li className="text-sm flex items-center gap-3 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-5 h-5 text-primary/70" /> Automated Fraud Flagging</li>
+                                <li className="text-sm flex items-center gap-3 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-5 h-5 text-primary/70" /> Royalty Integrity Units</li>
                             </ul>
-                            <Button asChild variant="outline" className="w-full border-primary/50 text-primary font-black hover:bg-primary/10">
-                                <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">INQUIRE CUSTOM PLAN</a>
-                            </Button>
+                            <div className="pt-8 border-t border-border/20">
+                                <Button asChild variant="outline" className="w-full border-primary/50 text-white font-black hover:bg-primary hover:text-black transition-all h-14 uppercase tracking-widest">
+                                    <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">INQUIRE CUSTOM PLAN</a>
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>
