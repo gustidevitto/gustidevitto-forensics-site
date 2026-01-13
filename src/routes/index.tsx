@@ -133,12 +133,12 @@ function Index() {
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-foreground leading-[0.9] uppercase">
                         Stop Guessing. <br />
                         Start Auditing. <br />
-                        <span className="text-primary">Institutional-Grade <br />Forensic Intelligence.</span>
+                        <span className="text-primary tracking-tighter">I Hunt Phantom Costs for Founders. <br />I Verify Integrity for Investors.</span>
                     </h1>
 
                     {/* Subheadline - Dual Segment Logic */}
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                        Whether you're a multi-outlet owner losing cash or an investor auditing a $10M target, <strong className="text-foreground font-bold">FFD™ v3 detects what accountants miss.</strong> Neural-powered. Private. 15-Minute Diagnosis.
+                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
+                        Whether you're a multi-outlet founder losing cash to "invisible" leaks or an investor auditing a $10M target, <strong className="text-foreground font-bold">FFD™ v3 exposes exactly where the money is bleeding.</strong> Neural-powered. Absolute Privacy. 15-Minute MRI.
                     </p>
 
                     {/* CTA - Side-by-Side Dual Logic */}
@@ -235,36 +235,42 @@ function Index() {
                 </div>
             </section>
 
-            {/* New Section: The Forensic Shield (Tier 1 & 2 Positioning) */}
-            <section id="investors" className="py-20 px-4 md:px-8 bg-black text-white relative overflow-hidden">
+            {/* New Section: Institutional Intelligence Unit (The Investor Gate) */}
+            <section id="investors" className="py-24 px-4 md:px-8 bg-black text-white relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
                 </div>
                 <div className="container mx-auto max-w-6xl relative z-10">
                     <div className="text-center mb-16">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-black uppercase tracking-widest border border-primary/30 mb-6">
+                            Institutional Intelligence Unit
+                        </div>
                         <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight uppercase">
-                            Beyond Small Business Optimization: <br />
-                            <span className="text-amber-500">Risk Intelligence for High-Stakes Decisions.</span>
+                            I Verify What Management <br />
+                            <span className="text-primary">Refuses to Disclose.</span>
                         </h2>
+                        <p className="text-gray-400 max-w-2xl mx-auto italic">
+                            Investment due diligence isn't about numbers on a page; it's about the patterns the management tries to hide. We use Neural AI to find the "Black Holes."
+                        </p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
-                        <div className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-500/50 transition-all group">
-                            <h3 className="text-xl font-black mb-4 text-amber-500 uppercase">M&A Due Diligence</h3>
+                        <div className="p-10 rounded-[2rem] bg-zinc-900/50 border border-white/5 hover:border-primary/50 transition-all group">
+                            <h3 className="text-xl font-black mb-4 text-primary uppercase">M&A Forensic Due Diligence</h3>
                             <p className="text-sm text-gray-400 leading-relaxed">
-                                Detect financial manipulation, revenue inflation, and cooked books before signing acquisition deals. <strong className="text-white">90% cheaper than Big 4 audits.</strong>
+                                Detect revenue inflation, cooked books, and hidden liabilities before the wire transfer. <strong className="text-white">We invalidate bad deals before they drain your capital.</strong>
                             </p>
                         </div>
-                        <div id="franchise" className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-500/50 transition-all group">
-                            <h3 className="text-xl font-black mb-4 text-amber-500 uppercase">Franchise Monitoring</h3>
+                        <div id="franchise" className="p-10 rounded-[2rem] bg-zinc-900/50 border border-white/5 hover:border-primary/50 transition-all group">
+                            <h3 className="text-xl font-black mb-4 text-primary uppercase">Franchise Royalty Guard</h3>
                             <p className="text-sm text-gray-400 leading-relaxed">
-                                Real-time fraud detection across 100+ locations. Flag underreporting franchisees automatically using <strong className="text-white">Neural AI.</strong>
+                                Universal oversight across 100+ locations. Flag underreporting franchisees and "off-the-books" transactions using <strong className="text-white">Neural Anomaly Detection.</strong>
                             </p>
                         </div>
-                        <div className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-500/50 transition-all group">
-                            <h3 className="text-xl font-black mb-4 text-amber-500 uppercase">Loan Underwriting</h3>
+                        <div className="p-10 rounded-[2rem] bg-zinc-900/50 border border-white/5 hover:border-primary/50 transition-all group">
+                            <h3 className="text-xl font-black mb-4 text-primary uppercase">ESG & Integrity Audit</h3>
                             <p className="text-sm text-gray-400 leading-relaxed">
-                                Statistical anomaly detection for banks and lenders to verify borrower health in <strong className="text-white">minutes, not weeks.</strong>
+                                Beyond financial metrics. We verify the biological integrity of the operation. If they're stealing from the system, <strong className="text-white">we find the trail in minutes.</strong>
                             </p>
                         </div>
                     </div>
@@ -376,27 +382,27 @@ function Index() {
 
                         {/* Story */}
                         <div className="md:col-span-3 space-y-4">
-                            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight">Kenapa Saya Membangun Ini?</h2>
+                            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight">Mission Protocol: Why I Build This</h2>
                             <p className="text-muted-foreground leading-relaxed">
-                                Saya pernah berada di posisi Anda. Founder <strong className="text-foreground">Dachicken Indonesia</strong> — pioneer ayam panggang utuh 9 rasa pertama di Semarang. Saat pandemi menghantam dan banyak bisnis tumbang, Dachicken justru <strong className="text-primary">meroket</strong>.
+                                I am not a business consultant. Consultants sell advice. <strong className="text-foreground">I am a Forensic Surgeon. I find the money.</strong>
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
-                                Seminggu sekali saya bisa belanja aset perhiasan emas hasil dari antrean yang tak putus. Saya merasa telah menaklukkan badai.
+                                This mission is personal. I built <strong className="text-foreground">Dachicken Indonesia</strong> from zero to Semarang's most viral retail brand. As we meroket, I felt invincible. I was buying assets every week.
+                            </p>
+                            <p className="text-muted-foreground leading-relaxed text-sm italic">
+                                But I was blind. I was focused on the "front of the house" while the system was bleeding internally. Small, "invisible" leaks in COGS and labor efficiency—Phantom Costs—were eating my dream alive.
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
-                                <strong className="text-destructive uppercase tracking-wide font-bold">Tapi saya membangun istana di atas pasir.</strong> Saat kompetitor raksasa datang membanting harga secara tidak masuk akal, saya sadar: saya tidak punya pertahanan finansial.
+                                When a massive price war hit, I had no defense. My assets were liquidated, and my dream collapsed. <strong className="text-primary font-bold">FFD™ v3 exists because I refuse to let your hard work be stolen by the same systemic blindness.</strong>
                             </p>
-                            <p className="text-muted-foreground leading-relaxed">
-                                Aset perhiasan yang saya kumpulkan habis ludes demi menyelamatkan usaha yang hancur, tapi tetap gagal.
-                            </p>
-                            <p className="text-foreground leading-relaxed font-medium bg-primary/5 p-4 border-l-4 border-primary italic">
-                                "Saya kehilangan mimpi itu bukan karena produk yang buruk, tapi karena saya buta terhadap pendarahan finansial di dalam. Itulah alasan saya mendirikan FFD™ v3—agar Anda tidak perlu membayar harga semahal yang saya bayar."
+                            <p className="text-foreground leading-relaxed font-bold bg-primary/5 p-4 border-l-4 border-primary italic">
+                                "The accounting books lie by omission. The Neural Engine tells the truth. I build this to verify the biological health of your capital—whether you're the one running it, or the one investing in it."
                             </p>
                             <div className="pt-4 flex items-center justify-between">
-                                <p className="text-sm text-muted-foreground">— <strong>Gusti Devitto (Vitto)</strong> | Financial Surgeon</p>
-                                <Button asChild variant="link" className="text-primary hover:text-primary/80 p-0 h-auto">
+                                <p className="text-sm text-muted-foreground">— <strong>Gusti Devitto (Vitto)</strong></p>
+                                <Button asChild variant="link" className="text-primary hover:text-primary/80 p-0 h-auto font-black uppercase tracking-widest text-[10px]">
                                     <Link to="/about-gusti-devitto" className="flex items-center gap-1">
-                                        Read Full Story <ArrowRight className="w-3 h-3" />
+                                        The Full Truth <ArrowRight className="w-3 h-3" />
                                     </Link>
                                 </Button>
                             </div>
@@ -545,11 +551,19 @@ function Index() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-6 gap-y-12 md:gap-y-32 md:gap-x-8 items-stretch relative">
+                        {/* Segment Header for Row 1: Founders */}
+                        <div className="md:col-span-6 flex items-center gap-4 mb-2 md:-mb-16 z-20">
+                            <div className="px-4 py-1.5 bg-primary/10 border border-primary/30 rounded-full text-[10px] font-black text-primary uppercase tracking-widest">
+                                01. SME Operational Suite (For Founders)
+                            </div>
+                            <div className="flex-1 h-px bg-white/5"></div>
+                        </div>
+
                         {/* SME Group Decoration Background - Desktop Row 1 */}
-                        <div className="hidden md:block absolute top-0 -inset-x-4 h-[44%] border border-primary/10 bg-primary/5 rounded-[3rem] pointer-events-none" />
+                        <div className="hidden md:block absolute top-[60px] -inset-x-4 h-[44%] border border-primary/10 bg-primary/5 rounded-[3rem] pointer-events-none" />
 
                         {/* 1. SME STARTER (Mobile 1st, Desktop Row 1 Col 1) */}
-                        <div className="md:col-span-2 md:order-1 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-10 hover:border-primary/30 transition-all group">
+                        <div className="md:col-span-2 md:order-1 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-20 hover:border-primary/30 transition-all group">
                             <div className="mb-4">
                                 <h3 className="text-xl font-black uppercase text-white">Starter</h3>
                                 <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">Fundamental Audit</p>
@@ -614,6 +628,14 @@ function Index() {
                                     <Link to="/get-access">ACTIVATE SCALE</Link>
                                 </Button>
                             </div>
+                        </div>
+
+                        {/* Segment Header for Row 2: Investors */}
+                        <div className="md:col-span-6 flex items-center gap-4 mb-2 md:-mb-16 z-20 mt-12 md:mt-0">
+                            <div className="px-4 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-[10px] font-black text-primary uppercase tracking-widest">
+                                02. Institutional Intelligence Unit (For Investors)
+                            </div>
+                            <div className="flex-1 h-px bg-white/5"></div>
                         </div>
 
                         {/* 3. ENTERPRISE TIER (Mobile 3rd, Desktop Row 2 Col 2-3) */}
