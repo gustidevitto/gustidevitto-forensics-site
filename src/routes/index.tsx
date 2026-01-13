@@ -538,17 +538,18 @@ function Index() {
             {/* Pricing Transparency Section */}
             <section id="pricing" className="py-24 px-4 md:px-8 border-t border-border/50 bg-[#0a0a0a] relative overflow-hidden">
                 <div className="container mx-auto max-w-7xl">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-20">
                         <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight uppercase">Transparent Intelligence Economics</h2>
-                        <p className="text-muted-foreground text-lg">Predictable pricing for precise forensic intervention.</p>
+                        <div className="h-1 w-24 bg-primary mx-auto mb-6"></div>
+                        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Predictable pricing for precise forensic intervention. No hidden fees, only hidden profit recovery.</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-y-6 md:gap-8 items-stretch relative">
-                        {/* SME Group Decoration Background - Desktop Only */}
-                        <div className="hidden md:block absolute col-start-1 row-start-1 row-span-3 -inset-4 border border-primary/10 bg-primary/5 rounded-[2.5rem] pointer-events-none" />
+                    <div className="grid grid-cols-1 md:grid-cols-6 gap-y-12 md:gap-y-32 md:gap-x-8 items-stretch relative">
+                        {/* SME Group Decoration Background - Desktop Row 1 */}
+                        <div className="hidden md:block absolute top-0 -inset-x-4 h-[44%] border border-primary/10 bg-primary/5 rounded-[3rem] pointer-events-none" />
 
-                        {/* 1. SME STARTER */}
-                        <div className="md:col-start-1 md:row-start-1 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-10 hover:border-primary/30 transition-all group">
+                        {/* 1. SME STARTER (Mobile 1st, Desktop Row 1 Col 1) */}
+                        <div className="md:col-span-2 md:order-1 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-10 hover:border-primary/30 transition-all group">
                             <div className="mb-4">
                                 <h3 className="text-xl font-black uppercase text-white">Starter</h3>
                                 <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">Fundamental Audit</p>
@@ -568,8 +569,8 @@ function Index() {
                             </div>
                         </div>
 
-                        {/* 2. SME GROWTH */}
-                        <div className="md:col-start-1 md:row-start-2 p-8 rounded-2xl border border-primary/30 bg-[#121212] flex flex-col relative z-10 shadow-xl shadow-primary/5 hover:border-primary/60 transition-all">
+                        {/* 2. SME GROWTH (Mobile 2nd, Desktop Row 1 Col 2) */}
+                        <div className="md:col-span-2 md:order-2 p-8 rounded-2xl border border-primary/30 bg-[#121212] flex flex-col relative z-10 shadow-xl shadow-primary/5 hover:border-primary/60 transition-all">
                             <div className="absolute -top-3 right-4 bg-[#FF0080] px-3 py-1 rounded-full text-[10px] font-black text-white uppercase tracking-wider shadow-lg z-20">POPULAR CHOICE</div>
                             <div className="mb-4">
                                 <h3 className="text-xl font-black uppercase text-white">Growth</h3>
@@ -579,10 +580,10 @@ function Index() {
                                 <p className="text-3xl font-black text-white">Rp 4jt<span className="text-xs font-normal text-muted-foreground ml-1">/mo</span></p>
                             </div>
                             <ul className="space-y-4 mb-8 flex-1">
-                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium whitespace-nowrap"><ShieldCheck className="w-4 h-4 text-primary" /> Everything in Starter</li>
-                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium whitespace-nowrap"><ShieldCheck className="w-4 h-4 text-primary" /> 2x Monthly Check-ins</li>
-                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium whitespace-nowrap"><ShieldCheck className="w-4 h-4 text-primary" /> 30-min Strategy Call</li>
-                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium whitespace-nowrap"><ShieldCheck className="w-4 h-4 text-primary" /> Full Dashboard Simulation</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> Everything in Starter</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> 2x Monthly Check-ins</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> 30-min Strategy Call</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> Full Dashboard Simulation</li>
                             </ul>
                             <div className="pt-6 border-t border-border/10">
                                 <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">Powered by FFD™ v3 Neural Engine</p>
@@ -592,8 +593,8 @@ function Index() {
                             </div>
                         </div>
 
-                        {/* 3. SME SCALE */}
-                        <div className="md:col-start-1 md:row-start-3 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-10 hover:border-primary/30 transition-all group">
+                        {/* 4. SME SCALE (Mobile 4th, Desktop Row 1 Col 3) */}
+                        <div className="md:col-span-2 md:order-3 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-10 hover:border-primary/30 transition-all group">
                             <div className="mb-4">
                                 <h3 className="text-xl font-black uppercase text-white">Scale</h3>
                                 <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">Deep Oversight</p>
@@ -615,19 +616,19 @@ function Index() {
                             </div>
                         </div>
 
-                        {/* 4. ENTERPRISE TIER - ANCHOR */}
-                        <div className="md:col-start-2 md:row-start-1 md:row-span-3 p-10 rounded-[2.5rem] border-2 border-primary bg-[#121212] flex flex-col relative z-20 shadow-[0_0_50px_rgba(255,215,0,0.1)] ring-1 ring-primary/20 md:scale-[1.05] overflow-hidden group">
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-black text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-[0.2em] shadow-2xl whitespace-nowrap z-30">RECOMMENDED FOR INVESTORS</div>
+                        {/* 3. ENTERPRISE TIER (Mobile 3rd, Desktop Row 2 Col 2-3) */}
+                        <div className="md:col-start-2 md:col-span-2 md:order-4 p-10 rounded-[2.5rem] border-2 border-primary bg-[#121212] flex flex-col relative z-20 shadow-[0_0_60px_rgba(255,215,0,0.15)] ring-1 ring-primary/20 md:scale-[1.12] overflow-visible group">
+                            <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-primary text-black text-[10px] font-black px-6 py-2.5 rounded-full uppercase tracking-[0.2em] shadow-2xl whitespace-nowrap z-30 border border-black/10">RECOMMENDED FOR INVESTORS</div>
 
                             {/* Visual Glow Layer */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-50 group-hover:opacity-80 transition-opacity pointer-events-none"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-50 group-hover:opacity-80 transition-opacity pointer-events-none rounded-[2.5rem]"></div>
 
-                            <div className="mb-8 mt-6 relative z-10">
+                            <div className="mb-8 mt-4 relative z-10">
                                 <h3 className="text-4xl font-black uppercase mb-1 text-primary tracking-tighter">Enterprise</h3>
                                 <p className="text-xs text-primary/80 font-bold tracking-[0.3em] uppercase">Due Diligence Intelligence Unit</p>
                             </div>
 
-                            <div className="mb-12 relative z-10">
+                            <div className="mb-10 relative z-10">
                                 <div className="flex items-baseline gap-2">
                                     <p className="text-6xl font-black text-white">$10,000</p>
                                     <span className="text-[#FF0080] font-black text-xs animate-pulse">L-7 AUTH</span>
@@ -635,17 +636,17 @@ function Index() {
                                 <p className="text-xs text-muted-foreground mt-2 uppercase font-bold tracking-widest bg-white/5 w-fit px-2 py-1 rounded">per Audit Engagement</p>
                             </div>
 
-                            <ul className="space-y-8 mb-16 flex-1 relative z-10">
+                            <ul className="space-y-6 mb-12 flex-1 relative z-10">
                                 <li className="flex items-start gap-4 text-gray-100 font-bold text-lg leading-tight">
-                                    <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30 shadow-lg shadow-primary/20"><ShieldCheck className="w-6 h-6 text-primary" /></div>
+                                    <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30 shadow-lg shadow-primary/20"><ShieldCheck className="w-5 h-5 text-primary" /></div>
                                     <span>Full M&A Due Diligence</span>
                                 </li>
                                 <li className="flex items-start gap-4 text-gray-100 font-bold text-lg leading-tight">
-                                    <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30 shadow-lg shadow-primary/20"><ShieldCheck className="w-6 h-6 text-primary" /></div>
+                                    <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30 shadow-lg shadow-primary/20"><ShieldCheck className="w-5 h-5 text-primary" /></div>
                                     <span>Revenue Integrity Verification</span>
                                 </li>
                                 <li className="flex items-start gap-4 text-gray-100 font-bold text-lg leading-tight">
-                                    <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30 shadow-lg shadow-primary/20"><ShieldCheck className="w-6 h-6 text-primary" /></div>
+                                    <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30 shadow-lg shadow-primary/20"><ShieldCheck className="w-5 h-5 text-primary" /></div>
                                     <span>Deep-Layer Neural Scan</span>
                                 </li>
                             </ul>
@@ -655,8 +656,8 @@ function Index() {
                             </Button>
                         </div>
 
-                        {/* 5. FRANCHISE TIER - OUTLIER */}
-                        <div className="md:col-start-3 md:row-start-1 md:row-span-3 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-20 hover:border-primary/30 transition-all opacity-80 hover:opacity-100 group">
+                        {/* 5. FRANCHISE TIER (Mobile 5th, Desktop Row 2 Col 4-5) */}
+                        <div className="md:col-start-4 md:col-span-2 md:order-5 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-10 hover:border-primary/30 transition-all opacity-80 hover:opacity-100 group">
                             <div className="mb-6 pointer-events-none">
                                 <h3 className="text-2xl font-black uppercase mb-1 text-white">Franchise</h3>
                                 <p className="text-xs text-primary font-bold tracking-[0.2em] uppercase font-mono">Network Monitoring</p>
