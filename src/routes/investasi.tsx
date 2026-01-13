@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
-import { ShieldCheck, ArrowRight, Globe, Lock, Cpu, BarChart3, Users, Building2, Briefcase } from "lucide-react"
+import { ShieldCheck, ArrowRight, Globe, Lock, Cpu, BarChart3, Building2, Briefcase } from "lucide-react"
 
 export const Route = createFileRoute('/investasi')({
     component: InvestasiPage,
