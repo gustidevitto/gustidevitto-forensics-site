@@ -1,4 +1,5 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router'
+import { useState, useEffect } from 'react'
 import { ModeToggle } from '@/components/mode-toggle'
 import { ThemeProvider } from "@/components/theme-provider"
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
@@ -48,7 +49,7 @@ export const Route = createRootRoute({
                 })}
             </script>
             <link rel="alternate" type="application/ld+json" href="/ontology.jsonld" title="Semantic Knowledge Graph" />
-            <div className="min-h-screen bg-background font-sans antialiased relative overflow-hidden">
+            <div className="min-h-screen bg-background font-sans antialiased relative">
                 {/* Subtle Moving Background Lights */}
                 <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
                     <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] animate-subtle-glow"></div>
@@ -93,7 +94,7 @@ export const Route = createRootRoute({
                                 <a href="/about-gusti-devitto" className="transition-colors hover:text-primary">About</a>
                                 <a href="/blog" className="transition-colors hover:text-primary">Blog</a>
                                 <a href="/forensics-pillars" className="transition-colors hover:text-primary">15 Pillars</a>
-                                <a href="/#pricing" className="transition-colors hover:text-primary font-bold decoration-primary underline-offset-4 decoration-2">Pricing</a>
+                                <a href="/investasi" className="transition-colors hover:text-primary font-bold decoration-primary underline-offset-4 decoration-2">Pricing</a>
                                 <a href="/contact" className="transition-colors hover:text-primary">Contact</a>
                                 <ModeToggle />
                             </nav>
@@ -119,7 +120,7 @@ export const Route = createRootRoute({
                                             <a href="/about-gusti-devitto" className="text-lg font-medium hover:text-primary">About</a>
                                             <a href="/blog" className="text-lg font-medium hover:text-primary">Blog</a>
                                             <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">15 Pillars</a>
-                                            <a href="/#pricing" className="text-lg font-medium hover:text-primary">Pricing</a>
+                                            <a href="/investasi" className="text-lg font-medium hover:text-primary">Pricing</a>
                                             <a href="/contact" className="text-lg font-medium hover:text-primary">Contact</a>
                                         </div>
                                     </SheetContent>
@@ -157,8 +158,56 @@ export const Route = createRootRoute({
                             </p>
                         </div>
                     </footer>
+                    {/* Back to Top Button */}
+                    <BackToTop />
                 </div>
             </div>
         </ThemeProvider>
     ),
 })
+
+function BackToTop() {
+    const [visible, setVisible] = useState(false)
+
+    useEffect(() => {
+        const toggleVisible = () => {
+            const scrolled = document.documentElement.scrollTop
+            if (scrolled > 300) {
+                setVisible(true)
+            } else if (scrolled <= 300) {
+                setVisible(false)
+            }
+        }
+        window.addEventListener('scroll', toggleVisible)
+        return () => window.removeEventListener('scroll', toggleVisible)
+    }, [])
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
+
+    return (
+        <button
+            onClick={scrollToTop}
+            className={`fixed bottom-8 right-8 z-[60] p-3 rounded-full bg-primary text-black shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+            aria-label="Back to top"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            >
+                <path d="m18 15-6-6-6 6" />
+            </svg>
+        </button>
+    )
+}

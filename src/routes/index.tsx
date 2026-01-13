@@ -552,7 +552,7 @@ function Index() {
 
                     <div className="grid grid-cols-1 md:grid-cols-6 gap-y-12 md:gap-y-32 md:gap-x-8 items-stretch relative">
                         {/* Segment Header for Row 1: Founders */}
-                        <div className="md:col-span-6 flex items-center gap-4 mb-2 md:-mb-16 z-20">
+                        <div className="md:col-span-6 flex items-center gap-4 mb-2 md:-mb-16 z-20 md:order-0">
                             <div className="px-4 py-1.5 bg-primary/10 border border-primary/30 rounded-full text-[10px] font-black text-primary uppercase tracking-widest">
                                 01. SME Operational Suite (For Founders)
                             </div>
@@ -631,7 +631,7 @@ function Index() {
                         </div>
 
                         {/* Segment Header for Row 2: Investors */}
-                        <div className="md:col-span-6 flex items-center gap-4 mb-2 md:-mb-16 z-20 mt-12 md:mt-0">
+                        <div className="md:col-span-6 flex items-center gap-4 mb-2 md:-mb-16 z-20 mt-12 md:mt-0 md:order-3">
                             <div className="px-4 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-[10px] font-black text-primary uppercase tracking-widest">
                                 02. Institutional Intelligence Unit (For Investors)
                             </div>
