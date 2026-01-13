@@ -75,11 +75,13 @@ function Index() {
 
     return (
         <div className="flex flex-col min-h-[calc(100vh-4rem)]">
-            <title>Gusti Devitto™ - Business Forensics & Phantom Cost Hunter</title>
-            <meta name="description" content="Deteksi kebocoran profit bisnis multi-outlet Anda. Kami bukan mencari fraud, melainkan memburu Phantom Cost yang memakan margin operasional Anda." />
-            <meta property="og:title" content="Gusti Devitto™ - Stop Kebocoran Profit Bisnis Anda" />
-            <meta property="og:description" content="Spesialis Phantom Cost Hunting untuk owner multi-outlet. Diagnosis gratis 15 menit." />
+            <title>Stop Guessing. Start Auditing. | Gusti Devitto™ Forensic Intelligence</title>
+            <meta name="description" content="Institutional-grade forensic intelligence for SME owners & investors. Deteksi kebocoran profit bisnis multi-outlet (Bakso, Retail, F&B) dengan Neural AI. Financial Due Diligence Indonesia & Franchise Fraud Detection." />
+            <meta name="keywords" content="Financial Due Diligence Indonesia, Franchise Fraud Detection, Neural Financial Audit, Forensic Accounting Tool for Investors, Audit UMKM, Kebocoran Profit, Phantom Cost Hunting" />
+            <meta property="og:title" content="Gusti Devitto™ - Institutional-Grade Forensic Intelligence" />
+            <meta property="og:description" content="Detect what accountants miss. 15-Minute Financial Diagnosis for multi-outlet owners (SME) and enterprise investors. Stop profit leakage now." />
 
+            {/* Previous Schema Stays, maybe update it later if needed */}
             <script type="application/ld+json">
                 {JSON.stringify({
                     "@context": "https://schema.org",
@@ -104,8 +106,8 @@ function Index() {
                     ]
                 })}
             </script>
-            {/* Hero Section - Storyselling */}
-            <section className="relative grid place-items-center lg:grid-cols-2 gap-8 py-16 md:py-24 px-4 md:px-8 overflow-hidden">
+            {/* Hero Section - The Split-Gate */}
+            <section id="owners" className="relative grid place-items-center lg:grid-cols-2 gap-8 py-16 md:py-24 px-4 md:px-8 overflow-hidden">
                 {/* Animated Background */}
                 <div className="absolute inset-0 -z-10">
                     <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background"></div>
@@ -117,47 +119,42 @@ function Index() {
                     {/* Badge */}
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] sm:text-xs font-black tracking-[0.2em] w-fit border border-primary/20 backdrop-blur-sm uppercase">
                         <ShieldCheck className="w-4 h-4" />
-                        <span>Auth Level: L-7 // BUY BACK YOUR SLEEP. BUY BACK YOUR TIME. BUY BACK YOUR MONEY.</span>
+                        <span>Auth Level: L-7 // Forensic Intelligence Unit</span>
                     </div>
 
-                    {/* Headline - The Pain */}
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
-                        Omzet Ramai, <br className="hidden sm:block" />
-                        <span className="text-primary">Tapi Kok Saldo Tipis?</span>
+                    {/* Headline - Institutional Grade */}
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-foreground leading-[0.9] uppercase">
+                        Stop Guessing. <br />
+                        Start Auditing. <br />
+                        <span className="text-primary">Institutional-Grade <br />Forensic Intelligence.</span>
                     </h1>
 
-                    {/* Subheadline - Empathy & Agitation */}
+                    {/* Subheadline - Dual Segment Logic */}
                     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                        Saya tahu persis rasanya — <em>kerja keras dari subuh sampai malam</em>, outlet ramai, tim sibuk, tapi akhir bulan selalu bertanya: <strong className="text-foreground">"Kemana perginya uangnya?"</strong>
+                        Whether you're a multi-outlet owner losing cash or an investor auditing a $10M target, <strong className="text-foreground font-bold">FFD™ v3 detects what accountants miss.</strong> Neural-powered. Private. 15-Minute Diagnosis.
                     </p>
 
-                    {/* The Promise */}
-                    <p className="text-base text-muted-foreground border-l-4 border-primary pl-4 italic">
-                        Dalam 15 menit, saya bisa tunjukkan <span className="text-foreground font-medium">di mana bocornya</span> — tanpa bongkar gudang, tanpa interogasi tim Anda berjam-jam. Pure data diagnosis.
-                    </p>
-
-                    {/* CTA */}
+                    {/* CTA - Side-by-Side Dual Logic */}
                     <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                        <Button asChild size="lg" className="text-lg h-14 px-8 shadow-lg shadow-primary/30 bg-primary hover:bg-primary/90 text-primary-foreground group relative overflow-hidden">
+                        <Button asChild size="lg" className="text-lg h-16 px-10 shadow-lg shadow-primary/30 bg-yellow-500 hover:bg-yellow-600 text-black font-black group relative overflow-hidden flex-1">
                             <Link to="/get-access">
-                                <span className="relative z-10 flex items-center">
-                                    Diagnosis Gratis: PCC Lite
+                                <span className="relative z-10 flex items-center justify-center">
+                                    JALANKAN GRATIS FFD
                                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </span>
-                                <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </Link>
                         </Button>
-                        <Button asChild variant="outline" size="lg" className="text-lg h-14 px-8 border-border/50 hover:border-primary/50 hover:bg-primary/5">
-                            <Link to="/forensics-pillars">
-                                Lihat Metodologi
-                            </Link>
+                        <Button asChild variant="outline" size="lg" className="text-lg h-16 px-10 border-amber-500/50 hover:border-amber-500 hover:bg-amber-500/10 text-amber-500 font-bold flex-1">
+                            <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">
+                                REQUEST ENTERPRISE DEMO
+                            </a>
                         </Button>
                     </div>
 
                     {/* Guarantee Badge */}
                     <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
                         <BadgeCheck className="w-5 h-5 text-green-500" />
-                        <span><strong className="text-foreground">No Find, No Pitch</strong> — Jika bisnis Anda sehat, konsultasi selesai. Gratis.</span>
+                        <span><strong className="text-foreground">Sovereign Standard</strong> — Data remains local. Direct access to FFD™ Proprietary Engine.</span>
                     </div>
                 </div>
 
@@ -218,14 +215,76 @@ function Index() {
                         ))}
                     </div>
 
-                    {/* Floating Badge (stays outside carousel) */}
-                    <div className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 bg-card border border-border/50 rounded-xl px-4 py-3 shadow-lg animate-float z-20 hidden sm:block">
-                        <div className="flex items-center gap-2">
-                            <Clock className="w-5 h-5 text-primary" />
-                            <div>
-                                <p className="text-[10px] uppercase font-bold text-muted-foreground leading-none mb-1">Kapasitas</p>
-                                <p className="text-sm font-black whitespace-nowrap">3 / 5 SLOT TERSEDIA</p>
-                            </div>
+                    {/* Floating ROI Box (Replaces Capacity Badge) */}
+                    <div className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 bg-black border border-amber-500/50 rounded-xl px-6 py-4 shadow-2xl animate-float z-20 hidden sm:block">
+                        <div className="flex flex-col gap-1">
+                            <p className="text-[10px] uppercase font-black text-amber-500 tracking-[0.2em] leading-none mb-1">Risk Intelligence</p>
+                            <p className="text-xl font-black text-white">ROI: 15,000%</p>
+                            <p className="text-[9px] text-muted-foreground max-w-[120px] leading-tight mt-1">
+                                Finding a $1M leak for a $10K audit fee isn't math; it's survival.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* New Section: The Forensic Shield (Tier 1 & 2 Positioning) */}
+            <section id="investors" className="py-20 px-4 md:px-8 bg-black text-white relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10">
+                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+                </div>
+                <div className="container mx-auto max-w-6xl relative z-10">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight uppercase">
+                            Beyond Small Business Optimization: <br />
+                            <span className="text-amber-500">Risk Intelligence for High-Stakes Decisions.</span>
+                        </h2>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <div className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-500/50 transition-all group">
+                            <h3 className="text-xl font-black mb-4 text-amber-500 uppercase">M&A Due Diligence</h3>
+                            <p className="text-sm text-gray-400 leading-relaxed">
+                                Detect financial manipulation, revenue inflation, and cooked books before signing acquisition deals. <strong className="text-white">90% cheaper than Big 4 audits.</strong>
+                            </p>
+                        </div>
+                        <div id="franchise" className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-500/50 transition-all group">
+                            <h3 className="text-xl font-black mb-4 text-amber-500 uppercase">Franchise Monitoring</h3>
+                            <p className="text-sm text-gray-400 leading-relaxed">
+                                Real-time fraud detection across 100+ locations. Flag underreporting franchisees automatically using <strong className="text-white">Neural AI.</strong>
+                            </p>
+                        </div>
+                        <div className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-500/50 transition-all group">
+                            <h3 className="text-xl font-black mb-4 text-amber-500 uppercase">Loan Underwriting</h3>
+                            <p className="text-sm text-gray-400 leading-relaxed">
+                                Statistical anomaly detection for banks and lenders to verify borrower health in <strong className="text-white">minutes, not weeks.</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Social Proof & Authority: Trusted By */}
+            <section className="py-12 border-y border-border/50 bg-background">
+                <div className="container mx-auto px-4">
+                    <p className="text-center text-[10px] font-black tracking-[0.3em] text-muted-foreground uppercase mb-8">Piloted with / Trusted by</p>
+                    <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+                        {/* Grayscale Placeholders for Logos */}
+                        <div className="flex flex-col items-center">
+                            <div className="h-8 w-32 bg-muted rounded animate-pulse"></div>
+                            <span className="text-[8px] mt-1 font-mono">FINANCIAL UNIT A</span>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <div className="h-8 w-32 bg-muted rounded animate-pulse"></div>
+                            <span className="text-[8px] mt-1 font-mono">INVESTOR GROUP B</span>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <div className="h-8 w-32 bg-muted rounded animate-pulse"></div>
+                            <span className="text-[8px] mt-1 font-mono">RETAIL CHAIN C</span>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <div className="h-8 w-32 bg-muted rounded animate-pulse"></div>
+                            <span className="text-[8px] mt-1 font-mono">FRANCHISE HQ D</span>
                         </div>
                     </div>
                 </div>
@@ -464,6 +523,79 @@ function Index() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Pricing Transparency Section */}
+            <section id="pricing" className="py-24 px-4 md:px-8 border-t border-border/50 bg-background relative overflow-hidden">
+                <div className="container mx-auto max-w-6xl">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight uppercase">Transparent Intelligence Economics</h2>
+                        <p className="text-muted-foreground text-lg">Predictable pricing for precise forensic intervention.</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {/* SME Tier */}
+                        <div className="p-8 rounded-2xl border border-border/50 bg-card/50 flex flex-col">
+                            <div className="mb-6">
+                                <h3 className="text-xl font-black uppercase mb-1">SME Tier</h3>
+                                <p className="text-xs text-primary font-bold tracking-widest uppercase">CFO-as-a-Service</p>
+                            </div>
+                            <div className="mb-8">
+                                <p className="text-3xl font-black">Rp 3jt - 5jt</p>
+                                <p className="text-xs text-muted-foreground">per month / engagement</p>
+                            </div>
+                            <ul className="space-y-4 mb-8 flex-1">
+                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Phantom Cost Hunting</li>
+                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Monthly Operational MRI</li>
+                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Margin Optimization</li>
+                            </ul>
+                            <Button asChild className="w-full bg-primary text-primary-foreground font-black">
+                                <Link to="/get-access">ACTIVATE SME AUDIT</Link>
+                            </Button>
+                        </div>
+
+                        {/* Enterprise Tier */}
+                        <div className="p-8 rounded-2xl border-2 border-amber-500 bg-black text-white relative flex flex-col scale-105 shadow-2xl">
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-black text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-tighter">Recommended for Investors</div>
+                            <div className="mb-6">
+                                <h3 className="text-xl font-black uppercase mb-1 text-amber-500">Enterprise Tier</h3>
+                                <p className="text-xs text-amber-500/80 font-bold tracking-widest uppercase">Due Diligence Intelligence</p>
+                            </div>
+                            <div className="mb-8">
+                                <p className="text-3xl font-black">$10,000</p>
+                                <p className="text-xs text-gray-400">per Audit Engagement</p>
+                            </div>
+                            <ul className="space-y-4 mb-8 flex-1">
+                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-amber-500" /> Full M&A Due Diligence</li>
+                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-amber-500" /> Revenue Integrity Verification</li>
+                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-amber-500" /> Deep-Layer Neural Scan</li>
+                            </ul>
+                            <Button asChild className="w-full bg-amber-500 text-black font-black hover:bg-amber-600">
+                                <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">BOOK ENTERPRISE AUDIT</a>
+                            </Button>
+                        </div>
+
+                        {/* Franchise Tier */}
+                        <div className="p-8 rounded-2xl border border-border/50 bg-card/50 flex flex-col">
+                            <div className="mb-6">
+                                <h3 className="text-xl font-black uppercase mb-1">Franchise Tier</h3>
+                                <p className="text-xs text-primary font-bold tracking-widest uppercase">Network Monitoring License</p>
+                            </div>
+                            <div className="mb-8">
+                                <p className="text-3xl font-black">Custom</p>
+                                <p className="text-xs text-muted-foreground">Annual License Arrangement</p>
+                            </div>
+                            <ul className="space-y-4 mb-8 flex-1">
+                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Multi-Outlet Neural Guard</li>
+                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Automated Fraud Flagging</li>
+                                <li className="text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Royalty Integrity Units</li>
+                            </ul>
+                            <Button asChild variant="outline" className="w-full border-primary/50 text-primary font-black hover:bg-primary/10">
+                                <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">INQUIRE CUSTOM PLAN</a>
+                            </Button>
                         </div>
                     </div>
                 </div>

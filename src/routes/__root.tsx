@@ -57,6 +57,21 @@ export const Route = createRootRoute({
 
                 <div className="relative flex min-h-screen flex-col z-10">
                     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+                        {/* Segmented Top Bar */}
+                        <div className="bg-primary/5 border-b border-primary/10 py-1.5 hidden md:block">
+                            <div className="container flex justify-center gap-8 px-4 md:px-8">
+                                <a href="/#owners" className="text-[10px] uppercase font-black tracking-widest text-primary hover:text-primary/80 transition-colors">
+                                    [ For Owners ]
+                                </a>
+                                <a href="/#investors" className="text-[10px] uppercase font-black tracking-widest text-muted-foreground hover:text-primary transition-colors">
+                                    [ For Investors & PE ]
+                                </a>
+                                <a href="/#franchise" className="text-[10px] uppercase font-black tracking-widest text-muted-foreground hover:text-primary transition-colors">
+                                    [ For Franchise HQs ]
+                                </a>
+                            </div>
+                        </div>
+
                         <div className="container flex h-16 items-center justify-between px-4 md:px-8">
                             {/* Logo */}
                             <div className="flex items-center gap-3">
@@ -73,18 +88,18 @@ export const Route = createRootRoute({
                             </div>
 
                             {/* Desktop Navigation */}
-                            <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
+                            <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
                                 <a href="/get-access" className="transition-colors hover:text-primary">Calculator</a>
                                 <a href="/about-gusti-devitto" className="transition-colors hover:text-primary">About</a>
                                 <a href="/blog" className="transition-colors hover:text-primary">Blog</a>
                                 <a href="/forensics-pillars" className="transition-colors hover:text-primary">15 Pillars</a>
-                                <a href="/investasi" className="transition-colors hover:text-primary">Investasi</a>
+                                <a href="/#pricing" className="transition-colors hover:text-primary font-bold decoration-primary underline-offset-4 decoration-2">Pricing</a>
                                 <a href="/contact" className="transition-colors hover:text-primary">Contact</a>
                                 <ModeToggle />
                             </nav>
 
                             {/* Mobile Navigation */}
-                            <div className="md:hidden flex items-center gap-4">
+                            <div className="lg:hidden flex items-center gap-4">
                                 <ModeToggle />
                                 <Sheet>
                                     <SheetTrigger asChild>
@@ -95,11 +110,16 @@ export const Route = createRootRoute({
                                     </SheetTrigger>
                                     <SheetContent side="right">
                                         <div className="flex flex-col space-y-6 mt-6">
+                                            <div className="flex flex-col gap-2 pb-4 border-b">
+                                                <a href="/#owners" className="text-xs font-black text-primary">FOR OWNERS</a>
+                                                <a href="/#investors" className="text-xs font-black text-muted-foreground">FOR INVESTORS & PE</a>
+                                                <a href="/#franchise" className="text-xs font-black text-muted-foreground">FOR FRANCHISE HQS</a>
+                                            </div>
                                             <a href="/get-access" className="text-lg font-medium hover:text-primary">Calculator</a>
                                             <a href="/about-gusti-devitto" className="text-lg font-medium hover:text-primary">About</a>
                                             <a href="/blog" className="text-lg font-medium hover:text-primary">Blog</a>
                                             <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">15 Pillars</a>
-                                            <a href="/investasi" className="text-lg font-medium hover:text-primary">Investasi</a>
+                                            <a href="/#pricing" className="text-lg font-medium hover:text-primary">Pricing</a>
                                             <a href="/contact" className="text-lg font-medium hover:text-primary">Contact</a>
                                         </div>
                                     </SheetContent>
