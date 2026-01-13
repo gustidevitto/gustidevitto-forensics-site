@@ -631,16 +631,16 @@ function Index() {
                         </div>
 
                         {/* Segment Header for Row 2: Investors */}
-                        <div className="md:col-span-6 flex items-center gap-4 mb-2 md:-mb-16 z-20 mt-12 md:mt-0 md:order-3">
+                        <div className="md:col-span-6 flex items-center gap-4 mb-2 md:-mb-16 z-20 mt-12 md:mt-0 md:order-4">
                             <div className="px-4 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-[10px] font-black text-primary uppercase tracking-widest">
                                 02. Institutional Intelligence Unit (For Investors)
                             </div>
                             <div className="flex-1 h-px bg-white/5"></div>
                         </div>
 
-                        {/* 3. ENTERPRISE TIER (Mobile 3rd, Desktop Row 2 Col 2-3) */}
-                        <div className="md:col-start-2 md:col-span-2 md:order-4 p-10 rounded-[2.5rem] border-2 border-primary bg-[#121212] flex flex-col relative z-20 shadow-[0_0_60px_rgba(255,215,0,0.15)] ring-1 ring-primary/20 md:scale-[1.12] overflow-visible group">
-                            <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-primary text-black text-[10px] font-black px-6 py-2.5 rounded-full uppercase tracking-[0.2em] shadow-2xl whitespace-nowrap z-30 border border-black/10">RECOMMENDED FOR INVESTORS</div>
+                        {/* 3. ENTERPRISE TIER (Mobile 3rd, Desktop Row 2 Col 1-2) */}
+                        <div className="md:col-start-1 md:col-span-2 md:order-5 p-10 rounded-[2.5rem] border-2 border-primary bg-[#121212] flex flex-col relative z-20 shadow-[0_0_60px_rgba(255,215,0,0.15)] ring-1 ring-primary/20 md:scale-[1.12] overflow-visible group">
+                            <div className="bg-primary text-black text-[10px] font-black px-6 py-2.5 rounded-full uppercase tracking-[0.2em] shadow-2xl whitespace-nowrap z-30 border border-black/10 w-fit mx-auto -mt-14 mb-8">RECOMMENDED FOR INVESTORS</div>
 
                             {/* Visual Glow Layer */}
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-50 group-hover:opacity-80 transition-opacity pointer-events-none rounded-[2.5rem]"></div>
@@ -678,8 +678,8 @@ function Index() {
                             </Button>
                         </div>
 
-                        {/* 5. FRANCHISE TIER (Mobile 5th, Desktop Row 2 Col 4-5) */}
-                        <div className="md:col-start-4 md:col-span-2 md:order-5 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-10 hover:border-primary/30 transition-all opacity-80 hover:opacity-100 group">
+                        {/* 5. FRANCHISE TIER (Mobile 5th, Desktop Row 2 Col 5-6) */}
+                        <div className="md:col-start-5 md:col-span-2 md:order-6 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-10 hover:border-primary/30 transition-all opacity-80 hover:opacity-100 group">
                             <div className="mb-6 pointer-events-none">
                                 <h3 className="text-2xl font-black uppercase mb-1 text-white">Franchise</h3>
                                 <p className="text-xs text-primary font-bold tracking-[0.2em] uppercase font-mono">Network Monitoring</p>

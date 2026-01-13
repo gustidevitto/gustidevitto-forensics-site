@@ -158,7 +158,7 @@ function InvestasiPage() {
                     <div className="grid md:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto md:mx-0">
                         {/* Enterprise Tier */}
                         <div className="p-10 rounded-[2.5rem] border-2 border-primary bg-[#121212] flex flex-col relative shadow-[0_0_50px_rgba(255,215,0,0.1)] ring-1 ring-primary/20 overflow-hidden group">
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-black text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-[0.2em] shadow-2xl whitespace-nowrap z-30">RECOMMENDED FOR INVESTORS</div>
+                            <div className="bg-primary text-black text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-[0.2em] shadow-2xl whitespace-nowrap z-30 border border-black/10 w-fit mx-auto -mt-14 mb-8">RECOMMENDED FOR INVESTORS</div>
 
                             <div className="mb-10 mt-6 relative z-10">
                                 <Building2 className="w-12 h-12 text-primary mb-4 opacity-70" />
