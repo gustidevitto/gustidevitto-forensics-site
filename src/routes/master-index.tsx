@@ -68,8 +68,8 @@ function MasterIndex() {
                             params={{ slug: pillar.id }}
                             className="p-4 rounded-xl border bg-card hover:border-primary/50 transition-all group"
                         >
-                            <span className="font-bold group-hover:text-primary transition-colors">{pillar.title}</span>
-                            <p className="text-xs text-muted-foreground mt-1 line-clamp-1">{pillar.layer1_term}</p>
+                            <span className="font-bold group-hover:text-primary transition-colors">{t(`pillars.${pillar.id}.title`)}</span>
+                            <p className="text-xs text-muted-foreground mt-1 line-clamp-1">{t(`pillars.${pillar.id}.layer1`)}</p>
                         </Link>
                     ))}
                 </div>

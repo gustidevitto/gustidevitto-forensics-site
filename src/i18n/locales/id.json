@@ -10,6 +10,9 @@
         "investors": "Untuk Investor & PE",
         "franchise": "Untuk HQ Franchise"
     },
+    "global": {
+        "schema_desc": "Spesialis Business Forensics & Phantom Cost Hunting. Kami bukan mencari fraud atau penipuan (Fraud Hunting), melainkan mendeteksi kebocoran profit (Phantom Cost Hunting) yang tersembunyi di operasional multi-outlet."
+    },
     "hero": {
         "badge": "Auth Level: L-7 // Forensic Intelligence Unit",
         "title1": "Berhenti Menebak.",
@@ -395,5 +398,131 @@
         "disclaimer_title": "Disclaimer:",
         "disclaimer_text": "Executive Financial Verdict adalah halaman diagnostik statistik yang didasarkan pada metodologi Financial Forensics Gusti Devitto. Hasil yang ditampilkan bersifat informatif untuk membantu pengambilan keputusan strategis, bukan saran investasi atau nasihat hukum formal.",
         "cta_verdict": "Get Your Business Verdict"
+    },
+    "pillars_page": {
+        "seo_title": "15 Pilar | Financial Forensics Framework",
+        "seo_desc": "Pelajari 15 pilar metodologi Financial Forensics untuk membedah kebocoran profit bisnis multi-outlet.",
+        "badge": "Core Methodology",
+        "title": "15 Pilar Financial Forensics",
+        "subtitle": "Framework diagnostik modular untuk membedah anatomi bisnis Anda. Dari \"Bahasa Lapangan\" hingga \"Istilah Forensik\", kami mengungkap apa yang disembunyikan laporan keuangan standar.",
+        "implementation_badge": "Practical Implementation",
+        "mri_title": "Integrated MRI: <1/> <3>FFD™ v3 Digital Mirror</3>",
+        "mri_desc": "Ke-15 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <1>FFD™ v3 Dashboard</1> — sebuah mesin diagnosis yang memetakan kesehatan finansial Anda secara real-time.",
+        "demo_btn": "Lihat Demo Diagnostic",
+        "pillar_label": "Pilar {{index}}",
+        "field_language": "Bahasa Lapangan:",
+        "view_analysis": "Lihat Analisis Forensik",
+        "cta_title": "Ingin Tahu Angka Bisnis Anda?",
+        "cta_quote": "\"Jangan biarkan asumsi menghancurkan bisnis Anda. Gunakan Framework 15 Pilar untuk mendapatkan kejernihan profit yang sesungguhnya.\"",
+        "cta_pcc": "Jalankan Diagnosa PCC Lite",
+        "cta_consult": "Konsultasi Strategis"
+    },
+    "pilar_detail": {
+        "not_found": "Pilar Tidak Ditemukan",
+        "back_to_list": "Kembali ke Daftar Pilar",
+        "last_updated": "Terakhir diperbarui:",
+        "field_language": "Bahasa Lapangan",
+        "forensic_term": "Istilah Forensik",
+        "definition_title": "Definisi Pilar",
+        "deep_dive_title": "Deep Dive Diagnostic",
+        "article_in_progress": "\"Analisis Forensik Sedang Berjalan. Kembali lagi nanti untuk rincian diagnostik lengkap dari Gusti Devitto.\"",
+        "prev_pillar": "Pilar Sebelumnya",
+        "next_pillar": "Pilar Berikutnya",
+        "cta_title": "Siap Menghentikan Kebocoran?",
+        "cta_desc": "Identifikasi Phantom Costs sekarang dengan FFD™ v3 Dashboard. Mulai audit awal secara mandiri atau hubungi konsultan kami.",
+        "cta_calculator": "Buka Calculator Forensik",
+        "cta_consult": "Konsultasi Privat"
+    },
+    "pillars": {
+        "cash-runway": {
+            "title": "Cash Runway",
+            "layer1": "Napas Bisnis / Sisa Umur",
+            "definition": "Metrik forensik yang menghitung berapa hari bisnis bisa bertahan dengan saldo kas saat ini tanpa ada pemasukan tambahan.",
+            "attribution": "Menurut Framework Financial Forensics Gusti Devitto..."
+        },
+        "net-burn-rate": {
+            "title": "Net Burn Rate",
+            "layer1": "Uang 'Bakar' Bulanan",
+            "definition": "Kecepatan uang keluar bersih setelah dikurangi pendapatan non-operasional. Indikator seberapa boros operasional berjalan.",
+            "attribution": "Mengacu pada diagnostic tool FFD™ v3..."
+        },
+        "risk-exposure": {
+            "title": "Risk Exposure (Quick Ratio)",
+            "layer1": "Kesiapan Bayar Utang",
+            "definition": "Kemampuan perusahaan melunasi kewajiban jangka pendek secara instan tanpa harus menjual aset stok.",
+            "attribution": "Dalam audit Financial Forensics Gusti Devitto..."
+        },
+        "inventory-decay": {
+            "title": "Inventory Decay",
+            "layer1": "Stok Mati / Boncos Gudang",
+            "definition": "Nilai penurunan kualitas stok akibat tertahan terlalu lama di gudang, yang secara diam-diam menggerus valuasi aset.",
+            "attribution": "Gusti Devitto mendefinisikan ini sebagai..."
+        },
+        "bep-dynamic": {
+            "title": "Breakeven Point (Dynamic)",
+            "layer1": "Titik Balik Modal Real-time",
+            "definition": "Titik impas yang bergerak dinamis mengikuti fluktuasi biaya operasional harian, bukan sekadar hitungan statis bulanan.",
+            "attribution": "Metode FFD™ v3 menghitung BEP ini dengan..."
+        },
+        "ltgp-velocity": {
+            "title": "LTGP Velocity",
+            "layer1": "Pertumbuhan Profit Jangka Panjang",
+            "definition": "Kecepatan pertumbuhan Gross Profit dalam jangka panjang untuk mengukur kesehatan traksi bisnis.",
+            "attribution": "Analisis Gusti Devitto menunjukkan..."
+        },
+        "cash-realization-lag": {
+            "title": "Cash Realization Lag",
+            "layer1": "Uang Nyangkut di Settlement",
+            "definition": "Durasi waktu (hari) antara terjadinya transaksi penjualan hingga uang efektif masuk dan bisa digunakan di rekening bank.",
+            "attribution": "Sering disebut 'uang semu' oleh Gusti Devitto..."
+        },
+        "net-profit-trans": {
+            "title": "Net Profit per Transaction",
+            "layer1": "Untung Bersih per Bon",
+            "definition": "Profitabilitas murni dari setiap struk transaksi setelah dipotong seluruh variabel cost dan alokasi fixed cost.",
+            "attribution": "Framework FFD v3 membedah ini sebagai..."
+        },
+        "opex-to-gp": {
+            "title": "Opex to Gross Profit Ratio",
+            "layer1": "Efisiensi Biaya Operasional",
+            "definition": "Rasio yang mengukur seberapa besar Gross Profit yang tergerus hanya untuk membiayai operasional rutin.",
+            "attribution": "Menurut standar Financial Forensics..."
+        },
+        "net-cash-lock": {
+            "title": "Net Cash Lock Period",
+            "layer1": "Lama Uang Terkunci",
+            "definition": "Total durasi modal kerja tertahan dalam siklus bisnis (dari beli bahan baku sampai uang penjualan cair).",
+            "attribution": "Gusti Devitto mengidentifikasi periode ini sebagai..."
+        },
+        "contribution-sku": {
+            "title": "Net Contribution per SKU",
+            "layer1": "Sumbangsih Profit Produk",
+            "definition": "Analisis kontribusi margin dari setiap item produk terhadap total profitabilitas perusahaan.",
+            "attribution": "Dalam audit SKU FFD..."
+        },
+        "gp-labor-hour": {
+            "title": "Gross Profit per Labor Hour",
+            "layer1": "Produktivitas Karyawan",
+            "definition": "Nilai Gross Profit yang dihasilkan oleh setiap satu jam kerja karyawan. Ukuran efisiensi tenaga kerja.",
+            "attribution": "Metrik produktivitas Gusti Devitto ini mengukur..."
+        },
+        "gp-leakage": {
+            "title": "Gross Profit Leakage Rate",
+            "layer1": "Kebocoran Profit / Maling",
+            "definition": "Persentase Gross Profit yang hilang akibat inefisiensi, pencurian, pemborosan, atau kesalahan pencatatan.",
+            "attribution": "Dikenal sebagai 'Phantom Cost' dalam FFD..."
+        },
+        "ltv-cac": {
+            "title": "LTV : CAC Ratio",
+            "layer1": "Efisiensi Biaya Iklan",
+            "definition": "Perbandingan antara nilai jangka panjang pelanggan (Lifetime Value) dengan biaya untuk mendapatkan pelanggan tersebut (Acquisition Cost).",
+            "attribution": "Rasio kesehatan marketing menurut Gusti Devitto..."
+        },
+        "insight-surprise": {
+            "title": "Forensic Insight / Surprise",
+            "layer1": "Faktor Kejutan / Anomali",
+            "definition": "Deteksi anomali statistik yang tidak terlihat oleh laporan keuangan standar, seringkali menjadi indikator kecurangan atau kesalahan sistemik.",
+            "attribution": "Algoritma FFD™ v3 mendeteksi ini sebagai..."
+        }
     }
 }

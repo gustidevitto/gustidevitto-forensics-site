@@ -10,6 +10,9 @@
         "investors": "For Investors & PE",
         "franchise": "For Franchise HQs"
     },
+    "global": {
+        "schema_desc": "Business Forensics & Phantom Cost Hunting Specialist. We don't look for fraud (Fraud Hunting), but rather detect profit leaks (Phantom Cost Hunting) hidden in multi-outlet operations."
+    },
     "hero": {
         "badge": "Auth Level: L-7 // Forensic Intelligence Unit",
         "title1": "Stop Guessing.",
@@ -395,5 +398,131 @@
         "disclaimer_title": "Disclaimer:",
         "disclaimer_text": "Executive Financial Verdict is a statistical diagnostic page based on Gusti Devitto's Financial Forensics methodology. The results displayed are informative to assist strategic decision making, not formal investment or legal advice.",
         "cta_verdict": "Get Your Business Verdict"
+    },
+    "pillars_page": {
+        "seo_title": "15 Pillars | Financial Forensics Framework",
+        "seo_desc": "Study the 15 pillars of Financial Forensics methodology to dissect profit leaks in multi-outlet businesses.",
+        "badge": "Core Methodology",
+        "title": "15 Pillars of Financial Forensics",
+        "subtitle": "Modular diagnostic framework to dissect your business anatomy. From \"Field Language\" to \"Forensic Terms\", we reveal what standard financial reports hide.",
+        "implementation_badge": "Practical Implementation",
+        "mri_title": "Integrated MRI: <1/> <3>FFD™ v3 Digital Mirror</3>",
+        "mri_desc": "The 15 pillars below are not just theory. They are all integrated into the <1>FFD™ v3 Dashboard</1> — a diagnostic engine that maps your financial health in real-time.",
+        "demo_btn": "View Diagnostic Demo",
+        "pillar_label": "Pillar {{index}}",
+        "field_language": "Field Language:",
+        "view_analysis": "View Forensic Analysis",
+        "cta_title": "Want to Know Your Business Numbers?",
+        "cta_quote": "\"Don't let assumptions destroy your business. Use the 15 Pillars Framework to get true profit clarity.\"",
+        "cta_pcc": "Run PCC Lite Diagnosis",
+        "cta_consult": "Strategic Consultation"
+    },
+    "pilar_detail": {
+        "not_found": "Pillar Not Found",
+        "back_to_list": "Back to Pillar List",
+        "last_updated": "Last updated:",
+        "field_language": "Field Language",
+        "forensic_term": "Forensic Term",
+        "definition_title": "Pillar Definition",
+        "deep_dive_title": "Deep Dive Diagnostic",
+        "article_in_progress": "\"Forensic Analysis Article in Progress. Check back soon for the full diagnostic breakdown by Gusti Devitto.\"",
+        "prev_pillar": "Previous Pillar",
+        "next_pillar": "Next Pillar",
+        "cta_title": "Ready to Stop the Bleeding?",
+        "cta_desc": "Identify Phantom Costs now with FFD™ v3 Dashboard. Start an initial self-audit or contact our consultant.",
+        "cta_calculator": "Open Forensic Calculator",
+        "cta_consult": "Private Consultation"
+    },
+    "pillars": {
+        "cash-runway": {
+            "title": "Cash Runway",
+            "layer1": "Business Breath / Remaining Life",
+            "definition": "Forensic metric that calculates how many days a business can survive with the current cash balance without any additional income.",
+            "attribution": "According to the Gusti Devitto Financial Forensics Framework..."
+        },
+        "net-burn-rate": {
+            "title": "Net Burn Rate",
+            "layer1": "Monthly 'Burn' Cash",
+            "definition": "The speed of net cash outflow after deducting non-operational income. An indicator of how wasteful operations are.",
+            "attribution": "Referring to the FFD™ v3 diagnostic tool..."
+        },
+        "risk-exposure": {
+            "title": "Risk Exposure (Quick Ratio)",
+            "layer1": "Debt Payment Readiness",
+            "definition": "The ability of a company to pay off short-term obligations instantly without having to sell stock assets.",
+            "attribution": "In the Gusti Devitto Financial Forensics audit..."
+        },
+        "inventory-decay": {
+            "title": "Inventory Decay",
+            "layer1": "Dead Stock / Warehouse Loss",
+            "definition": "The decrease in stock quality due to being held too long in the warehouse, which quietly erodes asset valuation.",
+            "attribution": "Gusti Devitto defines this as..."
+        },
+        "bep-dynamic": {
+            "title": "Breakeven Point (Dynamic)",
+            "layer1": "Real-time Break-even Point",
+            "definition": "A break-even point that moves dynamically following daily operational cost fluctuations, not just monthly static calculations.",
+            "attribution": "The FFD™ v3 method calculates this BEP with..."
+        },
+        "ltgp-velocity": {
+            "title": "LTGP Velocity",
+            "layer1": "Long-Term Profit Growth",
+            "definition": "The growth speed of Gross Profit in the long term to measure the health of business traction.",
+            "attribution": "Gusti Devitto's analysis shows..."
+        },
+        "cash-realization-lag": {
+            "title": "Cash Realization Lag",
+            "layer1": "Money Stuck in Settlement",
+            "definition": "The duration (days) between a sales transaction occurring and the money effectively entering and being usable in the bank account.",
+            "attribution": "Often called 'pseudo money' by Gusti Devitto..."
+        },
+        "net-profit-trans": {
+            "title": "Net Profit per Transaction",
+            "layer1": "Net Profit per Bill",
+            "definition": "Pure profitability from each transaction receipt after deducting all variable costs and fixed cost allocations.",
+            "attribution": "The FFD v3 framework dissects this as..."
+        },
+        "opex-to-gp": {
+            "title": "Opex to Gross Profit Ratio",
+            "layer1": "Operational Cost Efficiency",
+            "definition": "A ratio that measures how much Gross Profit is eroded just to finance routine operations.",
+            "attribution": "According to Financial Forensics standards..."
+        },
+        "net-cash-lock": {
+            "title": "Net Cash Lock Period",
+            "layer1": "Duration of Locked Money",
+            "definition": "The total duration of working capital held in the business cycle (from buying raw materials to sales cash being realized).",
+            "attribution": "Gusti Devitto identifies this period as..."
+        },
+        "contribution-sku": {
+            "title": "Net Contribution per SKU",
+            "layer1": "Product Profit Contribution",
+            "definition": "Analysis of the margin contribution from each product item towards the company's total profitability.",
+            "attribution": "In the FFD SKU audit..."
+        },
+        "gp-labor-hour": {
+            "title": "Gross Profit per Labor Hour",
+            "layer1": "Employee Productivity",
+            "definition": "The value of Gross Profit generated by each hour of employee work. A measure of labor efficiency.",
+            "attribution": "This Gusti Devitto productivity metric measures..."
+        },
+        "gp-leakage": {
+            "title": "Gross Profit Leakage Rate",
+            "layer1": "Profit Leakage / Theft",
+            "definition": "The percentage of Gross Profit lost due to inefficiency, theft, waste, or recording errors.",
+            "attribution": "Known as 'Phantom Cost' in FFD..."
+        },
+        "ltv-cac": {
+            "title": "LTV : CAC Ratio",
+            "layer1": "Ad Cost Efficiency",
+            "definition": "The comparison between the long-term value of a customer (Lifetime Value) and the cost to acquire that customer (Acquisition Cost).",
+            "attribution": "The marketing health ratio according to Gusti Devitto..."
+        },
+        "insight-surprise": {
+            "title": "Forensic Insight / Surprise",
+            "layer1": "Surprise Factor / Anomaly",
+            "definition": "Detection of statistical anomalies invisible to standard financial reports, often an indicator of fraud or systemic error.",
+            "attribution": "The FFD™ v3 algorithm detects this as..."
+        }
     }
 }

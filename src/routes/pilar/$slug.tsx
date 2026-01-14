@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, ChevronRight, ChevronLeft } from "lucide-react"
 import pillarsData from '@/data/pillarsData.json'
+import { useTranslation } from 'react-i18next'
 
 export const Route = createFileRoute('/pilar/$slug')({
     component: PilarPage,
@@ -56,6 +57,8 @@ const parseFrontmatter = (content: string) => {
 
 function PilarPage() {
     const { slug } = Route.useParams()
+    const { t, i18n } = useTranslation()
+    const currentLang = i18n.language
 
     // Jump back to top on navigation
     useEffect(() => {
@@ -69,20 +72,39 @@ function PilarPage() {
     if (!pillar) {
         return (
             <div className="container py-20 text-center">
-                <h1 className="text-2xl font-bold mb-4">Pilar Tidak Ditemukan</h1>
+                <h1 className="text-2xl font-bold mb-4">{t('pilar_detail.not_found')}</h1>
                 <Button asChild variant="outline">
-                    <Link to="/forensics-pillars">Kembali ke Daftar Pilar</Link>
+                    <Link to="/forensics-pillars">{t('pilar_detail.back_to_list')}</Link>
                 </Button>
             </div>
         )
     }
 
-    // Load Markdown Content
+    // Load Markdown Content (Try localized first, then fallback to original)
     const rawArticles = import.meta.glob('../../../content/pillars-articles/*.md', { query: '?raw', import: 'default', eager: true })
-    const articleEntry = Object.entries(rawArticles).find(([path, _]) => {
-        const filename = path.split('/').pop()?.replace('.md', '') || ''
-        return filename === slug
-    })
+
+    const findArticle = (slugBase: string, lang: string) => {
+        const langSuffix = lang === 'en' ? '.en' : ''
+        const targetFilename = `${slugBase}${langSuffix}`
+
+        return Object.entries(rawArticles).find(([path, _]) => {
+            const filename = path.split('/').pop()?.replace('.md', '') || ''
+            return filename === targetFilename
+        })
+    }
+
+    let articleEntry = findArticle(slug, currentLang)
+    // Fallback to primary if localized not found
+    if (!articleEntry && currentLang !== 'id') {
+        articleEntry = findArticle(slug, 'id')
+    }
+    // Final fallback to just the slug
+    if (!articleEntry) {
+        articleEntry = Object.entries(rawArticles).find(([path, _]) => {
+            const filename = path.split('/').pop()?.replace('.md', '') || ''
+            return filename === slug
+        })
+    }
 
     let articleContent = null
     let metadata = {}
@@ -93,8 +115,8 @@ function PilarPage() {
         metadata = parsed.data
     }
 
-    // SEO Overrides (simplified for now, ideally handled via meta function in TanStack Router)
-    const displayTitle = (metadata as any).title || pillar.title
+    // SEO Overrides
+    const displayTitle = (metadata as any).title || t(`pillars.${pillar.id}.title`)
 
     // Navigation
     const prevPillar = pillarIndex > 0 ? pillarsData[pillarIndex - 1] : null
@@ -120,7 +142,7 @@ function PilarPage() {
             {
                 "@type": "ListItem",
                 "position": 3,
-                "name": pillar.title,
+                "name": t(`pillars.${pillar.id}.title`),
                 "item": `https://gustidevitto.com/pilar/${slug}`
             }
         ]
@@ -131,7 +153,7 @@ function PilarPage() {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": displayTitle,
-        "description": (metadata as any).description || pillar.definition,
+        "description": (metadata as any).description || t(`pillars.${pillar.id}.definition`),
         "image": `https://gustidevitto.com${pillar.img_placeholder}`,
         "author": {
             "@type": "Person",
@@ -157,7 +179,7 @@ function PilarPage() {
     return (
         <div className="min-h-screen bg-background pb-20">
             <title>{`${displayTitle} - Financial Forensics Pillar`}</title>
-            <meta name="description" content={(metadata as any).description || pillar.definition} />
+            <meta name="description" content={(metadata as any).description || t(`pillars.${pillar.id}.definition`)} />
 
             <script type="application/ld+json">
                 {JSON.stringify(breadcrumbSchema)}
@@ -171,7 +193,7 @@ function PilarPage() {
                 <div className="container py-4 flex items-center justify-between px-4 md:px-8">
                     <Button variant="ghost" asChild size="sm" className="-ml-2 text-muted-foreground hover:text-foreground">
                         <Link to="/forensics-pillars">
-                            <ArrowLeft className="mr-2 w-4 h-4" /> Daftar Pilar
+                            <ArrowLeft className="mr-2 w-4 h-4" /> {t('pilar_detail.back_to_list')}
                         </Link>
                     </Button>
                     <div className="text-sm font-medium text-muted-foreground hidden md:block">
@@ -179,11 +201,11 @@ function PilarPage() {
                         <span className="mx-2">/</span>
                         <Link to="/forensics-pillars" className="hover:text-primary transition-colors">Financial Forensics</Link>
                         <span className="mx-2">/</span>
-                        <span className="text-foreground">{pillar.title}</span>
+                        <span className="text-foreground">{t(`pillars.${pillar.id}.title`)}</span>
                     </div>
                     <div className="text-xs font-mono text-muted-foreground/60 uppercase tracking-tighter">
-                        Last updated: <time dateTime={(metadata as any).last_updated || "2025-01-02"}>
-                            {new Date((metadata as any).last_updated || "2025-01-02").toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                        {t('pilar_detail.last_updated')} <time dateTime={(metadata as any).last_updated || "2025-01-02"}>
+                            {new Date((metadata as any).last_updated || "2025-01-02").toLocaleDateString(currentLang === 'id' ? 'id-ID' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                         </time>
                     </div>
                 </div>
@@ -199,7 +221,7 @@ function PilarPage() {
                     {/* Attribution Block */}
                     <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm mx-auto max-w-3xl">
                         <p className="text-primary font-medium text-lg leading-relaxed italic">
-                            "{pillar.attribution_anchor}"
+                            "{t(`pillars.${pillar.id}.attribution`)}"
                         </p>
                     </div>
                 </div>
@@ -210,7 +232,7 @@ function PilarPage() {
                     <div className="relative aspect-video rounded-2xl overflow-hidden border border-border shadow-2xl bg-muted">
                         <img
                             src={pillar.img_placeholder.startsWith('/') ? pillar.img_placeholder : `/${pillar.img_placeholder}`}
-                            alt={`${pillar.title} - Financial Forensics Dashboard by Gusti Devitto`}
+                            alt={`${t(`pillars.${pillar.id}.title`)} - Financial Forensics Dashboard by Gusti Devitto`}
                             className="w-full h-full object-cover"
                             onError={(e) => {
                                 // Fallback for missing images
@@ -223,15 +245,15 @@ function PilarPage() {
                 {/* The Dual-Layer Translation */}
                 <div className="grid md:grid-cols-2 gap-8 mb-16 mx-auto max-w-3xl">
                     <div className="space-y-4 p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-colors shadow-sm text-center">
-                        <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground block mb-2">Bahasa Lapangan</span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground block mb-2">{t('pilar_detail.field_language')}</span>
                         <h2 className="text-2xl md:text-3xl font-bold text-secondary dark:text-primary">
-                            {pillar.layer1_term}
+                            {t(`pillars.${pillar.id}.layer1`)}
                         </h2>
                     </div>
                     <div className="space-y-4 p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-colors shadow-sm text-center">
-                        <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground block mb-2">Istilah Forensik</span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground block mb-2">{t('pilar_detail.forensic_term')}</span>
                         <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                            {pillar.layer2_term}
+                            {t(`pillars.${pillar.id}.title`)}
                         </h2>
                     </div>
                 </div>
@@ -239,16 +261,16 @@ function PilarPage() {
                 {/* Content Section */}
                 <div className="space-y-12 max-w-3xl mx-auto">
                     <section className="prose prose-slate dark:prose-invert max-w-none">
-                        <h3 className="text-2xl font-bold border-b border-border pb-4 mb-6 text-center">Definisi Pilar</h3>
+                        <h3 className="text-2xl font-bold border-b border-border pb-4 mb-6 text-center">{t('pilar_detail.definition_title')}</h3>
                         <p className="text-xl text-muted-foreground leading-relaxed text-center">
-                            {pillar.definition}
+                            {t(`pillars.${pillar.id}.definition`)}
                         </p>
                     </section>
 
                     <section className="bg-muted/30 rounded-3xl p-8 md:p-12 border border-border/50">
                         <h3 className="text-2xl font-bold mb-8 flex items-center justify-center gap-3">
                             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">🔬</div>
-                            Deep Dive Diagnostic
+                            {t('pilar_detail.deep_dive_title')}
                         </h3>
                         {articleContent ? (
                             <div
@@ -259,7 +281,7 @@ function PilarPage() {
                             <div className="text-center py-12 space-y-4">
                                 <div className="text-5xl mb-4">🧪</div>
                                 <p className="text-xl text-muted-foreground italic font-medium">
-                                    "Forensic Analysis Article in Progress. Check back soon for the full diagnostic breakdown by Gusti Devitto."
+                                    {t('pilar_detail.article_in_progress')}
                                 </p>
                                 <div className="pt-4">
                                     <div className="h-1 w-24 bg-primary/30 mx-auto rounded-full"></div>
@@ -278,10 +300,10 @@ function PilarPage() {
                             className="group p-6 rounded-2xl border border-border bg-card hover:border-primary/50 transition-all text-left"
                         >
                             <span className="text-xs font-medium text-muted-foreground flex items-center gap-1 mb-2">
-                                <ChevronLeft className="w-3 h-3" /> Previous Pillar
+                                <ChevronLeft className="w-3 h-3" /> {t('pilar_detail.prev_pillar')}
                             </span>
                             <span className="font-bold text-lg group-hover:text-primary transition-colors">
-                                {prevPillar.title}
+                                {t(`pillars.${prevPillar.id}.title`)}
                             </span>
                         </Link>
                     ) : <div />}
@@ -293,10 +315,10 @@ function PilarPage() {
                             className="group p-6 rounded-2xl border border-border bg-card hover:border-primary/50 transition-all text-right"
                         >
                             <span className="text-xs font-medium text-muted-foreground flex items-center justify-end gap-1 mb-2">
-                                Next Pillar <ChevronRight className="w-3 h-3" />
+                                {t('pilar_detail.next_pillar')} <ChevronRight className="w-3 h-3" />
                             </span>
                             <span className="font-bold text-lg group-hover:text-primary transition-colors">
-                                {nextPillar.title}
+                                {t(`pillars.${nextPillar.id}.title`)}
                             </span>
                         </Link>
                     ) : <div />}
@@ -304,16 +326,16 @@ function PilarPage() {
 
                 {/* Final CTA */}
                 <div className="mt-20 bg-primary/5 border border-primary/10 rounded-[2.5rem] p-10 md:p-16 text-center space-y-8 max-w-3xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-bold">Siap Menghentikan Kebocoran?</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold">{t('pilar_detail.cta_title')}</h2>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                        Identifikasi Phantom Costs sekarang dengan FFD™ v3 Dashboard. Mulai audit awal secara mandiri atau hubungi konsultan kami.
+                        {t('pilar_detail.cta_desc')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button asChild size="lg" className="h-14 px-8 text-lg font-bold shadow-lg shadow-primary/20">
-                            <Link to="/get-access">Buka Calculator Forensik</Link>
+                            <Link to="/get-access">{t('pilar_detail.cta_calculator')}</Link>
                         </Button>
                         <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg font-bold">
-                            <Link to="/contact">Konsultasi Privat</Link>
+                            <Link to="/contact">{t('pilar_detail.cta_consult')}</Link>
                         </Button>
                     </div>
                 </div>

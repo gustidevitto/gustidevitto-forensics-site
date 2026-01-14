@@ -40,7 +40,7 @@ function RootComponent() {
                             "@id": "https://www.gustidevitto.com/#organization",
                             "name": "Gusti Devitto Forensics",
                             "image": "https://www.gustidevitto.com/assets/images/android-chrome-192x192.png",
-                            "description": "Spesialis Business Forensics & Phantom Cost Hunting. Kami bukan mencari fraud atau penipuan (Fraud Hunting), melainkan mendeteksi kebocoran profit (Phantom Cost Hunting) yang tersembunyi di operasional multi-outlet.",
+                            "description": t('global.schema_desc'),
                             "url": "https://www.gustidevitto.com",
                             "telephone": "+6281234567890",
                             "address": {
