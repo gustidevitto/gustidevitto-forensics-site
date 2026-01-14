@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ShieldCheck, TrendingDown, Users, DollarSign, Clock, Target, BadgeCheck, Activity, Microscope, Search, Brain } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { useTranslation } from 'react-i18next'
+import { useTranslation, Trans } from 'react-i18next'
 
 export const Route = createFileRoute('/')({
     component: Index,

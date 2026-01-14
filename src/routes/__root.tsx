@@ -176,6 +176,7 @@ function RootComponent() {
 }
 
 function BackToTop() {
+    const { t } = useTranslation()
     const [visible, setVisible] = useState(false)
 
     useEffect(() => {
