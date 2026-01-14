@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Card, CardContent } from "@/components/ui/card"
+import { useTranslation, Trans } from 'react-i18next'
 
 // @ts-ignore
 export const Route = createFileRoute('/terms')({
@@ -7,60 +8,72 @@ export const Route = createFileRoute('/terms')({
 })
 
 function Terms() {
+    const { t } = useTranslation()
     return (
         <div className="container py-20 max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold mb-8">Syarat & Ketentuan</h1>
+            <h1 className="text-4xl font-bold mb-8">{t('terms.title')}</h1>
             <Card>
                 <CardContent className="p-8 prose dark:prose-invert max-w-none">
-                    <h3>1. Definisi Layanan</h3>
+                    <h3>{t('terms.section1_title')}</h3>
                     <p>
-                        Gusti Devitto Forensics menyediakan layanan konsultasi keuangan, audit operasional, dan strategi bisnis.
-                        Kami bertindak sebagai penasihat independen dan bukan sebagai auditor publik yang memberikan opini audit atas laporan keuangan untuk keperluan bursa atau pihak ketiga publik.
+                        {t('terms.section1_desc')}
                     </p>
 
-                    <h3>2. Batasan Tanggung Jawab</h3>
+                    <h3>{t('terms.section2_title')}</h3>
                     <p>
-                        Hasil analisis dan rekomendasi kami didasarkan pada data yang Anda berikan. Kami tidak bertanggung jawab atas:
+                        {t('terms.section2_desc')}
                         <ul className="list-disc list-inside">
-                            <li>Ketidakakuratan data yang disajikan oleh klien.</li>
-                            <li>Keputusan bisnis yang diambil klien tanpa konsultasi lebih lanjut.</li>
-                            <li>Kerugian finansial yang terjadi akibat faktor eksternal di luar kendali manajemen.</li>
+                            <li>{t('terms.section2_item1')}</li>
+                            <li>{t('terms.section2_item2')}</li>
+                            <li>{t('terms.section2_item3')}</li>
                         </ul>
                     </p>
 
-                    <h3>3. Kebijakan Pembayaran</h3>
+                    <h3>{t('terms.section3_title')}</h3>
+                    <div className="space-y-4">
+                        <p>
+                            <Trans i18nKey="terms.section3_item1">
+                                <strong className="text-foreground">Tier 1 (Instant Diagnosis)</strong>: Full payment (100%) must be made in advance before the session is scheduled.
+                            </Trans>
+                        </p>
+                        <p>
+                            <Trans i18nKey="terms.section3_item2">
+                                <strong className="text-foreground">Tier 2 (Surgical Blueprint)</strong>: Full payment (100%) must be made in advance to secure a slot and begin the data review process.
+                            </Trans>
+                        </p>
+                        <p>
+                            <Trans i18nKey="terms.section3_item3">
+                                <strong className="text-foreground">Tier 3 (Turnaround Protocol)</strong>: Skema pembayaran dapat didiskusikan (Termin), namun deposit 50% wajib dibayarkan sebelum kick-off project.
+                            </Trans>
+                        </p>
+                    </div>
+
+                    <h3>{t('terms.section4_title')}</h3>
+                    <div className="space-y-4">
+                        <div>
+                            <strong className="text-foreground block mb-2">{t('terms.section4_refund_title')}</strong>
+                            <ul className="list-disc list-inside">
+                                <li>{t('terms.section4_refund_item1')}</li>
+                                <li>{t('terms.section4_refund_item2')}</li>
+                                <li>{t('terms.section4_refund_item3')}</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong className="text-foreground block mb-2">{t('terms.section4_reschedule_title')}</strong>
+                            <ul className="list-disc list-inside">
+                                <li>{t('terms.section4_reschedule_item1')}</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>{t('terms.section5_title')}</h3>
                     <p>
-                        <ul>
-                            <li><strong>Tier 1 (Instant Diagnosis)</strong>: Pembayaran penuh (100%) wajib dilakukan di muka sebelum sesi dijadwalkan.</li>
-                            <li><strong>Tier 2 (Surgical Blueprint)</strong>: Pembayaran penuh (100%) wajib dilakukan di muka untuk mengamankan slot dan memulai proses review data.</li>
-                            <li><strong>Tier 3 (Turnaround Protocol)</strong>: Skema pembayaran dapat didiskusikan (Termin), namun deposit 50% wajib dibayarkan sebelum kick-off project.</li>
-                        </ul>
+                        {t('terms.section5_desc')}
                     </p>
 
-                    <h3>4. Kebijakan Refund & Reschedule</h3>
+                    <h3>{t('terms.section6_title')}</h3>
                     <p>
-                        <strong>Refund (Pengembalian Dana):</strong>
-                        <ul>
-                            <li>Refund 100% dapat diajukan jika sesi dibatalkan oleh pihak Gusti Devitto Forensics.</li>
-                            <li>Refund tidak berlaku jika klien membatalkan sesi kurang dari 24 jam sebelum jadwal, atau tidak hadir (No-Show) pada sesi online/offline.</li>
-                            <li>Refund untuk layanan Tier 2 & 3 yang sudah berjalan tidak dapat dilakukan, namun sisa sesi dapat dialihkan ke kredit layanan lain.</li>
-                        </ul>
-                        <br />
-                        <strong>Reschedule (Penjadwalan Ulang):</strong>
-                        <ul>
-                            <li>Reschedule diperbolehkan maksimal 1x per sesi dengan pemberitahuan minimal 24 jam sebelumnya.</li>
-                        </ul>
-                    </p>
-
-                    <h3>5. Hak Kekayaan Intelektual</h3>
-                    <p>
-                        Seluruh materi, template, framework (termasuk 15-Pillars), dan laporan yang diberikan adalah hak cipta Gusti Devitto Forensics.
-                        Klien diberikan lisensi penggunaan internal, namun dilarang keras menjual kembali, menyebarkan, atau menggunakan materi tersebut untuk kepentingan komersial pihak ketiga tanpa izin tertulis.
-                    </p>
-
-                    <h3>6. Hukum yang Berlaku</h3>
-                    <p>
-                        Syarat dan ketentuan ini diatur oleh hukum Republik Indonesia. Segala sengketa akan diselesaikan melalui musyawarah untuk mufakat, atau melalui Badan Arbitrase Nasional Indonesia (BANI) jika tidak tercapai kesepakatan.
+                        {t('terms.section6_desc')}
                     </p>
                 </CardContent>
             </Card>

@@ -18,7 +18,7 @@ function InvestasiPage() {
             badge: t('pricing.starter_badge'),
             price: t('investasi.price_starter'),
             period: t('pricing.per_month'),
-            desc: t('investasi.sme_starter_desc', "Audit forensik dasar untuk mendeteksi 'kebocoran halus' pada operasional bulanan."),
+            desc: t('investasi.sme_starter_desc', "Basic forensic audit to detect 'subtle leaks' in monthly operations."),
             features: [
                 t('pricing.feature_starter_1'),
                 t('pricing.feature_starter_2'),
@@ -34,7 +34,7 @@ function InvestasiPage() {
             badge: t('pricing.popular'),
             price: t('investasi.price_growth'),
             period: t('pricing.per_month'),
-            desc: t('investasi.sme_growth_desc', "Diagnosis mendalam dengan intervensi strategis untuk perbaikan margin sistemik."),
+            desc: t('investasi.sme_growth_desc', "In-depth diagnosis with strategic intervention for systemic margin improvement."),
             features: [
                 t('pricing.feature_everything_starter'),
                 t('pricing.feature_checkins'),
@@ -52,7 +52,7 @@ function InvestasiPage() {
             badge: t('pricing.scale_badge'),
             price: t('investasi.price_scale'),
             period: t('pricing.per_month'),
-            desc: t('investasi.sme_scale_desc', "Pengawasan penuh untuk bisnis multi-outlet yang agresif melakukan ekspansi."),
+            desc: t('investasi.sme_scale_desc', "Full oversight for multi-outlet businesses aggressively expanding."),
             features: [
                 t('pricing.feature_everything_growth'),
                 t('pricing.feature_pulse'),

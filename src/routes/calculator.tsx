@@ -107,9 +107,9 @@ function Calculator() {
             ["", ""],
             [t('calculator.lite_disclaimer'), ""],
             ["", ""],
-            [t('calculator.export_steps', "LANGKAH SELANJUTNYA"), ""],
-            [t('calculator.export_step1', "1. Jadwalkan 15-Minute MRI dengan Vitto"), ""],
-            [t('calculator.export_step2', "2. Kunjungi: gustidevitto.com/investasi"), ""]
+            [t('calculator.export_steps', "NEXT STEPS"), ""],
+            [t('calculator.export_step1', "1. Schedule 15-Minute MRI with Vitto"), ""],
+            [t('calculator.export_step2', "2. Visit: gustidevitto.com/investasi"), ""]
         ].map(e => e.join(",")).join("\n");
 
         const encodedUri = "data:text/csv;charset=utf-8," + encodeURIComponent(csvContent);

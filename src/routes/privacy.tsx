@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Card, CardContent } from "@/components/ui/card"
+import { useTranslation, Trans } from 'react-i18next'
 
 // @ts-ignore
 export const Route = createFileRoute('/privacy')({
@@ -7,57 +8,62 @@ export const Route = createFileRoute('/privacy')({
 })
 
 function Privacy() {
+    const { t } = useTranslation()
     return (
         <div className="container py-20 max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold mb-8">Kebijakan Privasi</h1>
+            <h1 className="text-4xl font-bold mb-8">{t('privacy.title')}</h1>
             <Card>
                 <CardContent className="p-8 prose dark:prose-invert max-w-none">
-                    <h3>1. Pengumpulan Data</h3>
+                    <h3>{t('privacy.section1_title')}</h3>
                     <p>
-                        Kami mengumpulkan informasi yang Anda berikan secara sukarela, termasuk namun tidak terbatas pada:
+                        {t('privacy.section1_desc')}
                         <ul>
-                            <li>Nama Lengkap dan Kontak (Email, WhatsApp).</li>
-                            <li>Data Keuangan dan Operasional Bisnis untuk keperluan analisis.</li>
-                            <li>Informasi transaksi pembayaran.</li>
+                            <li>{t('privacy.section1_item1')}</li>
+                            <li>{t('privacy.section1_item2')}</li>
+                            <li>{t('privacy.section1_item3')}</li>
                         </ul>
                     </p>
 
-                    <h3>2. Penggunaan Data</h3>
+                    <h3>{t('privacy.section2_title')}</h3>
                     <p>
-                        Data Anda digunakan semata-mata untuk:
+                        {t('privacy.section2_desc')}
                         <ul>
-                            <li>Memberikan layanan konsultasi dan forensik sesuai kontrak.</li>
-                            <li>Memproses transaksi pembayaran dan administrasi.</li>
-                            <li>Mengirimkan laporan analisis dan rekomendasi bisnis.</li>
-                            <li>Komunikasi terkait jadwal dan update layanan.</li>
+                            <li>{t('privacy.section2_item1')}</li>
+                            <li>{t('privacy.section2_item2')}</li>
+                            <li>{t('privacy.section2_item3')}</li>
+                            <li>{t('privacy.section2_item4')}</li>
                         </ul>
                     </p>
 
-                    <h3>3. Non-Disclosure Agreement (NDA) & Kerahasiaan</h3>
+                    <h3>{t('privacy.section3_title')}</h3>
                     <p>
-                        Kami menjunjung tinggi kode etik profesional. <strong>Seluruh data keuangan dan rahasia dagang klien bersifat SANGAT RAHASIA.</strong>
+                        <Trans i18nKey="privacy.section3_desc1">
+                            We uphold professional ethical codes. <strong className="text-foreground">All financial data and client trade secrets are STRICTLY CONFIDENTIAL.</strong>
+                        </Trans>
                         <br /><br />
-                        Kami TIDAK AKAN mendistribusikan, menjual, atau membocorkan data sensitif bisnis Anda kepada pihak ketiga manapun, kecuali diwajibkan oleh hukum yang berlaku di Indonesia. Seluruh tim kami terikat perjanjian kerahasiaan (NDA) yang ketat.
+                        {t('privacy.section3_desc2')}
                     </p>
 
-                    <h3>4. Penyimpanan & Keamanan Data</h3>
+                    <h3>{t('privacy.section4_title')}</h3>
                     <p>
-                        Kami menerapkan standar keamanan teknis dan organisasi yang wajar untuk melindungi data Anda dari akses, penggunaan, atau pengungkapan yang tidak sah. Data disimpan dalam server terenkripsi dan hanya dapat diakses oleh personel yang berwenang.
+                        {t('privacy.section4_desc')}
                     </p>
 
-                    <h3>5. Hak Anda</h3>
+                    <h3>{t('privacy.section5_title')}</h3>
                     <p>
-                        Anda berhak untuk:
+                        {t('privacy.section5_desc')}
                         <ul>
-                            <li>Meminta salinan data pribadi yang kami simpan.</li>
-                            <li>Meminta penghapusan data setelah kontrak layanan berakhir (Right to be Forgotten).</li>
-                            <li>Menarik persetujuan penggunaan data untuk komunikasi pemasaran.</li>
+                            <li>{t('privacy.section5_item1')}</li>
+                            <li>{t('privacy.section5_item2')}</li>
+                            <li>{t('privacy.section5_item3')}</li>
                         </ul>
                     </p>
 
-                    <h3>6. Hubungi Kami</h3>
+                    <h3>{t('privacy.section6_title')}</h3>
                     <p>
-                        Jika Anda memiliki pertanyaan mengenai kebijakan privasi ini atau pengelolaan data Anda, silakan hubungi kami melalui halaman <a href="/contact" className="text-primary hover:underline">Kontak</a>.
+                        <Trans i18nKey="privacy.section6_desc">
+                            If you have questions regarding this privacy policy or the management of your data, please contact us via the <a href="/contact" className="text-primary hover:underline">Contact</a> page.
+                        </Trans>
                     </p>
                 </CardContent>
             </Card>

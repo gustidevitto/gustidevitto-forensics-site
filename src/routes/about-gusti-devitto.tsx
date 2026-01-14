@@ -183,7 +183,7 @@ function AboutGustiDevitto() {
                             <Brain className="w-10 h-10 text-primary mb-6 group-hover:scale-110 transition-transform" />
                             <h3 className="text-xl font-bold mb-4">{t('about_page.card_anomaly_title')}</h3>
                             <p className="text-sm text-muted-foreground leading-relaxed">
-                                <Trans i18nKey="about_page.card_anomaly_desc">Menggunakan <strong className="text-foreground underline decoration-primary/30">pattern recognition</strong> untuk melihat ketidakwajaran dalam COGS (Cost of Goods Sold) and <em className="italic">Wastage</em> yang sering tidak terdeteksi audit biasa.</Trans>
+                                <Trans i18nKey="about_page.card_anomaly_desc">Using <strong className="text-foreground underline decoration-primary/30">pattern recognition</strong> to spot anomalies in COGS (Cost of Goods Sold) and <em className="italic">Wastage</em> that often go undetected by standard audits.</Trans>
                             </p>
                         </div>
                         <div className="p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 group">
