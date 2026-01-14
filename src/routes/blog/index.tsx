@@ -58,11 +58,11 @@ function BlogIndex() {
         else entry.default = content as string
     })
 
-    const BLOG_POSTS = Array.from(blogMap.values()).map(entry => {
+    const BLOG_POSTS = Array.from(blogMap.entries()).map(([baseId, entry]) => {
         const content = (isEn && entry.en) ? entry.en : entry.default
         const { data } = parseFrontmatter(content)
         return {
-            slug: data.slug || '',
+            slug: data.slug || baseId.replace('.md', ''),
             title: data.title || 'Untitled',
             excerpt: data.excerpt || '',
             date: data.date || 'Unknown Date',
@@ -70,7 +70,7 @@ function BlogIndex() {
             category: data.category || 'General',
             image: data.image || '/assets/images/blog-default.png',
         }
-    }).filter(p => p.slug).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    }).filter(p => p.slug && p.title !== 'Untitled').sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
     return (
         <div className="container py-20 max-w-6xl mx-auto px-4 md:px-8">

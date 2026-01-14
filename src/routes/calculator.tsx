@@ -7,7 +7,6 @@ import { CurrencyInput } from '@/components/ui/currency-input'
 import { usePhantomCalculator } from '@/hooks/use-phantom-calculator'
 import { formatRupiah } from '@/lib/format'
 import { AlertTriangle, Download, RefreshCcw, ArrowRight, TrendingDown, Activity, Microscope, Target, Zap, DollarSign, Users } from 'lucide-react'
-import { Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { useTranslation, Trans } from 'react-i18next'
 
@@ -25,6 +24,13 @@ export const Route = createFileRoute('/calculator')({
         }
     },
 })
+
+function formatCurrency(value: number, currency: 'IDR' | 'USD' | 'EUR'): string {
+    const symbols = { IDR: 'Rp', USD: '$', EUR: '€' }
+    const prefix = symbols[currency]
+    const formatted = new Intl.NumberFormat('en-US').format(value)
+    return `${prefix} ${formatted}`
+}
 
 function Calculator() {
     const { t } = useTranslation()
@@ -44,6 +50,7 @@ function Calculator() {
     const [bootLines, setBootLines] = useState<string[]>([])
     const [phase, setPhase] = useState(1) // 1: Core, 2: Labor, 3: Hidden
     const [isCalculating, setIsCalculating] = useState(false)
+    const [currency, setCurrency] = useState<'IDR' | 'USD' | 'EUR'>('IDR')
 
     // Boot Sequence Effect
     useEffect(() => {
@@ -227,7 +234,7 @@ function Calculator() {
                                 <p className="text-xs font-bold text-destructive uppercase tracking-widest">{t('calculator.monthly_leakage')}</p>
                                 <TrendingDown className="w-4 h-4 text-destructive" />
                             </div>
-                            <h4 className="text-3xl font-black tracking-tight text-destructive">{formatRupiah(totalPhantomCost)}</h4>
+                            <h4 className="text-3xl font-black tracking-tight text-destructive">{formatCurrency(totalPhantomCost, currency)}</h4>
                             <div className="pt-2 border-t border-destructive/10 font-mono text-[10px] text-destructive/70 uppercase">
                                 Verdict: {severity.label}
                             </div>
@@ -239,7 +246,7 @@ function Calculator() {
                                 <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">{t('calculator.annual_loss')}</p>
                                 <Zap className="w-4 h-4 text-yellow-500 opacity-50" />
                             </div>
-                            <h4 className="text-3xl font-black tracking-tight">{formatRupiah(totalPhantomCost * 12)}</h4>
+                            <h4 className="text-3xl font-black tracking-tight">{formatCurrency(totalPhantomCost * 12, currency)}</h4>
                             <div className="pt-2 border-t border-border/50 font-mono text-[10px] text-muted-foreground uppercase tracking-tighter">
                                 {t('calculator.projection')}
                             </div>
@@ -258,17 +265,17 @@ function Calculator() {
                                 <div className="space-y-4">
                                     <div className="flex justify-between group">
                                         <span className="text-sm text-muted-foreground">{t('calculator.waste_shrinkage')}</span>
-                                        <span className="font-bold text-destructive group-hover:scale-110 transition-transform">{formatRupiah(kerugianBahanBaku)}</span>
+                                        <span className="font-bold text-destructive group-hover:scale-110 transition-transform">{formatCurrency(kerugianBahanBaku, currency)}</span>
                                     </div>
                                     <Separator className="bg-border/30" />
                                     <div className="flex justify-between group">
                                         <span className="text-sm text-muted-foreground">{t('calculator.idle_time')}</span>
-                                        <span className="font-bold text-destructive group-hover:scale-110 transition-transform">{formatRupiah(kerugianJamKosong)}</span>
+                                        <span className="font-bold text-destructive group-hover:scale-110 transition-transform">{formatCurrency(kerugianJamKosong, currency)}</span>
                                     </div>
                                     <Separator className="bg-border/30" />
                                     <div className="flex justify-between group">
                                         <span className="text-sm text-muted-foreground">{t('calculator.hidden_costs')}</span>
-                                        <span className="font-bold text-destructive group-hover:scale-110 transition-transform">{formatRupiah(biayaLain)}</span>
+                                        <span className="font-bold text-destructive group-hover:scale-110 transition-transform">{formatCurrency(biayaLain, currency)}</span>
                                     </div>
                                 </div>
                                 <div className="p-4 rounded-xl bg-primary/5 border border-primary/10">
@@ -298,10 +305,10 @@ function Calculator() {
                                         </Trans>
                                     </p>
                                     <Button asChild variant="secondary" className="w-full font-bold h-12">
-                                        <Link to="/investasi">
+                                        <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">
                                             {t('calculator.schedule_mri')}
                                             <ArrowRight className="ml-2 w-4 h-4" />
-                                        </Link>
+                                        </a>
                                     </Button>
                                 </CardContent>
                             </Card>
@@ -366,13 +373,32 @@ function Calculator() {
                         <CardContent className="space-y-6 py-8">
                             {phase === 1 && (
                                 <div className="space-y-6">
+                                    {/* Currency Selector */}
+                                    <div className="space-y-3">
+                                        <Label className="text-xs font-black uppercase tracking-widest opacity-70">Currency</Label>
+                                        <div className="grid grid-cols-3 gap-2">
+                                            {(['IDR', 'USD', 'EUR'] as const).map((curr) => (
+                                                <button
+                                                    key={curr}
+                                                    type="button"
+                                                    onClick={() => setCurrency(curr)}
+                                                    className={`px-4 py-3 rounded-lg border-2 font-bold text-sm transition-all ${currency === curr
+                                                        ? 'border-primary bg-primary text-primary-foreground'
+                                                        : 'border-border bg-muted/30 hover:border-primary/50'
+                                                        }`}
+                                                >
+                                                    {curr}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
                                     <div className="space-y-3">
                                         <Label className="text-xs font-black uppercase tracking-widest opacity-70">{t('calculator.label_revenue')}</Label>
-                                        <CurrencyInput value={omzet} onValueChange={setOmzet} placeholder="IDR 0" className="h-14 text-xl font-bold bg-muted/30 border-primary/20 focus-visible:ring-primary" />
+                                        <CurrencyInput value={omzet} onValueChange={setOmzet} placeholder={`${currency} 0`} className="h-14 text-xl font-bold bg-muted/30 border-primary/20 focus-visible:ring-primary" />
                                     </div>
                                     <div className="space-y-3">
                                         <Label className="text-xs font-black uppercase tracking-widest opacity-70">{t('calculator.label_cogs')}</Label>
-                                        <CurrencyInput value={biayaBaku} onValueChange={setBiayaBaku} placeholder="IDR 0" className="h-14 text-xl font-bold bg-muted/30 border-primary/20 focus-visible:ring-primary" />
+                                        <CurrencyInput value={biayaBaku} onValueChange={setBiayaBaku} placeholder={`${currency} 0`} className="h-14 text-xl font-bold bg-muted/30 border-primary/20 focus-visible:ring-primary" />
                                     </div>
                                 </div>
                             )}
@@ -380,7 +406,7 @@ function Calculator() {
                                 <div className="space-y-6">
                                     <div className="space-y-3">
                                         <Label className="text-xs font-black uppercase tracking-widest opacity-70">{t('calculator.label_payroll')}</Label>
-                                        <CurrencyInput value={gaji} onValueChange={setGaji} placeholder="IDR 0" className="h-14 text-xl font-bold bg-muted/30 border-primary/20 focus-visible:ring-primary" />
+                                        <CurrencyInput value={gaji} onValueChange={setGaji} placeholder={`${currency} 0`} className="h-14 text-xl font-bold bg-muted/30 border-primary/20 focus-visible:ring-primary" />
                                     </div>
                                     <div className="space-y-3">
                                         <Label className="text-xs font-black uppercase tracking-widest opacity-70">{t('calculator.label_idle')}</Label>
@@ -395,7 +421,7 @@ function Calculator() {
                                 <div className="space-y-6">
                                     <div className="space-y-3">
                                         <Label className="text-xs font-black uppercase tracking-widest opacity-70">{t('calculator.label_phantom_opex')}</Label>
-                                        <CurrencyInput value={biayaLain} onValueChange={setBiayaLain} placeholder="IDR 0" className="h-14 text-xl font-bold bg-muted/30 border-primary/20 focus-visible:ring-primary" />
+                                        <CurrencyInput value={biayaLain} onValueChange={setBiayaLain} placeholder={`${currency} 0`} className="h-14 text-xl font-bold bg-muted/30 border-primary/20 focus-visible:ring-primary" />
                                         <p className="text-[10px] text-muted-foreground uppercase leading-relaxed tracking-wider">{t('calculator.phantom_opex_desc')}</p>
                                     </div>
                                 </div>
