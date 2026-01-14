@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ShieldCheck, TrendingDown, Users, DollarSign, Clock, Target, BadgeCheck, Activity, Microscope } from "lucide-react"
+import { ArrowRight, ShieldCheck, TrendingDown, Users, DollarSign, Clock, Target, BadgeCheck, Activity, Microscope, Search, Brain } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslation } from 'react-i18next'
 
@@ -22,25 +22,28 @@ function Index() {
                     <div className="flex justify-between items-center p-4 rounded-lg bg-destructive/10 border border-destructive/20">
                         <div>
                             <p className="text-xs text-muted-foreground uppercase tracking-wide">{t('hero.visual.phantom_detected')}</p>
-                            <p className="text-2xl font-bold text-destructive">Rp 47.8 Juta<span className="text-sm font-normal">/bulan</span></p>
+                            <p className="text-2xl font-bold text-destructive">
+                                {t('hero.visual.leak_value')}
+                                <span className="text-sm font-normal">{t('hero.visual.per_month')}</span>
+                            </p>
                         </div>
                         <TrendingDown className="w-10 h-10 text-destructive opacity-50" />
                     </div>
                     <div className="grid grid-cols-2 gap-3">
                         <div className="p-3 rounded-lg bg-muted/50">
                             <p className="text-xs text-muted-foreground">{t('hero.visual.runway')}</p>
-                            <p className="text-lg font-bold text-yellow-500">2.3 bulan</p>
+                            <p className="text-lg font-bold text-yellow-500">{t('hero.visual.runway_value')}</p>
                         </div>
                         <div className="p-3 rounded-lg bg-muted/50">
                             <p className="text-xs text-muted-foreground">{t('hero.visual.leak')}</p>
-                            <p className="text-lg font-bold text-orange-500">-8.2%</p>
+                            <p className="text-lg font-bold text-orange-500">{t('hero.visual.leak_percent')}</p>
                         </div>
                     </div>
                     <div className="pt-4 border-t border-border/50">
                         <p className="text-sm italic text-muted-foreground">
                             {t('hero.visual.quote')}
                         </p>
-                        <p className="text-sm font-medium mt-2">— Vitto</p>
+                        <p className="text-sm font-medium mt-2">{t('hero.visual.author')}</p>
                     </div>
                 </div>
             )
@@ -503,7 +506,9 @@ function Index() {
                         </div>
                         <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight">{t('solution.title')}</h2>
                         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                            {t('solution.desc').split(' — ')[0]} — <strong className="text-foreground">{t('solution.desc').split(' — ')[1]}</strong>
+                            <Trans i18nKey="solution.desc">
+                                Not just a spreadsheet. This is a <strong className="text-foreground">Financial Operating System</strong> — modular infrastructure to lock every cent in its place.
+                            </Trans>
                         </p>
                     </div>
 
@@ -598,14 +603,14 @@ function Index() {
                                 <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">{t('pricing.starter_badge')}</p>
                             </div>
                             <div className="mb-8">
-                                <p className="text-3xl font-black text-white">Rp 3jt<span className="text-xs font-normal text-muted-foreground ml-1">/mo</span></p>
+                                <p className="text-3xl font-black text-white">{t('pricing.starter_price')}<span className="text-xs font-normal text-muted-foreground ml-1">{t('pricing.per_month')}</span></p>
                             </div>
                             <ul className="space-y-4 mb-8 flex-1">
                                 <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_starter_1')}</li>
                                 <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_starter_2')}</li>
                             </ul>
                             <div className="pt-6 border-t border-border/10">
-                                <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">Powered by FFD™ v3 Neural Engine</p>
+                                <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">{t('pricing.powered_by')}</p>
                                 <Button asChild className="w-full bg-primary/10 text-primary hover:bg-primary hover:text-black font-black transition-all">
                                     <Link to="/get-access">{t('pricing.cta_starter')}</Link>
                                 </Button>
@@ -620,7 +625,7 @@ function Index() {
                                 <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">{t('pricing.growth_badge')}</p>
                             </div>
                             <div className="mb-8">
-                                <p className="text-3xl font-black text-white">Rp 4jt<span className="text-xs font-normal text-muted-foreground ml-1">/mo</span></p>
+                                <p className="text-3xl font-black text-white">{t('pricing.growth_price')}<span className="text-xs font-normal text-muted-foreground ml-1">{t('pricing.per_month')}</span></p>
                             </div>
                             <ul className="space-y-4 mb-8 flex-1">
                                 <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_everything_starter')}</li>
@@ -629,7 +634,7 @@ function Index() {
                                 <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_simulation')}</li>
                             </ul>
                             <div className="pt-6 border-t border-border/10">
-                                <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">Powered by FFD™ v3 Neural Engine</p>
+                                <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">{t('pricing.powered_by')}</p>
                                 <Button asChild className="w-full bg-primary text-black hover:bg-primary/90 font-black shadow-lg shadow-primary/20">
                                     <Link to="/get-access">{t('pricing.cta_growth')}</Link>
                                 </Button>
@@ -643,7 +648,7 @@ function Index() {
                                 <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">{t('pricing.scale_badge')}</p>
                             </div>
                             <div className="mb-8">
-                                <p className="text-3xl font-black text-white">Rp 5jt<span className="text-xs font-normal text-muted-foreground ml-1">/mo</span></p>
+                                <p className="text-3xl font-black text-white">{t('pricing.scale_price')}<span className="text-xs font-normal text-muted-foreground ml-1">{t('pricing.per_month')}</span></p>
                             </div>
                             <ul className="space-y-4 mb-8 flex-1">
                                 <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_everything_growth')}</li>
@@ -652,9 +657,9 @@ function Index() {
                                 <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_priority')}</li>
                             </ul>
                             <div className="pt-6 border-t border-border/10">
-                                <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">Powered by FFD™ v3 Neural Engine</p>
+                                <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">{t('pricing.powered_by')}</p>
                                 <Button asChild className="w-full bg-primary/10 text-primary hover:bg-primary hover:text-black font-black transition-all">
-                                    <Link to="/get-access">ACTIVATE SCALE</Link>
+                                    <Link to="/get-access">{t('pricing.cta_scale')}</Link>
                                 </Button>
                             </div>
                         </div>
@@ -738,7 +743,9 @@ function Index() {
                     <ShieldCheck className="w-16 h-16 text-primary mx-auto mb-6" />
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">{t('guarantee_section.title')}</h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-                        {t('guarantee_section.p1').split(' healthy (green), ')[0]} <strong className="text-green-500">{t('guarantee_section.p1').includes('sehat (hijau)') ? 'sehat (hijau)' : 'healthy (green)'}</strong>, {t('guarantee_section.p1').split(' healthy (green), ')[1] || t('guarantee_section.p1').split(' sehat (hijau), ')[1]}
+                        <Trans i18nKey="guarantee_section.p1">
+                            I don't sell empty hopes. If FFD™ v3 dashboard says your business is <strong className="text-green-500">healthy (green)</strong>, the consultation is over. Free. No pitch whatsoever.
+                        </Trans>
                     </p>
                     <p className="text-muted-foreground">
                         {t('guarantee_section.p2')}
@@ -810,11 +817,15 @@ function Index() {
             <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-muted/20 to-background">
                 <div className="container mx-auto max-w-3xl text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        {t('final_cta.title1')} <span className="text-primary">{t('final_cta.title2')}</span>?
+                        <Trans i18nKey="final_cta.title">
+                            Ready to <span className="text-primary">Stop the Bleeding</span>?
+                        </Trans>
                     </h2>
                     <p className="text-lg text-muted-foreground mb-4">
-                        {t('final_cta.p1').split('. ')[0]}. <br />
-                        <strong className="text-foreground">{t('final_cta.p1').split('. ')[1]}. {t('final_cta.p1').split('. ')[2]}</strong>
+                        <Trans i18nKey="final_cta.p1">
+                            Your business data is speaking. <br />
+                            <strong className="text-foreground">Are you ready to hear the truth?</strong>
+                        </Trans>
                     </p>
                     <p className="text-sm text-muted-foreground mb-8 max-w-xl mx-auto italic">
                         {t('final_cta.quote')}
@@ -829,7 +840,9 @@ function Index() {
                     </Button>
                     <p className="text-sm text-muted-foreground mt-4">
                         <Clock className="w-4 h-4 inline mr-1" />
-                        {t('final_cta.footer').split('. ')[0]}. <strong className="text-foreground">{t('final_cta.footer').split('. ')[1]}</strong> {t('final_cta.footer').split('. ')[2]}
+                        <Trans i18nKey="final_cta.footer">
+                            Self-diagnosis takes 15 mins. <strong className="text-foreground">Available 24/7.</strong> Instant result.
+                        </Trans>
                     </p>
                 </div>
             </section>

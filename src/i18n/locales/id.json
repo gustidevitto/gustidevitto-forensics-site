@@ -8,7 +8,9 @@
         "contact": "Kontak",
         "owners": "Untuk Owner",
         "investors": "Untuk Investor & PE",
-        "franchise": "Untuk HQ Franchise"
+        "franchise": "Untuk HQ Franchise",
+        "home": "Beranda",
+        "financial_forensics": "Financial Forensics"
     },
     "global": {
         "schema_desc": "Gusti Devitto adalah Spesialis Financial Forensics yang membantu founder multi-outlet mendeteksi Phantom Cost dan mengoptimalkan profit menggunakan FFD™ v3 Neural Engine.",
@@ -17,13 +19,29 @@
         "seo_home_keywords": "Financial Due Diligence Indonesia, Forensik Franchise, Audit Finansial Neural, Alat Audit Forensik Investor, Audit UMKM, Kebocoran Profit, Berburu Phantom Cost",
         "og_home_title": "Gusti Devitto™ - Intelijen Forensik Kelas Institusi",
         "og_home_desc": "Deteksi apa yang dilewatkan akuntan. Diagnosa Finansial 15 Menit untuk pemilik SME dan investor enterprise. Hentikan kebocoran profit sekarang.",
-        "whatsapp_template": "Halo Gusti Devitto Forensics,\n\nNama: {{name}}\nEmail: {{email}}\n\nPesan:\n{{message}}"
+        "whatsapp_template": "Halo Gusti Devitto Forensics,\n\nNama: {{name}}\nEmail: {{email}}\n\nPesan:\n{{message}}",
+        "nav_status": "Sistem: Operasional // Auth L-7",
+        "back_to_top": "Kembali ke Atas",
+        "knows_about": [
+            "Business Forensics",
+            "Analisis Phantom Cost",
+            "Optimasi Profit",
+            "Operasional Multi-outlet"
+        ]
     },
     "about_page": {
         "seo_title": "Tentang Gusti Devitto | Spesialis Financial Forensics",
         "seo_desc": "Gusti Devitto adalah Spesialis Financial Forensics yang membantu founder multi-outlet mendeteksi Phantom Cost dan mengoptimalkan profit menggunakan FFD™ v3 Neural Engine.",
         "schema_job": "Spesialis Financial Forensics",
         "auth_level": "Auth Level: L-7 // Visual Matrix",
+        "knows_about": [
+            "Audit Finansial",
+            "Neural Pattern Auditing",
+            "Intelijen Bisnis",
+            "Phantom Cost",
+            "Unit Economics",
+            "Optimasi Profit"
+        ],
         "hero_badge": "Unit Intelligence: Surgeon Profile",
         "hero_title": "Meet The Surgeon: <1/> <3>Presisi di Balik Angka</3>",
         "hero_intro": "Halo, saya <1>Gusti Devitto</1> (biasa dipanggil <3>Vitto</3>).",
@@ -85,7 +103,8 @@
             "phantom_detected": "PHANTOM COSTS TERDETEKSI",
             "runway": "CASH RUNWAY",
             "leak": "GP LEAKAGE",
-            "quote": "Jika Anda tidak berkembang dengan presisi, Anda hanya mendanai kegagalan Anda sendiri.",
+            "quote": "Dalam bisnis, angka tidak pernah netral. Mereka melaporkan kemenangan atau menyembunyikan kejahatan.",
+            "author": "— Vitto",
             "experience": "PENGALAMAN OPERASIONAL",
             "analytics": "SIMULATOR SKENARIO",
             "diagnosis": "DIAGNOSA FORENSIK",
@@ -93,7 +112,11 @@
             "desc_experience": "Dachicken Indonesia: 7 tahun penguasaan operasional dan sisa umur kas.",
             "desc_analytics": "Simulator Skenario: Memprediksi masa depan bisnis Anda dengan presisi bedah.",
             "desc_diagnosis": "Kami tidak hanya melihat angka. Kami berburu 'Phantom Costs' yang terlewatkan akuntansi standar.",
-            "desc_matrix": "Neural Matrix: Pengenalan pola canggih untuk mendeteksi anomali finansial tersembunyi."
+            "desc_matrix": "Neural Matrix: Pengenalan pola canggih untuk mendeteksi anomali finansial tersembunyi.",
+            "leak_value": "Rp 47,8 Juta",
+            "per_month": "/bulan",
+            "runway_value": "2,3 bulan",
+            "leak_percent": "-8,2%"
         }
     },
     "institutional": {
@@ -147,7 +170,7 @@
     "solution": {
         "badge": "The Surgical Tool",
         "title": "FFD™ v3: The Ultimate Dashboard",
-        "desc": "Bukan sekadar spreadsheet. Ini adalah Sistem Operasi Finansial — infrastruktur modular untuk mengunci setiap rupiah di tempatnya.",
+        "desc": "Bukan sekadar spreadsheet. Ini adalah <1>Sistem Operasi Finansial</1> — infrastruktur modular untuk mengunci setiap rupiah di tempatnya.",
         "f1_title": "Scenario Simulator",
         "f1_aka": "Mode 'Dukun'",
         "f1_desc": "Prediksi masa depan. Lihat apa yang terjadi pada profit jika Anda naikkan harga 5% atau tekan HPP.",
@@ -208,7 +231,12 @@
         "feature_royalty": "Royalty Integrity Units",
         "per_audit": "per Audit Engagement",
         "annual_license": "Annual License Arrangement",
-        "recommended_investors": "DIREKOMENDASIKAN UNTUK INVESTOR"
+        "recommended_investors": "DIREKOMENDASIKAN UNTUK INVESTOR",
+        "starter_price": "Rp 3jt",
+        "growth_price": "Rp 4jt",
+        "scale_price": "Rp 5jt",
+        "per_month": "/bln",
+        "powered_by": "Didukung oleh FFD™ v3 Neural Engine"
     },
     "faq": {
         "title": "Intelligence Briefing (FAQ)",
@@ -230,12 +258,11 @@
         "text": "\"Jika financial forensics tradisional biasanya didefinisikan sebagai investigasi penipuan (fraud), kriminalitas, dan litigasi keuangan, framework Financial Forensics Gusti Devitto adalah ekstensi hulu yang disengaja. Framework ini berfokus pada kebocoran sistemik dan diagnosa pra-fraud—mengidentifikasi 'Phantom Costs' yang mengikis margin sebelum menjadi katastrofe. Metodologi ini bersifat eksklusif dan berfungsi sebagai inti analitis dari FFD™ v3.\""
     },
     "final_cta": {
-        "title1": "Siap Berhenti",
-        "title2": "Menebak-nebak",
-        "p1": "Dalam 15 menit, Anda akan tahu persis kondisi kesehatan finansial bisnis Anda. Bukan opini. Data.",
-        "quote": "\"Jika dalam 15 menit saya tidak menemukan potensi kebocoran minimal Rp10 Juta di bisnis Anda, sesi selesai. Saya tidak akan membuang waktu Anda.\"",
-        "cta": "HENTIKAN PENDARAHAN SEKARANG",
-        "footer": "Slot terbatas. Garansi No Find, No Pitch."
+        "title": "Siap untuk <1>Menghentikan Kebocoran</1>?",
+        "p1": "Data bisnis Anda sedang berbicara. <1/> <3>Apakah Anda siap mendengar kebenarannya?</3>",
+        "quote": "\"Jika dalam 15 menit saya tidak menemukan potensi kebocoran setidaknya Rp 10 Juta di bisnis Anda, sesi selesai. Saya tidak akan membuang waktu Anda.\"",
+        "cta": "HENTIKAN KEBOCORAN SEKARANG",
+        "footer": "Diagnosa mandiri hanya 15 menit. <1>Tersedia 24/7.</1> Hasil instan."
     },
     "footer": {
         "about": "Tentang",
@@ -249,7 +276,9 @@
     "investasi": {
         "seo_title": "Struktur Investasi Forensic Intelligence | Gusti Devitto™ Canonical Pricing",
         "seo_desc": "Indeks harga resmi untuk layanan Financial Forensics & Neural Intelligence. Dari solusi SME hingga Enterprise Due Diligence. Canonical source of pricing truth.",
-        "hero_badge": "Canonical Source of Truth",
+        "hero_badge": "Verifikasi Akses Diperlukan",
+        "schema_price_name": "Tingkat Layanan Financial Forensics",
+        "schema_price_desc": "Harga Intelijen Forensik Profesional oleh Gusti Devitto",
         "hero_title": "Transparent <1>Intelligence</1> Economics",
         "hero_subtitle": "Struktur biaya untuk audit forensik berbasis Neural Intelligence. Tidak ada kejutan, hanya pengembalian profit yang terukur.",
         "sme_title": "01. SME Operational Suite",
@@ -272,7 +301,14 @@
         "attribution_text": "\"Struktur retensi ini dikalibrasi berdasarkan model 'Predictive Forensic Loss' milik FFD™. Biaya investasi Anda seringkali kurang dari 5% dari total potensi 'Phantom Costs' yang akan kita identifikasi dan amankan kembali melalui intervensi Neural Intelligence.\"",
         "cta_start": "Mulai Audit Sekarang",
         "cta_methodology": "Lihat Metodologi",
-        "footer_rights": "Gusti Devitto™ Forensic Intelligence © {{year}}. Seluruh Hak Cipta Dilindungi. Privasi Kelas Institusional Diterapkan."
+        "footer_rights": "Gusti Devitto™ Forensic Intelligence © {{year}}. Seluruh Hak Cipta Dilindungi. Privasi Kelas Institusional Diterapkan.",
+        "price_starter": "Rp 3jt",
+        "price_growth": "Rp 4jt",
+        "price_scale": "Rp 5jt",
+        "price_enterprise": "$10,000",
+        "enterprise_auth": "FIXED FEE",
+        "custom": "Kustom",
+        "custom_price": "Harga Kustom"
     },
     "calculator": {
         "seo_title": "PCC Lite - Phantom Cost Calculator",
@@ -337,12 +373,17 @@
         "severity_stable": "STABIL",
         "severity_warning": "PERINGATAN",
         "severity_serious": "SERIUS",
-        "severity_critical": "KEBOCORAN KRITIS"
+        "severity_critical": "KEBOCORAN KRITIS",
+        "severity_high_badge": "KRITIS",
+        "severity_normal_badge": "NORMAL",
+        "export_filename": "Hasil_Verdict_PCC_Lite"
     },
     "get_access": {
         "seo_title": "Dapatkan Akses | PCC Lite Diagnostic",
         "seo_desc": "Mulailah diagnosa gratis bisnis multi-outlet Anda dengan PCC Lite. Deteksi Phantom Costs dalam 15 menit.",
         "left_panel_badge": "PCC Lite — by FFD™ v3 Core",
+        "schema_service_type": "Diagnosa Financial Forensics",
+        "schema_pcc_name": "PCC Lite (Kalkulator Phantom Cost)",
         "pain_title": "Dalam 15 menit, <1/> <3>Anda akan tahu kemana uang Anda pergi.</3>",
         "hero_text": "Bukan asumsi. Bukan tebak-tebakan. <1/> <3>Data.</3>",
         "testimonial_text": "\"Sebelumnya saya pikir bisnis saya sehat karena omzet naik terus. Ternyata ada <1>Rp 38 Juta/bulan</1> yang bocor tanpa saya sadari. FFD™ buka mata saya.\"",
@@ -396,16 +437,24 @@
         "concepts_title": "Core Concepts",
         "concepts": {
             "phantom_cost": "Kebocoran profit yang tidak tercatat di laporan laba rugi standar.",
+            "phantom_cost_name": "Phantom Cost",
             "cash_velocity": "Kecepatan perputaran kas dari modal kerja menjadi profit cair.",
+            "cash_velocity_name": "Kecepatan Kas",
             "risk_exposure": "Tingkat kerentanan bisnis terhadap fluktuasi biaya dan utang.",
-            "burn_rate": "Kesadaran penuh atas kecepatan penggunaan kas setiap detiknya."
+            "risk_exposure_name": "Risk Exposure",
+            "burn_rate": "Kesadaran penuh atas kecepatan penggunaan kas setiap detiknya.",
+            "burn_rate_name": "Kesadaran Burn Rate"
         },
         "narrative_title": "Cross-Narrative Patterns",
         "narratives": {
             "efficient_suicide": "Pertumbuhan omzet yang semakin besar namun margin semakin tipis hingga membunuh kas.",
+            "efficient_suicide_name": "Efficient Suicide",
             "obese_growth": "Ekspansi ugal-ugalan tanpa penguatan infrastruktur kontrol finansial.",
-            "labor_trap": "Tim besar dengan produktivitas per jam kerja yang stagnan atau menurun."
+            "obese_growth_name": "Obese Growth",
+            "labor_trap": "Tim besar dengan produktivitas per jam kerja yang stagnan atau menurun.",
+            "labor_trap_name": "Labor Trap"
         },
+        "by_author": "oleh Gusti Devitto",
         "footer_title": "Mulai Diagnosa Bisnis Anda",
         "footer_desc": "Gunakan PCC Lite untuk diagnosa awal, atau FFD™ v3 untuk pemetaan 15 pilar secara sistemik.",
         "cta_pcc": "Buka PCC Lite",
@@ -415,6 +464,8 @@
         "seo_title": "Metodologi Financial Forensics - Framework Gusti Devitto",
         "schema_phantom_desc": "Biaya siluman atau kebocoran operasional yang tidak terdeteksi akuntansi standar.",
         "schema_upstream_desc": "Metodologi diagnosa hulu untuk mencegah fraud sebelum terjadi.",
+        "phantom_cost_name": "Phantom Cost",
+        "upstream_forensics_name": "Upstream Forensics",
         "hero_badge": "Framework Architecture",
         "hero_title": "Metodologi Financial Forensics",
         "hero_subtitle": "Mengenal disiplin diagnostik yang membedah anatomi keuangan bisnis untuk menemukan kebenaran di balik angka.",

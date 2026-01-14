@@ -39,42 +39,38 @@ const rawBlogs = import.meta.glob('../../../content/blog/*.md', { query: '?raw',
 
 function BlogIndex() {
     const { t, i18n } = useTranslation()
-    const currentLang = i18n.language
+    const isEn = i18n.language.startsWith('en')
 
     // Process and filter blogs based on language
-    const blogMap = new Map<string, { id: string, en?: string, default: string }>()
+    const blogMap = new Map<string, { default: string, en?: string }>()
 
     Object.entries(rawBlogs).forEach(([path, content]) => {
         const filename = path.split('/').pop() || ''
-        const isEn = filename.endsWith('.en.md')
-        const baseId = isEn ? filename.replace('.en.md', '') : filename.replace('.md', '')
+        const isEnFile = filename.endsWith('.en.md')
+        const baseId = isEnFile ? filename.replace('.en.md', '') : filename.replace('.md', '')
 
         if (!blogMap.has(baseId)) {
-            blogMap.set(baseId, { id: baseId, default: '' })
+            blogMap.set(baseId, { default: '' })
         }
 
         const entry = blogMap.get(baseId)!
-        if (isEn) entry.en = content as string
+        if (isEnFile) entry.en = content as string
         else entry.default = content as string
     })
 
     const BLOG_POSTS = Array.from(blogMap.values()).map(entry => {
-        const content = (currentLang === 'en' && entry.en) ? entry.en : entry.default
+        const content = (isEn && entry.en) ? entry.en : entry.default
         const { data } = parseFrontmatter(content)
-
-        // Normalize slug: use baseId as slug for matching in detail page
-        const slug = entry.id.replace(/[\s\W]+/g, '-').toLowerCase()
-
         return {
-            slug,
+            slug: data.slug || '',
             title: data.title || 'Untitled',
             excerpt: data.excerpt || '',
             date: data.date || 'Unknown Date',
             readTime: data.readTime || '5 min read',
             category: data.category || 'General',
-            image: data.image || 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=800&auto=format&fit=crop'
+            image: data.image || '/assets/images/blog-default.png',
         }
-    }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    }).filter(p => p.slug).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
     return (
         <div className="container py-20 max-w-6xl mx-auto px-4 md:px-8">

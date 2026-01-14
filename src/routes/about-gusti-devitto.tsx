@@ -28,7 +28,7 @@ function AboutGustiDevitto() {
                             "jobTitle": t('about_page.schema_job'),
                             "description": t('about_page.seo_desc'),
                             "image": "https://www.gustidevitto.com/assets/images/aboutme.jpg",
-                            "knowsAbout": ["Financial Auditing", "Neural Pattern Auditing", "Business Intelligence", "Phantom Cost", "Unit Economics", "Profit Optimization"],
+                            "knowsAbout": t('about_page.knows_about', { returnObjects: true }),
                             "url": "https://www.gustidevitto.com/about-gusti-devitto",
                             "founder": {
                                 "@type": "Organization",

@@ -115,7 +115,7 @@ function Calculator() {
         const encodedUri = "data:text/csv;charset=utf-8," + encodeURIComponent(csvContent);
         const link = document.createElement("a");
         link.setAttribute("href", encodedUri);
-        link.setAttribute("download", `PCC_Lite_Verdict_${new Date().toISOString().split('T')[0]}.csv`);
+        link.setAttribute("download", `${t('calculator.export_filename')}_${new Date().toISOString().split('T')[0]}.csv`);
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -217,7 +217,7 @@ function Calculator() {
                             </div>
                             <h4 className="text-3xl font-black tracking-tight">{formatRupiah(omzet)}</h4>
                             <div className="pt-2 border-t border-border/50 font-mono text-[10px] text-muted-foreground uppercase">
-                                System Status: Operational
+                                {t('calculator.system_status')}: {t('calculator.operational_secured').split(' // ')[0]}
                             </div>
                         </div>
 

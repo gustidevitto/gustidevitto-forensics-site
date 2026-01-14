@@ -16,8 +16,8 @@ function InvestasiPage() {
             id: "starter",
             name: t('pricing.starter_title'),
             badge: t('pricing.starter_badge'),
-            price: "Rp 3.000.000",
-            period: "/bulan",
+            price: t('investasi.price_starter'),
+            period: t('pricing.per_month'),
             desc: t('investasi.sme_starter_desc', "Audit forensik dasar untuk mendeteksi 'kebocoran halus' pada operasional bulanan."),
             features: [
                 t('pricing.feature_starter_1'),
@@ -32,8 +32,8 @@ function InvestasiPage() {
             id: "growth",
             name: t('pricing.growth_title'),
             badge: t('pricing.popular'),
-            price: "Rp 4.000.000",
-            period: "/bulan",
+            price: t('investasi.price_growth'),
+            period: t('pricing.per_month'),
             desc: t('investasi.sme_growth_desc', "Diagnosis mendalam dengan intervensi strategis untuk perbaikan margin sistemik."),
             features: [
                 t('pricing.feature_everything_starter'),
@@ -50,8 +50,8 @@ function InvestasiPage() {
             id: "scale",
             name: t('pricing.scale_title'),
             badge: t('pricing.scale_badge'),
-            price: "Rp 5.000.000",
-            period: "/bulan",
+            price: t('investasi.price_scale'),
+            period: t('pricing.per_month'),
             desc: t('investasi.sme_scale_desc', "Pengawasan penuh untuk bisnis multi-outlet yang agresif melakukan ekspansi."),
             features: [
                 t('pricing.feature_everything_growth'),
@@ -75,14 +75,14 @@ function InvestasiPage() {
                 {JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "PriceSpecification",
-                    "name": "Financial Forensics Service Tiers",
-                    "description": "Professional Forensic Intelligence pricing by Gusti Devitto",
+                    "name": t('investasi.schema_price_name'),
+                    "description": t('investasi.schema_price_desc'),
                     "offers": [
-                        { "@type": "Offer", "name": "SME Starter", "price": "3000000", "priceCurrency": "IDR" },
-                        { "@type": "Offer", "name": "SME Growth", "price": "4000000", "priceCurrency": "IDR" },
-                        { "@type": "Offer", "name": "SME Scale", "price": "5000000", "priceCurrency": "IDR" },
-                        { "@type": "Offer", "name": "Enterprise Due Diligence", "price": "10000", "priceCurrency": "USD" },
-                        { "@type": "Offer", "name": "Franchise Neural Guard", "price": "Custom", "priceCurrency": "IDR" }
+                        { "@type": "Offer", "name": t('pricing.starter_title'), "price": "3000000", "priceCurrency": "IDR" },
+                        { "@type": "Offer", "name": t('pricing.growth_title'), "price": "4000000", "priceCurrency": "IDR" },
+                        { "@type": "Offer", "name": t('pricing.scale_title'), "price": "5000000", "priceCurrency": "IDR" },
+                        { "@type": "Offer", "name": t('pricing.enterprise_title'), "price": "10000", "priceCurrency": "USD" },
+                        { "@type": "Offer", "name": t('pricing.franchise_title'), "price": "Custom", "priceCurrency": "IDR" }
                     ]
                 })}
             </script>
@@ -121,7 +121,7 @@ function InvestasiPage() {
                         {smePlans.map((plan) => (
                             <div key={plan.id} className={`p-8 rounded-3xl border ${plan.highlight ? 'border-primary bg-primary/5 ring-1 ring-primary/20 shadow-2xl shadow-primary/5' : 'border-border/50 bg-[#111111]'} flex flex-col relative group transition-all`}>
                                 {plan.highlight && (
-                                    <div className="absolute -top-3 left-6 bg-[#FF0080] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">Most Popular</div>
+                                    <div className="absolute -top-3 left-6 bg-[#FF0080] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">{t('pricing.popular')}</div>
                                 )}
                                 <div className="mb-6">
                                     <h3 className="text-2xl font-black text-white uppercase mb-1">{plan.name}</h3>
@@ -174,8 +174,8 @@ function InvestasiPage() {
 
                             <div className="mb-12 relative z-10">
                                 <div className="flex items-baseline gap-2">
-                                    <p className="text-6xl font-black text-white">$10,000</p>
-                                    <span className="text-[#FF0080] font-black text-xs animate-pulse">FIXED FEE</span>
+                                    <p className="text-6xl font-black text-white">{t('investasi.price_enterprise')}</p>
+                                    <span className="text-[#FF0080] font-black text-xs animate-pulse">{t('investasi.enterprise_auth')}</span>
                                 </div>
                                 <p className="text-xs text-muted-foreground mt-2 uppercase font-bold tracking-widest bg-white/5 w-fit px-2 py-1 rounded">{t('pricing.per_audit')}</p>
                             </div>
@@ -209,7 +209,7 @@ function InvestasiPage() {
                             </div>
 
                             <div className="mb-12">
-                                <p className="text-5xl font-black text-white">Custom</p>
+                                <p className="text-5xl font-black text-white">{t('investasi.custom')}</p>
                                 <p className="text-[10px] text-muted-foreground uppercase font-black tracking-widest mt-2 border border-white/10 w-fit px-2 py-1">{t('pricing.annual_license')}</p>
                             </div>
 

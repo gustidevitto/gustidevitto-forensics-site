@@ -49,7 +49,7 @@ function RootComponent() {
                                 "addressRegion": "Jawa Tengah",
                                 "addressCountry": "ID"
                             },
-                            "knowsAbout": ["Business Forensics", "Phantom Cost Analysis", "Profit Optimization", "Multi-outlet Operations"],
+                            "knowsAbout": t('global.knows_about', { returnObjects: true }),
                             "priceRange": "$$$"
                         }
                     ]
@@ -90,7 +90,7 @@ function RootComponent() {
                                     </a>
                                     <div className="flex items-center gap-1.5">
                                         <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-status-blink"></div>
-                                        <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/80">System: Operational // Auth L-7</span>
+                                        <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/80">{t('global.nav_status')}</span>
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@ function BackToTop() {
         <button
             onClick={scrollToTop}
             className={`fixed bottom-8 right-8 z-[60] p-3 rounded-full bg-primary text-black shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
-            aria-label="Back to top"
+            aria-label={t('global.back_to_top')}
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"

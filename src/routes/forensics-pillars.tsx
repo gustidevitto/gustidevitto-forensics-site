@@ -81,7 +81,7 @@ function ForensicsPillars() {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                                 <p className="absolute bottom-4 left-4 text-[10px] font-mono text-white/70 uppercase tracking-widest">
-                                    Auth Level: L-7 // Visual Matrix
+                                    {t('about_page.auth_level')}
                                 </p>
                             </div>
                         </div>

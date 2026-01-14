@@ -78,7 +78,7 @@ const parseFrontmatter = (content: string) => {
 
 function BlogPost() {
     const { t, i18n } = useTranslation()
-    const currentLang = i18n.language
+    const isEn = i18n.language.startsWith('en')
 
     // @ts-ignore
     const { slug } = Route.useParams()
@@ -86,22 +86,35 @@ function BlogPost() {
     // Load Blogs Dynamically
     const rawBlogs = import.meta.glob('../../../content/blog/*.md', { query: '?raw', import: 'default', eager: true })
 
-    // Find the blog with matching slug (considering language)
-    const baseIdMatches = (filename: string, slug: string) => {
-        const baseId = filename.endsWith('.en.md') ? filename.replace('.en.md', '') : filename.replace('.md', '')
-        return baseId.replace(/[\s\W]+/g, '-').toLowerCase() === slug
+    // Find the blog with matching slug by checking data.slug
+    const blogMap = new Map<string, { default: string, en?: string }>()
+    Object.entries(rawBlogs).forEach(([path, content]) => {
+        const filename = path.split('/').pop() || ''
+        const isEnFile = filename.endsWith('.en.md')
+        const baseId = isEnFile ? filename.replace('.en.md', '') : filename.replace('.md', '')
+
+        if (!blogMap.has(baseId)) {
+            blogMap.set(baseId, { default: '' })
+        }
+
+        const entry = blogMap.get(baseId)!
+        if (isEnFile) entry.en = content as string
+        else entry.default = content as string
+    })
+
+    // Find entry where either default or en has matching slug in frontmatter
+    let selectedContent = ''
+    for (const entry of blogMap.values()) {
+        const { data: defaultData } = parseFrontmatter(entry.default)
+        const { data: enData } = entry.en ? parseFrontmatter(entry.en) : { data: null }
+
+        if (defaultData?.slug === slug || enData?.slug === slug) {
+            selectedContent = (isEn && entry.en) ? entry.en : entry.default
+            break
+        }
     }
 
-    const blogEntries = Object.entries(rawBlogs).filter(([path, _]) => baseIdMatches(path.split('/').pop() || '', slug))
-
-    // Select best entry: preference for .en.md if currentLang is 'en'
-    let blogEntry = blogEntries.find(([path, _]) => path.endsWith('.en.md') && currentLang === 'en')
-    if (!blogEntry) {
-        // Fallback to default (.md)
-        blogEntry = blogEntries.find(([path, _]) => !path.endsWith('.en.md'))
-    }
-
-    if (!blogEntry) {
+    if (!selectedContent) {
         return (
             <div className="container py-20 text-center">
                 <h1 className="text-2xl font-bold mb-4">{t('blog.not_found')}</h1>
@@ -112,7 +125,7 @@ function BlogPost() {
         )
     }
 
-    const { data, content } = parseFrontmatter(blogEntry[1] as string)
+    const { data, content } = parseFrontmatter(selectedContent)
 
     const post = {
         title: data.title || 'Untitled',

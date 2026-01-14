@@ -130,13 +130,13 @@ function PilarPage() {
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": "Home",
+                "name": t('nav.home'),
                 "item": "https://gustidevitto.com"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Financial Forensics",
+                "name": t('nav.financial_forensics'),
                 "item": "https://gustidevitto.com/forensics-pillars"
             },
             {
@@ -197,9 +197,9 @@ function PilarPage() {
                         </Link>
                     </Button>
                     <div className="text-sm font-medium text-muted-foreground hidden md:block">
-                        <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+                        <Link to="/" className="hover:text-primary transition-colors">{t('nav.home')}</Link>
                         <span className="mx-2">/</span>
-                        <Link to="/forensics-pillars" className="hover:text-primary transition-colors">Financial Forensics</Link>
+                        <Link to="/forensics-pillars" className="hover:text-primary transition-colors">{t('nav.financial_forensics')}</Link>
                         <span className="mx-2">/</span>
                         <span className="text-foreground">{t(`pillars.${pillar.id}.title`)}</span>
                     </div>

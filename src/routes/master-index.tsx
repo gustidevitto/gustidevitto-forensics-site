@@ -13,16 +13,16 @@ function MasterIndex() {
     const sortedPillars = [...pillarsData].sort((a, b) => a.title.localeCompare(b.title))
 
     const coreConcepts = [
-        { name: "Phantom Cost", desc: t('master_index.concepts.phantom_cost') },
-        { name: "Cash Velocity", desc: t('master_index.concepts.cash_velocity') },
-        { name: "Risk Exposure", desc: t('master_index.concepts.risk_exposure') },
-        { name: "Burn Rate Awareness", desc: t('master_index.concepts.burn_rate') }
+        { name: t('master_index.concepts.phantom_cost_name'), desc: t('master_index.concepts.phantom_cost') },
+        { name: t('master_index.concepts.cash_velocity_name'), desc: t('master_index.concepts.cash_velocity') },
+        { name: t('master_index.concepts.risk_exposure_name'), desc: t('master_index.concepts.risk_exposure') },
+        { name: t('master_index.concepts.burn_rate_name'), desc: t('master_index.concepts.burn_rate') }
     ]
 
     const narrativePatterns = [
-        { name: "Efficient Suicide", desc: t('master_index.narratives.efficient_suicide') },
-        { name: "Obese Growth", desc: t('master_index.narratives.obese_growth') },
-        { name: "Labor Trap", desc: t('master_index.narratives.labor_trap') }
+        { name: t('master_index.narratives.efficient_suicide_name'), desc: t('master_index.narratives.efficient_suicide') },
+        { name: t('master_index.narratives.obese_growth_name'), desc: t('master_index.narratives.obese_growth') },
+        { name: t('master_index.narratives.labor_trap_name'), desc: t('master_index.narratives.labor_trap') }
     ]
 
     return (
@@ -46,7 +46,7 @@ function MasterIndex() {
                     </div>
                     <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-balance">
                         <Trans i18nKey="master_index.hero_title">Financial Forensics <br /> Framework</Trans> <br />
-                        <Link to="/about-gusti-devitto" className="text-primary hover:underline">by Gusti Devitto</Link>
+                        <Link to="/about-gusti-devitto" className="text-primary hover:underline">{t('master_index.by_author')}</Link>
                     </h1>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                         {t('master_index.hero_subtitle')}

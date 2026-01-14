@@ -22,13 +22,13 @@ function MethodologyPage() {
                     "hasDefinedTerm": [
                         {
                             "@type": "DefinedTerm",
-                            "name": "Phantom Cost",
+                            "name": t('methodology.phantom_cost_name'),
                             "description": t('methodology.schema_phantom_desc'),
                             "termCode": "GD-PC-01"
                         },
                         {
                             "@type": "DefinedTerm",
-                            "name": "Upstream Forensics",
+                            "name": t('methodology.upstream_forensics_name'),
                             "description": t('methodology.schema_upstream_desc'),
                             "termCode": "GD-UF-01"
                         }
@@ -55,7 +55,7 @@ function MethodologyPage() {
                 </h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
                     <Trans i18nKey="methodology.definition_text">
-                        Financial Forensics adalah disiplin diagnostik yang menggabungkan analisis data operasional, pola statistik, dan audit alur kas untuk mendeteksi <strong className="text-foreground">Phantom Costs</strong> (biaya siluman) dan inefisiensi sistemik. Berbeda dengan audit konvensional, disiplin ini tidak hanya fokus pada "apa" yang terjadi di masa lalu, tapi "mengapa" kebocoran terjadi dan "bagaimana" menghentikannya secara <em>real-time</em>.
+                        Financial Forensics is a diagnostic discipline that combines operational data analysis, statistical patterns, and cash flow audits to detect <strong className="text-foreground">Phantom Costs</strong> (invisible leaks) and systemic inefficiencies. Unlike conventional audits, this discipline focuses not just on "what" happened in the past, but "why" leakage occurred and "how" to stop it in <em>real-time</em>.
                     </Trans>
                 </p>
             </section>
