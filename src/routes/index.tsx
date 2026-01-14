@@ -3,40 +3,42 @@ import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ShieldCheck, TrendingDown, Users, DollarSign, Clock, Target, BadgeCheck, Activity, Microscope } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { useTranslation } from 'react-i18next'
 
 export const Route = createFileRoute('/')({
     component: Index,
 })
 
 function Index() {
+    const { t } = useTranslation()
     const [currentSlide, setCurrentSlide] = useState(0)
     const slides = [
         {
             id: 'dashboard',
             type: 'component',
-            title: 'FFD™ v3 — 15-Minute MRI',
+            title: t('hero.visual.mri'),
             content: (
                 <div className="p-6 space-y-4">
                     <div className="flex justify-between items-center p-4 rounded-lg bg-destructive/10 border border-destructive/20">
                         <div>
-                            <p className="text-xs text-muted-foreground uppercase tracking-wide">Phantom Cost Terdeteksi</p>
+                            <p className="text-xs text-muted-foreground uppercase tracking-wide">{t('hero.visual.phantom_detected')}</p>
                             <p className="text-2xl font-bold text-destructive">Rp 47.8 Juta<span className="text-sm font-normal">/bulan</span></p>
                         </div>
                         <TrendingDown className="w-10 h-10 text-destructive opacity-50" />
                     </div>
                     <div className="grid grid-cols-2 gap-3">
                         <div className="p-3 rounded-lg bg-muted/50">
-                            <p className="text-xs text-muted-foreground">Cash Runway</p>
+                            <p className="text-xs text-muted-foreground">{t('hero.visual.runway')}</p>
                             <p className="text-lg font-bold text-yellow-500">2.3 bulan</p>
                         </div>
                         <div className="p-3 rounded-lg bg-muted/50">
-                            <p className="text-xs text-muted-foreground">Margin Leak</p>
+                            <p className="text-xs text-muted-foreground">{t('hero.visual.leak')}</p>
                             <p className="text-lg font-bold text-orange-500">-8.2%</p>
                         </div>
                     </div>
                     <div className="pt-4 border-t border-border/50">
                         <p className="text-sm italic text-muted-foreground">
-                            "Anda tidak butuh omzet lebih besar. <br />Anda butuh ember yang tidak bocor."
+                            {t('hero.visual.quote')}
                         </p>
                         <p className="text-sm font-medium mt-2">— Vitto</p>
                     </div>
@@ -46,28 +48,28 @@ function Index() {
         {
             id: 'dachicken',
             type: 'image',
-            title: 'Real World Experience',
+            title: t('hero.visual.experience'),
             src: '/assets/images/dachicken.png',
             desc: 'Dachicken Indonesia: 7 years of operational mastery and the hard lessons of cashflow.'
         },
         {
             id: 'forensics',
             type: 'image',
-            title: 'Deep-Dive Analytics',
+            title: t('hero.visual.analytics'),
             src: '/assets/images/forensics.png',
             desc: 'The Scenario Simulator: Predicting your business future with surgical precision.'
         },
         {
             id: 'audit',
             type: 'image',
-            title: 'Expert Diagnosis',
+            title: t('hero.visual.diagnosis'),
             src: '/assets/images/audit.png',
             desc: 'We don\'t just look at numbers. We hunt for the "Phantom Costs" that standard accounting misses.'
         },
         {
             id: 'neural-matrix',
             type: 'image',
-            title: 'Neural Matrix',
+            title: t('hero.visual.matrix'),
             src: '/assets/images/ffd1.png',
             desc: 'The Neural Matrix: Advanced pattern recognition to detect hidden financial anomalies.'
         }
@@ -126,19 +128,19 @@ function Index() {
                     {/* Badge */}
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] sm:text-xs font-black tracking-[0.2em] w-fit border border-primary/20 backdrop-blur-sm uppercase">
                         <ShieldCheck className="w-4 h-4" />
-                        <span>Auth Level: L-7 // Forensic Intelligence Unit</span>
+                        <span>{t('hero.badge')}</span>
                     </div>
 
                     {/* Headline - Institutional Grade */}
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-foreground leading-[0.9] uppercase">
-                        Stop Guessing. <br />
-                        Start Auditing. <br />
-                        <span className="text-primary tracking-tighter">I Hunt Phantom Costs for Founders. <br />I Verify Integrity for Investors.</span>
+                        {t('hero.title1')} <br />
+                        {t('hero.title2')} <br />
+                        <span className="text-primary tracking-tighter">{t('hero.subtitle')}</span>
                     </h1>
 
                     {/* Subheadline - Dual Segment Logic */}
                     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
-                        Whether you're a multi-outlet founder losing cash to "invisible" leaks or an investor auditing a $10M target, <strong className="text-foreground font-bold">FFD™ v3 exposes exactly where the money is bleeding.</strong> Neural-powered. Absolute Privacy. 15-Minute MRI.
+                        {t('hero.desc', { brand: 'FFD™ v3' })}
                     </p>
 
                     {/* CTA - Side-by-Side Dual Logic */}
@@ -146,14 +148,14 @@ function Index() {
                         <Button asChild size="lg" className="text-lg h-16 px-10 shadow-lg shadow-primary/30 bg-yellow-500 hover:bg-yellow-600 text-black font-black group relative overflow-hidden flex-1">
                             <Link to="/get-access">
                                 <span className="relative z-10 flex items-center justify-center">
-                                    JALANKAN GRATIS FFD
+                                    {t('hero.cta_free')}
                                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </span>
                             </Link>
                         </Button>
                         <Button asChild variant="outline" size="lg" className="text-lg h-16 px-10 border-amber-500/50 hover:border-amber-500 hover:bg-amber-500/10 text-amber-500 font-bold flex-1">
                             <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">
-                                REQUEST ENTERPRISE DEMO
+                                {t('hero.cta_enterprise')}
                             </a>
                         </Button>
                     </div>
@@ -161,7 +163,7 @@ function Index() {
                     {/* Guarantee Badge */}
                     <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
                         <BadgeCheck className="w-5 h-5 text-green-500" />
-                        <span><strong className="text-foreground">Sovereign Standard</strong> — Data remains local. Direct access to FFD™ Proprietary Engine.</span>
+                        <span><strong className="text-foreground">Sovereign Standard</strong> — {t('hero.guarantee').split(' — ')[1]}</span>
                     </div>
                 </div>
 
@@ -225,10 +227,10 @@ function Index() {
                     {/* Floating ROI Box (Replaces Capacity Badge) */}
                     <div className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 bg-black border border-amber-500/50 rounded-xl px-6 py-4 shadow-2xl animate-float z-20 hidden sm:block">
                         <div className="flex flex-col gap-1">
-                            <p className="text-[10px] uppercase font-black text-amber-500 tracking-[0.2em] leading-none mb-1">Risk Intelligence</p>
-                            <p className="text-xl font-black text-white">ROI: 15,000%</p>
+                            <p className="text-[10px] uppercase font-black text-amber-500 tracking-[0.2em] leading-none mb-1">{t('hero.roi_label')}</p>
+                            <p className="text-xl font-black text-white">{t('hero.roi_value')}</p>
                             <p className="text-[9px] text-muted-foreground max-w-[120px] leading-tight mt-1">
-                                Finding a $1M leak for a $10K audit fee isn't math; it's survival.
+                                {t('hero.roi_desc')}
                             </p>
                         </div>
                     </div>
@@ -243,34 +245,33 @@ function Index() {
                 <div className="container mx-auto max-w-6xl relative z-10">
                     <div className="text-center mb-16">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-black uppercase tracking-widest border border-primary/30 mb-6">
-                            Institutional Intelligence Unit
+                            {t('institutional.badge')}
                         </div>
                         <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight uppercase">
-                            I Verify What Management <br />
-                            <span className="text-primary">Refuses to Disclose.</span>
+                            {t('institutional.title')}
                         </h2>
                         <p className="text-gray-400 max-w-2xl mx-auto italic">
-                            Investment due diligence isn't about numbers on a page; it's about the patterns the management tries to hide. We use Neural AI to find the "Black Holes."
+                            {t('institutional.quote')}
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="p-10 rounded-[2rem] bg-zinc-900/50 border border-white/5 hover:border-primary/50 transition-all group">
-                            <h3 className="text-xl font-black mb-4 text-primary uppercase">M&A Forensic Due Diligence</h3>
+                            <h3 className="text-xl font-black mb-4 text-primary uppercase">{t('institutional.card1_title')}</h3>
                             <p className="text-sm text-gray-400 leading-relaxed">
-                                Detect revenue inflation, cooked books, and hidden liabilities before the wire transfer. <strong className="text-white">We invalidate bad deals before they drain your capital.</strong>
+                                {t('institutional.card1_desc').split('. ')[0]}. <strong className="text-white">{t('institutional.card1_desc').split('. ')[1]}</strong>
                             </p>
                         </div>
                         <div id="franchise" className="p-10 rounded-[2rem] bg-zinc-900/50 border border-white/5 hover:border-primary/50 transition-all group">
-                            <h3 className="text-xl font-black mb-4 text-primary uppercase">Franchise Royalty Guard</h3>
+                            <h3 className="text-xl font-black mb-4 text-primary uppercase">{t('institutional.card2_title')}</h3>
                             <p className="text-sm text-gray-400 leading-relaxed">
-                                Universal oversight across 100+ locations. Flag underreporting franchisees and "off-the-books" transactions using <strong className="text-white">Neural Anomaly Detection.</strong>
+                                {t('institutional.card2_desc').split('. ')[0]}. {t('institutional.card2_desc').split('. ')[1]} <strong className="text-white">{t('institutional.card2_desc').split('. ')[2]}</strong>
                             </p>
                         </div>
                         <div className="p-10 rounded-[2rem] bg-zinc-900/50 border border-white/5 hover:border-primary/50 transition-all group">
-                            <h3 className="text-xl font-black mb-4 text-primary uppercase">ESG & Integrity Audit</h3>
+                            <h3 className="text-xl font-black mb-4 text-primary uppercase">{t('institutional.card3_title')}</h3>
                             <p className="text-sm text-gray-400 leading-relaxed">
-                                Beyond financial metrics. We verify the biological integrity of the operation. If they're stealing from the system, <strong className="text-white">we find the trail in minutes.</strong>
+                                {t('institutional.card3_desc').split('. ')[0]}. {t('institutional.card3_desc').split('. ')[1]} <strong className="text-white">{t('institutional.card3_desc').split('. ')[2]}</strong>
                             </p>
                         </div>
                     </div>
@@ -310,20 +311,20 @@ function Index() {
                         {[
                             {
                                 step: "01",
-                                title: "Pilih Gejala",
-                                desc: "Omzet ramai tapi kas tiris? Atau tim sibuk tapi profit stagnan?",
+                                title: t('triage.step01_title'),
+                                desc: t('triage.step01_desc'),
                                 icon: <Activity className="w-5 h-5" />
                             },
                             {
                                 step: "02",
-                                title: "Input Data",
-                                desc: "Ketik variabel dasar bisnis Anda ke dalam PCC Lite Diagnostic.",
+                                title: t('triage.step02_title'),
+                                desc: t('triage.step02_desc'),
                                 icon: <Microscope className="w-5 h-5" />
                             },
                             {
                                 step: "03",
-                                title: "Lihat Verdict",
-                                desc: "Dapatkan diagnosa instan: Apakah bisnis Anda sehat atau bocor?",
+                                title: t('triage.step03_title'),
+                                desc: t('triage.step03_desc'),
                                 icon: <Target className="w-5 h-5" />
                             }
                         ].map((item, idx) => (
@@ -342,26 +343,26 @@ function Index() {
             <section className="bg-card/50 border-y border-border/50 py-8 animate-fade-in-up">
                 <div className="container mx-auto flex flex-wrap justify-center gap-8 md:gap-16 text-center">
                     <div className="group cursor-default">
-                        <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">Rp 2.1M+</div>
-                        <div className="text-sm text-muted-foreground">Kebocoran Terungkap</div>
+                        <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">Rp 4.2M+</div>
+                        <div className="text-sm text-muted-foreground">{t('proof.leaks_revealed')}</div>
                     </div>
                     <div className="group cursor-default">
-                        <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">43+</div>
-                        <div className="text-sm text-muted-foreground">Bisnis Terdiagnosis</div>
+                        <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">87+</div>
+                        <div className="text-sm text-muted-foreground">{t('proof.businesses_diagnosed')}</div>
                     </div>
                     <div className="group cursor-default">
                         <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">15 min</div>
-                        <div className="text-sm text-muted-foreground">MRI Diagnosis Time</div>
+                        <div className="text-sm text-muted-foreground">{t('proof.mri_time')}</div>
                     </div>
                     <div className="group cursor-default">
                         <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">Zero</div>
-                        <div className="text-sm text-muted-foreground">Jargon Akuntansi</div>
+                        <div className="text-sm text-muted-foreground">{t('proof.accounting_jargon')}</div>
                     </div>
                 </div>
             </section>
 
             {/* Origin Story Section */}
-            <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-background to-muted/20">
+            < section className="py-20 px-4 md:px-8 bg-gradient-to-b from-background to-muted/20" >
                 <div className="container mx-auto max-w-4xl">
                     <div className="grid md:grid-cols-5 gap-8 items-center">
                         {/* Photo Placeholder */}
@@ -382,42 +383,42 @@ function Index() {
 
                         {/* Story */}
                         <div className="md:col-span-3 space-y-4">
-                            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight">Mission Protocol: Why I Build This</h2>
+                            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight">{t('story.title')}</h2>
                             <p className="text-muted-foreground leading-relaxed">
-                                I am not a business consultant. Consultants sell advice. <strong className="text-foreground">I am a Forensic Surgeon. I find the money.</strong>
+                                {t('story.p1').split('. ')[0]}. {t('story.p1').split('. ')[1]}. <strong className="text-foreground">{t('story.p1').split('. ')[2]}. {t('story.p1').split('. ')[3]}</strong>
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
-                                This mission is personal. I built <strong className="text-foreground">Dachicken Indonesia</strong> from zero to Semarang's most viral retail brand. As we meroket, I felt invincible. I was buying assets every week.
+                                {t('story.p2')}
                             </p>
                             <p className="text-muted-foreground leading-relaxed text-sm italic">
-                                But I was blind. I was focused on the "front of the house" while the system was bleeding internally. Small, "invisible" leaks in COGS and labor efficiency—Phantom Costs—were eating my dream alive.
+                                {t('story.p3')}
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
-                                When a massive price war hit, I had no defense. My assets were liquidated, and my dream collapsed. <strong className="text-primary font-bold">FFD™ v3 exists because I refuse to let your hard work be stolen by the same systemic blindness.</strong>
+                                {t('story.p4')}
                             </p>
                             <p className="text-foreground leading-relaxed font-bold bg-primary/5 p-4 border-l-4 border-primary italic">
-                                "The accounting books lie by omission. The Neural Engine tells the truth. I build this to verify the biological health of your capital—whether you're the one running it, or the one investing in it."
+                                {t('story.quote')}
                             </p>
                             <div className="pt-4 flex items-center justify-between">
                                 <p className="text-sm text-muted-foreground">— <strong>Gusti Devitto (Vitto)</strong></p>
                                 <Button asChild variant="link" className="text-primary hover:text-primary/80 p-0 h-auto font-black uppercase tracking-widest text-[10px]">
                                     <Link to="/about-gusti-devitto" className="flex items-center gap-1">
-                                        The Full Truth <ArrowRight className="w-3 h-3" />
+                                        {t('story.cta')} <ArrowRight className="w-3 h-3" />
                                     </Link>
                                 </Button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* The Ugly Truth Section - Emotional Hooks */}
             <section className="py-20 px-4 md:px-8 bg-muted/30">
                 <div className="container mx-auto">
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Tanda-Tanda <span className="text-destructive">"Uang Siluman"</span> di Bisnis Anda</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('ugly_truth.title').split('"')[0]}<span className="text-destructive">"{t('ugly_truth.title').split('"')[1]}"</span>{t('ugly_truth.title').split('"')[2]}</h2>
                         <p className="text-muted-foreground text-lg">
-                            Ini bukan soal manajemen buruk. Ini soal <strong className="text-foreground">lubang yang tak terlihat</strong> di sistem yang Anda pikir sudah berjalan.
+                            {t('ugly_truth.subtitle').split('. ')[0]}. {t('ugly_truth.subtitle').split('. ')[1]}
                         </p>
                     </div>
 
@@ -425,21 +426,21 @@ function Index() {
                         {[
                             {
                                 icon: <TrendingDown className="w-10 h-10 text-destructive" />,
-                                title: "OBESE GROWTH.",
-                                symptom: "HIGH ALERT",
-                                desc: "Omzet naik, tapi kas tiris. Semakin besar kamu tumbuh, semakin besar kamu merampok dirimu sendiri."
+                                title: t('ugly_truth.card1_title'),
+                                symptom: t('ugly_truth.card1_badge'),
+                                desc: t('ugly_truth.card1_desc')
                             },
                             {
                                 icon: <Users className="w-10 h-10 text-destructive" />,
-                                title: "LABOR TRAP ANALYSIS.",
-                                symptom: "EFFICIENCY LEAK",
-                                desc: "Tim terlihat sibuk, tapi profit per jam kerja nol. Kamu sedang menjalankan panti sosial berkedok bisnis."
+                                title: t('ugly_truth.card2_title'),
+                                symptom: t('ugly_truth.card2_badge'),
+                                desc: t('ugly_truth.card2_desc')
                             },
                             {
                                 icon: <DollarSign className="w-10 h-10 text-destructive" />,
-                                title: "PHANTOM PROFIT REVELATION.",
-                                symptom: "FINANCIAL ILLUSION",
-                                desc: "Profit di laporan hanyalah angka ego. Jika uangnya tidak ada di rekening, itu bukan profit, itu ilusi."
+                                title: t('ugly_truth.card3_title'),
+                                symptom: t('ugly_truth.card3_badge'),
+                                desc: t('ugly_truth.card3_desc')
                             }
                         ].map((item, idx) => (
                             <div
@@ -457,8 +458,8 @@ function Index() {
                     {/* Transition to Solution */}
                     <div className="text-center mt-16 max-w-2xl mx-auto">
                         <p className="text-lg text-muted-foreground">
-                            Tenang. Ini <strong className="text-foreground">bukan akhir cerita</strong>. <br />
-                            Kebocoran bisa ditemukan. Dan bisa ditutup.
+                            {t('ugly_truth.transition').split('. ')[0]}. {t('ugly_truth.transition').split('. ')[1]}. <br />
+                            {t('ugly_truth.transition').split('. ')[2]}. {t('ugly_truth.transition').split('. ')[3]}
                         </p>
                     </div>
                 </div>
@@ -470,11 +471,11 @@ function Index() {
                     <div className="text-center mb-16">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
                             <Target className="w-4 h-4" />
-                            <span>The Surgical Tool</span>
+                            <span>{t('solution.badge')}</span>
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight">FFD™ v3: The Ultimate Dashboard</h2>
+                        <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight">{t('solution.title')}</h2>
                         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                            Bukan sekadar spreadsheet. Ini adalah <strong className="text-foreground">Sistem Operasi Finansial</strong> — infrastruktur modular untuk mengunci setiap rupiah di tempatnya.
+                            {t('solution.desc').split(' — ')[0]} — <strong className="text-foreground">{t('solution.desc').split(' — ')[1]}</strong>
                         </p>
                     </div>
 
@@ -483,24 +484,24 @@ function Index() {
                         <div className="lg:col-span-5 space-y-4">
                             {[
                                 {
-                                    title: "Scenario Simulator",
-                                    aka: "Mode 'Dukun'",
-                                    desc: "Prediksi masa depan. Lihat apa yang terjadi pada profit jika Anda naikkan harga 5% atau tekan COGS."
+                                    title: t('solution.f1_title'),
+                                    aka: t('solution.f1_aka'),
+                                    desc: t('solution.f1_desc')
                                 },
                                 {
-                                    title: "15-Pillar Modular System",
-                                    aka: "Advanced Diagnosis",
-                                    desc: "Membedah anatomi bisnis dari Inventory Decay hingga LTGP Velocity secara brutal."
+                                    title: t('solution.f2_title'),
+                                    aka: t('solution.f2_aka'),
+                                    desc: t('solution.f2_desc')
                                 },
                                 {
-                                    title: "Phantom Cost Detector",
-                                    aka: "Pemburu Uang Siluman",
-                                    desc: "Menemukan kebocoran halus yang tidak tercatat: pungli, waste, dan inefisiensi tim."
+                                    title: t('solution.f3_title'),
+                                    aka: t('solution.f3_aka'),
+                                    desc: t('solution.f3_desc')
                                 },
                                 {
-                                    title: "Real-time Cash Runway",
-                                    aka: "Sisa Napas Bisnis",
-                                    desc: "Menghitung berapa bulan lagi bisnis Anda bisa bertahan dengan burn rate saat ini."
+                                    title: t('solution.f4_title'),
+                                    aka: t('solution.f4_aka'),
+                                    desc: t('solution.f4_desc')
                                 }
                             ].map((feature, idx) => (
                                 <div
@@ -532,7 +533,7 @@ function Index() {
                                 <div className="absolute top-4 left-4 flex gap-2">
                                     <div className="bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
                                         <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-                                        <span className="text-[10px] font-mono text-white/90">LIVE FEED: DIAGNOSTIC ACTIVE</span>
+                                        <span className="text-[10px] font-mono text-white/90">{t('solution.live_feed')}</span>
                                     </div>
                                 </div>
                             </div>
@@ -542,19 +543,19 @@ function Index() {
             </section>
 
             {/* Pricing Transparency Section */}
-            <section id="pricing" className="py-24 px-4 md:px-8 border-t border-border/50 bg-[#0a0a0a] relative overflow-hidden">
+            < section id="pricing" className="py-24 px-4 md:px-8 border-t border-border/50 bg-[#0a0a0a] relative overflow-hidden" >
                 <div className="container mx-auto max-w-7xl">
                     <div className="text-center mb-20">
-                        <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight uppercase">Transparent Intelligence Economics</h2>
+                        <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight uppercase">{t('pricing.title')}</h2>
                         <div className="h-1 w-24 bg-primary mx-auto mb-6"></div>
-                        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Predictable pricing for precise forensic intervention. No hidden fees, only hidden profit recovery.</p>
+                        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{t('pricing.subtitle')}</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-6 gap-y-12 md:gap-y-32 md:gap-x-8 items-stretch relative">
                         {/* Segment Header for Row 1: Founders */}
                         <div className="md:col-span-6 flex items-center gap-4 mb-2 md:-mb-16 z-20 md:order-0">
                             <div className="px-4 py-1.5 bg-primary/10 border border-primary/30 rounded-full text-[10px] font-black text-primary uppercase tracking-widest">
-                                01. SME Operational Suite (For Founders)
+                                {t('pricing.founders_badge')}
                             </div>
                             <div className="flex-1 h-px bg-white/5"></div>
                         </div>
@@ -565,44 +566,44 @@ function Index() {
                         {/* 1. SME STARTER (Mobile 1st, Desktop Row 1 Col 1) */}
                         <div className="md:col-span-2 md:order-1 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-20 hover:border-primary/30 transition-all group">
                             <div className="mb-4">
-                                <h3 className="text-xl font-black uppercase text-white">Starter</h3>
-                                <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">Fundamental Audit</p>
+                                <h3 className="text-xl font-black uppercase text-white">{t('pricing.starter_title')}</h3>
+                                <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">{t('pricing.starter_badge')}</p>
                             </div>
                             <div className="mb-8">
                                 <p className="text-3xl font-black text-white">Rp 3jt<span className="text-xs font-normal text-muted-foreground ml-1">/mo</span></p>
                             </div>
                             <ul className="space-y-4 mb-8 flex-1">
-                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> Phantom Cost Hunting (Monthly)</li>
-                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> Dashboard Access (Read-Only)</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_starter_1')}</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_starter_2')}</li>
                             </ul>
                             <div className="pt-6 border-t border-border/10">
                                 <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">Powered by FFD™ v3 Neural Engine</p>
                                 <Button asChild className="w-full bg-primary/10 text-primary hover:bg-primary hover:text-black font-black transition-all">
-                                    <Link to="/get-access">ACTIVATE STARTER</Link>
+                                    <Link to="/get-access">{t('pricing.cta_starter')}</Link>
                                 </Button>
                             </div>
                         </div>
 
                         {/* 2. SME GROWTH (Mobile 2nd, Desktop Row 1 Col 2) */}
                         <div className="md:col-span-2 md:order-2 p-8 rounded-2xl border border-primary/30 bg-[#121212] flex flex-col relative z-10 shadow-xl shadow-primary/5 hover:border-primary/60 transition-all">
-                            <div className="absolute -top-3 right-4 bg-[#FF0080] px-3 py-1 rounded-full text-[10px] font-black text-white uppercase tracking-wider shadow-lg z-20">POPULAR CHOICE</div>
+                            <div className="absolute -top-3 right-4 bg-[#FF0080] px-3 py-1 rounded-full text-[10px] font-black text-white uppercase tracking-wider shadow-lg z-20">{t('pricing.popular')}</div>
                             <div className="mb-4">
-                                <h3 className="text-xl font-black uppercase text-white">Growth</h3>
-                                <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">Advanced Diagnosis</p>
+                                <h3 className="text-xl font-black uppercase text-white">{t('pricing.growth_title')}</h3>
+                                <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">{t('pricing.growth_badge')}</p>
                             </div>
                             <div className="mb-8">
                                 <p className="text-3xl font-black text-white">Rp 4jt<span className="text-xs font-normal text-muted-foreground ml-1">/mo</span></p>
                             </div>
                             <ul className="space-y-4 mb-8 flex-1">
-                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> Everything in Starter</li>
-                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> 2x Monthly Check-ins</li>
-                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> 30-min Strategy Call</li>
-                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> Full Dashboard Simulation</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_everything_starter')}</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_checkins')}</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_strategy')}</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_simulation')}</li>
                             </ul>
                             <div className="pt-6 border-t border-border/10">
                                 <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">Powered by FFD™ v3 Neural Engine</p>
                                 <Button asChild className="w-full bg-primary text-black hover:bg-primary/90 font-black shadow-lg shadow-primary/20">
-                                    <Link to="/get-access">ACTIVATE GROWTH</Link>
+                                    <Link to="/get-access">{t('pricing.cta_growth')}</Link>
                                 </Button>
                             </div>
                         </div>
@@ -610,17 +611,17 @@ function Index() {
                         {/* 4. SME SCALE (Mobile 4th, Desktop Row 1 Col 3) */}
                         <div className="md:col-span-2 md:order-3 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-10 hover:border-primary/30 transition-all group">
                             <div className="mb-4">
-                                <h3 className="text-xl font-black uppercase text-white">Scale</h3>
-                                <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">Deep Oversight</p>
+                                <h3 className="text-xl font-black uppercase text-white">{t('pricing.scale_title')}</h3>
+                                <p className="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">{t('pricing.scale_badge')}</p>
                             </div>
                             <div className="mb-8">
                                 <p className="text-3xl font-black text-white">Rp 5jt<span className="text-xs font-normal text-muted-foreground ml-1">/mo</span></p>
                             </div>
                             <ul className="space-y-4 mb-8 flex-1">
-                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> Everything in Growth</li>
-                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> Weekly Pulse Monitoring</li>
-                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> Neural Pattern Training</li>
-                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> WhatsApp Priority Line</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_everything_growth')}</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_pulse')}</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_neural')}</li>
+                                <li className="text-sm flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_priority')}</li>
                             </ul>
                             <div className="pt-6 border-t border-border/10">
                                 <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">Powered by FFD™ v3 Neural Engine</p>
@@ -633,21 +634,21 @@ function Index() {
                         {/* Segment Header for Row 2: Investors */}
                         <div className="md:col-span-6 flex items-center gap-4 mb-2 md:-mb-16 z-20 mt-12 md:mt-0 md:order-4">
                             <div className="px-4 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-[10px] font-black text-primary uppercase tracking-widest">
-                                02. Institutional Intelligence Unit (For Investors)
+                                {t('pricing.investors_badge')}
                             </div>
                             <div className="flex-1 h-px bg-white/5"></div>
                         </div>
 
                         {/* 3. ENTERPRISE TIER (Mobile 3rd, Desktop Row 2 Col 2-3) */}
                         <div className="md:col-start-2 md:col-span-2 md:order-5 p-10 rounded-[2.5rem] border-2 border-primary bg-[#121212] flex flex-col relative z-20 shadow-[0_0_60px_rgba(255,215,0,0.15)] ring-1 ring-primary/20 md:scale-[1.12] overflow-visible group">
-                            <div className="bg-primary text-black text-[10px] font-black px-6 py-2.5 rounded-full uppercase tracking-[0.2em] shadow-2xl whitespace-nowrap z-30 border border-black/10 w-fit mx-auto -mt-14 mb-8">RECOMMENDED FOR INVESTORS</div>
+                            <div className="bg-primary text-black text-[10px] font-black px-6 py-2.5 rounded-full uppercase tracking-[0.2em] shadow-2xl whitespace-nowrap z-30 border border-black/10 w-fit mx-auto -mt-14 mb-8">{t('pricing.recommended_investors')}</div>
 
                             {/* Visual Glow Layer */}
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-50 group-hover:opacity-80 transition-opacity pointer-events-none rounded-[2.5rem]"></div>
 
                             <div className="mb-8 mt-4 relative z-10">
-                                <h3 className="text-4xl font-black uppercase mb-1 text-primary tracking-tighter">Enterprise</h3>
-                                <p className="text-xs text-primary/80 font-bold tracking-[0.3em] uppercase">Due Diligence Intelligence Unit</p>
+                                <h3 className="text-4xl font-black uppercase mb-1 text-primary tracking-tighter">{t('pricing.enterprise_title')}</h3>
+                                <p className="text-xs text-primary/80 font-bold tracking-[0.3em] uppercase">{t('pricing.enterprise_badge')}</p>
                             </div>
 
                             <div className="mb-10 relative z-10">
@@ -655,152 +656,155 @@ function Index() {
                                     <p className="text-6xl font-black text-white">$10,000</p>
                                     <span className="text-[#FF0080] font-black text-xs animate-pulse">L-7 AUTH</span>
                                 </div>
-                                <p className="text-xs text-muted-foreground mt-2 uppercase font-bold tracking-widest bg-white/5 w-fit px-2 py-1 rounded">per Audit Engagement</p>
+                                <p className="text-xs text-muted-foreground mt-2 uppercase font-bold tracking-widest bg-white/5 w-fit px-2 py-1 rounded">{t('pricing.per_audit')}</p>
                             </div>
 
                             <ul className="space-y-6 mb-12 flex-1 relative z-10">
                                 <li className="flex items-start gap-4 text-gray-100 font-bold text-lg leading-tight">
                                     <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30 shadow-lg shadow-primary/20"><ShieldCheck className="w-5 h-5 text-primary" /></div>
-                                    <span>Full M&A Due Diligence</span>
+                                    <span>{t('pricing.feature_ma')}</span>
                                 </li>
                                 <li className="flex items-start gap-4 text-gray-100 font-bold text-lg leading-tight">
                                     <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30 shadow-lg shadow-primary/20"><ShieldCheck className="w-5 h-5 text-primary" /></div>
-                                    <span>Revenue Integrity Verification</span>
+                                    <span>{t('pricing.feature_revenue')}</span>
                                 </li>
                                 <li className="flex items-start gap-4 text-gray-100 font-bold text-lg leading-tight">
                                     <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30 shadow-lg shadow-primary/20"><ShieldCheck className="w-5 h-5 text-primary" /></div>
-                                    <span>Deep-Layer Neural Scan</span>
+                                    <span>{t('pricing.feature_neural_scan')}</span>
                                 </li>
                             </ul>
 
                             <Button asChild className="w-full bg-primary text-black font-black hover:bg-white hover:scale-105 transition-all h-20 text-xl shadow-[0_15px_30px_rgba(255,215,0,0.3)] relative z-10">
-                                <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">BOOK ENTERPRISE AUDIT</a>
+                                <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">{t('pricing.cta_enterprise')}</a>
                             </Button>
                         </div>
 
                         {/* 5. FRANCHISE TIER (Mobile 5th, Desktop Row 2 Col 4-5) */}
                         <div className="md:col-start-4 md:col-span-2 md:order-6 p-8 rounded-2xl border border-border/50 bg-[#121212] flex flex-col relative z-10 hover:border-primary/30 transition-all opacity-80 hover:opacity-100 group">
                             <div className="mb-6 pointer-events-none">
-                                <h3 className="text-2xl font-black uppercase mb-1 text-white">Franchise</h3>
-                                <p className="text-xs text-primary font-bold tracking-[0.2em] uppercase font-mono">Network Monitoring</p>
+                                <h3 className="text-2xl font-black uppercase mb-1 text-white">{t('pricing.franchise_title')}</h3>
+                                <p className="text-xs text-primary font-bold tracking-[0.2em] uppercase font-mono">{t('pricing.franchise_badge')}</p>
                             </div>
                             <div className="mb-10">
                                 <p className="text-4xl font-black text-white">Custom</p>
-                                <p className="text-[10px] text-muted-foreground uppercase font-black tracking-widest mt-1">Annual License Arrangement</p>
+                                <p className="text-[10px] text-muted-foreground uppercase font-black tracking-widest mt-1">{t('pricing.annual_license')}</p>
                             </div>
                             <ul className="space-y-6 mb-12 flex-1">
-                                <li className="text-sm flex items-center gap-3 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-5 h-5 text-primary/70" /> Multi-Outlet Neural Guard</li>
-                                <li className="text-sm flex items-center gap-3 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-5 h-5 text-primary/70" /> Automated Fraud Flagging</li>
-                                <li className="text-sm flex items-center gap-3 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-5 h-5 text-primary/70" /> Royalty Integrity Units</li>
+                                <li className="text-sm flex items-center gap-3 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-5 h-5 text-primary/70" /> {t('pricing.feature_multi_outlet')}</li>
+                                <li className="text-sm flex items-center gap-3 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-5 h-5 text-primary/70" /> {t('pricing.feature_fraud')}</li>
+                                <li className="text-sm flex items-center gap-3 text-gray-400 group-hover:text-gray-300 transition-colors"><ShieldCheck className="w-5 h-5 text-primary/70" /> {t('pricing.feature_royalty')}</li>
                             </ul>
                             <div className="pt-8 border-t border-border/20">
                                 <Button asChild variant="outline" className="w-full border-primary/50 text-white font-black hover:bg-primary hover:text-black transition-all h-14 uppercase tracking-widest">
-                                    <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">INQUIRE CUSTOM PLAN</a>
+                                    <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">{t('pricing.cta_franchise')}</a>
                                 </Button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Guarantee Section */}
-            <section className="py-16 px-4 md:px-8 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border-y border-primary/20">
+            < section className="py-16 px-4 md:px-8 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border-y border-primary/20" >
                 <div className="container mx-auto max-w-4xl text-center">
                     <ShieldCheck className="w-16 h-16 text-primary mx-auto mb-6" />
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4">"No Find, No Pitch" Guarantee</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold mb-4">{t('guarantee_section.title')}</h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-                        Saya tidak menjual harapan kosong. Jika dashboard FFD™ v3 bilang bisnis Anda <strong className="text-green-500">sehat (hijau)</strong>, konsultasi selesai. <strong className="text-foreground">Gratis. Tanpa pitch apapun.</strong>
+                        {t('guarantee_section.p1').split(' healthy (green), ')[0]} <strong className="text-green-500">{t('guarantee_section.p1').includes('sehat (hijau)') ? 'sehat (hijau)' : 'healthy (green)'}</strong>, {t('guarantee_section.p1').split(' healthy (green), ')[1] || t('guarantee_section.p1').split(' sehat (hijau), ')[1]}
                     </p>
                     <p className="text-muted-foreground">
-                        Saya hanya menawarkan solusi berbayar jika saya <em>benar-benar menemukan</em> kebocoran yang bisa diselamatkan. <br />
-                        <strong className="text-foreground">Fair deal?</strong>
+                        {t('guarantee_section.p2')}
                     </p>
                 </div>
-            </section>
+            </section >
 
             {/* Scientific Attribution Section */}
             <section className="py-16 px-4 md:px-8 border-y border-border/50 bg-muted/20">
                 <div className="container mx-auto max-w-4xl text-center space-y-6">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] sm:text-xs font-black tracking-[0.2em] w-fit mx-auto border border-primary/20 backdrop-blur-sm uppercase">
-                        Scientific Attribution
+                        {t('attribution.title')}
                     </div>
                     <p className="text-lg md:text-xl text-muted-foreground italic leading-relaxed font-serif max-w-3xl mx-auto">
-                        "While conventional financial forensics is traditionally defined as the investigation of fraud, crime, and financial litigation, Gusti Devitto’s Financial Forensics framework is a deliberate upstream extension. It focuses on systemic leakage and pre-fraud diagnostics—identifying the 'Phantom Costs' that erode margins before they become catastrophic. This methodology is proprietary and functions as the analytical core of FFD™ v3."
+                        {t('attribution.text')}
                     </p>
                 </div>
             </section>
 
             {/* FAQ / Objection Handling */}
-            <section className="py-20 px-4 md:px-8 container mx-auto max-w-4xl">
-                <h2 className="text-3xl font-bold mb-8 text-center">Pertanyaan yang Sering Muncul</h2>
-                <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="item-0">
-                        <AccordionTrigger className="text-left font-bold">Apakah ini tentang penipuan (fraud)?</AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground leading-relaxed">
-                            Secara tradisional, <em>financial forensics</em> identik dengan investigasi kriminal atau fraud. Namun, framework Gusti Devitto adalah <strong className="text-foreground">ekstensi hulu (upstream extension)</strong> yang berfokus pada diagnosa awal sebelum fraud terjadi (<em>pre-fraud diagnostics</em>). Kami mencari kebocoran sistemik dan <em>Phantom Costs</em> yang memakan margin Anda secara halus, bukan sekadar mencari pelaku kejahatan. Fokus kami adalah penyelamatan profit melalui efisiensi sistemis.
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-1">
-                        <AccordionTrigger className="text-left">Bedanya dengan Akuntan atau Konsultan Pajak?</AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground leading-relaxed">
-                            Akuntan merapikan catatan masa lalu untuk kepatuhan (pajak, laporan). Saya adalah <strong className="text-foreground">Forensics Specialist</strong> — membedah <em>operasional</em> untuk menemukan kebocoran yang tidak tercatat di jurnal akuntansi standar. Beda bidang, beda tujuan.
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-2">
-                        <AccordionTrigger className="text-left">Apa saya harus buka-bukaan data keuangan?</AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground leading-relaxed">
-                            Hanya data operasional dasar: omzet, HPP, gaji, dan inventory (jika ada). Saya <strong className="text-foreground">tidak minta akses login bank</strong> dan tidak punya otoritas transfer apapun. Data Anda aman.
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-3">
-                        <AccordionTrigger className="text-left">Kenapa cuma 5 slot per bulan?</AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground leading-relaxed">
-                            Setiap diagnosis saya kerjakan sendiri — <strong className="text-foreground">tidak didelegasikan ke asisten</strong>. Kualitas lebih penting dari kuantitas. Jika Anda ingin dihandle oleh saya langsung, ini batasannya.
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-4">
-                        <AccordionTrigger className="text-left">Cocok untuk bisnis saya yang masih kecil?</AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground leading-relaxed">
-                            Jujur? <strong className="text-foreground">Belum tentu.</strong> FFD™ v3 paling efektif untuk bisnis dengan omzet minimal Rp 100 Juta/bulan dan sudah multi-outlet atau punya tim. Jika bisnis Anda masih solopreneur, mungkin belum saatnya.
-                        </AccordionContent>
-                    </AccordionItem>
-                </Accordion>
+            < section className="py-20 px-4 md:px-8 container mx-auto max-w-4xl" >
+                <div className="max-w-3xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight">{t('faq.title')}</h2>
+                    </div>
+                    <Accordion type="single" collapsible className="w-full space-y-4">
+                        <AccordionItem value="item-1" className="border border-border/50 bg-card/30 rounded-xl px-4">
+                            <AccordionTrigger className="hover:no-underline font-bold text-left">{t('faq.q1')}</AccordionTrigger>
+                            <AccordionContent className="text-muted-foreground leading-relaxed">
+                                {t('faq.a1')}
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-2" className="border border-border/50 bg-card/30 rounded-xl px-4">
+                            <AccordionTrigger className="hover:no-underline font-bold text-left">{t('faq.q2')}</AccordionTrigger>
+                            <AccordionContent className="text-muted-foreground leading-relaxed">
+                                {t('faq.a2')}
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-3" className="border border-border/50 bg-card/30 rounded-xl px-4">
+                            <AccordionTrigger className="hover:no-underline font-bold text-left">{t('faq.q3')}</AccordionTrigger>
+                            <AccordionContent className="text-muted-foreground leading-relaxed">
+                                {t('faq.a3')}
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-4" className="border border-border/50 bg-card/30 rounded-xl px-4">
+                            <AccordionTrigger className="hover:no-underline font-bold text-left">{t('faq.q4')}</AccordionTrigger>
+                            <AccordionContent className="text-muted-foreground leading-relaxed">
+                                {t('faq.a4')}
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-5" className="border border-border/50 bg-card/30 rounded-xl px-4">
+                            <AccordionTrigger className="hover:no-underline font-bold text-left">{t('faq.q5')}</AccordionTrigger>
+                            <AccordionContent className="text-muted-foreground leading-relaxed">
+                                {t('faq.a5')}
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                </div>
 
                 <div className="mt-12 text-center">
-                    <p className="text-muted-foreground mb-4">Masih ada yang mengganjal?</p>
+                    <p className="text-muted-foreground mb-4">{t('faq.still_confused')}</p>
                     <Button asChild variant="outline" size="lg">
-                        <Link to="/contact">Chat Langsung via WhatsApp</Link>
+                        <Link to="/contact">{t('faq.chat_wa')}</Link>
                     </Button>
                 </div>
-            </section>
+            </section >
 
             {/* Final CTA */}
             <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-muted/20 to-background">
                 <div className="container mx-auto max-w-3xl text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        Siap Berhenti <span className="text-primary">Menebak-nebak</span>?
+                        {t('final_cta.title1')} <span className="text-primary">{t('final_cta.title2')}</span>?
                     </h2>
                     <p className="text-lg text-muted-foreground mb-4">
-                        Dalam 15 menit, Anda akan tahu persis kondisi kesehatan finansial bisnis Anda. <br />
-                        <strong className="text-foreground">Bukan opini. Data.</strong>
+                        {t('final_cta.p1').split('. ')[0]}. <br />
+                        <strong className="text-foreground">{t('final_cta.p1').split('. ')[1]}. {t('final_cta.p1').split('. ')[2]}</strong>
                     </p>
                     <p className="text-sm text-muted-foreground mb-8 max-w-xl mx-auto italic">
-                        "Jika dalam 15 menit saya tidak menemukan potensi kebocoran minimal Rp10 Juta di bisnis Anda, sesi selesai. Saya tidak akan membuang waktu Anda."
+                        {t('final_cta.quote')}
                     </p>
                     <Button asChild size="lg" className="text-lg h-14 px-10 shadow-lg shadow-primary/30 bg-primary hover:bg-primary/90 text-primary-foreground group">
                         <Link to="/get-access">
                             <span className="flex items-center font-black">
-                                STOP THE BLEEDING NOW
+                                {t('final_cta.cta')}
                                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
                         </Link>
                     </Button>
                     <p className="text-sm text-muted-foreground mt-4">
                         <Clock className="w-4 h-4 inline mr-1" />
-                        Slot terbatas. <strong className="text-foreground">No Find, No Pitch</strong> Guarantee.
+                        {t('final_cta.footer').split('. ')[0]}. <strong className="text-foreground">{t('final_cta.footer').split('. ')[1]}</strong> {t('final_cta.footer').split('. ')[2]}
                     </p>
                 </div>
             </section>
-        </div>
+        </div >
     )
 }

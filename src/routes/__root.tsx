@@ -1,13 +1,20 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { ModeToggle } from '@/components/mode-toggle'
+import { LanguageToggle } from '@/components/language-toggle'
 import { ThemeProvider } from "@/components/theme-provider"
+import { useTranslation } from 'react-i18next'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export const Route = createRootRoute({
-    component: () => (
+    component: RootComponent
+})
+
+function RootComponent() {
+    const { t } = useTranslation()
+    return (
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
             {/* Global Base Meta */}
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -62,13 +69,13 @@ export const Route = createRootRoute({
                         <div className="bg-primary/5 border-b border-primary/10 py-1.5 hidden md:block">
                             <div className="container flex justify-center gap-8 px-4 md:px-8">
                                 <a href="/#owners" className="text-[10px] uppercase font-black tracking-widest text-primary hover:text-primary/80 transition-colors">
-                                    [ For Owners ]
+                                    [ {t('nav.owners')} ]
                                 </a>
                                 <a href="/#investors" className="text-[10px] uppercase font-black tracking-widest text-muted-foreground hover:text-primary transition-colors">
-                                    [ For Investors & PE ]
+                                    [ {t('nav.investors')} ]
                                 </a>
                                 <a href="/#franchise" className="text-[10px] uppercase font-black tracking-widest text-muted-foreground hover:text-primary transition-colors">
-                                    [ For Franchise HQs ]
+                                    [ {t('nav.franchise')} ]
                                 </a>
                             </div>
                         </div>
@@ -90,17 +97,19 @@ export const Route = createRootRoute({
 
                             {/* Desktop Navigation */}
                             <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
-                                <a href="/get-access" className="transition-colors hover:text-primary">Calculator</a>
-                                <a href="/about-gusti-devitto" className="transition-colors hover:text-primary">About</a>
-                                <a href="/blog" className="transition-colors hover:text-primary">Blog</a>
-                                <a href="/forensics-pillars" className="transition-colors hover:text-primary">15 Pillars</a>
-                                <a href="/investasi" className="transition-colors hover:text-primary font-bold decoration-primary underline-offset-4 decoration-2">Pricing</a>
-                                <a href="/contact" className="transition-colors hover:text-primary">Contact</a>
+                                <a href="/get-access" className="transition-colors hover:text-primary">{t('nav.calculator')}</a>
+                                <a href="/about-gusti-devitto" className="transition-colors hover:text-primary">{t('nav.about')}</a>
+                                <a href="/blog" className="transition-colors hover:text-primary">{t('nav.blog')}</a>
+                                <a href="/forensics-pillars" className="transition-colors hover:text-primary">{t('nav.pillars')}</a>
+                                <a href="/investasi" className="transition-colors hover:text-primary font-bold decoration-primary underline-offset-4 decoration-2">{t('nav.pricing')}</a>
+                                <a href="/contact" className="transition-colors hover:text-primary">{t('nav.contact')}</a>
+                                <LanguageToggle />
                                 <ModeToggle />
                             </nav>
 
                             {/* Mobile Navigation */}
                             <div className="lg:hidden flex items-center gap-4">
+                                <LanguageToggle />
                                 <ModeToggle />
                                 <Sheet>
                                     <SheetTrigger asChild>
@@ -112,16 +121,16 @@ export const Route = createRootRoute({
                                     <SheetContent side="right">
                                         <div className="flex flex-col space-y-6 mt-6">
                                             <div className="flex flex-col gap-2 pb-4 border-b">
-                                                <a href="/#owners" className="text-xs font-black text-primary">FOR OWNERS</a>
-                                                <a href="/#investors" className="text-xs font-black text-muted-foreground">FOR INVESTORS & PE</a>
-                                                <a href="/#franchise" className="text-xs font-black text-muted-foreground">FOR FRANCHISE HQS</a>
+                                                <a href="/#owners" className="text-xs font-black text-primary">{t('nav.owners')}</a>
+                                                <a href="/#investors" className="text-xs font-black text-muted-foreground">{t('nav.investors')}</a>
+                                                <a href="/#franchise" className="text-xs font-black text-muted-foreground">{t('nav.franchise')}</a>
                                             </div>
-                                            <a href="/get-access" className="text-lg font-medium hover:text-primary">Calculator</a>
-                                            <a href="/about-gusti-devitto" className="text-lg font-medium hover:text-primary">About</a>
-                                            <a href="/blog" className="text-lg font-medium hover:text-primary">Blog</a>
-                                            <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">15 Pillars</a>
-                                            <a href="/investasi" className="text-lg font-medium hover:text-primary">Pricing</a>
-                                            <a href="/contact" className="text-lg font-medium hover:text-primary">Contact</a>
+                                            <a href="/get-access" className="text-lg font-medium hover:text-primary">{t('nav.calculator')}</a>
+                                            <a href="/about-gusti-devitto" className="text-lg font-medium hover:text-primary">{t('nav.about')}</a>
+                                            <a href="/blog" className="text-lg font-medium hover:text-primary">{t('nav.blog')}</a>
+                                            <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">{t('nav.pillars')}</a>
+                                            <a href="/investasi" className="text-lg font-medium hover:text-primary">{t('nav.pricing')}</a>
+                                            <a href="/contact" className="text-lg font-medium hover:text-primary">{t('nav.contact')}</a>
                                         </div>
                                     </SheetContent>
                                 </Sheet>
@@ -135,26 +144,26 @@ export const Route = createRootRoute({
                         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
                             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 md:mt-0">
                                 <a href="/about-gusti-devitto" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                                    About
+                                    {t('footer.about')}
                                 </a>
                                 <a href="/master-index" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                                    Framework Index
+                                    {t('footer.index')}
                                 </a>
                                 <a href="/methodology" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                                    Methodology
+                                    {t('footer.methodology')}
                                 </a>
                                 <a href="/verdict" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                                    Verdict
+                                    {t('footer.verdict')}
                                 </a>
                                 <a href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                                    Terms
+                                    {t('footer.terms')}
                                 </a>
                                 <a href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                                    Privacy
+                                    {t('footer.privacy')}
                                 </a>
                             </div>
                             <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-                                © {new Date().getFullYear()} Gusti Devitto™. All rights reserved.
+                                © {new Date().getFullYear()} Gusti Devitto™. {t('footer.rights')}
                             </p>
                         </div>
                     </footer>
@@ -163,8 +172,8 @@ export const Route = createRootRoute({
                 </div>
             </div>
         </ThemeProvider>
-    ),
-})
+    )
+}
 
 function BackToTop() {
     const [visible, setVisible] = useState(false)
