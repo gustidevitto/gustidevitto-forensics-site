@@ -95,26 +95,18 @@ function GetAccess() {
                 <div className="relative z-20 mt-auto space-y-6">
                     {/* Pain Statement */}
                     <h2 className="text-3xl font-bold text-foreground leading-tight">
-                        <Trans i18nKey="get_access.pain_title">
-                            Dalam 15 menit, <br />
-                            <span className="text-primary">Anda akan tahu kemana uang Anda pergi.</span>
-                        </Trans>
+                        <Trans i18nKey="get_access.pain_title">Dalam 15 menit, <br /> <span className="text-primary">Anda akan tahu kemana uang Anda pergi.</span></Trans>
                     </h2>
 
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        <Trans i18nKey="get_access.hero_text">
-                            Bukan asumsi. Bukan tebak-tebakan. <br />
-                            <strong className="text-foreground">Data.</strong>
-                        </Trans>
+                        <Trans i18nKey="get_access.hero_text">Bukan asumsi. Bukan tebak-tebakan. <br /> <strong className="text-foreground">Data.</strong></Trans>
                     </p>
 
                     {/* Testimonial */}
                     <div className="bg-card/50 backdrop-blur-md rounded-xl p-6 border border-border/50">
                         <blockquote className="space-y-3">
                             <p className="text-base leading-relaxed text-foreground">
-                                <Trans i18nKey="get_access.testimonial_text">
-                                    "Sebelumnya saya pikir bisnis saya sehat karena omzet naik terus. Ternyata ada <strong className="text-destructive">Rp 38 Juta/bulan</strong> yang bocor tanpa saya sadari. FFD™ buka mata saya."
-                                </Trans>
+                                <Trans i18nKey="get_access.testimonial_text">"Sebelumnya saya pikir bisnis saya sehat karena omzet naik terus. Ternyata ada <strong className="text-destructive">Rp 38 Juta/bulan</strong> yang bocor tanpa saya sadari. FFD™ buka mata saya."</Trans>
                             </p>
                             <footer className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
@@ -217,9 +209,7 @@ function GetAccess() {
                     {/* Trust Signals */}
                     <div className="text-center space-y-2">
                         <p className="text-xs text-muted-foreground">
-                            <Trans i18nKey="get_access.privacy_policy">
-                                Dengan klik "Lanjut", Anda setuju dengan <a href="/privacy" className="underline hover:text-primary">Kebijakan Privasi</a> kami.
-                            </Trans>
+                            <Trans i18nKey="get_access.privacy_policy">Dengan klik "Lanjut", Anda setuju dengan <a href="/privacy" className="underline hover:text-primary">Kebijakan Privasi</a> kami.</Trans>
                         </p>
                         <p className="text-xs text-muted-foreground">
                             {t('get_access.ssl_text')}
