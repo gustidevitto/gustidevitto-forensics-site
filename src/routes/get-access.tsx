@@ -6,12 +6,14 @@ import { Button } from "@/components/ui/button"
 import { useState } from 'react'
 import { submitLead } from '@/lib/googleSheetsAPI'
 import { Clock, ShieldCheck, ArrowRight } from 'lucide-react'
+import { useTranslation, Trans } from 'react-i18next'
 
 export const Route = createFileRoute('/get-access')({
     component: GetAccess,
 })
 
 function GetAccess() {
+    const { t } = useTranslation()
     const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(false)
 
@@ -32,7 +34,7 @@ function GetAccess() {
 
             if (!result.success) {
                 console.error('Lead submission failed:', result.error)
-                alert(`Gagal mengirim data ke Google Sheets: ${result.error || 'Unknown Error'}. Data akan disimpan secara lokal.`)
+                alert(t('contact_page.alert_failed', { error: result.error || 'Unknown Error' }))
             }
 
             // Create Session Token (only after successful submission or fallback)
@@ -48,14 +50,14 @@ function GetAccess() {
         } catch (error) {
             setIsLoading(false)
             console.error('Unexpected error:', error)
-            alert('Terjadi kesalahan. Silakan coba lagi.')
+            alert(t('contact_page.alert_error'))
         }
     }
 
     return (
         <div className="container relative flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0 min-h-[calc(100vh-4rem)]">
-            <title>Get Access | PCC Lite Diagnostic</title>
-            <meta name="description" content="Mulailah diagnosa gratis bisnis multi-outlet Anda dengan PCC Lite. Deteksi Phantom Costs dalam 15 menit." />
+            <title>{t('get_access.seo_title')}</title>
+            <meta name="description" content={t('get_access.seo_desc')} />
 
             {/* JSON-LD Service Schema */}
             <script type="application/ld+json">
@@ -86,35 +88,41 @@ function GetAccess() {
 
                 {/* Logo */}
                 <div className="relative z-20 flex items-center text-lg font-medium">
-                    <span className="text-foreground">PCC Lite — by FFD™ v3 Core</span>
+                    <span className="text-foreground">{t('get_access.left_panel_badge')}</span>
                 </div>
 
                 {/* Hero Content */}
                 <div className="relative z-20 mt-auto space-y-6">
                     {/* Pain Statement */}
                     <h2 className="text-3xl font-bold text-foreground leading-tight">
-                        Dalam 15 menit, <br />
-                        <span className="text-primary">Anda akan tahu kemana uang Anda pergi.</span>
+                        <Trans i18nKey="get_access.pain_title">
+                            Dalam 15 menit, <br />
+                            <span className="text-primary">Anda akan tahu kemana uang Anda pergi.</span>
+                        </Trans>
                     </h2>
 
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Bukan asumsi. Bukan tebak-tebakan. <br />
-                        <strong className="text-foreground">Data.</strong>
+                        <Trans i18nKey="get_access.hero_text">
+                            Bukan asumsi. Bukan tebak-tebakan. <br />
+                            <strong className="text-foreground">Data.</strong>
+                        </Trans>
                     </p>
 
                     {/* Testimonial */}
                     <div className="bg-card/50 backdrop-blur-md rounded-xl p-6 border border-border/50">
                         <blockquote className="space-y-3">
                             <p className="text-base leading-relaxed text-foreground">
-                                "Sebelumnya saya pikir bisnis saya sehat karena omzet naik terus. Ternyata ada <strong className="text-destructive">Rp 38 Juta/bulan</strong> yang bocor tanpa saya sadari. FFD™ buka mata saya."
+                                <Trans i18nKey="get_access.testimonial_text">
+                                    "Sebelumnya saya pikir bisnis saya sehat karena omzet naik terus. Ternyata ada <strong className="text-destructive">Rp 38 Juta/bulan</strong> yang bocor tanpa saya sadari. FFD™ buka mata saya."
+                                </Trans>
                             </p>
                             <footer className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
-                                    AR
+                                    {t('get_access.testimonial_name')[0]}
                                 </div>
                                 <div>
-                                    <p className="font-medium text-foreground">Andi Raharjo</p>
-                                    <p className="text-sm text-muted-foreground">Owner, 7 Outlet F&B — Surabaya</p>
+                                    <p className="font-medium text-foreground">{t('get_access.testimonial_name')}</p>
+                                    <p className="text-sm text-muted-foreground">{t('get_access.testimonial_role')}</p>
                                 </div>
                             </footer>
                         </blockquote>
@@ -123,7 +131,7 @@ function GetAccess() {
                     {/* Guarantee */}
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <ShieldCheck className="w-5 h-5 text-green-500" />
-                        <span>No Find, No Pitch Guarantee — Sehat? Konsultasi gratis, tanpa jualan.</span>
+                        <span>{t('get_access.guarantee')}</span>
                     </div>
                 </div>
             </div>
@@ -133,57 +141,57 @@ function GetAccess() {
                 <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
                     {/* Header */}
                     <div className="flex flex-col space-y-2 text-center">
-                        <h1 className="text-2xl font-bold tracking-tight">Mulai Diagnosis Gratis</h1>
+                        <h1 className="text-2xl font-bold tracking-tight">{t('get_access.form_title')}</h1>
                         <p className="text-muted-foreground">
-                            Satu langkah untuk melihat apa yang selama ini tersembunyi.
+                            {t('get_access.form_subtitle')}
                         </p>
                     </div>
 
                     {/* Capacity Badge */}
                     <div className="flex items-center justify-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
                         <Clock className="w-4 h-4" />
-                        <span>3 dari 5 slot tersisa bulan ini</span>
+                        <span>{t('get_access.slots_left', { count: 3 })}</span>
                     </div>
 
                     {/* Form Card */}
                     <Card className="border-border/50 shadow-xl">
                         <CardHeader className="pb-4">
-                            <CardTitle className="text-lg">Data Kontak</CardTitle>
+                            <CardTitle className="text-lg">{t('get_access.form_header')}</CardTitle>
                             <CardDescription>
-                                Aman. Data Anda tidak akan dibagikan ke pihak ketiga.
+                                {t('get_access.form_disclaimer')}
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
                             <form onSubmit={handleSubmit} className="space-y-4">
                                 <div className="space-y-2">
-                                    <Label htmlFor="name">Nama Lengkap</Label>
+                                    <Label htmlFor="name">{t('get_access.label_name')}</Label>
                                     <Input
                                         id="name"
                                         name="name"
-                                        placeholder="Contoh: Budi Santoso"
+                                        placeholder={t('get_access.placeholder_name')}
                                         required
                                         className="h-12"
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="phone">Nomor WhatsApp</Label>
+                                    <Label htmlFor="phone">{t('get_access.label_phone')}</Label>
                                     <Input
                                         id="phone"
                                         name="phone"
                                         type="tel"
-                                        placeholder="08xx-xxxx-xxxx"
+                                        placeholder={t('get_access.placeholder_phone')}
                                         required
                                         className="h-12"
                                     />
-                                    <p className="text-xs text-muted-foreground">Untuk konfirmasi jadwal diagnosis</p>
+                                    <p className="text-xs text-muted-foreground">{t('get_access.phone_desc')}</p>
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="email">Email Bisnis</Label>
+                                    <Label htmlFor="email">{t('get_access.label_email')}</Label>
                                     <Input
                                         id="email"
                                         name="email"
                                         type="email"
-                                        placeholder="nama@perusahaan.com"
+                                        placeholder={t('get_access.placeholder_email')}
                                         required
                                         className="h-12"
                                     />
@@ -194,10 +202,10 @@ function GetAccess() {
                                     disabled={isLoading}
                                 >
                                     {isLoading ? (
-                                        "Memproses..."
+                                        t('get_access.cta_processing')
                                     ) : (
                                         <>
-                                            Lanjut ke PCC Lite Diagnostic
+                                            {t('get_access.cta_run')}
                                             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                         </>
                                     )}
@@ -209,10 +217,12 @@ function GetAccess() {
                     {/* Trust Signals */}
                     <div className="text-center space-y-2">
                         <p className="text-xs text-muted-foreground">
-                            Dengan klik "Lanjut", Anda setuju dengan <a href="/privacy" className="underline hover:text-primary">Kebijakan Privasi</a> kami.
+                            <Trans i18nKey="get_access.privacy_policy">
+                                Dengan klik "Lanjut", Anda setuju dengan <a href="/privacy" className="underline hover:text-primary">Kebijakan Privasi</a> kami.
+                            </Trans>
                         </p>
                         <p className="text-xs text-muted-foreground">
-                            🔒 SSL Encrypted • Data aman
+                            {t('get_access.ssl_text')}
                         </p>
                     </div>
                 </div>

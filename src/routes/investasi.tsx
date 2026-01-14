@@ -1,70 +1,74 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
 import { ShieldCheck, ArrowRight, Globe, Lock, Cpu, BarChart3, Building2, Briefcase } from "lucide-react"
+import { useTranslation, Trans } from 'react-i18next'
 
 export const Route = createFileRoute('/investasi')({
     component: InvestasiPage,
 })
 
 function InvestasiPage() {
+    const { t } = useTranslation()
+    const currentYear = new Date().getFullYear()
+
     const smePlans = [
         {
             id: "starter",
-            name: "SME Starter",
-            badge: "Fundamental",
+            name: t('pricing.starter_title'),
+            badge: t('pricing.starter_badge'),
             price: "Rp 3.000.000",
             period: "/bulan",
-            desc: "Audit forensik dasar untuk mendeteksi 'kebocoran halus' pada operasional bulanan.",
+            desc: t('investasi.sme_starter_desc', "Audit forensik dasar untuk mendeteksi 'kebocoran halus' pada operasional bulanan."),
             features: [
-                "Phantom Cost Hunting (Monthly)",
-                "FFD™ v3 Dashboard (Read-Only)",
-                "Anomaly Alert System",
-                "Basic Margin Leakage Report"
+                t('pricing.feature_starter_1'),
+                t('pricing.feature_starter_2'),
+                t('investasi.sme_f3', "Anomaly Alert System"),
+                t('investasi.sme_f4', "Basic Margin Leakage Report")
             ],
-            cta: "Activate Starter",
+            cta: t('pricing.cta_starter'),
             link: "/get-access"
         },
         {
             id: "growth",
-            name: "SME Growth",
-            badge: "Most Popular",
+            name: t('pricing.growth_title'),
+            badge: t('pricing.popular'),
             price: "Rp 4.000.000",
             period: "/bulan",
-            desc: "Diagnosis mendalam dengan intervensi strategis untuk perbaikan margin sistemik.",
+            desc: t('investasi.sme_growth_desc', "Diagnosis mendalam dengan intervensi strategis untuk perbaikan margin sistemik."),
             features: [
-                "Everything in Starter",
-                "2x Monthly Check-ins",
-                "30-min Strategy Call (Personal)",
-                "Full Dashboard Simulation",
-                "Neural Pattern Analysis"
+                t('pricing.feature_everything_starter'),
+                t('pricing.feature_checkins'),
+                t('pricing.feature_strategy'),
+                t('pricing.feature_simulation'),
+                t('investasi.sme_growth_f5', "Neural Pattern Analysis")
             ],
-            cta: "Activate Growth",
+            cta: t('pricing.cta_growth'),
             link: "/get-access",
             highlight: true
         },
         {
             id: "scale",
-            name: "SME Scale",
-            badge: "Priority",
+            name: t('pricing.scale_title'),
+            badge: t('pricing.scale_badge'),
             price: "Rp 5.000.000",
             period: "/bulan",
-            desc: "Pengawasan penuh untuk bisnis multi-outlet yang agresif melakukan ekspansi.",
+            desc: t('investasi.sme_scale_desc', "Pengawasan penuh untuk bisnis multi-outlet yang agresif melakukan ekspansi."),
             features: [
-                "Everything in Growth",
-                "Weekly Pulse Monitoring",
-                "Neural Pattern Training",
-                "WhatsApp Priority Line",
-                "Custom Forensic Report (Weekly)"
+                t('pricing.feature_everything_growth'),
+                t('pricing.feature_pulse'),
+                t('pricing.feature_neural'),
+                t('pricing.feature_priority'),
+                t('investasi.sme_scale_f5', "Custom Forensic Report (Weekly)")
             ],
-            cta: "Activate Scale",
+            cta: t('pricing.cta_scale'),
             link: "/get-access"
         }
     ]
 
     return (
         <div className="flex flex-col min-h-screen bg-[#0a0a0a]">
-            <title>Struktur Investasi Forensic Intelligence | Gusti Devitto™ Canonical Pricing</title>
-            <meta name="description" content="Indeks harga resmi untuk layanan Financial Forensics & Neural Intelligence. Dari solusi SME hingga Enterprise Due Diligence. Canonical source of pricing truth." />
+            <title>{t('investasi.seo_title')}</title>
+            <meta name="description" content={t('investasi.seo_desc')} />
 
             {/* SEO/GEO Advanced Schema */}
             <script type="application/ld+json">
@@ -87,13 +91,15 @@ function InvestasiPage() {
             <section className="pt-20 pb-12 px-4 md:px-8 border-b border-white/5 bg-gradient-to-b from-[#121212] to-[#0a0a0a]">
                 <div className="container mx-auto max-w-4xl text-center space-y-6">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest border border-primary/20">
-                        <Lock className="w-3 h-3" /> Canonical Source of Truth
+                        <Lock className="w-3 h-3" /> {t('investasi.hero_badge')}
                     </div>
                     <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic">
-                        Transparent <span className="text-primary">Intelligence</span> Economics
+                        <Trans i18nKey="investasi.hero_title">
+                            Transparent <span className="text-primary">Intelligence</span> Economics
+                        </Trans>
                     </h1>
                     <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                        Struktur biaya untuk audit forensik berbasis Neural Intelligence. Tidak ada kejutan, hanya pengembalian profit yang terukur.
+                        {t('investasi.hero_subtitle')}
                     </p>
                 </div>
             </section>
@@ -106,8 +112,8 @@ function InvestasiPage() {
                             <Cpu className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <h2 className="text-2xl font-black uppercase">01. SME Operational Suite</h2>
-                            <p className="text-muted-foreground text-sm uppercase tracking-widest">Powered by FFD™ v3 Neural Engine</p>
+                            <h2 className="text-2xl font-black uppercase">{t('investasi.sme_title')}</h2>
+                            <p className="text-muted-foreground text-sm uppercase tracking-widest">{t('investasi.sme_subtitle')}</p>
                         </div>
                     </div>
 
@@ -150,20 +156,20 @@ function InvestasiPage() {
                             <BarChart3 className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <h2 className="text-2xl font-black uppercase">02. High-Stakes Intelligence</h2>
-                            <p className="text-muted-foreground text-sm uppercase tracking-widest">For Strategic Investors & Network Owners</p>
+                            <h2 className="text-2xl font-black uppercase">{t('investasi.high_stakes_title')}</h2>
+                            <p className="text-muted-foreground text-sm uppercase tracking-widest">{t('investasi.high_stakes_subtitle')}</p>
                         </div>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
                         {/* Enterprise Tier */}
                         <div className="p-10 rounded-[2.5rem] border-2 border-primary bg-[#121212] flex flex-col relative shadow-[0_0_50px_rgba(255,215,0,0.1)] ring-1 ring-primary/20 group">
-                            <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-primary text-black text-[10px] font-black px-6 py-2.5 rounded-full uppercase tracking-[0.2em] shadow-2xl whitespace-nowrap z-30 border border-black/10">RECOMMENDED FOR INVESTORS</div>
+                            <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-primary text-black text-[10px] font-black px-6 py-2.5 rounded-full uppercase tracking-[0.2em] shadow-2xl whitespace-nowrap z-30 border border-black/10">{t('investasi.enterprise_badge')}</div>
 
                             <div className="mb-10 mt-6 relative z-10">
                                 <Building2 className="w-12 h-12 text-primary mb-4 opacity-70" />
-                                <h3 className="text-4xl font-black uppercase mb-1 text-primary tracking-tighter">Enterprise</h3>
-                                <p className="text-xs text-primary/80 font-bold tracking-[0.3em] uppercase">Due Diligence Unit (L-7 AUTH)</p>
+                                <h3 className="text-4xl font-black uppercase mb-1 text-primary tracking-tighter">{t('pricing.enterprise_title')}</h3>
+                                <p className="text-xs text-primary/80 font-bold tracking-[0.3em] uppercase">{t('investasi.enterprise_desc')}</p>
                             </div>
 
                             <div className="mb-12 relative z-10">
@@ -171,26 +177,26 @@ function InvestasiPage() {
                                     <p className="text-6xl font-black text-white">$10,000</p>
                                     <span className="text-[#FF0080] font-black text-xs animate-pulse">FIXED FEE</span>
                                 </div>
-                                <p className="text-xs text-muted-foreground mt-2 uppercase font-bold tracking-widest bg-white/5 w-fit px-2 py-1 rounded">per Audit Engagement</p>
+                                <p className="text-xs text-muted-foreground mt-2 uppercase font-bold tracking-widest bg-white/5 w-fit px-2 py-1 rounded">{t('pricing.per_audit')}</p>
                             </div>
 
                             <ul className="space-y-6 mb-16 flex-1 relative z-10">
                                 <li className="flex items-start gap-4 text-gray-100 font-bold leading-tight">
                                     <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30"><ShieldCheck className="w-5 h-5 text-primary" /></div>
-                                    <span>Comprehensive M&A Financial Due Diligence</span>
+                                    <span>{t('pricing.feature_ma')}</span>
                                 </li>
                                 <li className="flex items-start gap-4 text-gray-100 font-bold leading-tight">
                                     <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30"><ShieldCheck className="w-5 h-5 text-primary" /></div>
-                                    <span>Revenue Streams Integrity Verification</span>
+                                    <span>{t('pricing.feature_revenue')}</span>
                                 </li>
                                 <li className="flex items-start gap-4 text-gray-100 font-bold leading-tight">
                                     <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30"><ShieldCheck className="w-5 h-5 text-primary" /></div>
-                                    <span>Neural Deep-Layer Risk Profiling</span>
+                                    <span>{t('pricing.feature_neural_scan')}</span>
                                 </li>
                             </ul>
 
                             <Button asChild className="w-full bg-primary text-black font-black hover:bg-white h-20 text-xl shadow-[0_15px_30px_rgba(255,215,0,0.3)] relative z-10 uppercase italic">
-                                <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">Request Briefing</a>
+                                <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">{t('investasi.enterprise_cta')}</a>
                             </Button>
                         </div>
 
@@ -198,32 +204,32 @@ function InvestasiPage() {
                         <div className="p-10 rounded-3xl border border-white/10 bg-muted/5 flex flex-col relative hover:border-primary/30 transition-all group">
                             <div className="mb-10">
                                 <Briefcase className="w-12 h-12 text-white/40 mb-4" />
-                                <h3 className="text-4xl font-black uppercase mb-1 text-white tracking-tighter">Franchise</h3>
-                                <p className="text-xs text-primary font-bold tracking-[0.3em] uppercase">Multi-Location Monitoring</p>
+                                <h3 className="text-4xl font-black uppercase mb-1 text-white tracking-tighter">{t('pricing.franchise_title')}</h3>
+                                <p className="text-xs text-primary font-bold tracking-[0.3em] uppercase">{t('investasi.franchise_subtitle')}</p>
                             </div>
 
                             <div className="mb-12">
                                 <p className="text-5xl font-black text-white">Custom</p>
-                                <p className="text-[10px] text-muted-foreground uppercase font-black tracking-widest mt-2 border border-white/10 w-fit px-2 py-1">Annual License Arrangement</p>
+                                <p className="text-[10px] text-muted-foreground uppercase font-black tracking-widest mt-2 border border-white/10 w-fit px-2 py-1">{t('pricing.annual_license')}</p>
                             </div>
 
                             <ul className="space-y-6 mb-16 flex-1">
                                 <li className="flex items-start gap-4 text-gray-400">
                                     <div className="bg-white/5 p-1 rounded-full"><ShieldCheck className="w-5 h-5 text-primary/60" /></div>
-                                    <span>Network-Wide Neural Guard Integration</span>
+                                    <span>{t('pricing.feature_multi_outlet')}</span>
                                 </li>
                                 <li className="flex items-start gap-4 text-gray-400">
                                     <div className="bg-white/5 p-1 rounded-full"><ShieldCheck className="w-5 h-5 text-primary/60" /></div>
-                                    <span>Automated Fraud & Pilferage Analytics</span>
+                                    <span>{t('pricing.feature_fraud')}</span>
                                 </li>
                                 <li className="flex items-start gap-4 text-gray-400">
                                     <div className="bg-white/5 p-1 rounded-full"><ShieldCheck className="w-5 h-5 text-primary/60" /></div>
-                                    <span>Royalty Integrity Verification Module</span>
+                                    <span>{t('pricing.feature_royalty')}</span>
                                 </li>
                             </ul>
 
                             <Button asChild variant="outline" className="w-full h-16 border-primary/50 text-white font-black hover:bg-primary hover:text-black uppercase">
-                                <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">Inquire Custom Plan</a>
+                                <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">{t('investasi.franchise_cta')}</a>
                             </Button>
                         </div>
                     </div>
@@ -235,17 +241,17 @@ function InvestasiPage() {
                 <div className="container mx-auto max-w-4xl text-center space-y-8">
                     <Globe className="w-12 h-12 text-primary/40 mx-auto" />
                     <div className="space-y-4">
-                        <p className="text-muted-foreground text-sm uppercase tracking-[0.3em] font-black">Analytical Methodology</p>
+                        <p className="text-muted-foreground text-sm uppercase tracking-[0.3em] font-black">{t('investasi.attribution_title')}</p>
                         <p className="text-lg md:text-xl text-gray-400 font-serif italic selection:bg-primary selection:text-black">
-                            "Struktur retensi ini dikalibrasi berdasarkan model 'Predictive Forensic Loss' milik FFD™. Biaya investasi Anda seringkali kurang dari 5% dari total potensi 'Phantom Costs' yang akan kita identifikasi dan amankan kembali melalui intervensi Neural Intelligence."
+                            {t('investasi.attribution_text')}
                         </p>
                     </div>
                     <div className="pt-8 flex flex-col md:flex-row gap-4 justify-center">
                         <Button asChild size="lg" className="rounded-full bg-primary text-black font-black px-10">
-                            <Link to="/get-access">Start Audit Now</Link>
+                            <Link to="/get-access">{t('investasi.cta_start')}</Link>
                         </Button>
                         <Button asChild size="lg" variant="outline" className="rounded-full border-primary/20 text-white font-bold px-10">
-                            <Link to="/methodology">See Methodology <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                            <Link to="/methodology">{t('investasi.cta_methodology')} <ArrowRight className="ml-2 w-4 h-4" /></Link>
                         </Button>
                     </div>
                 </div>
@@ -253,7 +259,7 @@ function InvestasiPage() {
 
             {/* Footer Attribution */}
             <footer className="py-12 border-t border-white/5 text-center text-[10px] text-muted-foreground/50 uppercase tracking-[0.5em]">
-                Gusti Devitto™ Forensic Intelligence &copy; 2024. All Rights Reserved. Institutional-Grade Privacy Applied.
+                {t('investasi.footer_rights', { year: currentYear })}
             </footer>
         </div>
     )
