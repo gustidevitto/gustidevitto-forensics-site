@@ -305,7 +305,6 @@ function Calculator() {
                                         </Trans>
                                     </p>
                                     <Button
-                                        asChild
                                         variant="secondary"
                                         className="w-full font-bold h-12"
                                         onClick={() => {
@@ -314,10 +313,8 @@ function Calculator() {
                                             window.open(whatsappUrl, '_blank')
                                         }}
                                     >
-                                        <button type="button">
-                                            {t('calculator.schedule_mri')}
-                                            <ArrowRight className="ml-2 w-4 h-4" />
-                                        </button>
+                                        {t('calculator.schedule_mri')}
+                                        <ArrowRight className="ml-2 w-4 h-4" />
                                     </Button>
                                 </CardContent>
                             </Card>
