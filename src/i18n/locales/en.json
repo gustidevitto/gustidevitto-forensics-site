@@ -369,6 +369,7 @@
         "export_steps": "NEXT STEPS",
         "export_step1": "1. Schedule 15-Minute MRI with Vitto",
         "export_step2": "2. Visit: gustidevitto.com/investasi",
+        "whatsapp_mri_template": "Hi Vitto, I just completed the PCC Lite diagnosis. I'd like to schedule a 15-minute MRI consultation to discuss my business health in detail. Thank you!",
         "severity_stable": "STABLE",
         "severity_warning": "WARNING",
         "severity_serious": "SERIOUS",

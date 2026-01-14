@@ -304,11 +304,20 @@ function Calculator() {
                                             Contact Vitto to perform a <strong>Surgical MRI</strong> using the <strong>FDD™v3 Full Version</strong> personally.
                                         </Trans>
                                     </p>
-                                    <Button asChild variant="secondary" className="w-full font-bold h-12">
-                                        <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">
+                                    <Button
+                                        asChild
+                                        variant="secondary"
+                                        className="w-full font-bold h-12"
+                                        onClick={() => {
+                                            const message = t('calculator.whatsapp_mri_template')
+                                            const whatsappUrl = `https://wa.me/628895440515?text=${encodeURIComponent(message)}`
+                                            window.open(whatsappUrl, '_blank')
+                                        }}
+                                    >
+                                        <button type="button">
                                             {t('calculator.schedule_mri')}
                                             <ArrowRight className="ml-2 w-4 h-4" />
-                                        </a>
+                                        </button>
                                     </Button>
                                 </CardContent>
                             </Card>
