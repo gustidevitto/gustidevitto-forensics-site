@@ -69,7 +69,7 @@ function GetAccess() {
                         "@id": "https://www.gustidevitto.com/#organization"
                     },
                     "name": "PCC Lite (Phantom Cost Calculator)",
-                    "description": "Diagnosa awal 15 menit untuk mendeteksi kebocoran profit dan Phantom Costs pada bisnis multi-outlet.",
+                    "description": t('pilar_detail.schema_service_desc'),
                     "offers": {
                         "@type": "Offer",
                         "price": "0",

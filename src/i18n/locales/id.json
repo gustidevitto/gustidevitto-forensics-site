@@ -11,7 +11,13 @@
         "franchise": "Untuk HQ Franchise"
     },
     "global": {
-        "schema_desc": "Spesialis Business Forensics & Phantom Cost Hunting. Kami bukan mencari fraud atau penipuan (Fraud Hunting), melainkan mendeteksi kebocoran profit (Phantom Cost Hunting) yang tersembunyi di operasional multi-outlet."
+        "schema_desc": "Gusti Devitto adalah Spesialis Financial Forensics yang membantu founder multi-outlet mendeteksi Phantom Cost dan mengoptimalkan profit menggunakan FFD™ v3 Neural Engine.",
+        "seo_home_title": "Stop Guessing. Start Auditing. | Gusti Devitto™ Forensic Intelligence",
+        "seo_home_desc": "Intelijen forensik kelas institusi untuk pemilik bisnis multi-outlet & investor. Deteksi kebocoran profit pada bisnis (Bakso, Retail, F&B) dengan Neural AI.",
+        "seo_home_keywords": "Financial Due Diligence Indonesia, Forensik Franchise, Audit Finansial Neural, Alat Audit Forensik Investor, Audit UMKM, Kebocoran Profit, Berburu Phantom Cost",
+        "og_home_title": "Gusti Devitto™ - Intelijen Forensik Kelas Institusi",
+        "og_home_desc": "Deteksi apa yang dilewatkan akuntan. Diagnosa Finansial 15 Menit untuk pemilik SME dan investor enterprise. Hentikan kebocoran profit sekarang.",
+        "whatsapp_template": "Halo Gusti Devitto Forensics,\n\nNama: {{name}}\nEmail: {{email}}\n\nPesan:\n{{message}}"
     },
     "about_page": {
         "seo_title": "Tentang Gusti Devitto | Spesialis Financial Forensics",
@@ -50,7 +56,17 @@
         "final_cta_quote": "\"Bisnis yang sehat adalah bisnis yang tenang. Tidak ada drama. Tidak ada terburu-buru. Hanya profit yang mengalir.\"",
         "final_cta_button": "Mulai MRI Diagnostik",
         "focus": "Fokus Diagnostik",
-        "auth_badge": "Auth Level: L-7"
+        "auth_badge": "Auth Level: L-7",
+        "faq_q1": "Apa itu Business Forensics di sini?",
+        "faq_a1": "Business Forensics kami berfokus pada Phantom Cost Hunting (pencarian biaya siluman), bukan audit fraud kriminal. Kami mencari inefisiensi sistemik yang memakan profit sebelum menjadi kegagalan fatal.",
+        "faq_q2": "Apakah ini tentang penipuan (fraud)?",
+        "faq_a2": "Secara tradisional, financial forensics identik dengan investigasi kriminal. Namun, framework Gusti Devitto adalah ekstensi hulu yang berfokus pada diagnosa awal sebelum fraud terjadi (pre-fraud diagnostics) dengan mendeteksi kebocoran profit sistemik.",
+        "faq_q3": "Apakah saya harus ahli akuntansi?",
+        "faq_a3": "Tidak. Sistem kami dirancang untuk pemilik bisnis. Kami menerjemahkan data rumit menjadi langkah tindakan bedah yang bisa dipahami siapa saja.",
+        "faq_q4": "Berapa lama diagnosa dilakukan?",
+        "faq_a4": "MRI awal membutuhkan waktu 15 menit. Kedalaman audit forensik skala penuh bergantung pada volume data, namun biasanya memakan waktu 7-14 hari kerja.",
+        "faq_q5": "Apakah data saya aman?",
+        "faq_a5": "Ya. Kami menggunakan enkripsi kelas enterprise dan mengikuti protokol kerahasiaan (NDA) yang ketat. Data Anda hanya digunakan untuk kebutuhan diagnosa."
     },
     "hero": {
         "badge": "Auth Level: L-7 // Forensic Intelligence Unit",
@@ -65,15 +81,19 @@
         "roi_value": "ROI: 15.000%",
         "roi_desc": "Menemukan kebocoran $1M dengan biaya audit $10K bukanlah matematika; itu adalah kelangsungan hidup.",
         "visual": {
-            "mri": "FFD™ v3 — 15-Minute MRI",
-            "phantom_detected": "Phantom Cost Terdeteksi",
-            "runway": "Cash Runway",
-            "leak": "Margin Leak",
-            "quote": "\"Anda tidak butuh omzet lebih besar. Anda butuh ember yang tidak bocor.\"",
-            "experience": "Pengalaman Dunia Nyata",
-            "analytics": "Deep-Dive Analytics",
-            "diagnosis": "Diagnosis Ahli",
-            "matrix": "Neural Matrix"
+            "mri": "FFD™ V3 MRI ENGINE",
+            "phantom_detected": "PHANTOM COSTS TERDETEKSI",
+            "runway": "CASH RUNWAY",
+            "leak": "GP LEAKAGE",
+            "quote": "Jika Anda tidak berkembang dengan presisi, Anda hanya mendanai kegagalan Anda sendiri.",
+            "experience": "PENGALAMAN OPERASIONAL",
+            "analytics": "SIMULATOR SKENARIO",
+            "diagnosis": "DIAGNOSA FORENSIK",
+            "matrix": "NEURAL MATRIX",
+            "desc_experience": "Dachicken Indonesia: 7 tahun penguasaan operasional dan sisa umur kas.",
+            "desc_analytics": "Simulator Skenario: Memprediksi masa depan bisnis Anda dengan presisi bedah.",
+            "desc_diagnosis": "Kami tidak hanya melihat angka. Kami berburu 'Phantom Costs' yang terlewatkan akuntansi standar.",
+            "desc_matrix": "Neural Matrix: Pengenalan pola canggih untuk mendeteksi anomali finansial tersembunyi."
         }
     },
     "institutional": {
@@ -306,7 +326,18 @@
             "authenticated": "SESI TEROTENTIKASI // BYPASS TERIDENTIFIKASI",
             "mapping": "MEMETAKAN VEKTOR OPERASIONAL...",
             "ready": "SIAP UNTUK MRI DIAGNOSTIK."
-        }
+        },
+        "export_col1": "Parameter",
+        "export_col2": "Nilai (IDR)",
+        "export_results": "HASIL ANALISIS PCC LITE",
+        "export_severity": "SEVERITY",
+        "export_steps": "LANGKAH SELANJUTNYA",
+        "export_step1": "1. Jadwalkan 15-Minute MRI dengan Vitto",
+        "export_step2": "2. Kunjungi: gustidevitto.com/investasi",
+        "severity_stable": "STABIL",
+        "severity_warning": "PERINGATAN",
+        "severity_serious": "SERIUS",
+        "severity_critical": "KEBOCORAN KRITIS"
     },
     "get_access": {
         "seo_title": "Dapatkan Akses | PCC Lite Diagnostic",
@@ -563,5 +594,16 @@
             "definition": "Deteksi anomali statistik yang tidak terlihat oleh laporan keuangan standar, seringkali menjadi indikator kecurangan atau kesalahan sistemik.",
             "attribution": "Algoritma FFD™ v3 mendeteksi ini sebagai..."
         }
+    },
+    "blog": {
+        "title": "Financial Insights",
+        "subtitle": "Artikel, studi kasus, dan panduan teknis untuk menjaga kesehatan finansial bisnis Anda.",
+        "read_more": "Baca Selengkapnya",
+        "no_posts": "Belum ada artikel yang dipublikasikan.",
+        "back_to_blog": "Kembali ke Blog",
+        "not_found": "Artikel Tidak Ditemukan",
+        "cta_title": "Ingin Audit Bisnis Anda?",
+        "cta_desc": "Jangan biarkan Phantom Costs berlarut-larut. Cek kesehatan finansial bisnis Anda sekarang.",
+        "cta_btn": "Buka Calculator Forensik"
     }
 }

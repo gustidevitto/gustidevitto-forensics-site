@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { CalendarDays, Clock, ArrowRight } from "lucide-react"
+import { useTranslation } from 'react-i18next'
 
 // @ts-ignore
 export const Route = createFileRoute('/blog/')({
@@ -36,34 +37,51 @@ const parseFrontmatter = (content: string) => {
 // Load Blogs Dynamically
 const rawBlogs = import.meta.glob('../../../content/blog/*.md', { query: '?raw', import: 'default', eager: true })
 
-const BLOG_POSTS = Object.entries(rawBlogs).map(([path, content]) => {
-    const { data } = parseFrontmatter(content as string)
-    // Extract slug from filename or frontmatter
-    const filename = path.split('/').pop()?.replace('.md', '') || ''
-
-    // Normalize slug: remove date prefix if exists for URL clarity, 
-    // but the user wants date prefix for sorting.
-    // We'll use the full filename as slug for safety, or a cleaned version.
-    const slug = data.slug || filename.replace(/[\s\W]+/g, '-').toLowerCase()
-
-    return {
-        slug,
-        title: data.title || 'Untitled',
-        excerpt: data.excerpt || '',
-        date: data.date || 'Unknown Date',
-        readTime: data.readTime || '5 min read',
-        category: data.category || 'General',
-        image: data.image || 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=800&auto=format&fit=crop'
-    }
-}).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-
 function BlogIndex() {
+    const { t, i18n } = useTranslation()
+    const currentLang = i18n.language
+
+    // Process and filter blogs based on language
+    const blogMap = new Map<string, { id: string, en?: string, default: string }>()
+
+    Object.entries(rawBlogs).forEach(([path, content]) => {
+        const filename = path.split('/').pop() || ''
+        const isEn = filename.endsWith('.en.md')
+        const baseId = isEn ? filename.replace('.en.md', '') : filename.replace('.md', '')
+
+        if (!blogMap.has(baseId)) {
+            blogMap.set(baseId, { id: baseId, default: '' })
+        }
+
+        const entry = blogMap.get(baseId)!
+        if (isEn) entry.en = content as string
+        else entry.default = content as string
+    })
+
+    const BLOG_POSTS = Array.from(blogMap.values()).map(entry => {
+        const content = (currentLang === 'en' && entry.en) ? entry.en : entry.default
+        const { data } = parseFrontmatter(content)
+
+        // Normalize slug: use baseId as slug for matching in detail page
+        const slug = entry.id.replace(/[\s\W]+/g, '-').toLowerCase()
+
+        return {
+            slug,
+            title: data.title || 'Untitled',
+            excerpt: data.excerpt || '',
+            date: data.date || 'Unknown Date',
+            readTime: data.readTime || '5 min read',
+            category: data.category || 'General',
+            image: data.image || 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=800&auto=format&fit=crop'
+        }
+    }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
     return (
         <div className="container py-20 max-w-6xl mx-auto px-4 md:px-8">
             <div className="text-center mb-16 space-y-4">
-                <h1 className="text-4xl font-bold tracking-tight">Financial Insights</h1>
+                <h1 className="text-4xl font-bold tracking-tight">{t('blog.title')}</h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                    Artikel, studi kasus, dan panduan teknis untuk menjaga kesehatan finansial bisnis Anda.
+                    {t('blog.subtitle')}
                 </p>
             </div>
 
@@ -111,7 +129,7 @@ function BlogIndex() {
                                 <Button variant="link" className="p-0 h-auto font-semibold text-primary" asChild>
                                     {/* @ts-ignore */}
                                     <Link to={`/blog/${post.slug}`}>
-                                        Baca Selengkapnya <ArrowRight className="ml-1 w-4 h-4" />
+                                        {t('blog.read_more')} <ArrowRight className="ml-1 w-4 h-4" />
                                     </Link>
                                 </Button>
                             </CardFooter>
@@ -119,7 +137,7 @@ function BlogIndex() {
                     ))
                 ) : (
                     <div className="col-span-full text-center py-20">
-                        <p className="text-muted-foreground">Belum ada artikel yang dipublikasikan.</p>
+                        <p className="text-muted-foreground">{t('blog.no_posts')}</p>
                     </div>
                 )}
             </div>

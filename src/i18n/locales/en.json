@@ -11,7 +11,13 @@
         "franchise": "For Franchise HQs"
     },
     "global": {
-        "schema_desc": "Business Forensics & Phantom Cost Hunting Specialist. We don't look for fraud (Fraud Hunting), but rather detect profit leaks (Phantom Cost Hunting) hidden in multi-outlet operations."
+        "schema_desc": "Gusti Devitto is a Financial Forensics Specialist helping multi-outlet founders detect Phantom Costs and optimize profit using the FFD™ v3 Neural Engine.",
+        "seo_home_title": "Stop Guessing. Start Auditing. | Gusti Devitto™ Forensic Intelligence",
+        "seo_home_desc": "Institutional-grade forensic intelligence for SME owners & investors. Detect profit leakage in multi-outlet businesses (Bakso, Retail, F&B) with Neural AI.",
+        "seo_home_keywords": "Financial Due Diligence Indonesia, Franchise Fraud Detection, Neural Financial Audit, Forensic Accounting Tool for Investors, SME Audit, Profit Leakage, Phantom Cost Hunting",
+        "og_home_title": "Gusti Devitto™ - Institutional-Grade Forensic Intelligence",
+        "og_home_desc": "Detect what accountants miss. 15-Minute Financial Diagnosis for multi-outlet owners (SME) and enterprise investors. Stop profit leakage now.",
+        "whatsapp_template": "Hello Gusti Devitto Forensics,\n\nName: {{name}}\nEmail: {{email}}\n\nMessage:\n{{message}}"
     },
     "about_page": {
         "seo_title": "About Gusti Devitto | Financial Forensics Specialist",
@@ -50,7 +56,17 @@
         "final_cta_quote": "\"A healthy business is a quiet business. No drama. No rushing. Just profit that flows.\"",
         "final_cta_button": "Start Diagnostic MRI",
         "focus": "Diagnostic Focus",
-        "auth_badge": "Auth Level: L-7"
+        "auth_badge": "Auth Level: L-7",
+        "faq_q1": "What is Business Forensics here?",
+        "faq_a1": "Our Business Forensics focuses on Phantom Cost Hunting (finding hidden costs), not criminal fraud audits. We look for systemic inefficiencies that eat profit before they become fatal failures.",
+        "faq_q2": "Is this about fraud?",
+        "faq_a2": "Traditionally, financial forensics is identified with criminal investigations. However, Gusti Devitto's framework is an upstream extension focusing on pre-fraud diagnostics by detecting systemic profit leakage.",
+        "faq_q3": "Do I need to be an accounting expert?",
+        "faq_a3": "No. Our system is designed for business owners. We translate complex data into surgical action items that anyone can understand.",
+        "faq_q4": "How long does a diagnosis take?",
+        "faq_a4": "The initial MRI takes 15 minutes. A full-scale forensic audit depth depends on the volume of data but usually takes 7-14 business days.",
+        "faq_q5": "Is my data secure?",
+        "faq_a5": "Yes. We use enterprise-grade encryption and follow strict non-disclosure protocols. Your data is used only for diagnostic purposes."
     },
     "hero": {
         "badge": "Auth Level: L-7 // Forensic Intelligence Unit",
@@ -65,15 +81,19 @@
         "roi_value": "ROI: 15,000%",
         "roi_desc": "Finding a $1M leak for a $10K audit fee isn't math; it's survival.",
         "visual": {
-            "mri": "FFD™ v3 — 15-Minute MRI",
-            "phantom_detected": "Phantom Cost Detected",
-            "runway": "Cash Runway",
-            "leak": "Margin Leak",
-            "quote": "\"You don't need more revenue. You need a bucket that doesn't leak.\"",
-            "experience": "Real World Experience",
-            "analytics": "Deep-Dive Analytics",
-            "diagnosis": "Expert Diagnosis",
-            "matrix": "Neural Matrix"
+            "mri": "FFD™ V3 MRI ENGINE",
+            "phantom_detected": "PHANTOM COSTS DETECTED",
+            "runway": "CASH RUNWAY",
+            "leak": "GP LEAKAGE",
+            "quote": "If you don't grow with precision, you are just financing your own failure.",
+            "experience": "OPERATIONAL EXPERIENCE",
+            "analytics": "SCENARIO SIMULATOR",
+            "diagnosis": "FORENSIC DIAGNOSIS",
+            "matrix": "NEURAL MATRIX",
+            "desc_experience": "Dachicken Indonesia: 7 years of operational mastery and the hard lessons of cashflow.",
+            "desc_analytics": "The Scenario Simulator: Predicting your business future with surgical precision.",
+            "desc_diagnosis": "We don't just look at numbers. We hunt for the 'Phantom Costs' that standard accounting misses.",
+            "desc_matrix": "The Neural Matrix: Advanced pattern recognition to detect hidden financial anomalies."
         }
     },
     "institutional": {
@@ -306,7 +326,18 @@
             "authenticated": "SESSION AUTHENTICATED // BYPASS IDENTIFIED",
             "mapping": "MAPPING OPERATIONAL VECTORS...",
             "ready": "READY FOR DIAGNOSTIC MRI."
-        }
+        },
+        "export_col1": "Parameter",
+        "export_col2": "Value (IDR)",
+        "export_results": "PCC LITE ANALYSIS RESULTS",
+        "export_severity": "SEVERITY",
+        "export_steps": "NEXT STEPS",
+        "export_step1": "1. Schedule 15-Minute MRI with Vitto",
+        "export_step2": "2. Visit: gustidevitto.com/investasi",
+        "severity_stable": "STABLE",
+        "severity_warning": "WARNING",
+        "severity_serious": "SERIOUS",
+        "severity_critical": "CRITICAL LEAK"
     },
     "get_access": {
         "seo_title": "Get Access | PCC Lite Diagnostic",
@@ -352,9 +383,9 @@
         "placeholder_last_name": "Santoso",
         "placeholder_email": "budi@example.com",
         "placeholder_message": "Tell us a bit about your business and the 'phantom cost' challenges you might be experiencing...",
-        "cta_whatsapp": "Send to WhatsApp",
-        "alert_failed": "Failed to send data to Google Sheets: {{error}}. Data will be saved locally.",
-        "alert_error": "An error occurred. Please try again."
+        "cta_whatsapp": "Inquiry via WhatsApp",
+        "alert_failed": "Submission failed: {{error}}",
+        "alert_error": "An unexpected error occurred. Please try again or contact us via WhatsApp."
     },
     "master_index": {
         "seo_title": "Master Index - Financial Forensics Framework by Gusti Devitto",
@@ -470,7 +501,8 @@
         "cta_title": "Ready to Stop the Bleeding?",
         "cta_desc": "Identify Phantom Costs now with FFD™ v3 Dashboard. Start an initial self-audit or contact our consultant.",
         "cta_calculator": "Open Forensic Calculator",
-        "cta_consult": "Private Consultation"
+        "cta_consult": "Private Consultation",
+        "schema_service_desc": "15-minute initial diagnosis to detect profit leakage and Phantom Costs in multi-outlet businesses."
     },
     "pillars": {
         "cash-runway": {
@@ -563,5 +595,16 @@
             "definition": "Detection of statistical anomalies invisible to standard financial reports, often an indicator of fraud or systemic error.",
             "attribution": "The FFD™ v3 algorithm detects this as..."
         }
+    },
+    "blog": {
+        "title": "Financial Insights",
+        "subtitle": "Articles, case studies, and technical guides to maintain your business financial health.",
+        "read_more": "Read More",
+        "no_posts": "No articles published yet.",
+        "back_to_blog": "Back to Blog",
+        "not_found": "Article Not Found",
+        "cta_title": "Want to Audit Your Business?",
+        "cta_desc": "Don't let Phantom Costs linger. Check your business financial health now.",
+        "cta_btn": "Open Forensic Calculator"
     }
 }

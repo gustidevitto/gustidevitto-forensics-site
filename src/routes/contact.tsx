@@ -20,7 +20,7 @@ function Contact() {
         const email = formData.get('email')
         const message = formData.get('message')
 
-        const whatsappMessage = `Halo Gusti Devitto Forensics,\n\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`
+        const whatsappMessage = t('global.whatsapp_template', { name, email, message })
         const whatsappUrl = `https://wa.me/628895440515?text=${encodeURIComponent(whatsappMessage)}`
 
         window.open(whatsappUrl, '_blank')

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, CalendarDays, User, Tag } from "lucide-react"
+import { useTranslation } from 'react-i18next'
 
 // @ts-ignore
 export const Route = createFileRoute('/blog/$slug')({
@@ -76,25 +77,36 @@ const parseFrontmatter = (content: string) => {
 }
 
 function BlogPost() {
+    const { t, i18n } = useTranslation()
+    const currentLang = i18n.language
+
     // @ts-ignore
     const { slug } = Route.useParams()
 
     // Load Blogs Dynamically
     const rawBlogs = import.meta.glob('../../../content/blog/*.md', { query: '?raw', import: 'default', eager: true })
 
-    // Find the blog with matching slug
-    const blogEntry = Object.entries(rawBlogs).find(([path, _]) => {
-        const filename = path.split('/').pop()?.replace('.md', '') || ''
-        const fileSlug = filename.replace(/[\s\W]+/g, '-').toLowerCase()
-        return fileSlug === slug
-    })
+    // Find the blog with matching slug (considering language)
+    const baseIdMatches = (filename: string, slug: string) => {
+        const baseId = filename.endsWith('.en.md') ? filename.replace('.en.md', '') : filename.replace('.md', '')
+        return baseId.replace(/[\s\W]+/g, '-').toLowerCase() === slug
+    }
+
+    const blogEntries = Object.entries(rawBlogs).filter(([path, _]) => baseIdMatches(path.split('/').pop() || '', slug))
+
+    // Select best entry: preference for .en.md if currentLang is 'en'
+    let blogEntry = blogEntries.find(([path, _]) => path.endsWith('.en.md') && currentLang === 'en')
+    if (!blogEntry) {
+        // Fallback to default (.md)
+        blogEntry = blogEntries.find(([path, _]) => !path.endsWith('.en.md'))
+    }
 
     if (!blogEntry) {
         return (
             <div className="container py-20 text-center">
-                <h1 className="text-2xl font-bold mb-4">Artikel Tidak Ditemukan</h1>
+                <h1 className="text-2xl font-bold mb-4">{t('blog.not_found')}</h1>
                 <Button asChild variant="outline">
-                    <Link to="/blog">Kembali ke Blog</Link>
+                    <Link to="/blog">{t('blog.back_to_blog')}</Link>
                 </Button>
             </div>
         )
@@ -116,7 +128,7 @@ function BlogPost() {
             <Button variant="ghost" asChild className="mb-8 -ml-4 text-muted-foreground hover:text-foreground">
                 {/* @ts-ignore */}
                 <Link to="/blog">
-                    <ArrowLeft className="mr-2 w-4 h-4" /> Kembali ke Blog
+                    <ArrowLeft className="mr-2 w-4 h-4" /> {t('blog.back_to_blog')}
                 </Link>
             </Button>
 
@@ -162,13 +174,13 @@ function BlogPost() {
 
             <div className="mt-16 pt-8 border-t border-border">
                 <div className="bg-muted/50 p-8 rounded-2xl text-center space-y-4">
-                    <h3 className="text-xl font-bold">Ingin Audit Bisnis Anda?</h3>
+                    <h3 className="text-xl font-bold">{t('blog.cta_title')}</h3>
                     <p className="text-muted-foreground">
-                        Jangan biarkan Phantom Costs berlarut-larut. Cek kesehatan finansial bisnis Anda sekarang.
+                        {t('blog.cta_desc')}
                     </p>
                     <Button asChild size="lg" className="bg-primary text-primary-foreground font-bold">
                         <Link to="/get-access">
-                            Buka Calculator Forensik
+                            {t('blog.cta_btn')}
                         </Link>
                     </Button>
                 </div>

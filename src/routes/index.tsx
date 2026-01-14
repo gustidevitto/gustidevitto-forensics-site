@@ -50,28 +50,32 @@ function Index() {
             type: 'image',
             title: t('hero.visual.experience'),
             src: '/assets/images/dachicken.png',
-            desc: 'Dachicken Indonesia: 7 years of operational mastery and the hard lessons of cashflow.'
+            desc: t('hero.visual.desc_experience'),
+            icon: <Activity className="w-6 h-6" />
         },
         {
             id: 'forensics',
             type: 'image',
             title: t('hero.visual.analytics'),
             src: '/assets/images/forensics.png',
-            desc: 'The Scenario Simulator: Predicting your business future with surgical precision.'
+            desc: t('hero.visual.desc_analytics'),
+            icon: <Microscope className="w-6 h-6" />
         },
         {
             id: 'audit',
             type: 'image',
             title: t('hero.visual.diagnosis'),
             src: '/assets/images/audit.png',
-            desc: 'We don\'t just look at numbers. We hunt for the "Phantom Costs" that standard accounting misses.'
+            desc: t('hero.visual.desc_diagnosis'),
+            icon: <Search className="w-6 h-6" />
         },
         {
             id: 'neural-matrix',
             type: 'image',
             title: t('hero.visual.matrix'),
             src: '/assets/images/ffd1.png',
-            desc: 'The Neural Matrix: Advanced pattern recognition to detect hidden financial anomalies.'
+            desc: t('hero.visual.desc_matrix'),
+            icon: <Brain className="w-6 h-6" />
         }
     ]
 
@@ -84,11 +88,11 @@ function Index() {
 
     return (
         <div className="flex flex-col min-h-[calc(100vh-4rem)]">
-            <title>Stop Guessing. Start Auditing. | Gusti Devitto™ Forensic Intelligence</title>
-            <meta name="description" content="Institutional-grade forensic intelligence for SME owners & investors. Deteksi kebocoran profit bisnis multi-outlet (Bakso, Retail, F&B) dengan Neural AI. Financial Due Diligence Indonesia & Franchise Fraud Detection." />
-            <meta name="keywords" content="Financial Due Diligence Indonesia, Franchise Fraud Detection, Neural Financial Audit, Forensic Accounting Tool for Investors, Audit UMKM, Kebocoran Profit, Phantom Cost Hunting" />
-            <meta property="og:title" content="Gusti Devitto™ - Institutional-Grade Forensic Intelligence" />
-            <meta property="og:description" content="Detect what accountants miss. 15-Minute Financial Diagnosis for multi-outlet owners (SME) and enterprise investors. Stop profit leakage now." />
+            <title>{t('global.seo_home_title')}</title>
+            <meta name="description" content={t('global.seo_home_desc')} />
+            <meta name="keywords" content={t('global.seo_home_keywords')} />
+            <meta property="og:title" content={t('global.og_home_title')} />
+            <meta property="og:description" content={t('global.og_home_desc')} />
 
             {/* Previous Schema Stays, maybe update it later if needed */}
             <script type="application/ld+json">
@@ -98,18 +102,42 @@ function Index() {
                     "mainEntity": [
                         {
                             "@type": "Question",
-                            "name": "Apa itu Business Forensics di sini?",
+                            "name": t('about_page.faq_q1'),
                             "acceptedAnswer": {
                                 "@type": "Answer",
-                                "text": "Business Forensics kami berfokus pada Phantom Cost Hunting (pencarian biaya siluman), bukan audit fraud kriminal. Kami mencari inefisiensi sistemik yang memakan profit sebelum menjadi kegagalan fatal."
+                                "text": t('about_page.faq_a1')
                             }
                         },
                         {
                             "@type": "Question",
-                            "name": "Apakah ini tentang penipuan (fraud)?",
+                            "name": t('about_page.faq_q2'),
                             "acceptedAnswer": {
                                 "@type": "Answer",
-                                "text": "Secara tradisional, financial forensics identik dengan investigasi kriminal. Namun, framework Gusti Devitto adalah ekstensi hulu yang berfokus pada diagnosa awal sebelum fraud terjadi (pre-fraud diagnostics) dengan mendeteksi kebocoran profit sistemik."
+                                "text": t('about_page.faq_a2')
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": t('about_page.faq_q3'),
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": t('about_page.faq_a3')
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": t('about_page.faq_q4'),
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": t('about_page.faq_a4')
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": t('about_page.faq_q5'),
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": t('about_page.faq_a5')
                             }
                         }
                     ]
