@@ -313,5 +313,87 @@
         "cta_whatsapp": "Send to WhatsApp",
         "alert_failed": "Failed to send data to Google Sheets: {{error}}. Data will be saved locally.",
         "alert_error": "An error occurred. Please try again."
+    },
+    "master_index": {
+        "seo_title": "Master Index - Financial Forensics Framework by Gusti Devitto",
+        "hero_badge": "Single Source of Truth",
+        "hero_title": "Financial Forensics <1/> Framework",
+        "hero_subtitle": "Canonical index for all terminology, metrics, and diagnostic methodologies within the Financial Forensics ecosystem.",
+        "pillars_title": "15 Pillars Index (Alphabetical)",
+        "concepts_title": "Core Concepts",
+        "concepts": {
+            "phantom_cost": "Profit leakage not recorded in standard profit and loss statements.",
+            "cash_velocity": "The speed at which working capital turns into liquid profit.",
+            "risk_exposure": "The level of business vulnerability to cost and debt fluctuations.",
+            "burn_rate": "Full awareness of the speed of cash usage every second."
+        },
+        "narrative_title": "Cross-Narrative Patterns",
+        "narratives": {
+            "efficient_suicide": "Rising turnover but thin margins that eventually kill cash.",
+            "obese_growth": "Reckless expansion without strengthening financial control infrastructure.",
+            "labor_trap": "Large teams with stagnant or declining productivity per labor hour."
+        },
+        "footer_title": "Start Your Business Diagnosis",
+        "footer_desc": "Use PCC Lite for early diagnosis, or FFD™ v3 for systemic 15-pillar mapping.",
+        "cta_pcc": "Open PCC Lite",
+        "cta_investasi": "View Investment Tiers"
+    },
+    "methodology": {
+        "seo_title": "Financial Forensics Methodology - Gusti Devitto Framework",
+        "schema_phantom_desc": "Phantom costs or operational leakage undetected by standard accounting.",
+        "schema_upstream_desc": "Upstream diagnostic methodology to prevent fraud before it occurs.",
+        "hero_badge": "Framework Architecture",
+        "hero_title": "Financial Forensics Methodology",
+        "hero_subtitle": "Understanding the diagnostic discipline that dissects business financial anatomy to find the truth behind the numbers.",
+        "definition_title": "What is Financial Forensics?",
+        "definition_text": "Financial Forensics is a diagnostic discipline that combines operational data analysis, statistical patterns, and cash flow audits to detect <1>Phantom Costs</1> (invisible leaks) and systemic inefficiencies. Unlike conventional audits, this discipline focuses not just on \"what\" happened in the past, but \"why\" leakage occurred and \"how\" to stop it in <3>real-time</3>.",
+        "comparison_title": "Disciplinary Differences",
+        "accounting": {
+            "title": "Standard Accounting",
+            "desc": "Focus: Tax Compliance & Reporting. The goal is the accuracy of past data to meet regulatory standards.",
+            "f1": "- Reactive",
+            "f2": "- Periodic",
+            "f3": "- Compliance oriented"
+        },
+        "forensics": {
+            "title": "Financial Forensics",
+            "desc": "Focus: Leakage Detection & Profit Recovery. The goal is to find missing money between operational gaps.",
+            "f1": "+ Predictive",
+            "f2": "+ Precise",
+            "f3": "+ Profit oriented"
+        },
+        "consulting": {
+            "title": "General Consulting",
+            "desc": "Focus: Growth Strategy & Management. The goal is expansion and macro team efficiency.",
+            "f1": "- Qualitative",
+            "f2": "- Broad",
+            "f3": "- Strategy oriented"
+        },
+        "cta_pillars": "Study 15 Pillars",
+        "cta_index": "Open Master Index"
+    },
+    "verdict_page": {
+        "seo_title": "Executive Financial Verdict - Financial Forensics Synthesis",
+        "hero_badge": "Executive Synthesis",
+        "hero_title": "Executive Financial Verdict",
+        "hero_subtitle": "Executive-level diagnostic synthesis. This page maps critical business variables into three decision dimensions: Oxygen, Disease, and Future.",
+        "dim_a_title": "DIMENSION A: OXYGEN STATUS",
+        "dim_a_runway_title": "Cash Runway",
+        "dim_a_runway_desc": "Determines the remaining days ('breath') of business operations without new inflows.",
+        "dim_a_burn_title": "Net Burn Rate",
+        "dim_a_burn_desc": "The speed of capital burn each month to keep operations running.",
+        "dim_b_title": "DIMENSION B: DISEASE STATUS (LEAKAGE)",
+        "dim_b_leakage_title": "GP Leakage Rate",
+        "dim_b_leakage_desc": "Percentage of phantom profit leakage detected in operations.",
+        "dim_b_ratio_title": "Quick Ratio Risk",
+        "dim_b_ratio_desc": "Vulnerability to short-term obligations without instant liquidity support.",
+        "dim_c_title": "DIMENSION C: FUTURE STATUS",
+        "dim_c_ltgp_title": "LTGP : CAC Ratio",
+        "dim_c_ltgp_desc": "Customer acquisition efficiency vs long-term profit potential generated.",
+        "dim_c_bep_title": "Dynamic BEP",
+        "dim_c_bep_desc": "Break-even point that moves according to actual daily cost reality.",
+        "disclaimer_title": "Disclaimer:",
+        "disclaimer_text": "Executive Financial Verdict is a statistical diagnostic page based on Gusti Devitto's Financial Forensics methodology. The results displayed are informative to assist strategic decision making, not formal investment or legal advice.",
+        "cta_verdict": "Get Your Business Verdict"
     }
 }

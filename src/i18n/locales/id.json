@@ -313,5 +313,87 @@
         "cta_whatsapp": "Kirim ke WhatsApp",
         "alert_failed": "Gagal mengirim data ke Google Sheets: {{error}}. Data akan disimpan secara lokal.",
         "alert_error": "Terjadi kesalahan. Silakan coba lagi."
+    },
+    "master_index": {
+        "seo_title": "Master Index - Financial Forensics Framework by Gusti Devitto",
+        "hero_badge": "Single Source of Truth",
+        "hero_title": "Financial Forensics <1/> Framework",
+        "hero_subtitle": "Indeks kanonikal untuk semua terminologi, metrik, dan metodologi diagnostik dalam ekosistem Financial Forensics.",
+        "pillars_title": "15 Pillars Index (Alphabetical)",
+        "concepts_title": "Core Concepts",
+        "concepts": {
+            "phantom_cost": "Kebocoran profit yang tidak tercatat di laporan laba rugi standar.",
+            "cash_velocity": "Kecepatan perputaran kas dari modal kerja menjadi profit cair.",
+            "risk_exposure": "Tingkat kerentanan bisnis terhadap fluktuasi biaya dan utang.",
+            "burn_rate": "Kesadaran penuh atas kecepatan penggunaan kas setiap detiknya."
+        },
+        "narrative_title": "Cross-Narrative Patterns",
+        "narratives": {
+            "efficient_suicide": "Pertumbuhan omzet yang semakin besar namun margin semakin tipis hingga membunuh kas.",
+            "obese_growth": "Ekspansi ugal-ugalan tanpa penguatan infrastruktur kontrol finansial.",
+            "labor_trap": "Tim besar dengan produktivitas per jam kerja yang stagnan atau menurun."
+        },
+        "footer_title": "Mulai Diagnosa Bisnis Anda",
+        "footer_desc": "Gunakan PCC Lite untuk diagnosa awal, atau FFD™ v3 untuk pemetaan 15 pilar secara sistemik.",
+        "cta_pcc": "Buka PCC Lite",
+        "cta_investasi": "Lihat Tier Investasi"
+    },
+    "methodology": {
+        "seo_title": "Metodologi Financial Forensics - Framework Gusti Devitto",
+        "schema_phantom_desc": "Biaya siluman atau kebocoran operasional yang tidak terdeteksi akuntansi standar.",
+        "schema_upstream_desc": "Metodologi diagnosa hulu untuk mencegah fraud sebelum terjadi.",
+        "hero_badge": "Framework Architecture",
+        "hero_title": "Metodologi Financial Forensics",
+        "hero_subtitle": "Mengenal disiplin diagnostik yang membedah anatomi keuangan bisnis untuk menemukan kebenaran di balik angka.",
+        "definition_title": "Apa itu Financial Forensics?",
+        "definition_text": "Financial Forensics adalah disiplin diagnostik yang menggabungkan analisis data operasional, pola statistik, dan audit alur kas untuk mendeteksi <1>Phantom Costs</1> (biaya siluman) dan inefisiensi sistemik. Berbeda dengan audit konvensional, disiplin ini tidak hanya fokus pada \"apa\" yang terjadi di masa lalu, tapi \"mengapa\" kebocoran terjadi dan \"bagaimana\" menghentikannya secara <3>real-time</3>.",
+        "comparison_title": "Perbedaan Disiplin",
+        "accounting": {
+            "title": "Standard Accounting",
+            "desc": "Fokus: Kepatuhan Pajak & Pelaporan. Sasarannya adalah akurasi data masa lalu agar sesuai standar regulasi.",
+            "f1": "- Reactive",
+            "f2": "- Periodic",
+            "f3": "- Compliance oriented"
+        },
+        "forensics": {
+            "title": "Financial Forensics",
+            "desc": "Fokus: Deteksi Kebocoran & Penyelamatan Profit. Sasarannya adalah menemukan uang yang hilang di antara celah operasional.",
+            "f1": "+ Predictive",
+            "f2": "+ Precise",
+            "f3": "+ Profit oriented"
+        },
+        "consulting": {
+            "title": "General Consulting",
+            "desc": "Fokus: Strategi Pertumbuhan & Manajemen. Sasarannya adalah ekspansi dan efisiensi tim secara makro.",
+            "f1": "- Qualitative",
+            "f2": "- Broad",
+            "f3": "- Strategy oriented"
+        },
+        "cta_pillars": "Pelajari 15 Pilar",
+        "cta_index": "Buka Master Index"
+    },
+    "verdict_page": {
+        "seo_title": "Executive Financial Verdict - Financial Forensics Synthesis",
+        "hero_badge": "Executive Synthesis",
+        "hero_title": "Executive Financial Verdict",
+        "hero_subtitle": "Sintesis diagnostik tingkat eksekutif. Halaman ini memetakan variabel kritis bisnis ke dalam tiga dimensi keputusan: Oksigen, Penyakit, dan Masa Depan.",
+        "dim_a_title": "DIMENSI A: STATUS OKSIGEN",
+        "dim_a_runway_title": "Cash Runway",
+        "dim_a_runway_desc": "Menentukan sisa hari ('sisa napas') operasional bisnis tanpa adanya inflow baru.",
+        "dim_a_burn_title": "Net Burn Rate",
+        "dim_a_burn_desc": "Kecepatan pembakaran modal setiap bulan untuk menjaga operasional tetap berjalan.",
+        "dim_b_title": "DIMENSI B: STATUS PENYAKIT (LEAKAGE)",
+        "dim_b_leakage_title": "GP Leakage Rate",
+        "dim_b_leakage_desc": "Persentase kebocoran profit siluman (Phantom Costs) yang terdeteksi dalam operasional.",
+        "dim_b_ratio_title": "Quick Ratio Risk",
+        "dim_b_ratio_desc": "Kerentanan terhadap kewajiban jangka pendek tanpa dukungan likuiditas instan.",
+        "dim_c_title": "DIMENSION C: STATUS MASA DEPAN",
+        "dim_c_ltgp_title": "LTGP : CAC Ratio",
+        "dim_c_ltgp_desc": "Efisiensi akuisisi pelanggan vs potensi keuntungan jangka panjang yang dihasilkan.",
+        "dim_c_bep_title": "Dynamic BEP",
+        "dim_c_bep_desc": "Titik balik modal yang bergerak mengikuti realitas biaya harian yang sebenarnya.",
+        "disclaimer_title": "Disclaimer:",
+        "disclaimer_text": "Executive Financial Verdict adalah halaman diagnostik statistik yang didasarkan pada metodologi Financial Forensics Gusti Devitto. Hasil yang ditampilkan bersifat informatif untuk membantu pengambilan keputusan strategis, bukan saran investasi atau nasihat hukum formal.",
+        "cta_verdict": "Get Your Business Verdict"
     }
 }

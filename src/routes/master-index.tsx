@@ -2,30 +2,32 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
 import { BookOpen, Layers, ShieldAlert, Target } from "lucide-react"
 import pillarsData from '@/data/pillarsData.json'
+import { useTranslation, Trans } from 'react-i18next'
 
 export const Route = createFileRoute('/master-index')({
     component: MasterIndex,
 })
 
 function MasterIndex() {
+    const { t } = useTranslation()
     const sortedPillars = [...pillarsData].sort((a, b) => a.title.localeCompare(b.title))
 
     const coreConcepts = [
-        { name: "Phantom Cost", desc: "Kebocoran profit yang tidak tercatat di laporan laba rugi standar." },
-        { name: "Cash Velocity", desc: "Kecepatan perputaran kas dari modal kerja menjadi profit cair." },
-        { name: "Risk Exposure", desc: "Tingkat kerentanan bisnis terhadap fluktuasi biaya dan utang." },
-        { name: "Burn Rate Awareness", desc: "Kesadaran penuh atas kecepatan penggunaan kas setiap detiknya." }
+        { name: "Phantom Cost", desc: t('master_index.concepts.phantom_cost') },
+        { name: "Cash Velocity", desc: t('master_index.concepts.cash_velocity') },
+        { name: "Risk Exposure", desc: t('master_index.concepts.risk_exposure') },
+        { name: "Burn Rate Awareness", desc: t('master_index.concepts.burn_rate') }
     ]
 
     const narrativePatterns = [
-        { name: "Efficient Suicide", desc: "Pertumbuhan omzet yang semakin besar namun margin semakin tipis hingga membunuh kas." },
-        { name: "Obese Growth", desc: "Ekspansi ugal-ugalan tanpa penguatan infrastruktur kontrol finansial." },
-        { name: "Labor Trap", desc: "Tim besar dengan produktivitas per jam kerja yang stagnan atau menurun." }
+        { name: "Efficient Suicide", desc: t('master_index.narratives.efficient_suicide') },
+        { name: "Obese Growth", desc: t('master_index.narratives.obese_growth') },
+        { name: "Labor Trap", desc: t('master_index.narratives.labor_trap') }
     ]
 
     return (
         <div className="container py-16 px-4 md:px-8 max-w-5xl mx-auto space-y-24">
-            <title>Master Index - Financial Forensics Framework by Gusti Devitto</title>
+            <title>{t('master_index.seo_title')}</title>
 
             {/* Hero */}
             <header className="text-center space-y-8 relative group">
@@ -40,14 +42,14 @@ function MasterIndex() {
                 </div>
                 <div className="space-y-4">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
-                        <BookOpen className="w-4 h-4" /> Single Source of Truth
+                        <BookOpen className="w-4 h-4" /> {t('master_index.hero_badge')}
                     </div>
                     <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-balance">
-                        Financial Forensics Framework <br />
+                        <Trans i18nKey="master_index.hero_title">Financial Forensics <br /> Framework</Trans> <br />
                         <Link to="/about-gusti-devitto" className="text-primary hover:underline">by Gusti Devitto</Link>
                     </h1>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                        Indeks kanonikal untuk semua terminologi, metrik, dan metodologi diagnostik dalam ekosistem Financial Forensics.
+                        {t('master_index.hero_subtitle')}
                     </p>
                 </div>
             </header>
@@ -56,7 +58,7 @@ function MasterIndex() {
             <section className="space-y-8">
                 <div className="flex items-center gap-3 border-b pb-4">
                     <Layers className="w-6 h-6 text-primary" />
-                    <h2 className="text-2xl font-bold">15 Pillars Index (Alphabetical)</h2>
+                    <h2 className="text-2xl font-bold">{t('master_index.pillars_title')}</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {sortedPillars.map((pillar) => (
@@ -77,7 +79,7 @@ function MasterIndex() {
             <section className="space-y-8">
                 <div className="flex items-center gap-3 border-b pb-4">
                     <Target className="w-6 h-6 text-primary" />
-                    <h2 className="text-2xl font-bold">Core Concepts</h2>
+                    <h2 className="text-2xl font-bold">{t('master_index.concepts_title')}</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                     {coreConcepts.map((concept) => (
@@ -93,7 +95,7 @@ function MasterIndex() {
             <section className="space-y-8">
                 <div className="flex items-center gap-3 border-b pb-4">
                     <ShieldAlert className="w-6 h-6 text-primary" />
-                    <h2 className="text-2xl font-bold">Cross-Narrative Patterns</h2>
+                    <h2 className="text-2xl font-bold">{t('master_index.narrative_title')}</h2>
                 </div>
                 <div className="grid md:grid-cols-1 gap-4">
                     {narrativePatterns.map((pattern) => (
@@ -108,16 +110,16 @@ function MasterIndex() {
             {/* Footer CTA */}
             <footer className="pt-16 border-t">
                 <div className="bg-primary/5 rounded-[2rem] p-8 md:p-12 text-center space-y-6">
-                    <h2 className="text-2xl md:text-3xl font-bold">Mulai Diagnosa Bisnis Anda</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold">{t('master_index.footer_title')}</h2>
                     <p className="text-muted-foreground">
-                        Gunakan PCC Lite untuk diagnosa awal, atau FFD™ v3 untuk pemetaan 15 pilar secara sistemik.
+                        {t('master_index.footer_desc')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button asChild size="lg" className="h-12 px-8 font-bold">
-                            <Link to="/get-access">Buka PCC Lite</Link>
+                            <Link to="/get-access">{t('master_index.cta_pcc')}</Link>
                         </Button>
                         <Button asChild variant="outline" size="lg" className="h-12 px-8 font-bold">
-                            <Link to="/investasi">Lihat Tier Investasi</Link>
+                            <Link to="/investasi">{t('master_index.cta_investasi')}</Link>
                         </Button>
                     </div>
                 </div>
