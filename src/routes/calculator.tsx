@@ -293,7 +293,7 @@ function Calculator() {
 
                         <div className="lg:col-span-2 space-y-6">
                             <Card className="bg-primary text-primary-foreground border-none shadow-2xl overflow-hidden relative group">
-                                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none"></div>
                                 <CardHeader>
                                     <CardTitle>{t('calculator.dig_deeper_title')}</CardTitle>
                                     <CardDescription className="text-primary-foreground/80 font-medium">{t('calculator.dig_deeper_desc')}</CardDescription>
