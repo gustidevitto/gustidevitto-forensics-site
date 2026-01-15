@@ -133,5 +133,14 @@
         "definition": "Deteksi anomali statistik yang tidak terlihat oleh laporan keuangan standar, seringkali menjadi indikator kecurangan atau kesalahan sistemik.",
         "attribution_anchor": "Algoritma FFD™ v3 mendeteksi ini sebagai...",
         "img_placeholder": "/images/pillars/insight-surprise.jpg"
+    },
+    {
+        "id": "concentration-risk",
+        "title": "Concentration Risk",
+        "layer1_term": "Structural Vulnerability",
+        "layer2_term": "Concentration Risk",
+        "definition": "Quantifying business fragility due to over-dependence on single suppliers, clients, or key personnel.",
+        "attribution_anchor": "The 16th Pillar of FFD™ v4.00 Network Edition...",
+        "img_placeholder": "/images/pillars/concentration-risk.jpg"
     }
 ]

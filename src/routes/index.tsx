@@ -12,6 +12,7 @@ export const Route = createFileRoute('/')({
 function Index() {
     const { t } = useTranslation()
     const [currentSlide, setCurrentSlide] = useState(0)
+    const [heroTab, setHeroTab] = useState<'investor' | 'owner'>('investor') // Default to Investor for "Authority" path
     const slides = [
         {
             id: 'dashboard',
@@ -38,12 +39,6 @@ function Index() {
                             <p className="text-xs text-muted-foreground">{t('hero.visual.leak')}</p>
                             <p className="text-lg font-bold text-orange-500">{t('hero.visual.leak_percent')}</p>
                         </div>
-                    </div>
-                    <div className="pt-4 border-t border-border/50">
-                        <p className="text-sm italic text-muted-foreground">
-                            {t('hero.visual.quote')}
-                        </p>
-                        <p className="text-sm font-medium mt-2">{t('hero.visual.author')}</p>
                     </div>
                 </div>
             )
@@ -169,38 +164,90 @@ function Index() {
                     <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-3xl opacity-30"></div>
                 </div>
 
-                <div className="flex flex-col gap-6 max-w-2xl animate-fade-in">
-                    {/* Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] sm:text-xs font-black tracking-[0.2em] w-fit border border-primary/20 backdrop-blur-sm uppercase">
-                        <ShieldCheck className="w-4 h-4" />
-                        <span>{t('hero.badge')}</span>
+                <div className="flex flex-col gap-6 max-w-2xl animate-fade-in relative z-10">
+                    {/* Hero Tabs */}
+                    <div className="flex p-1 bg-muted/20 backdrop-blur-sm border border-white/5 rounded-full w-fit mb-2">
+                        <button
+                            onClick={() => setHeroTab('investor')}
+                            className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${heroTab === 'investor' ? 'bg-primary text-black shadow-lg shadow-primary/20' : 'text-muted-foreground hover:text-white'}`}
+                        >
+                            Investor & HQ
+                        </button>
+                        <button
+                            onClick={() => setHeroTab('owner')}
+                            className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${heroTab === 'owner' ? 'bg-primary text-black shadow-lg shadow-primary/20' : 'text-muted-foreground hover:text-white'}`}
+                        >
+                            Business Owner
+                        </button>
                     </div>
 
-                    {/* Headline - Institutional Grade */}
-                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-foreground leading-[0.9] uppercase">
-                        {t('hero.title1')} <br />
-                        {t('hero.title2')} <br />
-                        <span className="text-primary tracking-tighter">{t('hero.subtitle')}</span>
-                    </h1>
+                    {/* Badge - Dynamic based on Tab */}
+                    <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-black tracking-[0.2em] w-fit border backdrop-blur-sm uppercase transition-colors duration-500 ${heroTab === 'investor' ? 'bg-red-500/10 text-red-500 border-red-500/20' : 'bg-primary/10 text-primary border-primary/20'}`}>
+                        <ShieldCheck className="w-4 h-4" />
+                        <span>{heroTab === 'investor' ? t('hero.roi_desc') : t('hero.badge')}</span>
+                    </div>
 
-                    {/* Subheadline - Dual Segment Logic */}
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
-                        {t('hero.desc', { brand: 'FFD™ v3' })}
+                    {/* Headline - Dynamic */}
+                    <div className="min-h-[180px]">
+                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-foreground leading-[0.9] uppercase transition-all duration-300">
+                            {heroTab === 'investor' ? (
+                                <>
+                                    {t('hero.title1')} <br />
+                                    <span className="text-destructive">{t('hero.title2')}</span>
+                                </>
+                            ) : (
+                                <>
+                                    Profit is a <br />
+                                    <span className="text-yellow-500">Vanity Metric.</span> <br />
+                                    Cash is Survival.
+                                </>
+                            )}
+                        </h1>
+                    </div>
+
+                    {/* Subheadline - Dynamic */}
+                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl min-h-[80px]">
+                        {heroTab === 'investor'
+                            ? t('hero.subtitle') + " " + t('hero.desc', { brand: 'FFD™ v4.00' })
+                            : heroTab === 'owner' ? (
+                                <>
+                                    While you celebrate high sales, Phantom Costs are quietly killing your runway. FFD™ v4.00 finds the leaks that accountants miss. Don't be the business that dies with a full restaurant.
+                                </>
+                            ) : null}
+                    </p>
+
+                    {/* Micro-Copy Loss Aversion */}
+                    <p className="text-xs font-mono text-destructive tracking-wide uppercase animate-pulse">
+                        <TrendingDown className="w-3 h-3 inline mr-2" />
+                        {heroTab === 'investor' ? t('hero.visual.quote') : "43+ Owners found critical leaks this week. Are you next?"}
                     </p>
 
                     {/* CTA - Side-by-Side Dual Logic */}
+                    {/* CTA - Dynamic */}
                     <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                        <Button asChild size="lg" className="text-lg h-16 px-10 shadow-lg shadow-primary/30 bg-yellow-500 hover:bg-yellow-600 text-black font-black group relative overflow-hidden flex-1">
-                            <Link to="/get-access">
-                                <span className="relative z-10 flex items-center justify-center">
-                                    {t('hero.cta_free')}
-                                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                </span>
-                            </Link>
-                        </Button>
-                        <Button asChild variant="outline" size="lg" className="text-lg h-16 px-10 border-amber-500/50 hover:border-amber-500 hover:bg-amber-500/10 text-amber-500 font-bold flex-1">
-                            <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
-                                {t('hero.cta_enterprise')}
+                        {heroTab === 'investor' ? (
+                            <Button asChild size="lg" className="text-lg h-16 px-10 shadow-lg shadow-destructive/30 bg-destructive hover:bg-destructive/80 text-white font-black group relative overflow-hidden flex-1">
+                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
+                                    <span className="relative z-10 flex items-center justify-center">
+                                        {t('hero.cta_enterprise')}
+                                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                    </span>
+                                </a>
+                            </Button>
+                        ) : (
+                            <Button asChild size="lg" className="text-lg h-16 px-10 shadow-lg shadow-primary/30 bg-yellow-500 hover:bg-yellow-600 text-black font-black group relative overflow-hidden flex-1">
+                                <Link to="/get-access">
+                                    <span className="relative z-10 flex items-center justify-center">
+                                        {t('hero.cta_free')}
+                                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                    </span>
+                                </Link>
+                            </Button>
+                        )}
+
+                        <Button asChild variant="outline" size="lg" className="text-lg h-16 px-10 border-white/10 hover:border-white hover:bg-white/5 text-muted-foreground hover:text-white font-bold flex-1">
+                            <a href="#video-explainer">
+                                Watch Demo Not Available
                             </a>
                         </Button>
                     </div>
@@ -392,8 +439,8 @@ function Index() {
                         <div className="text-sm text-muted-foreground">{t('proof.leaks_revealed')}</div>
                     </div>
                     <div className="group cursor-default">
-                        <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">87+</div>
-                        <div className="text-sm text-muted-foreground">{t('proof.businesses_diagnosed')}</div>
+                        <div className="text-3xl font-bold text-white group-hover:scale-110 transition-transform">2M+</div>
+                        <div className="text-sm text-muted-foreground">{t('proof.accounting_jargon')}</div>
                     </div>
                     <div className="group cursor-default">
                         <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">15 min</div>
@@ -401,7 +448,7 @@ function Index() {
                     </div>
                     <div className="group cursor-default">
                         <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">Zero</div>
-                        <div className="text-sm text-muted-foreground">{t('proof.accounting_jargon')}</div>
+                        <div className="text-sm text-muted-foreground">Accounting Jargon</div>
                     </div>
                 </div>
             </section>
@@ -549,6 +596,11 @@ function Index() {
                                     title: t('solution.f4_title'),
                                     aka: t('solution.f4_aka'),
                                     desc: t('solution.f4_desc')
+                                },
+                                {
+                                    title: t('solution.new_pillar_title'),
+                                    aka: "16th Pillar",
+                                    desc: t('solution.new_pillar_desc')
                                 }
                             ].map((feature, idx) => (
                                 <div
@@ -646,6 +698,7 @@ function Index() {
                                 <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_checkins')}</li>
                                 <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_strategy')}</li>
                                 <li className="text-sm flex items-center gap-2 text-gray-300 font-medium"><ShieldCheck className="w-4 h-4 text-primary" /> {t('pricing.feature_simulation')}</li>
+                                <li className="text-sm flex items-center gap-2 text-destructive font-bold"><ShieldCheck className="w-4 h-4 text-destructive" /> 16th Pillar Check</li>
                             </ul>
                             <div className="pt-6 border-t border-border/10">
                                 <p className="text-[10px] text-muted-foreground/40 italic mb-4 font-mono uppercase tracking-tighter">{t('pricing.powered_by')}</p>
@@ -750,6 +803,44 @@ function Index() {
                     </div>
                 </div>
             </section >
+
+            {/* NEW: Pilot Program Scarcity Block */}
+            <section className="py-16 px-4 md:px-8 bg-gradient-to-br from-destructive/5 to-background border-y border-destructive/20 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-destructive/10 blur-[100px] rounded-full"></div>
+                <div className="container mx-auto max-w-4xl relative z-10 text-center">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-destructive text-white text-xs font-black uppercase tracking-widest rounded mb-6 animate-pulse">
+                        ⚠ {t('pricing.pilot_header')}
+                    </div>
+                    <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter">
+                        {t('pricing.pilot_offer')}
+                    </h2>
+                    <div className="p-6 md:p-8 bg-black/50 border border-destructive/50 rounded-2xl backdrop-blur-md shadow-2xl max-w-2xl mx-auto">
+                        <div className="flex items-start gap-4 text-left">
+                            <div className="bg-destructive/20 p-2 rounded-lg shrink-0">
+                                <TrendingDown className="w-6 h-6 text-destructive" />
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-destructive text-lg mb-2 uppercase tracking-wide">Scarcity Protocol Active</h3>
+                                <p className="text-muted-foreground mb-4">
+                                    {t('pricing.pilot_catch')}
+                                </p>
+                                <div className="h-px w-full bg-white/10 my-4"></div>
+                                <h3 className="font-bold text-white text-lg mb-2 uppercase tracking-wide">Risk Reversal</h3>
+                                <p className="text-gray-300 italic">
+                                    "{t('pricing.pilot_guarantee')}"
+                                </p>
+                            </div>
+                        </div>
+                        <div className="mt-8">
+                            <Button asChild size="lg" className="w-full bg-destructive hover:bg-destructive/90 text-white font-black text-xl h-14 shadow-[0_0_30px_rgba(239,68,68,0.4)] animate-pulse">
+                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
+                                    CLAIM PILOT SPOT (1/3 LEFT)
+                                </a>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* Guarantee Section */}
             < section className="py-16 px-4 md:px-8 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border-y border-primary/20" >
