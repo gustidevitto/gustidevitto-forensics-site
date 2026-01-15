@@ -13,7 +13,7 @@
         "financial_forensics": "Financial Forensics"
     },
     "global": {
-        "schema_desc": "Gusti Devitto is a Financial Forensics Specialist helping multi-outlet founders detect Phantom Costs and optimize profit using the FFD™ v3 Neural Engine.",
+        "schema_desc": "Gusti Devitto is a Financial Forensics Specialist helping multi-outlet founders detect Phantom Costs and optimize profit using the FFD™ v4.00 Neural Engine.",
         "seo_home_title": "Stop Guessing. Start Auditing. | Gusti Devitto™ Forensic Intelligence",
         "seo_home_desc": "Institutional-grade forensic intelligence for SME owners & investors. Detect profit leakage in multi-outlet businesses with FFD™ v4.00 Network Edition.",
         "seo_home_keywords": "Financial Due Diligence Indonesia, Franchise Fraud Detection, Neural Financial Audit, Forensic Accounting Tool for Investors, SME Audit, Profit Leakage, Phantom Cost Hunting",
@@ -31,7 +31,7 @@
     },
     "about_page": {
         "seo_title": "About Gusti Devitto | Financial Forensics Specialist",
-        "seo_desc": "Gusti Devitto is a Financial Forensics Specialist helping multi-outlet founders detect Phantom Costs and optimize profit using the FFD™ v3 Neural Engine.",
+        "seo_desc": "Gusti Devitto is a Financial Forensics Specialist helping multi-outlet founders detect Phantom Costs and optimize profit using the FFD™ v4.00 Neural Engine.",
         "schema_job": "Financial Forensics Specialist",
         "auth_level": "Auth Level: L-7 // Visual Matrix",
         "knows_about": [
@@ -55,7 +55,7 @@
         "evolution_p2": "However, in the process, I found a hard fact: The problem wasn't sales, but <1>Hidden Inefficiency</1>.",
         "evolution_p3": "From that experience, I performed a <1>strategic pivot</1>. I left the generalist approach and built the deep diagnostic system that is now the foundation of my services.",
         "methodology_title": "Surgical Methodology",
-        "methodology_subtitle": "Built on the FFD™ v3 Engine, our approach is deterministic, not motivational.",
+        "methodology_subtitle": "Built on FFD™ v4.00 Engine, our approach is deterministic, not motivational.",
         "card_anomaly_title": "Anomaly Detection",
         "card_anomaly_desc": "Using <1>pattern recognition</1> to see irregularities in COGS (Cost of Goods Sold) and <3>Wastage</3> that often go undetected by standard audits.",
         "card_cash_title": "Cash Velocity Audit",
@@ -149,7 +149,7 @@
         "p1": "I am not a business consultant. Consultants sell advice. I am a Forensic Surgeon. I find the money.",
         "p2": "This mission is personal. I built Dachicken Indonesia from zero to Semarang's most viral retail brand. As we meroket, I felt invincible. I was buying assets every week.",
         "p3": "But I was blind. I was focused on the \"front of the house\" while the system was bleeding internally. Small, \"invisible\" leaks in COGS and labor efficiency—Phantom Costs—were eating my dream alive.",
-        "p4": "When a massive price war hit, I had no defense. My assets were liquidated, and my dream collapsed. FFD™ v3 exists because I refuse to let your hard work be stolen by the same systemic blindness.",
+        "p4": "When the price war hit, I had no defense. My assets were liquidated. FFD™ v4.00 exists because I refuse to let your hard work be stolen by the same systemic blindness.",
         "quote": "\"The accounting books lie by omission. The Neural Engine tells the truth. I build this to verify the biological health of your capital—whether you're the one running it, or the one investing in it.\"",
         "cta": "The Full Truth"
     },
@@ -189,8 +189,8 @@
     },
     "guarantee_section": {
         "title": "\"No Find, No Pitch\" Guarantee",
-        "p1": "I don't sell empty hopes. If FFD™ v3 dashboard says your business is healthy (green), the consultation is over. Free. No pitch whatsoever.",
-        "p2": "I only offer paid solutions if I truly find leaks that can be saved. Fair deal?"
+        "p1": "I don't sell empty hopes. If FFD™ v4.00 dashboard says your business is <1>healthy (green)</1>, the consultation is over. Free. No pitch whatsoever.",
+        "p2": "I only work with owners who have REAL problems to solve."
     },
     "pricing": {
         "title": "Transparent Intelligence Economics",
@@ -246,22 +246,22 @@
     },
     "faq": {
         "title": "Intelligence Briefing (FAQ)",
-        "q1": "How is this different from accounting?",
-        "a1": "Accounting records what happened. Forensics explains why it happened and where the money actually went. Accountants focus on compliance; we focus on leakage.",
-        "q2": "Do I need to give you my passwords?",
-        "a2": "No. FFD™ v3 is designed for privacy. You can input data manually or export raw CSVs. We don't need direct database access for a L-7 audit.",
-        "q3": "Is the 'No Find, No Pitch' guarantee real?",
-        "a3": "Yes. If our initial diagnostic shows your business is within the 95th percentile of efficiency and we find no significant leaks, we stop. We only work where we can provide at least 10x ROI on our fee.",
-        "q4": "How long does a full audit take?",
-        "a4": "A self-service diagnostic takes 15 minutes. A full Enterprise-grade verification takes 3-7 business days depending on the complexity of the multi-node network.",
-        "q5": "Is it suitable for my small business?",
-        "a5": "Honestly? Not necessarily. FFD™ v3 is most effective for businesses with a minimum turnover of Rp 100 Million/month and are already multi-outlet or have a team. If your business is still a solopreneur, it might not be the right time yet.",
-        "still_confused": "Still have questions?",
-        "chat_wa": "Chat directly via WhatsApp"
+        "q1": "Is my data safe?",
+        "a1": "Absolute Zero-Knowledge Policy. FFD™ v4.00 runs locally on your browser session for the initial diagnosis. We do not store your uploaded CSVs. Once you close the tab, the data evaporates. For Enterprise clients, we deploy a private on-premise container.",
+        "q2": "I'm not a tech person. Is this hard to use?",
+        "a2": "If you can drag and drop a file, you can use FFD™ v4.00. We built the 'Forensic Connector' specifically to handle messy exports from Moka, Pawoon, ESB, or even raw Excel sheets. The system cleans it for you.",
+        "q3": "Does this replace my accountant?",
+        "a3": "No. Accountants record history; FFD™ v4.00 detects crime. Your accountant ensures compliance. We ensure survival. We are the second opinion that keeps your finance team honest.",
+        "q4": "Why is the diagnosis free?",
+        "a4": "Because 80% of businesses are actually fine. I only want to work with the 20% who are bleeding and ready for surgery. The diagnosis filters the noise for me.",
+        "q5": "What if I find a leak?",
+        "a5": "You have three options: 1) Fix it yourself using our findings (Free). 2) Use our recommended protocols to plug it. 3) Hire us for a full forensic deep-dive and recovery mission (Enterprise).",
+        "still_confused": "Still confused?",
+        "chat_wa": "Chat via WhatsApp"
     },
     "attribution": {
         "title": "Scientific Attribution",
-        "text": "\"While conventional financial forensics is traditionally defined as the investigation of fraud, crime, and financial litigation, Gusti Devitto’s Financial Forensics framework is a deliberate upstream extension. It focuses on systemic leakage and pre-fraud diagnostics—identifying the 'Phantom Costs' that erode margins before they become catastrophic. This methodology is proprietary and functions as the analytical core of FFD™ v3.\""
+        "text": "The 16 Pillars Framework is adapted from proprietary research on High-Velocity Transactional Fraud (HVTF), optimized by FFD™ v4.00 Network Edition (2026)."
     },
     "final_cta": {
         "title": "Ready to <1>Stop the Bleeding</1>?",
@@ -288,7 +288,7 @@
         "hero_title": "Transparent <1>Intelligence</1> Economics",
         "hero_subtitle": "Fee structure for Neural Intelligence based forensic audits. No surprises, only measurable profit recovery.",
         "sme_title": "01. SME Operational Suite",
-        "sme_subtitle": "Powered by FFD™ v3 Neural Engine",
+        "sme_subtitle": "Powered by FFD™ v4.00 Neural Engine",
         "sme_starter_desc": "Fundamental forensic audit to detect 'silent leaks' in monthly operations.",
         "sme_f3": "Anomaly Alert System",
         "sme_f4": "Basic Margin Leakage Report",
@@ -317,7 +317,7 @@
         "faq_q1": "How much does a forensic audit cost?",
         "faq_a1": "Pricing starts from $200 per month for the SME Starter plan, designed for small multi-outlet businesses. For enterprise and investors, we offer fixed-fee Due Diligence starting at $10,000.",
         "faq_q2": "What is included in the monthly forensic fee?",
-        "faq_a2": "Every tier includes access to the FFD™ v3 Dashboard, Anomaly Alert System, and basic to detailed Profit Recovery reports depending on the chosen level.",
+        "faq_a2": "Every tier includes access to the FFD™ v4.00 Dashboard, Anomaly Alert System, and basic to detailed Profit Recovery reports depending on the chosen level.",
         "faq_q3": "Is there a money-back guarantee?",
         "faq_a3": "We offer a 'No Find, No Pitch' guarantee. If we don't find any operational leakages or Phantom Costs during the initial diagnosis, the consultation is free."
     },
@@ -332,7 +332,7 @@
         "analyzing_vectors": "Analyzing Operational Vectors...",
         "synthesizing": "Synthesizing Ghost Profit Patterns",
         "active_alarms": "Active Surgical Alarms",
-        "critical_msg": "Phantom Cost detected exceeding tolerance threshold (Ratio > 15%). Immediate FDD™v3 intervention required.",
+        "critical_msg": "Phantom Cost detected exceeding tolerance threshold (Ratio > 15%). Immediate FFD™ v4.00 intervention required.",
         "normal_msg": "Operational leakage detected but still within self-audit range.",
         "revenue_flow": "Revenue Flow",
         "monthly_leakage": "Monthly Leakage",
@@ -342,11 +342,11 @@
         "waste_shrinkage": "Waste & Shrinkage (COGS)",
         "idle_time": "Idle Time Cost (Labor)",
         "hidden_costs": "Hidden Operational Costs",
-        "lite_disclaimer": "This is a PCC Lite level audit. A deeper FDD™v3 will dissect up to 15 pillars of forensics (including LTGP, Cash Lock, and LTV:CAC).",
+        "lite_disclaimer": "This is a PCC Lite level audit. A deeper FDD™v4.00 will dissect up to 16 pillars of forensics (including LTGP, Cash Lock, and LTV:CAC).",
         "export_verdict": "Export Final Verdict (.csv)",
         "dig_deeper_title": "Dig Deeper",
         "dig_deeper_desc": "Don't let these numbers keep swelling.",
-        "dig_deeper_text": "Contact Vitto to perform a <1>Surgical MRI</1> using the <3>FDD™v3 Full Version</3> personally.",
+        "dig_deeper_text": "Contact Vitto to perform a <1>Surgical MRI</1> using the <3>FFD™v4.00 Full Version</3> personally.",
         "schedule_mri": "Schedule 15-Min MRI",
         "re_scan": "Re-Scan Operational Data",
         "phase_status": "Phase {{current}} / {{total}}",
@@ -369,7 +369,7 @@
         "boot": {
             "initializing": "INITIALIZING SURGICAL ENVIRONMENT...",
             "allocating": "ALLOCATING VOLATILE MEMORY...",
-            "connecting": "CONNECTING TO FFD™v3 CORE CLUSTER...",
+            "connecting": "CONNECTING TO FFD™v4.00 CORE CLUSTER...",
             "authenticated": "SESSION AUTHENTICATED // BYPASS IDENTIFIED",
             "mapping": "MAPPING OPERATIONAL VECTORS...",
             "ready": "READY FOR DIAGNOSTIC MRI."
@@ -393,7 +393,7 @@
     "get_access": {
         "seo_title": "Get Access | PCC Lite Diagnostic",
         "seo_desc": "Start your free multi-outlet business diagnosis with PCC Lite. Detect Phantom Costs in 15 minutes.",
-        "left_panel_badge": "PCC Lite — by FFD™ v3 Core",
+        "left_panel_badge": "PCC Lite — by FFD™ v4.00 Core",
         "schema_service_type": "Financial Forensics Diagnosis",
         "schema_pcc_name": "PCC Lite (Phantom Cost Calculator)",
         "pain_title": "In 15 minutes, <1/> <3>you will know where your money goes.</3>",
@@ -445,7 +445,7 @@
         "hero_badge": "Single Source of Truth",
         "hero_title": "Financial Forensics <1/> Framework",
         "hero_subtitle": "Canonical index for all terminology, metrics, and diagnostic methodologies within the Financial Forensics ecosystem.",
-        "pillars_title": "15 Pillars Index (Alphabetical)",
+        "pillars_title": "16 Pillars Index (Alphabetical)",
         "concepts_title": "Core Concepts",
         "concepts": {
             "phantom_cost": "Profit leakage not recorded in standard profit and loss statements.",
@@ -468,7 +468,7 @@
         },
         "by_author": "by Gusti Devitto",
         "footer_title": "Start Your Business Diagnosis",
-        "footer_desc": "Use PCC Lite for early diagnosis, or FFD™ v3 for systemic 15-pillar mapping.",
+        "footer_desc": "Use PCC Lite for initial diagnosis, or FFD™ v4.00 for systemic 16-pillar mapping.",
         "cta_pcc": "Open PCC Lite",
         "cta_investasi": "View Investment Tiers"
     },

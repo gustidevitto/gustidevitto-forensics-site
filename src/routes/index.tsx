@@ -217,7 +217,7 @@ function Index() {
                     </p>
 
                     {/* Micro-Copy Loss Aversion */}
-                    <p className="text-xs font-mono text-destructive tracking-wide uppercase animate-pulse">
+                    <p className="text-xs font-mono text-red-400 tracking-wide uppercase animate-pulse">
                         <TrendingDown className="w-3 h-3 inline mr-2" />
                         {heroTab === 'investor' ? t('hero.visual.quote') : "43+ Owners found critical leaks this week. Are you next?"}
                     </p>
@@ -820,7 +820,7 @@ function Index() {
                                 <TrendingDown className="w-6 h-6 text-destructive" />
                             </div>
                             <div>
-                                <h3 className="font-bold text-destructive text-lg mb-2 uppercase tracking-wide">Scarcity Protocol Active</h3>
+                                <h3 className="font-bold text-red-400 text-lg mb-2 uppercase tracking-wide">Limited Intake Window</h3>
                                 <p className="text-muted-foreground mb-4">
                                     {t('pricing.pilot_catch')}
                                 </p>

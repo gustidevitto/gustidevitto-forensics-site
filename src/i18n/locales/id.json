@@ -13,7 +13,7 @@
         "financial_forensics": "Financial Forensics"
     },
     "global": {
-        "schema_desc": "Gusti Devitto adalah Spesialis Financial Forensics yang membantu founder multi-outlet mendeteksi Phantom Cost dan mengoptimalkan profit menggunakan FFD™ v3 Neural Engine.",
+        "schema_desc": "Gusti Devitto adalah Spesialis Financial Forensics yang membantu founder multi-outlet mendeteksi Phantom Cost dan mengoptimalkan profit menggunakan FFD™ v4.00 Neural Engine.",
         "seo_home_title": "Stop Guessing. Start Auditing. | Gusti Devitto™ Forensic Intelligence",
         "seo_home_desc": "Intelijen forensik kelas institusi untuk pemilik bisnis multi-outlet & investor. Deteksi kebocoran profit dengan FFD™ v4.00 Network Edition.",
         "seo_home_keywords": "Financial Due Diligence Indonesia, Forensik Franchise, Audit Finansial Neural, Alat Audit Forensik Investor, Audit UMKM, Kebocoran Profit, Berburu Phantom Cost",
@@ -31,7 +31,7 @@
     },
     "about_page": {
         "seo_title": "Tentang Gusti Devitto | Spesialis Financial Forensics",
-        "seo_desc": "Gusti Devitto adalah Spesialis Financial Forensics yang membantu founder multi-outlet mendeteksi Phantom Cost dan mengoptimalkan profit menggunakan FFD™ v3 Neural Engine.",
+        "seo_desc": "Gusti Devitto adalah Spesialis Financial Forensics yang membantu founder multi-outlet mendeteksi Phantom Cost dan mengoptimalkan profit menggunakan FFD™ v4.00 Neural Engine.",
         "schema_job": "Spesialis Financial Forensics",
         "auth_level": "Auth Level: L-7 // Visual Matrix",
         "knows_about": [
@@ -55,7 +55,7 @@
         "evolution_p2": "Namun, dalam prosesnya, saya menemukan fakta keras: Masalahnya bukan pada penjualan, melainkan pada <1>Inefisiensi Tersembunyi</1>.",
         "evolution_p3": "Dari pengalaman tersebut, saya melakukan <1>pivot strategis</1>. Saya meninggalkan pendekatan generalis dan membangun sistem diagnosis mendalam yang kini menjadi fondasi layanan saya.",
         "methodology_title": "Metodologi Bedah",
-        "methodology_subtitle": "Dibangun di atas FFD™ v3 Engine, pendekatan kami bersifat deterministik, bukan motivasional.",
+        "methodology_subtitle": "Dibangun di atas FFD™ v4.00 Engine, pendekatan kami bersifat deterministik, bukan motivasional.",
         "card_anomaly_title": "Deteksi Anomali",
         "card_anomaly_desc": "Menggunakan <1>pattern recognition</1> untuk melihat ketidakwajaran dalam COGS (Cost of Goods Sold) dan <3>Wastage</3> yang sering tidak terdeteksi audit biasa.",
         "card_cash_title": "Audit Kecepatan Kas",
@@ -78,12 +78,11 @@
         "faq_q1": "Apa itu Business Forensics di sini?",
         "faq_a1": "Business Forensics kami berfokus pada Phantom Cost Hunting (pencarian biaya siluman), bukan audit fraud kriminal. Kami mencari inefisiensi sistemik yang memakan profit sebelum menjadi kegagalan fatal.",
         "faq_q2": "Apakah ini tentang penipuan (fraud)?",
-        "faq_a2": "Secara tradisional, financial forensics identik dengan investigasi kriminal. Namun, framework Gusti Devitto adalah ekstensi hulu yang berfokus pada diagnosa awal sebelum fraud terjadi (pre-fraud diagnostics) dengan mendeteksi kebocoran profit sistemik.",
+        "text": "\"Jika financial forensics tradisional biasanya didefinisikan sebagai investigasi penipuan (fraud), kriminalitas, dan litigasi keuangan, framework Financial Forensics Gusti Devitto adalah ekstensi hulu yang disengaja. Framework ini berfokus pada kebocoran sistemik dan diagnosa pra-fraud—mengidentifikasi 'Phantom Costs' yang mengikis margin sebelum menjadi katastrofe. Metodologi ini bersifat eksklusif dan berfungsi sebagai inti analitis dari FFD™ v4.00.\"",
         "faq_q3": "Apakah saya harus ahli akuntansi?",
         "faq_a3": "Tidak. Sistem kami dirancang untuk pemilik bisnis. Kami menerjemahkan data rumit menjadi langkah tindakan bedah yang bisa dipahami siapa saja.",
         "faq_q4": "Berapa lama diagnosa dilakukan?",
         "faq_a4": "MRI awal membutuhkan waktu 15 menit. Kedalaman audit forensik skala penuh bergantung pada volume data, namun biasanya memakan waktu 7-14 hari kerja.",
-        "faq_q5": "Apakah data saya aman?",
         "faq_a5": "Ya. Kami menggunakan enkripsi kelas enterprise dan mengikuti protokol kerahasiaan (NDA) yang ketat. Data Anda hanya digunakan untuk kebutuhan diagnosa."
     },
     "hero": {
@@ -149,7 +148,7 @@
         "p1": "Saya bukan konsultan bisnis. Konsultan menjual saran. Saya adalah Forensic Surgeon. Saya menemukan uangnya.",
         "p2": "Misi ini bersifat pribadi. Saya membangun Dachicken Indonesia dari nol hingga menjadi brand ritel paling viral di Semarang. Saat kami meroket, saya merasa tak terkalahkan. Saya membeli aset setiap minggu.",
         "p3": "Tapi saya buta. Saya fokus pada \"bagian depan rumah\" sementara sistem berdarah secara internal. Kebocoran kecil yang \"tidak terlihat\" di HPP dan efisiensi tenaga kerja—Phantom Costs—memakan mimpi saya hidup-hidup.",
-        "p4": "Ketika perang harga besar-besaran melanda, saya tidak punya pertahanan. Aset saya dilikuidasi, dan mimpi saya runtuh. FFD™ v3 ada karena saya menolak membiarkan kerja keras Anda dicuri oleh kebutaan sistemik yang sama.",
+        "p4": "Ketika perang harga besar-besaran melanda, saya tidak punya pertahanan. Aset saya dilikuidasi, dan mimpi saya runtuh. FFD™ v4.00 ada karena saya menolak membiarkan kerja keras Anda dicuri oleh kebutaan sistemik yang sama.",
         "quote": "\"Buku akuntansi berbohong karena ada yang disembunyikan. Neural Engine mengatakan kebenaran. Saya membangun ini untuk memverifikasi kesehatan biologis modal Anda—apakah Anda yang menjalankannya, atau Anda yang berinvestasi di dalamnya.\"",
         "cta": "Kebenaran Selengkapnya"
     },
@@ -189,8 +188,8 @@
     },
     "guarantee_section": {
         "title": "Garansi \"No Find, No Pitch\"",
-        "p1": "Saya tidak menjual harapan kosong. Jika dashboard FFD™ v3 bilang bisnis Anda sehat (hijau), konsultasi selesai. Gratis. Tanpa pitch apapun.",
-        "p2": "Saya hanya menawarkan solusi berbayar jika saya benar-benar menemukan kebocoran yang bisa diselamatkan. Deal yang adil?"
+        "p1": "Saya tidak menjual harapan kosong. Jika dashboard FFD™ v4.00 bilang bisnis Anda sehat (hijau), konsultasi selesai. Gratis. Tanpa pitch apapun.",
+        "p2": "Saya hanya bekerja dengan owner yang memiliki masalah NYATA untuk diselesaikan."
     },
     "pricing": {
         "title": "Transparent Intelligence Economics",
@@ -246,22 +245,22 @@
     },
     "faq": {
         "title": "Intelligence Briefing (FAQ)",
-        "q1": "Apa bedanya dengan akuntansi?",
-        "a1": "Akuntansi mencatat apa yang terjadi. Forensik menjelaskan mengapa itu terjadi dan ke mana uang itu sebenarnya pergi. Akuntan fokus pada kepatuhan; kami fokus pada kebocoran.",
-        "q2": "Apakah saya perlu memberikan password saya?",
-        "a2": "Tidak. FFD™ v3 dirancang untuk privasi. Anda dapat memasukkan data secara manual atau mengekspor CSV mentah. Kami tidak butuh akses langsung ke database untuk audit L-7.",
-        "q3": "Apakah garansi 'No Find, No Pitch' itu nyata?",
-        "a3": "Ya. Jika diagnosa awal kami menunjukkan bisnis Anda berada dalam persentil efisiensi ke-95 dan kami tidak menemukan kebocoran yang signifikan, kami berhenti. Kami hanya bekerja jika kami dapat memberikan setidaknya 10x ROI dari biaya kami.",
-        "q4": "Berapa lama waktu yang dibutuhkan untuk audit penuh?",
-        "a4": "Diagnosa mandiri memakan waktu 15 menit. Verifikasi kelas Enterprise secara penuh memakan waktu 3-7 hari kerja tergantung pada kompleksitas jaringan multi-node.",
-        "q5": "Cocok untuk bisnis saya yang masih kecil?",
-        "a5": "Jujur? Belum tentu. FFD™ v3 paling efektif untuk bisnis dengan omzet minimal Rp 100 Juta/bulan dan sudah multi-outlet atau punya tim. Jika bisnis Anda masih solopreneur, mungkin belum saatnya.",
+        "q1": "Apakah data saya aman?",
+        "a1": "Absolute Zero-Knowledge Policy. FFD™ v4.00 berjalan secara lokal di sesi browser Anda untuk diagnosa awal. Kami tidak menyimpan CSV yang Anda unggah. Setelah tab ditutup, data menguap. Untuk klien Enterprise, kami men-deploy kontainer on-premise pribadi.",
+        "q2": "Saya gaptek. Apakah ini susah?",
+        "a2": "Jika Anda bisa drag-and-drop file, Anda bisa menggunakan FFD™ v4.00. Kami membangun 'Forensic Connector' khusus untuk menangani ekspor berantakan dari Moka, Pawoon, ESB, atau Excel mentah sekalipun. Sistem yang merapikannya untuk Anda.",
+        "q3": "Apakah ini menggantikan akuntan saya?",
+        "a3": "Tidak. Akuntan mencatat sejarah; FFD™ v4.00 mendeteksi kejahatan. Akuntan menjaga kepatuhan. Kami menjaga kelangsungan hidup. Kami adalah 'second opinion' yang menjaga tim keuangan Anda tetap jujur.",
+        "q4": "Kenapa diagnosa ini gratis?",
+        "a4": "Karena 80% bisnis sebenarnya baik-baik saja. Saya hanya ingin bekerja dengan 20% yang pendarahan dan siap untuk dibedah. Diagnosa ini memfilter noise untuk saya.",
+        "q5": "Bagaimana jika saya menemukan kebocoran?",
+        "a5": "Anda punya tiga opsi: 1) Perbaiki sendiri menggunakan temuan kami (Gratis). 2) Gunakan protokol kami untuk menambalnya. 3) Hire kami untuk misi forensik full-scale (Enterprise).",
         "still_confused": "Masih ada yang mengganjal?",
         "chat_wa": "Chat Langsung via WhatsApp"
     },
     "attribution": {
         "title": "Scientific Attribution",
-        "text": "\"Jika financial forensics tradisional biasanya didefinisikan sebagai investigasi penipuan (fraud), kriminalitas, dan litigasi keuangan, framework Financial Forensics Gusti Devitto adalah ekstensi hulu yang disengaja. Framework ini berfokus pada kebocoran sistemik dan diagnosa pra-fraud—mengidentifikasi 'Phantom Costs' yang mengikis margin sebelum menjadi katastrofe. Metodologi ini bersifat eksklusif dan berfungsi sebagai inti analitis dari FFD™ v3.\""
+        "text": "\"Framework 16 Pilar ini diadaptasi dari riset proprietari mengenai High-Velocity Transactional Fraud (HVTF), dioptimalkan oleh FFD™ v4.00 Network Edition (2026).\""
     },
     "final_cta": {
         "title": "Siap untuk <1>Menghentikan Kebocoran</1>?",
@@ -288,7 +287,7 @@
         "hero_title": "Transparent <1>Intelligence</1> Economics",
         "hero_subtitle": "Struktur biaya untuk audit forensik berbasis Neural Intelligence. Tidak ada kejutan, hanya pengembalian profit yang terukur.",
         "sme_title": "01. SME Operational Suite",
-        "sme_subtitle": "Didukung oleh FFD™ v3 Neural Engine",
+        "sme_subtitle": "Didukung oleh FFD™ v4.00 Neural Engine",
         "sme_starter_desc": "Audit forensik dasar untuk mendeteksi 'kebocoran halus' pada operasional bulanan.",
         "sme_f3": "Sistem Peringatan Anomali",
         "sme_f4": "Laporan Margin Leakage Dasar",
@@ -318,7 +317,7 @@
         "faq_q1": "Berapa biaya audit forensik?",
         "faq_a1": "Harga mulai dari Rp 3 juta per bulan untuk paket SME Starter, yang dirancang untuk bisnis multi-outlet kecil. Untuk enterprise dan investor, kami menawarkan Due Diligence biaya tetap mulai dari $10.000.",
         "faq_q2": "Apa saja yang termasuk dalam biaya forensik bulanan?",
-        "faq_a2": "Setiap tingkat mencakup akses ke Dasbor FFD™ v3, Sistem Peringatan Anomali, dan laporan Pemulihan Profit dasar hingga mendetail tergantung pada tingkat yang dipilih.",
+        "faq_a2": "Setiap tingkat mencakup akses ke Dasbor FFD™ v4.00, Sistem Peringatan Anomali, dan laporan Pemulihan Profit dasar hingga mendetail tergantung pada tingkat yang dipilih.",
         "faq_q3": "Apakah ada jaminan uang kembali?",
         "faq_a3": "Kami menawarkan jaminan 'No Find, No Pitch'. Jika kami tidak menemukan kebocoran operasional atau Phantom Costs selama diagnosis awal, konsultasi tersebut gratis."
     },
@@ -333,7 +332,7 @@
         "analyzing_vectors": "Menganalisis Vektor Operasional...",
         "synthesizing": "Menyintesis Pola Profit Siluman",
         "active_alarms": "Alarm Bedah Aktif",
-        "critical_msg": "Phantom Cost terdeteksi melebihi ambang batas toleransi (Rasio > 15%). Diperlukan intervensi FDD™v3 segera.",
+        "critical_msg": "Phantom Cost terdeteksi melebihi ambang batas toleransi (Rasio > 15%). Diperlukan intervensi FDD™v4.00 segera.",
         "normal_msg": "Kebocoran operasional terdeteksi namun masih dalam rentang audit mandiri.",
         "revenue_flow": "Aliran Pendapatan",
         "monthly_leakage": "Kebocoran Bulanan",
@@ -343,11 +342,11 @@
         "waste_shrinkage": "Limbah & Penyusutan (HPP)",
         "idle_time": "Biaya Waktu Kosong (SDM)",
         "hidden_costs": "Biaya Operasional Tersembunyi",
-        "lite_disclaimer": "Ini adalah audit level PCC Lite. FDD™v3 yang lebih mendalam akan membedah hingga 15 pilar forensik (termasuk LTGP, Cash Lock, dan LTV:CAC).",
+        "lite_disclaimer": "Ini adalah audit level PCC Lite. FDD™v4.00 yang lebih mendalam akan membedah hingga 16 pilar forensik (termasuk LTGP, Cash Lock, dan LTV:CAC).",
         "export_verdict": "Ekspor Verdict Akhir (.csv)",
         "dig_deeper_title": "Gali Lebih Dalam",
         "dig_deeper_desc": "Jangan biarkan angka ini terus membengkak.",
-        "dig_deeper_text": "Hubungi Vitto untuk melakukan <1>Surgical MRI</1> menggunakan <3>FDD™v3 Versi Penuh</3> secara personal.",
+        "dig_deeper_text": "Hubungi Vitto untuk melakukan <1>Surgical MRI</1> menggunakan <3>FDD™v4.00 Versi Penuh</3> secara personal.",
         "schedule_mri": "Jadwalkan 15-Min MRI",
         "re_scan": "Scan Ulang Data Operasional",
         "phase_status": "Fase {{current}} / {{total}}",
@@ -370,7 +369,7 @@
         "boot": {
             "initializing": "MENGINISIALISASI LINGKUNGAN BEDAH...",
             "allocating": "MENGALOKASIKAN MEMORI VOLATIL...",
-            "connecting": "MENGHUBUNGKAN KE CLUSTER INTI FFD™v3...",
+            "connecting": "MENGHUBUNGKAN KE CLUSTER INTI FFD™v4.00...",
             "authenticated": "SESI TEROTENTIKASI // BYPASS TERIDENTIFIKASI",
             "mapping": "MEMETAKAN VEKTOR OPERASIONAL...",
             "ready": "SIAP UNTUK MRI DIAGNOSTIK."
@@ -394,7 +393,7 @@
     "get_access": {
         "seo_title": "Dapatkan Akses | PCC Lite Diagnostic",
         "seo_desc": "Mulailah diagnosa gratis bisnis multi-outlet Anda dengan PCC Lite. Deteksi Phantom Costs dalam 15 menit.",
-        "left_panel_badge": "PCC Lite — by FFD™ v3 Core",
+        "left_panel_badge": "PCC Lite — by FFD™ v4.00 Core",
         "schema_service_type": "Diagnosa Financial Forensics",
         "schema_pcc_name": "PCC Lite (Kalkulator Phantom Cost)",
         "pain_title": "Dalam 15 menit, <1/> <3>Anda akan tahu kemana uang Anda pergi.</3>",
@@ -446,7 +445,7 @@
         "hero_badge": "Single Source of Truth",
         "hero_title": "Financial Forensics <1/> Framework",
         "hero_subtitle": "Indeks kanonikal untuk semua terminologi, metrik, dan metodologi diagnostik dalam ekosistem Financial Forensics.",
-        "pillars_title": "15 Pillars Index (Alphabetical)",
+        "pillars_title": "16 Pillars Index (Alphabetical)",
         "concepts_title": "Core Concepts",
         "concepts": {
             "phantom_cost": "Kebocoran profit yang tidak tercatat di laporan laba rugi standar.",
@@ -469,7 +468,7 @@
         },
         "by_author": "oleh Gusti Devitto",
         "footer_title": "Mulai Diagnosa Bisnis Anda",
-        "footer_desc": "Gunakan PCC Lite untuk diagnosa awal, atau FFD™ v3 untuk pemetaan 15 pilar secara sistemik.",
+        "footer_desc": "Gunakan PCC Lite untuk diagnosa awal, atau FFD™ v4.00 untuk pemetaan 16 pilar secara sistemik.",
         "cta_pcc": "Buka PCC Lite",
         "cta_investasi": "Lihat Tier Investasi"
     },
@@ -563,7 +562,7 @@
         "prev_pillar": "Pilar Sebelumnya",
         "next_pillar": "Pilar Berikutnya",
         "cta_title": "Siap Menghentikan Kebocoran?",
-        "cta_desc": "Identifikasi Phantom Costs sekarang dengan FFD™ v3 Dashboard. Mulai audit awal secara mandiri atau hubungi konsultan kami.",
+        "cta_desc": "Identifikasi Phantom Costs sekarang dengan FFD™ v4.00 Dashboard. Mulai audit awal secara mandiri atau hubungi konsultan kami.",
         "cta_calculator": "Buka Calculator Forensik",
         "cta_consult": "Konsultasi Privat"
     },
@@ -578,7 +577,7 @@
             "title": "Net Burn Rate",
             "layer1": "Uang 'Bakar' Bulanan",
             "definition": "Kecepatan uang keluar bersih setelah dikurangi pendapatan non-operasional. Indikator seberapa boros operasional berjalan.",
-            "attribution": "Mengacu pada diagnostic tool FFD™ v3..."
+            "attribution": "Mengacu pada diagnostic tool FFD™ v4.00..."
         },
         "risk-exposure": {
             "title": "Risk Exposure (Quick Ratio)",
@@ -596,7 +595,7 @@
             "title": "Breakeven Point (Dynamic)",
             "layer1": "Titik Balik Modal Real-time",
             "definition": "Titik impas yang bergerak dinamis mengikuti fluktuasi biaya operasional harian, bukan sekadar hitungan statis bulanan.",
-            "attribution": "Metode FFD™ v3 menghitung BEP ini dengan..."
+            "attribution": "Metode FFD™ v4.00 menghitung BEP ini dengan..."
         },
         "ltgp-velocity": {
             "title": "LTGP Velocity",
@@ -614,7 +613,7 @@
             "title": "Net Profit per Transaction",
             "layer1": "Untung Bersih per Bon",
             "definition": "Profitabilitas murni dari setiap struk transaksi setelah dipotong seluruh variabel cost dan alokasi fixed cost.",
-            "attribution": "Framework FFD v3 membedah ini sebagai..."
+            "attribution": "Framework FFD v4.00 membedah ini sebagai..."
         },
         "opex-to-gp": {
             "title": "Opex to Gross Profit Ratio",
