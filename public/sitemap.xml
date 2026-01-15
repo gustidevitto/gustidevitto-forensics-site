@@ -1,57 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.gustidevitto.com/</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/" />
   </url>
   <url>
     <loc>https://www.gustidevitto.com/about-gusti-devitto</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/about-gusti-devitto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/about-gusti-devitto" />
   </url>
   <url>
     <loc>https://www.gustidevitto.com/forensics-pillars</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/forensics-pillars" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/forensics-pillars" />
   </url>
   <url>
     <loc>https://www.gustidevitto.com/get-access</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/get-access" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/get-access" />
   </url>
   <url>
     <loc>https://www.gustidevitto.com/blog</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/blog" />
   </url>
   <url>
     <loc>https://www.gustidevitto.com/investasi</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/investasi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/investasi" />
   </url>
   <url>
     <loc>https://www.gustidevitto.com/master-index</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/master-index" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/master-index" />
   </url>
   <url>
     <loc>https://www.gustidevitto.com/methodology</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/methodology" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/methodology" />
   </url>
   <url>
     <loc>https://www.gustidevitto.com/verdict</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/verdict" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/verdict" />
   </url>
 </urlset>
+

@@ -13,14 +13,32 @@ export const Route = createRootRoute({
 })
 
 function RootComponent() {
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
+
+    useEffect(() => {
+        // Update HTML lang attribute on change
+        document.documentElement.lang = i18n.language
+        // Update Page Title dynamically
+        document.title = t('global.seo_home_title', 'Gusti Devitto Forensics | Institution-Grade Intelligence')
+    }, [i18n.language, t])
+
+    const canonicalUrl = "https://www.gustidevitto.com"
     return (
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
             {/* Global Base Meta */}
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="description" content={t('global.seo_home_desc')} />
+            <meta name="keywords" content={t('global.seo_home_keywords')} />
+            <meta httpEquiv="content-language" content={i18n.language} />
             <meta property="og:type" content="website" />
             <meta property="og:site_name" content="Gusti Devitto Forensics" />
+            <meta property="og:locale" content={i18n.language === 'id' ? 'id_ID' : 'en_US'} />
+            <meta property="og:locale:alternate" content={i18n.language === 'id' ? 'en_US' : 'id_ID'} />
             <meta name="twitter:card" content="summary_large_image" />
+            <link rel="canonical" href={canonicalUrl} />
+            <link rel="alternate" href={canonicalUrl} hrefLang="x-default" />
+            <link rel="alternate" href={canonicalUrl} hrefLang="id-ID" />
+            <link rel="alternate" href={canonicalUrl} hrefLang="en-US" />
             <link rel="alternate" type="application/ld+json" href="/ontology.jsonld" />
 
             {/* JSON-LD Global Schema */}
