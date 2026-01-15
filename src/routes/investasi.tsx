@@ -230,6 +230,9 @@ function InvestasiPage() {
                                     <span className="text-[#FF0080] font-black text-xs animate-pulse">{t('investasi.enterprise_auth')}</span>
                                 </div>
                                 <p className="text-xs text-muted-foreground mt-2 uppercase font-bold tracking-widest bg-white/5 w-fit px-2 py-1 rounded">{t('pricing.per_audit')}</p>
+                                <p className="text-xs text-primary/60 mt-4 italic max-w-xs leading-relaxed border-l border-primary/30 pl-3">
+                                    "{t('investasi.enterprise_comparator')}"
+                                </p>
                             </div>
 
                             <ul className="space-y-6 mb-16 flex-1 relative z-10">

@@ -91,9 +91,10 @@
         "title1": "Your Network is Bleeding.",
         "title2": "You Just Can't See It Yet.",
         "subtitle": "Monitoring 1,000 locations isn't about management; it's about Sovereign Surveillance.",
-        "desc": "FFD™ v4.00 Network Edition detects the 'Rotten Core'—franchisees with perfect reports but hidden fraud—in seconds. Stop the hemorrhage before it hits your P&L.",
-        "cta_free": "ACTIVATE SURVIVAL AUDIT",
-        "cta_enterprise": "CLAIM ENTERPRISE SLOT",
+        "qualifier": "Built for founders, CFOs, and operators managing scale where structural failure hides behind growth.",
+        "desc": "Surface metrics indicate growth. Structural signals indicate decay. FFD™ v4.00 Network Edition detects the 'Rotten Core'—franchisees with perfect reports but hidden fraud—in seconds. Stop the hemorrhage before it hits your P&L.",
+        "cta_free": "Apply for Pilot Access",
+        "cta_enterprise": "Audit My Network",
         "guarantee": "Sovereign Standard — Data remains local. Direct access to FFD™ Proprietary Engine.",
         "roi_label": "PILOT PROGRAM",
         "roi_value": "3 SPOTS LEFT",
@@ -210,7 +211,7 @@
         "cta_starter": "ACTIVATE STARTER",
         "cta_growth": "ACTIVATE GROWTH",
         "cta_scale": "ACTIVATE SCALE",
-        "cta_enterprise": "REQUEST AUDIT",
+        "cta_enterprise": "Audit My Network",
         "cta_franchise": "REQUEST HUB ACCESS",
         "popular": "POPULAR CHOICE",
         "investor_standard": "INVESTOR STANDARD",
@@ -312,6 +313,7 @@
         "price_growth": "$275",
         "price_scale": "$350",
         "price_enterprise": "$10,000",
+        "enterprise_comparator": "Priced below the cost of a single failed acquisition assumption.",
         "enterprise_auth": "FIXED FEE",
         "custom": "Custom",
         "faq_q1": "How much does a forensic audit cost?",
@@ -439,6 +441,9 @@
         "cta_whatsapp": "Inquiry via WhatsApp",
         "alert_failed": "Submission failed: {{error}}",
         "alert_error": "An unexpected error occurred. Please try again or contact us via WhatsApp."
+    },
+    "master_lab": {
+        "framing": "When scale increases, averages lie. Master Lab isolates failure instead of celebrating growth."
     },
     "master_index": {
         "seo_title": "Master Index - Financial Forensics Framework by Gusti Devitto",

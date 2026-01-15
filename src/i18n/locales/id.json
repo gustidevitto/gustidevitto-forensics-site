@@ -90,9 +90,10 @@
         "title1": "Jaringan Anda Sedang Berdarah.",
         "title2": "Anda Hanya Belum Melihatnya.",
         "subtitle": "Memantau 1.000 lokasi bukan soal manajemen; ini soal Pengawasan Berdaulat.",
-        "desc": "FFD™ v4.00 Network Edition mendeteksi 'Inti Busuk'—franchisee dengan laporan sempurna tapi menyimpan fraud—dalam hitungan detik. Hentikan pendarahan sebelum menghantam P&L Anda.",
-        "cta_free": "AKTIFKAN SURVIVAL AUDIT",
-        "cta_enterprise": "KLAIM SLOT ENTERPRISE",
+        "qualifier": "Dirancang untuk founder, CFO, dan operator yang mengelola skala besar, di mana kerusakan struktural tersembunyi di balik pertumbuhan.",
+        "desc": "Metrik permukaan menunjukkan pertumbuhan. Sinyal struktural menunjukkan pembusukan. FFD™ v4.00 Network Edition mendeteksi 'Inti Busuk'—franchisee dengan laporan sempurna tapi menyimpan fraud—dalam hitungan detik. Hentikan pendarahan sebelum menghantam P&L Anda.",
+        "cta_free": "Ajukan Akses Pilot",
+        "cta_enterprise": "Audit Jaringan Saya",
         "guarantee": "Sovereign Standard — Data tetap lokal. Akses langsung ke Engine Propietari FFD™.",
         "roi_label": "PROGRAM PILOT",
         "roi_value": "SISA 3 SLOT",
@@ -209,7 +210,7 @@
         "cta_starter": "AKTIFKAN STARTER",
         "cta_growth": "AKTIFKAN GROWTH",
         "cta_scale": "AKTIFKAN SCALE",
-        "cta_enterprise": "REQUEST AUDIT",
+        "cta_enterprise": "Audit Jaringan Saya",
         "cta_franchise": "REQUEST HUB ACCESS",
         "popular": "PILIHAN POPULER",
         "investor_standard": "INVESTOR STANDARD",
@@ -311,6 +312,7 @@
         "price_growth": "Rp 4jt",
         "price_scale": "Rp 5jt",
         "price_enterprise": "$10,000",
+        "enterprise_comparator": "Biaya ini lebih kecil dibanding satu asumsi akuisisi yang salah.",
         "enterprise_auth": "FIXED FEE",
         "custom": "Kustom",
         "custom_price": "Harga Kustom",
@@ -439,6 +441,9 @@
         "cta_whatsapp": "Kirim ke WhatsApp",
         "alert_failed": "Gagal mengirim data ke Google Sheets: {{error}}. Data akan disimpan secara lokal.",
         "alert_error": "Terjadi kesalahan. Silakan coba lagi."
+    },
+    "master_lab": {
+        "framing": "Ketika skala membesar, rata-rata mulai berbohong. Master Lab mengisolasi kegagalan, bukan merayakan pertumbuhan."
     },
     "master_index": {
         "seo_title": "Master Index - Financial Forensics Framework by Gusti Devitto",

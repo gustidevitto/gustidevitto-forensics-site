@@ -206,10 +206,17 @@ function Index() {
                         </h1>
                     </div>
 
+                    {/* Qualifier Line - Clinical/Forensic */}
+                    {heroTab === 'investor' && (
+                        <p className="text-sm md:text-base text-red-500 font-medium mt-6 mb-2 tracking-wide border-l-2 border-destructive pl-4">
+                            {t('hero.qualifier')}
+                        </p>
+                    )}
+
                     {/* Subheadline - Dynamic */}
                     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl min-h-[80px]">
                         {heroTab === 'investor'
-                            ? t('hero.subtitle') + " " + t('hero.desc', { brand: 'FFD™ v4.00' })
+                            ? t('hero.desc', { brand: 'FFD™ v4.00' })
                             : heroTab === 'owner' ? (
                                 <>
                                     While you celebrate high sales, Phantom Costs are quietly killing your runway. FFD™ v4.00 finds the leaks that accountants miss. Don't be the business that dies with a full restaurant.
@@ -381,6 +388,11 @@ function Index() {
                 <div className="container mx-auto max-w-7xl relative z-20">
                     <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-12">
                         <div className="text-left max-w-2xl">
+                            {/* Master Lab Framing - Clinical Attach */}
+                            <p className="text-red-500 font-mono text-xs md:text-sm mb-6 uppercase tracking-widest border-l-2 border-red-500 pl-3 leading-relaxed max-w-lg opacity-80">
+                                {t('master_lab.framing')}
+                            </p>
+
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-900/20 text-red-500 text-[10px] font-black uppercase tracking-widest border border-red-500/20 mb-6">
                                 <Activity className="w-3 h-3 animate-pulse" /> Live Telemetry
                             </div>
