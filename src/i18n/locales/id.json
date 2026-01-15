@@ -308,7 +308,13 @@
         "price_enterprise": "$10,000",
         "enterprise_auth": "FIXED FEE",
         "custom": "Kustom",
-        "custom_price": "Harga Kustom"
+        "custom_price": "Harga Kustom",
+        "faq_q1": "Berapa biaya audit forensik?",
+        "faq_a1": "Harga mulai dari Rp 3 juta per bulan untuk paket SME Starter, yang dirancang untuk bisnis multi-outlet kecil. Untuk enterprise dan investor, kami menawarkan Due Diligence biaya tetap mulai dari $10.000.",
+        "faq_q2": "Apa saja yang termasuk dalam biaya forensik bulanan?",
+        "faq_a2": "Setiap tingkat mencakup akses ke Dasbor FFD™ v3, Sistem Peringatan Anomali, dan laporan Pemulihan Profit dasar hingga mendetail tergantung pada tingkat yang dipilih.",
+        "faq_q3": "Apakah ada jaminan uang kembali?",
+        "faq_a3": "Kami menawarkan jaminan 'No Find, No Pitch'. Jika kami tidak menemukan kebocoran operasional atau Phantom Costs selama diagnosis awal, konsultasi tersebut gratis."
     },
     "calculator": {
         "seo_title": "PCC Lite - Phantom Cost Calculator",

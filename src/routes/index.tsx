@@ -99,52 +99,66 @@ function Index() {
 
             {/* Previous Schema Stays, maybe update it later if needed */}
             <script type="application/ld+json">
-                {JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "FAQPage",
-                    "mainEntity": [
-                        {
-                            "@type": "Question",
-                            "name": t('about_page.faq_q1'),
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": t('about_page.faq_a1')
+                {JSON.stringify([
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": t('about_page.faq_q1'),
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": t('about_page.faq_a1')
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": t('about_page.faq_q2'),
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": t('about_page.faq_a2')
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": t('about_page.faq_q3'),
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": t('about_page.faq_a3')
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": t('about_page.faq_q4'),
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": t('about_page.faq_a4')
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": t('about_page.faq_q5'),
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": t('about_page.faq_a5')
+                                }
                             }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": t('about_page.faq_q2'),
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": t('about_page.faq_a2')
+                        ]
+                    },
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": t('nav.home'),
+                                "item": "https://www.gustidevitto.com/"
                             }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": t('about_page.faq_q3'),
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": t('about_page.faq_a3')
-                            }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": t('about_page.faq_q4'),
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": t('about_page.faq_a4')
-                            }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": t('about_page.faq_q5'),
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": t('about_page.faq_a5')
-                            }
-                        }
-                    ]
-                })}
+                        ]
+                    }
+                ])}
             </script>
             {/* Hero Section - The Split-Gate */}
             <section id="owners" className="relative grid place-items-center lg:grid-cols-2 gap-8 py-16 md:py-24 px-4 md:px-8 overflow-hidden">

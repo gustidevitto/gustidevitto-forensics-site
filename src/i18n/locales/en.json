@@ -307,7 +307,13 @@
         "price_scale": "$350",
         "price_enterprise": "$10,000",
         "enterprise_auth": "FIXED FEE",
-        "custom": "Custom"
+        "custom": "Custom",
+        "faq_q1": "How much does a forensic audit cost?",
+        "faq_a1": "Pricing starts from $200 per month for the SME Starter plan, designed for small multi-outlet businesses. For enterprise and investors, we offer fixed-fee Due Diligence starting at $10,000.",
+        "faq_q2": "What is included in the monthly forensic fee?",
+        "faq_a2": "Every tier includes access to the FFD™ v3 Dashboard, Anomaly Alert System, and basic to detailed Profit Recovery reports depending on the chosen level.",
+        "faq_q3": "Is there a money-back guarantee?",
+        "faq_a3": "We offer a 'No Find, No Pitch' guarantee. If we don't find any operational leakages or Phantom Costs during the initial diagnosis, the consultation is free."
     },
     "calculator": {
         "seo_title": "PCC Lite - Phantom Cost Calculator",

@@ -72,19 +72,71 @@ function InvestasiPage() {
 
             {/* SEO/GEO Advanced Schema */}
             <script type="application/ld+json">
-                {JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "PriceSpecification",
-                    "name": t('investasi.schema_price_name'),
-                    "description": t('investasi.schema_price_desc'),
-                    "offers": [
-                        { "@type": "Offer", "name": t('pricing.starter_title'), "price": "3000000", "priceCurrency": "IDR" },
-                        { "@type": "Offer", "name": t('pricing.growth_title'), "price": "4000000", "priceCurrency": "IDR" },
-                        { "@type": "Offer", "name": t('pricing.scale_title'), "price": "5000000", "priceCurrency": "IDR" },
-                        { "@type": "Offer", "name": t('pricing.enterprise_title'), "price": "10000", "priceCurrency": "USD" },
-                        { "@type": "Offer", "name": t('pricing.franchise_title'), "price": "Custom", "priceCurrency": "IDR" }
-                    ]
-                })}
+                {JSON.stringify([
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "name": "Financial Forensics Audit",
+                        "serviceType": t('investasi.schema_price_name'),
+                        "description": t('investasi.schema_price_desc'),
+                        "provider": {
+                            "@id": "https://www.gustidevitto.com/#organization"
+                        },
+                        "offers": [
+                            { "@type": "Offer", "name": t('pricing.starter_title'), "price": "3000000", "priceCurrency": "IDR" },
+                            { "@type": "Offer", "name": t('pricing.growth_title'), "price": "4000000", "priceCurrency": "IDR" },
+                            { "@type": "Offer", "name": t('pricing.scale_title'), "price": "5000000", "priceCurrency": "IDR" }
+                        ]
+                    },
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": t('nav.home'),
+                                "item": "https://www.gustidevitto.com/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": t('nav.pricing'),
+                                "item": "https://www.gustidevitto.com/investasi"
+                            }
+                        ]
+                    },
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": t('investasi.faq_q1'),
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": t('investasi.faq_a1')
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": t('investasi.faq_q2'),
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": t('investasi.faq_a2')
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": t('investasi.faq_q3'),
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": t('investasi.faq_a3')
+                                }
+                            }
+                        ]
+                    }
+                ])}
             </script>
 
             {/* Hero Header */}
