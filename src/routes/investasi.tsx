@@ -196,7 +196,7 @@ function InvestasiPage() {
                             </ul>
 
                             <Button asChild className="w-full bg-primary text-black font-black hover:bg-white h-20 text-xl shadow-[0_15px_30px_rgba(255,215,0,0.3)] relative z-10 uppercase italic">
-                                <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">{t('investasi.enterprise_cta')}</a>
+                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">{t('investasi.enterprise_cta')}</a>
                             </Button>
                         </div>
 
@@ -229,7 +229,7 @@ function InvestasiPage() {
                             </ul>
 
                             <Button asChild variant="outline" className="w-full h-16 border-primary/50 text-white font-black hover:bg-primary hover:text-black uppercase">
-                                <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">{t('investasi.franchise_cta')}</a>
+                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">{t('investasi.franchise_cta')}</a>
                             </Button>
                         </div>
                     </div>

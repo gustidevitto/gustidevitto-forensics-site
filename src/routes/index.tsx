@@ -185,7 +185,7 @@ function Index() {
                             </Link>
                         </Button>
                         <Button asChild variant="outline" size="lg" className="text-lg h-16 px-10 border-amber-500/50 hover:border-amber-500 hover:bg-amber-500/10 text-amber-500 font-bold flex-1">
-                            <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">
+                            <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
                                 {t('hero.cta_enterprise')}
                             </a>
                         </Button>
@@ -708,7 +708,7 @@ function Index() {
                             </ul>
 
                             <Button asChild className="w-full bg-primary text-black font-black hover:bg-white hover:scale-105 transition-all h-20 text-xl shadow-[0_15px_30px_rgba(255,215,0,0.3)] relative z-10">
-                                <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">{t('pricing.cta_enterprise')}</a>
+                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">{t('pricing.cta_enterprise')}</a>
                             </Button>
                         </div>
 
@@ -729,7 +729,7 @@ function Index() {
                             </ul>
                             <div className="pt-8 border-t border-border/20">
                                 <Button asChild variant="outline" className="w-full border-primary/50 text-white font-black hover:bg-primary hover:text-black transition-all h-14 uppercase tracking-widest">
-                                    <a href="https://calendly.com/gustidevitto" target="_blank" rel="noopener noreferrer">{t('pricing.cta_franchise')}</a>
+                                    <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">{t('pricing.cta_franchise')}</a>
                                 </Button>
                             </div>
                         </div>
