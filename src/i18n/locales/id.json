@@ -445,6 +445,54 @@
     "master_lab": {
         "framing": "Ketika skala membesar, rata-rata mulai berbohong. Master Lab mengisolasi kegagalan, bukan merayakan pertumbuhan."
     },
+    "segmentation": {
+        "network_headline": "SIAPA YANG MEMBUTUHKAN FFD™ NETWORK EDITION",
+        "network_audience_1": "Kantor pusat franchise (20–500 cabang)",
+        "network_audience_2": "Holding multi-brand",
+        "network_audience_3": "Grup restoran & ritel",
+        "network_audience_4": "Private Equity (monitoring portofolio)",
+        "network_problem": "Saya mengelola puluhan cabang. Sebagian mungkin tidak melaporkan omzet sebenarnya, tapi saya tidak punya bukti tanpa audit manual yang mahal.",
+        "network_cta": "Ajukan Demo Network Edition",
+        "sme_headline": "UNTUK BISNIS TUNGGAL & MULTI-OUTLET KECIL",
+        "sme_audience_1": "Bisnis dengan 3–20 outlet",
+        "sme_audience_2": "Brand F&B / ritel yang sedang tumbuh",
+        "sme_audience_3": "Fokus pada kebocoran margin",
+        "sme_problem": "Omzet naik, tapi laba stagnan. Saya tidak tahu di mana uang bocor.",
+        "sme_cta": "Jalankan Audit Gratis"
+    },
+    "pilot": {
+        "header": "PROGRAM PILOT TERBATAS",
+        "subheader": "FFD™ v4.00 NETWORK EDITION",
+        "price": "$30.000 / Pilot Validasi 3 Bulan",
+        "discount": "(Diskon 70% dari lisensi tahunan $100.000)",
+        "included_title": "Yang Didapatkan:",
+        "included_1": "Setup Network Edition",
+        "included_2": "Import massal CSV & pemetaan kolom",
+        "included_3": "Akses Master Lab (20–200 cabang)",
+        "included_4": "Laporan forensik bulanan",
+        "included_5": "Review strategi kuartalan (90 menit, dipimpin Vitto)",
+        "criteria_title": "Kriteria Sukses:",
+        "criteria_1": "Mendeteksi ≥1 cabang dengan underreporting (>20%)",
+        "criteria_2": "Mengidentifikasi ≥3 outlier operasional yang perlu tindakan",
+        "guarantee_title": "Garansi:",
+        "guarantee_text": "Jika tidak ditemukan masalah yang dapat ditindaklanjuti, 50% dana dikembalikan ($15.000).",
+        "scarcity": "Hanya tersedia 3 slot pilot",
+        "cta": "Ajukan Program Pilot"
+    },
+    "transparency": {
+        "p1": "FFD™ v4.00 Network Edition telah tervalidasi secara matematis. Mesin deteksinya diuji dengan data chaotic dan adversarial.",
+        "p2": "Yang sedang kami validasi sekarang adalah perilaku sistem di skala jaringan nyata.",
+        "p3": "Itulah alasan Program Pilot ini ada.",
+        "p4": "Anda mendapatkan intelijen forensik level enterprise dengan biaya jauh lebih rendah. Kami mendapatkan validasi dunia nyata dan studi kasus.",
+        "p5": "Jika hasil sesuai ekspektasi, kerja sama berlanjut. Jika tidak, risiko dibagi.",
+        "author": "— Vitto, Founder",
+        "cta": "Jadi Salah Satu dari 3 Jaringan Pertama"
+    },
+    "demo_video": {
+        "header": "LIHAT FFD™ NETWORK EDITION BERAKSI",
+        "placeholder": "Video Demo Segera Hadir",
+        "cta": "Ajukan Demo Langsung"
+    },
     "master_index": {
         "seo_title": "Master Index - Financial Forensics Framework by Gusti Devitto",
         "hero_badge": "Single Source of Truth",

@@ -337,6 +337,117 @@ function Index() {
                 </div>
             </section>
 
+            {/* 1️⃣ VISITOR SEGMENTATION SECTION */}
+            <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-background to-muted/20 border-y border-border/50">
+                <div className="container mx-auto max-w-7xl">
+                    <div className="grid md:grid-cols-2 gap-12">
+                        {/* LEFT COLUMN - NETWORK OPERATORS */}
+                        <div className="p-10 rounded-3xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-background relative overflow-hidden group hover:border-primary/50 transition-all">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+                            <div className="relative z-10">
+                                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-8 text-primary">
+                                    {t('segmentation.network_headline')}
+                                </h3>
+                                <ul className="space-y-3 mb-8">
+                                    <li className="flex items-center gap-3 text-foreground font-medium">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></div>
+                                        {t('segmentation.network_audience_1')}
+                                    </li>
+                                    <li className="flex items-center gap-3 text-foreground font-medium">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></div>
+                                        {t('segmentation.network_audience_2')}
+                                    </li>
+                                    <li className="flex items-center gap-3 text-foreground font-medium">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></div>
+                                        {t('segmentation.network_audience_3')}
+                                    </li>
+                                    <li className="flex items-center gap-3 text-foreground font-medium">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></div>
+                                        {t('segmentation.network_audience_4')}
+                                    </li>
+                                </ul>
+                                <blockquote className="border-l-4 border-primary pl-6 py-4 mb-8 bg-black/20 rounded-r-lg">
+                                    <p className="text-muted-foreground italic leading-relaxed">
+                                        "{t('segmentation.network_problem')}"
+                                    </p>
+                                </blockquote>
+                                <Button asChild size="lg" className="w-full bg-primary text-black hover:bg-primary/90 font-black h-14 text-base shadow-lg shadow-primary/20">
+                                    <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
+                                        {t('segmentation.network_cta')}
+                                    </a>
+                                </Button>
+                            </div>
+                        </div>
+
+                        {/* RIGHT COLUMN - SME OPERATORS */}
+                        <div className="p-10 rounded-3xl border border-border/50 bg-card/50 relative overflow-hidden group hover:border-primary/30 transition-all">
+                            <div className="relative z-10">
+                                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-8">
+                                    {t('segmentation.sme_headline')}
+                                </h3>
+                                <ul className="space-y-3 mb-8">
+                                    <li className="flex items-center gap-3 text-muted-foreground">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50 shrink-0"></div>
+                                        {t('segmentation.sme_audience_1')}
+                                    </li>
+                                    <li className="flex items-center gap-3 text-muted-foreground">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50 shrink-0"></div>
+                                        {t('segmentation.sme_audience_2')}
+                                    </li>
+                                    <li className="flex items-center gap-3 text-muted-foreground">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50 shrink-0"></div>
+                                        {t('segmentation.sme_audience_3')}
+                                    </li>
+                                </ul>
+                                <blockquote className="border-l-4 border-muted pl-6 py-4 mb-8 bg-muted/10 rounded-r-lg">
+                                    <p className="text-muted-foreground italic leading-relaxed">
+                                        "{t('segmentation.sme_problem')}"
+                                    </p>
+                                </blockquote>
+                                <Button asChild variant="outline" size="lg" className="w-full border-primary/50 hover:bg-primary/10 font-black h-14 text-base">
+                                    <Link to="/get-access">
+                                        {t('segmentation.sme_cta')}
+                                    </Link>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 4️⃣ DEMO VIDEO PLACEHOLDER */}
+            <section className="py-24 px-4 md:px-8 bg-muted/10">
+                <div className="container mx-auto max-w-5xl">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4">
+                            {t('demo_video.header')}
+                        </h2>
+                    </div>
+
+                    {/* Video Placeholder Container */}
+                    <div className="relative aspect-video bg-black rounded-2xl border-2 border-primary/30 overflow-hidden shadow-2xl shadow-primary/10">
+                        {/* Placeholder Content */}
+                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-background to-muted/50">
+                            <div className="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center mb-6 animate-pulse">
+                                <div className="w-0 h-0 border-l-[20px] border-l-primary border-y-[12px] border-y-transparent ml-2"></div>
+                            </div>
+                            <p className="text-2xl font-black text-primary uppercase tracking-widest">
+                                {t('demo_video.placeholder')}
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* CTA Below Video */}
+                    <div className="mt-12 text-center">
+                        <Button asChild size="lg" className="bg-primary text-black hover:bg-white font-black h-14 px-10 shadow-lg shadow-primary/20">
+                            <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
+                                {t('demo_video.cta')}
+                            </a>
+                        </Button>
+                    </div>
+                </div>
+            </section>
+
             {/* New Section: Institutional Intelligence Unit (The Investor Gate) */}
             <section id="investors" className="py-24 px-4 md:px-8 bg-black text-white relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
@@ -783,6 +894,95 @@ function Index() {
                         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{t('pricing.subtitle')}</p>
                     </div>
 
+                    {/* 2️⃣ PILOT PROGRAM PRICING BOX */}
+                    <div className="mb-20 max-w-5xl mx-auto">
+                        <div className="relative p-12 rounded-[2.5rem] border-4 border-primary bg-gradient-to-br from-primary/10 via-background to-background overflow-hidden shadow-[0_0_80px_rgba(255,215,0,0.2)]">
+                            {/* Glow Effects */}
+                            <div className="absolute top-0 left-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+                            <div className="absolute bottom-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+
+                            {/* Scarcity Badge */}
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-destructive text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-2xl animate-pulse z-20">
+                                ⚠ {t('pilot.scarcity')}
+                            </div>
+
+                            <div className="relative z-10">
+                                {/* Header */}
+                                <div className="text-center mb-10">
+                                    <p className="text-primary text-sm font-black uppercase tracking-[0.3em] mb-2">{t('pilot.header')}</p>
+                                    <h3 className="text-4xl md:text-5xl font-black text-white mb-4">{t('pilot.subheader')}</h3>
+                                </div>
+
+                                {/* Pricing */}
+                                <div className="text-center mb-12">
+                                    <p className="text-5xl md:text-6xl font-black text-primary mb-2">{t('pilot.price')}</p>
+                                    <p className="text-muted-foreground text-sm">{t('pilot.discount')}</p>
+                                </div>
+
+                                {/* Two Column Layout */}
+                                <div className="grid md:grid-cols-2 gap-8 mb-10">
+                                    {/* What's Included */}
+                                    <div className="bg-black/40 p-8 rounded-2xl border border-primary/20">
+                                        <h4 className="text-primary font-black uppercase tracking-widest text-sm mb-6">{t('pilot.included_title')}</h4>
+                                        <ul className="space-y-4">
+                                            <li className="flex items-start gap-3 text-gray-300">
+                                                <ShieldCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                                                <span>{t('pilot.included_1')}</span>
+                                            </li>
+                                            <li className="flex items-start gap-3 text-gray-300">
+                                                <ShieldCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                                                <span>{t('pilot.included_2')}</span>
+                                            </li>
+                                            <li className="flex items-start gap-3 text-gray-300">
+                                                <ShieldCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                                                <span>{t('pilot.included_3')}</span>
+                                            </li>
+                                            <li className="flex items-start gap-3 text-gray-300">
+                                                <ShieldCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                                                <span>{t('pilot.included_4')}</span>
+                                            </li>
+                                            <li className="flex items-start gap-3 text-gray-300">
+                                                <ShieldCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                                                <span>{t('pilot.included_5')}</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    {/* Success Criteria & Guarantee */}
+                                    <div className="space-y-6">
+                                        <div className="bg-black/40 p-8 rounded-2xl border border-primary/20">
+                                            <h4 className="text-primary font-black uppercase tracking-widest text-sm mb-6">{t('pilot.criteria_title')}</h4>
+                                            <ul className="space-y-4">
+                                                <li className="flex items-start gap-3 text-gray-300">
+                                                    <Target className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                                                    <span>{t('pilot.criteria_1')}</span>
+                                                </li>
+                                                <li className="flex items-start gap-3 text-gray-300">
+                                                    <Target className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                                                    <span>{t('pilot.criteria_2')}</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="bg-primary/10 p-8 rounded-2xl border border-primary/30">
+                                            <h4 className="text-primary font-black uppercase tracking-widest text-sm mb-4">{t('pilot.guarantee_title')}</h4>
+                                            <p className="text-gray-300 leading-relaxed">{t('pilot.guarantee_text')}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* CTA */}
+                                <div className="text-center">
+                                    <Button asChild size="lg" className="bg-primary text-black hover:bg-white font-black h-16 px-12 text-xl shadow-[0_0_40px_rgba(255,215,0,0.4)] hover:scale-105 transition-all">
+                                        <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
+                                            {t('pilot.cta')}
+                                        </a>
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-6 gap-y-12 md:gap-y-32 md:gap-x-8 items-stretch relative">
                         {/* Segment Header for Row 1: Founders */}
                         <div className="md:col-span-6 flex items-center gap-4 mb-2 md:-mb-16 z-20 md:order-0">
@@ -940,40 +1140,36 @@ function Index() {
                 </div>
             </section >
 
-            {/* NEW: Pilot Program Scarcity Block */}
-            <section className="py-16 px-4 md:px-8 bg-gradient-to-br from-destructive/5 to-background border-y border-destructive/20 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-destructive/10 blur-[100px] rounded-full"></div>
-                <div className="container mx-auto max-w-4xl relative z-10 text-center">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-destructive text-white text-xs font-black uppercase tracking-widest rounded mb-6 animate-pulse">
-                        ⚠ {t('pricing.pilot_header')}
+            {/* 3️⃣ "WHY THE PILOT EXISTS" TRANSPARENCY SECTION */}
+            <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-muted/10 to-background border-y border-border/50">
+                <div className="container mx-auto max-w-4xl">
+                    <div className="space-y-6 text-center">
+                        <p className="text-lg md:text-xl text-foreground leading-relaxed">
+                            {t('transparency.p1')}
+                        </p>
+                        <p className="text-lg md:text-xl text-foreground leading-relaxed">
+                            {t('transparency.p2')}
+                        </p>
+                        <p className="text-2xl md:text-3xl font-bold text-primary leading-relaxed">
+                            {t('transparency.p3')}
+                        </p>
+                        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                            {t('transparency.p4')}
+                        </p>
+                        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                            {t('transparency.p5')}
+                        </p>
+                        <p className="text-sm text-muted-foreground italic mt-8">
+                            {t('transparency.author')}
+                        </p>
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter">
-                        {t('pricing.pilot_offer')}
-                    </h2>
-                    <div className="p-6 md:p-8 bg-black/50 border border-destructive/50 rounded-2xl backdrop-blur-md shadow-2xl max-w-2xl mx-auto">
-                        <div className="flex items-start gap-4 text-left">
-                            <div className="bg-destructive/20 p-2 rounded-lg shrink-0">
-                                <TrendingDown className="w-6 h-6 text-destructive" />
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-red-400 text-lg mb-2 uppercase tracking-wide">Limited Intake Window</h3>
-                                <p className="text-muted-foreground mb-4">
-                                    {t('pricing.pilot_catch')}
-                                </p>
-                                <div className="h-px w-full bg-white/10 my-4"></div>
-                                <h3 className="font-bold text-white text-lg mb-2 uppercase tracking-wide">Risk Reversal</h3>
-                                <p className="text-gray-300 italic">
-                                    "{t('pricing.pilot_guarantee')}"
-                                </p>
-                            </div>
-                        </div>
-                        <div className="mt-8">
-                            <Button asChild size="lg" className="w-full bg-destructive hover:bg-destructive/90 text-white font-black text-xl h-14 shadow-[0_0_30px_rgba(239,68,68,0.4)] animate-pulse">
-                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
-                                    CLAIM PILOT SPOT (1/3 LEFT)
-                                </a>
-                            </Button>
-                        </div>
+
+                    <div className="mt-12 text-center">
+                        <Button asChild size="lg" className="bg-primary text-black hover:bg-white font-black h-16 px-12 text-xl shadow-lg shadow-primary/30">
+                            <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
+                                {t('transparency.cta')}
+                            </a>
+                        </Button>
                     </div>
                 </div>
             </section>

@@ -445,6 +445,54 @@
     "master_lab": {
         "framing": "When scale increases, averages lie. Master Lab isolates failure instead of celebrating growth."
     },
+    "segmentation": {
+        "network_headline": "WHO FFD™ NETWORK EDITION IS FOR",
+        "network_audience_1": "Franchise HQs (20–500 locations)",
+        "network_audience_2": "Multi-brand holding companies",
+        "network_audience_3": "Restaurant & retail groups",
+        "network_audience_4": "PE firms monitoring portfolio performance",
+        "network_problem": "I manage dozens of locations. Some are underreporting revenue, but I can't prove it without expensive manual audits.",
+        "network_cta": "Request Network Edition Demo",
+        "sme_headline": "FOR SINGLE & SMALL MULTI-OUTLET OPERATORS",
+        "sme_audience_1": "Businesses with 3–20 outlets",
+        "sme_audience_2": "Growing F&B / retail brands",
+        "sme_audience_3": "Operators focused on margin leakage",
+        "sme_problem": "My revenue is growing, but profit is flat. I don't know where the money is leaking.",
+        "sme_cta": "Run Free Audit"
+    },
+    "pilot": {
+        "header": "LIMITED PILOT PROGRAM",
+        "subheader": "FFD™ v4.00 NETWORK EDITION",
+        "price": "$30,000 / 3-Month Validation Pilot",
+        "discount": "(70% off standard $100,000/year license)",
+        "included_title": "What's Included:",
+        "included_1": "Network Edition setup",
+        "included_2": "Bulk CSV import & column mapping",
+        "included_3": "Master Lab access (20–200 locations)",
+        "included_4": "Monthly forensic insight reports",
+        "included_5": "Quarterly strategy review (90 minutes, led by Vitto)",
+        "criteria_title": "Success Criteria:",
+        "criteria_1": "Detect ≥1 underreporting location (>20% discrepancy)",
+        "criteria_2": "Identify ≥3 operational outliers requiring intervention",
+        "guarantee_title": "Guarantee:",
+        "guarantee_text": "If no actionable issues are found, 50% refund ($15,000 returned).",
+        "scarcity": "Only 3 pilot slots available",
+        "cta": "Apply for Pilot Program"
+    },
+    "transparency": {
+        "p1": "FFD™ v4.00 Network Edition is mathematically validated. The detection engine has been stress-tested using chaotic and adversarial data.",
+        "p2": "What we are validating now is scale behavior across real franchise networks.",
+        "p3": "That's why this Pilot exists.",
+        "p4": "You receive enterprise-grade forensic intelligence at a fraction of the cost. We receive real-world validation and a case study.",
+        "p5": "If results meet expectations, this becomes a long-term engagement. If not, risk is shared.",
+        "author": "— Vitto, Founder",
+        "cta": "Be One of the First 3 Networks"
+    },
+    "demo_video": {
+        "header": "SEE FFD™ NETWORK EDITION IN ACTION",
+        "placeholder": "Demo Video Coming Soon",
+        "cta": "Request Live Demo"
+    },
     "master_index": {
         "seo_title": "Master Index - Financial Forensics Framework by Gusti Devitto",
         "hero_badge": "Single Source of Truth",
