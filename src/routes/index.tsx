@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ShieldCheck, TrendingDown, Users, DollarSign, Clock, Target, BadgeCheck, Activity, Microscope, Search, Brain, Lock } from "lucide-react"
+import { ArrowRight, ShieldCheck, TrendingDown, Users, DollarSign, Clock, Target, BadgeCheck, Activity, Microscope, Search, Brain, Lock, Maximize2, X } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslation, Trans } from 'react-i18next'
 
@@ -13,6 +13,7 @@ function Index() {
     const { t } = useTranslation()
     const [currentSlide, setCurrentSlide] = useState(0)
     const [heroTab, setHeroTab] = useState<'investor' | 'owner'>('investor') // Default to Investor for "Authority" path
+    const [showMasterLab, setShowMasterLab] = useState(false)
     const slides = [
         {
             id: 'dashboard',
@@ -370,7 +371,7 @@ function Index() {
                 </div>
             </section>
 
-            {/* Master Lab Network Edition Showcase (The Weapon) */}
+            {/* Master Lab Network Edition Showcase (The Weapon) - Interactive Preview */}
             <section className="py-24 px-4 md:px-8 bg-black relative overflow-hidden border-t border-white/5">
                 {/* Background Grid/Effects */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -387,7 +388,7 @@ function Index() {
                                 Master Lab <span className="text-red-600">Network Edition</span>
                             </h2>
                             <p className="text-gray-400 text-lg leading-relaxed">
-                                Aggregated intelligence from <strong className="text-white">50+ active franchise nodes</strong>. Detect systemic fraud patterns, phantom costs, and inventory leakage across your entire fleet in real-time.
+                                Aggregated intelligence from <strong className="text-white">50+ active franchise nodes</strong>.
                             </p>
                         </div>
                         <div className="flex gap-8 border-l border-white/10 pl-8">
@@ -408,34 +409,76 @@ function Index() {
                         </div>
                     </div>
 
-                    {/* The Weapon - Image */}
-                    <div className="relative group">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-red-500/20 via-primary/20 to-red-500/20 rounded-xl blur-lg opacity-50 group-hover:opacity-100 transition duration-1000"></div>
-                        <div className="relative rounded-xl border border-white/10 bg-zinc-900/50 p-2 shadow-2xl backdrop-blur-sm">
+                    {/* The Weapon - Interactive Preview Card */}
+                    <div
+                        className="relative group rounded-xl border border-white/10 bg-zinc-900/50 overflow-hidden cursor-pointer h-[400px] transition-all hover:border-red-500/50 hover:shadow-[0_0_50px_rgba(220,38,38,0.2)]"
+                        onClick={() => setShowMasterLab(true)}
+                    >
+                        {/* Image Layer - Cropped/Masked */}
+                        <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
                             <img
                                 src="/assets/images/ffdv4masterlab.png"
                                 alt="FFD v4 Master Lab Aggregator Interface"
-                                className="w-full h-auto rounded-lg border border-white/5 relative z-10 shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+                                className="w-full h-full object-cover object-top opacity-60 group-hover:opacity-40 transition-opacity"
                             />
-
-                            {/* Tech Overlay Lines */}
-                            <div className="absolute -left-px top-1/4 h-1/2 w-[2px] bg-gradient-to-b from-transparent via-red-500/50 to-transparent"></div>
-                            <div className="absolute -right-px top-1/4 h-1/2 w-[2px] bg-gradient-to-b from-transparent via-red-500/50 to-transparent"></div>
                         </div>
-                    </div>
 
-                    <div className="mt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-60 hover:opacity-100 transition-opacity">
-                        <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-[0.3em]">
-                            System Architecture: Distributed Forensic Ledger
-                        </p>
-                        <div className="flex gap-4">
-                            <BadgeCheck className="w-4 h-4 text-zinc-600" />
-                            <Activity className="w-4 h-4 text-zinc-600" />
-                            <Lock className="w-4 h-4 text-zinc-600" />
+                        {/* Overlay Gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+
+                        {/* Center CTA */}
+                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 z-20">
+                            <div className="w-16 h-16 rounded-full bg-red-600/20 border border-red-500/50 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+                                <Maximize2 className="w-8 h-8 text-red-500" />
+                            </div>
+                            <p className="text-sm font-black uppercase tracking-[0.3em] text-white/80 group-hover:text-white transition-colors">
+                                Initialize Master View
+                            </p>
+                        </div>
+
+                        {/* Tech Overlay Lines (Decorative) */}
+                        <div className="absolute top-4 left-4 flex gap-1">
+                            <div className="w-1 h-1 bg-red-500 rounded-full"></div>
+                            <div className="w-1 h-1 bg-white/20 rounded-full"></div>
+                            <div className="w-1 h-1 bg-white/20 rounded-full"></div>
+                        </div>
+                        <div className="absolute bottom-4 right-4 text-[10px] font-mono text-red-500/50 uppercase">
+                            // Secure_Connection_Established
                         </div>
                     </div>
                 </div>
             </section>
+
+            {/* Lightbox Modal */}
+            {showMasterLab && (
+                <div className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300">
+                    {/* Close Button */}
+                    <button
+                        onClick={() => setShowMasterLab(false)}
+                        className="absolute top-4 right-4 md:top-8 md:right-8 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+                    >
+                        <X className="w-8 h-8" />
+                    </button>
+
+                    <div className="relative max-w-full max-h-full w-full h-full flex flex-col items-center justify-center" onClick={() => setShowMasterLab(false)}>
+                        <div className="relative w-fit h-fit max-w-full max-h-[85vh] overflow-auto rounded-lg border border-white/10 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+                            <img
+                                src="/assets/images/ffdv4masterlab.png"
+                                alt="Master Lab Full View"
+                                className="max-w-full h-auto object-contain block"
+                            />
+                        </div>
+
+                        <div className="mt-6 flex flex-col items-center gap-2 pointer-events-none">
+                            <h3 className="text-xl font-black text-white uppercase tracking-widest">Master Lab Aggregator</h3>
+                            <div className="flex items-center gap-3">
+                                <span className="px-2 py-0.5 bg-red-900/50 border border-red-500/30 text-red-400 text-[10px] font-mono rounded uppercase">Live Feed</span>
+                                <span className="text-zinc-500 text-xs font-mono">Res: 100% // Scanned: 50 Nodes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* Social Proof & Authority: Trusted By */}
             <section className="py-12 border-y border-border/50 bg-background">
