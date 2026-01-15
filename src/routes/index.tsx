@@ -446,6 +446,17 @@ function Index() {
                             // Secure_Connection_Established
                         </div>
                     </div>
+
+                    <div className="mt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-60 hover:opacity-100 transition-opacity">
+                        <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-[0.3em]">
+                            System Architecture: Distributed Forensic Ledger
+                        </p>
+                        <div className="flex gap-4">
+                            <BadgeCheck className="w-4 h-4 text-zinc-600" />
+                            <Activity className="w-4 h-4 text-zinc-600" />
+                            <Lock className="w-4 h-4 text-zinc-600" />
+                        </div>
+                    </div>
                 </div>
             </section>
 
