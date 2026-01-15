@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ShieldCheck, TrendingDown, Users, DollarSign, Clock, Target, BadgeCheck, Activity, Microscope, Search, Brain } from "lucide-react"
+import { ArrowRight, ShieldCheck, TrendingDown, Users, DollarSign, Clock, Target, BadgeCheck, Activity, Microscope, Search, Brain, Lock } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslation, Trans } from 'react-i18next'
 
@@ -365,6 +365,73 @@ function Index() {
                             <p className="text-sm text-gray-400 leading-relaxed">
                                 {t('institutional.card3_desc').split('. ')[0]}. {t('institutional.card3_desc').split('. ')[1]} <strong className="text-white">{t('institutional.card3_desc').split('. ')[2]}</strong>
                             </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Master Lab Network Edition Showcase (The Weapon) */}
+            <section className="py-24 px-4 md:px-8 bg-black relative overflow-hidden border-t border-white/5">
+                {/* Background Grid/Effects */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+                <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black to-transparent z-10"></div>
+                <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-10"></div>
+
+                <div className="container mx-auto max-w-7xl relative z-20">
+                    <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-12">
+                        <div className="text-left max-w-2xl">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-900/20 text-red-500 text-[10px] font-black uppercase tracking-widest border border-red-500/20 mb-6">
+                                <Activity className="w-3 h-3 animate-pulse" /> Live Telemetry
+                            </div>
+                            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white uppercase leading-none mb-4">
+                                Master Lab <span className="text-red-600">Network Edition</span>
+                            </h2>
+                            <p className="text-gray-400 text-lg leading-relaxed">
+                                Aggregated intelligence from <strong className="text-white">50+ active franchise nodes</strong>. Detect systemic fraud patterns, phantom costs, and inventory leakage across your entire fleet in real-time.
+                            </p>
+                        </div>
+                        <div className="flex gap-8 border-l border-white/10 pl-8">
+                            <div className="text-left hidden md:block">
+                                <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-mono mb-1">Clearance Level</p>
+                                <p className="text-xl font-black text-white">L-9 APPROVED</p>
+                            </div>
+                            <div className="text-left hidden md:block">
+                                <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-mono mb-1">Monitoring</p>
+                                <div className="flex items-center gap-2">
+                                    <span className="relative flex h-2 w-2">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                                    </span>
+                                    <p className="text-xl font-black text-red-500">54 NODES</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* The Weapon - Image */}
+                    <div className="relative group">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-red-500/20 via-primary/20 to-red-500/20 rounded-xl blur-lg opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+                        <div className="relative rounded-xl border border-white/10 bg-zinc-900/50 p-2 shadow-2xl backdrop-blur-sm">
+                            <img
+                                src="/assets/images/ffdv4masterlab.png"
+                                alt="FFD v4 Master Lab Aggregator Interface"
+                                className="w-full h-auto rounded-lg border border-white/5 relative z-10 shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+                            />
+
+                            {/* Tech Overlay Lines */}
+                            <div className="absolute -left-px top-1/4 h-1/2 w-[2px] bg-gradient-to-b from-transparent via-red-500/50 to-transparent"></div>
+                            <div className="absolute -right-px top-1/4 h-1/2 w-[2px] bg-gradient-to-b from-transparent via-red-500/50 to-transparent"></div>
+                        </div>
+                    </div>
+
+                    <div className="mt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-60 hover:opacity-100 transition-opacity">
+                        <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-[0.3em]">
+                            System Architecture: Distributed Forensic Ledger
+                        </p>
+                        <div className="flex gap-4">
+                            <BadgeCheck className="w-4 h-4 text-zinc-600" />
+                            <Activity className="w-4 h-4 text-zinc-600" />
+                            <Lock className="w-4 h-4 text-zinc-600" />
                         </div>
                     </div>
                 </div>
