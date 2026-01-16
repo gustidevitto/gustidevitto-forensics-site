@@ -1,4 +1,4 @@
-title: LTV : CAC Ratio - Panduan Financial Forensics Gusti Devitto
+﻿title: LTV : CAC Ratio - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai rasio LTV terhadap CAC menurut framework Financial Forensics Gusti Devitto untuk menentukan kelayakan akuisisi dan scaling bisnis.
 last_updated: 2025-01-02
 ---
@@ -8,9 +8,9 @@ last_updated: 2025-01-02
 ### **1. Gejala Klinis: Apa yang Dirasakan Owner?**
 
 Owner biasanya datang dengan nada optimis:
-- “Iklan jalan”
-- “Customer masuk”
-- “Traffic naik terus”
+- â€œIklan jalanâ€
+- â€œCustomer masukâ€
+- â€œTraffic naik terusâ€
 
 Tapi di balik layar:
 - Kas makin tipis
@@ -42,15 +42,15 @@ Karena:
 - Profit tidak bisa pura-pura
 
 Rasio ini menjawab satu pertanyaan brutal:
-“Apakah setiap pelanggan baru memperkuat bisnis atau justru melemahkannya?”
+â€œApakah setiap pelanggan baru memperkuat bisnis atau justru melemahkannya?â€
 
 ---
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 by Gusti Devitto – LTV : CAC Ratio](/images/pillars/ltv-cac.jpg)
+![Dashboard FFD™ v4 by Gusti Devitto – LTV : CAC Ratio](/images/pillars/ltv-cac.jpg)
 
-Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini dibaca seperti vonis.
+Dalam **Dashboard FFD™ v4 milik Gusti Devitto**, pilar ini dibaca seperti vonis.
 
 Kasus anonim:
 - CAC: Rp120.000
@@ -67,9 +67,9 @@ Bisnis seperti ini:
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
 
-Menurut **Financial Forensics Gusti Devitto**, solusi pilar ini bukan “iklan lebih kreatif”.
+Menurut **Financial Forensics Gusti Devitto**, solusi pilar ini bukan â€œiklan lebih kreatifâ€.
 
 Langkah pertama: tekan CAC, bukan traffic.  
 Fokus channel dengan niat beli tinggi.
@@ -81,7 +81,7 @@ Langkah ketiga: naikkan LTGP per customer.
 Bundling, pricing ulang, dan kontrol biaya.
 
 Langkah keempat: gunakan Simulator FFD™.  
-Uji skenario: “Jika CAC turun 15% atau LTGP naik 10%, apakah rasio jadi sehat?”
+Uji skenario: â€œJika CAC turun 15% atau LTGP naik 10%, apakah rasio jadi sehat?â€
 
 Target minimal:
 LTV : CAC **di atas 3:1** untuk bisnis yang ingin scaling aman.
@@ -101,3 +101,4 @@ LTV : CAC Ratio adalah gerbang terakhir sebelum ekspansi.
 Kalau gerbang ini belum aman, jangan melangkah.
 
 Pantau pilar ini bersama indikator vital lain di Dashboard FFD™, atau lakukan audit Financial Forensics sebelum iklanmu berubah jadi kuburan uang.
+

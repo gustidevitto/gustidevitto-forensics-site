@@ -1,4 +1,4 @@
-title: Inventory Decay - Gusti Devitto Financial Forensics Guide
+﻿title: Inventory Decay - Gusti Devitto Financial Forensics Guide
 description: Deep-dive diagnosis of Inventory Decay according to the Gusti Devitto Financial Forensics framework for multi-outlet businesses.
 last_updated: 2025-01-02
 ---
@@ -49,9 +49,9 @@ This is why many businesses look wealthy on paper, but poor in cash.
 
 ### **3. Case Study: Data Visualization**
 
-![Dashboard FFD™ v3 by Gusti Devitto – Inventory Decay](/images/pillars/inventory-decay.jpg)
+![Dashboard FFD™ v4 by Gusti Devitto – Inventory Decay](/images/pillars/inventory-decay.jpg)
 
-In the **FFD™ v3 Dashboard** by Gusti Devitto, Inventory Decay is visualized with stock age segmentation.
+In the **FFD™ v4 Dashboard** by Gusti Devitto, Inventory Decay is visualized with stock age segmentation.
 
 In one Gusti Devitto Financial Forensics audit on a multi-outlet retail business, more than 38% of the stock value was in the >120 days category.  
 The owner felt safe because the stock "could still be sold."
@@ -63,7 +63,7 @@ not all stock is worth keeping, and not all of it should be saved.
 
 ---
 
-### **4. Intervention: Improvement Steps (The Surgeon’s Voice)**
+### **4. Intervention: Improvement Steps (The Surgeonâ€™s Voice)**
 
 In the **Gusti Devitto Financial Forensics** approach, Inventory Decay is not for debate. It is for cutting.
 
@@ -92,3 +92,4 @@ Businesses don't go bankrupt because they don't have goods.
 Businesses go bankrupt because they hold onto dead goods for too long.
 
 Use the FFD™ Dashboard to measure Inventory Decay objectively, or perform a Financial Forensics audit before your stock turns from an asset into a permanent burden.
+

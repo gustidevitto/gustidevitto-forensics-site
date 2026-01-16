@@ -1,4 +1,4 @@
----
+﻿---
 title: Gross Profit per Labor Hour - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Gross Profit per Labor Hour menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
 last_updated: 2025-01-02
@@ -9,9 +9,9 @@ last_updated: 2025-01-02
 ### **1. Gejala Klinis: Apa yang Dirasakan Owner?**
 
 Owner sering berkata dengan bangga:
-- “Tim saya loyal”
-- “Semua kelihatan sibuk”
-- “Kalau kurang orang, operasional kacau”
+- â€œTim saya loyalâ€
+- â€œSemua kelihatan sibukâ€
+- â€œKalau kurang orang, operasional kacauâ€
 
 Tapi realitanya:
 - Profit stagnan
@@ -51,9 +51,9 @@ tapi di desain operasional.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 by Gusti Devitto – Gross Profit per Labor Hour](/images/pillars/gp-labor-hour.jpg)
+![Dashboard FFD™ v4 by Gusti Devitto – Gross Profit per Labor Hour](/images/pillars/gp-labor-hour.jpg)
 
-Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini menunjukkan apakah jam kerja benar-benar mencetak laba.
+Dalam **Dashboard FFD™ v4 milik Gusti Devitto**, pilar ini menunjukkan apakah jam kerja benar-benar mencetak laba.
 
 Kasus nyata:
 - Gaji naik 18%
@@ -70,7 +70,7 @@ Bisnis seperti ini:
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
 
 Menurut **Financial Forensics Gusti Devitto**, solusi pilar ini bukan sekadar PHK.
 
@@ -84,7 +84,7 @@ Langkah ketiga: sederhanakan proses.
 Semakin ribet SOP, semakin mahal setiap jam kerja.
 
 Langkah keempat: gunakan Simulator FFD™.  
-Uji skenario: “Apa dampaknya jika 1 jam kerja harus menghasilkan X rupiah?”
+Uji skenario: â€œApa dampaknya jika 1 jam kerja harus menghasilkan X rupiah?â€
 
 Tujuannya satu:
 setiap jam kerja harus layak secara ekonomi.
@@ -99,3 +99,4 @@ Jika setiap jam kerja tidak menghasilkan laba kotor yang memadai,
 bisnis kamu sedang membiayai kesibukan, bukan pertumbuhan.
 
 Pantau Gross Profit per Labor Hour bersama pilar vital lain di Dashboard FFD™, atau lakukan audit Financial Forensics sebelum bisnismu berubah jadi panti sosial permanen.
+

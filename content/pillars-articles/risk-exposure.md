@@ -1,4 +1,4 @@
-title: Risk Exposure (Quick Ratio) - Panduan Financial Forensics Gusti Devitto
+﻿title: Risk Exposure (Quick Ratio) - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Risk Exposure menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
 last_updated: 2025-01-02
 ---
@@ -7,13 +7,13 @@ last_updated: 2025-01-02
 
 ### **1. Gejala Klinis: Apa yang Dirasakan Owner?**
 
-Banyak owner merasa bisnisnya “aman” karena masih punya stok, masih ada piutang, dan masih bisa jalan.  
+Banyak owner merasa bisnisnya â€œamanâ€ karena masih punya stok, masih ada piutang, dan masih bisa jalan.  
 Masalahnya baru terasa ketika satu kejadian kecil datang: supplier minta dibayar lebih cepat, bank menahan pencairan, atau biaya tak terduga muncul tanpa peringatan.
 
 Di momen itu, kepanikan langsung terjadi.  
 Owner mulai menjual stok dengan harga banting, meminjam ke sana-sini, atau mengorbankan keputusan jangka panjang demi bertahan hari ini.
 
-Di lapangan, kondisi ini sering disebut dengan “kaget likuiditas”.  
+Di lapangan, kondisi ini sering disebut dengan â€œkaget likuiditasâ€.  
 Bukan karena bisnis rugi besar, tapi karena kas yang tersedia ternyata tidak cukup untuk menghadapi kewajiban jangka pendek.
 
 Dalam audit **Financial Forensics Gusti Devitto**, gejala ini hampir selalu muncul pada bisnis yang terlalu percaya diri pada aset non-kas. Stok dianggap uang. Piutang dianggap aman. Padahal ketika krisis kecil datang, semua itu tidak bisa langsung berubah menjadi uang tunai.
@@ -36,7 +36,7 @@ Quick Ratio sengaja tidak memasukkan inventory.
 Alasannya sederhana: stok bukan uang.  
 Dalam kondisi tertekan, stok sulit diuangkan dengan nilai penuh dan sering justru menjadi sumber kerugian tambahan.
 
-Dalam sistem diagnostik Gusti Devitto, Risk Exposure adalah indikator “ketahanan mendadak”.  
+Dalam sistem diagnostik Gusti Devitto, Risk Exposure adalah indikator â€œketahanan mendadakâ€.  
 Ia mengukur apakah bisnis mampu bertahan dari guncangan kecil tanpa harus mengambil keputusan panik yang merusak struktur jangka panjang.
 
 Quick Ratio yang rendah berarti bisnis sangat rentan.  
@@ -46,9 +46,9 @@ Satu gangguan kecil bisa memicu reaksi berantai: keterlambatan bayar, denda, rus
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 by Gusti Devitto – Risk Exposure](/images/pillars/risk-exposure.jpg)
+![Dashboard FFD™ v4 by Gusti Devitto – Risk Exposure](/images/pillars/risk-exposure.jpg)
 
-Pada Dashboard **FFD™ (Financial Forensics Dashboard) v3** karya Gusti Devitto, Risk Exposure ditampilkan dalam zona warna yang tegas untuk memudahkan pembacaan risiko.
+Pada Dashboard **FFD™ (Financial Forensics Dashboard) v4** karya Gusti Devitto, Risk Exposure ditampilkan dalam zona warna yang tegas untuk memudahkan pembacaan risiko.
 
 Dalam salah satu audit Financial Forensics Gusti Devitto terhadap bisnis distribusi multi-outlet, owner merasa aman karena nilai stok sangat besar. Namun Quick Ratio menunjukkan angka di zona merah.
 
@@ -59,7 +59,7 @@ Dashboard ini membantu owner memahami perbedaan antara **terlihat kaya** dan **s
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
 
 Dalam pendekatan **Financial Forensics Gusti Devitto**, Risk Exposure tinggi adalah bom waktu yang harus dinonaktifkan.
 
@@ -87,3 +87,4 @@ Gunakan Dashboard FFD™ untuk mengukur Risk Exposure Anda secara objektif, atau
 
 Ketahanan bukan soal optimisme.  
 Ketahanan adalah soal likuiditas.
+

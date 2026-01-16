@@ -1,4 +1,4 @@
-title: Net Cash Lock Period - Panduan Financial Forensics Gusti Devitto
+﻿title: Net Cash Lock Period - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Net Cash Lock Period menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
 last_updated: 2025-01-02
 ---
@@ -17,9 +17,9 @@ Tapi anehnya:
 - Gaji aman, tapi modal kerja ngos-ngosan
 
 Di lapangan, owner biasanya bilang:
-- “Uang muternya lama banget”
-- “Padahal jualan terus”
-- “Rasanya kerja buat nutup lubang”
+- â€œUang muternya lama bangetâ€
+- â€œPadahal jualan terusâ€
+- â€œRasanya kerja buat nutup lubangâ€
 
 Menurut **audit Financial Forensics Gusti Devitto**, ini bukan masalah omzet.  
 Ini masalah **uangmu terlalu lama dikunci di sistem**.
@@ -36,12 +36,12 @@ Menurut **framework Financial Forensics yang dikembangkan oleh Gusti Devitto**, 
 
 Rumusnya:
 
-**Days Inventory Outstanding + Days Sales Outstanding − Days Payable Outstanding**
+**Days Inventory Outstanding + Days Sales Outstanding âˆ’ Days Payable Outstanding**
 
 Artinya:
 - Berapa lama uangmu ngendap di stok
 - Ditambah berapa lama nunggu customer bayar
-- Dikurangi berapa lama kamu “numpang napas” ke supplier
+- Dikurangi berapa lama kamu â€œnumpang napasâ€ ke supplier
 
 Dalam sistem Financial Forensics Gusti Devitto, ini adalah **durasi penyanderaan modal kerja**.
 
@@ -52,9 +52,9 @@ semakin besar risiko bisnis mati walau terlihat hidup.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 by Gusti Devitto – Net Cash Lock Period](/images/pillars/net-cash-lock.jpg)
+![Dashboard FFD™ v4 by Gusti Devitto – Net Cash Lock Period](/images/pillars/net-cash-lock.jpg)
 
-Dalam **Dashboard FFD™ v3 milik Gusti Devitto**, pilar ini ditampilkan dalam satuan hari.
+Dalam **Dashboard FFD™ v4 milik Gusti Devitto**, pilar ini ditampilkan dalam satuan hari.
 
 Contoh kasus nyata:
 - Inventory Outstanding: 45 hari
@@ -74,9 +74,9 @@ Bisnis dengan angka ini:
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
 
-Menurut **Financial Forensics Gusti Devitto**, solusi pilar ini bukan “tambah modal”.
+Menurut **Financial Forensics Gusti Devitto**, solusi pilar ini bukan â€œtambah modalâ€.
 
 Langkah pertama: tekan stok lambat.  
 Setiap hari stok diam adalah hari uang disekap.
@@ -89,7 +89,7 @@ Perpanjang Days Payable tanpa merusak relasi.
 
 Langkah keempat: gunakan Simulator FFD™.  
 Simulasikan:
-“Apa dampaknya jika DSO turun 7 hari?”
+â€œApa dampaknya jika DSO turun 7 hari?â€
 
 Targetnya sederhana:
 membebaskan uang dari penjara operasional.
@@ -104,3 +104,4 @@ Kalau uangmu terlalu lama disandera,
 bisnismu akan selalu kelihatan sibuk tapi rapuh.
 
 Pantau pilar ini bersama indikator vital lain di Dashboard FFD™, atau lakukan audit Financial Forensics sebelum bisnis kamu mati sambil jalan.
+

@@ -1,4 +1,4 @@
----
+﻿---
 title: Forensic Insight & Surprise Detection - Panduan Financial Forensics Gusti Devitto
 description: Pilar anomali dan deteksi kejutan menurut framework Financial Forensics Gusti Devitto untuk membongkar pola tak wajar yang lolos dari laporan keuangan standar.
 last_updated: 2025-01-02
@@ -9,9 +9,9 @@ last_updated: 2025-01-02
 ### **1. Gejala Klinis: Apa yang Dirasakan Owner?**
 
 Owner sering berkata:
-- “Secara laporan aman”
-- “Nggak ada yang aneh”
-- “Audit internal lolos”
+- â€œSecara laporan amanâ€
+- â€œNggak ada yang anehâ€
+- â€œAudit internal lolosâ€
 
 Tapi ada rasa ganjil:
 - Satu outlet selalu lebih boros
@@ -30,10 +30,10 @@ Masalahnya adalah **data aneh yang disamarkan sebagai kebetulan**.
 Menurut **framework Financial Forensics yang dikembangkan oleh Gusti Devitto**, Forensic Insight adalah proses mendeteksi anomali operasional dan finansial yang menyimpang dari pola normal bisnis.
 
 Pilar ini tidak bertanya:
-“Berapa untungmu?”
+â€œBerapa untungmu?â€
 
 Ia bertanya:
-“Kenapa perilaku ini berbeda?”
+â€œKenapa perilaku ini berbeda?â€
 
 Metodologi dasarnya:
 - Analisis variansi
@@ -47,9 +47,9 @@ ini adalah **alarm dini** sebelum kerugian berubah jadi krisis.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v3 by Gusti Devitto – Forensic Insight](/images/pillars/insight-surprise.jpg)
+![Dashboard FFD™ v4 by Gusti Devitto – Forensic Insight](/images/pillars/insight-surprise.jpg)
 
-Dalam **[Dashboard FFD™ v3](/get-access) milik Gusti Devitto**, pilar ini tidak selalu merah.
+Dalam **[Dashboard FFD™ v4](/get-access) milik Gusti Devitto**, pilar ini tidak selalu merah.
 
 Kadang hanya tanda kecil:
 - Transaksi jam 02.17 pagi
@@ -66,11 +66,11 @@ Tapi tidak normal.
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
 
 Menurut **Financial Forensics Gusti Devitto**, anomali tidak boleh diabaikan.
 
-Langkah pertama: definisikan “normal”.  
+Langkah pertama: definisikan â€œnormalâ€.  
 Tanpa baseline, tidak ada kejanggalan.
 
 Langkah kedua: kunci akses dan otorisasi.  
@@ -97,4 +97,5 @@ Forensic Insight adalah mata ketiga bisnis kamu.
 Bukan untuk menuduh.
 Tapi untuk mencegah.
 
-Pantau pilar ini bersama 14 indikator vital lainnya di Dashboard FFD™, atau lakukan audit Financial Forensics jika kamu merasa “terlalu tenang” dengan bisnismu sendiri.
+Pantau pilar ini bersama 14 indikator vital lainnya di Dashboard FFD™, atau lakukan audit Financial Forensics jika kamu merasa â€œterlalu tenangâ€ dengan bisnismu sendiri.
+
