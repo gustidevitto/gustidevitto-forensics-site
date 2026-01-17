@@ -333,7 +333,7 @@ function Index() {
                             <p className="text-[10px] uppercase font-black text-amber-500 tracking-[0.2em] leading-none mb-2">{t('hero.roi_label')}</p>
                             <div className="space-y-1">
                                 <p className="text-xl font-black text-white animate-pulse-color">{t('hero.roi_value')}</p>
-                                <p className="text-[9px] text-red-500 font-mono max-w-[140px] leading-tight mx-auto animate-pulse">
+                                <p className="text-[9px] text-red-500 font-mono max-w-[140px] leading-tight mx-auto animate-pulse-color">
                                     {t('hero.roi_desc')}
                                 </p>
                             </div>
