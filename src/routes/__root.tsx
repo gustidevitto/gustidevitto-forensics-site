@@ -100,7 +100,7 @@ function RootComponent() {
 
                             {/* Desktop Navigation */}
                             <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
-                                <a href="/fip-lite" className="transition-colors hover:text-primary">{t('nav.calculator')}</a>
+                                <a href="/fip-lite" className="transition-colors hover:text-primary nav-gold-glow">{t('nav.calculator')}</a>
                                 <a href="/about-gusti-devitto" className="transition-colors hover:text-primary">{t('nav.about')}</a>
                                 <a href="/blog" className="transition-colors hover:text-primary">{t('nav.blog')}</a>
                                 <a href="/forensics-pillars" className="transition-colors hover:text-primary">{t('nav.pillars')}</a>
@@ -128,7 +128,7 @@ function RootComponent() {
                                                 <a href="/#investors" className="text-xs font-black text-muted-foreground">{t('nav.investors')}</a>
                                                 <a href="/#franchise" className="text-xs font-black text-muted-foreground">{t('nav.franchise')}</a>
                                             </div>
-                                            <a href="/fip-lite" className="text-lg font-medium hover:text-primary">{t('nav.calculator')}</a>
+                                            <a href="/fip-lite" className="text-lg font-medium hover:text-primary nav-gold-glow">{t('nav.calculator')}</a>
                                             <a href="/about-gusti-devitto" className="text-lg font-medium hover:text-primary">{t('nav.about')}</a>
                                             <a href="/blog" className="text-lg font-medium hover:text-primary">{t('nav.blog')}</a>
                                             <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">{t('nav.pillars')}</a>
