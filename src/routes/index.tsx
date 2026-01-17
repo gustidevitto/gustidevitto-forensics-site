@@ -944,8 +944,12 @@ function Index() {
                     {/* 2️⃣ PILOT PROGRAM PRICING BOX */}
                     <div className="mb-20 max-w-5xl mx-auto relative">
                         {/* Scarcity Badge - Outside overflow container */}
-                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-destructive text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-2xl animate-pulse z-30">
-                            ⚠ {t('pilot.scarcity')}
+                        {/* Scarcity Badge - Outside overflow container */}
+                        <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-max max-w-[90vw] z-30">
+                            <div className="bg-[#7f1d1d] text-white px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest shadow-2xl flex flex-col items-center text-center border-2 border-primary/20">
+                                <span className="text-amber-400 mb-1">⚠ {t('pilot.scarcity').split('|')[0]}</span>
+                                <span className="animate-pulse-color text-[10px] sm:text-xs text-white/90">{t('pilot.scarcity').split('|')[1]?.trim() || "3 validation slots remaining"}</span>
+                            </div>
                         </div>
 
                         <div className="relative p-12 rounded-[2.5rem] border-4 border-primary bg-gradient-to-br from-primary/10 via-background to-background overflow-hidden shadow-[0_0_80px_rgba(255,215,0,0.2)]">
