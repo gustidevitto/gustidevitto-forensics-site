@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
+import type { ChangeEvent } from 'react'
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ShieldCheck, TrendingDown, Users, DollarSign, Clock, Target, BadgeCheck, Activity, Microscope, Search, Brain, Lock, Maximize2, X } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -436,7 +437,7 @@ function Index() {
                                     placeholder="e.g. 10"
                                     className="text-center text-3xl font-black h-16 bg-black border-white/20 text-white focus:border-primary"
                                     min="1"
-                                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNetworkSize(parseInt(e.target.value) || 0)}
+                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setNetworkSize(parseInt(e.target.value) || 0)}
                                 />
                             </div>
 
