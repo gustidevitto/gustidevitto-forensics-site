@@ -1046,7 +1046,7 @@ function Step4GrowthRisk({ data, onChange }: {
                 {/* LTGP Velocity Group */}
                 <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
                     <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                        <TrendingUpIcon className="w-3 h-3" /> Growth Velocity
+                        <TrendingUp className="w-3 h-3" /> Growth Velocity
                     </h3>
                     <div className="space-y-4">
                         <div className="space-y-2">

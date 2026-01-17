@@ -17,6 +17,7 @@ import { Route as MethodologyRouteImport } from './routes/methodology'
 import { Route as InvestasiRouteImport } from './routes/investasi'
 import { Route as GetAccessRouteImport } from './routes/get-access'
 import { Route as ForensicsPillarsRouteImport } from './routes/forensics-pillars'
+import { Route as FipLiteRouteImport } from './routes/fip-lite'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as AboutGustiDevittoRouteImport } from './routes/about-gusti-devitto'
@@ -65,6 +66,11 @@ const ForensicsPillarsRoute = ForensicsPillarsRouteImport.update({
   path: '/forensics-pillars',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FipLiteRoute = FipLiteRouteImport.update({
+  id: '/fip-lite',
+  path: '/fip-lite',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/about-gusti-devitto': typeof AboutGustiDevittoRoute
   '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
+  '/fip-lite': typeof FipLiteRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
   '/get-access': typeof GetAccessRoute
   '/investasi': typeof InvestasiRoute
@@ -123,6 +130,7 @@ export interface FileRoutesByTo {
   '/about-gusti-devitto': typeof AboutGustiDevittoRoute
   '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
+  '/fip-lite': typeof FipLiteRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
   '/get-access': typeof GetAccessRoute
   '/investasi': typeof InvestasiRoute
@@ -141,6 +149,7 @@ export interface FileRoutesById {
   '/about-gusti-devitto': typeof AboutGustiDevittoRoute
   '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
+  '/fip-lite': typeof FipLiteRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
   '/get-access': typeof GetAccessRoute
   '/investasi': typeof InvestasiRoute
@@ -160,6 +169,7 @@ export interface FileRouteTypes {
     | '/about-gusti-devitto'
     | '/calculator'
     | '/contact'
+    | '/fip-lite'
     | '/forensics-pillars'
     | '/get-access'
     | '/investasi'
@@ -177,6 +187,7 @@ export interface FileRouteTypes {
     | '/about-gusti-devitto'
     | '/calculator'
     | '/contact'
+    | '/fip-lite'
     | '/forensics-pillars'
     | '/get-access'
     | '/investasi'
@@ -194,6 +205,7 @@ export interface FileRouteTypes {
     | '/about-gusti-devitto'
     | '/calculator'
     | '/contact'
+    | '/fip-lite'
     | '/forensics-pillars'
     | '/get-access'
     | '/investasi'
@@ -212,6 +224,7 @@ export interface RootRouteChildren {
   AboutGustiDevittoRoute: typeof AboutGustiDevittoRoute
   CalculatorRoute: typeof CalculatorRoute
   ContactRoute: typeof ContactRoute
+  FipLiteRoute: typeof FipLiteRoute
   ForensicsPillarsRoute: typeof ForensicsPillarsRoute
   GetAccessRoute: typeof GetAccessRoute
   InvestasiRoute: typeof InvestasiRoute
@@ -283,6 +296,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ForensicsPillarsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fip-lite': {
+      id: '/fip-lite'
+      path: '/fip-lite'
+      fullPath: '/fip-lite'
+      preLoaderRoute: typeof FipLiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -340,6 +360,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutGustiDevittoRoute: AboutGustiDevittoRoute,
   CalculatorRoute: CalculatorRoute,
   ContactRoute: ContactRoute,
+  FipLiteRoute: FipLiteRoute,
   ForensicsPillarsRoute: ForensicsPillarsRoute,
   GetAccessRoute: GetAccessRoute,
   InvestasiRoute: InvestasiRoute,
