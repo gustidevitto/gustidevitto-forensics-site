@@ -249,4 +249,22 @@
     .animate-scanline {
         animation: scanline 2s linear infinite;
     }
+
+    /* Pulse Color Animation (No Opacity) */
+    @keyframes pulse-color {
+
+        0%,
+        100% {
+            color: white;
+        }
+
+        50% {
+            color: #ef4444;
+            /* red-500 */
+        }
+    }
+
+    .animate-pulse-color {
+        animation: pulse-color 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
 }

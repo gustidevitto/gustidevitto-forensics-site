@@ -329,12 +329,17 @@ function Index() {
 
                     {/* Floating ROI Box (Replaces Capacity Badge) */}
                     <div className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 bg-black border border-amber-500/50 rounded-xl px-6 py-4 shadow-2xl animate-float z-20 hidden sm:block">
-                        <div className="flex flex-col gap-1">
-                            <p className="text-[10px] uppercase font-black text-amber-500 tracking-[0.2em] leading-none mb-1">{t('hero.roi_label')}</p>
-                            <p className="text-xl font-black text-white">{t('hero.roi_value')}</p>
-                            <p className="text-[9px] text-muted-foreground max-w-[120px] leading-tight mt-1">
-                                {t('hero.roi_desc')}
-                            </p>
+                        <div className="flex flex-col gap-1 text-center items-center">
+                            <p className="text-[10px] uppercase font-black text-amber-500 tracking-[0.2em] leading-none mb-2">{t('hero.roi_label')}</p>
+                            <div className="space-y-1">
+                                <p className="text-xl font-black text-white animate-pulse-color">{t('hero.roi_value')}</p>
+                                <p className="text-[9px] text-muted-foreground uppercase tracking-wider font-bold max-w-[140px] leading-tight mx-auto">
+                                    {t('hero.roi_desc').split('|')[0]}
+                                </p>
+                                <p className="text-[9px] text-red-500 font-mono max-w-[140px] leading-tight mx-auto animate-pulse">
+                                    {t('hero.roi_desc').split('|')[1] || "3 validation slots remaining"}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
