@@ -201,7 +201,7 @@ function Calculator() {
                         </h3>
                         <div className="space-y-3">
                             {severity.level === 'critical' || severity.level === 'high' ? (
-                                <div className="flex items-start gap-3 text-destructive animate-status-blink">
+                                <div className="flex items-start gap-3 text-red-500 animate-status-blink">
                                     <span className="font-mono text-sm underline">[ {t('calculator.severity_high_badge', 'CRITICAL')} ]</span>
                                     <p className="text-sm font-bold">{t('calculator.critical_msg')}</p>
                                 </div>
@@ -234,7 +234,7 @@ function Calculator() {
                                 <p className="text-xs font-bold text-destructive uppercase tracking-widest">{t('calculator.monthly_leakage')}</p>
                                 <TrendingDown className="w-4 h-4 text-destructive" />
                             </div>
-                            <h4 className="text-3xl font-black tracking-tight text-destructive">{formatCurrency(totalPhantomCost, currency)}</h4>
+                            <h4 className="text-3xl font-black tracking-tight text-red-500">{formatCurrency(totalPhantomCost, currency)}</h4>
                             <div className="pt-2 border-t border-destructive/10 font-mono text-[10px] text-destructive/70 uppercase">
                                 Verdict: {severity.label}
                             </div>
@@ -265,17 +265,17 @@ function Calculator() {
                                 <div className="space-y-4">
                                     <div className="flex justify-between group">
                                         <span className="text-sm text-muted-foreground">{t('calculator.waste_shrinkage')}</span>
-                                        <span className="font-bold text-destructive group-hover:scale-110 transition-transform">{formatCurrency(kerugianBahanBaku, currency)}</span>
+                                        <span className="font-bold text-red-500 group-hover:scale-110 transition-transform">{formatCurrency(kerugianBahanBaku, currency)}</span>
                                     </div>
                                     <Separator className="bg-border/30" />
                                     <div className="flex justify-between group">
                                         <span className="text-sm text-muted-foreground">{t('calculator.idle_time')}</span>
-                                        <span className="font-bold text-destructive group-hover:scale-110 transition-transform">{formatCurrency(kerugianJamKosong, currency)}</span>
+                                        <span className="font-bold text-red-500 group-hover:scale-110 transition-transform">{formatCurrency(kerugianJamKosong, currency)}</span>
                                     </div>
                                     <Separator className="bg-border/30" />
                                     <div className="flex justify-between group">
                                         <span className="text-sm text-muted-foreground">{t('calculator.hidden_costs')}</span>
-                                        <span className="font-bold text-destructive group-hover:scale-110 transition-transform">{formatCurrency(biayaLain, currency)}</span>
+                                        <span className="font-bold text-red-500 group-hover:scale-110 transition-transform">{formatCurrency(biayaLain, currency)}</span>
                                     </div>
                                 </div>
                                 <div className="p-4 rounded-xl bg-primary/5 border border-primary/10">

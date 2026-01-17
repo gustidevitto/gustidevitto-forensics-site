@@ -374,7 +374,7 @@
         "waste_shrinkage": "Waste & Shrinkage (COGS)",
         "idle_time": "Idle Time Cost (Labor)",
         "hidden_costs": "Hidden Operational Costs",
-        "lite_disclaimer": "This is a PCC Lite level audit. A deeper FDD™v4.00 will dissect up to 16 pillars of forensics (including LTGP, Cash Lock, and LTV:CAC).",
+        "lite_disclaimer": "This is a PCC Lite level audit. A deeper FIP™ Protocol will dissect up to 16 pillars of forensics (including LTGP, Cash Lock, and LTV:CAC).",
         "export_verdict": "Export Final Verdict (.csv)",
         "dig_deeper_title": "Dig Deeper",
         "dig_deeper_desc": "Don't let these numbers keep swelling.",
