@@ -1,5 +1,5 @@
-﻿---
-title: Gross Profit per Labor Hour – Financial Forensics Guide by Gusti Devitto
+---
+title: Gross Profit per Labor Hour � Financial Forensics Guide by Gusti Devitto
 description: An in-depth diagnosis of Gross Profit per Labor Hour using the Financial Forensics framework by Gusti Devitto for multi-outlet businesses in Indonesia.
 last_updated: 2025-01-02
 ---
@@ -9,9 +9,9 @@ last_updated: 2025-01-02
 ### **1. Clinical Symptoms: What Does the Owner Feel?**
 
 Owners often say with pride:
-- â€œMy team is loyalâ€
-- â€œEveryone looks busyâ€
-- â€œIf weâ€™re short-staffed, operations fall apartâ€
+- “My team is loyal”
+- “Everyone looks busy”
+- “If we’re short-staffed, operations fall apart”
 
 But the reality:
 - Profit stagnates
@@ -51,9 +51,9 @@ but operational design.
 
 ### **3. Case Breakdown: Data Visualization**
 
-![FFD™ Dashboard v4 by Gusti Devitto – Gross Profit per Labor Hour](/images/pillars/gp-labor-hour.jpg)
+![FIP� Protocol Dashboard v4 by Gusti Devitto � Gross Profit per Labor Hour](/images/pillars/gp-labor-hour.jpg)
 
-In **Gusti Devitto's FFD™ Dashboard v4**, this pillar reveals whether working hours are truly generating profit.
+In **Gusti Devitto's FIP� Protocol Dashboard v4**, this pillar reveals whether working hours are truly generating profit.
 
 Real case:
 - Salaries increased by 18%
@@ -70,7 +70,7 @@ Businesses like this are:
 
 ---
 
-### **4. Intervention: Corrective Actions (The Surgeonâ€™s Voice)**
+### **4. Intervention: Corrective Actions (The Surgeon’s Voice)**
 
 According to **Financial Forensics Gusti Devitto**, fixing this pillar is not simply about layoffs.
 
@@ -83,8 +83,8 @@ Quiet hours must not subsidize peak hours.
 Third step: simplify processes.  
 The more complex the SOP, the more expensive every working hour becomes.
 
-Fourth step: use the FFD™ Simulator.  
-Test the scenario: â€œWhat if every working hour must generate X in gross profit?â€
+Fourth step: use the FIP� Protocol Simulator.  
+Test the scenario: “What if every working hour must generate X in gross profit?”
 
 One objective only:  
 every working hour must be economically justified.
@@ -98,5 +98,6 @@ According to the **Financial Forensics Gusti Devitto diagnostic system**, a heal
 If each working hour fails to produce adequate gross profit,
 your business is funding busyness, not growth.
 
-Monitor Gross Profit per Labor Hour alongside other vital pillars in the FFD™ Dashboard, or conduct a Financial Forensics audit before your business turns into a permanent social shelter.
+Monitor Gross Profit per Labor Hour alongside other vital pillars in the FIP� Protocol Dashboard, or conduct a Financial Forensics audit before your business turns into a permanent social shelter.
+
 

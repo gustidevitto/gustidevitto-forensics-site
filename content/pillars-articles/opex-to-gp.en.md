@@ -1,4 +1,4 @@
-﻿title: Opex to Gross Profit Ratio - Financial Forensics Guide by Gusti Devitto
+title: Opex to Gross Profit Ratio - Financial Forensics Guide by Gusti Devitto
 description: An in-depth diagnosis of the Opex to Gross Profit Ratio under the Financial Forensics framework by Gusti Devitto for multi-outlet businesses in Indonesia.
 last_updated: 2025-01-02
 ---
@@ -13,12 +13,12 @@ Gross profit looks healthy.
 But at the end of every month:
 - Net profit disappears
 - Owner compensation gets delayed
-- There is always a feeling of â€œrunning out of airâ€
+- There is always a feeling of “running out of air”
 
 On the ground, common phrases include:
-- â€œOur operations feel too heavyâ€
-- â€œThe costs seem reasonable, but the money keeps vanishingâ€
-- â€œA slight slowdown and we panicâ€
+- “Our operations feel too heavy”
+- “The costs seem reasonable, but the money keeps vanishing”
+- “A slight slowdown and we panic”
 
 According to **Financial Forensics audits by Gusti Devitto**, this is a classic sign that your gross profit is being **legally robbed** by OPEX.
 
@@ -40,8 +40,8 @@ This is a ruthless metric.
 Because it does not care how big your revenue is.
 
 If this ratio is:
-- Too high â†’ the business becomes fragile when demand drops
-- Too low â†’ it often signals underinvestment or dishonest cost data
+- Too high → the business becomes fragile when demand drops
+- Too low → it often signals underinvestment or dishonest cost data
 
 In the Financial Forensics system by Gusti Devitto, this ratio is an **operational breathing indicator**.
 
@@ -49,9 +49,9 @@ In the Financial Forensics system by Gusti Devitto, this ratio is an **operation
 
 ### **3. Case Dissection: Data Visualization**
 
-![Dashboard FFD™ v4 by Gusti Devitto – Opex to Gross Profit Ratio](/images/pillars/opex-to-gp.jpg)
+![Dashboard FIP� Protocol by Gusti Devitto � Opex to Gross Profit Ratio](/images/pillars/opex-to-gp.jpg)
 
-In **Gusti Devitto's Dashboard FFD™ v4**, this pillar is shown per outlet and tracked as a monthly trend.
+In **Gusti Devitto's Dashboard FIP� Protocol**, this pillar is shown per outlet and tracked as a monthly trend.
 
 Real case:
 - Monthly Gross Profit: Rp420 million
@@ -61,7 +61,7 @@ Real case:
 What does this mean?
 
 For every Rp100 of gross profit,  
-Rp85 is consumed by rent, salaries, utilities, admin, and â€œreasonableâ€ costs.
+Rp85 is consumed by rent, salaries, utilities, admin, and “reasonable” costs.
 
 The remaining Rp15 must cover:
 - Taxes
@@ -74,9 +74,9 @@ This is survival.
 
 ---
 
-### **4. Intervention: Corrective Actions (The Surgeonâ€™s Voice)**
+### **4. Intervention: Corrective Actions (The Surgeon’s Voice)**
 
-According to **Financial Forensics Gusti Devitto**, fixing this pillar is not about â€œbeing frugalâ€.
+According to **Financial Forensics Gusti Devitto**, fixing this pillar is not about “being frugal”.
 
 Step one: classify OPEX into productive and decorative.  
 Air conditioning in an empty room is still a cost, not an asset.
@@ -88,9 +88,9 @@ High rent is acceptable if supported by throughput.
 Step three: freeze expansion until the ratio is healthy.  
 Adding outlets with a broken ratio only accelerates collapse.
 
-Step four: use the FFD™ Simulator.  
+Step four: use the FIP� Protocol Simulator.  
 Simulate:  
-â€œIf Gross Profit increases by 10% without increasing OPEX, what happens?â€
+“If Gross Profit increases by 10% without increasing OPEX, what happens?”
 
 The objective is clear:  
 let more gross profit escape the jaws of fixed costs.
@@ -104,5 +104,6 @@ Under the **Financial Forensics diagnostic system by Gusti Devitto**, the Opex t
 If you do not control this ratio,  
 your business will always be busy and always poor.
 
-Monitor this pillar alongside 14 other vital indicators in the FFD™ Dashboard, or conduct a Financial Forensics audit before fixed costs turn into a permanent prison.
+Monitor this pillar alongside 14 other vital indicators in the FIP� Protocol Dashboard, or conduct a Financial Forensics audit before fixed costs turn into a permanent prison.
+
 

@@ -35,7 +35,7 @@ function MasterIndex() {
                 <div className="relative mx-auto max-w-2xl h-48 rounded-2xl overflow-hidden border border-border shadow-xl mb-8">
                     <img
                         src="/assets/images/ffd.png"
-                        alt="FFD Framework Visual"
+                        alt="FIP™ Framework Visual"
                         className="w-full h-full object-cover grayscale-[0.2] transition-all duration-700 group-hover:grayscale-0"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>

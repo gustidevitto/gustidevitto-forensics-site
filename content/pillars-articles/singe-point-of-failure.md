@@ -1,4 +1,4 @@
-﻿title: Single Point of Failure (Revenue Concentration Risk) - Panduan Financial Forensics Gusti Devitto
+title: Single Point of Failure (Revenue Concentration Risk) - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai risiko konsentrasi pendapatan (Single Point of Failure) menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
 last_updated: 2025-01-02
 ---
@@ -18,9 +18,9 @@ Namun ada satu fakta yang jarang dibicarakan:
 - Satu supplier menentukan hidup-mati produksi  
 
 Owner sering berkata:
-- â€œTenang, dia pelanggan loyalâ€
-- â€œPlatform ini aman, sudah lamaâ€
-- â€œProduk ini best seller, nggak mungkin matiâ€
+- “Tenang, dia pelanggan loyal”
+- “Platform ini aman, sudah lama”
+- “Produk ini best seller, nggak mungkin mati”
 
 Menurut **audit Financial Forensics Gusti Devitto**, kalimat-kalimat ini adalah tanda **ketergantungan struktural yang berbahaya**.
 
@@ -46,12 +46,12 @@ Secara metodologi, metrik ini dihitung sebagai:
 
 **Kontribusi Pendapatan Terbesar / Total Pendapatan**
 
-Hasilnya dinyatakan dalam persentase (0–100%).
+Hasilnya dinyatakan dalam persentase (0�100%).
 
 Dalam sistem Financial Forensics Gusti Devitto:
-- < 25% â†’ relatif sehat  
-- 25–40% â†’ mulai rapuh  
-- > 40% â†’ **single failure risk aktif**
+- < 25% → relatif sehat  
+- 25�40% → mulai rapuh  
+- > 40% → **single failure risk aktif**
 
 Ini bukan masalah hari ini.  
 Ini masalah **satu kejadian di masa depan**.
@@ -60,9 +60,9 @@ Ini masalah **satu kejadian di masa depan**.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v4 by Gusti Devitto – Single Point of Failure](/images/pillars/single-point-failure.jpg)
+![Dashboard FIP� Protocol by Gusti Devitto � Single Point of Failure](/images/pillars/single-point-failure.jpg)
 
-Dalam **Dashboard FFD™ v4 milik Gusti Devitto**, metrik ini divisualisasikan sebagai konsentrasi pendapatan, bukan sekadar ranking.
+Dalam **Dashboard FIP� Protocol milik Gusti Devitto**, metrik ini divisualisasikan sebagai konsentrasi pendapatan, bukan sekadar ranking.
 
 Kasus nyata:
 - 1 platform menyumbang 52% omzet
@@ -78,9 +78,9 @@ bisnis langsung masuk mode survival.
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
 
-Menurut **Financial Forensics Gusti Devitto**, solusi pilar ini bukan â€œcari omzet baru secara acakâ€.
+Menurut **Financial Forensics Gusti Devitto**, solusi pilar ini bukan “cari omzet baru secara acak”.
 
 Langkah pertama: sadari dan ukur konsentrasi secara jujur.  
 Tanpa angka, risiko selalu terasa aman.
@@ -89,9 +89,9 @@ Langkah kedua: bangun sumber pendapatan sekunder yang relevan.
 Bukan asal banyak, tapi bisa berdiri sendiri.
 
 Langkah ketiga: uji skenario kegagalan.  
-â€œJika channel terbesar hilang 30%, apa yang terjadi?â€
+“Jika channel terbesar hilang 30%, apa yang terjadi?”
 
-Langkah keempat: gunakan Simulator FFD™.  
+Langkah keempat: gunakan Simulator FIP� Protocol.  
 Simulasikan redistribusi omzet dan lihat dampaknya ke stabilitas bisnis.
 
 Tujuannya jelas:
@@ -107,5 +107,6 @@ bisnis yang sehat bukan yang paling fokus, tapi yang paling tahan guncangan.
 Single Point of Failure bukan soal hari ini untung atau rugi.  
 Ini soal **besok masih hidup atau tidak**.
 
-Pantau Revenue Concentration Risk di Dashboard FFD™,  
+Pantau Revenue Concentration Risk di Dashboard FIP� Protocol,  
 atau lakukan audit Financial Forensics sebelum satu titik kecil menjatuhkan seluruh bisnis.
+

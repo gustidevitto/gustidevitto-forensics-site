@@ -14,6 +14,7 @@ function Index() {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [heroTab, setHeroTab] = useState<'investor' | 'owner'>('investor') // Default to Investor for "Authority" path
     const [showMasterLab, setShowMasterLab] = useState(false)
+    const [networkSize, setNetworkSize] = useState<number>(0)
     const slides = [
         {
             id: 'dashboard',
@@ -165,9 +166,9 @@ function Index() {
                     <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-3xl opacity-30"></div>
                 </div>
 
-                <div className="flex flex-col gap-6 max-w-2xl animate-fade-in relative z-10">
+                <div className="flex flex-col gap-4 max-w-2xl animate-fade-in relative z-10">
                     {/* Hero Tabs */}
-                    <div className="flex p-1 bg-muted/20 backdrop-blur-sm border border-white/5 rounded-full w-fit mb-2">
+                    <div className="flex p-1 bg-muted/20 backdrop-blur-sm border border-white/5 rounded-full w-fit mb-1">
                         <button
                             onClick={() => setHeroTab('investor')}
                             className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${heroTab === 'investor' ? 'bg-primary text-black shadow-lg shadow-primary/20' : 'text-muted-foreground hover:text-white'}`}
@@ -216,10 +217,10 @@ function Index() {
                     {/* Subheadline - Dynamic */}
                     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl min-h-[80px]">
                         {heroTab === 'investor'
-                            ? t('hero.desc', { brand: 'FFD™ v4.00' })
+                            ? t('hero.desc')
                             : heroTab === 'owner' ? (
                                 <>
-                                    While you celebrate high sales, Phantom Costs are quietly killing your runway. FFD™ v4.00 finds the leaks that accountants miss. Don't be the business that dies with a full restaurant.
+                                    While you celebrate high sales, Phantom Costs are quietly killing your runway. FIP™ Protocol finds the leaks that accountants miss. Don't be the business that dies with a full restaurant.
                                 </>
                             ) : null}
                     </p>
@@ -415,6 +416,48 @@ function Index() {
                 </div>
             </section>
 
+            {/* Cost of Delay Calculator */}
+            <section className="py-20 px-4 md:px-8 bg-black border-y border-white/10">
+                <div className="container mx-auto max-w-4xl text-center">
+                    <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4 text-white">
+                        {t('cost_of_delay.title')}
+                    </h2>
+                    <p className="text-xl text-muted-foreground mb-12">
+                        {t('cost_of_delay.subtitle')}
+                    </p>
+
+                    <div className="max-w-md mx-auto bg-zinc-900 border border-white/10 rounded-2xl p-8 shadow-2xl">
+                        <div className="space-y-6">
+                            <div>
+                                <label className="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">{t('cost_of_delay.input_placeholder')}</label>
+                                <Input
+                                    type="number"
+                                    placeholder="e.g. 10"
+                                    className="text-center text-3xl font-black h-16 bg-black border-white/20 text-white focus:border-primary"
+                                    min="1"
+                                    onChange={(e) => setNetworkSize(parseInt(e.target.value) || 0)}
+                                />
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
+                                <div>
+                                    <p className="text-[10px] uppercase font-bold text-muted-foreground mb-1">{t('cost_of_delay.daily_loss')}</p>
+                                    <p className="text-2xl font-black text-red-500">${(networkSize * 32).toLocaleString()}</p>
+                                </div>
+                                <div>
+                                    <p className="text-[10px] uppercase font-bold text-muted-foreground mb-1">{t('cost_of_delay.monthly_loss')}</p>
+                                    <p className="text-2xl font-black text-red-500">${(networkSize * 32 * 30).toLocaleString()}</p>
+                                </div>
+                            </div>
+
+                            <Button asChild size="lg" className="w-full bg-red-600 hover:bg-red-700 text-white font-black h-14 uppercase tracking-wider shadow-lg shadow-red-900/20">
+                                <Link to="/get-access">{t('cost_of_delay.cta')}</Link>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* 4️⃣ DEMO VIDEO PLACEHOLDER */}
             <section className="py-24 px-4 md:px-8 bg-muted/10">
                 <div className="container mx-auto max-w-5xl">
@@ -541,7 +584,7 @@ function Index() {
                         <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
                             <img
                                 src="/assets/images/ffdv4masterlab.png"
-                                alt="FFD v4 Master Lab Aggregator Interface"
+                                alt="FIP™ Master Lab Aggregator Interface"
                                 className="w-full h-full object-cover object-top opacity-60 group-hover:opacity-40 transition-opacity"
                             />
                         </div>
@@ -801,7 +844,7 @@ function Index() {
                 </div>
             </section>
 
-            {/* The Solution - FFD v3 Dashboard Visual */}
+            {/* The Solution - FIP™ Protocol Interface Visual */}
             <section className="py-24 px-4 md:px-8 bg-muted/20">
                 <div className="container mx-auto max-w-6xl">
                     <div className="text-center mb-16">
@@ -866,7 +909,7 @@ function Index() {
                             <div className="relative rounded-2xl border border-primary/20 overflow-hidden shadow-2xl bg-background">
                                 <img
                                     src="/assets/images/ffd.png"
-                                    alt="FFD™ v3 Financial Forensics Dashboard"
+                                    alt="FIP™ Protocol Interface"
                                     className="w-full h-auto object-cover transform scale-100 group-hover:scale-[1.02] transition-transform duration-700"
                                 />
                                 {/* Scanning Overlay Effect */}
@@ -1087,7 +1130,7 @@ function Index() {
                             <div className="mb-10 relative z-10">
                                 <div className="flex items-baseline gap-2">
                                     <p className="text-6xl font-black text-white">$10,000</p>
-                                    <span className="text-[#FF0080] font-black text-xs animate-pulse">L-7 AUTH</span>
+                                    <span className="text-[#FF0080] font-black text-xs animate-pulse">L-9 AUTH</span>
                                 </div>
                                 <p className="text-xs text-muted-foreground mt-2 uppercase font-bold tracking-widest bg-white/5 w-fit px-2 py-1 rounded">{t('pricing.per_audit')}</p>
                                 <p className="text-xs text-primary/60 mt-4 italic max-w-xs leading-relaxed border-l border-primary/30 pl-3">
@@ -1181,7 +1224,7 @@ function Index() {
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">{t('guarantee_section.title')}</h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
                         <Trans i18nKey="guarantee_section.p1">
-                            I don't sell empty hopes. If FFD™ v3 dashboard says your business is <strong className="text-green-500">healthy (green)</strong>, the consultation is over. Free. No pitch whatsoever.
+                            I don't sell empty hopes. If FIP™ Protocol Verdict classifies your network as Fortress (green), the consultation is over. Free. No pitch whatsoever.
                         </Trans>
                     </p>
                     <p className="text-muted-foreground">

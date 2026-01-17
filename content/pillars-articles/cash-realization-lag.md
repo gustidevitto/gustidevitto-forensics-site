@@ -1,4 +1,4 @@
-﻿title: Cash Realization Lag - Panduan Financial Forensics Gusti Devitto
+title: Cash Realization Lag - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Cash Realization Lag menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet.
 last_updated: 2025-01-02
 ---
@@ -11,14 +11,14 @@ Secara operasional, bisnis kamu terlihat sehat.
 Order masuk. Struk tercetak. Dashboard penjualan hijau semua.
 
 Tapi ada satu momen horor yang terus berulang:
-- Mau gajian â†’ saldo tipis  
-- Mau restock â†’ nunggu talangan  
-- Mau bayar supplier â†’ â€œminggu depan yaâ€
+- Mau gajian → saldo tipis  
+- Mau restock → nunggu talangan  
+- Mau bayar supplier → “minggu depan ya”
 
 Di lapangan, ini sering disebut:
-- â€œUang nyangkutâ€
-- â€œDuit masih di luarâ€
-- â€œBelum cairâ€
+- “Uang nyangkut”
+- “Duit masih di luar”
+- “Belum cair”
 
 Menurut **audit Financial Forensics Gusti Devitto**, ini bukan masalah penjualan.  
 Ini masalah waktu.
@@ -33,7 +33,7 @@ Menurut **framework Financial Forensics yang dikembangkan oleh Gusti Devitto**, 
 
 Rumusnya sederhana:
 
-**Tanggal Kas Diterima – Tanggal Transaksi Penjualan**
+**Tanggal Kas Diterima � Tanggal Transaksi Penjualan**
 
 Semakin panjang jaraknya, semakin besar risiko bisnis kehabisan napas.
 
@@ -49,11 +49,11 @@ Masalah ini sangat umum di:
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v4 by Gusti Devitto – Cash Realization Lag](/images/pillars/cash-realization-lag.jpg)
+![Dashboard FIP� Protocol by Gusti Devitto � Cash Realization Lag](/images/pillars/cash-realization-lag.jpg)
 
-Dalam **Dashboard FFD™ v4** milik Gusti Devitto, Cash Realization Lag ditampilkan sebagai distribusi hari, bukan angka rata-rata.
+Dalam **Dashboard FIP� Protocol** milik Gusti Devitto, Cash Realization Lag ditampilkan sebagai distribusi hari, bukan angka rata-rata.
 
-Satu klien F&B multi-outlet terlihat â€œamanâ€ dengan rata-rata 9 hari.  
+Satu klien F&B multi-outlet terlihat “aman” dengan rata-rata 9 hari.  
 Namun data forensik menunjukkan:
 - 40% transaksi cair di hari ke-14
 - 18% baru cair setelah hari ke-21
@@ -65,9 +65,9 @@ Begitu ada gangguan kecil (promo gagal, hujan panjang, traffic turun), kas langs
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
 
-Menurut **Financial Forensics Gusti Devitto**, Cash Realization Lag tidak boleh â€œdirasa-rasaâ€. Harus dipotong.
+Menurut **Financial Forensics Gusti Devitto**, Cash Realization Lag tidak boleh “dirasa-rasa”. Harus dipotong.
 
 Langkah pertama: petakan semua sumber penjualan dan jadwal settlement-nya.  
 Jangan digabung.
@@ -78,9 +78,9 @@ Tidak semua penjualan punya nilai kas yang sama.
 Langkah ketiga: tekan dependency pada channel dengan lag terpanjang.  
 Omzet tinggi tapi lambat = racun kas.
 
-Langkah keempat: gunakan Simulator FFD™.  
+Langkah keempat: gunakan Simulator FIP� Protocol.  
 Simulasikan:  
-â€œJika 30% transaksi saya pindahkan ke channel cepat, apa dampaknya ke kas?â€
+“Jika 30% transaksi saya pindahkan ke channel cepat, apa dampaknya ke kas?”
 
 Tujuannya satu: uang bergerak lebih cepat dari biaya.
 
@@ -92,5 +92,6 @@ Menurut **diagnostic system Financial Forensics Gusti Devitto**, bisnis tidak ma
 
 Cash Realization Lag adalah alasan kenapa bisnis terlihat sukses tapi selalu kehabisan uang.
 
-Pantau metrik ini di Dashboard FFD™, atau lakukan audit Financial Forensics sebelum keterlambatan kecil berubah jadi krisis kas besar.
+Pantau metrik ini di Dashboard FIP� Protocol, atau lakukan audit Financial Forensics sebelum keterlambatan kecil berubah jadi krisis kas besar.
+
 

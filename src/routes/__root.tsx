@@ -82,41 +82,7 @@ function RootComponent() {
                 </div>
 
                 <div className="relative flex min-h-screen flex-col z-10">
-                    {/* L-9 Sovereign Intelligence Access Banner */}
-                    <div className="w-full bg-black border-b border-red-500/20 py-2 relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 via-transparent to-red-500/5 animate-pulse"></div>
-                        <div className="container flex items-center justify-center gap-3 px-4 relative z-10">
-                            <div className="flex items-center gap-2">
-                                <span className="relative flex h-2 w-2">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-                                </span>
-                                <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-red-500">
-                                    Auth Level: L-9
-                                </span>
-                            </div>
-                            <span className="text-[10px] md:text-xs text-muted-foreground/60 font-mono hidden sm:inline">
-                                // Sovereign Intelligence Access
-                            </span>
-                        </div>
-                    </div>
-
                     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-                        {/* Segmented Top Bar */}
-                        <div className="bg-primary/5 border-b border-primary/10 py-1.5 hidden md:block">
-                            <div className="container flex justify-center gap-8 px-4 md:px-8">
-                                <a href="/#owners" className="text-[10px] uppercase font-black tracking-widest text-primary hover:text-primary/80 transition-colors">
-                                    [ {t('nav.owners')} ]
-                                </a>
-                                <a href="/#investors" className="text-[10px] uppercase font-black tracking-widest text-muted-foreground hover:text-primary transition-colors">
-                                    [ {t('nav.investors')} ]
-                                </a>
-                                <a href="/#franchise" className="text-[10px] uppercase font-black tracking-widest text-muted-foreground hover:text-primary transition-colors">
-                                    [ {t('nav.franchise')} ]
-                                </a>
-                            </div>
-                        </div>
-
                         <div className="container flex h-16 items-center justify-between px-4 md:px-8">
                             {/* Logo */}
                             <div className="flex items-center gap-3">
@@ -126,8 +92,8 @@ function RootComponent() {
                                         Gusti Devitto<span className="text-secondary dark:text-primary">™</span>
                                     </a>
                                     <div className="flex items-center gap-1.5">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-status-blink"></div>
-                                        <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/80">{t('global.nav_status')}</span>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-status-blink"></div>
+                                        <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/80">Auth L-9 // Sovereign Intelligence Access</span>
                                     </div>
                                 </div>
                             </div>

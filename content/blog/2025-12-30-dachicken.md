@@ -23,7 +23,7 @@ Namun, di balik layar, saya sedang membangun istana di atas pasir. Saya tidak sa
 Begitu kompetitor raksasa datang membanting harga (predatory pricing), saya tidak punya bantalan kas untuk bertahan. Aset perhiasan yang saya kumpulkan seminggu sekali itu habis ludes demi menambal pendarahan kas, namun tetap gagal menyelamatkan usaha. Setelah 7 tahun berjuang, Dachicken harus berhenti.
 
 ### Vonis Forensik
-Jangan biarkan omzet ramai menipu Anda. Pastikan "mesin" finansial di bawah kap bisnismu benar-benar sehat. Itulah alasan saya mendirikan **FFD™** — agar Anda tidak perlu membayar harga semahal yang saya bayar.
+Jangan biarkan omzet ramai menipu Anda. Pastikan "mesin" finansial di bawah kap bisnismu benar-benar sehat. Itulah alasan saya mendirikan **FIP� Protocol™** — agar Anda tidak perlu membayar harga semahal yang saya bayar.
 
 **Buy Back Your Time. Buy Back Your Sleep. Buy Back Your Money.**
 

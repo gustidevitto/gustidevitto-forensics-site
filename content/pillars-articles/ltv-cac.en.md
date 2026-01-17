@@ -1,5 +1,5 @@
-﻿---
-title: LTV : CAC Ratio – Financial Forensics Guide by Gusti Devitto
+---
+title: LTV : CAC Ratio � Financial Forensics Guide by Gusti Devitto
 description: An in-depth diagnosis of the LTV to CAC ratio using the Financial Forensics framework by Gusti Devitto to determine acquisition viability and business scaling readiness.
 last_updated: 2025-01-02
 ---
@@ -9,16 +9,16 @@ last_updated: 2025-01-02
 ### **1. Clinical Symptoms: What Does the Owner Feel?**
 
 Owners usually arrive sounding optimistic:
-- â€œAds are runningâ€
-- â€œCustomers are coming inâ€
-- â€œTraffic keeps growingâ€
+- “Ads are running”
+- “Customers are coming in”
+- “Traffic keeps growing”
 
 But behind the scenes:
 - Cash keeps thinning
 - Repeat orders are low
 - The moment ads stop, sales die
 
-According to **Financial Forensics audits by Gusti Devitto**, these are symptoms of a business that *looks like itâ€™s growing but never gets rich*.
+According to **Financial Forensics audits by Gusti Devitto**, these are symptoms of a business that *looks like it’s growing but never gets rich*.
 
 In practice, many founders fail to realize:
 they are not acquiring customers,  
@@ -43,15 +43,15 @@ Because:
 - Profit cannot pretend
 
 This ratio answers one brutal question:
-â€œDoes every new customer strengthen the business, or quietly weaken it?â€
+“Does every new customer strengthen the business, or quietly weaken it?”
 
 ---
 
 ### **3. Case Breakdown: Data Visualization**
 
-![FFD™ Dashboard v4 by Gusti Devitto – LTV : CAC Ratio](/images/pillars/ltv-cac.jpg)
+![FIP� Protocol Dashboard v4 by Gusti Devitto � LTV : CAC Ratio](/images/pillars/ltv-cac.jpg)
 
-In **Gusti Devitto's FFD™ Dashboard v4**, this pillar is read like a verdict.
+In **Gusti Devitto's FIP� Protocol Dashboard v4**, this pillar is read like a verdict.
 
 Anonymous case:
 - CAC: IDR 120,000
@@ -68,9 +68,9 @@ A business like this:
 
 ---
 
-### **4. Intervention: Corrective Actions (The Surgeonâ€™s Voice)**
+### **4. Intervention: Corrective Actions (The Surgeon’s Voice)**
 
-According to **Financial Forensics Gusti Devitto**, fixing this pillar is not about â€œmore creative adsâ€.
+According to **Financial Forensics Gusti Devitto**, fixing this pillar is not about “more creative ads”.
 
 First step: reduce CAC, not chase traffic.  
 Focus on channels with high purchase intent.
@@ -81,8 +81,8 @@ Retention is cheaper than acquisition.
 Third step: increase LTGP per customer.  
 Bundling, repricing, and cost control.
 
-Fourth step: use the FFD™ Simulator.  
-Test scenarios like: â€œIf CAC drops by 15% or LTGP rises by 10%, does the ratio become healthy?â€
+Fourth step: use the FIP� Protocol Simulator.  
+Test scenarios like: “If CAC drops by 15% or LTGP rises by 10%, does the ratio become healthy?”
 
 Minimum target:
 LTV : CAC **above 3:1** for businesses that want to scale safely.
@@ -101,5 +101,6 @@ The problem is advertising that is:
 The LTV : CAC Ratio is the final gate before expansion.  
 If this gate is not secure, do not step forward.
 
-Monitor this pillar alongside other vital indicators in the FFD™ Dashboard, or conduct a Financial Forensics audit before your ads turn into a money grave.
+Monitor this pillar alongside other vital indicators in the FIP� Protocol Dashboard, or conduct a Financial Forensics audit before your ads turn into a money grave.
+
 

@@ -90,7 +90,7 @@ function AboutGustiDevitto() {
                             <div className="absolute -top-6 -left-6 md:top-12 md:-left-8 bg-card border border-primary/30 p-4 rounded-xl shadow-xl animate-float hidden sm:block">
                                 <Activity className="w-8 h-8 text-primary mb-2" />
                                 <p className="text-[10px] font-bold text-muted-foreground uppercase">Diagnosis Core</p>
-                                <p className="text-xl font-black text-foreground">FFD™ v3</p>
+                                <p className="text-xl font-black text-foreground">FIP™ Protocol</p>
                             </div>
                         </div>
 
@@ -168,7 +168,7 @@ function AboutGustiDevitto() {
                 </div>
             </section>
 
-            {/* Methodology Section - FFD & Neural Engine */}
+            {/* Methodology Section - FIP™ Protocol & Sovereign Intelligence Engine */}
             <section className="py-24 px-4 md:px-8 relative overflow-hidden">
                 <div className="container mx-auto max-w-5xl">
                     <div className="text-center mb-16 space-y-4">
@@ -207,7 +207,7 @@ function AboutGustiDevitto() {
                             <div className="flex-1 space-y-4 text-center md:text-left">
                                 <p className="text-sm font-mono text-primary uppercase font-bold tracking-[0.3em]">{t('about_page.proprietary_badge')}</p>
                                 <p className="text-muted-foreground">
-                                    <Trans i18nKey="about_page.proprietary_text">Sistem ini bukan sekadar spreadsheet, melainkan kerangka kerja audit yang dilengkapi dengan <strong className="text-foreground">Neural Engine</strong> untuk diagnosis deterministik tingkat tinggi.</Trans>
+                                    <Trans i18nKey="about_page.proprietary_text">Sistem ini bukan sekadar spreadsheet, melainkan kerangka kerja audit yang dilengkapi dengan <strong className="text-foreground">Sovereign Intelligence</strong> untuk diagnosis deterministik tingkat tinggi.</Trans>
                                 </p>
                             </div>
                             <Button variant="secondary" className="px-8 h-12 font-bold cursor-default">

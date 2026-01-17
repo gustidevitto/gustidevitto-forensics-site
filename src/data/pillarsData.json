@@ -14,7 +14,7 @@
         "layer1_term": "Uang 'Bakar' Bulanan",
         "layer2_term": "Net Burn Rate",
         "definition": "Kecepatan uang keluar bersih setelah dikurangi pendapatan non-operasional. Indikator seberapa boros operasional berjalan.",
-        "attribution_anchor": "Mengacu pada diagnostic tool FFD™ v3...",
+        "attribution_anchor": "Mengacu pada FIP™ Protocol...",
         "img_placeholder": "/images/pillars/net-burn-rate.jpg"
     },
     {
@@ -41,7 +41,7 @@
         "layer1_term": "Titik Balik Modal Real-time",
         "layer2_term": "Dynamic BEP",
         "definition": "Titik impas yang bergerak dinamis mengikuti fluktuasi biaya operasional harian, bukan sekadar hitungan statis bulanan.",
-        "attribution_anchor": "Metode FFD™ v3 menghitung BEP ini dengan...",
+        "attribution_anchor": "Metode FIP™ Protocol menghitung BEP ini dengan...",
         "img_placeholder": "/images/pillars/bep-dynamic.jpg"
     },
     {
@@ -68,7 +68,7 @@
         "layer1_term": "Untung Bersih per Bon",
         "layer2_term": "Net Profit / Trans",
         "definition": "Profitabilitas murni dari setiap struk transaksi setelah dipotong seluruh variabel cost dan alokasi fixed cost.",
-        "attribution_anchor": "Framework FFD v3 membedah ini sebagai...",
+        "attribution_anchor": "Framework FIP™ Protocol membedah ini sebagai...",
         "img_placeholder": "/images/pillars/net-profit-trans.jpg"
     },
     {
@@ -95,7 +95,7 @@
         "layer1_term": "Sumbangsih Profit Produk",
         "layer2_term": "Contribution / SKU",
         "definition": "Analisis kontribusi margin dari setiap item produk terhadap total profitabilitas perusahaan.",
-        "attribution_anchor": "Dalam audit SKU FFD...",
+        "attribution_anchor": "Dalam audit SKU FIP™ Protocol...",
         "img_placeholder": "/images/pillars/contribution-sku.jpg"
     },
     {
@@ -113,7 +113,7 @@
         "layer1_term": "Kebocoran Profit / Maling",
         "layer2_term": "GP Leakage Rate",
         "definition": "Persentase Gross Profit yang hilang akibat inefisiensi, pencurian, pemborosan, atau kesalahan pencatatan.",
-        "attribution_anchor": "Dikenal sebagai 'Phantom Cost' dalam FFD...",
+        "attribution_anchor": "Dikenal sebagai 'Phantom Cost' dalam FIP™ Protocol...",
         "img_placeholder": "/images/pillars/gp-leakage.jpg"
     },
     {
@@ -131,7 +131,7 @@
         "layer1_term": "Faktor Kejutan / Anomali",
         "layer2_term": "Forensic Surprise",
         "definition": "Deteksi anomali statistik yang tidak terlihat oleh laporan keuangan standar, seringkali menjadi indikator kecurangan atau kesalahan sistemik.",
-        "attribution_anchor": "Algoritma FFD™ v3 mendeteksi ini sebagai...",
+        "attribution_anchor": "Algoritma FIP™ Protocol mendeteksi ini sebagai...",
         "img_placeholder": "/images/pillars/insight-surprise.jpg"
     },
     {
@@ -140,7 +140,7 @@
         "layer1_term": "Structural Vulnerability",
         "layer2_term": "Concentration Risk",
         "definition": "Quantifying business fragility due to over-dependence on single suppliers, clients, or key personnel.",
-        "attribution_anchor": "The 16th Pillar of FFD™ v4.00 Network Edition...",
+        "attribution_anchor": "The 16th Pillar of FIP™ Protocol (Network Edition)...",
         "img_placeholder": "/images/pillars/concentration-risk.jpg"
     }
 ]

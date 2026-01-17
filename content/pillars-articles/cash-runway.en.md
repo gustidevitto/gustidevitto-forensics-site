@@ -1,4 +1,4 @@
-﻿title: Cash Runway - Gusti Devitto Financial Forensics Guide
+title: Cash Runway - Gusti Devitto Financial Forensics Guide
 description: Deep-dive diagnosis of Cash Runway according to the Gusti Devitto Financial Forensics framework for multi-outlet businesses.
 last_updated: 2025-01-02
 ---
@@ -35,7 +35,7 @@ This is a calculation of cash reality.
 
 In the Gusti Devitto diagnostic system, Cash Runway is calculated with the formula:
 
-**Total Available Cash / (Total Monthly Expenses Ã· 30 Days)**
+**Total Available Cash / (Total Monthly Expenses ÷ 30 Days)**
 
 The result is in days.  
 And this number determines whether the business has breathing room or is walking on the edge of a cliff.
@@ -52,9 +52,9 @@ One bad decision can immediately lead to fatality.
 
 ### **3. Case Study: Data Visualization**
 
-![Dashboard FFD™ v4 by Gusti Devitto – Cash Runway](/images/pillars/cash-runway.jpg)
+![Dashboard FIP� Protocol by Gusti Devitto � Cash Runway](/images/pillars/cash-runway.jpg)
 
-On the **[FFD™ (Financial Forensics Dashboard) v4](/get-access)** created by Gusti Devitto, Cash Runway is displayed in clear color gradations: green (safe), yellow (alert), and red (critical).
+On the **[FIP� Protocol (Financial Forensics Dashboard) v4](/get-access)** created by Gusti Devitto, Cash Runway is displayed in clear color gradations: green (safe), yellow (alert), and red (critical).
 
 In one Financial Forensics audit case by Gusti Devitto on an F&B business with five outlets, the owner felt the company was healthy because of high monthly turnover. However, after all cash and expenses were calculated, their Cash Runway was only **18 days**.
 
@@ -69,7 +69,7 @@ It only forces the owner to see a reality that has been avoided for a long time.
 
 ---
 
-### **4. Intervention: Improvement Steps (The Surgeonâ€™s Voice)**
+### **4. Intervention: Improvement Steps (The Surgeon’s Voice)**
 
 In the **Gusti Devitto Financial Forensics** approach, a short Cash Runway is not for regret, but for immediate repair.
 
@@ -80,7 +80,7 @@ The second step is to re-dissect fixed costs. Rent, core salaries, and utilities
 The third step is to accelerate cash inflows. In many audits, small discounts for fast payment prove to be much healthier than waiting too long for receivables.
 
 The fourth step is simulation.  
-In FFD™, if expenses are reduced by 10%, how many days does the runway increase?  
+In FIP� Protocol, if expenses are reduced by 10%, how many days does the runway increase?  
 If turnover drops by 20%, can the business still survive?
 
 In the Gusti Devitto diagnostic system, Cash Runway must be monitored **every day**, not just when a crisis has already occurred.
@@ -94,8 +94,9 @@ Without sufficient runway, other pillars only provide a false sense of security.
 
 If you don't know how long your business can survive without income, then you are unconsciously gambling with time.
 
-Use the FFD™ Dashboard to perform a self-diagnosis, or perform a deep Financial Forensics audit before your business truly runs out of breath.
+Use the FIP� Protocol Dashboard to perform a self-diagnosis, or perform a deep Financial Forensics audit before your business truly runs out of breath.
 
 Businesses don't die from loss.  
 Businesses die from running out of time.
+
 

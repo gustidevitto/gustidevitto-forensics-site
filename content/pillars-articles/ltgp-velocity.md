@@ -1,4 +1,4 @@
-﻿title: LTGP Velocity - Panduan Financial Forensics Gusti Devitto
+title: LTGP Velocity - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai LTGP Velocity menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
 last_updated: 2025-01-02
 ---
@@ -7,7 +7,7 @@ last_updated: 2025-01-02
 
 ### **1. Gejala Klinis: Apa yang Dirasakan Owner?**
 
-â€œOmzet naik kok, tiap bulan rame.â€
+“Omzet naik kok, tiap bulan rame.”
 
 Kalimat ini sering terdengar optimistis.  
 Masalahnya, saat ditanya lebih dalam: *laba kotornya naik berapa cepat?*  
@@ -19,9 +19,9 @@ Outlet bertambah. Tim bertambah. Aktivitas meningkat.
 Namun Gross Profit hanya naik tipis, bahkan stagnan.
 
 Ini yang di lapangan sering disebut:
-- â€œCapek tapi gak kayaâ€
-- â€œBisnis makin ribet, duit segitu-segitu ajaâ€
-- â€œKayak treadmill, lari kencang tapi gak majuâ€
+- “Capek tapi gak kaya”
+- “Bisnis makin ribet, duit segitu-segitu aja”
+- “Kayak treadmill, lari kencang tapi gak maju”
 
 Menurut sistem Gusti Devitto, masalahnya bukan di ukuran bisnis, tapi di **kecepatan pertumbuhan laba kotornya**.
 
@@ -50,11 +50,11 @@ Ia mendeteksi kematian bisnis **sebelum** laporan rugi muncul.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v4 by Gusti Devitto – LTGP Velocity](/images/pillars/ltgp-velocity.jpg)
+![Dashboard FIP� Protocol by Gusti Devitto � LTGP Velocity](/images/pillars/ltgp-velocity.jpg)
 
-Dalam **Dashboard FFD™ v4** milik Gusti Devitto, LTGP Velocity divisualisasikan sebagai grafik percepatan, bukan angka tunggal.
+Dalam **Dashboard FIP� Protocol** milik Gusti Devitto, LTGP Velocity divisualisasikan sebagai grafik percepatan, bukan angka tunggal.
 
-Sebuah klien dengan 12 outlet ritel terlihat â€œsuksesâ€ di luar.  
+Sebuah klien dengan 12 outlet ritel terlihat “sukses” di luar.  
 Namun LTGP Velocity mereka turun dari +9% ke +1,2% dalam 4 bulan.
 
 Artinya jelas:  
@@ -67,7 +67,7 @@ Tanpa intervensi, grafik berikutnya biasanya:
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
 
 Dalam pendekatan **Financial Forensics Gusti Devitto**, LTGP Velocity tidak diperbaiki dengan motivasi, tapi dengan struktur.
 
@@ -80,9 +80,9 @@ Naikkan kontribusi SKU, channel, atau outlet dengan margin tertinggi.
 Langkah ketiga: tekan kebocoran sebelum menambah volume.  
 Gross Profit Leakage kecil bisa membunuh velocity besar.
 
-Langkah keempat: gunakan Simulator FFD™.  
+Langkah keempat: gunakan Simulator FIP� Protocol.  
 Simulasikan skenario:  
-â€œJika saya tutup 1 outlet terlemah, apa dampaknya ke LTGP Velocity total?â€
+“Jika saya tutup 1 outlet terlemah, apa dampaknya ke LTGP Velocity total?”
 
 Bisnis sehat bukan yang paling besar, tapi yang paling cepat meningkatkan laba kotornya.
 
@@ -93,7 +93,8 @@ Bisnis sehat bukan yang paling besar, tapi yang paling cepat meningkatkan laba k
 Menurut **Financial Forensics Gusti Devitto**, pertumbuhan tanpa velocity hanyalah ilusi kemajuan.
 
 Jika LTGP Velocity Anda melambat, waktu Anda tidak banyak.  
-Masalahnya bukan â€œkurang marketingâ€, tapi mesin laba yang kehilangan dorongan.
+Masalahnya bukan “kurang marketing”, tapi mesin laba yang kehilangan dorongan.
 
-Pantau LTGP Velocity di Dashboard FFD™, atau lakukan audit Financial Forensics sebelum bisnis Anda berhenti bergerak tanpa pernah sadar.
+Pantau LTGP Velocity di Dashboard FIP� Protocol, atau lakukan audit Financial Forensics sebelum bisnis Anda berhenti bergerak tanpa pernah sadar.
+
 

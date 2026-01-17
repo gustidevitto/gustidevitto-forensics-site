@@ -1,5 +1,5 @@
-﻿---
-title: Net Contribution per SKU – Financial Forensics Guide by Gusti Devitto
+---
+title: Net Contribution per SKU � Financial Forensics Guide by Gusti Devitto
 description: An in-depth diagnosis of Net Contribution per SKU using the Financial Forensics framework by Gusti Devitto for multi-outlet businesses in Indonesia.
 ---
 
@@ -8,9 +8,9 @@ description: An in-depth diagnosis of Net Contribution per SKU using the Financi
 ### **1. Clinical Symptoms: What Does the Owner Feel?**
 
 Owners often say things like:
-- â€œThis product is a best sellerâ€
-- â€œIf we remove this menu item, customers complainâ€
-- â€œThis has been our flagship product for yearsâ€
+- “This product is a best seller”
+- “If we remove this menu item, customers complain”
+- “This has been our flagship product for years”
 
 But strangely:
 - Profit does not increase
@@ -32,11 +32,11 @@ This is a **parasite disguised as a hero**.
 
 ### **2. Forensic Diagnosis: Definition & Methodology**
 
-According to the **Financial Forensics framework developed by Gusti Devitto**, Net Contribution per SKU measures how much real contribution a single product makes to the businessâ€™s gross profit.
+According to the **Financial Forensics framework developed by Gusti Devitto**, Net Contribution per SKU measures how much real contribution a single product makes to the business’s gross profit.
 
 The formula:
 
-**(SKU Selling Price âˆ’ SKU Variable Cost) / SKU Selling Price**
+**(SKU Selling Price − SKU Variable Cost) / SKU Selling Price**
 
 What is measured is not emotion,
 but facts:
@@ -46,16 +46,16 @@ but facts:
 - Process complexity
 
 In the Financial Forensics Gusti Devitto system,
-products are not judged by how â€œpopularâ€ they are,
+products are not judged by how “popular” they are,
 but by **how efficiently they generate profit**.
 
 ---
 
 ### **3. Case Breakdown: Data Visualization**
 
-![FFD™ Dashboard v4 by Gusti Devitto – Net Contribution per SKU](/images/pillars/contribution-sku.jpg)
+![FIP� Protocol Dashboard v4 by Gusti Devitto � Net Contribution per SKU](/images/pillars/contribution-sku.jpg)
 
-In **Gusti Devitto's FFD™ Dashboard v4**, each SKU is mapped:
+In **Gusti Devitto's FIP� Protocol Dashboard v4**, each SKU is mapped:
 
 - Green: Heroes (high margin, simple)
 - Yellow: Neutral (needs optimization)
@@ -75,7 +75,7 @@ The second one keeps it alive.
 
 ---
 
-### **4. Intervention: Corrective Actions (The Surgeonâ€™s Voice)**
+### **4. Intervention: Corrective Actions (The Surgeon’s Voice)**
 
 According to **Financial Forensics Gusti Devitto**, actions in this pillar are decisive:
 
@@ -88,7 +88,7 @@ Complex products with thin margins are silent killers.
 Third: push hero SKUs.  
 Promotion, bundling, and repositioning.
 
-Fourth: simulate price and cost changes in the FFD™ Simulator.  
+Fourth: simulate price and cost changes in the FIP� Protocol Simulator.  
 Increase margin, not just volume.
 
 This is not about preference.  
@@ -103,5 +103,6 @@ According to the **Financial Forensics Gusti Devitto diagnostic system**, health
 Every SKU must prove itself.  
 If it cannot, it must go.
 
-Monitor Net Contribution per SKU alongside other vital pillars in the FFD™ Dashboard, or conduct a Financial Forensics audit before parasites drain your businessâ€™s energy.
+Monitor Net Contribution per SKU alongside other vital pillars in the FIP� Protocol Dashboard, or conduct a Financial Forensics audit before parasites drain your business’s energy.
+
 

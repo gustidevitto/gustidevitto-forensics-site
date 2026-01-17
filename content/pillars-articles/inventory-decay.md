@@ -1,4 +1,4 @@
-﻿title: Inventory Decay - Panduan Financial Forensics Gusti Devitto
+title: Inventory Decay - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Inventory Decay menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
 last_updated: 2025-01-02
 ---
@@ -11,9 +11,9 @@ Di laporan keuangan, bisnis terlihat sehat.
 Aset besar. Stok penuh. Gudang rapih.
 
 Tapi di dunia nyata, owner sering ngos-ngosan cari uang tunai.  
-Bayar gaji telat. Supplier ditunda. Promo dipaksakan demi â€œnguras stokâ€.
+Bayar gaji telat. Supplier ditunda. Promo dipaksakan demi “nguras stok”.
 
-Di lapangan, kondisi ini sering disebut â€œuang nyangkut di barangâ€.  
+Di lapangan, kondisi ini sering disebut “uang nyangkut di barang”.  
 Barang ada. Nilai tercatat ada. Tapi uangnya tidak bisa dipakai.
 
 Masalahnya, banyak owner menganggap stok sebagai kekayaan.  
@@ -41,7 +41,7 @@ Batas 90 hari bukan angka estetika.
 Dalam audit lintas industri, stok yang melewati periode ini hampir selalu mengalami penurunan nilai riil, baik karena diskon paksa, biaya penyimpanan, atau penurunan relevansi produk.
 
 Inventory Decay tidak muncul di laporan laba rugi.  
-Ia tersembunyi di neraca sebagai â€œaset lancarâ€, padahal kenyataannya tidak lancar sama sekali.
+Ia tersembunyi di neraca sebagai “aset lancar”, padahal kenyataannya tidak lancar sama sekali.
 
 Inilah sebabnya banyak bisnis terlihat kaya di kertas, tapi miskin di kas.
 
@@ -49,12 +49,12 @@ Inilah sebabnya banyak bisnis terlihat kaya di kertas, tapi miskin di kas.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v4 by Gusti Devitto – Inventory Decay](/images/pillars/inventory-decay.jpg)
+![Dashboard FIP� Protocol by Gusti Devitto � Inventory Decay](/images/pillars/inventory-decay.jpg)
 
-Dalam **Dashboard FFD™ v4** karya Gusti Devitto, Inventory Decay divisualisasikan dengan segmentasi usia stok.
+Dalam **Dashboard FIP� Protocol** karya Gusti Devitto, Inventory Decay divisualisasikan dengan segmentasi usia stok.
 
 Dalam salah satu audit Financial Forensics Gusti Devitto pada bisnis ritel multi-outlet, lebih dari 38% nilai stok berada di kategori >120 hari.  
-Owner merasa aman karena stok â€œmasih bisa dijualâ€.
+Owner merasa aman karena stok “masih bisa dijual”.
 
 Namun simulasi menunjukkan bahwa jika stok itu diuangkan cepat, nilai realisasi kasnya hanya sekitar 55% dari nilai tercatat.
 
@@ -63,7 +63,7 @@ tidak semua stok layak dipertahankan, dan tidak semua harus diselamatkan.
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
 
 Dalam pendekatan **Financial Forensics Gusti Devitto**, Inventory Decay bukan untuk diperdebatkan. Ia untuk dipotong.
 
@@ -77,7 +77,7 @@ Langkah ketiga adalah koreksi pola pembelian.
 Inventory Decay bukan kesalahan gudang, tapi kesalahan keputusan di hulu.
 
 Langkah keempat adalah simulasi kebijakan.  
-Di FFD™, owner bisa melihat dampak jika pembelian diturunkan 15% atau jika siklus restock diperlambat.
+Di FIP� Protocol, owner bisa melihat dampak jika pembelian diturunkan 15% atau jika siklus restock diperlambat.
 
 Dalam sistem Gusti Devitto, stok sehat adalah stok yang bergerak.  
 Stok diam adalah utang yang menyamar.
@@ -91,5 +91,6 @@ Menurut **Financial Forensics Gusti Devitto**, Inventory Decay adalah pembunuh d
 Bisnis tidak bangkrut karena tidak punya barang.  
 Bisnis bangkrut karena terlalu lama memeluk barang yang sudah mati.
 
-Gunakan Dashboard FFD™ untuk mengukur Inventory Decay secara objektif, atau lakukan audit Financial Forensics sebelum stok Anda berubah dari aset menjadi beban permanen.
+Gunakan Dashboard FIP� Protocol untuk mengukur Inventory Decay secara objektif, atau lakukan audit Financial Forensics sebelum stok Anda berubah dari aset menjadi beban permanen.
+
 

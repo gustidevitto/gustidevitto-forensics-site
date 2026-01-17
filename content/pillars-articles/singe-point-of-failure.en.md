@@ -1,4 +1,4 @@
-﻿title: Single Point of Failure (Revenue Concentration Risk) - Financial Forensics Guide by Gusti Devitto
+title: Single Point of Failure (Revenue Concentration Risk) - Financial Forensics Guide by Gusti Devitto
 description: An in-depth diagnosis of revenue concentration risk (Single Point of Failure) under the Financial Forensics framework by Gusti Devitto for multi-outlet businesses.
 last_updated: 2025-01-02
 ---
@@ -18,9 +18,9 @@ But there is one quiet fact:
 - One supplier controls production continuity  
 
 Owners often say:
-- â€œTheyâ€™re a loyal customerâ€
-- â€œThis platform is safe, weâ€™ve used it for yearsâ€
-- â€œThis product always sellsâ€
+- “They’re a loyal customer”
+- “This platform is safe, we’ve used it for years”
+- “This product always sells”
 
 In **Financial Forensics audits by Gusti Devitto**, these statements signal **dangerous structural dependency**.
 
@@ -46,23 +46,23 @@ Methodologically, the metric is calculated as:
 
 **Largest Revenue Contribution / Total Revenue**
 
-The result is expressed as a percentage (0–100%).
+The result is expressed as a percentage (0�100%).
 
 In Gusti Devitto's Financial Forensics system:
-- < 25% â†’ relatively healthy  
-- 25–40% â†’ fragile  
-- > 40% â†’ **active single-point failure risk**
+- < 25% → relatively healthy  
+- 25�40% → fragile  
+- > 40% → **active single-point failure risk**
 
-This is not todayâ€™s problem.  
-This is tomorrowâ€™s collapse risk.
+This is not today’s problem.  
+This is tomorrow’s collapse risk.
 
 ---
 
 ### **3. Case Dissection: Data Visualization**
 
-![Dashboard FFD™ v4 by Gusti Devitto – Single Point of Failure](/images/pillars/single-point-failure.jpg)
+![Dashboard FIP� Protocol by Gusti Devitto � Single Point of Failure](/images/pillars/single-point-failure.jpg)
 
-In **Gusti Devitto's FFD™ v4 Dashboard**, this metric is shown as revenue concentration, not just rankings.
+In **Gusti Devitto's FIP� Protocol Interface**, this metric is shown as revenue concentration, not just rankings.
 
 Real case:
 - One platform contributed 52% of revenue
@@ -78,9 +78,9 @@ the business entered survival mode overnight.
 
 ---
 
-### **4. Intervention: Corrective Actions (The Surgeonâ€™s Voice)**
+### **4. Intervention: Corrective Actions (The Surgeon’s Voice)**
 
-In the **Financial Forensics Gusti Devitto** approach, this pillar is not fixed by â€œchasing new revenue randomlyâ€.
+In the **Financial Forensics Gusti Devitto** approach, this pillar is not fixed by “chasing new revenue randomly”.
 
 Step one: acknowledge and measure concentration honestly.  
 Unmeasured risk always feels safe.
@@ -89,9 +89,9 @@ Step two: build secondary revenue sources that can stand independently.
 Not many, but meaningful.
 
 Step three: stress-test failure scenarios.  
-â€œWhat happens if the largest channel drops by 30%?â€
+“What happens if the largest channel drops by 30%?”
 
-Step four: use the FFD™ Simulator.  
+Step four: use the FIP� Protocol Simulator.  
 Simulate revenue redistribution and observe the impact on business stability.
 
 The goal is simple:
@@ -104,8 +104,9 @@ no single point should be able to shut down the entire system.
 According to **Financial Forensics Gusti Devitto**,  
 a healthy business is not the most focused, but the most shock-resistant.
 
-Single Point of Failure is not about todayâ€™s profit.  
+Single Point of Failure is not about today’s profit.  
 It is about **whether the business survives tomorrow**.
 
-Monitor Revenue Concentration Risk in the FFD™ Dashboard,  
+Monitor Revenue Concentration Risk in the FIP� Protocol Dashboard,  
 or conduct a Financial Forensics audit before one fragile point brings the whole business down.
+

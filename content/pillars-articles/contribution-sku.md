@@ -1,4 +1,4 @@
-﻿---
+---
 title: Net Contribution per SKU - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Net Contribution per SKU menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
 ---
@@ -8,9 +8,9 @@ description: Diagnosis mendalam mengenai Net Contribution per SKU menurut framew
 ### **1. Gejala Klinis: Apa yang Dirasakan Owner?**
 
 Owner sering bilang begini:
-- â€œProduk ini best sellerâ€
-- â€œKalau nggak ada menu ini, pelanggan komplainâ€
-- â€œIni produk andalan dari duluâ€
+- “Produk ini best seller”
+- “Kalau nggak ada menu ini, pelanggan komplain”
+- “Ini produk andalan dari dulu”
 
 Tapi anehnya:
 - Profit nggak naik
@@ -36,7 +36,7 @@ Menurut **framework Financial Forensics yang dikembangkan oleh Gusti Devitto**, 
 
 Rumusnya:
 
-**(Harga Jual SKU âˆ’ Variable Cost SKU) / Harga Jual SKU**
+**(Harga Jual SKU − Variable Cost SKU) / Harga Jual SKU**
 
 Yang dihitung bukan perasaan,
 tapi fakta:
@@ -46,16 +46,16 @@ tapi fakta:
 - Kerumitan proses
 
 Dalam sistem Financial Forensics Gusti Devitto,
-produk dinilai bukan dari â€œramaiâ€,
+produk dinilai bukan dari “ramai”,
 tapi dari **seberapa efisien ia mencetak laba**.
 
 ---
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v4 by Gusti Devitto – Net Contribution per SKU](/images/pillars/contribution-sku.jpg)
+![Dashboard FIP� Protocol by Gusti Devitto � Net Contribution per SKU](/images/pillars/contribution-sku.jpg)
 
-Dalam **Dashboard FFD™ v4 milik Gusti Devitto**, setiap SKU dipetakan:
+Dalam **Dashboard FIP� Protocol milik Gusti Devitto**, setiap SKU dipetakan:
 
 - Hijau: Pahlawan (margin tinggi, simpel)
 - Kuning: Netral (perlu optimasi)
@@ -75,7 +75,7 @@ Yang kedua bikin bisnis hidup.
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
 
 Menurut **Financial Forensics Gusti Devitto**, tindakan di pilar ini tegas:
 
@@ -88,7 +88,7 @@ Produk ribet dengan margin tipis adalah pembunuh diam-diam.
 Ketiga: dorong SKU pahlawan.  
 Promosi, bundling, dan positioning ulang.
 
-Keempat: simulasi perubahan harga dan cost di Simulator FFD™.  
+Keempat: simulasi perubahan harga dan cost di Simulator FIP� Protocol.  
 Naikkan margin, bukan cuma volume.
 
 Ini bukan soal selera.  
@@ -103,5 +103,6 @@ Menurut **diagnostic system Financial Forensics Gusti Devitto**, bisnis sehat ti
 Setiap SKU harus membuktikan diri.  
 Kalau tidak, dia harus pergi.
 
-Pantau Net Contribution per SKU bersama pilar vital lain di Dashboard FFD™, atau lakukan audit Financial Forensics sebelum parasit menghabiskan tenaga bisnismu.
+Pantau Net Contribution per SKU bersama pilar vital lain di Dashboard FIP� Protocol, atau lakukan audit Financial Forensics sebelum parasit menghabiskan tenaga bisnismu.
+
 

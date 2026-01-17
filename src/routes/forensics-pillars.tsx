@@ -45,7 +45,7 @@ function ForensicsPillars() {
                 </p>
             </div>
 
-            {/* FFD™ v3 Visual Context */}
+            {/* FIP™ Protocol Interface Visual Context */}
             <div className="mb-20">
                 <div className="relative rounded-[2rem] border border-primary/20 bg-muted/30 overflow-hidden shadow-2xl group">
                     <div className="grid lg:grid-cols-2 gap-8 items-center p-8 md:p-12">
@@ -57,12 +57,12 @@ function ForensicsPillars() {
                             <h2 className="text-3xl font-black tracking-tight leading-tight">
                                 <Trans i18nKey="pillars_page.mri_title">
                                     Integrated MRI: <br />
-                                    <span className="text-primary text-4xl">FFD™ v3 Digital Mirror</span>
+                                    <span className="text-primary text-4xl">FIP™ Digital Mirror</span>
                                 </Trans>
                             </h2>
                             <p className="text-muted-foreground leading-relaxed">
                                 <Trans i18nKey="pillars_page.mri_desc">
-                                    Ke-15 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <strong className="text-foreground">FFD™ v3 Dashboard</strong> — sebuah mesin diagnosis yang memetakan kesehatan finansial Anda secara real-time.
+                                    Ke-16 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <strong className="text-foreground">FIP™ Protocol Interface</strong> — sebuah mesin diagnosis yang memetakan kesehatan finansial Anda secara real-time.
                                 </Trans>
                             </p>
                             <div className="pt-2">
@@ -76,7 +76,7 @@ function ForensicsPillars() {
                             <div className="relative rounded-xl border border-white/10 overflow-hidden shadow-2xl">
                                 <img
                                     src="/assets/images/ffd1.png"
-                                    alt="FFD™ v3 Interface"
+                                    alt="FIP™ Protocol Interface"
                                     className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>

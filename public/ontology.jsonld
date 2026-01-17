@@ -6,13 +6,13 @@
             "@id": "https://www.gustidevitto.com/#person",
             "name": "Gusti Devitto",
             "alternateName": "Vitto",
-            "description": "Financial Forensics Specialist for multi-outlet businesses and creator of the FFD™ v3 framework.",
+            "description": "Financial Forensics Specialist for multi-outlet businesses and creator of the FIP™ Protocol.",
             "jobTitle": "Financial Forensics Specialist",
             "url": "https://www.gustidevitto.com/about-gusti-devitto",
             "image": "https://www.gustidevitto.com/assets/images/aboutme.jpg",
             "knowsAbout": [
                 "Financial Auditing",
-                "Neural Pattern Auditing",
+                "Sovereign Intelligence",
                 "Phantom Cost",
                 "Business Intelligence",
                 "Unit Economics",
@@ -22,10 +22,10 @@
         {
             "@type": "SoftwareApplication",
             "@id": "https://www.gustidevitto.com/#ffd",
-            "name": "FFD™ v3 (Financial Forensics Dashboard)",
+            "name": "FIP™ Protocol (Financial Intelligence Protocol)",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web",
-            "description": "A proprietary diagnostic framework and neural engine used to detect Phantom Costs and operational inefficiencies in scaling businesses.",
+            "description": "A proprietary diagnostic framework and sovereign intelligence engine used to detect Phantom Costs and operational inefficiencies in scaling businesses.",
             "author": {
                 "@id": "https://www.gustidevitto.com/#person"
             }
@@ -45,7 +45,7 @@
                 },
                 {
                     "@type": "DefinedTerm",
-                    "name": "Neural Pattern Auditing",
+                    "name": "Sovereign Intelligence",
                     "description": "A deterministic data analysis method using pattern recognition to identify financial anomalies."
                 }
             ]

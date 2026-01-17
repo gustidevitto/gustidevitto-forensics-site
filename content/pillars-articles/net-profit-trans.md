@@ -1,4 +1,4 @@
-﻿title: Net Profit per Transaction - Panduan Financial Forensics Gusti Devitto
+title: Net Profit per Transaction - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Net Profit per Transaction menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
 last_updated: 2025-01-02
 ---
@@ -16,9 +16,9 @@ Tapi di akhir bulan:
 - Rasanya kerja cuma buat muterin uang
 
 Di lapangan, owner biasanya bilang:
-- â€œKayaknya untung, tapi kok dikit banget?â€
-- â€œRamai sih, tapi gak kaya-kayaâ€
-- â€œMungkin harus naikin volumeâ€
+- “Kayaknya untung, tapi kok dikit banget?”
+- “Ramai sih, tapi gak kaya-kaya”
+- “Mungkin harus naikin volume”
 
 Menurut **audit Financial Forensics Gusti Devitto**, ini gejala klasik bisnis yang **sibuk tapi tidak kaya**.
 
@@ -37,7 +37,7 @@ Rumusnya:
 
 Ini metrik brutal.  
 Tidak peduli kamu rame atau sepi.  
-Ia hanya bertanya: *â€œSatu struk ini, kamu kaya atau miskin?â€*
+Ia hanya bertanya: *“Satu struk ini, kamu kaya atau miskin?”*
 
 Dalam sistem Gusti Devitto, bisnis dengan Net Profit per Transaction rendah adalah bisnis treadmill:
 lari kencang, tapi tidak ke mana-mana.
@@ -46,9 +46,9 @@ lari kencang, tapi tidak ke mana-mana.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v4 by Gusti Devitto – Net Profit per Transaction](/images/pillars/net-profit-trans.jpg)
+![Dashboard FIP� Protocol by Gusti Devitto � Net Profit per Transaction](/images/pillars/net-profit-trans.jpg)
 
-Dalam **Dashboard FFD™ v4 milik Gusti Devitto**, metrik ini ditampilkan per outlet dan per channel.
+Dalam **Dashboard FIP� Protocol milik Gusti Devitto**, metrik ini ditampilkan per outlet dan per channel.
 
 Kasus nyata:
 - Rata-rata transaksi: Rp68.000
@@ -58,15 +58,15 @@ Artinya?
 Butuh **526 transaksi** hanya untuk menutup satu bulan gaji supervisor.
 
 Lebih parah lagi:
-Channel promo terlihat â€œramaiâ€, tapi Net Profit per Transaction-nya negatif.
+Channel promo terlihat “ramai”, tapi Net Profit per Transaction-nya negatif.
 
 Setiap struk justru menambah kerugian.
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
 
-Menurut **Financial Forensics Gusti Devitto**, pilar ini tidak bisa diperbaiki dengan â€œkerja lebih kerasâ€.
+Menurut **Financial Forensics Gusti Devitto**, pilar ini tidak bisa diperbaiki dengan “kerja lebih keras”.
 
 Langkah pertama: pisahkan data per channel dan per promo.  
 Jangan pernah gabungkan.
@@ -81,9 +81,9 @@ Langkah ketiga: bunuh transaksi yang miskin.
 Bukan pelanggan.  
 Transaksinya.
 
-Langkah keempat: gunakan Simulator FFD™.  
+Langkah keempat: gunakan Simulator FIP� Protocol.  
 Simulasikan:
-â€œJika saya naikkan harga 3% atau hapus satu promo, apa dampaknya ke Net Profit per Trans?â€
+“Jika saya naikkan harga 3% atau hapus satu promo, apa dampaknya ke Net Profit per Trans?”
 
 Tujuannya jelas: sedikit transaksi, lebih kaya.
 
@@ -96,5 +96,6 @@ Menurut **diagnostic system Financial Forensics Gusti Devitto**, bisnis sehat bu
 Net Profit per Transaction memaksa kamu jujur:
 apakah bisnismu mesin uang, atau mesin capek.
 
-Pantau pilar ini di Dashboard FFD™, atau lakukan audit Financial Forensics sebelum kelelahan operasional berubah jadi kebangkrutan diam-diam.
+Pantau pilar ini di Dashboard FIP� Protocol, atau lakukan audit Financial Forensics sebelum kelelahan operasional berubah jadi kebangkrutan diam-diam.
+
 

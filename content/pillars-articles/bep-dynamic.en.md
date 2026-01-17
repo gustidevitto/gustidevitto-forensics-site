@@ -1,5 +1,5 @@
-﻿---
-title: Breakeven Point (Dynamic) – Financial Forensics Guide by Gusti Devitto
+---
+title: Breakeven Point (Dynamic) � Financial Forensics Guide by Gusti Devitto
 description: An in-depth diagnosis of Dynamic Breakeven Point using the Financial Forensics framework by Gusti Devitto for multi-outlet businesses in Indonesia.
 last_updated: 2025-01-02
 ---
@@ -8,12 +8,12 @@ last_updated: 2025-01-02
 
 ### **1. Clinical Symptoms: What Does the Owner Feel?**
 
-â€œWeâ€™ve already hit BEP today.â€
+“We’ve already hit BEP today.”
 
 This sentence is often spoken with relief.  
 The problem is, tomorrow is not guaranteed.
 
-In practice, owners often feel their business is safe because it has â€œpassed the break-even point.â€  
+In practice, owners often feel their business is safe because it has “passed the break-even point.”  
 Outlets are busy. Production runs. The profit and loss statement looks balanced.
 
 Yet somehow, cash remains thin.  
@@ -50,9 +50,9 @@ A dynamic BEP is a survival tool.
 
 ### **3. Case Breakdown: Data Visualization**
 
-![FFD™ Dashboard v4 by Gusti Devitto – Dynamic BEP](/images/pillars/bep-dynamic.jpg)
+![FIP� Protocol Dashboard v4 by Gusti Devitto � Dynamic BEP](/images/pillars/bep-dynamic.jpg)
 
-In **Gusti Devitto's FFD™ Dashboard v4**, Breakeven Point is shown as a moving graph, not a single lifeless number.
+In **Gusti Devitto's FIP� Protocol Dashboard v4**, Breakeven Point is shown as a moving graph, not a single lifeless number.
 
 In one Financial Forensics audit by Gusti Devitto of an F&B business with 7 outlets, their BEP increased by 18% in just 6 months due to:
 - rising raw material costs
@@ -67,7 +67,7 @@ the day when the business *feels profitable*, but has actually entered a zone of
 
 ---
 
-### **4. Intervention: Corrective Actions (The Surgeonâ€™s Voice)**
+### **4. Intervention: Corrective Actions (The Surgeon’s Voice)**
 
 In the **Financial Forensics Gusti Devitto** approach, BEP must be treated like blood pressure, not a statue.
 
@@ -78,7 +78,7 @@ Second step: separate controllable and uncontrollable variable costs.
 Promotions are not obligations. They are choices.
 
 Third step: run stress simulations.  
-In FFD™, owners can see the impact if:
+In FIP� Protocol, owners can see the impact if:
 - COGS increases by 5%
 - platform discounts increase by 3%
 - or salaries rise by 10%
@@ -96,5 +96,6 @@ According to **Financial Forensics Gusti Devitto**, a static Breakeven Point is 
 Businesses rarely die from one big mistake.  
 They die because they feel safe with numbers that are no longer relevant.
 
-Use the [FFD™ Dashboard](/get-access) to monitor your Breakeven Point dynamically, or conduct a Financial Forensics audit before your costs move faster than your awareness.
+Use the [FIP� Protocol Dashboard](/get-access) to monitor your Breakeven Point dynamically, or conduct a Financial Forensics audit before your costs move faster than your awareness.
+
 

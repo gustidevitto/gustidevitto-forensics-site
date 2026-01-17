@@ -1,4 +1,4 @@
-﻿---
+---
 title: Breakeven Point (Dynamic) - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Breakeven Point Dinamis menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
 last_updated: 2025-01-02
@@ -8,12 +8,12 @@ last_updated: 2025-01-02
 
 ### **1. Gejala Klinis: Apa yang Dirasakan Owner?**
 
-â€œHari ini kita sudah BEP kok.â€
+“Hari ini kita sudah BEP kok.”
 
 Kalimat ini sering diucapkan dengan nada lega.  
 Masalahnya, besok belum tentu.
 
-Di lapangan, owner sering merasa bisnisnya aman karena â€œsudah lewat titik impasâ€.  
+Di lapangan, owner sering merasa bisnisnya aman karena “sudah lewat titik impas”.  
 Outlet ramai. Produksi jalan. Laporan laba rugi terlihat seimbang.
 
 Tapi anehnya, uang tetap tipis.  
@@ -50,9 +50,9 @@ BEP dinamis adalah alat bertahan hidup.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v4 by Gusti Devitto – Dynamic BEP](/images/pillars/bep-dynamic.jpg)
+![Dashboard FIP� Protocol by Gusti Devitto � Dynamic BEP](/images/pillars/bep-dynamic.jpg)
 
-Dalam **Dashboard FFD™ v4** milik Gusti Devitto, Breakeven Point ditampilkan sebagai grafik bergerak, bukan satu angka mati.
+Dalam **Dashboard FIP� Protocol** milik Gusti Devitto, Breakeven Point ditampilkan sebagai grafik bergerak, bukan satu angka mati.
 
 Dalam satu audit Financial Forensics Gusti Devitto pada bisnis F&B dengan 7 outlet, BEP mereka naik 18% hanya dalam 6 bulan akibat:
 - kenaikan bahan baku
@@ -67,7 +67,7 @@ hari ketika bisnis *merasa untung*, tapi sebenarnya sudah masuk zona rugi strukt
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
 
 Dalam pendekatan **Financial Forensics Gusti Devitto**, BEP harus diperlakukan seperti tekanan darah, bukan patung.
 
@@ -78,7 +78,7 @@ Langkah kedua: pisahkan biaya variabel yang bisa dikendalikan dan yang tidak.
 Promo bukan kewajiban. Itu pilihan.
 
 Langkah ketiga: lakukan simulasi stres.  
-Di FFD™, owner bisa melihat dampak jika:
+Di FIP� Protocol, owner bisa melihat dampak jika:
 - COGS naik 5%
 - diskon platform bertambah 3%
 - atau gaji naik 10%
@@ -96,5 +96,6 @@ Menurut **Financial Forensics Gusti Devitto**, Breakeven Point statis adalah res
 Bisnis jarang mati karena satu kesalahan besar.  
 Bisnis mati karena merasa aman di angka yang sudah tidak relevan.
 
-Gunakan [Dashboard FFD™](/get-access) untuk memantau Breakeven Point secara dinamis, atau lakukan audit Financial Forensics sebelum biaya Anda bergerak lebih cepat dari kesadaran Anda.
+Gunakan [Dashboard FIP� Protocol](/get-access) untuk memantau Breakeven Point secara dinamis, atau lakukan audit Financial Forensics sebelum biaya Anda bergerak lebih cepat dari kesadaran Anda.
+
 

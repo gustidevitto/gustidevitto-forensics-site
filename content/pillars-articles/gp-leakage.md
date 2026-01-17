@@ -1,4 +1,4 @@
-﻿title: Gross Profit Leakage Rate - Panduan Financial Forensics Gusti Devitto
+title: Gross Profit Leakage Rate - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Gross Profit Leakage Rate menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
 last_updated: 2025-01-02
 ---
@@ -15,7 +15,7 @@ Karena secara kasat mata, semuanya terlihat normal.
 - Tidak ada pencurian besar yang ketahuan
 
 Tapi ada rasa aneh:
-- Profit selalu lebih kecil dari yang â€œharusnyaâ€
+- Profit selalu lebih kecil dari yang “harusnya”
 - Setiap bulan ada selisih tak bisa dijelaskan
 - Kerja keras tidak pernah terasa sebanding
 
@@ -36,7 +36,7 @@ Menurut **framework Financial Forensics yang dikembangkan oleh Gusti Devitto**, 
 
 Rumusnya:
 
-**(Gross Profit Teoritis âˆ’ Gross Profit Aktual) / Gross Profit Teoritis**
+**(Gross Profit Teoritis − Gross Profit Aktual) / Gross Profit Teoritis**
 
 Gross Profit Teoritis dihitung dari:
 - Harga jual seharusnya
@@ -53,9 +53,9 @@ tapi nyata terasa di kas.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v4 by Gusti Devitto – Gross Profit Leakage Rate](/images/pillars/gp-leakage.jpg)
+![Dashboard FIP� Protocol by Gusti Devitto � Gross Profit Leakage Rate](/images/pillars/gp-leakage.jpg)
 
-Dalam **Dashboard FFD™ v4 milik Gusti Devitto**, pilar ini sering menjadi titik kejut.
+Dalam **Dashboard FIP� Protocol milik Gusti Devitto**, pilar ini sering menjadi titik kejut.
 
 Kasus anonim:
 - Gross Profit teoritis: Rp480 juta
@@ -76,7 +76,7 @@ Tapi totalnya mematikan.
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
 
 Menurut **Financial Forensics Gusti Devitto**, phantom cost tidak diatasi dengan marah-marah.
 
@@ -89,8 +89,8 @@ Leakage suka bersembunyi di agregasi.
 Langkah ketiga: kunci variabel kritis.  
 Takaran, diskon, jam kerja, dan approval harus punya pagar.
 
-Langkah keempat: gunakan Simulator FFD™.  
-Simulasikan: â€œJika leakage turun 3%, dampaknya ke kas berapa?â€
+Langkah keempat: gunakan Simulator FIP� Protocol.  
+Simulasikan: “Jika leakage turun 3%, dampaknya ke kas berapa?”
 
 Targetnya bukan nol.
 Targetnya **terkendali**.
@@ -105,5 +105,6 @@ Mereka mati karena ribuan kebocoran kecil yang dibiarkan.
 
 Gross Profit Leakage Rate adalah alat untuk melihat hantu sebelum ia membunuh bisnis kamu.
 
-Pantau pilar ini bersama indikator vital lain di [Dashboard FFD™](/get-access), atau lakukan audit Financial Forensics jika profitmu selalu terasa lebih kecil dari yang seharusnya.
+Pantau pilar ini bersama indikator vital lain di [Dashboard FIP� Protocol](/get-access), atau lakukan audit Financial Forensics jika profitmu selalu terasa lebih kecil dari yang seharusnya.
+
 

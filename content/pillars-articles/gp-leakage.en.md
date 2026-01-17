@@ -1,5 +1,5 @@
-﻿---
-title: Gross Profit Leakage Rate – Financial Forensics Guide by Gusti Devitto
+---
+title: Gross Profit Leakage Rate � Financial Forensics Guide by Gusti Devitto
 description: An in-depth diagnosis of Gross Profit Leakage Rate using the Financial Forensics framework by Gusti Devitto for multi-outlet businesses in Indonesia.
 last_updated: 2025-01-02
 ---
@@ -37,7 +37,7 @@ According to the **Financial Forensics framework developed by Gusti Devitto**, G
 
 The formula:
 
-**(Theoretical Gross Profit âˆ’ Actual Gross Profit) / Theoretical Gross Profit**
+**(Theoretical Gross Profit − Actual Gross Profit) / Theoretical Gross Profit**
 
 Theoretical Gross Profit is calculated from:
 - Expected selling prices
@@ -54,9 +54,9 @@ but are painfully real in cash flow.
 
 ### **3. Case Breakdown: Data Visualization**
 
-![FFD™ Dashboard v4 by Gusti Devitto – Gross Profit Leakage Rate](/images/pillars/gp-leakage.jpg)
+![FIP� Protocol Dashboard v4 by Gusti Devitto � Gross Profit Leakage Rate](/images/pillars/gp-leakage.jpg)
 
-In **Gusti Devitto's FFD™ Dashboard v4**, this pillar often becomes a shock point.
+In **Gusti Devitto's FIP� Protocol Dashboard v4**, this pillar often becomes a shock point.
 
 Anonymous case:
 - Theoretical Gross Profit: IDR 480 million
@@ -77,7 +77,7 @@ Together, lethal.
 
 ---
 
-### **4. Intervention: Corrective Actions (The Surgeonâ€™s Voice)**
+### **4. Intervention: Corrective Actions (The Surgeon’s Voice)**
 
 According to **Financial Forensics Gusti Devitto**, phantom costs are not fixed by shouting.
 
@@ -90,8 +90,8 @@ Leakage loves hiding inside aggregation.
 Third step: lock critical variables.  
 Portions, discounts, work hours, and approvals must have guardrails.
 
-Fourth step: use the FFD™ Simulator.  
-Simulate: â€œIf leakage drops by 3%, what is the cash impact?â€
+Fourth step: use the FIP� Protocol Simulator.  
+Simulate: “If leakage drops by 3%, what is the cash impact?”
 
 The target is not zero.  
 The target is **controlled**.
@@ -106,5 +106,6 @@ They die from thousands of small leakages left unchecked.
 
 Gross Profit Leakage Rate is the tool to see the ghost before it kills your business.
 
-Monitor this pillar alongside other vital indicators in the [FFD™ Dashboard](/get-access), or conduct a Financial Forensics audit if your profit always feels smaller than it should be.
+Monitor this pillar alongside other vital indicators in the [FIP� Protocol Dashboard](/get-access), or conduct a Financial Forensics audit if your profit always feels smaller than it should be.
+
 

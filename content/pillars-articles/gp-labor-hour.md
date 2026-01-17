@@ -1,4 +1,4 @@
-﻿---
+---
 title: Gross Profit per Labor Hour - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai Gross Profit per Labor Hour menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
 last_updated: 2025-01-02
@@ -9,9 +9,9 @@ last_updated: 2025-01-02
 ### **1. Gejala Klinis: Apa yang Dirasakan Owner?**
 
 Owner sering berkata dengan bangga:
-- â€œTim saya loyalâ€
-- â€œSemua kelihatan sibukâ€
-- â€œKalau kurang orang, operasional kacauâ€
+- “Tim saya loyal”
+- “Semua kelihatan sibuk”
+- “Kalau kurang orang, operasional kacau”
 
 Tapi realitanya:
 - Profit stagnan
@@ -51,9 +51,9 @@ tapi di desain operasional.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FFD™ v4 by Gusti Devitto – Gross Profit per Labor Hour](/images/pillars/gp-labor-hour.jpg)
+![Dashboard FIP� Protocol by Gusti Devitto � Gross Profit per Labor Hour](/images/pillars/gp-labor-hour.jpg)
 
-Dalam **Dashboard FFD™ v4 milik Gusti Devitto**, pilar ini menunjukkan apakah jam kerja benar-benar mencetak laba.
+Dalam **Dashboard FIP� Protocol milik Gusti Devitto**, pilar ini menunjukkan apakah jam kerja benar-benar mencetak laba.
 
 Kasus nyata:
 - Gaji naik 18%
@@ -70,7 +70,7 @@ Bisnis seperti ini:
 
 ---
 
-### **4. Intervensi: Langkah Perbaikan (The Surgeonâ€™s Voice)**
+### **4. Intervensi: Langkah Perbaikan (The Surgeon’s Voice)**
 
 Menurut **Financial Forensics Gusti Devitto**, solusi pilar ini bukan sekadar PHK.
 
@@ -83,8 +83,8 @@ Jam sepi tidak boleh disubsidi jam ramai.
 Langkah ketiga: sederhanakan proses.  
 Semakin ribet SOP, semakin mahal setiap jam kerja.
 
-Langkah keempat: gunakan Simulator FFD™.  
-Uji skenario: â€œApa dampaknya jika 1 jam kerja harus menghasilkan X rupiah?â€
+Langkah keempat: gunakan Simulator FIP� Protocol.  
+Uji skenario: “Apa dampaknya jika 1 jam kerja harus menghasilkan X rupiah?”
 
 Tujuannya satu:
 setiap jam kerja harus layak secara ekonomi.
@@ -98,5 +98,6 @@ Menurut **diagnostic system Financial Forensics Gusti Devitto**, tim yang sehat 
 Jika setiap jam kerja tidak menghasilkan laba kotor yang memadai,
 bisnis kamu sedang membiayai kesibukan, bukan pertumbuhan.
 
-Pantau Gross Profit per Labor Hour bersama pilar vital lain di Dashboard FFD™, atau lakukan audit Financial Forensics sebelum bisnismu berubah jadi panti sosial permanen.
+Pantau Gross Profit per Labor Hour bersama pilar vital lain di Dashboard FIP� Protocol, atau lakukan audit Financial Forensics sebelum bisnismu berubah jadi panti sosial permanen.
+
 

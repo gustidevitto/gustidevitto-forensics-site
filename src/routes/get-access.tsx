@@ -106,7 +106,7 @@ function GetAccess() {
                     <div className="bg-card/50 backdrop-blur-md rounded-xl p-6 border border-border/50">
                         <blockquote className="space-y-3">
                             <p className="text-base leading-relaxed text-foreground">
-                                <Trans i18nKey="get_access.testimonial_text">"Previously, I thought my business was healthy because turnover kept rising. Turns out there was <strong className="text-destructive">$2,500/month</strong> leaking without me realizing it. FFD™ opened my eyes."</Trans>
+                                <Trans i18nKey="get_access.testimonial_text">"Previously, I thought my business was healthy because turnover kept rising. Turns out there was <strong className="text-destructive">$2,500/month</strong> leaking without me realizing it. FIP™ Protocol opened my eyes."</Trans>
                             </p>
                             <footer className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">

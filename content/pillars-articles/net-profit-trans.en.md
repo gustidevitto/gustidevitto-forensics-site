@@ -1,4 +1,4 @@
-﻿title: Net Profit per Transaction - Financial Forensics Guide by Gusti Devitto
+title: Net Profit per Transaction - Financial Forensics Guide by Gusti Devitto
 description: An in-depth diagnosis of Net Profit per Transaction under the Financial Forensics framework by Gusti Devitto for multi-outlet businesses in Indonesia.
 last_updated: 2025-01-02
 ---
@@ -16,9 +16,9 @@ But at the end of the month:
 - It feels like you are just spinning cash in circles
 
 On the ground, owners usually say:
-- â€œIt feels profitable, but why is it so small?â€
-- â€œItâ€™s busy, but Iâ€™m never getting richerâ€
-- â€œMaybe we just need more volumeâ€
+- “It feels profitable, but why is it so small?”
+- “It’s busy, but I’m never getting richer”
+- “Maybe we just need more volume”
 
 According to **Financial Forensics audits by Gusti Devitto**, this is a classic symptom of a business that is **busy but not wealthy**.
 
@@ -37,7 +37,7 @@ The formula is straightforward:
 
 This is a brutal metric.  
 It does not care whether you are busy or quiet.  
-It asks only one question: *â€œDoes this single receipt make you rich or poor?â€*
+It asks only one question: *“Does this single receipt make you rich or poor?”*
 
 In the Gusti Devitto system, a business with low Net Profit per Transaction is a treadmill business:  
 running fast, going nowhere.
@@ -46,27 +46,27 @@ running fast, going nowhere.
 
 ### **3. Case Dissection: Data Visualization**
 
-![Dashboard FFD™ v4 by Gusti Devitto – Net Profit per Transaction](/images/pillars/net-profit-trans.jpg)
+![Dashboard FIP� Protocol by Gusti Devitto � Net Profit per Transaction](/images/pillars/net-profit-trans.jpg)
 
-In **Gusti Devitto's Dashboard FFD™ v4**, this metric is displayed by outlet and by channel.
+In **Gusti Devitto's Dashboard FIP� Protocol**, this metric is displayed by outlet and by channel.
 
 Real case:
 - Average transaction value: Rp68,000
 - Net Profit per Transaction: Rp1,900
 
 What does this mean?  
-It takes **526 transactions** just to cover one month of a supervisorâ€™s salary.
+It takes **526 transactions** just to cover one month of a supervisor’s salary.
 
 Even worse:  
-Promotional channels look â€œbusyâ€, but their Net Profit per Transaction is **negative**.
+Promotional channels look “busy”, but their Net Profit per Transaction is **negative**.
 
 Every receipt actually adds to the loss.
 
 ---
 
-### **4. Intervention: Corrective Actions (The Surgeonâ€™s Voice)**
+### **4. Intervention: Corrective Actions (The Surgeon’s Voice)**
 
-According to **Financial Forensics Gusti Devitto**, this pillar cannot be fixed by â€œworking harderâ€.
+According to **Financial Forensics Gusti Devitto**, this pillar cannot be fixed by “working harder”.
 
 Step one: separate data by channel and by promotion.  
 Never lump them together.
@@ -81,9 +81,9 @@ Step three: kill poor transactions.
 Not the customers.  
 **The transactions.**
 
-Step four: use the FFD™ Simulator.  
+Step four: use the FIP� Protocol Simulator.  
 Simulate:  
-â€œIf I increase prices by 3% or remove one promotion, what happens to Net Profit per Transaction?â€
+“If I increase prices by 3% or remove one promotion, what happens to Net Profit per Transaction?”
 
 The objective is clear:  
 fewer transactions, more wealth.
@@ -97,5 +97,6 @@ Under the **Financial Forensics diagnostic system by Gusti Devitto**, a healthy 
 Net Profit per Transaction forces honesty:  
 is your business a money machine, or an exhaustion machine?
 
-Monitor this pillar in the FFD™ Dashboard, or conduct a Financial Forensics audit before operational fatigue turns into a quiet bankruptcy.
+Monitor this pillar in the FIP� Protocol Dashboard, or conduct a Financial Forensics audit before operational fatigue turns into a quiet bankruptcy.
+
 
