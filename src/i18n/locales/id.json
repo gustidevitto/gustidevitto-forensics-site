@@ -86,24 +86,24 @@
         "faq_a5": "Ya. Kami menggunakan enkripsi kelas enterprise dan mengikuti protokol kerahasiaan (NDA) yang ketat. Data Anda hanya digunakan untuk kebutuhan diagnosa."
     },
     "hero": {
-        "badge": "Auth Level: L-9 // Forensic Intelligence Unit",
-        "title1": "Forensic Business Audit",
-        "title2": "untuk Operasi Multi-Lokasi.",
-        "subtitle": "Dioperasikan oleh Gusti Devitto—Forensic Business Diagnostician. Mengidentifikasi kebocoran profit tersembunyi, inkonsistensi operasional, dan risiko keruntuhan struktural melalui FIP™ Protocol yang proprietary.",
-        "qualifier": "Didukung oleh FIP™ Sovereign Intelligence. Tanpa Cloud. Tanpa Kebocoran Data. Hanya Kebenaran.",
-        "desc": "Anda tidak membeli akses software. Anda membeli Verdict—putusan final atas kesehatan bisnis Anda. FIP™ Protocol mendeteksi 'Inti Busuk' sebelum menyebar ke seluruh jaringan.",
-        "cta_free": "Request Forensic Audit",
-        "cta_enterprise": "Request Forensic Audit",
-        "guarantee": "Sovereign Standard — Data tetap lokal. Akses langsung ke Engine Propietari FFD™.",
-        "roi_label": "PROGRAM PILOT",
-        "roi_value": "SISA 3 SLOT",
-        "roi_desc": "Hanya 3 Slot Tersisa untuk Q1 2026. Klaim Slot Enterprise.",
+        "badge": "Auth Level: L-9 // Sovereign Intelligence Access",
+        "title1": "Laporan Standar adalah Titik Buta Finansial.",
+        "title2": "Jaringan Anda Berdarah. FIP™ Menemukan Lukanya.",
+        "subtitle": "Kepercayaan bukan kontrol. Transparansi sering kali ilusi. Dioperasikan oleh Gusti Devitto, FIP™ Protocol mengekspos variansi, fraud, dan inefisiensi yang dilewatkan akuntan tradisional.",
+        "qualifier": "Verdict real-time. Risiko zero-cloud. Sovereign Intelligence Loop.",
+        "desc": "Bahayanya bukan hanya staf yang tidak jujur. Bahayanya adalah Keheningan Data. Lokasi yang paling Anda percayai sering kali tempat pembusukan sistemik terbesar terjadi karena paling jarang dipertanyakan. Kami tidak mengaudit orang; kami mengaudit Kebenaran.",
+        "cta_free": "Inisiasi Protokol Forensik",
+        "cta_enterprise": "Inisiasi Protokol Forensik",
+        "guarantee": "Sovereign Standard — Kami tidak menjual software; kami menyampaikan Kepastian. Arsitektur zero-cloud.",
+        "roi_label": "ALOKASI BERIKUTNYA",
+        "roi_value": "Q3 2026",
+        "roi_desc": "Kohort saat ini ditutup. 3 slot validasi tersisa.",
         "visual": {
             "mri": "FIP™ PROTOCOL ENGINE",
             "phantom_detected": "PHANTOM COSTS TERDETEKSI",
             "runway": "CASH RUNWAY",
             "leak": "GP LEAKAGE",
-            "quote": "Setiap bulan Anda menunggu adalah Rp 750 Juta hilang akibat ketidakjujuran yang tidak terdeteksi.",
+            "quote": "Setiap 24 jam variansi yang tidak terdeteksi di jaringan 50 unit menghabiskan rata-rata $1,600. Secara matematis, audit ini membayar dirinya sendiri sebelum verdict pertama dikirimkan.",
             "author": "— Vitto",
             "experience": "GOD-MODE SURVEILLANCE",
             "analytics": "KEAJAIBAN 10 MENIT",
@@ -189,8 +189,17 @@
     },
     "guarantee_section": {
         "title": "Garansi \"No Find, No Pitch\"",
-        "p1": "Saya tidak menjual harapan kosong. Jika Verdict FIP™ Protocol bilang bisnis Anda sehat (hijau), konsultasi selesai. Gratis. Tanpa pitch apapun.",
-        "p2": "Saya hanya bekerja dengan owner yang memiliki masalah NYATA untuk diselesaikan."
+        "p1": "Saya tidak menjual harapan kosong. Jika Verdict FIP™ Protocol mengklasifikasikan jaringan Anda sebagai <1>Fortress (hijau)</1>, konsultasi selesai. Gratis. Tanpa pitch apapun.",
+        "p2": "Saya hanya bekerja dengan jaringan yang memiliki masalah struktural NYATA untuk diselesaikan. Kerentanan bukan kelemahan—ini adalah peluang untuk intervensi bedah."
+    },
+    "verdict_classification": {
+        "title": "Klasifikasi Network Verdict",
+        "fortress_title": "Fortress",
+        "fortress_desc": "Integritas struktural terverifikasi. Tidak ada anomali sistemik terdeteksi. Kesehatan jaringan: Optimal.",
+        "vulnerable_title": "Vulnerable",
+        "vulnerable_desc": "Variansi moderat terdeteksi. Inefisiensi operasional hadir. Intervensi direkomendasikan dalam 60 hari.",
+        "critical_title": "Critical",
+        "critical_desc": "Pembusukan sistemik teridentifikasi. Risiko keruntuhan struktural: Tinggi. Intervensi forensik segera diperlukan."
     },
     "pricing": {
         "title": "Transparent Intelligence Economics",
