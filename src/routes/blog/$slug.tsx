@@ -45,6 +45,9 @@ const mdToHtml = (md: string) => {
 
     // Inline elements (apply to the whole thing)
     return html
+        .replace(/™/g, '&trade;')
+        .replace(/®/g, '&reg;')
+        .replace(/©/g, '&copy;')
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*(.*?)\*/g, '<em>$1</em>')
         .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="rounded-lg my-8 w-full shadow-md" />')
