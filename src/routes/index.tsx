@@ -333,11 +333,8 @@ function Index() {
                             <p className="text-[10px] uppercase font-black text-amber-500 tracking-[0.2em] leading-none mb-2">{t('hero.roi_label')}</p>
                             <div className="space-y-1">
                                 <p className="text-xl font-black text-white animate-pulse-color">{t('hero.roi_value')}</p>
-                                <p className="text-[9px] text-muted-foreground uppercase tracking-wider font-bold max-w-[140px] leading-tight mx-auto">
-                                    {t('hero.roi_desc').split('|')[0]}
-                                </p>
                                 <p className="text-[9px] text-red-500 font-mono max-w-[140px] leading-tight mx-auto animate-pulse">
-                                    {t('hero.roi_desc').split('|')[1] || "3 validation slots remaining"}
+                                    {t('hero.roi_desc')}
                                 </p>
                             </div>
                         </div>
