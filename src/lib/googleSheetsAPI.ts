@@ -10,6 +10,7 @@ export interface LeadData {
     phone: string
     email: string
     source?: string
+    [key: string]: any // Allow arbitrary extra data
 }
 
 export interface ApiResponse {
@@ -35,17 +36,13 @@ export async function submitLead(data: LeadData): Promise<ApiResponse> {
         console.warn('Lead capture disabled or not configured.')
         localStorage.setItem('LEAD_STORAGE_FALLBACK', JSON.stringify(data))
         return {
-            success: false,
+            success: true, // Return success even if disabled for UX flow
             error: 'API_NOT_CONFIGURED',
             message: 'Alamat API belum terpasang dengan benar di .env.local',
         }
     }
 
     try {
-        // We use 'no-cors' because Google Apps Script always redirects, 
-        // which often causes "Failed to fetch" in modern browsers.
-        // NOTE: In 'no-cors' mode, we cannot read the response body, 
-        // but the data WILL reached the Google Sheet.
         await fetch(apiUrl, {
             method: 'POST',
             mode: 'no-cors',
@@ -54,7 +51,7 @@ export async function submitLead(data: LeadData): Promise<ApiResponse> {
             },
             body: JSON.stringify({
                 ...data,
-                source: data.source || 'PCC Calculator',
+                source: data.source || 'FIP Lite Diagnostic',
             }),
         })
 

@@ -24,16 +24,24 @@ import {
     UserPlus,
     ShieldCheck,
     AlertCircle,
-    Share2
+    Share2,
+    Coins
 } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { CurrencyInput } from "@/components/ui/currency-input"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import type { FIPLiteState, RevenueProfitabilityInputs, CashFlowInputs, OperationalEfficiencyInputs, GrowthRiskInputs, HealthScoreResult } from '@/types/fip-lite'
 import { calculateFIPLiteResults } from '@/lib/fip-engine'
 import { generateFIPLitePDF } from '@/lib/pdf-generator'
+import { submitLead } from '@/lib/googleSheetsAPI'
 
 export const Route = createFileRoute('/fip-lite')({
     component: FIPLitePage,
@@ -42,6 +50,11 @@ export const Route = createFileRoute('/fip-lite')({
 function FIPLitePage() {
     const [isBooting, setIsBooting] = useState(true)
     const [bootLines, setBootLines] = useState<string[]>([])
+    const [currency, setCurrency] = useState<{ code: string; locale: string; prefix: string }>({
+        code: 'IDR',
+        locale: 'id-ID',
+        prefix: 'Rp'
+    })
 
     const [state, setState] = useState<FIPLiteState>({
         currentStep: 1,
@@ -154,6 +167,18 @@ function FIPLitePage() {
                     </p>
                 </div>
                 <div className="flex items-center gap-4">
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button variant="outline" className="gap-2 bg-white/5 border-white/10 uppercase text-[10px] font-black tracking-widest h-10">
+                                <Coins className="w-3 h-3 text-primary" /> {currency.code}
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end" className="bg-black/90 border-white/10 backdrop-blur-xl">
+                            <DropdownMenuItem onClick={() => setCurrency({ code: 'IDR', locale: 'id-ID', prefix: 'Rp' })} className="text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white cursor-pointer">IDR (Rupiah)</DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => setCurrency({ code: 'USD', locale: 'en-US', prefix: '$' })} className="text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white cursor-pointer">USD (Dollar)</DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => setCurrency({ code: 'EUR', locale: 'de-DE', prefix: '€' })} className="text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white cursor-pointer">EUR (Euro)</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
                     <div className="text-right hidden sm:block">
                         <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest">DIAGNOSTIC STATUS</p>
                         <p className="text-xs font-mono text-green-500 uppercase flex items-center justify-end gap-1">
@@ -235,6 +260,7 @@ function FIPLitePage() {
                                 {state.currentStep === 1 && (
                                     <Step1RevenueProfitability
                                         data={state.formData.step1 || {} as any}
+                                        currency={currency}
                                         onChange={(data: RevenueProfitabilityInputs) => setState(prev => ({
                                             ...prev,
                                             formData: { ...prev.formData, step1: data }
@@ -245,6 +271,7 @@ function FIPLitePage() {
                                 {state.currentStep === 2 && (
                                     <Step2CashFlow
                                         data={state.formData.step2 || {} as any}
+                                        currency={currency}
                                         onChange={(data: CashFlowInputs) => setState(prev => ({
                                             ...prev,
                                             formData: { ...prev.formData, step2: data }
@@ -255,6 +282,7 @@ function FIPLitePage() {
                                 {state.currentStep === 3 && (
                                     <Step3OperationalEfficiency
                                         data={state.formData.step3 || {} as any}
+                                        currency={currency}
                                         onChange={(data: OperationalEfficiencyInputs) => setState(prev => ({
                                             ...prev,
                                             formData: { ...prev.formData, step3: data }
@@ -265,6 +293,7 @@ function FIPLitePage() {
                                 {state.currentStep === 4 && (
                                     <Step4GrowthRisk
                                         data={state.formData.step4 || {} as any}
+                                        currency={currency}
                                         onChange={(data: GrowthRiskInputs) => setState(prev => ({
                                             ...prev,
                                             formData: { ...prev.formData, step4: data }
@@ -321,6 +350,7 @@ function FIPLitePage() {
                 )}
                 {state.isGeneratingPDF && !state.leadCaptured && (
                     <LeadCaptureModal
+                        results={state.results!}
                         onSuccess={(data) => {
                             setState(prev => ({
                                 ...prev,
@@ -340,7 +370,11 @@ function FIPLitePage() {
     )
 }
 
-function LeadCaptureModal({ onSuccess, onClose }: { onSuccess: (data: { name: string, email: string, businessName: string }) => void, onClose: () => void }) {
+function LeadCaptureModal({ onSuccess, onClose, results }: {
+    onSuccess: (data: { name: string, email: string, businessName: string }) => void,
+    onClose: () => void,
+    results: HealthScoreResult
+}) {
     const [email, setEmail] = useState('')
     const [name, setName] = useState('')
     const [businessName, setBusinessName] = useState('')
@@ -350,8 +384,16 @@ function LeadCaptureModal({ onSuccess, onClose }: { onSuccess: (data: { name: st
         e.preventDefault()
         setIsSubmitting(true)
 
-        // Simulate API call to Google Sheets/CRM
-        await new Promise(r => setTimeout(r, 2000))
+        // Submit lead data to Google Sheets
+        await submitLead({
+            name,
+            email,
+            phone: '-', // FIP Lite doesn't capture phone yet
+            businessName,
+            source: 'FIP Lite Diagnostic (PDF Unlock)',
+            overallScore: results.overallScore,
+            verdict: results.verdictLabel
+        })
 
         setIsSubmitting(false)
         onSuccess({ name, email, businessName })
@@ -609,9 +651,10 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
     )
 }
 
-function Step1RevenueProfitability({ data, onChange }: {
+function Step1RevenueProfitability({ data, onChange, currency }: {
     data: RevenueProfitabilityInputs,
-    onChange: (data: RevenueProfitabilityInputs) => void
+    onChange: (data: RevenueProfitabilityInputs) => void,
+    currency: { locale: string; prefix: string; code: string }
 }) {
     const updateField = (field: keyof RevenueProfitabilityInputs, value: number) => {
         onChange({ ...data, [field]: value })
@@ -631,9 +674,12 @@ function Step1RevenueProfitability({ data, onChange }: {
                             <CurrencyInput
                                 value={data.totalRevenue || 0}
                                 onValueChange={(v) => updateField('totalRevenue', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Total sales before any costs/taxes.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Total Monthly Transactions</Label>
@@ -644,15 +690,19 @@ function Step1RevenueProfitability({ data, onChange }: {
                                 placeholder="0"
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Total number of separate customer orders.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Total Monthly Costs (COGS + OPEX)</Label>
                             <CurrencyInput
                                 value={data.totalCosts || 0}
                                 onValueChange={(v) => updateField('totalCosts', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Combine product costs and operational overhead.</p>
                         </div>
                     </div>
                 </div>
@@ -705,18 +755,24 @@ function Step1RevenueProfitability({ data, onChange }: {
                             <CurrencyInput
                                 value={data.operatingExpenses || 0}
                                 onValueChange={(v) => updateField('operatingExpenses', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Fixed + variable costs to keep the lights on.</p>
                         </div>
                         <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Monthly Gross Profit (Absolute Rp)</Label>
+                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Monthly Gross Profit (Absolute {currency.code})</Label>
                             <CurrencyInput
                                 value={data.grossProfit || 0}
                                 onValueChange={(v) => updateField('grossProfit', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Revenue minus direct costs (COGS).</p>
                         </div>
                     </div>
                 </div>
@@ -732,18 +788,24 @@ function Step1RevenueProfitability({ data, onChange }: {
                             <CurrencyInput
                                 value={data.topSKURevenue || 0}
                                 onValueChange={(v) => updateField('topSKURevenue', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Revenue from your single best-selling product.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Top SKU Variable Costs</Label>
                             <CurrencyInput
                                 value={data.topSKUVariableCosts || 0}
                                 onValueChange={(v) => updateField('topSKUVariableCosts', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Costs directly tied to producing that SKU.</p>
                         </div>
                     </div>
                 </div>
@@ -752,9 +814,10 @@ function Step1RevenueProfitability({ data, onChange }: {
     )
 }
 
-function Step2CashFlow({ data, onChange }: {
+function Step2CashFlow({ data, onChange, currency }: {
     data: CashFlowInputs,
-    onChange: (data: CashFlowInputs) => void
+    onChange: (data: CashFlowInputs) => void,
+    currency: { locale: string; prefix: string; code: string }
 }) {
     const updateField = (field: keyof CashFlowInputs, value: any) => {
         onChange({ ...data, [field]: value })
@@ -774,16 +837,21 @@ function Step2CashFlow({ data, onChange }: {
                             <CurrencyInput
                                 value={data.currentCash || 0}
                                 onValueChange={(v) => updateField('currentCash', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Amount currently available in bank accounts.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Average Monthly Burn Rate</Label>
                             <CurrencyInput
                                 value={data.monthlyBurnRate || 0}
                                 onValueChange={(v) => updateField('monthlyBurnRate', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
                             <p className="text-[9px] text-muted-foreground italic">Total monthly outflows (fixed + variable).</p>
@@ -802,27 +870,36 @@ function Step2CashFlow({ data, onChange }: {
                             <CurrencyInput
                                 value={data.inventoryValue || 0}
                                 onValueChange={(v) => updateField('inventoryValue', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Value of stock currently held.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Accounts Receivable (Money Owed to You)</Label>
                             <CurrencyInput
                                 value={data.accountsReceivable || 0}
                                 onValueChange={(v) => updateField('accountsReceivable', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Total outstanding invoices billed to clients.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Accounts Payable (Money You Owe)</Label>
                             <CurrencyInput
                                 value={data.accountsPayable || 0}
                                 onValueChange={(v) => updateField('accountsPayable', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Total money owed to suppliers/vendors.</p>
                         </div>
                     </div>
                 </div>
@@ -866,18 +943,24 @@ function Step2CashFlow({ data, onChange }: {
                             <CurrencyInput
                                 value={data.cashInflows || 0}
                                 onValueChange={(v) => updateField('cashInflows', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Total money actually hitting the bank monthly.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Average Monthly Cash Outflows</Label>
                             <CurrencyInput
                                 value={data.cashOutflows || 0}
                                 onValueChange={(v) => updateField('cashOutflows', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Total money leaving the bank monthly.</p>
                         </div>
                     </div>
                 </div>
@@ -886,9 +969,10 @@ function Step2CashFlow({ data, onChange }: {
     )
 }
 
-function Step3OperationalEfficiency({ data, onChange }: {
+function Step3OperationalEfficiency({ data, onChange, currency }: {
     data: OperationalEfficiencyInputs,
-    onChange: (data: OperationalEfficiencyInputs) => void
+    onChange: (data: OperationalEfficiencyInputs) => void,
+    currency: { locale: string; prefix: string; code: string }
 }) {
     const updateField = (field: keyof OperationalEfficiencyInputs, value: number) => {
         onChange({ ...data, [field]: value })
@@ -908,9 +992,12 @@ function Step3OperationalEfficiency({ data, onChange }: {
                             <CurrencyInput
                                 value={data.totalGrossProfit || 0}
                                 onValueChange={(v) => updateField('totalGrossProfit', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Total GP generated by the entire workforce.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Total Staff Labor Hours / Month</Label>
@@ -937,7 +1024,9 @@ function Step3OperationalEfficiency({ data, onChange }: {
                             <CurrencyInput
                                 value={data.inventoryAtStart || 0}
                                 onValueChange={(v) => updateField('inventoryAtStart', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
                         </div>
@@ -946,7 +1035,9 @@ function Step3OperationalEfficiency({ data, onChange }: {
                             <CurrencyInput
                                 value={data.inventoryAtEnd || 0}
                                 onValueChange={(v) => updateField('inventoryAtEnd', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
                         </div>
@@ -955,9 +1046,12 @@ function Step3OperationalEfficiency({ data, onChange }: {
                             <CurrencyInput
                                 value={data.inventorySpoilage || 0}
                                 onValueChange={(v) => updateField('inventorySpoilage', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Value of inventory lost to decay or damage.</p>
                         </div>
                     </div>
                 </div>
@@ -973,25 +1067,33 @@ function Step3OperationalEfficiency({ data, onChange }: {
                             <CurrencyInput
                                 value={data.fixedCosts || 0}
                                 onValueChange={(v) => updateField('fixedCosts', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Rent, salaries, and other non-variable costs.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Variable Cost Per Unit (Avg)</Label>
                             <CurrencyInput
                                 value={data.variableCostPerUnit || 0}
                                 onValueChange={(v) => updateField('variableCostPerUnit', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Direct costs for one unit of product/service.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Average Price Per Unit</Label>
                             <CurrencyInput
                                 value={data.pricePerUnit || 0}
                                 onValueChange={(v) => updateField('pricePerUnit', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
                         </div>
@@ -1013,6 +1115,7 @@ function Step3OperationalEfficiency({ data, onChange }: {
                                 placeholder="0"
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Tasks executed according to schedule.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Number of Unplanned "Surprises"</Label>
@@ -1032,9 +1135,10 @@ function Step3OperationalEfficiency({ data, onChange }: {
     )
 }
 
-function Step4GrowthRisk({ data, onChange }: {
+function Step4GrowthRisk({ data, onChange, currency }: {
     data: GrowthRiskInputs,
-    onChange: (data: GrowthRiskInputs) => void
+    onChange: (data: GrowthRiskInputs) => void,
+    currency: { locale: string; prefix: string; code: string }
 }) {
     const updateField = (field: keyof GrowthRiskInputs, value: number) => {
         onChange({ ...data, [field]: value })
@@ -1054,16 +1158,21 @@ function Step4GrowthRisk({ data, onChange }: {
                             <CurrencyInput
                                 value={data.ltgpMonth1 || 0}
                                 onValueChange={(v) => updateField('ltgpMonth1', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Gross profit from your oldest active cohort.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">LTGP - Month 2</Label>
                             <CurrencyInput
                                 value={data.ltgpMonth2 || 0}
                                 onValueChange={(v) => updateField('ltgpMonth2', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
                         </div>
@@ -1072,9 +1181,12 @@ function Step4GrowthRisk({ data, onChange }: {
                             <CurrencyInput
                                 value={data.ltgpMonth3 || 0}
                                 onValueChange={(v) => updateField('ltgpMonth3', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Helps measure retention and LTV growth.</p>
                         </div>
                     </div>
                 </div>
@@ -1090,18 +1202,24 @@ function Step4GrowthRisk({ data, onChange }: {
                             <CurrencyInput
                                 value={data.customerLifetimeValue || 0}
                                 onValueChange={(v) => updateField('customerLifetimeValue', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Total profit expected from one customer.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Customer Acquisition Cost (CAC)</Label>
                             <CurrencyInput
                                 value={data.customerAcquisitionCost || 0}
                                 onValueChange={(v) => updateField('customerAcquisitionCost', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Total sales/marketing cost to get one customer.</p>
                         </div>
                     </div>
                 </div>
@@ -1117,18 +1235,24 @@ function Step4GrowthRisk({ data, onChange }: {
                             <CurrencyInput
                                 value={data.currentLiabilities || 0}
                                 onValueChange={(v) => updateField('currentLiabilities', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Debt and obligations due within 1 year.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Current Liquid Assets</Label>
                             <CurrencyInput
                                 value={data.currentAssets || 0}
                                 onValueChange={(v) => updateField('currentAssets', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Cash and assets easily converted to cash.</p>
                         </div>
                     </div>
                 </div>
@@ -1144,16 +1268,21 @@ function Step4GrowthRisk({ data, onChange }: {
                             <CurrencyInput
                                 value={data.largestRevenueSource || 0}
                                 onValueChange={(v) => updateField('largestRevenueSource', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
+                            <p className="text-[9px] text-muted-foreground italic">Revenue from your biggest single point of dependence.</p>
                         </div>
                         <div className="space-y-2">
                             <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Total Business Revenue</Label>
                             <CurrencyInput
                                 value={data.totalRevenue || 0}
                                 onValueChange={(v) => updateField('totalRevenue', v)}
-                                placeholder="Rp 0"
+                                placeholder="0"
+                                locale={currency.locale}
+                                prefix={currency.prefix}
                                 className="bg-black/20 border-white/10"
                             />
                         </div>

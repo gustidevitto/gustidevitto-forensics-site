@@ -4,34 +4,36 @@ import { Input } from "@/components/ui/input"
 interface CurrencyInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'> {
     value: number
     onValueChange: (value: number) => void
+    locale?: string
+    prefix?: string
 }
 
 export const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputProps>(
-    ({ value, onValueChange, className, ...props }, ref) => {
+    ({ value, onValueChange, className, locale = 'id-ID', prefix = 'Rp', ...props }, ref) => {
         // Format number to display string with thousand separators
         const formatDisplay = (val: number) => {
             if (val === 0) return ''
-            return new Intl.NumberFormat('id-ID').format(val)
+            return new Intl.NumberFormat(locale).format(val)
         }
 
         const [displayValue, setDisplayValue] = React.useState(formatDisplay(value))
 
         // Update internal display when external value changes (e.g. reset)
         React.useEffect(() => {
-            if (value !== parseInput(displayValue)) {
+            const parsedCurrent = parseInput(displayValue)
+            if (value !== parsedCurrent) {
                 setDisplayValue(formatDisplay(value))
             }
-        }, [value])
+        }, [value, locale])
 
         const parseInput = (input: string) => {
             // Remove non-digits
-            const clean = input.replace(/\./g, '').replace(/[^0-9]/g, '')
+            const clean = input.replace(/[^0-9]/g, '')
             return clean ? parseInt(clean, 10) : 0
         }
 
         const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
             const raw = e.target.value
-            // Allow user to clear input
             if (raw === '') {
                 setDisplayValue('')
                 onValueChange(0)
@@ -44,15 +46,18 @@ export const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputPro
         }
 
         return (
-            <Input
-                {...props}
-                ref={ref}
-                type="text"
-                inputMode="numeric"
-                value={displayValue}
-                onChange={handleChange}
-                className={className}
-            />
+            <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-bold opacity-40">{prefix}</span>
+                <Input
+                    {...props}
+                    ref={ref}
+                    type="text"
+                    inputMode="numeric"
+                    value={displayValue}
+                    onChange={handleChange}
+                    className={`pl-10 ${className}`}
+                />
+            </div>
         )
     }
 )

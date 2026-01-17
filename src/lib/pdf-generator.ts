@@ -8,103 +8,180 @@ import type { HealthScoreResult } from '@/types/fip-lite';
 
 export async function generateFIPLitePDF(results: HealthScoreResult, name: string, businessName: string) {
     const doc = new jsPDF();
-    const primaryColor = '#7c3aed'; // Purple-600 (approx)
+    const primaryColor = '#7c3aed'; // Purple-600
+    const dangerColor = '#ef4444'; // Red-500
+    const successColor = '#10b981'; // Emerald-500
 
-    // Page 1: Executive Summary
+    const addFooter = (pageNum: number) => {
+        doc.setFontSize(8);
+        doc.setTextColor(150, 150, 150);
+        doc.text(`CONFIDENTIAL // GUSTI DEVITTO FORENSICS // PAGE ${pageNum}`, 105, 285, { align: 'center' });
+        doc.text('NO FIND NO PITCH GUARANTEE APPLIES', 105, 290, { align: 'center' });
+    };
+
+    // --- PAGE 1: EXECUTIVE SUMMARY ---
     doc.setFillColor(0, 0, 0);
     doc.rect(0, 0, 210, 297, 'F');
 
-    // Logo / Header
+    // Branding
     doc.setTextColor(primaryColor);
-    doc.setFontSize(24);
+    doc.setFontSize(28);
     doc.setFont('helvetica', 'bold');
-    doc.text('FIP™ FORENSIC REPORT', 20, 30);
+    doc.text('FIP™ PROTOCOL', 20, 30);
 
-    doc.setTextColor(255, 255, 255);
     doc.setFontSize(10);
     doc.setFont('helvetica', 'normal');
-    doc.text(`CONFIDENTIAL // L-9 AUTHORIZATION REQUIRED`, 20, 40);
-    doc.text(`DATE: ${new Date().toLocaleDateString()}`, 150, 40);
+    doc.setTextColor(255, 255, 255);
+    doc.text('CLINICAL BUSINESS HEALTH FORENSICS // L-9 AUTHORIZATION', 20, 38);
+    doc.text(`ID: ${Math.random().toString(36).substring(2, 9).toUpperCase()}`, 160, 38);
 
     doc.setDrawColor(primaryColor);
-    doc.setLineWidth(0.5);
-    doc.line(20, 45, 190, 45);
+    doc.line(20, 42, 190, 42);
 
-    // Business Info
-    doc.setFontSize(12);
-    doc.text(`BUSINESS: ${businessName.toUpperCase()}`, 20, 60);
-    doc.text(`OPERATOR: ${name.toUpperCase()}`, 20, 70);
-
-    // Overall Score
-    doc.setDrawColor(primaryColor);
-    doc.setFillColor(primaryColor);
-    doc.setLineWidth(1);
-    doc.circle(105, 120, 30, 'S');
-
-    doc.setFontSize(48);
-    doc.text(`${results.overallScore}`, 105, 125, { align: 'center' });
+    // Business Intelligence
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'bold');
+    doc.text(businessName.toUpperCase(), 20, 55);
     doc.setFontSize(10);
-    doc.text('OVERALL HEALTH SCORE', 105, 135, { align: 'center' });
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(150, 150, 150);
+    doc.text(`OWNER/OPERATOR: ${name.toUpperCase()}`, 20, 62);
+    doc.text(`DIAGNOSTIC DATE: ${new Date().toLocaleDateString()}`, 20, 67);
 
-    doc.setFontSize(18);
-    doc.setTextColor(results.verdict === 'fortress' ? '#10b981' : results.verdict === 'warning' ? '#f59e0b' : '#ef4444');
-    doc.text(results.verdictLabel, 105, 160, { align: 'center' });
+    // Overall Score Gauge
+    doc.setLineWidth(2);
+    doc.setDrawColor(primaryColor);
+    doc.circle(105, 115, 30, 'S');
 
-    // Category Breakdown
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(48);
+    doc.setFont('helvetica', 'bold');
+    doc.text(`${results.overallScore}`, 105, 120, { align: 'center' });
+
+    doc.setFontSize(10);
+    doc.setTextColor(primaryColor);
+    doc.text('TOTAL HEALTH SCORE', 105, 132, { align: 'center' });
+
+    // Verdict
+    doc.setFontSize(20);
+    const vColor = results.verdict === 'fortress' ? successColor : results.verdict === 'warning' ? '#f59e0b' : dangerColor;
+    doc.setTextColor(vColor);
+    doc.text(results.verdictLabel.toUpperCase(), 105, 155, { align: 'center' });
+
+    // Category Grid
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(14);
-    doc.text('ARCHITECTURAL VECTORS', 20, 190);
+    doc.text('DIAGNOSTIC VECTORS', 20, 185);
 
-    let y = 205;
+    let y = 200;
+    const catLabels: Record<string, string> = {
+        revenueProfitability: 'REVENUE & PROFITABILITY',
+        cashFlow: 'CASH FLOW & LIQUIDITY',
+        operationalEfficiency: 'OPERATIONAL EFFICIENCY',
+        growthRisk: 'GROWTH & RISK EXPOSURE'
+    };
+
     Object.entries(results.categoryScores).forEach(([cat, score]) => {
-        const label = cat.replace(/([A-Z])/g, ' $1').toUpperCase();
         doc.setFontSize(10);
-        doc.text(label, 20, y);
-        doc.text(`${score}/100`, 170, y);
+        doc.setTextColor(200, 200, 200);
+        doc.text(catLabels[cat] || cat.toUpperCase(), 20, y);
+        doc.setTextColor(255, 255, 255);
+        doc.text(`${score}/100`, 175, y);
 
-        doc.setFillColor(30, 30, 30);
+        doc.setFillColor(40, 40, 40);
         doc.rect(20, y + 2, 170, 2, 'F');
         doc.setFillColor(primaryColor);
         doc.rect(20, y + 2, (score / 100) * 170, 2, 'F');
-
-        y += 15;
+        y += 18;
     });
 
-    // Page 2: Risks & Recommendations
+    addFooter(1);
+
+    // --- PAGE 2: THE 16 PILLARS BREAKDOWN ---
     doc.addPage();
     doc.setFillColor(0, 0, 0);
     doc.rect(0, 0, 210, 297, 'F');
 
     doc.setTextColor(primaryColor);
-    doc.setFontSize(16);
-    doc.text('CRITICAL RISK ANALYSIS', 20, 30);
+    doc.setFontSize(18);
+    doc.setFont('helvetica', 'bold');
+    doc.text('16-PILLAR GRANULAR AUDIT', 20, 25);
 
-    y = 50;
-    results.topRisks.forEach((risk, i) => {
-        doc.setDrawColor(239, 68, 68); // Red
-        doc.rect(20, y, 170, 40, 'S');
+    y = 40;
+    results.pillars.forEach((p, i) => {
+        if (i === 8) { // Split to Page 3 if needed, but we'll try to fit or add page
+            // For 16, we might need a 3rd page or smaller rows. 
+            // Let's use two columns per page maybe? No, let's just make rows compact.
+        }
 
-        doc.setTextColor(239, 68, 68);
-        doc.setFontSize(12);
-        doc.text(`${i + 1}. ${risk.name.toUpperCase()}`, 25, y + 10);
+        doc.setFontSize(9);
+        doc.setTextColor(200, 200, 200);
+        doc.text(`${i + 1}. ${p.name}`, 20, y);
 
-        doc.setTextColor(255, 255, 255);
-        doc.setFontSize(10);
-        doc.text(`Severity Score: ${Math.round(100 - risk.score)}% Risk`, 25, y + 18);
+        const pScore = p.score;
+        const pColor = pScore > 80 ? successColor : pScore > 50 ? '#f59e0b' : dangerColor;
 
-        doc.setFont('helvetica', 'oblique');
-        doc.text('Prescription:', 25, y + 28);
-        doc.setFont('helvetica', 'normal');
-        const lines = doc.splitTextToSize(risk.recommendation, 150);
-        doc.text(lines, 50, y + 28);
+        doc.setTextColor(pColor);
+        doc.text(`${pScore}%`, 180, y, { align: 'right' });
 
-        y += 50;
+        doc.setFillColor(30, 30, 30);
+        doc.rect(20, y + 2, 170, 1, 'F');
+        doc.setFillColor(pColor);
+        doc.rect(20, y + 2, (pScore / 100) * 170, 1, 'F');
+
+        y += 12;
+
+        if (y > 270) {
+            addFooter(2);
+            doc.addPage(); y = 25;
+            doc.setFillColor(0, 0, 0); doc.rect(0, 0, 210, 297, 'F');
+            doc.setTextColor(primaryColor); doc.setFontSize(18); doc.text('16-PILLAR AUDIT (CONT.)', 20, 25);
+            y = 40;
+        }
     });
 
-    // Footer on P2
-    doc.setTextColor(primaryColor);
-    doc.setFontSize(8);
-    doc.text('PROCESSED BY ANTIGRAVITY FORENSIC ENGINE // NO FIND NO PITCH GUARANTEE APPLIES', 105, 280, { align: 'center' });
+    // --- PAGE 3: RECOMMENDATIONS ---
+    doc.addPage();
+    doc.setFillColor(0, 0, 0);
+    doc.rect(0, 0, 210, 297, 'F');
+
+    doc.setTextColor(dangerColor);
+    doc.setFontSize(18);
+    doc.text('CRITICAL VULNERABILITIES', 20, 25);
+
+    y = 40;
+    results.topRisks.forEach((risk) => {
+        doc.setDrawColor(dangerColor);
+        doc.rect(20, y, 170, 35, 'S');
+
+        doc.setTextColor(dangerColor);
+        doc.setFontSize(11);
+        doc.setFont('helvetica', 'bold');
+        doc.text(risk.name.toUpperCase(), 25, y + 8);
+
+        doc.setTextColor(255, 255, 255);
+        doc.setFontSize(9);
+        doc.setFont('helvetica', 'normal');
+        const lines = doc.splitTextToSize(`PRESCRIPTION: ${risk.recommendation}`, 160);
+        doc.text(lines, 25, y + 16);
+
+        y += 42;
+    });
+
+    y += 10;
+    doc.setTextColor(successColor);
+    doc.setFontSize(18);
+    doc.text('PRIMARY FORTIFICATIONS', 20, y);
+    y += 15;
+
+    results.strengths.forEach((s) => {
+        doc.setFontSize(10);
+        doc.setTextColor(successColor);
+        doc.text(`[+] ${s.name.toUpperCase()}`, 20, y);
+        y += 8;
+    });
+
+    addFooter(3);
 
     // Save
     doc.save(`FIP_Forensic_Report_${businessName.replace(/\s+/g, '_')}.pdf`);
