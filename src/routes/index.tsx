@@ -247,7 +247,7 @@ function Index() {
                             </Button>
                         ) : (
                             <Button asChild size="lg" className="text-lg h-16 px-10 shadow-lg shadow-primary/30 bg-yellow-500 hover:bg-yellow-600 text-black font-black group relative overflow-hidden flex-1">
-                                <Link to="/get-access">
+                                <Link to="/fip-lite">
                                     <span className="relative z-10 flex items-center justify-center">
                                         {t('hero.cta_free')}
                                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -410,7 +410,7 @@ function Index() {
                                     </p>
                                 </blockquote>
                                 <Button asChild variant="outline" size="lg" className="w-full border-primary/50 hover:bg-primary/10 font-black h-14 text-base">
-                                    <Link to="/get-access">
+                                    <Link to="/fip-lite">
                                         {t('segmentation.sme_cta')}
                                     </Link>
                                 </Button>
@@ -455,7 +455,7 @@ function Index() {
                             </div>
 
                             <Button asChild size="lg" className="w-full bg-red-600 hover:bg-red-700 text-white font-black h-14 uppercase tracking-wider shadow-lg shadow-red-900/20">
-                                <Link to="/get-access">{t('cost_of_delay.cta')}</Link>
+                                <Link to="/fip-lite">{t('cost_of_delay.cta')}</Link>
                             </Button>
                         </div>
                     </div>

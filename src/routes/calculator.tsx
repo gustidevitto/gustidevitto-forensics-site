@@ -16,7 +16,7 @@ export const Route = createFileRoute('/calculator')({
         const token = localStorage.getItem('pcc_session_token')
         if (!token) {
             throw redirect({
-                to: '/get-access',
+                to: '/fip-lite',
                 search: {
                     redirect: location.href,
                 },

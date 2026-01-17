@@ -116,7 +116,7 @@ function MasterIndex() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button asChild size="lg" className="h-12 px-8 font-bold">
-                            <Link to="/get-access">{t('master_index.cta_pcc')}</Link>
+                            <Link to="/fip-lite">{t('master_index.cta_pcc')}</Link>
                         </Button>
                         <Button asChild variant="outline" size="lg" className="h-12 px-8 font-bold">
                             <Link to="/investasi">{t('master_index.cta_investasi')}</Link>

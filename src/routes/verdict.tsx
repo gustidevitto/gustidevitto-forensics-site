@@ -86,7 +86,7 @@ function VerdictPage() {
             {/* Footer CTA */}
             <footer className="text-center pt-8">
                 <Button asChild size="lg" className="h-14 px-10 group">
-                    <Link to="/get-access">
+                    <Link to="/fip-lite">
                         {t('verdict_page.cta_verdict')}
                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Link>

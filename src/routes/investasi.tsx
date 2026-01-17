@@ -26,7 +26,7 @@ function InvestasiPage() {
                 t('investasi.sme_f4', "Basic Margin Leakage Report")
             ],
             cta: t('pricing.cta_starter'),
-            link: "/get-access"
+            link: "/fip-lite"
         },
         {
             id: "growth",
@@ -43,7 +43,7 @@ function InvestasiPage() {
                 t('investasi.sme_growth_f5', "Neural Pattern Analysis")
             ],
             cta: t('pricing.cta_growth'),
-            link: "/get-access",
+            link: "/fip-lite",
             highlight: true
         },
         {
@@ -61,7 +61,7 @@ function InvestasiPage() {
                 t('investasi.sme_scale_f5', "Custom Forensic Report (Weekly)")
             ],
             cta: t('pricing.cta_scale'),
-            link: "/get-access"
+            link: "/fip-lite"
         }
     ]
 
@@ -303,7 +303,7 @@ function InvestasiPage() {
                     </div>
                     <div className="pt-8 flex flex-col md:flex-row gap-4 justify-center">
                         <Button asChild size="lg" className="rounded-full bg-primary text-black font-black px-10">
-                            <Link to="/get-access">{t('investasi.cta_start')}</Link>
+                            <Link to="/fip-lite">{t('investasi.cta_start')}</Link>
                         </Button>
                         <Button asChild size="lg" variant="outline" className="rounded-full border-primary/20 text-white font-bold px-10">
                             <Link to="/methodology">{t('investasi.cta_methodology')} <ArrowRight className="ml-2 w-4 h-4" /></Link>

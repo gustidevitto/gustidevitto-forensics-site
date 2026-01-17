@@ -123,7 +123,7 @@ function AboutGustiDevitto() {
 
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Button asChild size="lg" className="h-14 px-8 font-black tracking-wide text-lg">
-                                    <Link to="/get-access">
+                                    <Link to="/fip-lite">
                                         {t('about_page.cta_ready')}
                                         <ArrowRight className="ml-2 w-5 h-5" />
                                     </Link>
@@ -265,7 +265,7 @@ function AboutGustiDevitto() {
 
                     <div className="pt-8">
                         <Button asChild size="lg" className="h-16 px-12 text-xl font-black rounded-2xl shadow-2xl shadow-primary/20 hover:scale-105 transition-transform group">
-                            <Link to="/get-access" className="flex items-center">
+                            <Link to="/fip-lite" className="flex items-center">
                                 {t('about_page.final_cta_button')}
                                 <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                             </Link>

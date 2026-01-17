@@ -67,7 +67,7 @@ function ForensicsPillars() {
                             </p>
                             <div className="pt-2">
                                 <Button asChild variant="outline" className="border-primary/50 text-primary hover:bg-primary/5 h-12 px-6 font-bold">
-                                    <Link to="/get-access">{t('pillars_page.demo_btn')}</Link>
+                                    <Link to="/fip-lite">{t('pillars_page.demo_btn')}</Link>
                                 </Button>
                             </div>
                         </div>
@@ -150,7 +150,7 @@ function ForensicsPillars() {
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-6">
                         <Button asChild size="lg" className="h-14 px-10 text-lg font-bold shadow-xl shadow-primary/20">
-                            <Link to="/get-access">
+                            <Link to="/fip-lite">
                                 {t('pillars_page.cta_pcc')}
                             </Link>
                         </Button>
