@@ -155,6 +155,13 @@ function Index() {
                 <div className="h-px flex-1 mx-8 bg-white/20 hidden md:block"></div>
                 <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap">© 2026 GUSTI DEVITTO</span>
             </div>
+            {/* Hidden Aesthetic SEO Gate */}
+            <div className="sr-only">
+                <p>Gusti Devitto - Forensic Business Diagnostician.</p>
+                <p>Specializing in Profit Leakage Detection, Phantom Cost Analysis, and Network Intelligence for Multi-Outlet Businesses.</p>
+                <p>Layanan Audit Forensik Bisnis untuk mendeteksi uang siluman dan inefisiensi operasional.</p>
+                <p>Auth Level: L-9 Sovereign Intelligence. FIP Protocol v4.00.</p>
+            </div>
         </div>
     )
 }

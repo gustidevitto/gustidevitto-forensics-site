@@ -37,8 +37,8 @@ function MultiOutletPage() {
         <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#0a1628] via-[#0f1f3a] to-[#0a1628]">
             {/* SEO Meta Tags */}
             <title>{t('global.seo_home_title')}</title>
-            <meta name="description" content={t('global.seo_home_desc')} />
-            <meta name="keywords" content={t('global.seo_home_keywords')} />
+            <meta name="description" content={t('multi_outlet.seo_desc')} />
+            <meta name="keywords" content={t('multi_outlet.seo_keywords')} />
             <meta property="og:title" content={t('global.og_home_title')} />
             <meta property="og:description" content={t('global.og_home_desc')} />
             <meta property="og:type" content="website" />
@@ -455,6 +455,15 @@ function MultiOutletPage() {
                     <p className="text-sm text-muted-foreground mt-4">
                         <Clock className="w-4 h-4 inline mr-1" />
                         {t('multi_outlet.final_cta_meta')}
+                    </p>
+                </div>
+            </section>
+
+            {/* Cross-Link Strategy */}
+            <section className="py-8 px-4 md:px-8 border-t border-white/5 bg-black/20">
+                <div className="container mx-auto max-w-4xl text-center">
+                    <p className="text-sm text-muted-foreground">
+                        {t('multi_outlet.cross_link_label')} <Link to="/network-intelligence" className="text-primary font-bold hover:underline px-1">{t('multi_outlet.cross_link_cta')}</Link>
                     </p>
                 </div>
             </section>

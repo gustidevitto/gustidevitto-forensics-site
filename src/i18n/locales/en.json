@@ -13,6 +13,10 @@
         "financial_forensics": "Financial Forensics"
     },
     "multi_outlet": {
+        "seo_desc": "Stop profit leakage now. Don't let invisible costs bleed your business dry. Forensic profit protection for multi-outlet owners (3-20 locations).",
+        "seo_keywords": "Small Business Audit, Profit Leakage Detection, SME Forensic, Multi-Outlet Analysis, Turnaround Strategy",
+        "cross_link_label": "Managing a large franchise network (>20)?",
+        "cross_link_cta": "Go to Enterprise Intelligence",
         "hero_badge": "Powered by FIP™",
         "hero_title": "Stop Profit Leakage.",
         "hero_title_accent": "Find Where Your Money Goes.",
@@ -73,6 +77,10 @@
         "footer_badge": "Built on FIP™ v4.00 · Proprietary Diagnostic Protocol"
     },
     "network_intelligence": {
+        "seo_desc": "Ensure systemic security and eliminate network-wide fraud. Real-time forensic intelligence for franchise HQs (20-500+ locations). Detect anomalies before they become failures.",
+        "seo_keywords": "Franchise Fraud Detection, Network Intelligence, Systemic Risk Analysis, Enterprise Forensics, HQ Compliance",
+        "cross_link_label": "Are you a single-owner or smaller network (<20)?",
+        "cross_link_cta": "Go to SME Operational Suite",
         "hero_badge": "Powered by FIP™",
         "hero_title": "Network Intelligence",
         "hero_title_accent": "for Franchise HQs.",

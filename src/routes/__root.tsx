@@ -21,8 +21,8 @@ function RootComponent() {
         document.title = t('global.seo_home_title', 'Gusti Devitto Forensics | Institution-Grade Intelligence')
     }, [i18n.language, t])
 
-    const canonicalUrl = "https://www.gustidevitto.com"
     const location = useLocation()
+    const canonicalUrl = `https://www.gustidevitto.com${location.pathname === '/' ? '' : location.pathname}`
     const isEntranceGate = location.pathname === '/'
 
     return (

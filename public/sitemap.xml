@@ -73,5 +73,21 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/verdict" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/verdict" />
   </url>
+  <url>
+    <loc>https://www.gustidevitto.com/multi-outlet</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/multi-outlet" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/multi-outlet" />
+  </url>
+  <url>
+    <loc>https://www.gustidevitto.com/network-intelligence</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/network-intelligence" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/network-intelligence" />
+  </url>
 </urlset>
 

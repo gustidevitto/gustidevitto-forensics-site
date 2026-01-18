@@ -13,6 +13,10 @@
         "financial_forensics": "Financial Forensics"
     },
     "multi_outlet": {
+        "seo_desc": "Hentikan kebocoran profit sekarang. Jangan biarkan biaya tak terlihat menggerogoti bisnis Anda. Perlindungan profit forensik untuk pemilik multi-outlet (3-20 cabang).",
+        "seo_keywords": "Audit Bisnis Kecil, Deteksi Kebocoran Profit, Forensik UKM, Analisis Multi-Outlet, Strategi Turnaround",
+        "cross_link_label": "Mengelola jaringan franchise besar (>20)?",
+        "cross_link_cta": "Ke Intelijen Enterprise",
         "hero_badge": "Powered by FIP™",
         "hero_title": "Hentikan Profit Leakage.",
         "hero_title_accent": "Temukan Ke Mana Uang Anda Mengalir.",
@@ -73,6 +77,10 @@
         "footer_badge": "Built on FIP™ v4.00 · Protokol Diagnostik Proprietary"
     },
     "network_intelligence": {
+        "seo_desc": "Pastikan keamanan sistemik dan hapus fraud di seluruh jaringan. Intelijen forensik real-time untuk HQ Franchise (20-500+ cabang). Deteksi anomali sebelum menjadi kegagalan.",
+        "seo_keywords": "Deteksi Fraud Franchise, Intelijen Jaringan, Analisis Risiko Sistemik, Forensik Enterprise, Kepatuhan HQ",
+        "cross_link_label": "Pemilik tunggal atau jaringan kecil (<20)?",
+        "cross_link_cta": "Ke SME Operational Suite",
         "hero_badge": "Powered by FIP™",
         "hero_title": "Network Intelligence",
         "hero_title_accent": "untuk HQ Franchise.",
