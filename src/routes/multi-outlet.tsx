@@ -1,0 +1,472 @@
+import { createFileRoute, Link } from '@tanstack/react-router'
+import { useState, useEffect } from 'react'
+import type { ChangeEvent } from 'react'
+import { Button } from "@/components/ui/button"
+import { ArrowRight, ShieldCheck, Activity, CheckCircle2, Play, ChevronLeft, ChevronRight, Clock } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { useTranslation, Trans } from 'react-i18next'
+
+export const Route = createFileRoute('/multi-outlet')({
+    component: MultiOutletPage,
+})
+
+function MultiOutletPage() {
+    const { t } = useTranslation()
+    const [networkSize, setNetworkSize] = useState<number>(0)
+    const [currentSlide, setCurrentSlide] = useState(0)
+
+    const heroImages = [
+        '/assets/images/audit.png',
+        '/assets/images/forensic_dashboard.png',
+        '/assets/images/network_monitoring.png',
+        '/assets/images/dachicken.png'
+    ]
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % heroImages.length)
+        }, 5000)
+        return () => clearInterval(timer)
+    }, [])
+
+    const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroImages.length)
+    const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length)
+
+    return (
+        <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#0a1628] via-[#0f1f3a] to-[#0a1628]">
+            {/* SEO Meta Tags */}
+            <title>{t('global.seo_home_title')}</title>
+            <meta name="description" content={t('global.seo_home_desc')} />
+            <meta name="keywords" content={t('global.seo_home_keywords')} />
+            <meta property="og:title" content={t('global.og_home_title')} />
+            <meta property="og:description" content={t('global.og_home_desc')} />
+            <meta property="og:type" content="website" />
+            <meta name="geo.region" content="ID-JK" />
+            <meta name="geo.placename" content="Jakarta" />
+            <meta name="geo.position" content="-6.200000;106.816666" />
+
+            {/* Hero Section with Carousel */}
+            <section className="relative py-24 px-4 md:px-8 border-b border-white/5 overflow-hidden">
+                <div className="absolute inset-0 -z-10">
+                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] opacity-50 animate-pulse"></div>
+                </div>
+
+                <div className="container mx-auto max-w-6xl">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left: Copy */}
+                        <div className="space-y-8 animate-fade-in">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest border border-primary/20">
+                                <Activity className="w-3 h-3" /> {t('multi_outlet.hero_badge')}
+                            </div>
+
+                            <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.1]">
+                                {t('multi_outlet.hero_title')} <br />
+                                <span className="text-primary">{t('multi_outlet.hero_title_accent')}</span>
+                            </h1>
+
+                            <p className="text-xl text-muted-foreground leading-relaxed">
+                                {t('multi_outlet.hero_desc')}
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                                <Button asChild size="lg" className="h-16 px-10 text-lg font-black bg-primary text-black hover:bg-white shadow-xl shadow-primary/20">
+                                    <Link to="/fip-lite">
+                                        {t('multi_outlet.cta_health_score')}
+                                        <ArrowRight className="ml-2 w-5 h-5" />
+                                    </Link>
+                                </Button>
+                                <Button asChild variant="outline" size="lg" className="h-16 px-10 border-white/10 hover:bg-white/5 text-white font-bold">
+                                    <a href="#benefits">{t('multi_outlet.cta_see_catch')}</a>
+                                </Button>
+                            </div>
+
+                            <p className="text-sm text-muted-foreground/60 italic">
+                                {t('multi_outlet.hero_meta')}
+                            </p>
+                        </div>
+
+                        {/* Right: Image Carousel */}
+                        <div className="relative">
+                            <div className="relative rounded-2xl border border-white/10 bg-zinc-900/50 overflow-hidden backdrop-blur-sm group">
+                                {/* Carousel Images */}
+                                <div className="relative aspect-[4/3]">
+                                    {heroImages.map((img, idx) => (
+                                        <div
+                                            key={idx}
+                                            className={`absolute inset-0 transition-opacity duration-1000 ${idx === currentSlide ? 'opacity-100' : 'opacity-0'
+                                                }`}
+                                        >
+                                            <img
+                                                src={img}
+                                                alt={`Forensic Audit ${idx + 1}`}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    ))}
+
+                                    {/* Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                </div>
+
+                                {/* Carousel Controls */}
+                                <button
+                                    onClick={prevSlide}
+                                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all opacity-0 group-hover:opacity-100"
+                                >
+                                    <ChevronLeft className="w-5 h-5" />
+                                </button>
+                                <button
+                                    onClick={nextSlide}
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all opacity-0 group-hover:opacity-100"
+                                >
+                                    <ChevronRight className="w-5 h-5" />
+                                </button>
+
+                                {/* Dots Indicator */}
+                                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                                    {heroImages.map((_, idx) => (
+                                        <button
+                                            key={idx}
+                                            onClick={() => setCurrentSlide(idx)}
+                                            className={`w-2 h-2 rounded-full transition-all ${idx === currentSlide ? 'bg-primary w-8' : 'bg-white/50'
+                                                }`}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Social Proof */}
+            <section className="py-16 px-4 md:px-8 bg-white/[0.02] border-b border-white/5">
+                <div className="container mx-auto max-w-5xl">
+                    <div className="grid md:grid-cols-3 gap-8 text-center">
+                        <div className="space-y-2">
+                            <div className="text-4xl font-black text-primary">{t('multi_outlet.social_leaks_val')}</div>
+                            <div className="text-sm text-muted-foreground uppercase tracking-wide">{t('multi_outlet.social_leaks')}</div>
+                        </div>
+                        <div className="space-y-2">
+                            <div className="text-4xl font-black text-primary">{t('multi_outlet.social_verdict_val')}</div>
+                            <div className="text-sm text-muted-foreground uppercase tracking-wide">{t('multi_outlet.social_verdict')}</div>
+                        </div>
+                        <div className="space-y-2">
+                            <div className="text-4xl font-black text-primary">{t('multi_outlet.social_diagnosed_val')}</div>
+                            <div className="text-sm text-muted-foreground uppercase tracking-wide">{t('multi_outlet.social_diagnosed')}</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Cost Calculator */}
+            <section className="py-24 px-4 md:px-8 bg-white/[0.01] border-b border-white/5">
+                <div className="container mx-auto max-w-4xl text-center space-y-12">
+                    <div className="space-y-4">
+                        <h2 className="text-3xl font-black tracking-tight">{t('multi_outlet.calc_title')}</h2>
+                        <p className="text-muted-foreground">{t('multi_outlet.calc_desc')}</p>
+                    </div>
+
+                    <div className="max-w-md mx-auto bg-black/50 border border-white/10 rounded-2xl p-8 shadow-2xl backdrop-blur-sm">
+                        <div className="space-y-6">
+                            <div>
+                                <label className="text-[10px] font-black uppercase tracking-widest text-primary mb-2 block">{t('multi_outlet.calc_label')}</label>
+                                <Input
+                                    type="number"
+                                    placeholder={t('multi_outlet.calc_placeholder')}
+                                    className="text-center text-3xl font-black h-16 bg-zinc-900 border-white/10 text-white focus:border-primary"
+                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setNetworkSize(parseInt(e.target.value) || 0)}
+                                />
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+                                <div>
+                                    <p className="text-[10px] uppercase font-bold text-muted-foreground mb-1">{t('multi_outlet.calc_daily')}</p>
+                                    <p className="text-2xl font-black text-red-500">${(networkSize * 32).toLocaleString()}</p>
+                                </div>
+                                <div>
+                                    <p className="text-[10px] uppercase font-bold text-muted-foreground mb-1">{t('multi_outlet.calc_monthly')}</p>
+                                    <p className="text-2xl font-black text-red-500">${(networkSize * 32 * 30).toLocaleString()}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Benefits-First Features with Forensics Image */}
+            <section id="benefits" className="py-24 px-4 md:px-8 border-b border-white/5">
+                <div className="container mx-auto max-w-6xl space-y-16">
+                    <div className="text-center space-y-4">
+                        <h2 className="text-3xl md:text-5xl font-black tracking-tight">{t('multi_outlet.benefits_title')}</h2>
+                        <p className="text-muted-foreground max-w-2xl mx-auto">{t('multi_outlet.benefits_desc')}</p>
+                    </div>
+
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left: Benefits List */}
+                        <div className="space-y-8">
+                            {/* Benefit 1 */}
+                            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-primary/50 transition-all space-y-3">
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                                        <CheckCircle2 className="w-5 h-5" />
+                                    </div>
+                                    <div className="flex-1 space-y-2">
+                                        <h3 className="text-xl font-black">{t('multi_outlet.benefit1_title')}</h3>
+                                        <div className="text-sm text-muted-foreground leading-relaxed">
+                                            <Trans i18nKey="multi_outlet.benefit1_desc" components={{ 1: <span className="text-primary font-bold" /> }} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Benefit 2 */}
+                            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-primary/50 transition-all space-y-3">
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                                        <CheckCircle2 className="w-5 h-5" />
+                                    </div>
+                                    <div className="flex-1 space-y-2">
+                                        <h3 className="text-xl font-black">{t('multi_outlet.benefit2_title')}</h3>
+                                        <div className="text-sm text-muted-foreground leading-relaxed">
+                                            <Trans i18nKey="multi_outlet.benefit2_desc" components={{ 1: <span className="text-primary font-bold" /> }} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Benefit 3 */}
+                            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-primary/50 transition-all space-y-3">
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                                        <CheckCircle2 className="w-5 h-5" />
+                                    </div>
+                                    <div className="flex-1 space-y-2">
+                                        <h3 className="text-xl font-black">{t('multi_outlet.benefit3_title')}</h3>
+                                        <div className="text-sm text-muted-foreground leading-relaxed">
+                                            <Trans i18nKey="multi_outlet.benefit3_desc" components={{ 1: <span className="text-primary font-bold" /> }} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Benefit 4 */}
+                            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-primary/50 transition-all space-y-3">
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                                        <CheckCircle2 className="w-5 h-5" />
+                                    </div>
+                                    <div className="flex-1 space-y-2">
+                                        <h3 className="text-xl font-black">{t('multi_outlet.benefit4_title')}</h3>
+                                        <div className="text-sm text-muted-foreground leading-relaxed">
+                                            <Trans i18nKey="multi_outlet.benefit4_desc" components={{ 1: <span className="text-primary font-bold" /> }} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right: Forensics Image */}
+                        <div className="relative">
+                            <div className="relative rounded-2xl border border-primary/20 bg-zinc-900/50 overflow-hidden backdrop-blur-sm">
+                                <img
+                                    src="/assets/images/forensics.png"
+                                    alt="Forensic Analysis Dashboard"
+                                    className="w-full h-auto"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                <div className="absolute bottom-6 left-6 right-6">
+                                    <p className="text-xs font-black uppercase tracking-widest text-primary mb-2">{t('multi_outlet.benefits_img_badge')}</p>
+                                    <p className="text-sm text-white/80">{t('multi_outlet.benefits_img_text')}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="text-center pt-8">
+                        <Button asChild size="lg" className="h-16 px-12 font-black bg-primary text-black hover:bg-white shadow-xl shadow-primary/20">
+                            <Link to="/fip-lite">{t('multi_outlet.cta_health_score')}</Link>
+                        </Button>
+                    </div>
+                </div>
+            </section>
+
+            {/* Demo Video */}
+            <section className="py-24 px-4 md:px-8 border-b border-white/5">
+                <div className="container mx-auto max-w-4xl text-center space-y-8">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] font-black tracking-[0.2em] border border-primary/20 uppercase">
+                        {t('multi_outlet.demo_badge')}
+                    </div>
+                    <h2 className="text-3xl font-black tracking-tight">{t('multi_outlet.demo_title')}</h2>
+
+                    <div className="relative aspect-video rounded-2xl border border-white/10 bg-zinc-900/50 overflow-hidden group cursor-pointer backdrop-blur-sm">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
+                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
+                            <div className="w-20 h-20 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <Play className="w-8 h-8 text-primary ml-1" />
+                            </div>
+                            <p className="text-lg font-bold text-white">{t('multi_outlet.demo_video_text')}</p>
+                        </div>
+                    </div>
+
+                    <Button asChild variant="outline" size="lg" className="border-primary/50 hover:bg-primary/10 text-white font-bold">
+                        <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
+                            {t('multi_outlet.demo_cta')}
+                        </a>
+                    </Button>
+                </div>
+            </section>
+
+            {/* Simplified Pricing */}
+            <section className="py-24 px-4 md:px-8 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border-y border-primary/20">
+                <div className="container mx-auto max-w-5xl">
+                    <div className="text-center mb-16 space-y-4">
+                        <h2 className="text-3xl md:text-4xl font-black">{t('multi_outlet.pricing_title')}</h2>
+                        <p className="text-muted-foreground">{t('multi_outlet.pricing_desc')}</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        {/* Free Tier */}
+                        <div className="p-8 rounded-2xl bg-black/50 border border-white/10 backdrop-blur-sm space-y-6">
+                            <div className="space-y-2">
+                                <h3 className="text-2xl font-black uppercase">{t('multi_outlet.pricing_free_title')}</h3>
+                                <p className="text-sm text-muted-foreground">{t('multi_outlet.pricing_free_sub')}</p>
+                            </div>
+
+                            <div className="space-y-4">
+                                <div className="flex items-baseline gap-2">
+                                    <span className="text-5xl font-black text-primary">FREE</span>
+                                </div>
+
+                                <ul className="space-y-3 text-sm text-muted-foreground">
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                        {t('multi_outlet.pricing_free_f1')}
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                        {t('multi_outlet.pricing_free_f2')}
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                        {t('multi_outlet.pricing_free_f3')}
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                        {t('multi_outlet.pricing_free_f4')}
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <Button asChild className="w-full h-14 font-black bg-white/10 hover:bg-white/20 text-white border border-white/20">
+                                <Link to="/fip-lite">{t('multi_outlet.pricing_free_cta')}</Link>
+                            </Button>
+                        </div>
+
+                        {/* Paid Tier */}
+                        <div className="p-8 rounded-2xl bg-primary/10 border-2 border-primary backdrop-blur-sm space-y-6 relative">
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-black text-xs font-black uppercase rounded-full">
+                                Most Popular
+                            </div>
+
+                            <div className="space-y-2">
+                                <h3 className="text-2xl font-black uppercase">{t('multi_outlet.pricing_paid_title')}</h3>
+                                <p className="text-sm text-muted-foreground">{t('multi_outlet.pricing_paid_sub')}</p>
+                            </div>
+
+                            <div className="space-y-4">
+                                <div className="flex items-baseline gap-2">
+                                    <span className="text-sm text-muted-foreground">{t('multi_outlet.pricing_paid_price_label')}</span>
+                                    <span className="text-5xl font-black text-primary">{t('multi_outlet.pricing_paid_price')}</span>
+                                </div>
+
+                                <ul className="space-y-3 text-sm text-muted-foreground">
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                        {t('multi_outlet.pricing_paid_f1')}
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                        {t('multi_outlet.pricing_paid_f2')}
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                        {t('multi_outlet.pricing_paid_f3')}
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                        {t('multi_outlet.pricing_paid_f4')}
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <Button asChild className="w-full h-14 font-black bg-primary text-black hover:bg-white">
+                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
+                                    {t('multi_outlet.pricing_paid_cta')}
+                                </a>
+                            </Button>
+                        </div>
+                    </div>
+
+                    <p className="text-center text-sm text-muted-foreground mt-12 italic">
+                        <ShieldCheck className="w-4 h-4 inline mr-1" />
+                        {t('multi_outlet.pricing_guarantee')}
+                    </p>
+                </div>
+            </section>
+
+            {/* FAQ */}
+            <section className="py-20 px-4 md:px-8 container mx-auto max-w-4xl">
+                <div className="max-w-3xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className="text-2xl md:text-4xl font-black tracking-tight">{t('multi_outlet.faq_title', 'Common Questions')}</h2>
+                    </div>
+                    <Accordion type="single" collapsible className="w-full space-y-4">
+                        {[1, 2, 3, 4, 5].map((num) => (
+                            <AccordionItem key={num} value={`item-${num}`} className="border border-border/50 bg-card/30 rounded-xl px-4">
+                                <AccordionTrigger className="hover:no-underline font-bold text-left">{t(`faq.q${num}`)}</AccordionTrigger>
+                                <AccordionContent className="text-muted-foreground leading-relaxed">
+                                    <Trans i18nKey={`faq.a${num}`} components={{ 1: <strong className="text-foreground" />, br: <br /> }} />
+                                </AccordionContent>
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
+                </div>
+            </section>
+
+            {/* Final CTA */}
+            <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-muted/20 to-background">
+                <div className="container mx-auto max-w-3xl text-center space-y-8">
+                    <h2 className="text-3xl md:text-4xl font-bold">
+                        <Trans i18nKey="multi_outlet.final_cta_title" components={{ 1: <span className="text-primary" /> }} />
+                    </h2>
+                    <div className="text-lg text-muted-foreground">
+                        <Trans i18nKey="multi_outlet.final_cta_desc" components={{ 1: <strong className="text-foreground" />, br: <br /> }} />
+                    </div>
+                    <Button asChild size="lg" className="text-lg h-14 px-10 shadow-lg shadow-primary/30 bg-primary hover:bg-primary/90 text-primary-foreground group">
+                        <Link to="/fip-lite">
+                            <span className="flex items-center font-black">
+                                {t('multi_outlet.cta_health_score')}
+                                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                        </Link>
+                    </Button>
+                    <p className="text-sm text-muted-foreground mt-4">
+                        <Clock className="w-4 h-4 inline mr-1" />
+                        {t('multi_outlet.final_cta_meta')}
+                    </p>
+                </div>
+            </section>
+
+            {/* Footer Badge */}
+            <section className="py-8 px-4 md:px-8 border-t border-white/5">
+                <div className="container mx-auto max-w-4xl text-center">
+                    <p className="text-xs text-muted-foreground/60 uppercase tracking-widest">
+                        {t('multi_outlet.footer_badge')}
+                    </p>
+                </div>
+            </section>
+        </div>
+    )
+}

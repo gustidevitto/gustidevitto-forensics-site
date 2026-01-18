@@ -13,6 +13,8 @@ import { Route as MasterIndexRouteImport } from './routes/master-index'
 import { Route as VerdictRouteImport } from './routes/verdict'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as NetworkIntelligenceRouteImport } from './routes/network-intelligence'
+import { Route as MultiOutletRouteImport } from './routes/multi-outlet'
 import { Route as MethodologyRouteImport } from './routes/methodology'
 import { Route as InvestasiRouteImport } from './routes/investasi'
 import { Route as GetAccessRouteImport } from './routes/get-access'
@@ -44,6 +46,16 @@ const TermsRoute = TermsRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetworkIntelligenceRoute = NetworkIntelligenceRouteImport.update({
+  id: '/network-intelligence',
+  path: '/network-intelligence',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MultiOutletRoute = MultiOutletRouteImport.update({
+  id: '/multi-outlet',
+  path: '/multi-outlet',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MethodologyRoute = MethodologyRouteImport.update({
@@ -118,6 +130,8 @@ export interface FileRoutesByFullPath {
   '/investasi': typeof InvestasiRoute
   '/master-index': typeof MasterIndexRoute
   '/methodology': typeof MethodologyRoute
+  '/multi-outlet': typeof MultiOutletRoute
+  '/network-intelligence': typeof NetworkIntelligenceRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/verdict': typeof VerdictRoute
@@ -136,6 +150,8 @@ export interface FileRoutesByTo {
   '/investasi': typeof InvestasiRoute
   '/master-index': typeof MasterIndexRoute
   '/methodology': typeof MethodologyRoute
+  '/multi-outlet': typeof MultiOutletRoute
+  '/network-intelligence': typeof NetworkIntelligenceRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/verdict': typeof VerdictRoute
@@ -155,6 +171,8 @@ export interface FileRoutesById {
   '/investasi': typeof InvestasiRoute
   '/master-index': typeof MasterIndexRoute
   '/methodology': typeof MethodologyRoute
+  '/multi-outlet': typeof MultiOutletRoute
+  '/network-intelligence': typeof NetworkIntelligenceRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/verdict': typeof VerdictRoute
@@ -175,6 +193,8 @@ export interface FileRouteTypes {
     | '/investasi'
     | '/master-index'
     | '/methodology'
+    | '/multi-outlet'
+    | '/network-intelligence'
     | '/privacy'
     | '/terms'
     | '/verdict'
@@ -193,6 +213,8 @@ export interface FileRouteTypes {
     | '/investasi'
     | '/master-index'
     | '/methodology'
+    | '/multi-outlet'
+    | '/network-intelligence'
     | '/privacy'
     | '/terms'
     | '/verdict'
@@ -211,6 +233,8 @@ export interface FileRouteTypes {
     | '/investasi'
     | '/master-index'
     | '/methodology'
+    | '/multi-outlet'
+    | '/network-intelligence'
     | '/privacy'
     | '/terms'
     | '/verdict'
@@ -230,6 +254,8 @@ export interface RootRouteChildren {
   InvestasiRoute: typeof InvestasiRoute
   MasterIndexRoute: typeof MasterIndexRoute
   MethodologyRoute: typeof MethodologyRoute
+  MultiOutletRoute: typeof MultiOutletRoute
+  NetworkIntelligenceRoute: typeof NetworkIntelligenceRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
   VerdictRoute: typeof VerdictRoute
@@ -266,6 +292,20 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/network-intelligence': {
+      id: '/network-intelligence'
+      path: '/network-intelligence'
+      fullPath: '/network-intelligence'
+      preLoaderRoute: typeof NetworkIntelligenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/multi-outlet': {
+      id: '/multi-outlet'
+      path: '/multi-outlet'
+      fullPath: '/multi-outlet'
+      preLoaderRoute: typeof MultiOutletRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/methodology': {
@@ -366,6 +406,8 @@ const rootRouteChildren: RootRouteChildren = {
   InvestasiRoute: InvestasiRoute,
   MasterIndexRoute: MasterIndexRoute,
   MethodologyRoute: MethodologyRoute,
+  MultiOutletRoute: MultiOutletRoute,
+  NetworkIntelligenceRoute: NetworkIntelligenceRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
   VerdictRoute: VerdictRoute,
