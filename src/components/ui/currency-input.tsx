@@ -47,7 +47,9 @@ export const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputPro
 
         return (
             <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-bold opacity-40">{prefix}</span>
+                {prefix && (
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-bold opacity-40">{prefix}</span>
+                )}
                 <Input
                     {...props}
                     ref={ref}
@@ -55,7 +57,7 @@ export const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputPro
                     inputMode="numeric"
                     value={displayValue}
                     onChange={handleChange}
-                    className={`pl-10 ${className}`}
+                    className={`${prefix ? 'pl-10' : 'pl-3'} ${className}`}
                 />
             </div>
         )

@@ -95,9 +95,8 @@ export function calculateFIPLiteResults(formData: FIPLiteFormData): HealthScoreR
     }));
 
     // 7. Cash Realization Lag
-    const saleDate = new Date(step2.saleDate || new Date());
-    const cashDate = new Date(step2.cashReceivedDate || new Date());
-    const lagDays = Math.max(0, (cashDate.getTime() - saleDate.getTime()) / (1000 * 3600 * 24));
+    // 7. Cash Realization Lag
+    const lagDays = step2.realizationLagDays || 0;
     pillars.push(createPillar({
         id: 'cash-lag',
         name: 'Cash Realization Lag',

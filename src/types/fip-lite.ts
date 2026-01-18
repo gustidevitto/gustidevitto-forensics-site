@@ -64,8 +64,7 @@ export interface CashFlowInputs {
     accountsPayable: number
 
     // Cash Realization Lag
-    saleDate: string // ISO date
-    cashReceivedDate: string // ISO date
+    realizationLagDays: number
 
     // Net Burn Rate
     cashInflows: number
