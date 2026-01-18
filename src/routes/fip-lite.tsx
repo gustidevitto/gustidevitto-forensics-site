@@ -102,6 +102,100 @@ function FIPLitePage() {
         }
     }, [state.isCalculating, state.formData])
 
+    // Data Synchronization Protocol (Auto-fill downstream steps)
+    useEffect(() => {
+        if (!state.formData.step1) return
+
+        setState(prev => {
+            const s1 = prev.formData.step1
+            if (!s1) return prev
+
+            let hasChanges = false
+            const newFormData = { ...prev.formData }
+
+            // Sync to Step 2 (Cash Flow)
+            if (!newFormData.step2) {
+                newFormData.step2 = {
+                    currentCash: 0,
+                    monthlyBurnRate: 0,
+                    inventoryValue: 0,
+                    accountsReceivable: 0,
+                    accountsPayable: 0,
+                    saleDate: '',
+                    cashReceivedDate: '',
+                    cashInflows: 0,
+                    cashOutflows: 0
+                };
+                hasChanges = true;
+            }
+            // Burn Rate ~ Total Costs
+            if (s1.totalCosts && !newFormData.step2.monthlyBurnRate) {
+                newFormData.step2 = { ...newFormData.step2, monthlyBurnRate: s1.totalCosts }
+                hasChanges = true
+            }
+            // Inflows ~ Revenue
+            if (s1.totalRevenue && !newFormData.step2.cashInflows) {
+                newFormData.step2 = { ...newFormData.step2, cashInflows: s1.totalRevenue }
+                hasChanges = true
+            }
+            // Outflows ~ Total Costs
+            if (s1.totalCosts && !newFormData.step2.cashOutflows) {
+                newFormData.step2 = { ...newFormData.step2, cashOutflows: s1.totalCosts }
+                hasChanges = true
+            }
+
+            // Sync to Step 3 (Operational Efficiency)
+            if (!newFormData.step3) {
+                newFormData.step3 = {
+                    totalGrossProfit: 0,
+                    totalLaborHours: 0,
+                    inventoryAtStart: 0,
+                    inventoryAtEnd: 0,
+                    inventorySpoilage: 0,
+                    fixedCosts: 0,
+                    variableCostPerUnit: 0,
+                    pricePerUnit: 0,
+                    plannedEvents: 0,
+                    unplannedEvents: 0
+                };
+                hasChanges = true;
+            }
+            // Total GP
+            if (s1.grossProfit && !newFormData.step3.totalGrossProfit) {
+                newFormData.step3 = { ...newFormData.step3, totalGrossProfit: s1.grossProfit }
+                hasChanges = true
+            }
+
+            // Sync to Step 4 (Growth & Risk)
+            if (!newFormData.step4) {
+                newFormData.step4 = {
+                    ltgpMonth1: 0,
+                    ltgpMonth2: 0,
+                    ltgpMonth3: 0,
+                    customerLifetimeValue: 0,
+                    customerAcquisitionCost: 0,
+                    currentLiabilities: 0,
+                    currentAssets: 0,
+                    largestRevenueSource: 0,
+                    totalRevenue: 0
+                };
+                hasChanges = true;
+            }
+            // Total Business Revenue
+            if (s1.totalRevenue && !newFormData.step4.totalRevenue) {
+                newFormData.step4 = { ...newFormData.step4, totalRevenue: s1.totalRevenue }
+                hasChanges = true
+            }
+
+            if (!hasChanges) return prev
+
+            return {
+                ...prev,
+                formData: newFormData
+            }
+        })
+    }, [state.formData.step1])
+
     if (isBooting) {
         return (
             <div className="fixed inset-0 z-[200] bg-black flex items-center justify-center p-6 font-mono overflow-hidden">
@@ -657,7 +751,31 @@ function Step1RevenueProfitability({ data, onChange, currency }: {
     currency: { locale: string; prefix: string; code: string }
 }) {
     const updateField = (field: keyof RevenueProfitabilityInputs, value: number) => {
-        onChange({ ...data, [field]: value })
+        const newData = { ...data, [field]: value }
+
+        // Auto-calculate Gross Profit (Absolute)
+        // Formula: Revenue - (TotalCosts - OPEX) = Revenue - COGS
+        // We assume Total Costs = COGS + OPEX
+        if (['totalRevenue', 'totalCosts', 'operatingExpenses'].includes(field)) {
+            const r = newData.totalRevenue || 0
+            const tc = newData.totalCosts || 0
+            const opex = newData.operatingExpenses || 0
+
+            // Only calculate if we have meaningful inputs
+            if (r > 0 && tc > 0) {
+                const calculatedGP = r - (tc - opex)
+                newData.grossProfit = calculatedGP
+            }
+        }
+
+        // Auto-calculate Actual Gross Profit (%)
+        // Formula: (Gross Profit / Total Revenue) * 100
+        if (newData.grossProfit && newData.totalRevenue) {
+            const gpPercent = (newData.grossProfit / newData.totalRevenue) * 100
+            newData.actualGrossProfit = parseFloat(gpPercent.toFixed(2))
+        }
+
+        onChange(newData)
     }
 
     return (
