@@ -22,7 +22,7 @@ function Index() {
     if (!mounted) return null
 
     return (
-        <div className="h-screen w-full bg-[#0a1628] text-white font-sans flex items-center justify-center overflow-hidden selection:bg-primary selection:text-black relative p-6 md:p-12 lg:p-20">
+        <div className="min-h-screen w-full bg-[#0a1628] text-white font-sans flex items-start md:items-center justify-center overflow-x-hidden selection:bg-primary selection:text-black relative p-6 pb-24 md:p-12 lg:p-20">
             {/* SEO Overlay */}
             <title>GUSTI DEVITTO™ — Forensic Business Practice</title>
 
