@@ -5,6 +5,7 @@ import { ShieldAlert, Maximize2, X, Activity, CheckCircle2, Play, ChevronLeft, C
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslation, Trans } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
+import { WavingDots } from "@/components/ui/waving-dots"
 
 export const Route = createFileRoute('/network-intelligence')({
     component: NetworkIntelligencePage,
@@ -14,6 +15,7 @@ function NetworkIntelligencePage() {
     const { t } = useTranslation()
     const [showMasterLab, setShowMasterLab] = useState(false)
     const [currentSlide, setCurrentSlide] = useState(0)
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
 
     const heroImages = [
         '/assets/images/audit.png',
@@ -29,11 +31,21 @@ function NetworkIntelligencePage() {
         return () => clearInterval(timer)
     }, [])
 
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (typeof window === 'undefined') return
+        const x = (e.clientX / window.innerWidth) - 0.5
+        const y = (e.clientY / window.innerHeight) - 0.5
+        setMousePos({ x, y })
+    }
+
     const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroImages.length)
     const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length)
 
     return (
-        <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#0a1628] via-[#0f1f3a] to-[#0a1628] text-white">
+        <div
+            onMouseMove={handleMouseMove}
+            className="flex flex-col min-h-screen bg-gradient-to-b from-[#0a1628] via-[#0f1f3a] to-[#0a1628] text-white perspective-1000 overflow-x-hidden"
+        >
             {/* SEO Meta Tags */}
             <title>{t('global.seo_home_title')} - Enterprise Network Intelligence</title>
             <meta name="description" content={t('network_intelligence.seo_desc')} />
@@ -47,11 +59,33 @@ function NetworkIntelligencePage() {
 
             {/* Hero Section with Carousel */}
             <section className="relative py-24 px-4 md:px-8 border-b border-white/5 overflow-hidden">
-                <div className="absolute inset-0 -z-10">
-                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] opacity-30 animate-pulse"></div>
+                {/* Dynamic Spotlight Effect - "The Forensic Torch" (Red for Enterprise) */}
+                <div
+                    className="absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 ease-out"
+                    style={{
+                        background: `radial-gradient(800px circle at ${50 + (mousePos.x * 100)}% ${50 + (mousePos.y * 100)}%, rgba(220, 38, 38, 0.2), transparent 50%)`
+                    }}
+                />
+
+                <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+                    <div
+                        className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[120px] opacity-50 animate-pulse transition-transform duration-[50ms] ease-linear"
+                        style={{ transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 40}px)` }}
+                    ></div>
+                    <div
+                        className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-red-900/20 rounded-full blur-[100px] transition-transform duration-[50ms] ease-linear"
+                        style={{ transform: `translate(${mousePos.x * 60}px, ${mousePos.y * 60}px)` }}
+                    ></div>
+                    {/* Enhanced Grid Pattern for Parallax Reference */}
+                    <div className="absolute inset-0 opacity-[0.08] transition-transform duration-[50ms] ease-linear"
+                        style={{
+                            backgroundImage: 'radial-gradient(circle, #fff 1.5px, transparent 1.5px)',
+                            backgroundSize: '40px 40px',
+                            transform: `translate(${mousePos.x * -20}px, ${mousePos.y * -20}px)`
+                        }}></div>
                 </div>
 
-                <div className="container mx-auto max-w-6xl">
+                <div className="container mx-auto max-w-6xl relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left: Copy */}
                         <div className="space-y-8 animate-fade-in">
@@ -87,10 +121,16 @@ function NetworkIntelligencePage() {
                         </div>
 
                         {/* Right: Image Carousel */}
-                        <div className="relative">
-                            <div className="relative rounded-2xl border border-white/10 bg-zinc-900/50 overflow-hidden backdrop-blur-sm group">
+                        <div className="relative perspective-1000">
+                            <div
+                                className="relative rounded-2xl border border-white/10 bg-zinc-900/50 overflow-hidden backdrop-blur-sm group shadow-2xl transition-all duration-100 ease-out"
+                                style={{
+                                    transform: `rotateY(${mousePos.x * 10}deg) rotateX(${mousePos.y * -10}deg) translateZ(20px)`,
+                                    transformStyle: 'preserve-3d'
+                                }}
+                            >
                                 {/* Carousel Images */}
-                                <div className="relative aspect-[4/3]">
+                                <div className="relative aspect-[4/3] transform-style-3d">
                                     {heroImages.map((img, idx) => (
                                         <div
                                             key={idx}
@@ -112,19 +152,19 @@ function NetworkIntelligencePage() {
                                 {/* Carousel Controls */}
                                 <button
                                     onClick={prevSlide}
-                                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all opacity-0 group-hover:opacity-100"
+                                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all opacity-0 group-hover:opacity-100 z-20"
                                 >
                                     <ChevronLeft className="w-5 h-5" />
                                 </button>
                                 <button
                                     onClick={nextSlide}
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all opacity-0 group-hover:opacity-100"
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all opacity-0 group-hover:opacity-100 z-20"
                                 >
                                     <ChevronRight className="w-5 h-5" />
                                 </button>
 
                                 {/* Dots Indicator */}
-                                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
                                     {heroImages.map((_, idx) => (
                                         <button
                                             key={idx}
@@ -330,9 +370,12 @@ function NetworkIntelligencePage() {
                 </div>
             </section>
 
+
+
             {/* Simplified Pricing - Enterprise */}
-            <section className="py-24 px-4 md:px-8 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border-y border-primary/20">
-                <div className="container mx-auto max-w-4xl">
+            <section className="py-24 px-4 md:px-8 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border-y border-primary/20 relative overflow-hidden">
+                <WavingDots color="rgba(30, 58, 138, 0.3)" className="opacity-50" />
+                <div className="container mx-auto max-w-4xl relative z-10">
                     <div className="text-center mb-16 space-y-4">
                         <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight">{t('network_intelligence.pilot_title')}</h2>
                         <p className="text-muted-foreground">{t('network_intelligence.pilot_desc')}</p>

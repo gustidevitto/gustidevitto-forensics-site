@@ -35,10 +35,11 @@ function Index() {
             className="min-h-screen w-full bg-[#0a1628] text-white font-sans flex items-start md:items-center justify-center overflow-x-hidden selection:bg-primary selection:text-black relative p-6 pb-24 md:p-12 lg:p-20 perspective-1000"
         >
             {/* Dynamic Spotlight Effect - "The Forensic Torch" */}
+            {/* Dynamic Spotlight Effect - "The Forensic Torch" */}
             <div
-                className="absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 ease-out opacity-40 mix-blend-overlay"
+                className="absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 ease-out"
                 style={{
-                    background: `radial-gradient(1200px circle at ${50 + (mousePos.x * 100)}% ${50 + (mousePos.y * 100)}%, rgba(29, 78, 216, 0.15), transparent 60%)`
+                    background: `radial-gradient(800px circle at ${50 + (mousePos.x * 100)}% ${50 + (mousePos.y * 100)}%, rgba(56, 189, 248, 0.15), transparent 50%)`
                 }}
             />
 
@@ -48,22 +49,23 @@ function Index() {
             {/* Ambient Background Elements with Parallax */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div
-                    className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse transition-transform duration-[50ms] ease-linear"
-                    style={{ transform: `translate(calc(-50% + ${mousePos.x * -20}px), calc(-50% + ${mousePos.y * -20}px))` }}
+                    className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse transition-transform duration-[50ms] ease-linear"
+                    style={{ transform: `translate(calc(-50% + ${mousePos.x * -40}px), calc(-50% + ${mousePos.y * -40}px))` }}
                 ></div>
                 <div
-                    className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] animate-pulse delay-700 transition-transform duration-[50ms] ease-linear"
-                    style={{ transform: `translate(${mousePos.x * 20}px, ${mousePos.y * 20}px)` }}
+                    className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] animate-pulse delay-700 transition-transform duration-[50ms] ease-linear"
+                    style={{ transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 40}px)` }}
                 ></div>
                 <div
-                    className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-blue-900/10 rounded-full blur-[100px] transition-transform duration-[50ms] ease-linear"
-                    style={{ transform: `translate(${mousePos.x * 30}px, ${mousePos.y * 30}px)` }}
+                    className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-blue-900/20 rounded-full blur-[100px] transition-transform duration-[50ms] ease-linear"
+                    style={{ transform: `translate(${mousePos.x * 60}px, ${mousePos.y * 60}px)` }}
                 ></div>
-                <div className="absolute inset-0 opacity-[0.02] transition-transform duration-[50ms] ease-linear"
+                {/* Enhanced Grid Pattern for Parallax Reference */}
+                <div className="absolute inset-0 opacity-[0.08] transition-transform duration-[50ms] ease-linear"
                     style={{
-                        backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                        backgroundImage: 'radial-gradient(circle, #fff 1.5px, transparent 1.5px)',
                         backgroundSize: '40px 40px',
-                        transform: `translate(${mousePos.x * -10}px, ${mousePos.y * -10}px)`
+                        transform: `translate(${mousePos.x * -20}px, ${mousePos.y * -20}px)`
                     }}></div>
             </div>
 
@@ -125,9 +127,9 @@ function Index() {
                     <Link
                         to="/multi-outlet"
                         onClick={() => handlePathSelection('multi')}
-                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-primary/50 transition-all duration-300 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-primary/10"
+                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-primary/50 transition-all duration-100 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-primary/10"
                         style={{
-                            transform: `rotateY(${mousePos.x * 5}deg) rotateX(${mousePos.y * -5}deg) translateZ(10px)`,
+                            transform: `rotateY(${mousePos.x * 15}deg) rotateX(${mousePos.y * -15}deg) translateZ(30px)`,
                             transformStyle: 'preserve-3d'
                         }}
                     >
@@ -158,9 +160,9 @@ function Index() {
                     <Link
                         to="/network-intelligence"
                         onClick={() => handlePathSelection('network')}
-                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-red-500/50 transition-all duration-300 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-red-500/10"
+                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-red-500/50 transition-all duration-100 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-red-500/10"
                         style={{
-                            transform: `rotateY(${mousePos.x * 5}deg) rotateX(${mousePos.y * -5}deg) translateZ(10px)`,
+                            transform: `rotateY(${mousePos.x * 15}deg) rotateX(${mousePos.y * -15}deg) translateZ(30px)`,
                             transformStyle: 'preserve-3d'
                         }}
                     >
