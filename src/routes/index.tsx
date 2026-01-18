@@ -8,10 +8,18 @@ export const Route = createFileRoute('/')({
 
 function Index() {
     const [mounted, setMounted] = useState(false)
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
 
     useEffect(() => {
         setMounted(true)
     }, [])
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (typeof window === 'undefined') return
+        const x = (e.clientX / window.innerWidth) - 0.5
+        const y = (e.clientY / window.innerHeight) - 0.5
+        setMousePos({ x, y })
+    }
 
     const handlePathSelection = (path: 'multi' | 'network') => {
         if (typeof window !== 'undefined') {
@@ -22,17 +30,41 @@ function Index() {
     if (!mounted) return null
 
     return (
-        <div className="min-h-screen w-full bg-[#0a1628] text-white font-sans flex items-start md:items-center justify-center overflow-x-hidden selection:bg-primary selection:text-black relative p-6 pb-24 md:p-12 lg:p-20">
+        <div
+            onMouseMove={handleMouseMove}
+            className="min-h-screen w-full bg-[#0a1628] text-white font-sans flex items-start md:items-center justify-center overflow-x-hidden selection:bg-primary selection:text-black relative p-6 pb-24 md:p-12 lg:p-20 perspective-1000"
+        >
+            {/* Dynamic Spotlight Effect - "The Forensic Torch" */}
+            <div
+                className="absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 ease-out opacity-40 mix-blend-overlay"
+                style={{
+                    background: `radial-gradient(1200px circle at ${50 + (mousePos.x * 100)}% ${50 + (mousePos.y * 100)}%, rgba(29, 78, 216, 0.15), transparent 60%)`
+                }}
+            />
+
             {/* SEO Overlay */}
             <title>GUSTI DEVITTO™ — Forensic Business Practice</title>
 
-            {/* Ambient Background Elements with Pulsating Gold Glow */}
+            {/* Ambient Background Elements with Parallax */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse"></div>
-                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] animate-pulse delay-700"></div>
-                <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-blue-900/10 rounded-full blur-[100px]"></div>
-                <div className="absolute inset-0 opacity-[0.02]"
-                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+                <div
+                    className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse transition-transform duration-[50ms] ease-linear"
+                    style={{ transform: `translate(calc(-50% + ${mousePos.x * -20}px), calc(-50% + ${mousePos.y * -20}px))` }}
+                ></div>
+                <div
+                    className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] animate-pulse delay-700 transition-transform duration-[50ms] ease-linear"
+                    style={{ transform: `translate(${mousePos.x * 20}px, ${mousePos.y * 20}px)` }}
+                ></div>
+                <div
+                    className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-blue-900/10 rounded-full blur-[100px] transition-transform duration-[50ms] ease-linear"
+                    style={{ transform: `translate(${mousePos.x * 30}px, ${mousePos.y * 30}px)` }}
+                ></div>
+                <div className="absolute inset-0 opacity-[0.02] transition-transform duration-[50ms] ease-linear"
+                    style={{
+                        backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                        backgroundSize: '40px 40px',
+                        transform: `translate(${mousePos.x * -10}px, ${mousePos.y * -10}px)`
+                    }}></div>
             </div>
 
             <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10">
@@ -76,24 +108,28 @@ function Index() {
                             </div>
                             <div className="flex flex-col gap-1">
                                 <span className="text-white/40">REGION</span>
-                                <span>SEA_IDN</span>
+                                <span className="text-white/60">SEA_IDN</span>
                             </div>
                             <div className="flex flex-col gap-1">
                                 <span className="text-white/40">AUTHORITY</span>
-                                <span>SOVEREIGN_INTEL</span>
+                                <span className="text-white/60">SOVEREIGN_INTEL</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 {/* RIGHT SIDE: Vertical Segment Selection */}
-                <div className="flex flex-col gap-6 animate-fade-in-right">
+                <div className="flex flex-col gap-6 animate-fade-in-right perspective-1000">
 
                     {/* Option 1: Multi-Outlet (SME) */}
                     <Link
                         to="/multi-outlet"
                         onClick={() => handlePathSelection('multi')}
-                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-primary/50 transition-all duration-500 rounded-2xl overflow-hidden backdrop-blur-sm"
+                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-primary/50 transition-all duration-300 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-primary/10"
+                        style={{
+                            transform: `rotateY(${mousePos.x * 5}deg) rotateX(${mousePos.y * -5}deg) translateZ(10px)`,
+                            transformStyle: 'preserve-3d'
+                        }}
                     >
                         {/* Background Thumbnail */}
                         <div className="absolute inset-0 opacity-10 grayscale group-hover:grayscale-0 group-hover:opacity-30 group-hover:scale-105 transition-all duration-700">
@@ -101,7 +137,7 @@ function Index() {
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/80 to-transparent"></div>
 
-                        <div className="relative z-10 space-y-4">
+                        <div className="relative z-10 space-y-4 transform transition-transform duration-300 group-hover:translate-z-10">
                             <div className="flex items-center justify-between">
                                 <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                                     <Zap className="w-5 h-5" />
@@ -122,7 +158,11 @@ function Index() {
                     <Link
                         to="/network-intelligence"
                         onClick={() => handlePathSelection('network')}
-                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-red-500/50 transition-all duration-500 rounded-2xl overflow-hidden backdrop-blur-sm"
+                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-red-500/50 transition-all duration-300 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-red-500/10"
+                        style={{
+                            transform: `rotateY(${mousePos.x * 5}deg) rotateX(${mousePos.y * -5}deg) translateZ(10px)`,
+                            transformStyle: 'preserve-3d'
+                        }}
                     >
                         {/* Background Thumbnail */}
                         <div className="absolute inset-0 opacity-10 grayscale group-hover:grayscale-0 group-hover:opacity-30 group-hover:scale-105 transition-all duration-700">
@@ -130,7 +170,7 @@ function Index() {
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/80 to-transparent"></div>
 
-                        <div className="relative z-10 space-y-4">
+                        <div className="relative z-10 space-y-4 transform transition-transform duration-300 group-hover:translate-z-10">
                             <div className="flex items-center justify-between">
                                 <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 group-hover:scale-110 transition-transform">
                                     <Globe className="w-5 h-5" />
