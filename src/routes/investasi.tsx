@@ -2,6 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
 import { ShieldCheck, ArrowRight, Globe, Lock, Cpu, BarChart3, Building2, Briefcase } from "lucide-react"
 import { useTranslation, Trans } from 'react-i18next'
+import { HowFIPWorks } from "@/components/HowFIPWorks"
 
 export const Route = createFileRoute('/investasi')({
     component: InvestasiPage,
@@ -17,8 +18,8 @@ function InvestasiPage() {
             name: t('pricing.starter_title'),
             badge: t('pricing.starter_badge'),
             price: t('investasi.price_starter'),
-            period: t('pricing.per_month'),
-            desc: t('investasi.sme_starter_desc', "Basic forensic audit to detect 'subtle leaks' in monthly operations."),
+            period: t('investasi.per_starter', "sekali audit"),
+            desc: t('investasi.sme_starter_desc', "Pembedahan forensik awal untuk mendeteksi 'kebocoran sistemik'."),
             features: [
                 t('pricing.feature_starter_1'),
                 t('pricing.feature_starter_2'),
@@ -33,8 +34,8 @@ function InvestasiPage() {
             name: t('pricing.growth_title'),
             badge: t('pricing.popular'),
             price: t('investasi.price_growth'),
-            period: t('pricing.per_month'),
-            desc: t('investasi.sme_growth_desc', "In-depth diagnosis with strategic intervention for systemic margin improvement."),
+            period: t('investasi.per_growth', "/kuartal"),
+            desc: t('investasi.sme_growth_desc', "Audit berkala dan pendampingan strategis untuk perbaikan margin berkelanjutan."),
             features: [
                 t('pricing.feature_everything_starter'),
                 t('pricing.feature_checkins'),
@@ -51,8 +52,8 @@ function InvestasiPage() {
             name: t('pricing.scale_title'),
             badge: t('pricing.scale_badge'),
             price: t('investasi.price_scale'),
-            period: t('pricing.per_month'),
-            desc: t('investasi.sme_scale_desc', "Full oversight for multi-outlet businesses aggressively expanding."),
+            period: t('investasi.per_scale', "/tahun"),
+            desc: t('investasi.sme_scale_desc', "Akses penuh platform FIP™ untuk kedaulatan intelijen jaringan Anda."),
             features: [
                 t('pricing.feature_everything_growth'),
                 t('pricing.feature_pulse'),
@@ -83,9 +84,9 @@ function InvestasiPage() {
                             "@id": "https://www.gustidevitto.com/#organization"
                         },
                         "offers": [
-                            { "@type": "Offer", "name": t('pricing.starter_title'), "price": "3000000", "priceCurrency": "IDR" },
-                            { "@type": "Offer", "name": t('pricing.growth_title'), "price": "4000000", "priceCurrency": "IDR" },
-                            { "@type": "Offer", "name": t('pricing.scale_title'), "price": "5000000", "priceCurrency": "IDR" }
+                            { "@type": "Offer", "name": t('pricing.starter_title'), "price": "15000000", "priceCurrency": "IDR" },
+                            { "@type": "Offer", "name": t('pricing.growth_title'), "price": "12000000", "priceCurrency": "IDR" },
+                            { "@type": "Offer", "name": t('pricing.scale_title'), "price": "150000000", "priceCurrency": "IDR" }
                         ]
                     },
                     {
@@ -199,6 +200,9 @@ function InvestasiPage() {
                     </div>
                 </div>
             </section>
+
+            {/* HYBRID EVOLUTION SECTION */}
+            <HowFIPWorks />
 
             {/* 02. HIGH-STAKES SECTION */}
             <section className="py-24 px-4 md:px-8 border-y border-white/5 relative bg-[#0a0a0a]">
