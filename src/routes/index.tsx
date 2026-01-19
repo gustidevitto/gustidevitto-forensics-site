@@ -36,12 +36,6 @@ function Index() {
         <div
             onMouseMove={handleMouseMove}
             className="min-h-screen w-full bg-[#0a1628] text-white font-sans flex items-start md:items-center justify-center overflow-x-hidden selection:bg-primary selection:text-black relative p-6 pb-24 md:p-12 lg:p-20 perspective-1000"
-        >
-            {/* Language Toggle Slider - Top Right */}
-            <div className="absolute top-6 right-6 md:top-10 md:right-10 z-50 animate-fade-in">
-                <LanguageSlider />
-            </div>
-
             {/* Dynamic Spotlight Effect - "The Forensic Torch" */}
             {/* Dynamic Spotlight Effect - "The Forensic Torch" */}
             <div
@@ -51,10 +45,10 @@ function Index() {
                 }}
             />
 
-            {/* SEO Overlay */}
-            <title>GUSTI DEVITTO™ — Forensic Business Practice</title>
+            {/* SEO Overlay */ }
+    <title>GUSTI DEVITTO™ — Forensic Business Practice</title>
 
-            {/* Ambient Background Elements with Parallax */}
+    {/* Ambient Background Elements with Parallax */ }
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div
                     className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse transition-transform duration-[50ms] ease-linear"
@@ -100,6 +94,11 @@ function Index() {
                                 {t('entrance_gate.hero_subtitle')}
                             </p>
                         </div>
+                    </div>
+
+                    {/* Language Toggle Slider - Integrated beneath title */}
+                    <div className="animate-fade-in delay-300">
+                        <LanguageSlider />
                     </div>
 
                     <div className="space-y-4">
@@ -202,19 +201,19 @@ function Index() {
                 </div>
             </div>
 
-            {/* Absolute Footer Credential */}
-            <div className="absolute bottom-8 left-12 md:left-20 right-12 md:right-20 flex justify-between items-center opacity-10 pointer-events-none">
-                <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap">NON_DISCLOSURE_ENABLED</span>
-                <div className="h-px flex-1 mx-8 bg-white/20 hidden md:block"></div>
-                <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap">© 2026 GUSTI DEVITTO</span>
-            </div>
-            {/* Hidden Aesthetic SEO Gate */}
-            <div className="sr-only">
-                <p>Gusti Devitto - Forensic Business Diagnostician.</p>
-                <p>Specializing in Profit Leakage Detection, Phantom Cost Analysis, and Network Intelligence for Multi-Outlet Businesses.</p>
-                <p>Layanan Audit Forensik Bisnis untuk mendeteksi uang siluman dan inefisiensi operasional.</p>
-                <p>Auth Level: L-9 Sovereign Intelligence. FIP Protocol v4.00.</p>
-            </div>
-        </div>
+    {/* Absolute Footer Credential */ }
+    <div className="absolute bottom-8 left-12 md:left-20 right-12 md:right-20 flex justify-between items-center opacity-10 pointer-events-none">
+        <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap">NON_DISCLOSURE_ENABLED</span>
+        <div className="h-px flex-1 mx-8 bg-white/20 hidden md:block"></div>
+        <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap">© 2026 GUSTI DEVITTO</span>
+    </div>
+    {/* Hidden Aesthetic SEO Gate */ }
+    <div className="sr-only">
+        <p>Gusti Devitto - Forensic Business Diagnostician.</p>
+        <p>Specializing in Profit Leakage Detection, Phantom Cost Analysis, and Network Intelligence for Multi-Outlet Businesses.</p>
+        <p>Layanan Audit Forensik Bisnis untuk mendeteksi uang siluman dan inefisiensi operasional.</p>
+        <p>Auth Level: L-9 Sovereign Intelligence. FIP Protocol v4.00.</p>
+    </div>
+        </div >
     )
 }
