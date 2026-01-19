@@ -137,24 +137,7 @@
         "pilot_cta": "Daftar Program Pilot",
         "final_cta_title": "Mengamankan",
         "final_cta_title_accent": "Masa Depan Jaringan Anda.",
-        "final_cta_desc": "Hubungi Vitto untuk audit jaringan strategis atau implementasi Master Lab.",
-        "how_it_works": {
-            "section_title": "The Path to <1>Sovereign Intelligence</1>",
-            "section_subtitle": "Bagaimana kami mentransfer kekuatan deteksi dari spesialis ke dalam DNA bisnis Anda—menghapus ketergantungan selamanya.",
-            "phase1_title": "Fase 1: Diagnostic Surgery",
-            "phase1_actor": "Intervensi Ahli (Gusti + FIP™)",
-            "phase1_desc": "Menghentikan 'pendarahan' seketika. Vitto membedah data Anda secara personal untuk menemukan kebocoran sistemik yang tidak terlihat oleh tim Anda.",
-            "phase2_title": "Fase 2: Intelligence Transfer",
-            "phase2_actor": "Pemberdayaan Tim (Transfer Pengetahuan)",
-            "phase2_desc": "Kami melatih tim internal Anda menggunakan FIP™ Lite agar mereka mampu mendeteksi anomali dasar tanpa harus menunggu audit eksternal.",
-            "phase3_title": "Fase 3: Supervised Autonomy",
-            "phase3_actor": "Kedaulatan Terpimpin (Gusti sebagai Oracle)",
-            "phase3_desc": "Tim Anda mengoperasikan protokol secara mandiri. Vitto tetap tersedia sebagai 'Oracle' untuk kasus-kasus kompleks dan keputusan strategis tingkat tinggi.",
-            "phase4_title": "Fase 4: Full Sovereignty",
-            "phase4_actor": "Sistem Otonom (Infrastruktur Mandiri)",
-            "phase4_desc": "Bisnis Anda memiliki kedaulatan intelijen penuh. Protokol FIP™ telah tertanam dalam sistem Anda, berjalan mandiri tanpa ketergantungan pada konsultan.",
-            "tesla_principle": "Catatan Strategis: Kami menerapkan <1>Tesla Principle</1>. Setiap diagnosa memperkuat database pola FIP™, membuat sistem Anda semakin cerdas dan otonom setiap harinya."
-        }
+        "final_cta_desc": "Hubungi Vitto untuk audit jaringan strategis atau implementasi Master Lab."
     },
     "global": {
         "schema_desc": "Gusti Devitto—Forensic Business Diagnostician. Mengidentifikasi kebocoran profit tersembunyi, mendeteksi selisih angka, dan memastikan kepatuhan unit melalui metodologi audit forensik yang proprietary.",
@@ -460,6 +443,23 @@
         "rights": "Seluruh hak cipta dilindungi."
     },
     "investasi": {
+        "how_it_works": {
+            "section_title": "The Path to <1>Sovereign Intelligence</1>",
+            "section_subtitle": "Bagaimana kami mentransfer kekuatan deteksi dari spesialis ke dalam DNA bisnis Anda—menghapus ketergantungan selamanya.",
+            "phase1_title": "Fase 1: Diagnostic Surgery",
+            "phase1_actor": "Intervensi Ahli (Gusti + FIP™)",
+            "phase1_desc": "Menghentikan 'pendarahan' seketika. Vitto membedah data Anda secara personal untuk menemukan kebocoran sistemik yang tidak terlihat oleh tim Anda.",
+            "phase2_title": "Fase 2: Intelligence Transfer",
+            "phase2_actor": "Pemberdayaan Tim (Transfer Pengetahuan)",
+            "phase2_desc": "Kami melatih tim internal Anda menggunakan FIP™ Lite agar mereka mampu mendeteksi anomali dasar tanpa harus menunggu audit eksternal.",
+            "phase3_title": "Fase 3: Supervised Autonomy",
+            "phase3_actor": "Kedaulatan Terpimpin (Gusti sebagai Oracle)",
+            "phase3_desc": "Tim Anda mengoperasikan protokol secara mandiri. Vitto tetap tersedia sebagai 'Oracle' untuk kasus-kasus kompleks dan keputusan strategis tingkat tinggi.",
+            "phase4_title": "Fase 4: Full Sovereignty",
+            "phase4_actor": "Sistem Otonom (Infrastruktur Mandiri)",
+            "phase4_desc": "Bisnis Anda memiliki kedaulatan intelijen penuh. Protokol FIP™ telah tertanam dalam sistem Anda, berjalan mandiri tanpa ketergantungan pada konsultan.",
+            "tesla_principle": "Catatan Strategis: Kami menerapkan <1>Tesla Principle</1>. Setiap diagnosa memperkuat database pola FIP™, membuat sistem Anda semakin cerdas dan otonom setiap harinya."
+        },
         "seo_title": "Struktur Investasi Forensic Intelligence | Gusti Devitto™ Canonical Pricing",
         "seo_desc": "Indeks harga resmi untuk layanan Financial Forensics & Neural Intelligence. Dari solusi SME hingga Enterprise Due Diligence. Canonical source of pricing truth.",
         "hero_badge": "Verifikasi Akses Diperlukan",

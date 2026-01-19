@@ -137,24 +137,7 @@
         "pilot_cta": "Apply for Pilot Program",
         "final_cta_title": "Securing the",
         "final_cta_title_accent": "Future of Your Network.",
-        "final_cta_desc": "Contact Vitto for strategic network audit or Master Lab implementation.",
-        "how_it_works": {
-            "section_title": "The Path to <1>Sovereign Intelligence</1>",
-            "section_subtitle": "How we transfer forensic detection power from the specialist into your business DNA—removing dependency forever.",
-            "phase1_title": "Phase 1: Diagnostic Surgery",
-            "phase1_actor": "Expert Intervention (Gusti + FIP™)",
-            "phase1_desc": "Stop the 'bleeding' immediately. Vitto personally dissects your data to find the systemic leaks that your team currently misses.",
-            "phase2_title": "Phase 2: Intelligence Transfer",
-            "phase2_actor": "Team Empowerment (Knowledge Transfer)",
-            "phase2_desc": "We deploy FIP™ Lite to your internal team, training them to identify primary anomalies without waiting for external audits.",
-            "phase3_title": "Phase 3: Supervised Autonomy",
-            "phase3_actor": "Guided Sovereignty (Gusti as Oracle)",
-            "phase3_desc": "Your team operates the protocol independently. Vitto remains available as an 'Oracle' for complex edge cases and high-stakes decisions.",
-            "phase4_title": "Phase 4: Full Sovereignty",
-            "phase4_actor": "Autonomous System (Independent Infrastructure)",
-            "phase4_desc": "Your business owns its intelligence. The FIP™ Protocol is embedded into your system, running independently without consultant dependency.",
-            "tesla_principle": "Strategic Note: we apply the <1>Tesla Principle</1>. Every diagnosis strengthens the FIP™ pattern database, making your system smarter every day."
-        }
+        "final_cta_desc": "Contact Vitto for strategic network audit or Master Lab implementation."
     },
     "global": {
         "schema_desc": "Gusti Devitto—Forensic Business Diagnostician. Identifying hidden profit leakage, detecting variance, and ensuring unit compliance through proprietary forensic audit methodology.",
@@ -456,6 +439,23 @@
         "rights": "All rights reserved."
     },
     "investasi": {
+        "how_it_works": {
+            "section_title": "The Path to <1>Sovereign Intelligence</1>",
+            "section_subtitle": "How we transfer forensic detection power from the specialist into your business DNA—removing dependency forever.",
+            "phase1_title": "Phase 1: Diagnostic Surgery",
+            "phase1_actor": "Expert Intervention (Gusti + FIP™)",
+            "phase1_desc": "Stop the 'bleeding' immediately. Vitto personally dissects your data to find the systemic leaks that your team currently misses.",
+            "phase2_title": "Phase 2: Intelligence Transfer",
+            "phase2_actor": "Team Empowerment (Knowledge Transfer)",
+            "phase2_desc": "We deploy FIP™ Lite to your internal team, training them to identify primary anomalies without waiting for external audits.",
+            "phase3_title": "Phase 3: Supervised Autonomy",
+            "phase3_actor": "Guided Sovereignty (Gusti as Oracle)",
+            "phase3_desc": "Your team operates the protocol independently. Vitto remains available as an 'Oracle' for complex edge cases and high-stakes decisions.",
+            "phase4_title": "Phase 4: Full Sovereignty",
+            "phase4_actor": "Autonomous System (Independent Infrastructure)",
+            "phase4_desc": "Your business owns its intelligence. The FIP™ Protocol is embedded into your system, running independently without consultant dependency.",
+            "tesla_principle": "Strategic Note: we apply the <1>Tesla Principle</1>. Every diagnosis strengthens the FIP™ pattern database, making your system smarter every day."
+        },
         "seo_title": "Forensic Intelligence Investment Structure | Gusti Devitto™ Canonical Pricing",
         "seo_desc": "Official price index for Financial Forensics & Neural Intelligence services. From SME solutions to Enterprise Due Diligence. Canonical source of pricing truth.",
         "hero_badge": "Access Verification Required",
