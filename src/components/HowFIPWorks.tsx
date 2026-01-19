@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { Cpu, Users, Zap, ShieldCheck } from 'lucide-react';
 
 export const HowFIPWorks: React.FC = () => {
@@ -8,33 +8,33 @@ export const HowFIPWorks: React.FC = () => {
     const phases = [
         {
             id: 1,
-            title: t('how_it_works.phase1_title', 'Phase 1: Diagnostic Surgery'),
-            actor: t('how_it_works.phase1_actor', 'Gusti + FIP™ (Done-for-you)'),
-            desc: t('how_it_works.phase1_desc', 'Gusti personally operates the FIP™ protocol on your raw data to identify hidden systemic leaks.'),
+            title: t('investasi.how_it_works.phase1_title'),
+            actor: t('investasi.how_it_works.phase1_actor'),
+            desc: t('investasi.how_it_works.phase1_desc'),
             icon: <Zap className="w-6 h-6 text-primary" />,
             status: 'active'
         },
         {
             id: 2,
-            title: t('how_it_works.phase2_title', 'Phase 2: Knowledge Transfer'),
-            actor: t('how_it_works.phase2_actor', 'Gusti Teaching You (Guided)'),
-            desc: t('how_it_works.phase2_desc', 'Deployment of FIP™ Lite to your team with direct training on how to interpret forensic patterns.'),
+            title: t('investasi.how_it_works.phase2_title'),
+            actor: t('investasi.how_it_works.phase2_actor'),
+            desc: t('investasi.how_it_works.phase2_desc'),
             icon: <Users className="w-6 h-6 text-primary/80" />,
             status: 'upcoming'
         },
         {
             id: 3,
-            title: t('how_it_works.phase3_title', 'Phase 3: Supervised Autonomy'),
-            actor: t('how_it_works.phase3_actor', 'You + FIP™ (Gusti as Oracle)'),
-            desc: t('how_it_works.phase3_desc', 'Your team operates FIP™ daily. Gusti remains available as an "Oracle" for complex, high-stakes edge cases.'),
+            title: t('investasi.how_it_works.phase3_title'),
+            actor: t('investasi.how_it_works.phase3_actor'),
+            desc: t('investasi.how_it_works.phase3_desc'),
             icon: <Cpu className="w-6 h-6 text-primary/60" />,
             status: 'upcoming'
         },
         {
             id: 4,
-            title: t('how_it_works.phase4_title', 'Phase 4: Full Sovereignty'),
-            actor: t('how_it_works.phase4_actor', 'Autonomous FIP™ Protocol'),
-            desc: t('how_it_works.phase4_desc', 'The system runs autonomously with your team. Intelligence is fully codified and independent.'),
+            title: t('investasi.how_it_works.phase4_title'),
+            actor: t('investasi.how_it_works.phase4_actor'),
+            desc: t('investasi.how_it_works.phase4_desc'),
             icon: <ShieldCheck className="w-6 h-6 text-primary/40" />,
             status: 'upcoming'
         }
@@ -45,10 +45,14 @@ export const HowFIPWorks: React.FC = () => {
             <div className="container mx-auto max-w-6xl">
                 <div className="text-center mb-16 space-y-4">
                     <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight">
-                        The <span className="text-primary">Hybrid Intelligence</span> Evolution
+                        <Trans
+                            i18nKey="investasi.how_it_works.section_title"
+                            defaults="The Path to <span className='text-primary'>Sovereign Intelligence</span>"
+                            components={{ 1: <span className='text-primary' /> }}
+                        />
                     </h2>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto italic">
-                        Scale from human-led diagnostics to autonomous forensic sovereignty.
+                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto italic leading-relaxed">
+                        {t('investasi.how_it_works.section_subtitle')}
                     </p>
                 </div>
 
@@ -57,7 +61,7 @@ export const HowFIPWorks: React.FC = () => {
                         <div key={phase.id} className="relative group">
                             {/* Connector Line */}
                             {idx < phases.length - 1 && (
-                                <div className="hidden md:block absolute top-12 left-[80%] w-full h-[2px] bg-gradient-to-r from-primary/20 to-transparent z-0" />
+                                <div className="hidden md:block absolute top-[20%] left-[80%] w-full h-[1px] border-t border-dashed border-primary/20 z-0" />
                             )}
 
                             <div className="relative z-10 p-8 rounded-3xl border border-white/10 bg-[#121212]/50 group-hover:border-primary/30 transition-all h-full flex flex-col">
@@ -81,9 +85,11 @@ export const HowFIPWorks: React.FC = () => {
 
                 <div className="mt-16 p-8 rounded-[2rem] bg-primary/5 border border-primary/20 max-w-3xl mx-auto text-center">
                     <p className="text-sm text-gray-300 leading-relaxed italic">
-                        <span className="text-primary font-bold">Note:</span> We follow the <span className="text-white font-bold">"Tesla Principle"</span>.
-                        Your data improves FIP™ every day, creating a flywheel effect where the system becomes
-                        dramatically smarter and more autonomous over time.
+                        <Trans
+                            i18nKey="investasi.how_it_works.tesla_principle"
+                            defaults="Strategic Note: we apply the <span className='text-primary font-bold'>Tesla Principle</span>. Every diagnosis strengthens the FIP™ patterns, making your system smarter every day."
+                            components={{ 1: <span className="text-primary font-bold" /> }}
+                        />
                     </p>
                 </div>
             </div>
