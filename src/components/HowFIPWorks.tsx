@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Cpu, Users, Zap, ShieldCheck, ChevronRight } from 'lucide-react';
+import { Cpu, Users, Zap, ShieldCheck } from 'lucide-react';
 
 export const HowFIPWorks: React.FC = () => {
     const { t } = useTranslation();
