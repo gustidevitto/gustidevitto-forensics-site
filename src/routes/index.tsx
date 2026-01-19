@@ -2,6 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { ArrowRight, Lock, Globe, Zap } from "lucide-react"
 import { useTranslation, Trans } from 'react-i18next'
+import { LanguageSlider } from '@/components/LanguageSlider'
 
 export const Route = createFileRoute('/')({
     component: Index,
@@ -36,6 +37,11 @@ function Index() {
             onMouseMove={handleMouseMove}
             className="min-h-screen w-full bg-[#0a1628] text-white font-sans flex items-start md:items-center justify-center overflow-x-hidden selection:bg-primary selection:text-black relative p-6 pb-24 md:p-12 lg:p-20 perspective-1000"
         >
+            {/* Language Toggle Slider - Top Right */}
+            <div className="absolute top-6 right-6 md:top-10 md:right-10 z-50 animate-fade-in">
+                <LanguageSlider />
+            </div>
+
             {/* Dynamic Spotlight Effect - "The Forensic Torch" */}
             {/* Dynamic Spotlight Effect - "The Forensic Torch" */}
             <div
@@ -84,8 +90,9 @@ function Index() {
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-none uppercase">
                             <Trans i18nKey="entrance_gate.hero_title">
                                 GUSTI <br />
-                                DEVITTO<span className="text-primary italic">™</span>
+                                DEVITTO
                             </Trans>
+                            <span className="text-[#FFD700] italic ml-1">™</span>
                         </h1>
                         <div className="flex items-center gap-4">
                             <div className="h-px w-12 bg-primary"></div>

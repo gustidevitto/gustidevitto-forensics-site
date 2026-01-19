@@ -93,7 +93,7 @@ function RootComponent() {
                                     <img src="/assets/images/android-chrome-192x192.png" alt="Gusti Devitto Logo" className="h-8 w-8" />
                                     <div className="flex flex-col -space-y-1">
                                         <a className="font-bold text-xl tracking-tight" href="/">
-                                            Gusti Devitto<span className="text-secondary dark:text-primary">™</span>
+                                            Gusti Devitto<span className="text-[#FFD700] italic">™</span>
                                         </a>
                                         <div className="flex items-center gap-1.5">
                                             <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-status-blink"></div>
