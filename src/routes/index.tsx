@@ -1,12 +1,14 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { ArrowRight, Lock, Globe, Zap } from "lucide-react"
+import { useTranslation, Trans } from 'react-i18next'
 
 export const Route = createFileRoute('/')({
     component: Index,
 })
 
 function Index() {
+    const { t } = useTranslation()
     const [mounted, setMounted] = useState(false)
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
 
@@ -80,13 +82,15 @@ function Index() {
 
                     <div className="space-y-4">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-none uppercase">
-                            GUSTI <br />
-                            DEVITTO<span className="text-primary italic">™</span>
+                            <Trans i18nKey="entrance_gate.hero_title">
+                                GUSTI <br />
+                                DEVITTO<span className="text-primary italic">™</span>
+                            </Trans>
                         </h1>
                         <div className="flex items-center gap-4">
                             <div className="h-px w-12 bg-primary"></div>
                             <p className="text-xs md:text-sm text-white/40 font-bold tracking-[0.3em] uppercase">
-                                Forensic Business Practice
+                                {t('entrance_gate.hero_subtitle')}
                             </p>
                         </div>
                     </div>
@@ -94,10 +98,10 @@ function Index() {
                     <div className="space-y-4">
                         <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Initialization Prompt:</p>
                         <p className="text-base md:text-lg text-white border-l-2 border-primary/50 pl-6 py-2 leading-relaxed max-w-md font-bold">
-                            Choose your scale to initiate forensic reconnaissance.
+                            {t('entrance_gate.init_prompt')}
                         </p>
                         <p className="text-xs text-white/40 italic leading-relaxed max-w-xs font-medium pl-6">
-                            Proprietary diagnostic protocols for high-stakes business operations.
+                            {t('entrance_gate.proprietary_note')}
                         </p>
                     </div>
 
@@ -144,14 +148,14 @@ function Index() {
                                 <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                                     <Zap className="w-5 h-5" />
                                 </div>
-                                <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em]">For businesses with 3-20 locations</span>
+                                <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em]">{t('entrance_gate.multi_outlet_label')}</span>
                             </div>
                             <div className="space-y-1">
-                                <h3 className="text-3xl font-black uppercase tracking-tighter group-hover:text-primary transition-colors">Multi-Outlet</h3>
-                                <p className="text-sm text-white/60 font-medium">Profit Protection & Leakage Diagnosis</p>
+                                <h3 className="text-3xl font-black uppercase tracking-tighter group-hover:text-primary transition-colors">{t('entrance_gate.multi_outlet_title')}</h3>
+                                <p className="text-sm text-white/60 font-medium">{t('entrance_gate.multi_outlet_desc')}</p>
                             </div>
                             <div className="flex items-center gap-2 text-[10px] font-black uppercase text-primary transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
-                                Initialize Protocol <ArrowRight className="w-3 h-3" />
+                                {t('entrance_gate.multi_outlet_cta')} <ArrowRight className="w-3 h-3" />
                             </div>
                         </div>
                     </Link>
@@ -177,14 +181,14 @@ function Index() {
                                 <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 group-hover:scale-110 transition-transform">
                                     <Globe className="w-5 h-5" />
                                 </div>
-                                <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em]">For businesses with 21-500+ locations</span>
+                                <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em]">{t('entrance_gate.enterprise_label')}</span>
                             </div>
                             <div className="space-y-1">
-                                <h3 className="text-3xl font-black uppercase tracking-tighter group-hover:text-red-500 transition-colors">Enterprise</h3>
-                                <p className="text-sm text-white/60 font-medium">Systemic Fraud & Network Intelligence</p>
+                                <h3 className="text-3xl font-black uppercase tracking-tighter group-hover:text-red-500 transition-colors">{t('entrance_gate.enterprise_title')}</h3>
+                                <p className="text-sm text-white/60 font-medium">{t('entrance_gate.enterprise_desc')}</p>
                             </div>
                             <div className="flex items-center gap-2 text-[10px] font-black uppercase text-red-500 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
-                                Initiate Intelligence <ArrowRight className="w-3 h-3" />
+                                {t('entrance_gate.enterprise_cta')} <ArrowRight className="w-3 h-3" />
                             </div>
                         </div>
                     </Link>

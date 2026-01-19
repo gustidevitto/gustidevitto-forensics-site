@@ -115,7 +115,7 @@ function Calculator() {
             [t('calculator.lite_disclaimer'), ""],
             ["", ""],
             [t('calculator.export_steps', "NEXT STEPS"), ""],
-            [t('calculator.export_step1', "1. Schedule 15-Minute MRI with Vitto"), ""],
+            [t('calculator.export_step1', "1. Schedule 15-Minute MRI with Gusti Devitto"), ""],
             [t('calculator.export_step2', "2. Visit: gustidevitto.com/investasi"), ""]
         ].map(e => e.join(",")).join("\n");
 
@@ -301,7 +301,7 @@ function Calculator() {
                                 <CardContent>
                                     <p className="text-sm leading-relaxed mb-6">
                                         <Trans i18nKey="calculator.dig_deeper_text">
-                                            Contact Vitto to perform a <strong>Surgical MRI</strong> using the <strong>FDD™v3 Full Version</strong> personally.
+                                            Contact Gusti Devitto to perform a <strong>Surgical MRI</strong> using the <strong>FDD™v3 Full Version</strong> personally.
                                         </Trans>
                                     </p>
                                     <Button asChild variant="secondary" className="w-full font-bold h-12">

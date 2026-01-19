@@ -111,7 +111,7 @@ function AboutGustiDevitto() {
 
                             <div className="prose prose-invert prose-lg max-w-none">
                                 <p className="text-xl text-muted-foreground leading-relaxed">
-                                    <Trans i18nKey="about_page.hero_intro">Halo, saya <strong className="text-foreground">Gusti Devitto</strong> (biasa dipanggil <strong className="text-foreground">Vitto</strong>).</Trans>
+                                    <Trans i18nKey="about_page.hero_intro">Halo, saya <strong className="text-foreground">Gusti Devitto</strong>.</Trans>
                                 </p>
                                 <p className="text-muted-foreground leading-relaxed">
                                     <Trans i18nKey="about_page.hero_p1">Saya bukan akuntan pajak, dan saya bukan perencana keuangan konvensional. Saya adalah seorang <strong className="text-primary">Financial Forensics Specialist</strong> yang berdedikasi membantu <em>founder</em> bisnis multi-outlet dan <em>brand owners</em> untuk membedah apa yang sebenarnya terjadi di balik laporan keuangan mereka.</Trans>
