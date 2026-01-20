@@ -18,13 +18,13 @@ function InvestasiPage() {
             name: t('pricing.starter_title'),
             badge: t('pricing.starter_badge'),
             price: t('investasi.price_starter'),
-            period: t('investasi.per_starter', "sekali audit"),
-            desc: t('investasi.sme_starter_desc', "Pembedahan forensik awal untuk mendeteksi 'kebocoran sistemik'."),
+            period: t('investasi.per_starter'),
+            desc: t('investasi.sme_starter_desc'),
             features: [
                 t('pricing.feature_starter_1'),
                 t('pricing.feature_starter_2'),
-                t('investasi.sme_f3', "Anomaly Alert System"),
-                t('investasi.sme_f4', "Basic Margin Leakage Report")
+                t('investasi.sme_f3'),
+                t('investasi.sme_f4')
             ],
             cta: t('pricing.cta_starter'),
             link: "/fip-lite"
@@ -34,14 +34,14 @@ function InvestasiPage() {
             name: t('pricing.growth_title'),
             badge: t('pricing.popular'),
             price: t('investasi.price_growth'),
-            period: t('investasi.per_growth', "/kuartal"),
-            desc: t('investasi.sme_growth_desc', "Audit berkala dan pendampingan strategis untuk perbaikan margin berkelanjutan."),
+            period: t('investasi.per_growth'),
+            desc: t('investasi.sme_growth_desc'),
             features: [
                 t('pricing.feature_everything_starter'),
                 t('pricing.feature_checkins'),
                 t('pricing.feature_strategy'),
                 t('pricing.feature_simulation'),
-                t('investasi.sme_growth_f5', "Neural Pattern Analysis")
+                t('investasi.sme_growth_f5')
             ],
             cta: t('pricing.cta_growth'),
             link: "/fip-lite",
@@ -52,14 +52,14 @@ function InvestasiPage() {
             name: t('pricing.scale_title'),
             badge: t('pricing.scale_badge'),
             price: t('investasi.price_scale'),
-            period: t('investasi.per_scale', "/tahun"),
-            desc: t('investasi.sme_scale_desc', "Akses penuh platform FIP™ untuk kedaulatan intelijen jaringan Anda."),
+            period: t('investasi.per_scale'),
+            desc: t('investasi.sme_scale_desc'),
             features: [
                 t('pricing.feature_everything_growth'),
                 t('pricing.feature_pulse'),
                 t('pricing.feature_neural'),
                 t('pricing.feature_priority'),
-                t('investasi.sme_scale_f5', "Custom Forensic Report (Weekly)")
+                t('investasi.sme_scale_f5')
             ],
             cta: t('pricing.cta_scale'),
             link: "/fip-lite"

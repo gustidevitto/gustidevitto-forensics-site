@@ -24,7 +24,7 @@ function AboutGustiDevitto() {
                             "@type": "Person",
                             "@id": "https://www.gustidevitto.com/#person",
                             "name": "Gusti Devitto",
-                            "alternateName": "Vitto",
+                            "alternateName": "Gusti Devitto",
                             "jobTitle": t('about_page.schema_job'),
                             "description": t('about_page.seo_desc'),
                             "image": "https://www.gustidevitto.com/assets/images/aboutme.jpg",

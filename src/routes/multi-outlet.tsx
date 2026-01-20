@@ -13,7 +13,7 @@ export const Route = createFileRoute('/multi-outlet')({
 })
 
 function MultiOutletPage() {
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
     const [networkSize, setNetworkSize] = useState<number>(0)
     const [currentSlide, setCurrentSlide] = useState(0)
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
@@ -223,11 +223,11 @@ function MultiOutletPage() {
                             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
                                 <div>
                                     <p className="text-[10px] uppercase font-bold text-muted-foreground mb-1">{t('multi_outlet.calc_daily')}</p>
-                                    <p className="text-2xl font-black text-red-500">${(networkSize * 32).toLocaleString()}</p>
+                                    <p className="text-2xl font-black text-red-500">{i18n.language === 'id' ? `Rp ${(networkSize * 450000).toLocaleString('id-ID')}` : `$${(networkSize * 32).toLocaleString()}`}</p>
                                 </div>
                                 <div>
                                     <p className="text-[10px] uppercase font-bold text-muted-foreground mb-1">{t('multi_outlet.calc_monthly')}</p>
-                                    <p className="text-2xl font-black text-red-500">${(networkSize * 32 * 30).toLocaleString()}</p>
+                                    <p className="text-2xl font-black text-red-500">{i18n.language === 'id' ? `Rp ${(networkSize * 450000 * 30).toLocaleString('id-ID')}` : `$${(networkSize * 32 * 30).toLocaleString()}`}</p>
                                 </div>
                             </div>
                         </div>
@@ -367,85 +367,112 @@ function MultiOutletPage() {
                         <p className="text-muted-foreground">{t('multi_outlet.pricing_desc')}</p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                        {/* Free Tier */}
-                        <div className="p-8 rounded-2xl bg-black/50 border border-white/10 backdrop-blur-sm space-y-6">
+                    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        {/* Tier 1: Diagnostic Surgery */}
+                        <div className="p-8 rounded-2xl bg-black/50 border border-white/10 backdrop-blur-sm space-y-6 flex flex-col">
                             <div className="space-y-2">
-                                <h3 className="text-2xl font-black uppercase">{t('multi_outlet.pricing_free_title')}</h3>
-                                <p className="text-sm text-muted-foreground">{t('multi_outlet.pricing_free_sub')}</p>
+                                <h3 className="text-xl font-black uppercase text-white">{t('pricing.starter_title')}</h3>
+                                <p className="text-xs text-primary font-bold uppercase tracking-widest">{t('pricing.starter_badge')}</p>
                             </div>
 
-                            <div className="space-y-4">
+                            <div className="space-y-4 flex-1">
                                 <div className="flex items-baseline gap-2">
-                                    <span className="text-5xl font-black text-primary">FREE</span>
+                                    <span className="text-4xl font-black text-white">{t('investasi.price_starter')}</span>
+                                    <span className="text-xs text-muted-foreground">/audit</span>
                                 </div>
 
-                                <ul className="space-y-3 text-sm text-muted-foreground">
+                                <ul className="space-y-3 text-xs text-muted-foreground">
                                     <li className="flex items-start gap-2">
                                         <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('multi_outlet.pricing_free_f1')}
+                                        {t('pricing.feature_starter_1')}
                                     </li>
                                     <li className="flex items-start gap-2">
                                         <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('multi_outlet.pricing_free_f2')}
+                                        {t('pricing.feature_starter_2')}
                                     </li>
                                     <li className="flex items-start gap-2">
                                         <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('multi_outlet.pricing_free_f3')}
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('multi_outlet.pricing_free_f4')}
+                                        {t('investasi.sme_f3')}
                                     </li>
                                 </ul>
                             </div>
 
-                            <Button asChild className="w-full h-14 font-black bg-white/10 hover:bg-white/20 text-white border border-white/20">
-                                <Link to="/fip-lite">{t('multi_outlet.pricing_free_cta')}</Link>
+                            <Button asChild className="w-full h-12 font-black bg-white/10 hover:bg-white/20 text-white border border-white/20">
+                                <Link to="/fip-lite">{t('pricing.cta_starter')}</Link>
                             </Button>
                         </div>
 
-                        {/* Paid Tier */}
-                        <div className="p-8 rounded-2xl bg-primary/10 border-2 border-primary backdrop-blur-sm space-y-6 relative">
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-black text-xs font-black uppercase rounded-full">
-                                Most Popular
+                        {/* Tier 2: Growth Partnership */}
+                        <div className="p-8 rounded-2xl bg-primary/10 border-2 border-primary backdrop-blur-sm space-y-6 flex flex-col relative shadow-2xl shadow-primary/10">
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-black text-[10px] font-black uppercase rounded-full">
+                                {t('pricing.popular')}
                             </div>
 
                             <div className="space-y-2">
-                                <h3 className="text-2xl font-black uppercase">{t('multi_outlet.pricing_paid_title')}</h3>
-                                <p className="text-sm text-muted-foreground">{t('multi_outlet.pricing_paid_sub')}</p>
+                                <h3 className="text-xl font-black uppercase text-white">{t('pricing.growth_title')}</h3>
+                                <p className="text-xs text-primary font-bold uppercase tracking-widest">{t('pricing.growth_badge')}</p>
                             </div>
 
-                            <div className="space-y-4">
+                            <div className="space-y-4 flex-1">
                                 <div className="flex items-baseline gap-2">
-                                    <span className="text-sm text-muted-foreground">{t('multi_outlet.pricing_paid_price_label')}</span>
-                                    <span className="text-5xl font-black text-primary">{t('multi_outlet.pricing_paid_price')}</span>
+                                    <span className="text-4xl font-black text-white">{t('investasi.price_growth')}</span>
+                                    <span className="text-xs text-muted-foreground">{i18n.language === 'id' ? '/kuartal' : '/quarter'}</span>
                                 </div>
 
-                                <ul className="space-y-3 text-sm text-muted-foreground">
+                                <ul className="space-y-3 text-xs text-white/80">
                                     <li className="flex items-start gap-2">
                                         <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('multi_outlet.pricing_paid_f1')}
+                                        {t('pricing.feature_checkins')}
                                     </li>
                                     <li className="flex items-start gap-2">
                                         <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('multi_outlet.pricing_paid_f2')}
+                                        {t('pricing.feature_strategy')}
                                     </li>
                                     <li className="flex items-start gap-2">
                                         <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('multi_outlet.pricing_paid_f3')}
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('multi_outlet.pricing_paid_f4')}
+                                        {t('investasi.sme_growth_f5')}
                                     </li>
                                 </ul>
                             </div>
 
-                            <Button asChild className="w-full h-14 font-black bg-primary text-black hover:bg-white">
+                            <Button asChild className="w-full h-12 font-black bg-primary text-black hover:bg-white">
                                 <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
-                                    {t('multi_outlet.pricing_paid_cta')}
+                                    {t('pricing.cta_growth')}
                                 </a>
+                            </Button>
+                        </div>
+
+                        {/* Tier 3: Enterprise Sovereignty */}
+                        <div className="p-8 rounded-2xl bg-black/50 border border-white/10 backdrop-blur-sm space-y-6 flex flex-col">
+                            <div className="space-y-2">
+                                <h3 className="text-xl font-black uppercase text-white">{t('pricing.scale_title')}</h3>
+                                <p className="text-xs text-primary font-bold uppercase tracking-widest">{t('pricing.scale_badge')}</p>
+                            </div>
+
+                            <div className="space-y-4 flex-1">
+                                <div className="flex items-baseline gap-2">
+                                    <span className="text-4xl font-black text-white">{t('investasi.price_scale')}</span>
+                                    <span className="text-xs text-muted-foreground">/year</span>
+                                </div>
+
+                                <ul className="space-y-3 text-xs text-muted-foreground">
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                        {t('pricing.feature_everything_growth')}
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                        {t('pricing.feature_pulse')}
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                        {t('investasi.sme_scale_f5')}
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <Button asChild className="w-full h-12 font-black bg-white/10 hover:bg-white/20 text-white border border-white/20">
+                                <Link to="/investasi">{t('pricing.cta_scale')}</Link>
                             </Button>
                         </div>
                     </div>
