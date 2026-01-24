@@ -363,11 +363,33 @@ function NetworkIntelligencePage() {
                         ></iframe>
                     </div>
 
-                    <Button asChild variant="outline" size="lg" className="border-primary/50 hover:bg-primary/10 text-white font-bold">
-                        <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
-                            {t('network_intelligence.demo_cta')}
-                        </a>
-                    </Button>
+                    <div className="flex flex-col items-center gap-8">
+                        <Button asChild variant="outline" size="lg" className="border-primary/50 hover:bg-primary/10 text-white font-bold h-14 px-10">
+                            <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
+                                {t('network_intelligence.demo_cta')}
+                            </a>
+                        </Button>
+
+                        {/* CPA Diplomacy Layer */}
+                        <div className="max-w-3xl w-full p-8 rounded-2xl bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 backdrop-blur-md relative overflow-hidden group">
+                            <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity">
+                                <ShieldAlert className="w-24 h-24 text-primary -mr-8 -mt-8 rotate-12" />
+                            </div>
+
+                            <div className="relative z-10 space-y-4">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase tracking-wider border border-blue-500/20">
+                                    <Activity className="w-3 h-3" /> {t('network_intelligence.cpa_partner_badge')}
+                                </div>
+                                <h3 className="text-2xl font-black text-white">{t('network_intelligence.cpa_partner_title')}</h3>
+                                <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+                                    <Trans
+                                        i18nKey="network_intelligence.cpa_partner_desc"
+                                        components={{ 1: <span className="text-primary font-bold" /> }}
+                                    />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 

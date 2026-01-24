@@ -351,11 +351,14 @@ function MultiOutletPage() {
                         ></iframe>
                     </div>
 
-                    <Button asChild variant="outline" size="lg" className="border-primary/50 hover:bg-primary/10 text-white font-bold">
+                    <Button asChild variant="outline" size="lg" className="border-primary/50 hover:bg-primary/10 text-white font-bold text-center">
                         <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
                             {t('multi_outlet.demo_cta')}
                         </a>
                     </Button>
+                    <p className="text-xs text-muted-foreground/60 max-w-md mx-auto italic mt-2">
+                        {t('multi_outlet.demo_disclaimer')}
+                    </p>
                 </div>
             </section>
 
