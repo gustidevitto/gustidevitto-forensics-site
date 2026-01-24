@@ -64,7 +64,7 @@
         "benefits_img_text": "Metodologi 16 Pilar Gusti Devitto dalam aksi",
         "demo_badge": "LIVE DEMONSTRATION",
         "demo_title": "Lihat Cara Kerjanya",
-        "demo_video_text": "Tonton Demo 3 Menit",
+        "demo_video_text": "Tonton Demo Protokol Forensik",
         "demo_cta": "Jadwalkan Live Walkthrough",
         "pricing_title": "Harga Transparan",
         "pricing_desc": "Pilih tingkat diagnosa Anda",
@@ -695,7 +695,7 @@
     },
     "demo_video": {
         "header": "LIHAT FIP™ PROTOCOL BERAKSI",
-        "placeholder": "Video Demo Segera Hadir",
+        "url": "https://www.youtube.com/embed/V86OFZUYCTg",
         "cta": "Ajukan Demo Langsung"
     },
     "master_index": {

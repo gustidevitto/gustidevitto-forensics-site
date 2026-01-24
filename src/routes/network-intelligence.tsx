@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { ShieldAlert, Maximize2, X, Activity, CheckCircle2, Play, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
+import { ShieldAlert, Maximize2, X, Activity, CheckCircle2, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslation, Trans } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
@@ -352,14 +352,15 @@ function NetworkIntelligencePage() {
                     </div>
                     <h2 className="text-3xl font-black tracking-tight">{t('network_intelligence.demo_title')}</h2>
 
-                    <div className="relative aspect-video rounded-2xl border border-white/10 bg-zinc-900/50 overflow-hidden group cursor-pointer backdrop-blur-sm">
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
-                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                            <div className="w-20 h-20 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <Play className="w-8 h-8 text-primary ml-1" />
-                            </div>
-                            <p className="text-lg font-bold text-white">{t('network_intelligence.demo_video_text')}</p>
-                        </div>
+                    <div className="relative aspect-video rounded-2xl border border-white/10 bg-black overflow-hidden shadow-2xl">
+                        <iframe
+                            className="absolute inset-0 w-full h-full"
+                            src={t('demo_video.url')}
+                            title="Network Analysis Demo"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                        ></iframe>
                     </div>
 
                     <Button asChild variant="outline" size="lg" className="border-primary/50 hover:bg-primary/10 text-white font-bold">

@@ -64,7 +64,7 @@
         "benefits_img_text": "16-Pillar diagnostic framework in action",
         "demo_badge": "LIVE DEMONSTRATION",
         "demo_title": "See How It Works",
-        "demo_video_text": "Watch 3-Minute Demo",
+        "demo_video_text": "Watch Forensic Protocol Demo",
         "demo_cta": "Schedule Live Walkthrough",
         "pricing_title": "Transparent Pricing",
         "pricing_desc": "Choose your diagnostic depth",
@@ -692,7 +692,7 @@
     },
     "demo_video": {
         "header": "SEE FIP™ PROTOCOL IN ACTION",
-        "placeholder": "Demo Video Coming Soon",
+        "url": "https://www.youtube.com/embed/V86OFZUYCTg",
         "cta": "Request Live Demo"
     },
     "master_index": {

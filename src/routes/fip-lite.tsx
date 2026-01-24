@@ -25,7 +25,8 @@ import {
     Coins,
     CheckCircle,
     PieChart,
-    ShoppingCart
+    ShoppingCart,
+    Play
 } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -279,6 +280,29 @@ function FIPLitePage() {
                     </Button>
                 </div>
             </header>
+
+            {/* Demo Video Section for FIP Lite */}
+            <section className="bg-white/5 border border-white/10 rounded-3xl p-8 space-y-6">
+                <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                        <Play className="w-4 h-4 text-primary fill-primary" />
+                    </div>
+                    <div>
+                        <h3 className="text-sm font-black uppercase tracking-widest">{t('multi_outlet.demo_title')}</h3>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">{t('multi_outlet.demo_video_text')}</p>
+                    </div>
+                </div>
+                <div className="relative aspect-video rounded-2xl border border-white/5 bg-black overflow-hidden shadow-2xl">
+                    <iframe
+                        className="absolute inset-0 w-full h-full"
+                        src={t('demo_video.url')}
+                        title="FIP Protocol Demo"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                    ></iframe>
+                </div>
+            </section>
 
             <main className="grid gap-12">
                 {/* Progress Visualizer */}
