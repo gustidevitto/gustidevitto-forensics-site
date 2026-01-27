@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
-import { ShieldCheck, ArrowRight, Globe, Lock, Cpu, BarChart3, Building2, Briefcase } from "lucide-react"
+import { ShieldCheck, Globe, Lock, Cpu, BarChart3 } from "lucide-react"
 import { useTranslation, Trans } from 'react-i18next'
 import { HowFIPWorks } from "@/components/HowFIPWorks"
 
@@ -14,134 +14,84 @@ function InvestasiPage() {
 
     const smePlans = [
         {
-            id: "starter",
-            name: t('pricing.starter_title'),
-            badge: t('pricing.starter_badge'),
-            price: t('investasi.price_starter'),
-            period: t('investasi.per_starter'),
-            desc: t('investasi.sme_starter_desc'),
+            id: "rescue",
+            name: t('pricing.starter_title'), // Rescue Audit
+            badge: t('pricing.starter_badge'), // One-Time Surgery
+            price: t('investasi.price_starter'), // $1,200
+            period: t('investasi.per_starter'), // per audit
+            desc: "Critical one-time diagnostic surgery to identify root causes of profit leakage.",
             features: [
                 t('pricing.feature_starter_1'),
                 t('pricing.feature_starter_2'),
-                t('investasi.sme_f3'),
-                t('investasi.sme_f4')
+                t('pricing.feature_strategy'),
+                "Corrective Action Plan"
             ],
             cta: t('pricing.cta_starter'),
-            link: "/fip-lite"
+            link: "/single-entity"
         },
         {
-            id: "growth",
-            name: t('pricing.growth_title'),
-            badge: t('pricing.popular'),
-            price: t('investasi.price_growth'),
-            period: t('investasi.per_growth'),
-            desc: t('investasi.sme_growth_desc'),
+            id: "integrity",
+            name: t('pricing.growth_title'), // Integrity Program
+            badge: t('pricing.growth_badge'), // Ongoing Protection
+            price: t('investasi.price_growth'), // $1,800
+            period: t('investasi.per_growth'), // /quarter
+            desc: "Quarterly forensic oversight to ensure sustained operational integrity.",
             features: [
-                t('pricing.feature_everything_starter'),
+                "Everything in Rescue Audit",
                 t('pricing.feature_checkins'),
-                t('pricing.feature_strategy'),
-                t('pricing.feature_simulation'),
-                t('investasi.sme_growth_f5')
+                "Quarterly Forensic Analysis",
+                "Continuous Variance Monitoring"
             ],
             cta: t('pricing.cta_growth'),
-            link: "/fip-lite",
+            link: "/single-entity",
             highlight: true
-        },
+        }
+    ]
+
+    const networkPlans = [
         {
-            id: "scale",
-            name: t('pricing.scale_title'),
-            badge: t('pricing.scale_badge'),
-            price: t('investasi.price_scale'),
-            period: t('investasi.per_scale'),
-            desc: t('investasi.sme_scale_desc'),
+            id: "pilot",
+            name: t('pricing.scale_title'), // Network Pilot
+            badge: t('pricing.scale_badge'), // Validation Stage
+            price: t('investasi.price_scale'), // $3,500
+            period: t('investasi.per_scale'), // /3 months
+            desc: " Battlefield test for networks to surface hidden systemic failure patterns.",
             features: [
-                t('pricing.feature_everything_growth'),
-                t('pricing.feature_pulse'),
-                t('pricing.feature_neural'),
-                t('pricing.feature_priority'),
-                t('investasi.sme_scale_f5')
+                "16-Pillar Network Diagnostic",
+                "Outlier Detection Training",
+                "Systemic Fraud Vector Mapping",
+                "50% Refund Guarantee"
             ],
             cta: t('pricing.cta_scale'),
-            link: "/fip-lite"
+            link: "/network-intelligence"
+        },
+        {
+            id: "annual",
+            name: t('pricing.enterprise_title'), // Annual Plan
+            badge: t('pricing.enterprise_badge'), // Full Surveillance
+            price: t('investasi.price_enterprise'), // $12,000
+            period: t('investasi.per_enterprise'), // /year
+            desc: "Year-round institutional-grade forensic surveillance for total network control.",
+            features: [
+                "Continuous Network Intelligence",
+                "Strategic Crisis Briefings",
+                "Master Lab Configuration",
+                "Unlimited Pattern Training"
+            ],
+            cta: t('pricing.cta_enterprise'),
+            link: "/network-intelligence",
+            highlight: true
         }
     ]
 
     return (
         <div className="flex flex-col min-h-screen bg-[#0a0a0a]">
-            <title>{t('investasi.seo_title')}</title>
+            {/* SEO Meta Tags */}
+            <title>{t('investasi.seo_title')} - Forensic Economics</title>
             <meta name="description" content={t('investasi.seo_desc')} />
 
-            {/* SEO/GEO Advanced Schema */}
-            <script type="application/ld+json">
-                {JSON.stringify([
-                    {
-                        "@context": "https://schema.org",
-                        "@type": "Service",
-                        "name": "Financial Forensics Audit",
-                        "serviceType": t('investasi.schema_price_name'),
-                        "description": t('investasi.schema_price_desc'),
-                        "provider": {
-                            "@id": "https://www.gustidevitto.com/#organization"
-                        },
-                        "offers": [
-                            { "@type": "Offer", "name": t('pricing.starter_title'), "price": "15000000", "priceCurrency": "IDR" },
-                            { "@type": "Offer", "name": t('pricing.growth_title'), "price": "12000000", "priceCurrency": "IDR" },
-                            { "@type": "Offer", "name": t('pricing.scale_title'), "price": "150000000", "priceCurrency": "IDR" }
-                        ]
-                    },
-                    {
-                        "@context": "https://schema.org",
-                        "@type": "BreadcrumbList",
-                        "itemListElement": [
-                            {
-                                "@type": "ListItem",
-                                "position": 1,
-                                "name": t('nav.home'),
-                                "item": "https://www.gustidevitto.com/"
-                            },
-                            {
-                                "@type": "ListItem",
-                                "position": 2,
-                                "name": t('nav.pricing'),
-                                "item": "https://www.gustidevitto.com/investasi"
-                            }
-                        ]
-                    },
-                    {
-                        "@context": "https://schema.org",
-                        "@type": "FAQPage",
-                        "mainEntity": [
-                            {
-                                "@type": "Question",
-                                "name": t('investasi.faq_q1'),
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": t('investasi.faq_a1')
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": t('investasi.faq_q2'),
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": t('investasi.faq_a2')
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": t('investasi.faq_q3'),
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": t('investasi.faq_a3')
-                                }
-                            }
-                        ]
-                    }
-                ])}
-            </script>
-
             {/* Hero Header */}
-            <section className="pt-20 pb-12 px-4 md:px-8 border-b border-white/5 bg-gradient-to-b from-[#121212] to-[#0a0a0a]">
+            <section className="pt-24 pb-16 px-4 md:px-8 border-b border-white/5 bg-gradient-to-b from-[#121212] to-[#0a0a0a]">
                 <div className="container mx-auto max-w-4xl text-center space-y-6">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest border border-primary/20">
                         <Lock className="w-3 h-3" /> {t('investasi.hero_badge')}
@@ -158,41 +108,41 @@ function InvestasiPage() {
             </section>
 
             {/* 01. SME SECTION */}
-            <section className="py-24 px-4 md:px-8 bg-muted/5 relative">
-                <div className="container mx-auto max-w-7xl">
-                    <div className="flex items-center gap-4 mb-12">
-                        <div className="h-10 w-10 bg-primary/20 rounded-lg flex items-center justify-center border border-primary/30">
+            <section className="py-24 px-4 md:px-8 border-b border-white/5 bg-zinc-900/10">
+                <div className="container mx-auto max-w-6xl">
+                    <div className="flex flex-col md:flex-row md:items-center gap-4 mb-12">
+                        <div className="h-12 w-12 bg-primary/20 rounded-xl flex items-center justify-center border border-primary/30">
                             <Cpu className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <h2 className="text-2xl font-black uppercase">{t('investasi.sme_title')}</h2>
-                            <p className="text-muted-foreground text-sm uppercase tracking-widest">{t('investasi.sme_subtitle')}</p>
+                            <h2 className="text-3xl font-black uppercase tracking-tight">{t('investasi.sme_title')}</h2>
+                            <p className="text-muted-foreground text-sm uppercase tracking-widest font-bold">1 Entity • 1 P&L • Single Operator</p>
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8 items-stretch">
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
                         {smePlans.map((plan) => (
-                            <div key={plan.id} className={`p-8 rounded-3xl border ${plan.highlight ? 'border-primary bg-primary/5 ring-1 ring-primary/20 shadow-2xl shadow-primary/5' : 'border-border/50 bg-[#111111]'} flex flex-col relative group transition-all`}>
+                            <div key={plan.id} className={`p-10 rounded-3xl border ${plan.highlight ? 'border-primary bg-primary/5 shadow-2xl shadow-primary/5' : 'border-border/50 bg-[#111111]'} flex flex-col relative`}>
                                 {plan.highlight && (
-                                    <div className="absolute -top-3 left-6 bg-[#FF0080] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">{t('pricing.popular')}</div>
+                                    <div className="absolute -top-3 left-6 bg-primary text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">{t('pricing.popular')}</div>
                                 )}
                                 <div className="mb-6">
                                     <h3 className="text-2xl font-black text-white uppercase mb-1">{plan.name}</h3>
                                     <p className="text-xs text-primary/80 font-bold uppercase tracking-widest">{plan.badge}</p>
                                 </div>
                                 <div className="mb-8 items-baseline flex gap-1">
-                                    <span className="text-4xl font-black text-white">{plan.price}</span>
+                                    <span className="text-5xl font-black text-white">{plan.price}</span>
                                     <span className="text-muted-foreground text-sm">{plan.period}</span>
                                 </div>
                                 <p className="text-sm text-gray-400 mb-8 leading-relaxed italic border-l-2 border-primary/30 pl-4">{plan.desc}</p>
-                                <ul className="space-y-4 mb-8 flex-1">
-                                    {plan.features.map(f => (
-                                        <li key={f} className="flex items-start gap-2 text-sm text-gray-300">
-                                            <ShieldCheck className="w-4 h-4 text-primary shrink-0 mt-0.5" /> {f}
+                                <ul className="space-y-4 mb-10 flex-1">
+                                    {plan.features.map((f, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                                            <ShieldCheck className="w-5 h-5 text-primary shrink-0" /> {f}
                                         </li>
                                     ))}
                                 </ul>
-                                <Button asChild className={`w-full h-14 font-black uppercase text-sm ${plan.highlight ? 'bg-primary text-black hover:bg-white' : 'bg-white/10 text-white hover:bg-primary hover:text-black'}`}>
+                                <Button asChild size="lg" className={`w-full h-16 font-black uppercase ${plan.highlight ? 'bg-primary text-black hover:bg-white' : 'bg-white/10 text-white hover:bg-primary hover:text-black'}`}>
                                     <Link to={plan.link as any}>{plan.cta}</Link>
                                 </Button>
                             </div>
@@ -201,126 +151,69 @@ function InvestasiPage() {
                 </div>
             </section>
 
-            {/* HYBRID EVOLUTION SECTION */}
-            <HowFIPWorks />
-
-            {/* 02. HIGH-STAKES SECTION */}
-            <section className="py-24 px-4 md:px-8 border-y border-white/5 relative bg-[#0a0a0a]">
-                <div className="container mx-auto max-w-7xl">
-                    <div className="flex items-center gap-4 mb-16 justify-center md:justify-start text-center md:text-left">
-                        <div className="h-10 w-10 bg-primary/20 rounded-lg flex items-center justify-center border border-primary/30">
-                            <BarChart3 className="w-6 h-6 text-primary" />
+            {/* 02. NETWORK SECTION */}
+            <section className="py-24 px-4 md:px-8 bg-zinc-900/20">
+                <div className="container mx-auto max-w-6xl">
+                    <div className="flex flex-col md:flex-row md:items-center gap-4 mb-12 justify-end text-right">
+                        <div className="order-2 md:order-1">
+                            <h2 className="text-3xl font-black uppercase tracking-tight">{t('investasi.high_stakes_title')}</h2>
+                            <p className="text-muted-foreground text-sm uppercase tracking-widest font-bold">2+ Entities • Portfolio • Network Intelligence</p>
                         </div>
-                        <div>
-                            <h2 className="text-2xl font-black uppercase">{t('investasi.high_stakes_title')}</h2>
-                            <p className="text-muted-foreground text-sm uppercase tracking-widest">{t('investasi.high_stakes_subtitle')}</p>
+                        <div className="h-12 w-12 bg-blue-500/20 rounded-xl flex items-center justify-center border border-blue-500/30 order-1 md:order-2 self-end md:self-auto">
+                            <BarChart3 className="w-6 h-6 text-blue-400" />
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
-                        {/* Enterprise Tier */}
-                        <div className="p-10 rounded-[2.5rem] border-2 border-primary bg-[#121212] flex flex-col relative shadow-[0_0_50px_rgba(255,215,0,0.1)] ring-1 ring-primary/20 group">
-                            <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-primary text-black text-[10px] font-black px-6 py-2.5 rounded-full uppercase tracking-[0.2em] shadow-2xl whitespace-nowrap z-30 border border-black/10">{t('investasi.enterprise_badge')}</div>
-
-                            <div className="mb-10 mt-6 relative z-10">
-                                <Building2 className="w-12 h-12 text-primary mb-4 opacity-70" />
-                                <h3 className="text-4xl font-black uppercase mb-1 text-primary tracking-tighter">{t('pricing.enterprise_title')}</h3>
-                                <p className="text-xs text-primary/80 font-bold tracking-[0.3em] uppercase">{t('investasi.enterprise_desc')}</p>
-                            </div>
-
-                            <div className="mb-12 relative z-10">
-                                <div className="flex items-baseline gap-2">
-                                    <p className="text-6xl font-black text-white">{t('investasi.price_enterprise')}</p>
-                                    <span className="text-[#FF0080] font-black text-xs animate-pulse">{t('investasi.enterprise_auth')}</span>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl ml-auto">
+                        {networkPlans.map((plan) => (
+                            <div key={plan.id} className={`p-10 rounded-3xl border ${plan.highlight ? 'border-blue-500 bg-blue-500/5 shadow-2xl shadow-blue-500/5' : 'border-border/50 bg-[#111111]'} flex flex-col relative`}>
+                                {plan.highlight && (
+                                    <div className="absolute -top-3 left-6 bg-blue-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">ENTERPRISE HUB</div>
+                                )}
+                                <div className="mb-6">
+                                    <h3 className="text-2xl font-black text-white uppercase mb-1">{plan.name}</h3>
+                                    <p className="text-xs text-blue-400 font-bold uppercase tracking-widest">{plan.badge}</p>
                                 </div>
-                                <p className="text-xs text-muted-foreground mt-2 uppercase font-bold tracking-widest bg-white/5 w-fit px-2 py-1 rounded">{t('pricing.per_audit')}</p>
-                                <p className="text-xs text-primary/60 mt-4 italic max-w-xs leading-relaxed border-l border-primary/30 pl-3">
-                                    "{t('investasi.enterprise_comparator')}"
-                                </p>
+                                <div className="mb-8 items-baseline flex gap-1">
+                                    <span className="text-5xl font-black text-white">{plan.price}</span>
+                                    <span className="text-muted-foreground text-sm">{plan.period}</span>
+                                </div>
+                                <p className="text-sm text-gray-400 mb-8 leading-relaxed italic border-l-2 border-blue-500/30 pl-4">{plan.desc}</p>
+                                <ul className="space-y-4 mb-10 flex-1">
+                                    {plan.features.map((f, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                                            <ShieldCheck className="w-5 h-5 text-blue-400 shrink-0" /> {f}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <Button asChild size="lg" className={`w-full h-16 font-black uppercase ${plan.highlight ? 'bg-blue-500 text-white hover:bg-white hover:text-black' : 'bg-white/10 text-white hover:bg-blue-500'}`}>
+                                    <Link to={plan.link as any}>{plan.cta}</Link>
+                                </Button>
                             </div>
-
-                            <ul className="space-y-6 mb-16 flex-1 relative z-10">
-                                <li className="flex items-start gap-4 text-gray-100 font-bold leading-tight">
-                                    <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30"><ShieldCheck className="w-5 h-5 text-primary" /></div>
-                                    <span>{t('pricing.feature_ma')}</span>
-                                </li>
-                                <li className="flex items-start gap-4 text-gray-100 font-bold leading-tight">
-                                    <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30"><ShieldCheck className="w-5 h-5 text-primary" /></div>
-                                    <span>{t('pricing.feature_revenue')}</span>
-                                </li>
-                                <li className="flex items-start gap-4 text-gray-100 font-bold leading-tight">
-                                    <div className="bg-primary/20 p-1.5 rounded-full shrink-0 border border-primary/30"><ShieldCheck className="w-5 h-5 text-primary" /></div>
-                                    <span>{t('pricing.feature_neural_scan')}</span>
-                                </li>
-                            </ul>
-
-                            <Button asChild className="w-full bg-primary text-black font-black hover:bg-white h-20 text-xl shadow-[0_15px_30px_rgba(255,215,0,0.3)] relative z-10 uppercase italic">
-                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">{t('investasi.enterprise_cta')}</a>
-                            </Button>
-                        </div>
-
-                        {/* Franchise Tier */}
-                        <div className="p-10 rounded-3xl border border-white/10 bg-muted/5 flex flex-col relative hover:border-primary/30 transition-all group">
-                            <div className="mb-10">
-                                <Briefcase className="w-12 h-12 text-white/40 mb-4" />
-                                <h3 className="text-4xl font-black uppercase mb-1 text-white tracking-tighter">{t('pricing.franchise_title')}</h3>
-                                <p className="text-xs text-primary font-bold tracking-[0.3em] uppercase">{t('investasi.franchise_subtitle')}</p>
-                            </div>
-
-                            <div className="mb-12">
-                                <p className="text-5xl font-black text-white">{t('investasi.custom')}</p>
-                                <p className="text-[10px] text-muted-foreground uppercase font-black tracking-widest mt-2 border border-white/10 w-fit px-2 py-1">{t('pricing.annual_license')}</p>
-                            </div>
-
-                            <ul className="space-y-6 mb-16 flex-1">
-                                <li className="flex items-start gap-4 text-gray-400">
-                                    <div className="bg-white/5 p-1 rounded-full"><ShieldCheck className="w-5 h-5 text-primary/60" /></div>
-                                    <span>{t('pricing.feature_multi_outlet')}</span>
-                                </li>
-                                <li className="flex items-start gap-4 text-gray-400">
-                                    <div className="bg-white/5 p-1 rounded-full"><ShieldCheck className="w-5 h-5 text-primary/60" /></div>
-                                    <span>{t('pricing.feature_fraud')}</span>
-                                </li>
-                                <li className="flex items-start gap-4 text-gray-400">
-                                    <div className="bg-white/5 p-1 rounded-full"><ShieldCheck className="w-5 h-5 text-primary/60" /></div>
-                                    <span>{t('pricing.feature_royalty')}</span>
-                                </li>
-                            </ul>
-
-                            <Button asChild variant="outline" className="w-full h-16 border-primary/50 text-white font-black hover:bg-primary hover:text-black uppercase">
-                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">{t('investasi.franchise_cta')}</a>
-                            </Button>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* Scientific Compliance Footer */}
-            <section className="py-20 px-4 md:px-8 bg-[#050505]">
+            {/* How It Works Mini */}
+            <HowFIPWorks />
+
+            {/* Attribution / Footer Copy */}
+            <section className="py-24 px-4 md:px-8 bg-zinc-950 border-t border-white/5">
                 <div className="container mx-auto max-w-4xl text-center space-y-8">
                     <Globe className="w-12 h-12 text-primary/40 mx-auto" />
-                    <div className="space-y-4">
-                        <p className="text-muted-foreground text-sm uppercase tracking-[0.3em] font-black">{t('investasi.attribution_title')}</p>
-                        <p className="text-lg md:text-xl text-gray-400 font-serif italic selection:bg-primary selection:text-black">
+                    <div className="space-y-4 text-center">
+                        <p className="text-muted-foreground text-xs uppercase tracking-widest font-black">{t('investasi.attribution_title')}</p>
+                        <p className="text-xl text-gray-400 font-serif italic max-w-2xl mx-auto">
                             {t('investasi.attribution_text')}
                         </p>
                     </div>
-                    <div className="pt-8 flex flex-col md:flex-row gap-4 justify-center">
-                        <Button asChild size="lg" className="rounded-full bg-primary text-black font-black px-10">
-                            <Link to="/fip-lite">{t('investasi.cta_start')}</Link>
-                        </Button>
-                        <Button asChild size="lg" variant="outline" className="rounded-full border-primary/20 text-white font-bold px-10">
-                            <Link to="/methodology">{t('investasi.cta_methodology')} <ArrowRight className="ml-2 w-4 h-4" /></Link>
-                        </Button>
-                    </div>
                 </div>
             </section>
 
-            {/* Footer Attribution */}
-            <footer className="py-12 border-t border-white/5 text-center text-[10px] text-muted-foreground/50 uppercase tracking-[0.5em]">
+            <footer className="py-12 border-t border-white/5 text-center text-[10px] text-muted-foreground/40 uppercase tracking-[0.5em]">
                 {t('investasi.footer_rights', { year: currentYear })}
             </footer>
         </div>
     )
 }
-

@@ -514,7 +514,7 @@ function NetworkIntelligencePage() {
             <section className="py-8 px-4 md:px-8 border-t border-white/5">
                 <div className="container mx-auto max-w-4xl text-center">
                     <p className="text-xs text-muted-foreground/60 uppercase tracking-widest">
-                        {t('multi_outlet.footer_badge')}
+                        {t('single_entity.footer_badge')}
                     </p>
                 </div>
             </section>

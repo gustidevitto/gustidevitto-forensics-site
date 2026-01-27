@@ -24,7 +24,7 @@ function Index() {
         setMousePos({ x, y })
     }
 
-    const handlePathSelection = (path: 'multi' | 'network') => {
+    const handlePathSelection = (path: 'single' | 'network') => {
         if (typeof window !== 'undefined') {
             localStorage.setItem('preferredPath', path)
         }
@@ -136,7 +136,7 @@ function Index() {
                     {/* Option 1: Single Entity (SME) */}
                     <Link
                         to="/single-entity"
-                        onClick={() => handlePathSelection('multi')}
+                        onClick={() => handlePathSelection('single')}
                         className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-primary/50 transition-all duration-100 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-primary/10"
                         style={{
                             transform: `rotateY(${mousePos.x * 15}deg) rotateX(${mousePos.y * -15}deg) translateZ(30px)`,
