@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as MasterIndexRouteImport } from './routes/master-index'
 import { Route as VerdictRouteImport } from './routes/verdict'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as SingleEntityRouteImport } from './routes/single-entity'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as NetworkIntelligenceRouteImport } from './routes/network-intelligence'
 import { Route as MultiOutletRouteImport } from './routes/multi-outlet'
@@ -41,6 +42,11 @@ const VerdictRoute = VerdictRouteImport.update({
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SingleEntityRoute = SingleEntityRouteImport.update({
+  id: '/single-entity',
+  path: '/single-entity',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -133,6 +139,7 @@ export interface FileRoutesByFullPath {
   '/multi-outlet': typeof MultiOutletRoute
   '/network-intelligence': typeof NetworkIntelligenceRoute
   '/privacy': typeof PrivacyRoute
+  '/single-entity': typeof SingleEntityRoute
   '/terms': typeof TermsRoute
   '/verdict': typeof VerdictRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -153,6 +160,7 @@ export interface FileRoutesByTo {
   '/multi-outlet': typeof MultiOutletRoute
   '/network-intelligence': typeof NetworkIntelligenceRoute
   '/privacy': typeof PrivacyRoute
+  '/single-entity': typeof SingleEntityRoute
   '/terms': typeof TermsRoute
   '/verdict': typeof VerdictRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -174,6 +182,7 @@ export interface FileRoutesById {
   '/multi-outlet': typeof MultiOutletRoute
   '/network-intelligence': typeof NetworkIntelligenceRoute
   '/privacy': typeof PrivacyRoute
+  '/single-entity': typeof SingleEntityRoute
   '/terms': typeof TermsRoute
   '/verdict': typeof VerdictRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -196,6 +205,7 @@ export interface FileRouteTypes {
     | '/multi-outlet'
     | '/network-intelligence'
     | '/privacy'
+    | '/single-entity'
     | '/terms'
     | '/verdict'
     | '/blog/$slug'
@@ -216,6 +226,7 @@ export interface FileRouteTypes {
     | '/multi-outlet'
     | '/network-intelligence'
     | '/privacy'
+    | '/single-entity'
     | '/terms'
     | '/verdict'
     | '/blog/$slug'
@@ -236,6 +247,7 @@ export interface FileRouteTypes {
     | '/multi-outlet'
     | '/network-intelligence'
     | '/privacy'
+    | '/single-entity'
     | '/terms'
     | '/verdict'
     | '/blog/$slug'
@@ -257,6 +269,7 @@ export interface RootRouteChildren {
   MultiOutletRoute: typeof MultiOutletRoute
   NetworkIntelligenceRoute: typeof NetworkIntelligenceRoute
   PrivacyRoute: typeof PrivacyRoute
+  SingleEntityRoute: typeof SingleEntityRoute
   TermsRoute: typeof TermsRoute
   VerdictRoute: typeof VerdictRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -285,6 +298,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/single-entity': {
+      id: '/single-entity'
+      path: '/single-entity'
+      fullPath: '/single-entity'
+      preLoaderRoute: typeof SingleEntityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -409,6 +429,7 @@ const rootRouteChildren: RootRouteChildren = {
   MultiOutletRoute: MultiOutletRoute,
   NetworkIntelligenceRoute: NetworkIntelligenceRoute,
   PrivacyRoute: PrivacyRoute,
+  SingleEntityRoute: SingleEntityRoute,
   TermsRoute: TermsRoute,
   VerdictRoute: VerdictRoute,
   BlogSlugRoute: BlogSlugRoute,

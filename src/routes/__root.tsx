@@ -105,7 +105,7 @@ function RootComponent() {
                                 {/* Desktop Navigation */}
                                 <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
                                     <a
-                                        href={typeof window !== 'undefined' && localStorage.getItem('preferredPath') === 'network' ? '/network-intelligence' : '/multi-outlet'}
+                                        href={typeof window !== 'undefined' && localStorage.getItem('preferredPath') === 'network' ? '/network-intelligence' : '/single-entity'}
                                         className="transition-colors hover:text-primary font-bold"
                                     >
                                         {t('nav.home')}
@@ -134,7 +134,7 @@ function RootComponent() {
                                         <SheetContent side="right">
                                             <div className="flex flex-col space-y-6 mt-6">
                                                 <a
-                                                    href={typeof window !== 'undefined' && localStorage.getItem('preferredPath') === 'network' ? '/network-intelligence' : '/multi-outlet'}
+                                                    href={typeof window !== 'undefined' && localStorage.getItem('preferredPath') === 'network' ? '/network-intelligence' : '/single-entity'}
                                                     className="text-lg font-medium hover:text-primary font-bold"
                                                 >
                                                     {t('nav.home')}
