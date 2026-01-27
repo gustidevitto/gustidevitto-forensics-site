@@ -1,4 +1,11 @@
 {
+    "redirects": [
+        {
+            "source": "/multi-outlet",
+            "destination": "/single-entity",
+            "permanent": true
+        }
+    ],
     "rewrites": [
         {
             "source": "/(.*)",
