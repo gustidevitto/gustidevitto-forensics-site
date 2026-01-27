@@ -45,8 +45,34 @@ function SingleEntityPage() {
     return (
         <div
             onMouseMove={handleMouseMove}
-            className="flex flex-col min-h-screen bg-black text-white perspective-1000 overflow-x-hidden"
+            className="flex flex-col min-h-screen bg-[#0a1628] text-white perspective-1000 overflow-x-hidden relative"
         >
+            {/* Dynamic Spotlight Effect - "The Forensic Torch" */}
+            <div
+                className="absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 ease-out"
+                style={{
+                    background: `radial-gradient(800px circle at ${50 + (mousePos.x * 100)}% ${50 + (mousePos.y * 100)}%, rgba(56, 189, 248, 0.1), transparent 50%)`
+                }}
+            />
+
+            {/* Ambient Background Elements with Parallax */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div
+                    className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse transition-transform duration-[50ms] ease-linear"
+                    style={{ transform: `translate(calc(-50% + ${mousePos.x * -40}px), calc(-50% + ${mousePos.y * -40}px))` }}
+                ></div>
+                <div
+                    className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] animate-pulse delay-700 transition-transform duration-[50ms] ease-linear"
+                    style={{ transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 40}px)` }}
+                ></div>
+                {/* Grid Pattern */}
+                <div className="absolute inset-0 opacity-[0.05] transition-transform duration-[50ms] ease-linear"
+                    style={{
+                        backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                        backgroundSize: '40px 40px',
+                        transform: `translate(${mousePos.x * -20}px, ${mousePos.y * -20}px)`
+                    }}></div>
+            </div>
             {/* SEO Meta Tags */}
             <title>{t('global.seo_home_title')}</title>
             <meta name="description" content={t('single_entity.seo_desc')} />
