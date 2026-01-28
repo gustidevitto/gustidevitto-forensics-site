@@ -6,10 +6,11 @@ interface CurrencyInputProps extends Omit<React.InputHTMLAttributes<HTMLInputEle
     onValueChange: (value: number) => void
     locale?: string
     prefix?: string
+    suffix?: string
 }
 
 export const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputProps>(
-    ({ value, onValueChange, className, locale = 'id-ID', prefix = 'Rp', ...props }, ref) => {
+    ({ value, onValueChange, className, locale = 'id-ID', prefix = 'Rp', suffix = '', ...props }, ref) => {
         // Format number to display string with thousand separators
         const formatDisplay = (val: number) => {
             if (val === 0) return ''
@@ -57,8 +58,11 @@ export const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputPro
                     inputMode="numeric"
                     value={displayValue}
                     onChange={handleChange}
-                    className={`${prefix ? 'pl-10' : 'pl-3'} ${className}`}
+                    className={`${prefix ? 'pl-10' : 'pl-3'} ${suffix ? 'pr-10' : 'pr-3'} ${className}`}
                 />
+                {suffix && (
+                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold opacity-40">{suffix}</span>
+                )}
             </div>
         )
     }

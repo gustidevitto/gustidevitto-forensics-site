@@ -257,7 +257,7 @@ function FIPLitePage() {
                     <iframe
                         className="absolute inset-0 w-full h-full"
                         src={t('demo_video.url')}
-                        title="FIP Protocol Demo"
+                        title={t('demo_video.header')}
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
@@ -620,7 +620,7 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
                                 <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border ${results.verdict === 'fortress' ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-500' : 'bg-red-500/10 border-red-500/20 text-red-500'}`}>
                                     <div className={`w-2 h-2 rounded-full animate-pulse ${results.verdict === 'fortress' ? 'bg-emerald-500' : 'bg-red-500'}`} />
                                     <span className="text-[10px] uppercase tracking-[0.2em] font-black">
-                                        Surgeon's Verdict
+                                        {t('fip_lite.results.surgeon_verdict')}
                                     </span>
                                 </div>
                                 <h2 className={`text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none ${results.verdictColor}`}>
@@ -633,7 +633,7 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
 
                             <div className="grid md:grid-cols-2 gap-6 pt-8 border-t border-white/5">
                                 <div>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-2">Confirmed Pillars</p>
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-2">{t('fip_lite.results.confirmed_pillars')}</p>
                                     <div className="flex flex-wrap gap-2">
                                         {results.pillars.slice(0, 4).map(p => (
                                             <span key={p.id} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[10px] font-bold uppercase text-white/60">
@@ -644,10 +644,9 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
                                     </div>
                                 </div>
                                 <div>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-2">Hidden Blindspots</p>
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-2">{t('fip_lite.results.hidden_blindspots')}</p>
                                     <p className="text-sm text-white/60 italic">
-                                        The remaining 8 detection pillars are locked in this Lite version.
-                                        Upgrade to full FIP™ for deep-dive forensics.
+                                        {t('fip_lite.results.hidden_pillars_note')}
                                     </p>
                                 </div>
                             </div>
@@ -658,25 +657,25 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
                     <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 space-y-6">
                         <div className="flex items-center gap-3">
                             <div className="h-px flex-1 bg-white/10" />
-                            <h3 className="text-sm font-black uppercase tracking-widest text-white/40">Immediate Surgical Protocol</h3>
+                            <h3 className="text-sm font-black uppercase tracking-widest text-white/40">{t('fip_lite.results.action_plan_title')}</h3>
                             <div className="h-px flex-1 bg-white/10" />
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-4">
                             <div className="p-4 rounded-xl bg-black border border-white/10 hover:border-primary/50 transition-colors group">
-                                <span className="text-[10px] font-black text-primary uppercase tracking-widest block mb-2">Step 01</span>
-                                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors">Stabilize Cash Bleed</p>
-                                <p className="text-xs text-muted-foreground mt-1">Plug the leakage identified in {results.topRisks[0]?.name || 'Pillar 1'}.</p>
+                                <span className="text-[10px] font-black text-primary uppercase tracking-widest block mb-2">{t('fip_lite.results.step_label')} 01</span>
+                                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors">{t('fip_lite.results.stabilize_bleed')}</p>
+                                <p className="text-xs text-muted-foreground mt-1">{t('fip_lite.results.stabilize_desc', { risk: results.topRisks[0]?.name || 'Pillar 1' })}</p>
                             </div>
                             <div className="p-4 rounded-xl bg-black border border-white/10 hover:border-primary/50 transition-colors group">
-                                <span className="text-[10px] font-black text-primary uppercase tracking-widest block mb-2">Step 02</span>
-                                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors">Forensic Deep Scan</p>
-                                <p className="text-xs text-muted-foreground mt-1">Unlock the full 18-pillar analysis to find hidden roots.</p>
+                                <span className="text-[10px] font-black text-primary uppercase tracking-widest block mb-2">{t('fip_lite.results.step_label')} 02</span>
+                                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors">{t('fip_lite.results.forensic_scan')}</p>
+                                <p className="text-xs text-muted-foreground mt-1">{t('fip_lite.results.forensic_desc')}</p>
                             </div>
                             <div className="p-4 rounded-xl bg-black border border-white/10 hover:border-primary/50 transition-colors group">
-                                <span className="text-[10px] font-black text-primary uppercase tracking-widest block mb-2">Step 03</span>
-                                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors">Execute Recovery</p>
-                                <p className="text-xs text-muted-foreground mt-1">Implement the corrective actions from the full report.</p>
+                                <span className="text-[10px] font-black text-primary uppercase tracking-widest block mb-2">{t('fip_lite.results.step_label')} 03</span>
+                                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors">{t('fip_lite.results.execute_recovery')}</p>
+                                <p className="text-xs text-muted-foreground mt-1">{t('fip_lite.results.execute_desc')}</p>
                             </div>
                         </div>
                     </div>
@@ -944,7 +943,8 @@ function Step2CashFlow({ data, onChange, currency }: StepProps<CashFlowInputs>) 
                             value={data.idealCogs || 0}
                             onValueChange={(val) => updateField('idealCogs', val)}
                             locale={currency.locale}
-                            prefix={currency.prefix}
+                            prefix=""
+                            suffix="%"
                             className="bg-black/20 border-white/10 font-mono"
                         />
                     </InputField>
@@ -953,7 +953,8 @@ function Step2CashFlow({ data, onChange, currency }: StepProps<CashFlowInputs>) 
                             value={data.actualMaterial || 0}
                             onValueChange={(val) => updateField('actualMaterial', val)}
                             locale={currency.locale}
-                            prefix={currency.prefix}
+                            prefix=""
+                            suffix="%"
                             className="bg-black/20 border-white/10 font-mono"
                         />
                     </InputField>
@@ -962,7 +963,8 @@ function Step2CashFlow({ data, onChange, currency }: StepProps<CashFlowInputs>) 
                             value={data.directLabor || 0}
                             onValueChange={(val) => updateField('directLabor', val)}
                             locale={currency.locale}
-                            prefix={currency.prefix}
+                            prefix=""
+                            suffix="%"
                             className="bg-black/20 border-white/10 font-mono"
                         />
                     </InputField>
@@ -971,7 +973,8 @@ function Step2CashFlow({ data, onChange, currency }: StepProps<CashFlowInputs>) 
                             value={data.wasteSpoilage || 0}
                             onValueChange={(val) => updateField('wasteSpoilage', val)}
                             locale={currency.locale}
-                            prefix={currency.prefix}
+                            prefix=""
+                            suffix="%"
                             className="bg-black/20 border-white/10 font-mono"
                         />
                     </InputField>
@@ -998,7 +1001,7 @@ function Step3Operational({ data, onChange, currency }: StepProps<OperationalEff
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                    <InputField label={t('fip_lite.steps.fixed_costs_label')} tooltip={t('fip_lite.tooltips.rent_utilities')}>
+                    <InputField label={t('fip_lite.steps.rent_utilities_label')} tooltip={t('fip_lite.tooltips.rent_utilities')}>
                         <CurrencyInput
                             value={data.rentUtilities || 0}
                             onValueChange={(val) => updateField('rentUtilities', val)}
@@ -1007,7 +1010,7 @@ function Step3Operational({ data, onChange, currency }: StepProps<OperationalEff
                             className="bg-black/20 border-white/10 font-mono"
                         />
                     </InputField>
-                    <InputField label={t('fip_lite.steps.monthly_opex_label')} tooltip={t('fip_lite.tooltips.payroll_mgmt')}>
+                    <InputField label={t('fip_lite.steps.management_payroll_label')} tooltip={t('fip_lite.tooltips.payroll_mgmt')}>
                         <CurrencyInput
                             value={data.payrollMgmt || 0}
                             onValueChange={(val) => updateField('payrollMgmt', val)}
@@ -1016,7 +1019,7 @@ function Step3Operational({ data, onChange, currency }: StepProps<OperationalEff
                             className="bg-black/20 border-white/10 font-mono"
                         />
                     </InputField>
-                    <InputField label={t('fip_lite.steps.top_sku_var_costs_label')} tooltip={t('fip_lite.tooltips.marketing_spend')}>
+                    <InputField label={t('fip_lite.steps.marketing_label')} tooltip={t('fip_lite.tooltips.marketing_spend')}>
                         <CurrencyInput
                             value={data.marketingSpend || 0}
                             onValueChange={(val) => updateField('marketingSpend', val)}
@@ -1025,7 +1028,7 @@ function Step3Operational({ data, onChange, currency }: StepProps<OperationalEff
                             className="bg-black/20 border-white/10 font-mono"
                         />
                     </InputField>
-                    <InputField label={t('fip_lite.steps.ap_label')} tooltip={t('fip_lite.tooltips.general_admin')}>
+                    <InputField label={t('fip_lite.steps.admin_costs_label')} tooltip={t('fip_lite.tooltips.general_admin')}>
                         <CurrencyInput
                             value={data.generalAdmin || 0}
                             onValueChange={(val) => updateField('generalAdmin', val)}

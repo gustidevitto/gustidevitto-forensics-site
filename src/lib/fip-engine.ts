@@ -20,18 +20,20 @@ export function calculateFIPLiteResults(formData: FIPLiteFormData): HealthScoreR
     const { shortTermDebt, totalWorkingHours } = formData.step4 || { accountsPayable: 0, shortTermDebt: 0, headcount: 1, totalWorkingHours: 1 };
 
     // Derived Values
-    const totalCOGS = actualMaterial + directLabor + wasteSpoilage;
-    const grossProfit = totalRevenue - totalCOGS;
+    // actualMaterial is used as Actual Gross Profit % in the UI
+    const grossProfit = totalRevenue * (actualMaterial / 100);
+    const totalCOGS = totalRevenue - grossProfit;
     const totalOpEx = rentUtilities + payrollMgmt + marketingSpend + generalAdmin;
     const netProfit = grossProfit - totalOpEx;
     const monthlyBurnRate = totalOpEx + (shortTermDebt * 0.1); // Approx interest/principal
 
     // --- PILLAR 1: GROSS PROFIT LEAKAGE ---
-    // Leakage = (Actual Material + Waste) - Ideal COGS
-    // We assume Ideal COGS is just the material component ideally.
-    const actualMaterialCost = actualMaterial + wasteSpoilage;
-    const leakageValue = Math.max(0, actualMaterialCost - idealCogs);
-    const leakagePercent = totalRevenue > 0 ? (leakageValue / totalRevenue) * 100 : 0;
+    // In this context, idealCogs is Target GP% and actualMaterial is Actual GP% from the Lite UI
+    const targetGP = idealCogs;
+    const actualGP = actualMaterial;
+
+    const leakagePercent = Math.max(0, targetGP - actualGP);
+    const leakageValue = (leakagePercent / 100) * totalRevenue;
 
     pillars.push(createPillar({
         id: 'gp-leakage',
