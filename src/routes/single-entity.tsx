@@ -198,11 +198,6 @@ function SingleEntityPage() {
                             <div className="pt-4 flex flex-col sm:flex-row gap-4">
                                 <Button asChild size="lg" className="h-14 px-8 bg-primary hover:bg-primary/90 text-black font-black uppercase tracking-widest text-xs shadow-[0_0_30px_rgba(56,189,248,0.3)]">
                                     <Link to="/fip-lite">
-                                        Open Surgical Calculator <ArrowRight className="ml-2 w-4 h-4" />
-                                    </Link>
-                                </Button>
-                                <Button asChild variant="outline" size="lg" className="h-14 px-8 border-white/10 bg-white/5 hover:bg-white/10 text-white font-bold uppercase tracking-widest text-xs">
-                                    <Link to="/fip-lite">
                                         Launch FIP™ Lite <Zap className="ml-2 w-4 h-4" />
                                     </Link>
                                 </Button>
