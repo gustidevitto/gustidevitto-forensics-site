@@ -15,14 +15,13 @@ export function calculateFIPLiteResults(formData: FIPLiteFormData): HealthScoreR
 
     // Destructure Inputs
     const { totalRevenue } = formData.step1 || { totalRevenue: 0, transactionCount: 1 };
-    const { idealCogs, actualMaterial, directLabor, wasteSpoilage } = formData.step2 || { idealCogs: 0, actualMaterial: 0, directLabor: 0, wasteSpoilage: 0 };
+    const { idealCogs, actualMaterial, wasteSpoilage } = formData.step2 || { idealCogs: 0, actualMaterial: 0, wasteSpoilage: 0 };
     const { rentUtilities, payrollMgmt, marketingSpend, generalAdmin, cashOnHand, inventoryValue } = formData.step3 || { rentUtilities: 0, payrollMgmt: 0, marketingSpend: 0, generalAdmin: 0, cashOnHand: 0, inventoryValue: 0 };
     const { shortTermDebt, totalWorkingHours } = formData.step4 || { accountsPayable: 0, shortTermDebt: 0, headcount: 1, totalWorkingHours: 1 };
 
     // Derived Values
     // actualMaterial is used as Actual Gross Profit % in the UI
     const grossProfit = totalRevenue * (actualMaterial / 100);
-    const totalCOGS = totalRevenue - grossProfit;
     const totalOpEx = rentUtilities + payrollMgmt + marketingSpend + generalAdmin;
     const netProfit = grossProfit - totalOpEx;
     const monthlyBurnRate = totalOpEx + (shortTermDebt * 0.1); // Approx interest/principal
@@ -33,7 +32,6 @@ export function calculateFIPLiteResults(formData: FIPLiteFormData): HealthScoreR
     const actualGP = actualMaterial;
 
     const leakagePercent = Math.max(0, targetGP - actualGP);
-    const leakageValue = (leakagePercent / 100) * totalRevenue;
 
     pillars.push(createPillar({
         id: 'gp-leakage',
