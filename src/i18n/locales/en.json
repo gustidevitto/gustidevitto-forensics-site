@@ -1040,7 +1040,8 @@
             "price_label": "Economic Accessibility",
             "price_anchor": "Engineered for SME growth. Access enterprise-grade forensics at a fraction of the $30,000 corporate rate.",
             "cta_btn": "Request Full FIP™ Diagnostic",
-            "guarantee": "No Find, No Fee — If we don't identify systemic leakage exceeding your investment, the audit is on us."
+            "guarantee": "No Find, No Fee — If we don't identify systemic leakage exceeding your investment, the audit is on us.",
+            "wa_template": "Hello Gusti, I just completed the FIP™ Lite Diagnostic with a score of {{score}}/100 ({{verdict}}). I am interested in a full FIP™ Diagnostic for my business. What are the next steps?"
         },
         "steps": {
             "yield_dynamics": "Yield Dynamics",

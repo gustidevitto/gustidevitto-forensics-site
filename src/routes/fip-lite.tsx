@@ -574,192 +574,224 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
         }
     }
     return (
-        <div className="space-y-12 animate-in fade-in zoom-in-95 duration-1000 max-w-5xl mx-auto w-full">
-            {/* Executive summary Header */}
-            <div className="grid md:grid-cols-3 gap-8">
-                {/* Score Gauge */}
-                <Card className="md:col-span-1 border-primary/20 bg-primary/5 relative overflow-hidden flex flex-col items-center justify-center p-8 text-center min-h-[300px]">
-                    <div className="absolute top-0 right-0 p-4 opacity-10">
-                        <Activity className="w-24 h-24" />
-                    </div>
-                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-6">{t('fip_lite.results.overall_score')}</span>
-                    <div className="relative">
-                        <svg className="w-48 h-48 -rotate-90">
-                            <circle
-                                cx="96" cy="96" r="80"
-                                className="stroke-muted/20 fill-none"
-                                strokeWidth="8"
-                            />
-                            <circle
-                                cx="96" cy="96" r="80"
-                                className="stroke-primary fill-none transition-all duration-[2000ms] ease-out"
-                                strokeWidth="8"
-                                strokeDasharray={502.4}
-                                strokeDashoffset={502.4 - (502.4 * results.overallScore) / 100}
-                                strokeLinecap="round"
-                            />
-                        </svg>
-                        <div className="absolute inset-0 flex flex-col items-center justify-center rotate-90">
-                            <span className="text-6xl font-black tracking-tight">{new Intl.NumberFormat().format(results.overallScore)}</span>
-                            <span className="text-xs font-bold opacity-50">/ 100</span>
-                        </div>
-                    </div>
-                </Card>
+        <div className="space-y-12 animate-in fade-in zoom-in-95 duration-1000 max-w-6xl mx-auto w-full">
+            {/* Clinical MRI Command Center */}
+            <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary/5 to-primary/20 rounded-[3rem] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
 
-                {/* Verdict & Categories */}
-                <div className="md:col-span-2 space-y-6">
-                    {/* Premium Verdict Block */}
-                    <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a0a0a] shadow-2xl group">
-                        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.05]" />
-                        <div className="absolute top-0 right-0 p-6 opacity-30">
-                            <Activity className={`w-32 h-32 ${results.verdictColor}`} />
-                        </div>
+                <Card className="relative border-white/5 bg-[#080808] rounded-[2.5rem] overflow-hidden shadow-2xl">
+                    <div className="absolute inset-0 bg-grain opacity-[0.03] pointer-events-none"></div>
 
-                        <div className="relative z-10 p-10 flex flex-col justify-between h-full space-y-8">
-                            <div className="space-y-4">
-                                <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border ${results.verdict === 'fortress' ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-500' : 'bg-red-500/10 border-red-500/20 text-red-500'}`}>
-                                    <div className={`w-2 h-2 rounded-full animate-pulse ${results.verdict === 'fortress' ? 'bg-emerald-500' : 'bg-red-500'}`} />
-                                    <span className="text-[10px] uppercase tracking-[0.2em] font-black">
-                                        {t('fip_lite.results.surgeon_verdict')}
-                                    </span>
-                                </div>
-                                <h2 className={`text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none ${results.verdictColor}`}>
-                                    {results.verdictLabel.split(':')[1] || results.verdictLabel}
-                                </h2>
-                                <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-2xl leading-relaxed">
-                                    {t('fip_lite.results.diagnosis_complete')}
-                                </p>
+                    <div className="grid md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/5">
+                        {/* Column 1: The Score Gauge */}
+                        <div className="md:col-span-4 p-10 flex flex-col items-center justify-center text-center relative bg-primary/5">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent animate-scanline"></div>
+
+                            <div className="mb-8 space-y-1">
+                                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary block">{t('fip_lite.results.overall_score')}</span>
+                                <div className="h-0.5 w-12 bg-primary/30 mx-auto rounded-full"></div>
                             </div>
 
-                            <div className="grid md:grid-cols-2 gap-6 pt-8 border-t border-white/5">
-                                <div>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-2">{t('fip_lite.results.confirmed_pillars')}</p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {results.pillars.slice(0, 4).map(p => (
-                                            <span key={p.id} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[10px] font-bold uppercase text-white/60">
-                                                {p.name.split('(')[0]}
-                                            </span>
-                                        ))}
-                                        <span className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[10px] font-bold uppercase text-white/40">+12 More</span>
-                                    </div>
+                            <div className="relative mb-8">
+                                <div className="absolute inset-0 rounded-full bg-primary/5 blur-2xl animate-pulse"></div>
+                                <svg className="w-56 h-56 -rotate-90 relative z-10">
+                                    <circle
+                                        cx="112" cy="112" r="100"
+                                        className="stroke-white/5 fill-none"
+                                        strokeWidth="12"
+                                    />
+                                    <circle
+                                        cx="112" cy="112" r="100"
+                                        className="stroke-primary fill-none transition-all duration-[2500ms] cubic-bezier(0.34, 1.56, 0.64, 1)"
+                                        strokeWidth="12"
+                                        strokeDasharray={628}
+                                        strokeDashoffset={628 - (628 * results.overallScore) / 100}
+                                        strokeLinecap="round"
+                                    />
+                                    {/* Tick marks */}
+                                    {[...Array(8)].map((_, i) => (
+                                        <line
+                                            key={i}
+                                            x1="112" y1="24" x2="112" y2="34"
+                                            transform={`rotate(${i * 45} 112 112)`}
+                                            className="stroke-white/10"
+                                            strokeWidth="2"
+                                        />
+                                    ))}
+                                </svg>
+                                <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
+                                    <span className="text-7xl font-black tracking-tighter tabular-nums drop-shadow-2xl">{new Intl.NumberFormat().format(results.overallScore)}</span>
+                                    <span className="text-[10px] font-bold opacity-40 tracking-widest uppercase mt-[-4px]">Diagnostic Score</span>
                                 </div>
-                                <div>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-2">{t('fip_lite.results.hidden_blindspots')}</p>
-                                    <p className="text-sm text-white/60 italic">
-                                        {t('fip_lite.results.hidden_pillars_note')}
+                            </div>
+
+                            <div className="flex gap-2 items-center text-[10px] font-black tracking-widest text-primary/60 uppercase">
+                                <span className="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                                Live Verdict Extraction
+                            </div>
+                        </div>
+
+                        {/* Column 2: The Verdict & Briefing */}
+                        <div className="md:col-span-8 p-10 md:p-14 space-y-10">
+                            <div className="space-y-6">
+                                <div className="flex flex-wrap items-center gap-4">
+                                    <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-[10px] font-black uppercase tracking-widest ${results.verdict === 'fortress'
+                                        ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-500'
+                                        : results.verdict === 'critical'
+                                            ? 'bg-red-500/10 border-red-500/20 text-red-500'
+                                            : 'bg-yellow-500/10 border-yellow-500/20 text-yellow-500'
+                                        }`}>
+                                        <div className={`w-2 h-2 rounded-full animate-pulse ${results.verdict === 'fortress' ? 'bg-emerald-500' : results.verdict === 'critical' ? 'bg-red-500' : 'bg-yellow-500'
+                                            }`} />
+                                        {t('fip_lite.results.surgeon_verdict')}
+                                    </div>
+                                    <span className="text-[10px] text-white/20 font-black tracking-widest uppercase">ID: FIP-MRI-{Math.random().toString(36).substr(2, 6).toUpperCase()}</span>
+                                </div>
+
+                                <div className="space-y-4">
+                                    <h2 className={`text-5xl md:text-6xl font-black tracking-tight uppercase leading-[0.85] italic ${results.verdictColor}`}>
+                                        {results.verdictLabel.split(':')[1] || results.verdictLabel}
+                                    </h2>
+                                    <p className="text-xl md:text-2xl text-muted-foreground/90 font-medium max-w-3xl leading-relaxed text-balance">
+                                        {t('fip_lite.results.diagnosis_complete')}
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    {/* What's Next Action Plan */}
-                    <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 space-y-6">
-                        <div className="flex items-center gap-3">
-                            <div className="h-px flex-1 bg-white/10" />
-                            <h3 className="text-sm font-black uppercase tracking-widest text-white/40">{t('fip_lite.results.action_plan_title')}</h3>
-                            <div className="h-px flex-1 bg-white/10" />
-                        </div>
-
-                        <div className="grid md:grid-cols-3 gap-4">
-                            <div className="p-4 rounded-xl bg-black border border-white/10 hover:border-primary/50 transition-colors group">
-                                <span className="text-[10px] font-black text-primary uppercase tracking-widest block mb-2">{t('fip_lite.results.step_label')} 01</span>
-                                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors">{t('fip_lite.results.stabilize_bleed')}</p>
-                                <p className="text-xs text-muted-foreground mt-1">{t('fip_lite.results.stabilize_desc', { risk: results.topRisks[0]?.name || 'Pillar 1' })}</p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-black border border-white/10 hover:border-primary/50 transition-colors group">
-                                <span className="text-[10px] font-black text-primary uppercase tracking-widest block mb-2">{t('fip_lite.results.step_label')} 02</span>
-                                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors">{t('fip_lite.results.forensic_scan')}</p>
-                                <p className="text-xs text-muted-foreground mt-1">{t('fip_lite.results.forensic_desc')}</p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-black border border-white/10 hover:border-primary/50 transition-colors group">
-                                <span className="text-[10px] font-black text-primary uppercase tracking-widest block mb-2">{t('fip_lite.results.step_label')} 03</span>
-                                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors">{t('fip_lite.results.execute_recovery')}</p>
-                                <p className="text-xs text-muted-foreground mt-1">{t('fip_lite.results.execute_desc')}</p>
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                                {Object.entries(results.categoryScores).map(([cat, score]) => (
+                                    <div key={cat} className="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-3 group/item hover:bg-white/[0.04] transition-colors">
+                                        <p className="text-[9px] font-black uppercase tracking-widest opacity-40 truncate">
+                                            {cat.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
+                                        </p>
+                                        <div className="flex items-baseline gap-1">
+                                            <span className="text-2xl font-black tabular-nums">{score}</span>
+                                            <span className="text-[9px] font-bold opacity-20 uppercase">Pts</span>
+                                        </div>
+                                        <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                                            <div
+                                                className={`h-full transition-all duration-1000 ${score >= 80 ? 'bg-emerald-500' : score < 50 ? 'bg-red-500' : 'bg-yellow-500'}`}
+                                                style={{ width: `${score}%` }}
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
+                </Card>
+            </div>
 
-                    <div className="grid sm:grid-cols-2 gap-4">
-                        {Object.entries(results.categoryScores).map(([cat, score]) => (
-                            <div key={cat} className="bg-white/5 border border-white/10 p-5 rounded-2xl space-y-3">
-                                <p className="text-[10px] font-black uppercase tracking-widest opacity-60">
-                                    {cat.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
-                                </p>
-                                <div className="flex items-end justify-between">
-                                    <div className="flex items-end gap-2">
-                                        <span className="text-3xl font-black">{new Intl.NumberFormat().format(score)}</span>
-                                        <span className="text-[10px] mb-2 font-bold opacity-40">/ 100</span>
-                                    </div>
-                                    <div className={`text-[10px] font-black uppercase px-2 py-1 rounded ${score >= 80 ? 'bg-green-500/20 text-green-500' : score < 50 ? 'bg-red-500/20 text-red-500' : 'bg-yellow-500/20 text-yellow-500'}`}>
-                                        {score >= 80 ? 'Fortress' : score < 50 ? 'Critical' : 'Warning'}
-                                    </div>
+            {/* Strategic Intervention Timeline */}
+            <div className="relative">
+                <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/5 -translate-x-1/2 hidden md:block" />
+
+                <div className="space-y-8 relative z-10">
+                    <div className="flex items-center gap-4 justify-center mb-10 text-center">
+                        <div className="h-px w-12 bg-white/10" />
+                        <h3 className="text-xs font-black uppercase tracking-[0.5em] text-white/40">{t('fip_lite.results.action_plan_title')}</h3>
+                        <div className="h-px w-12 bg-white/10" />
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-6">
+                        <div className="p-8 rounded-[2rem] bg-[#0a0a0a] border border-white/5 relative group hover:border-primary/40 transition-all duration-500">
+                            <span className="absolute top-8 right-8 text-4xl font-black text-white/5 tracking-tighter group-hover:text-primary/10 transition-colors">01</span>
+                            <div className="space-y-4 relative z-10">
+                                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
+                                    <Zap className="w-5 h-5 text-primary group-hover:text-black" />
                                 </div>
-                                <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                                    <div
-                                        className={`h-full transition-all duration-1000 ${score >= 80 ? 'bg-green-500' : score < 50 ? 'bg-red-500' : 'bg-yellow-500'}`}
-                                        style={{ width: `${score}%` }}
-                                    />
+                                <div>
+                                    <h4 className="text-lg font-black uppercase tracking-tight text-white group-hover:text-primary transition-colors">{t('fip_lite.results.stabilize_bleed')}</h4>
+                                    <p className="text-sm text-muted-foreground/80 leading-relaxed mt-2">{t('fip_lite.results.stabilize_desc', { risk: results.topRisks[0]?.name || 'Pillar 1' })}</p>
                                 </div>
                             </div>
+                        </div>
+
+                        <div className="p-8 rounded-[2rem] bg-[#0a0a0a] border border-white/5 relative group hover:border-primary/40 transition-all duration-500 shadow-2xl shadow-primary/5">
+                            <span className="absolute top-8 right-8 text-4xl font-black text-white/5 tracking-tighter group-hover:text-primary/10 transition-colors">02</span>
+                            <div className="space-y-4 relative z-10">
+                                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
+                                    <Activity className="w-5 h-5 text-primary group-hover:text-black" />
+                                </div>
+                                <div>
+                                    <h4 className="text-lg font-black uppercase tracking-tight text-white group-hover:text-primary transition-colors">{t('fip_lite.results.forensic_scan')}</h4>
+                                    <p className="text-sm text-muted-foreground/80 leading-relaxed mt-2">{t('fip_lite.results.forensic_desc')}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="p-8 rounded-[2rem] bg-[#0a0a0a] border border-white/5 relative group hover:border-primary/40 transition-all duration-500">
+                            <span className="absolute top-8 right-8 text-4xl font-black text-white/5 tracking-tighter group-hover:text-primary/10 transition-colors">03</span>
+                            <div className="space-y-4 relative z-10">
+                                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
+                                    <RefreshCcw className="w-5 h-5 text-primary group-hover:text-black" />
+                                </div>
+                                <div>
+                                    <h4 className="text-lg font-black uppercase tracking-tight text-white group-hover:text-primary transition-colors">{t('fip_lite.results.execute_recovery')}</h4>
+                                    <p className="text-sm text-muted-foreground/80 leading-relaxed mt-2">{t('fip_lite.results.execute_desc')}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Analysis Detailed Vectors */}
+            <div className="grid md:grid-cols-2 gap-12">
+                {/* Critical Risks */}
+                <div className="space-y-8">
+                    <div className="flex items-center gap-4">
+                        <div className="h-px flex-1 bg-red-500/10" />
+                        <h3 className="text-sm font-black uppercase tracking-[0.3em] flex items-center gap-2 text-red-500">
+                            <AlertCircle className="w-4 h-4" /> {t('fip_lite.results.critical_vectors_title')}
+                        </h3>
+                        <div className="h-px w-10 bg-red-500/10" />
+                    </div>
+
+                    <div className="grid gap-4">
+                        {results.topRisks.map(risk => (
+                            <Card key={risk.id} className="border-red-500/10 bg-red-500/[0.02] hover:bg-red-500/[0.05] transition-all duration-500 group overflow-hidden relative">
+                                <div className="absolute top-0 left-0 w-1 h-full bg-red-500/30 group-hover:bg-red-500 transition-colors"></div>
+                                <CardHeader className="pb-2">
+                                    <div className="flex justify-between items-start">
+                                        <CardTitle className="text-sm font-black uppercase tracking-widest text-red-400/80">{risk.name}</CardTitle>
+                                        <span className="font-mono text-[10px] text-red-500 font-bold bg-red-500/10 px-2 py-0.5 rounded">{Math.round(100 - risk.score)}% {t('fip_lite.results.risk_label')}</span>
+                                    </div>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-xs font-medium leading-relaxed text-muted-foreground/80">{risk.recommendation}</p>
+                                </CardContent>
+                            </Card>
                         ))}
                     </div>
                 </div>
-            </div>
 
-            {/* Critical Risks */}
-            <div className="space-y-8">
-                <div className="flex items-center gap-4">
-                    <div className="h-px flex-1 bg-white/10" />
-                    <h3 className="text-xl font-black uppercase tracking-widest flex items-center gap-3">
-                        <AlertCircle className="w-5 h-5 text-red-500" /> {t('fip_lite.results.critical_vectors_title')}
-                    </h3>
-                    <div className="h-px flex-1 bg-white/10" />
-                </div>
+                {/* Strengths */}
+                <div className="space-y-8">
+                    <div className="flex items-center gap-4">
+                        <div className="h-px flex-1 bg-emerald-500/10" />
+                        <h3 className="text-sm font-black uppercase tracking-[0.3em] flex items-center gap-2 text-emerald-500">
+                            <ShieldCheck className="w-4 h-4" /> {t('fip_lite.results.strengths_title')}
+                        </h3>
+                        <div className="h-px w-10 bg-emerald-500/10" />
+                    </div>
 
-                <div className="grid md:grid-cols-3 gap-6">
-                    {results.topRisks.map(risk => (
-                        <Card key={risk.id} className="border-red-500/20 bg-red-500/5 hover:bg-red-500/10 transition-all duration-500 border-t-2 border-t-red-500/50">
-                            <CardHeader className="pb-3">
-                                <CardTitle className="text-xs font-black uppercase tracking-widest text-red-400">{risk.name}</CardTitle>
-                            </CardHeader>
-                            <CardContent className="space-y-4">
-                                <div className="flex items-center justify-between font-mono text-xs">
-                                    <span className="opacity-60 uppercase font-bold">Severity:</span>
-                                    <span className="text-red-500 font-bold">{Math.round(100 - risk.score)}% RISK</span>
-                                </div>
-                                <p className="text-xs font-medium leading-relaxed text-muted-foreground/80">{risk.recommendation}</p>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </div>
-            </div>
-
-            {/* Strengths */}
-            <div className="space-y-8">
-                <div className="flex items-center gap-4">
-                    <div className="h-px flex-1 bg-white/10" />
-                    <h3 className="text-xl font-black uppercase tracking-widest flex items-center gap-3">
-                        <ShieldCheck className="w-5 h-5 text-green-500" /> {t('fip_lite.results.strengths_title')}
-                    </h3>
-                    <div className="h-px flex-1 bg-white/10" />
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-6">
-                    {results.strengths.map(strength => (
-                        <Card key={strength.id} className="border-green-500/20 bg-green-500/5 transition-all duration-500 border-t-2 border-t-green-500/50">
-                            <CardHeader className="pb-3">
-                                <CardTitle className="text-xs font-black uppercase tracking-widest text-green-400">{strength.name}</CardTitle>
-                            </CardHeader>
-                            <CardContent className="space-y-4">
-                                <div className="flex items-center justify-between font-mono text-xs">
-                                    <span className="opacity-60 uppercase font-bold">Resilience:</span>
-                                    <span className="text-green-500 font-bold">{strength.score}/100</span>
-                                </div>
-                                <p className="text-xs font-medium leading-relaxed text-muted-foreground/80">Structural integrity is high in this vector. Maintain current protocols to ensure continued fortress-level stability.</p>
-                            </CardContent>
-                        </Card>
-                    ))}
+                    <div className="grid gap-4">
+                        {results.strengths.map(strength => (
+                            <Card key={strength.id} className="border-emerald-500/10 bg-emerald-500/[0.02] hover:bg-emerald-500/[0.05] transition-all duration-500 group overflow-hidden relative">
+                                <div className="absolute top-0 left-0 w-1 h-full bg-emerald-500/30 group-hover:bg-emerald-500 transition-colors"></div>
+                                <CardHeader className="pb-2">
+                                    <div className="flex justify-between items-start">
+                                        <CardTitle className="text-sm font-black uppercase tracking-widest text-emerald-400/80">{strength.name}</CardTitle>
+                                        <span className="font-mono text-[10px] text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">{strength.score}% BI-RES</span>
+                                    </div>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-xs font-medium leading-relaxed text-muted-foreground/80">Structural integrity is high in this vector. Current protocols are effectively mitigating systemic volatility.</p>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
                 </div>
             </div>
 
@@ -769,7 +801,7 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
                 <div className="absolute top-0 right-0 w-96 h-96 bg-white/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl group-hover:bg-white/30 transition-all duration-1000" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
 
-                <div className="relative flex flex-col items-center text-center gap-10 py-4">
+                <div className="relative flex flex-col items-center text-center gap-10 py-4 z-10">
                     <div className="space-y-6 max-w-3xl">
                         <div className="flex items-center gap-3 justify-center">
                             <span className="px-4 py-1.5 bg-primary-foreground/10 border border-primary-foreground/20 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-primary-foreground/70">
@@ -779,10 +811,10 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
                                 {[1, 2, 3].map(i => <div key={i} className="w-2 h-2 rounded-full bg-primary-foreground/20 animate-pulse" />)}
                             </div>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-none">
+                        <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-none text-white">
                             {t('fip_lite.results.cta_generate_title')}
                         </h2>
-                        <p className="text-lg md:text-xl opacity-90 font-bold leading-relaxed max-w-2xl mx-auto">
+                        <p className="text-lg md:text-xl opacity-90 font-bold leading-relaxed max-w-2xl mx-auto text-white/80">
                             {t('fip_lite.results.cta_generate_desc')}
                         </p>
                     </div>
@@ -792,7 +824,7 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
                             onClick={onDownload}
                             size="lg"
                             variant="secondary"
-                            className="h-24 px-16 font-black text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all bg-primary-foreground text-primary border-none w-full sm:w-auto rounded-2xl"
+                            className="h-24 px-16 font-black text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all bg-white text-primary border-none w-full sm:w-auto rounded-3xl hover:bg-white hover:opacity-90"
                         >
                             {t('fip_lite.results.btn_download')}
                         </Button>
@@ -800,7 +832,7 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
                             onClick={handleShare}
                             size="lg"
                             variant="outline"
-                            className="h-24 px-12 font-black text-lg border-2 border-primary-foreground/30 bg-primary-foreground/5 hover:bg-primary-foreground hover:text-primary text-primary-foreground transition-all flex items-center gap-3 w-full sm:w-auto rounded-2xl"
+                            className="h-24 px-12 font-black text-lg border-2 border-white/30 bg-white/5 hover:bg-white hover:text-primary text-white transition-all flex items-center gap-3 w-full sm:w-auto rounded-3xl"
                         >
                             <Share2 className="w-6 h-6" /> {t('fip_lite.results.btn_share')}
                         </Button>
@@ -808,7 +840,7 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
                             onClick={onReset}
                             size="lg"
                             variant="ghost"
-                            className="h-24 px-10 font-bold text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10 transition-all w-full sm:w-auto rounded-2xl"
+                            className="h-24 px-10 font-bold text-white/40 hover:text-white hover:bg-white/10 transition-all w-full sm:w-auto rounded-3xl"
                         >
                             {t('fip_lite.results.btn_reset')}
                         </Button>
@@ -817,45 +849,57 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
             </div>
 
             {/* Upgrade CTA Section */}
-            <div className="mt-20 border-t border-white/10 pt-20 pb-10">
-                <div className="max-w-4xl mx-auto">
-                    <div className="text-center space-y-4 mb-12">
-                        <span className="text-primary font-black tracking-[0.3em] text-[10px] uppercase">{t('fip_lite.upgrade_cta.badge')}</span>
-                        <h2 className="text-5xl font-black tracking-tighter text-balance leading-[0.9]">{t('fip_lite.upgrade_cta.title')}</h2>
-                        <p className="text-xl text-muted-foreground font-medium italic">"{t('fip_lite.upgrade_cta.subtitle')}"</p>
-                    </div>
-
-                    <div className="grid md:grid-cols-5 gap-8 items-center">
-                        <div className="md:col-span-3 space-y-6">
-                            <p className="text-lg leading-relaxed text-balance opacity-80">
-                                {t('fip_lite.upgrade_cta.desc')}
-                            </p>
-
-                            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-4">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                                        <Zap className="w-5 h-5 text-primary" />
-                                    </div>
-                                    <div>
-                                        <p className="text-xs font-black uppercase opacity-60 tracking-widest">{t('fip_lite.upgrade_cta.price_label')}</p>
-                                        <p className="text-sm font-bold text-primary">{t('fip_lite.upgrade_cta.price_anchor')}</p>
-                                    </div>
-                                </div>
-                                <p className="text-[11px] opacity-60 leading-relaxed italic border-l-2 border-primary/40 pl-4">
-                                    {t('fip_lite.upgrade_cta.guarantee')}
-                                </p>
-                            </div>
+            <div className="mt-20 border-t border-white/10 pt-20 pb-20">
+                <div className="max-w-4xl mx-auto space-y-12">
+                    <div className="text-center space-y-6 max-w-3xl mx-auto">
+                        <div className="space-y-4">
+                            <span className="text-primary font-black tracking-[0.3em] text-[10px] uppercase block">{t('fip_lite.upgrade_cta.badge')}</span>
+                            <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-balance leading-[0.85]">{t('fip_lite.upgrade_cta.title')}</h2>
+                            <p className="text-xl text-muted-foreground font-medium italic">"{t('fip_lite.upgrade_cta.subtitle')}"</p>
                         </div>
 
-                        <div className="md:col-span-2">
+                        <p className="text-lg md:text-xl leading-relaxed text-muted-foreground/80 max-w-2xl mx-auto">
+                            {t('fip_lite.upgrade_cta.desc')}
+                        </p>
+                    </div>
+
+                    <div className="bg-white/[0.03] border border-white/10 rounded-[3rem] p-8 md:p-12 overflow-hidden relative group shadow-2xl">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-all duration-1000" />
+
+                        <div className="relative space-y-10">
+                            <div className="grid md:grid-cols-2 gap-8 items-center border-b border-white/5 pb-10">
+                                <div className="space-y-4">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                                            <Zap className="w-6 h-6 text-primary" />
+                                        </div>
+                                        <div>
+                                            <p className="text-xs font-black uppercase opacity-40 tracking-widest">{t('fip_lite.upgrade_cta.price_label')}</p>
+                                            <p className="text-lg font-black text-primary leading-tight">{t('fip_lite.upgrade_cta.price_anchor')}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <blockquote className="p-4 border-l-2 border-primary/30 bg-primary/5 rounded-r-xl">
+                                    <p className="text-xs font-bold opacity-60 leading-relaxed italic">
+                                        {t('fip_lite.upgrade_cta.guarantee')}
+                                    </p>
+                                </blockquote>
+                            </div>
+
                             <Button
-                                onClick={() => window.open('https://wa.me/6281234567890', '_blank')}
-                                className="w-full h-40 rounded-3xl bg-white text-black hover:bg-primary hover:text-white transition-all duration-500 flex flex-col items-center justify-center gap-2 group shadow-2xl shadow-white/20"
+                                onClick={() => {
+                                    const score = results.overallScore;
+                                    const verdict = results.verdictLabel.split(':')[1]?.trim() || results.verdictLabel;
+                                    const message = t('fip_lite.upgrade_cta.wa_template', { score, verdict });
+                                    window.open(`https://wa.me/628895440515?text=${encodeURIComponent(message)}`, '_blank');
+                                }}
+                                className="w-full h-32 rounded-[2rem] bg-white text-black hover:bg-primary hover:text-white transition-all duration-500 flex flex-col items-center justify-center gap-1 group shadow-3xl shadow-white/10"
                             >
-                                <span className="text-2xl font-black tracking-tighter uppercase group-hover:scale-105 transition-transform text-center px-4 leading-tight">
+                                <span className="text-3xl font-black tracking-tighter uppercase group-hover:scale-105 transition-transform text-center px-4 leading-none">
                                     {t('fip_lite.upgrade_cta.cta_btn')}
                                 </span>
-                                <span className="text-[10px] font-bold opacity-40 uppercase tracking-[0.2em]">Initialization Protocol →</span>
+                                <span className="text-[10px] font-black opacity-40 uppercase tracking-[0.3em]">Launch Diagnostic Protocol →</span>
                             </Button>
                         </div>
                     </div>

@@ -1041,7 +1041,8 @@
             "price_label": "Aksesibilitas Ekonomi",
             "price_anchor": "Dirancang untuk pertumbuhan SME. Dapatkan intelijen forensik kelas enterprise dengan biaya jauh di bawah tarif korporat $30.000 (Rp 470 Juta+).",
             "cta_btn": "Minta Diagnosa FIP™ Penuh",
-            "guarantee": "No Find, No Fee — Jika kami tidak menemukan kebocoran sistemik yang melebihi biaya investasi Anda, audit ini gratis."
+            "guarantee": "No Find, No Fee — Jika kami tidak menemukan kebocoran sistemik yang melebihi biaya investasi Anda, audit ini gratis.",
+            "wa_template": "Halo Gusti, saya baru saja menyelesaikan FIP™ Lite Diagnostic dengan skor {{score}}/100 ({{verdict}}). Saya tertarik untuk melakukan full FIP™ Diagnostic untuk bisnis saya. Bagaimana proses selanjutnya?"
         },
         "steps": {
             "yield_dynamics": "Dinamika Yield",
