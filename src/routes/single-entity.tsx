@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { useTranslation, Trans } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
 import { WavingDots } from "@/components/ui/waving-dots"
+import { ForensicCaseFiles } from "@/components/ForensicCaseFiles"
 
 export const Route = createFileRoute('/single-entity')({
     component: SingleEntityPage,
@@ -170,6 +171,11 @@ function SingleEntityPage() {
                     </div>
                 </div>
             </section>
+
+
+
+            {/* Case Studies / War Stories */}
+            <ForensicCaseFiles />
 
             {/* Quick Calculator */}
             <section className="py-24 px-4 md:px-8 bg-black border-b border-white/5">
@@ -347,6 +353,6 @@ function SingleEntityPage() {
                     {t('single_entity.footer_badge')}
                 </p>
             </section>
-        </div>
+        </div >
     )
 }

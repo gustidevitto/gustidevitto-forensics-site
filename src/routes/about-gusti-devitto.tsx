@@ -24,16 +24,12 @@ function AboutGustiDevitto() {
                             "@type": "Person",
                             "@id": "https://www.gustidevitto.com/#person",
                             "name": "Gusti Devitto",
-                            "alternateName": "Gusti Devitto",
-                            "jobTitle": t('about_page.schema_job'),
+                            "alternateName": "Vitto",
+                            "jobTitle": "Financial Forensics Practitioner",
                             "description": t('about_page.seo_desc'),
                             "image": "https://www.gustidevitto.com/assets/images/aboutme.jpg",
-                            "knowsAbout": t('about_page.knows_about', { returnObjects: true }),
-                            "url": "https://www.gustidevitto.com/about-gusti-devitto",
-                            "founder": {
-                                "@type": "Organization",
-                                "name": "LAPA"
-                            }
+                            "knowsAbout": ["Financial Forensics", "Operational Efficiency", "Pattern Recognition", "Unit Economics"],
+                            "url": "https://www.gustidevitto.com/about-gusti-devitto"
                         },
                         {
                             "@type": "BreadcrumbList",
@@ -123,13 +119,13 @@ function AboutGustiDevitto() {
 
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Button asChild size="lg" className="h-14 px-8 font-black tracking-wide text-lg">
-                                    <Link to="/fip-lite">
+                                    <Link to="/calculator">
                                         {t('about_page.cta_ready')}
                                         <ArrowRight className="ml-2 w-5 h-5" />
                                     </Link>
                                 </Button>
                                 <div className="flex items-center gap-3 px-6 py-2 border border-border/50 rounded-xl bg-muted/20">
-                                    <BadgeCheck className="w-5 h-5 text-green-500" />
+                                    <Zap className="w-5 h-5 text-primary" />
                                     <span className="text-sm font-medium text-muted-foreground">{t('about_page.certified')}</span>
                                 </div>
                             </div>
