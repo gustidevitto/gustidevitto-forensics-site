@@ -11,21 +11,12 @@ import {
     TrendingUp,
     BarChart3,
     HeartPulse,
-    Users,
-    Percent,
-    Clock,
-    Flame,
-    Warehouse,
     Scale,
-    Package,
-    UserPlus,
     ShieldCheck,
     AlertCircle,
     Share2,
     Coins,
-    CheckCircle,
     PieChart,
-    ShoppingCart,
     Play
 } from 'lucide-react'
 import { Button } from "@/components/ui/button"
@@ -336,7 +327,7 @@ function FIPLitePage() {
                                     <Step1RevenueProfitability
                                         data={state.formData.step1 || {} as any}
                                         currency={currency}
-                                        t={t}
+
                                         onChange={(data: RevenueProfitabilityInputs) => setState(prev => ({
                                             ...prev,
                                             formData: { ...prev.formData, step1: data }
@@ -348,7 +339,7 @@ function FIPLitePage() {
                                     <Step2CashFlow
                                         data={state.formData.step2 || {} as any}
                                         currency={currency}
-                                        t={t}
+
                                         onChange={(data: CashFlowInputs) => setState(prev => ({
                                             ...prev,
                                             formData: { ...prev.formData, step2: data }
@@ -360,7 +351,7 @@ function FIPLitePage() {
                                     <Step3Operational
                                         data={state.formData.step3 || {} as any}
                                         currency={currency}
-                                        t={t}
+
                                         onChange={(data: OperationalEfficiencyInputs) => setState(prev => ({
                                             ...prev,
                                             formData: { ...prev.formData, step3: data }
@@ -372,7 +363,7 @@ function FIPLitePage() {
                                     <Step4Growth
                                         data={state.formData.step4 || {} as any}
                                         currency={currency}
-                                        t={t}
+
                                         onChange={(data: GrowthRiskInputs) => setState(prev => ({
                                             ...prev,
                                             formData: { ...prev.formData, step4: data }
@@ -848,10 +839,10 @@ interface StepProps<T> {
     data: T
     onChange: (data: T) => void
     currency: { locale: string; prefix: string; code: string }
-    t: any
+
 }
 
-function Step1RevenueProfitability({ data, onChange, currency, t }: StepProps<RevenueProfitabilityInputs>) {
+function Step1RevenueProfitability({ data, onChange, currency }: StepProps<RevenueProfitabilityInputs>) {
     const updateField = (field: keyof RevenueProfitabilityInputs, value: number) => {
         onChange({ ...data, [field]: value })
     }
@@ -894,7 +885,7 @@ function Step1RevenueProfitability({ data, onChange, currency, t }: StepProps<Re
     )
 }
 
-function Step2CashFlow({ data, onChange, currency, t }: StepProps<CashFlowInputs>) {
+function Step2CashFlow({ data, onChange, currency }: StepProps<CashFlowInputs>) {
     const updateField = (field: keyof CashFlowInputs, value: any) => {
         onChange({ ...data, [field]: value })
     }
@@ -956,7 +947,7 @@ function Step2CashFlow({ data, onChange, currency, t }: StepProps<CashFlowInputs
     )
 }
 
-function Step3Operational({ data, onChange, currency, t }: StepProps<OperationalEfficiencyInputs>) {
+function Step3Operational({ data, onChange, currency }: StepProps<OperationalEfficiencyInputs>) {
     const updateField = (field: keyof OperationalEfficiencyInputs, value: any) => {
         onChange({ ...data, [field]: value })
     }
@@ -1038,7 +1029,7 @@ function Step3Operational({ data, onChange, currency, t }: StepProps<Operational
     )
 }
 
-function Step4Growth({ data, onChange, currency, t }: StepProps<GrowthRiskInputs>) {
+function Step4Growth({ data, onChange, currency }: StepProps<GrowthRiskInputs>) {
     const updateField = (field: keyof GrowthRiskInputs, value: any) => {
         onChange({ ...data, [field]: value })
     }

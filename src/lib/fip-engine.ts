@@ -14,10 +14,10 @@ export function calculateFIPLiteResults(formData: FIPLiteFormData): HealthScoreR
     const pillars: PillarResult[] = [];
 
     // Destructure Inputs
-    const { totalRevenue, transactionCount } = formData.step1 || { totalRevenue: 0, transactionCount: 1 };
+    const { totalRevenue } = formData.step1 || { totalRevenue: 0, transactionCount: 1 };
     const { idealCogs, actualMaterial, directLabor, wasteSpoilage } = formData.step2 || { idealCogs: 0, actualMaterial: 0, directLabor: 0, wasteSpoilage: 0 };
     const { rentUtilities, payrollMgmt, marketingSpend, generalAdmin, cashOnHand, inventoryValue } = formData.step3 || { rentUtilities: 0, payrollMgmt: 0, marketingSpend: 0, generalAdmin: 0, cashOnHand: 0, inventoryValue: 0 };
-    const { accountsPayable, shortTermDebt, headcount, totalWorkingHours } = formData.step4 || { accountsPayable: 0, shortTermDebt: 0, headcount: 1, totalWorkingHours: 1 };
+    const { shortTermDebt, totalWorkingHours } = formData.step4 || { accountsPayable: 0, shortTermDebt: 0, headcount: 1, totalWorkingHours: 1 };
 
     // Derived Values
     const totalCOGS = actualMaterial + directLabor + wasteSpoilage;

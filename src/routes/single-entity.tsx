@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Activity, ArrowRight, CheckCircle2, AlertTriangle, ShieldCheck, Zap } from "lucide-react"
+import { Activity, ArrowRight, CheckCircle2, Zap, ChevronLeft, ChevronRight, Clock } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslation, Trans } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
