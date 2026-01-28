@@ -13,216 +13,121 @@ import type {
 export function calculateFIPLiteResults(formData: FIPLiteFormData): HealthScoreResult {
     const pillars: PillarResult[] = [];
 
-    // --- STEP 1: REVENUE & PROFITABILITY ---
-    const { step1 } = formData;
+    // Destructure Inputs
+    const { totalRevenue, transactionCount } = formData.step1 || { totalRevenue: 0, transactionCount: 1 };
+    const { idealCogs, actualMaterial, directLabor, wasteSpoilage } = formData.step2 || { idealCogs: 0, actualMaterial: 0, directLabor: 0, wasteSpoilage: 0 };
+    const { rentUtilities, payrollMgmt, marketingSpend, generalAdmin, cashOnHand, inventoryValue } = formData.step3 || { rentUtilities: 0, payrollMgmt: 0, marketingSpend: 0, generalAdmin: 0, cashOnHand: 0, inventoryValue: 0 };
+    const { accountsPayable, shortTermDebt, headcount, totalWorkingHours } = formData.step4 || { accountsPayable: 0, shortTermDebt: 0, headcount: 1, totalWorkingHours: 1 };
 
-    // 1. Net Profit per Transaction
-    const netProfitPerTx = step1.totalTransactions > 0
-        ? (step1.totalRevenue - step1.totalCosts) / step1.totalTransactions
-        : 0;
-    pillars.push(createPillar({
-        id: 'net-profit-per-tx',
-        name: 'Net Profit per Transaction',
-        category: 'revenue-profitability',
-        value: netProfitPerTx,
-        benchmark: 50000, // Example: Rp 50k benchmark
-        scoring: (val) => val > 75000 ? 100 : val > 30000 ? 70 : 30,
-        recommendation: netProfitPerTx < 30000 ? 'Increase average order value or optimize unit costs.' : 'Maintain yield discipline.'
-    }));
+    // Derived Values
+    const totalCOGS = actualMaterial + directLabor + wasteSpoilage;
+    const grossProfit = totalRevenue - totalCOGS;
+    const totalOpEx = rentUtilities + payrollMgmt + marketingSpend + generalAdmin;
+    const netProfit = grossProfit - totalOpEx;
+    const monthlyBurnRate = totalOpEx + (shortTermDebt * 0.1); // Approx interest/principal
 
-    // 2. Gross Profit Leakage
-    const gpLeakage = Math.max(0, step1.theoreticalGrossProfit - step1.actualGrossProfit);
+    // --- PILLAR 1: GROSS PROFIT LEAKAGE ---
+    // Leakage = (Actual Material + Waste) - Ideal COGS
+    // We assume Ideal COGS is just the material component ideally.
+    const actualMaterialCost = actualMaterial + wasteSpoilage;
+    const leakageValue = Math.max(0, actualMaterialCost - idealCogs);
+    const leakagePercent = totalRevenue > 0 ? (leakageValue / totalRevenue) * 100 : 0;
+
     pillars.push(createPillar({
         id: 'gp-leakage',
         name: 'Gross Profit Leakage',
         category: 'revenue-profitability',
-        value: gpLeakage,
-        benchmark: 2, // 2% leakage is normal
+        value: leakagePercent,
+        benchmark: 2, // < 2% is good
         scoring: (val) => val <= 2 ? 100 : val <= 5 ? 60 : 20,
-        recommendation: gpLeakage > 5 ? 'Audit point-of-sale and inventory shrinkage vectors.' : 'Leakage is within acceptable margin.'
+        recommendation: leakagePercent > 5 ? `Critical Leakage (${leakagePercent.toFixed(1)}%). Audit kitchen waste and vendor prices immediately.` : 'Supply chain integrity is intact.'
     }));
 
-    // 3. OPEX to GP Ratio
-    const opexToGPRatio = step1.grossProfit > 0 ? (step1.operatingExpenses / step1.grossProfit) * 100 : 0;
+    // --- PILLAR 2: LABOR EFFICIENCY (GP / Man Hour) ---
+    const gpPerManHour = totalWorkingHours > 0 ? grossProfit / totalWorkingHours : 0;
     pillars.push(createPillar({
-        id: 'opex-gp-ratio',
-        name: 'OPEX to GP Ratio',
-        category: 'revenue-profitability',
-        value: opexToGPRatio,
-        benchmark: 40, // 40% benchmark
-        scoring: (val) => val <= 40 ? 100 : val <= 60 ? 60 : 20,
-        recommendation: opexToGPRatio > 60 ? 'Operational overhead is eating your margins. Review fixed costs.' : 'High operational efficiency observed.'
+        id: 'labor-efficiency',
+        name: 'Labor Efficiency (GP/Hour)',
+        category: 'operational-efficiency',
+        value: gpPerManHour,
+        benchmark: 100000,
+        scoring: (val) => val > 150000 ? 100 : val > 75000 ? 70 : 30,
+        recommendation: gpPerManHour < 75000 ? 'Labor is dragging margins down. Optimize scheduling or increase throughput.' : 'Workforce productivity is healthy.'
     }));
 
-    // 4. Contribution Margin per SKU
-    const skuMargin = step1.topSKURevenue > 0 ? ((step1.topSKURevenue - step1.topSKUVariableCosts) / step1.topSKURevenue) * 100 : 0;
+    // --- PILLAR 3: OPEX RATIO ---
+    const opexRatio = totalRevenue > 0 ? (totalOpEx / totalRevenue) * 100 : 0;
     pillars.push(createPillar({
-        id: 'sku-contribution-margin',
-        name: 'Top SKU Contribution Margin',
-        category: 'revenue-profitability',
-        value: skuMargin,
-        benchmark: 60,
-        scoring: (val) => val >= 60 ? 100 : val >= 40 ? 70 : 30,
-        recommendation: skuMargin < 40 ? 'Your flagship product has low yield. Renounce low-margin items.' : 'Healthy top-line contribution.'
+        id: 'opex-ratio',
+        name: 'OpEx Structure Ratio',
+        category: 'operational-efficiency',
+        value: opexRatio,
+        benchmark: 30,
+        scoring: (val) => val <= 30 ? 100 : val <= 45 ? 60 : 20,
+        recommendation: opexRatio > 45 ? 'Overhead is too heavy. Cut General Admin or Rent costs.' : 'Lean operational structure.'
     }));
 
-    // --- STEP 2: CASH FLOW & LIQUIDITY ---
-    const { step2 } = formData;
+    // --- PILLAR 4: NET PROFIT MARGIN ---
+    const netMargin = totalRevenue > 0 ? (netProfit / totalRevenue) * 100 : 0;
+    pillars.push(createPillar({
+        id: 'net-margin',
+        name: 'Net Profit Margin',
+        category: 'revenue-profitability',
+        value: netMargin,
+        benchmark: 20,
+        scoring: (val) => val >= 20 ? 100 : val >= 10 ? 60 : 10,
+        recommendation: netMargin < 10 ? 'Profitability is dangerously low. Review pricing structure.' : 'Strong bottom-line performance.'
+    }));
 
-    // 5. Cash Runway
-    const runway = step2.monthlyBurnRate > 0 ? step2.currentCash / step2.monthlyBurnRate : 12;
+    // --- PILLAR 5: CASH RUNWAY ---
+    const runwayMonths = monthlyBurnRate > 0 ? cashOnHand / monthlyBurnRate : 0;
     pillars.push(createPillar({
         id: 'cash-runway',
-        name: 'Cash Runway (Months)',
+        name: 'Cash Runway (Liquidity)',
         category: 'cash-flow',
-        value: runway,
+        value: runwayMonths,
         benchmark: 6,
-        scoring: (val) => val >= 6 ? 100 : val >= 2 ? 50 : 0,
-        recommendation: runway < 2 ? 'CRITICAL: Immediate cash injection or massive cost reduction required.' : 'Runway is sufficient for short-term pivots.'
+        scoring: (val) => val >= 6 ? 100 : val >= 2 ? 40 : 0,
+        recommendation: runwayMonths < 2 ? 'CRITICAL: Insolvency imminent. Secure capital or freeze spending.' : 'Liquidity reserves are sufficient.'
     }));
 
-    // 6. Net Cash Lock
-    const netCashLock = (step2.inventoryValue + step2.accountsReceivable - step2.accountsPayable);
-    const lockRatio = step1.totalRevenue > 0 ? (netCashLock / step1.totalRevenue) * 100 : 0;
+    // --- PILLAR 6: BREAK-EVEN POINT SAFETY ---
+    const gpMargin = totalRevenue > 0 ? grossProfit / totalRevenue : 0;
+    const bepRevenue = gpMargin > 0 ? totalOpEx / gpMargin : 0;
+    const safetyMargin = bepRevenue > 0 ? ((totalRevenue - bepRevenue) / totalRevenue) * 100 : 0;
+
     pillars.push(createPillar({
-        id: 'net-cash-lock',
-        name: 'Net Cash Lockup Ratio',
-        category: 'cash-flow',
-        value: lockRatio,
-        benchmark: 15,
-        scoring: (val) => val <= 15 ? 100 : val <= 30 ? 60 : 20,
-        recommendation: lockRatio > 30 ? 'Too much cash is trapped in operations. Optimize AR collections.' : 'Healthy working capital velocity.'
+        id: 'bep-safety',
+        name: 'Break-Even Safety Margin',
+        category: 'growth-risk',
+        value: safetyMargin,
+        benchmark: 20,
+        scoring: (val) => val >= 20 ? 100 : val >= 0 ? 50 : 0,
+        recommendation: safetyMargin < 0 ? `You are burning cash on every sale. Need ${Math.abs(safetyMargin).toFixed(1)}% more revenue to survive.` : 'Revenue is comfortably above survival line.'
     }));
 
-    // 7. Cash Realization Lag
-    // 7. Cash Realization Lag
-    const lagDays = step2.realizationLagDays || 0;
-    pillars.push(createPillar({
-        id: 'cash-lag',
-        name: 'Cash Realization Lag',
-        category: 'cash-flow',
-        value: lagDays,
-        benchmark: 7, // 7 days
-        scoring: (val) => val <= 7 ? 100 : val <= 14 ? 70 : 30,
-        recommendation: lagDays > 14 ? 'Your cash cycle is slow. Renegotiate payment terms with clients.' : 'Excellent cash velocity.'
-    }));
-
-    // 8. Net Burn Rate (Percentage of inflow)
-    const netBurn = step2.cashInflows > 0 ? ((step2.cashOutflows - step2.cashInflows) / step2.cashInflows) * 100 : 0;
-    pillars.push(createPillar({
-        id: 'net-burn-rate',
-        name: 'Net Burn Rate',
-        category: 'cash-flow',
-        value: netBurn,
-        benchmark: 0, // Should be profitable
-        scoring: (val) => val <= 0 ? 100 : val <= 10 ? 60 : 20,
-        recommendation: netBurn > 0 ? 'Monthly outflow exceeds inflow. Switch to survival mode.' : 'Positive cash hygiene.'
-    }));
-
-    // --- STEP 3: OPERATIONAL EFFICIENCY ---
-    const { step3 } = formData;
-
-    // 9. GP per Labor Hour
-    const gpPerLaborHour = step3.totalLaborHours > 0 ? step3.totalGrossProfit / step3.totalLaborHours : 0;
-    pillars.push(createPillar({
-        id: 'gp-labor-hour',
-        name: 'GP per Labor Hour',
-        category: 'operational-efficiency',
-        value: gpPerLaborHour,
-        benchmark: 150000,
-        scoring: (val) => val >= 150000 ? 100 : val >= 50000 ? 60 : 20,
-        recommendation: gpPerLaborHour < 50000 ? 'Low labor productivity. Automate repetitive tasks.' : 'High operational leverage.'
-    }));
-
-    // 10. Inventory Decay Rate
-    const decayRate = step3.inventoryAtStart > 0 ? (step3.inventorySpoilage / step3.inventoryAtStart) * 100 : 0;
+    // --- PILLAR 7: INVENTORY DECAY RISK ---
+    const inventoryRisk = inventoryValue > 0 ? (wasteSpoilage / inventoryValue) * 100 : 0;
     pillars.push(createPillar({
         id: 'inventory-decay',
         name: 'Inventory Decay Rate',
         category: 'operational-efficiency',
-        value: decayRate,
-        benchmark: 1,
-        scoring: (val) => val <= 1 ? 100 : val <= 3 ? 60 : 20,
-        recommendation: decayRate > 3 ? 'High spoilage observed. Review storage and FIFO protocols.' : 'Effective inventory management.'
+        value: inventoryRisk,
+        benchmark: 5,
+        scoring: (val) => val <= 5 ? 100 : val <= 10 ? 60 : 30,
+        recommendation: inventoryRisk > 10 ? 'High spoilage detected. Check storage protocols.' : 'Inventory retention is good.'
     }));
 
-    // 11. BEP Dynamics (Efficiency of fixed costs cover)
-    const unitContribution = step3.pricePerUnit - step3.variableCostPerUnit;
-    const bepUnits = unitContribution > 0 ? step3.fixedCosts / unitContribution : 999999;
-    const currentUnits = step1.totalTransactions; // Proxy for units
-    const bepSafetyMargin = currentUnits > 0 ? ((currentUnits - bepUnits) / currentUnits) * 100 : -100;
+    // --- PILLAR 8: MARKETING ROI ESTIMATE ---
+    const marketingRoi = marketingSpend > 0 ? totalRevenue / marketingSpend : 10;
     pillars.push(createPillar({
-        id: 'bep-dynamics',
-        name: 'BEP Safety Margin',
-        category: 'operational-efficiency',
-        value: bepSafetyMargin,
-        benchmark: 25,
-        scoring: (val) => val >= 25 ? 100 : val >= 0 ? 60 : 10,
-        recommendation: bepSafetyMargin < 0 ? 'Business is operating below Break-Even Point. URGENT action needed.' : 'Healthy buffer against demand shocks.'
-    }));
-
-    // 12. Insight-to-Surprise Ratio
-    const totalEvents = step3.plannedEvents + step3.unplannedEvents;
-    const predictability = totalEvents > 0 ? (step3.plannedEvents / totalEvents) * 100 : 100;
-    pillars.push(createPillar({
-        id: 'predictability-ratio',
-        name: 'Insight-to-Surprise Ratio',
-        category: 'operational-efficiency',
-        value: predictability,
-        benchmark: 80,
-        scoring: (val) => val >= 80 ? 100 : val >= 50 ? 60 : 20,
-        recommendation: predictability < 50 ? 'Too many "surprises". Implement predictive maintenance and standard ops.' : 'Predictable operational environment.'
-    }));
-
-    // --- STEP 4: GROWTH & RISK ---
-    const { step4 } = formData;
-
-    // 13. LTGP Velocity
-    const velocity = step4.ltgpMonth1 > 0 ? ((step4.ltgpMonth3 - step4.ltgpMonth1) / step4.ltgpMonth1) * 100 : 0;
-    pillars.push(createPillar({
-        id: 'ltgp-velocity',
-        name: 'LTGP Velocity',
+        id: 'marketing-roi',
+        name: 'Marketing Yield (ROAS Proxy)',
         category: 'growth-risk',
-        value: velocity,
-        benchmark: 15,
-        scoring: (val) => val >= 15 ? 100 : val >= 5 ? 70 : 30,
-        recommendation: velocity < 5 ? 'Growth has plateaued. Re-evaluate customer retention and LTV.' : 'Strong upward velocity.'
-    }));
-
-    // 14. LTV:CAC Ratio
-    const ltvCac = step4.customerAcquisitionCost > 0 ? step4.customerLifetimeValue / step4.customerAcquisitionCost : 3;
-    pillars.push(createPillar({
-        id: 'ltv-cac-ratio',
-        name: 'LTV:CAC Ratio',
-        category: 'growth-risk',
-        value: ltvCac,
-        benchmark: 3,
-        scoring: (val) => val >= 3 ? 100 : val >= 1.5 ? 60 : 20,
-        recommendation: ltvCac < 1.5 ? 'Acquisition is too expensive. Optimize marketing efficiency.' : 'Highly scalable acquisition model.'
-    }));
-
-    // 15. Risk Exposure Index (Current Ratio)
-    const riskExposure = step4.currentLiabilities > 0 ? step4.currentAssets / step4.currentLiabilities : 2;
-    pillars.push(createPillar({
-        id: 'risk-exposure',
-        name: 'Risk Exposure Index',
-        category: 'growth-risk',
-        value: riskExposure,
-        benchmark: 2,
-        scoring: (val) => val >= 2 ? 100 : val >= 1 ? 60 : 20,
-        recommendation: riskExposure < 1 ? 'Technical insolvancy risk. Current assets cannot cover debt.' : 'Liquid and stable foundation.'
-    }));
-
-    // 16. Single Point of Failure
-    const spof = step4.totalRevenue > 0 ? (step4.largestRevenueSource / step4.totalRevenue) * 100 : 0;
-    pillars.push(createPillar({
-        id: 'spof-risk',
-        name: 'Single Point of Failure',
-        category: 'growth-risk',
-        value: spof,
-        benchmark: 20,
-        scoring: (val) => val <= 20 ? 100 : val <= 40 ? 60 : 20,
-        recommendation: spof > 40 ? 'High concentration risk. Diversify customer base immediately.' : 'Resilient and diversified revenue streams.'
+        value: marketingRoi,
+        benchmark: 8,
+        scoring: (val) => val >= 8 ? 100 : val >= 4 ? 60 : 30,
+        recommendation: marketingRoi < 4 ? 'Marketing spend is inefficient. Pause ads and review CAC.' : 'Marketing is driving efficiency.'
     }));
 
     // --- AGGREGATION ---
@@ -235,10 +140,10 @@ export function calculateFIPLiteResults(formData: FIPLiteFormData): HealthScoreR
     if (overallScore >= 80) {
         verdict = 'fortress';
         verdictLabel = 'FORTRESS: STRUCTURALLY SOUND';
-        verdictColor = 'text-green-500';
+        verdictColor = 'text-emerald-500';
     } else if (overallScore < 50) {
         verdict = 'critical';
-        verdictLabel = 'CRITICAL: IMMEDIATE FAILURE RISK';
+        verdictLabel = 'CRITICAL: FAILURE IMMINENT';
         verdictColor = 'text-red-500';
     }
 
@@ -248,7 +153,7 @@ export function calculateFIPLiteResults(formData: FIPLiteFormData): HealthScoreR
 
     const getCategoryScore = (cat: PillarCategory) => {
         const catPillars = pillars.filter(p => p.category === cat);
-        return catPillars.reduce((acc, p) => acc + p.score, 0) / catPillars.length;
+        return catPillars.length ? catPillars.reduce((acc, p) => acc + p.score, 0) / catPillars.length : 0;
     };
 
     return {

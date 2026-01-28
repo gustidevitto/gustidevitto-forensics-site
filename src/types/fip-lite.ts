@@ -30,92 +30,48 @@ export interface PillarMetric {
 // STEP 1: REVENUE & PROFITABILITY
 // ============================================================================
 
+// ============================================================================
+// STEP 1: REVENUE BASELINE
+// ============================================================================
+
 export interface RevenueProfitabilityInputs {
-    // Net Profit per Transaction
     totalRevenue: number
-    totalTransactions: number
-    totalCosts: number
-
-    // Gross Profit Leakage
-    theoreticalGrossProfit: number
-    actualGrossProfit: number
-
-    // OPEX to GP Ratio
-    operatingExpenses: number
-    grossProfit: number
-
-    // Contribution Margin per SKU
-    topSKURevenue: number
-    topSKUVariableCosts: number
+    transactionCount: number
 }
 
 // ============================================================================
-// STEP 2: CASH FLOW & LIQUIDITY
+// STEP 2: COST OF GOODS SOLD (COGS)
 // ============================================================================
 
 export interface CashFlowInputs {
-    // Cash Runway
-    currentCash: number
-    monthlyBurnRate: number
-
-    // Net Cash Lock
-    inventoryValue: number
-    accountsReceivable: number
-    accountsPayable: number
-
-    // Cash Realization Lag
-    realizationLagDays: number
-
-    // Net Burn Rate
-    cashInflows: number
-    cashOutflows: number
+    idealCogs: number
+    actualMaterial: number
+    directLabor: number
+    wasteSpoilage: number
 }
 
 // ============================================================================
-// STEP 3: OPERATIONAL EFFICIENCY
+// STEP 3: OPEX & ASSETS
 // ============================================================================
 
 export interface OperationalEfficiencyInputs {
-    // GP per Labor Hour
-    totalGrossProfit: number
-    totalLaborHours: number
-
-    // Inventory Decay Rate
-    inventoryAtStart: number
-    inventoryAtEnd: number
-    inventorySpoilage: number
-
-    // BEP Dynamics
-    fixedCosts: number
-    variableCostPerUnit: number
-    pricePerUnit: number
-
-    // Insight-to-Surprise Ratio
-    plannedEvents: number
-    unplannedEvents: number
+    rentUtilities: number
+    payrollMgmt: number
+    marketingSpend: number
+    generalAdmin: number
+    cashOnHand: number
+    inventoryValue: number
 }
 
 // ============================================================================
-// STEP 4: GROWTH & RISK
+// STEP 4: LIABILITIES & OPS
 // ============================================================================
 
 export interface GrowthRiskInputs {
-    // LTGP Velocity
-    ltgpMonth1: number
-    ltgpMonth2: number
-    ltgpMonth3: number
-
-    // LTV:CAC Ratio
-    customerLifetimeValue: number
-    customerAcquisitionCost: number
-
-    // Risk Exposure Index
-    currentLiabilities: number
-    currentAssets: number
-
-    // Single Point of Failure
-    largestRevenueSource: number
-    totalRevenue: number
+    accountsPayable: number
+    shortTermDebt: number
+    headcount: number
+    totalWorkingHours: number
 }
 
 // ============================================================================

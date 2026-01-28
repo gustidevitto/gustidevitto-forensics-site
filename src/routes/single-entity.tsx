@@ -1,8 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useState, useEffect, type ChangeEvent } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Activity, CheckCircle2, ChevronLeft, ChevronRight, ArrowRight, Clock } from "lucide-react"
+import { Activity, ArrowRight, CheckCircle2, AlertTriangle, ShieldCheck, Zap } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslation, Trans } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
@@ -177,34 +177,77 @@ function SingleEntityPage() {
             {/* Case Studies / War Stories */}
             <ForensicCaseFiles />
 
-            {/* Quick Calculator */}
-            <section className="py-24 px-4 md:px-8 bg-black border-b border-white/5">
-                <div className="container mx-auto max-w-4xl text-center space-y-12">
-                    <div className="space-y-4">
-                        <h2 className="text-3xl font-black tracking-tight">{t('single_entity.calc_title')}</h2>
-                        <p className="text-muted-foreground">{t('single_entity.calc_desc')}</p>
-                    </div>
+            {/* Quick Calculator (Forensic Preview Console) */}
+            <section className="py-24 px-4 md:px-8 bg-[#0a0a0a] border-b border-white/5 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.05] pointer-events-none" />
 
-                    <div className="max-w-md mx-auto bg-zinc-900 border border-white/10 rounded-2xl p-8 shadow-2xl backdrop-blur-sm">
-                        <div className="space-y-6">
-                            <div>
-                                <label className="text-[10px] font-black uppercase tracking-widest text-primary mb-2 block">{t('single_entity.calc_label')}</label>
-                                <Input
-                                    type="number"
-                                    placeholder={t('single_entity.calc_placeholder')}
-                                    className="text-center text-3xl font-black h-16 bg-black border-white/10 text-white focus:border-primary"
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setNetworkSize(parseInt(e.target.value) || 0)}
-                                />
+                <div className="container mx-auto max-w-5xl relative z-10">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="space-y-8 text-left">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 mb-4">
+                                <Activity className="w-4 h-4 text-red-500 animate-pulse" />
+                                <span className="text-[10px] uppercase tracking-[0.2em] font-black text-red-500">System Alert</span>
                             </div>
+                            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-white leading-tight">
+                                {t('single_entity.calc_title')}
+                            </h2>
+                            <p className="text-lg text-muted-foreground leading-relaxed">
+                                {t('single_entity.calc_desc')}
+                            </p>
 
-                            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+                            <div className="pt-4 flex flex-col sm:flex-row gap-4">
+                                <Button asChild size="lg" className="h-14 px-8 bg-primary hover:bg-primary/90 text-black font-black uppercase tracking-widest text-xs shadow-[0_0_30px_rgba(56,189,248,0.3)]">
+                                    <Link to="/calculator">
+                                        Open Surgical Calculator <ArrowRight className="ml-2 w-4 h-4" />
+                                    </Link>
+                                </Button>
+                                <Button asChild variant="outline" size="lg" className="h-14 px-8 border-white/10 bg-white/5 hover:bg-white/10 text-white font-bold uppercase tracking-widest text-xs">
+                                    <Link to="/fip-lite">
+                                        Launch FIP™ Lite <Zap className="ml-2 w-4 h-4" />
+                                    </Link>
+                                </Button>
+                            </div>
+                        </div>
+
+                        {/* Interactive Mini-Console */}
+                        <div className="bg-[#111] border border-white/10 rounded-3xl p-8 relative overflow-hidden shadow-2xl group">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent animate-scan-fast" />
+
+                            <div className="space-y-8">
                                 <div>
-                                    <p className="text-[10px] uppercase font-bold text-muted-foreground mb-1">{t('single_entity.calc_daily')}</p>
-                                    <p className="text-2xl font-black text-red-500">${(networkSize * 0.0006).toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
+                                    <label className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-3 block flex items-center justify-between">
+                                        <span>INPUT_SEQUENCE: REVENUE_ESTIMATE</span>
+                                        <span className="text-primary animate-pulse">● LIVE</span>
+                                    </label>
+                                    <div className="relative">
+                                        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl font-mono text-muted-foreground">$</span>
+                                        <Input
+                                            type="number"
+                                            placeholder="0"
+                                            className="text-right text-3xl font-mono h-20 bg-black/50 border-white/10 text-white focus:border-primary/50 focus:ring-0 pl-12 pr-6 rounded-xl"
+                                            onChange={(e) => setNetworkSize(parseInt(e.target.value) || 0)}
+                                        />
+                                    </div>
                                 </div>
-                                <div>
-                                    <p className="text-[10px] uppercase font-bold text-muted-foreground mb-1">{t('single_entity.calc_monthly')}</p>
-                                    <p className="text-2xl font-black text-red-500">${(networkSize * 0.018).toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
+
+                                <div className="space-y-4">
+                                    <div className="p-4 rounded-xl bg-red-500/5 border border-red-500/10 flex items-center justify-between">
+                                        <div>
+                                            <p className="text-[9px] uppercase font-black tracking-widest text-red-500/70 mb-1">Daily Leakage</p>
+                                            <p className="text-xl font-mono font-bold text-red-500">${(networkSize * 0.0006).toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
+                                        </div>
+                                        <ArrowRight className="w-4 h-4 text-red-500/30" />
+                                    </div>
+
+                                    <div className="p-6 rounded-xl bg-primary/5 border border-primary/10">
+                                        <p className="text-[9px] uppercase font-black tracking-widest text-primary/70 mb-2">Projected Annual Loss</p>
+                                        <p className="text-4xl font-mono font-black text-white tracking-tight">
+                                            $<span className="text-primary">{(networkSize * 0.018 * 12).toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+                                        </p>
+                                        <p className="text-[10px] text-muted-foreground mt-2 italic">
+                                            *Based on global average phantom cost index (1.8% / mo)
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

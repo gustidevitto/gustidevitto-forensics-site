@@ -110,76 +110,38 @@ function FIPLitePage() {
             let hasChanges = false
             const newFormData = { ...prev.formData }
 
-            // Sync to Step 2 (Cash Flow)
+            // Sync to Step 2 (Cash Flow / COGS)
             if (!newFormData.step2) {
                 newFormData.step2 = {
-                    currentCash: 0,
-                    monthlyBurnRate: 0,
-                    inventoryValue: 0,
-                    accountsReceivable: 0,
-                    accountsPayable: 0,
-                    realizationLagDays: 0,
-                    cashInflows: 0,
-                    cashOutflows: 0
-                };
-                hasChanges = true;
-            }
-            // Burn Rate ~ Total Costs
-            if (s1.totalCosts && !newFormData.step2.monthlyBurnRate) {
-                newFormData.step2 = { ...newFormData.step2, monthlyBurnRate: s1.totalCosts }
-                hasChanges = true
-            }
-            // Inflows ~ Revenue
-            if (s1.totalRevenue && !newFormData.step2.cashInflows) {
-                newFormData.step2 = { ...newFormData.step2, cashInflows: s1.totalRevenue }
-                hasChanges = true
-            }
-            // Outflows ~ Total Costs
-            if (s1.totalCosts && !newFormData.step2.cashOutflows) {
-                newFormData.step2 = { ...newFormData.step2, cashOutflows: s1.totalCosts }
+                    idealCogs: 0,
+                    actualMaterial: 0,
+                    directLabor: 0,
+                    wasteSpoilage: 0
+                }
                 hasChanges = true
             }
 
             // Sync to Step 3 (Operational Efficiency)
             if (!newFormData.step3) {
                 newFormData.step3 = {
-                    totalGrossProfit: 0,
-                    totalLaborHours: 0,
-                    inventoryAtStart: 0,
-                    inventoryAtEnd: 0,
-                    inventorySpoilage: 0,
-                    fixedCosts: 0,
-                    variableCostPerUnit: 0,
-                    pricePerUnit: 0,
-                    plannedEvents: 0,
-                    unplannedEvents: 0
-                };
-                hasChanges = true;
-            }
-            // Total GP
-            if (s1.grossProfit && !newFormData.step3.totalGrossProfit) {
-                newFormData.step3 = { ...newFormData.step3, totalGrossProfit: s1.grossProfit }
+                    rentUtilities: 0,
+                    payrollMgmt: 0,
+                    marketingSpend: 0,
+                    generalAdmin: 0,
+                    cashOnHand: 0,
+                    inventoryValue: 0
+                }
                 hasChanges = true
             }
 
             // Sync to Step 4 (Growth & Risk)
             if (!newFormData.step4) {
                 newFormData.step4 = {
-                    ltgpMonth1: 0,
-                    ltgpMonth2: 0,
-                    ltgpMonth3: 0,
-                    customerLifetimeValue: 0,
-                    customerAcquisitionCost: 0,
-                    currentLiabilities: 0,
-                    currentAssets: 0,
-                    largestRevenueSource: 0,
-                    totalRevenue: 0
-                };
-                hasChanges = true;
-            }
-            // Total Business Revenue
-            if (s1.totalRevenue && !newFormData.step4.totalRevenue) {
-                newFormData.step4 = { ...newFormData.step4, totalRevenue: s1.totalRevenue }
+                    accountsPayable: 0,
+                    shortTermDebt: 0,
+                    headcount: 0,
+                    totalWorkingHours: 0
+                }
                 hasChanges = true
             }
 
@@ -647,13 +609,77 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
 
                 {/* Verdict & Categories */}
                 <div className="md:col-span-2 space-y-6">
-                    <div className={`p-8 rounded-2xl border-2 ${results.verdict === 'fortress' ? 'bg-green-500/10 border-green-500/20' : results.verdict === 'warning' ? 'bg-yellow-500/10 border-yellow-500/20' : 'bg-red-500/10 border-red-500/20'}`}>
-                        <h2 className={`text-3xl font-black mb-3 ${results.verdictColor}`}>
-                            {t(`fip_lite.results.verdict_${results.verdict}`)}
-                        </h2>
-                        <p className="text-sm text-balance text-muted-foreground leading-relaxed">
-                            {t('fip_lite.results.diagnosis_complete')}
-                        </p>
+                    {/* Premium Verdict Block */}
+                    <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a0a0a] shadow-2xl group">
+                        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.05]" />
+                        <div className="absolute top-0 right-0 p-6 opacity-30">
+                            <Activity className={`w-32 h-32 ${results.verdictColor}`} />
+                        </div>
+
+                        <div className="relative z-10 p-10 flex flex-col justify-between h-full space-y-8">
+                            <div className="space-y-4">
+                                <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border ${results.verdict === 'fortress' ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-500' : 'bg-red-500/10 border-red-500/20 text-red-500'}`}>
+                                    <div className={`w-2 h-2 rounded-full animate-pulse ${results.verdict === 'fortress' ? 'bg-emerald-500' : 'bg-red-500'}`} />
+                                    <span className="text-[10px] uppercase tracking-[0.2em] font-black">
+                                        Surgeon's Verdict
+                                    </span>
+                                </div>
+                                <h2 className={`text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none ${results.verdictColor}`}>
+                                    {results.verdictLabel.split(':')[1] || results.verdictLabel}
+                                </h2>
+                                <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-2xl leading-relaxed">
+                                    {t('fip_lite.results.diagnosis_complete')}
+                                </p>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-6 pt-8 border-t border-white/5">
+                                <div>
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-2">Confirmed Pillars</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {results.pillars.slice(0, 4).map(p => (
+                                            <span key={p.id} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[10px] font-bold uppercase text-white/60">
+                                                {p.name.split('(')[0]}
+                                            </span>
+                                        ))}
+                                        <span className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[10px] font-bold uppercase text-white/40">+12 More</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-2">Hidden Blindspots</p>
+                                    <p className="text-sm text-white/60 italic">
+                                        The remaining 8 detection pillars are locked in this Lite version.
+                                        Upgrade to full FIP™ for deep-dive forensics.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* What's Next Action Plan */}
+                    <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 space-y-6">
+                        <div className="flex items-center gap-3">
+                            <div className="h-px flex-1 bg-white/10" />
+                            <h3 className="text-sm font-black uppercase tracking-widest text-white/40">Immediate Surgical Protocol</h3>
+                            <div className="h-px flex-1 bg-white/10" />
+                        </div>
+
+                        <div className="grid md:grid-cols-3 gap-4">
+                            <div className="p-4 rounded-xl bg-black border border-white/10 hover:border-primary/50 transition-colors group">
+                                <span className="text-[10px] font-black text-primary uppercase tracking-widest block mb-2">Step 01</span>
+                                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors">Stabilize Cash Bleed</p>
+                                <p className="text-xs text-muted-foreground mt-1">Plug the leakage identified in {results.topRisks[0]?.name || 'Pillar 1'}.</p>
+                            </div>
+                            <div className="p-4 rounded-xl bg-black border border-white/10 hover:border-primary/50 transition-colors group">
+                                <span className="text-[10px] font-black text-primary uppercase tracking-widest block mb-2">Step 02</span>
+                                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors">Forensic Deep Scan</p>
+                                <p className="text-xs text-muted-foreground mt-1">Unlock the full 18-pillar analysis to find hidden roots.</p>
+                            </div>
+                            <div className="p-4 rounded-xl bg-black border border-white/10 hover:border-primary/50 transition-colors group">
+                                <span className="text-[10px] font-black text-primary uppercase tracking-widest block mb-2">Step 03</span>
+                                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors">Execute Recovery</p>
+                                <p className="text-xs text-muted-foreground mt-1">Implement the corrective actions from the full report.</p>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -827,161 +853,40 @@ interface StepProps<T> {
 
 function Step1RevenueProfitability({ data, onChange, currency, t }: StepProps<RevenueProfitabilityInputs>) {
     const updateField = (field: keyof RevenueProfitabilityInputs, value: number) => {
-        const newData = { ...data, [field]: value }
-
-        // Auto-calculate Gross Profit (Absolute)
-        // Formula: Revenue - (TotalCosts - OPEX) = Revenue - COGS
-        // We assume Total Costs = COGS + OPEX
-        if (['totalRevenue', 'totalCosts', 'operatingExpenses'].includes(field)) {
-            const r = newData.totalRevenue || 0
-            const tc = newData.totalCosts || 0
-            const opex = newData.operatingExpenses || 0
-
-            // Only calculate if we have meaningful inputs
-            if (r > 0 && tc > 0) {
-                const calculatedGP = r - (tc - opex)
-                newData.grossProfit = calculatedGP
-            }
-        }
-        onChange(newData)
+        onChange({ ...data, [field]: value })
     }
 
     return (
         <div className="space-y-6 animate-fade-in">
-            <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                    <TrendingUp className="w-3 h-3" /> {t('fip_lite.steps.yield_dynamics')}
-                </h3>
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/5 space-y-6">
+                <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 bg-primary/10 rounded-lg"><TrendingUp className="w-5 h-5 text-primary" /></div>
+                    <div>
+                        <h3 className="text-sm font-black uppercase tracking-widest text-white">Revenue Baseline</h3>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Top-line Performance Data</p>
+                    </div>
+                </div>
+
                 <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.total_revenue_label')}</Label>
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Total Revenue (Last Month)</Label>
                         <CurrencyInput
                             value={data.totalRevenue || 0}
                             onValueChange={(val) => updateField('totalRevenue', val)}
                             locale={currency.locale}
                             prefix={currency.prefix}
-                            className="bg-black/20 border-white/10 font-mono"
+                            className="bg-black/20 border-white/10 font-mono text-lg h-12"
                         />
-                        <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.total_revenue_hint')}</p>
                     </div>
                     <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.total_transactions_label')}</Label>
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Total Transactions (Count)</Label>
                         <CurrencyInput
-                            value={data.totalTransactions || 0}
-                            onValueChange={(val) => updateField('totalTransactions', val)}
+                            value={data.transactionCount || 0}
+                            onValueChange={(val) => updateField('transactionCount', val)}
                             locale={currency.locale}
                             prefix=""
-                            className="bg-black/20 border-white/10 font-mono"
+                            className="bg-black/20 border-white/10 font-mono text-lg h-12"
                         />
-                        <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.total_transactions_hint')}</p>
-                    </div>
-                    <div className="space-y-2 md:col-span-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.total_costs_label')}</Label>
-                        <CurrencyInput
-                            value={data.totalCosts || 0}
-                            onValueChange={(val) => updateField('totalCosts', val)}
-                            locale={currency.locale}
-                            prefix={currency.prefix}
-                            className="bg-black/20 border-white/10 font-mono"
-                        />
-                        <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.total_costs_hint')}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                    <PieChart className="w-3 h-3" /> {t('fip_lite.steps.margin_leakage')}
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.theoretical_gp_label')}</Label>
-                        <div className="relative">
-                            <CurrencyInput
-                                value={data.theoreticalGrossProfit || 0}
-                                onValueChange={(val) => updateField('theoreticalGrossProfit', val)}
-                                locale={currency.locale}
-                                prefix=""
-                                className="bg-black/20 border-white/10 pr-8 font-mono"
-                            />
-                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">%</span>
-                        </div>
-                        <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.theoretical_gp_hint')}</p>
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.actual_gp_label')}</Label>
-                        <div className="relative">
-                            <CurrencyInput
-                                value={data.actualGrossProfit || 0}
-                                onValueChange={(val) => updateField('actualGrossProfit', val)}
-                                locale={currency.locale}
-                                prefix=""
-                                className="bg-black/20 border-white/10 pr-8 font-mono"
-                            />
-                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">%</span>
-                        </div>
-                        <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.actual_gp_hint')}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                    <Percent className="w-3 h-3" /> {t('fip_lite.steps.opex_efficiency')}
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.monthly_opex_label')}</Label>
-                        <CurrencyInput
-                            value={data.operatingExpenses || 0}
-                            onValueChange={(val) => updateField('operatingExpenses', val)}
-                            locale={currency.locale}
-                            prefix={currency.prefix}
-                            className="bg-black/20 border-white/10 font-mono"
-                        />
-                        <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.monthly_opex_hint')}</p>
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.monthly_gp_label', { currency: currency.code })}</Label>
-                        <CurrencyInput
-                            value={data.grossProfit || 0}
-                            onValueChange={(val) => updateField('grossProfit', val)}
-                            locale={currency.locale}
-                            prefix={currency.prefix}
-                            className="bg-black/20 border-white/10 font-mono"
-                        />
-                        <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.monthly_gp_hint')}</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                    <ShoppingCart className="w-3 h-3" /> {t('fip_lite.steps.sku_velocity')}
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.top_sku_revenue_label')}</Label>
-                        <CurrencyInput
-                            value={data.topSKURevenue || 0}
-                            onValueChange={(val) => updateField('topSKURevenue', val)}
-                            locale={currency.locale}
-                            prefix={currency.prefix}
-                            className="bg-black/20 border-white/10 font-mono"
-                        />
-                        <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.top_sku_revenue_hint')}</p>
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.top_sku_var_costs_label')}</Label>
-                        <CurrencyInput
-                            value={data.topSKUVariableCosts || 0}
-                            onValueChange={(val) => updateField('topSKUVariableCosts', val)}
-                            locale={currency.locale}
-                            prefix={currency.prefix}
-                            className="bg-black/20 border-white/10 font-mono"
-                        />
-                        <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.top_sku_var_costs_hint')}</p>
                     </div>
                 </div>
             </div>
@@ -994,132 +899,56 @@ function Step2CashFlow({ data, onChange, currency, t }: StepProps<CashFlowInputs
         onChange({ ...data, [field]: value })
     }
     return (
-        <div className="space-y-10">
-            <div className="grid md:grid-cols-2 gap-8">
-                {/* Cash Runway Group */}
-                <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                    <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                        <Clock className="w-3 h-3" /> {t('fip_lite.steps.runway_dynamics')}
-                    </h3>
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.current_cash_label')}</Label>
-                            <CurrencyInput
-                                value={data.currentCash || 0}
-                                onValueChange={(val) => updateField('currentCash', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.current_cash_hint')}</p>
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.burn_rate_label')}</Label>
-                            <CurrencyInput
-                                value={data.monthlyBurnRate || 0}
-                                onValueChange={(val) => updateField('monthlyBurnRate', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.burn_rate_hint')}</p>
-                        </div>
+        <div className="space-y-6 animate-fade-in">
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/5 space-y-6">
+                <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 bg-primary/10 rounded-lg"><Scale className="w-5 h-5 text-primary" /></div>
+                    <div>
+                        <h3 className="text-sm font-black uppercase tracking-widest text-white">COGS & Materials</h3>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Cost of Goods Sold Breakdown</p>
                     </div>
                 </div>
 
-                {/* Net Cash Lock Group */}
-                <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                    <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                        <Warehouse className="w-3 h-3" /> {t('fip_lite.steps.working_capital')}
-                    </h3>
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.inventory_value_label')}</Label>
-                            <CurrencyInput
-                                value={data.inventoryValue || 0}
-                                onValueChange={(val) => updateField('inventoryValue', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.inventory_value_hint')}</p>
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.ar_label')}</Label>
-                            <CurrencyInput
-                                value={data.accountsReceivable || 0}
-                                onValueChange={(val) => updateField('accountsReceivable', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.ar_hint')}</p>
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.ap_label')}</Label>
-                            <CurrencyInput
-                                value={data.accountsPayable || 0}
-                                onValueChange={(val) => updateField('accountsPayable', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.ap_hint')}</p>
-                        </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Ideal COGS (Recipe Cost)</Label>
+                        <CurrencyInput
+                            value={data.idealCogs || 0}
+                            onValueChange={(val) => updateField('idealCogs', val)}
+                            locale={currency.locale}
+                            prefix={currency.prefix}
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
                     </div>
-                </div>
-
-                {/* Cash Realization Group */}
-                <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                    <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                        <Activity className="w-3 h-3" /> {t('fip_lite.steps.realization_dso')}
-                    </h3>
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.dso_label')}</Label>
-                            <div className="relative">
-                                <CurrencyInput
-                                    value={data.realizationLagDays || 0}
-                                    onValueChange={(val) => updateField('realizationLagDays', val)}
-                                    locale={currency.locale}
-                                    prefix=""
-                                    className="bg-black/20 border-white/10 font-mono"
-                                />
-                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-muted-foreground uppercase">{t('fip_lite.steps.days')}</span>
-                            </div>
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.dso_hint')}</p>
-                        </div>
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Actual Material Purchases</Label>
+                        <CurrencyInput
+                            value={data.actualMaterial || 0}
+                            onValueChange={(val) => updateField('actualMaterial', val)}
+                            locale={currency.locale}
+                            prefix={currency.prefix}
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
                     </div>
-                </div>
-
-                {/* Net Burn Dynamics Group */}
-                <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                    <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                        <Flame className="w-3 h-3" /> {t('fip_lite.steps.net_burn')}
-                    </h3>
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.inflows_label')}</Label>
-                            <CurrencyInput
-                                value={data.cashInflows || 0}
-                                onValueChange={(val) => updateField('cashInflows', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.inflows_hint')}</p>
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.outflows_label')}</Label>
-                            <CurrencyInput
-                                value={data.cashOutflows || 0}
-                                onValueChange={(val) => updateField('cashOutflows', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.outflows_hint')}</p>
-                        </div>
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Direct Labor Production</Label>
+                        <CurrencyInput
+                            value={data.directLabor || 0}
+                            onValueChange={(val) => updateField('directLabor', val)}
+                            locale={currency.locale}
+                            prefix={currency.prefix}
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Known Waste / Spoilage</Label>
+                        <CurrencyInput
+                            value={data.wasteSpoilage || 0}
+                            onValueChange={(val) => updateField('wasteSpoilage', val)}
+                            locale={currency.locale}
+                            prefix={currency.prefix}
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
                     </div>
                 </div>
             </div>
@@ -1132,146 +961,76 @@ function Step3Operational({ data, onChange, currency, t }: StepProps<Operational
         onChange({ ...data, [field]: value })
     }
     return (
-        <div className="space-y-10">
-            <div className="grid md:grid-cols-2 gap-8">
-                {/* Labor Velocity Group */}
-                <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                    <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                        <Users className="w-3 h-3" /> {t('fip_lite.steps.labor_velocity')}
-                    </h3>
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.total_gp_label')}</Label>
-                            <CurrencyInput
-                                value={data.totalGrossProfit || 0}
-                                onValueChange={(val) => updateField('totalGrossProfit', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.total_gp_hint')}</p>
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.labor_hours_label')}</Label>
-                            <CurrencyInput
-                                value={data.totalLaborHours || 0}
-                                onValueChange={(val) => updateField('totalLaborHours', val)}
-                                locale={currency.locale}
-                                prefix=""
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.labor_hours_hint')}</p>
-                        </div>
+        <div className="space-y-6 animate-fade-in">
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/5 space-y-6">
+                <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 bg-primary/10 rounded-lg"><PieChart className="w-5 h-5 text-primary" /></div>
+                    <div>
+                        <h3 className="text-sm font-black uppercase tracking-widest text-white">OpEx & Assets</h3>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Operational Expenditures</p>
                     </div>
                 </div>
 
-                {/* Inventory Health Group */}
-                <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                    <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                        <Package className="w-3 h-3" /> {t('fip_lite.steps.inventory_health')}
-                    </h3>
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.inv_start_label')}</Label>
-                            <CurrencyInput
-                                value={data.inventoryAtStart || 0}
-                                onValueChange={(val) => updateField('inventoryAtStart', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.inv_end_label')}</Label>
-                            <CurrencyInput
-                                value={data.inventoryAtEnd || 0}
-                                onValueChange={(val) => updateField('inventoryAtEnd', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.inv_spoilage_label')}</Label>
-                            <CurrencyInput
-                                value={data.inventorySpoilage || 0}
-                                onValueChange={(val) => updateField('inventorySpoilage', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.inv_spoilage_hint')}</p>
-                        </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Rent & Utilities</Label>
+                        <CurrencyInput
+                            value={data.rentUtilities || 0}
+                            onValueChange={(val) => updateField('rentUtilities', val)}
+                            locale={currency.locale}
+                            prefix={currency.prefix}
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
                     </div>
-                </div>
-
-                {/* BEP Structure Group */}
-                <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                    <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                        <Scale className="w-3 h-3" /> {t('fip_lite.steps.bep_structure')}
-                    </h3>
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.fixed_costs_label')}</Label>
-                            <CurrencyInput
-                                value={data.fixedCosts || 0}
-                                onValueChange={(val) => updateField('fixedCosts', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.fixed_costs_hint')}</p>
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.var_cost_unit_label')}</Label>
-                            <CurrencyInput
-                                value={data.variableCostPerUnit || 0}
-                                onValueChange={(val) => updateField('variableCostPerUnit', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.price_unit_label')}</Label>
-                            <CurrencyInput
-                                value={data.pricePerUnit || 0}
-                                onValueChange={(val) => updateField('pricePerUnit', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                        </div>
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Payroll (Management)</Label>
+                        <CurrencyInput
+                            value={data.payrollMgmt || 0}
+                            onValueChange={(val) => updateField('payrollMgmt', val)}
+                            locale={currency.locale}
+                            prefix={currency.prefix}
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
                     </div>
-                </div>
-
-                {/* Predictability Group */}
-                <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                    <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                        <CheckCircle className="w-3 h-3" /> {t('fip_lite.steps.predictability')}
-                    </h3>
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.planned_events_label')}</Label>
-                            <CurrencyInput
-                                value={data.plannedEvents || 0}
-                                onValueChange={(val) => updateField('plannedEvents', val)}
-                                locale={currency.locale}
-                                prefix=""
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.unplanned_events_label')}</Label>
-                            <CurrencyInput
-                                value={data.unplannedEvents || 0}
-                                onValueChange={(val) => updateField('unplannedEvents', val)}
-                                locale={currency.locale}
-                                prefix=""
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.unplanned_events_hint')}</p>
-                        </div>
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Marketing Spend</Label>
+                        <CurrencyInput
+                            value={data.marketingSpend || 0}
+                            onValueChange={(val) => updateField('marketingSpend', val)}
+                            locale={currency.locale}
+                            prefix={currency.prefix}
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">General & Admin</Label>
+                        <CurrencyInput
+                            value={data.generalAdmin || 0}
+                            onValueChange={(val) => updateField('generalAdmin', val)}
+                            locale={currency.locale}
+                            prefix={currency.prefix}
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Cash on Hand</Label>
+                        <CurrencyInput
+                            value={data.cashOnHand || 0}
+                            onValueChange={(val) => updateField('cashOnHand', val)}
+                            locale={currency.locale}
+                            prefix={currency.prefix}
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Inventory Value (At Close)</Label>
+                        <CurrencyInput
+                            value={data.inventoryValue || 0}
+                            onValueChange={(val) => updateField('inventoryValue', val)}
+                            locale={currency.locale}
+                            prefix={currency.prefix}
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
                     </div>
                 </div>
             </div>
@@ -1283,139 +1042,57 @@ function Step4Growth({ data, onChange, currency, t }: StepProps<GrowthRiskInputs
     const updateField = (field: keyof GrowthRiskInputs, value: any) => {
         onChange({ ...data, [field]: value })
     }
-
     return (
-        <div className="space-y-10">
-            <div className="grid md:grid-cols-2 gap-8">
-                {/* LTGP Velocity Group */}
-                <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                    <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                        <TrendingUp className="w-3 h-3" /> {t('fip_lite.steps.ltgp_velocity')}
-                    </h3>
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.ltgp_m1_label')}</Label>
-                            <CurrencyInput
-                                value={data.ltgpMonth1 || 0}
-                                onValueChange={(val) => updateField('ltgpMonth1', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.ltgp_trend_hint')}</p>
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.ltgp_m2_label')}</Label>
-                            <CurrencyInput
-                                value={data.ltgpMonth2 || 0}
-                                onValueChange={(val) => updateField('ltgpMonth2', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.ltgp_m3_label')}</Label>
-                            <CurrencyInput
-                                value={data.ltgpMonth3 || 0}
-                                onValueChange={(val) => updateField('ltgpMonth3', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                        </div>
+        <div className="space-y-6 animate-fade-in">
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/5 space-y-6">
+                <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 bg-primary/10 rounded-lg"><Shield className="w-5 h-5 text-primary" /></div>
+                    <div>
+                        <h3 className="text-sm font-black uppercase tracking-widest text-white">Liabilities & Ops</h3>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Debt and Workforce Data</p>
                     </div>
                 </div>
 
-                {/* LTV:CAC Group */}
-                <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                    <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                        <UserPlus className="w-3 h-3" /> {t('fip_lite.steps.cac_ltv')}
-                    </h3>
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.clv_label')}</Label>
-                            <CurrencyInput
-                                value={data.customerLifetimeValue || 0}
-                                onValueChange={(val) => updateField('customerLifetimeValue', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.clv_hint')}</p>
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.cac_label')}</Label>
-                            <CurrencyInput
-                                value={data.customerAcquisitionCost || 0}
-                                onValueChange={(val) => updateField('customerAcquisitionCost', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.cac_hint')}</p>
-                        </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Accounts Payable</Label>
+                        <CurrencyInput
+                            value={data.accountsPayable || 0}
+                            onValueChange={(val) => updateField('accountsPayable', val)}
+                            locale={currency.locale}
+                            prefix={currency.prefix}
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
                     </div>
-                </div>
-
-                {/* Risk Exposure Group */}
-                <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                    <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                        <ShieldCheck className="w-3 h-3" /> {t('fip_lite.steps.solvency_risk')}
-                    </h3>
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.liabilities_label')}</Label>
-                            <CurrencyInput
-                                value={data.currentLiabilities || 0}
-                                onValueChange={(val) => updateField('currentLiabilities', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.liabilities_hint')}</p>
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.assets_label')}</Label>
-                            <CurrencyInput
-                                value={data.currentAssets || 0}
-                                onValueChange={(val) => updateField('currentAssets', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.assets_hint')}</p>
-                        </div>
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Short-Term Debt</Label>
+                        <CurrencyInput
+                            value={data.shortTermDebt || 0}
+                            onValueChange={(val) => updateField('shortTermDebt', val)}
+                            locale={currency.locale}
+                            prefix={currency.prefix}
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
                     </div>
-                </div>
-
-                {/* SPOF Group */}
-                <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5">
-                    <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
-                        <AlertCircle className="w-3 h-3" /> {t('fip_lite.steps.concentration')}
-                    </h3>
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.largest_source_label')}</Label>
-                            <CurrencyInput
-                                value={data.largestRevenueSource || 0}
-                                onValueChange={(val) => updateField('largestRevenueSource', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                            <p className="text-[9px] text-muted-foreground italic">{t('fip_lite.steps.largest_source_hint')}</p>
-                        </div>
-                        <div className="space-y-2">
-                            <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">{t('fip_lite.steps.total_rev_label')}</Label>
-                            <CurrencyInput
-                                value={data.totalRevenue || 0}
-                                onValueChange={(val) => updateField('totalRevenue', val)}
-                                locale={currency.locale}
-                                prefix={currency.prefix}
-                                className="bg-black/20 border-white/10 font-mono"
-                            />
-                        </div>
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Total Headcount</Label>
+                        <CurrencyInput
+                            value={data.headcount || 0}
+                            onValueChange={(val) => updateField('headcount', val)}
+                            locale={currency.locale}
+                            prefix=""
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Total Working Hours (Mo)</Label>
+                        <CurrencyInput
+                            value={data.totalWorkingHours || 0}
+                            onValueChange={(val) => updateField('totalWorkingHours', val)}
+                            locale={currency.locale}
+                            prefix=""
+                            className="bg-black/20 border-white/10 font-mono"
+                        />
                     </div>
                 </div>
             </div>
