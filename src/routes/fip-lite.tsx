@@ -764,29 +764,52 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
             </div>
 
             {/* Action Section */}
-            <div className="bg-primary p-12 rounded-[2rem] text-primary-foreground relative overflow-hidden group shadow-2xl shadow-primary/20">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl group-hover:bg-white/20 transition-all duration-1000" />
-                <div className="relative flex flex-col md:flex-row items-center justify-between gap-12">
-                    <div className="space-y-6 text-center md:text-left">
-                        <div className="flex items-center gap-3 justify-center md:justify-start">
-                            <span className="px-3 py-1 bg-white/20 rounded-full text-[10px] font-black uppercase tracking-widest">{t('network_intelligence.hero_meta').split('·')[2]?.trim() || t('fip_lite.header.access')}</span>
-                            <div className="flex gap-1">
-                                {[1, 2, 3].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/40 animate-pulse" />)}
+            <div className="bg-primary p-12 rounded-[2.5rem] text-primary-foreground relative overflow-hidden group shadow-2xl shadow-primary/30 bg-grain">
+                {/* Decorative Elements */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-white/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl group-hover:bg-white/30 transition-all duration-1000" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
+
+                <div className="relative flex flex-col items-center text-center gap-10 py-4">
+                    <div className="space-y-6 max-w-3xl">
+                        <div className="flex items-center gap-3 justify-center">
+                            <span className="px-4 py-1.5 bg-primary-foreground/10 border border-primary-foreground/20 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-primary-foreground/70">
+                                {t('network_intelligence.hero_meta').split('·')[2]?.trim() || t('fip_lite.header.access')}
+                            </span>
+                            <div className="flex gap-1.5">
+                                {[1, 2, 3].map(i => <div key={i} className="w-2 h-2 rounded-full bg-primary-foreground/20 animate-pulse" />)}
                             </div>
                         </div>
-                        <h2 className="text-4xl font-black tracking-tight">{t('fip_lite.results.cta_generate_title')}</h2>
-                        <p className="max-w-md text-lg opacity-80 font-medium leading-relaxed">
+                        <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-none">
+                            {t('fip_lite.results.cta_generate_title')}
+                        </h2>
+                        <p className="text-lg md:text-xl opacity-90 font-bold leading-relaxed max-w-2xl mx-auto">
                             {t('fip_lite.results.cta_generate_desc')}
                         </p>
                     </div>
-                    <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-                        <Button onClick={onDownload} size="lg" variant="secondary" className="h-20 px-12 font-black text-xl shadow-2xl hover:scale-105 active:scale-95 transition-all">
+
+                    <div className="flex flex-col sm:flex-row gap-4 w-full justify-center items-center">
+                        <Button
+                            onClick={onDownload}
+                            size="lg"
+                            variant="secondary"
+                            className="h-24 px-16 font-black text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all bg-primary-foreground text-primary border-none w-full sm:w-auto rounded-2xl"
+                        >
                             {t('fip_lite.results.btn_download')}
                         </Button>
-                        <Button onClick={handleShare} size="lg" variant="outline" className="h-20 px-12 font-bold bg-white/5 border-white/20 hover:bg-white/10 text-white transition-all flex items-center gap-2">
-                            <Share2 className="w-5 h-5" /> {t('fip_lite.results.btn_share')}
+                        <Button
+                            onClick={handleShare}
+                            size="lg"
+                            variant="outline"
+                            className="h-24 px-12 font-black text-lg border-2 border-primary-foreground/30 bg-primary-foreground/5 hover:bg-primary-foreground hover:text-primary text-primary-foreground transition-all flex items-center gap-3 w-full sm:w-auto rounded-2xl"
+                        >
+                            <Share2 className="w-6 h-6" /> {t('fip_lite.results.btn_share')}
                         </Button>
-                        <Button onClick={onReset} size="lg" variant="ghost" className="h-20 px-8 font-bold text-white/40 hover:text-white transition-all">
+                        <Button
+                            onClick={onReset}
+                            size="lg"
+                            variant="ghost"
+                            className="h-24 px-10 font-bold text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10 transition-all w-full sm:w-auto rounded-2xl"
+                        >
                             {t('fip_lite.results.btn_reset')}
                         </Button>
                     </div>
