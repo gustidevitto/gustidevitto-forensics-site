@@ -1113,6 +1113,24 @@
             "largest_source_hint": "Seberapa bergantung Anda pada satu sumber?",
             "total_rev_label": "Total Pendapatan",
             "days": "HARI"
+        },
+        "tooltips": {
+            "total_revenue": "Duit yang masuk dari jualan.",
+            "transaction_count": "Berapa kali ada orang yang beli.",
+            "ideal_cogs": "Biaya yang harusnya keluar buat bikin produk.",
+            "actual_material": "Duit yang beneran dipake buat beli bahan.",
+            "direct_labor": "Gaji buat orang yang bikin produk.",
+            "waste_spoilage": "Bahan yang kebuang atau rusak.",
+            "rent_utilities": "Duit buat bayar sewa tempat dan listrik.",
+            "payroll_mgmt": "Gaji buat orang yang ngurus kantor.",
+            "marketing_spend": "Duit buat promosi biar makin laris.",
+            "general_admin": "Biaya lain-lain kayak alat tulis.",
+            "cash_on_hand": "Sisa duit di laci atau di bank sekarang.",
+            "inventory_value": "Harga barang-barang yang ada di gudang.",
+            "accounts_payable": "Tagihan yang belum dibayar ke orang lain.",
+            "short_term_debt": "Hutang yang harus dibayar sebentar lagi.",
+            "headcount": "Berapa banyak orang yang kerja.",
+            "total_working_hours": "Total jam kerja semua orang sebulan ini."
         }
     }
 }

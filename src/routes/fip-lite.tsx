@@ -17,8 +17,16 @@ import {
     Share2,
     Coins,
     PieChart,
-    Play
+    Play,
+    ChevronDown,
+    HelpCircle
 } from 'lucide-react'
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "../components/ui/tooltip"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
@@ -45,9 +53,9 @@ function FIPLitePage() {
     const [isBooting, setIsBooting] = useState(true)
     const [bootLines, setBootLines] = useState<string[]>([])
     const [currency, setCurrency] = useState<{ code: string; locale: string; prefix: string }>({
-        code: 'IDR',
-        locale: 'id-ID',
-        prefix: 'Rp'
+        code: 'USD',
+        locale: 'en-US',
+        prefix: '$'
     })
 
     const [state, setState] = useState<FIPLiteState>({
@@ -213,7 +221,7 @@ function FIPLitePage() {
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button variant="outline" className="gap-2 bg-white/5 border-white/10 uppercase text-[10px] font-black tracking-widest h-10">
-                                <Coins className="w-3 h-3 text-primary" /> {currency.code}
+                                <Coins className="w-3 h-3 text-primary" /> {currency.code} <ChevronDown className="w-3 h-3 opacity-50" />
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end" className="bg-black/90 border-white/10 backdrop-blur-xl">
@@ -241,8 +249,8 @@ function FIPLitePage() {
                         <Play className="w-4 h-4 text-primary fill-primary" />
                     </div>
                     <div>
-                        <h3 className="text-sm font-black uppercase tracking-widest">{t('multi_outlet.demo_title')}</h3>
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">{t('multi_outlet.demo_video_text')}</p>
+                        <h3 className="text-sm font-black uppercase tracking-widest">{t('single_entity.demo_title')}</h3>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">{t('single_entity.demo_video_text')}</p>
                     </div>
                 </div>
                 <div className="relative aspect-video rounded-2xl border border-white/5 bg-black overflow-hidden shadow-2xl">
@@ -762,7 +770,7 @@ function FIPLiteResultsDashboard({ results, onReset, onDownload }: {
                 <div className="relative flex flex-col md:flex-row items-center justify-between gap-12">
                     <div className="space-y-6 text-center md:text-left">
                         <div className="flex items-center gap-3 justify-center md:justify-start">
-                            <span className="px-3 py-1 bg-white/20 rounded-full text-[10px] font-black uppercase tracking-widest">{t('multi_outlet.hero_meta').split('·')[2].trim()}</span>
+                            <span className="px-3 py-1 bg-white/20 rounded-full text-[10px] font-black uppercase tracking-widest">{t('network_intelligence.hero_meta').split('·')[2]?.trim() || t('fip_lite.header.access')}</span>
                             <div className="flex gap-1">
                                 {[1, 2, 3].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/40 animate-pulse" />)}
                             </div>
@@ -839,10 +847,41 @@ interface StepProps<T> {
     data: T
     onChange: (data: T) => void
     currency: { locale: string; prefix: string; code: string }
+}
 
+function InputField({
+    label,
+    tooltip,
+    children
+}: {
+    label: string,
+    tooltip: string,
+    children: React.ReactNode
+}) {
+    return (
+        <div className="space-y-2">
+            <div className="flex items-center gap-2">
+                <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">
+                    {label}
+                </Label>
+                <TooltipProvider>
+                    <Tooltip>
+                        <TooltipTrigger asChild>
+                            <HelpCircle className="w-3 h-3 text-primary cursor-help opacity-40 hover:opacity-100 transition-opacity" />
+                        </TooltipTrigger>
+                        <TooltipContent side="right" className="max-w-[200px] bg-zinc-900 border-white/10 text-white p-3 shadow-2xl backdrop-blur-xl">
+                            <p className="font-medium leading-relaxed">{tooltip}</p>
+                        </TooltipContent>
+                    </Tooltip>
+                </TooltipProvider>
+            </div>
+            {children}
+        </div>
+    )
 }
 
 function Step1RevenueProfitability({ data, onChange, currency }: StepProps<RevenueProfitabilityInputs>) {
+    const { t } = useTranslation()
     const updateField = (field: keyof RevenueProfitabilityInputs, value: number) => {
         onChange({ ...data, [field]: value })
     }
@@ -853,14 +892,13 @@ function Step1RevenueProfitability({ data, onChange, currency }: StepProps<Reven
                 <div className="flex items-center gap-3 mb-6">
                     <div className="p-2 bg-primary/10 rounded-lg"><TrendingUp className="w-5 h-5 text-primary" /></div>
                     <div>
-                        <h3 className="text-sm font-black uppercase tracking-widest text-white">Revenue Baseline</h3>
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Top-line Performance Data</p>
+                        <h3 className="text-sm font-black uppercase tracking-widest text-white">{t('fip_lite.steps.yield_dynamics')}</h3>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{t('fip_lite.card.title_step1')}</p>
                     </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Total Revenue (Last Month)</Label>
+                    <InputField label={t('fip_lite.steps.total_revenue_label')} tooltip={t('fip_lite.tooltips.total_revenue')}>
                         <CurrencyInput
                             value={data.totalRevenue || 0}
                             onValueChange={(val) => updateField('totalRevenue', val)}
@@ -868,9 +906,8 @@ function Step1RevenueProfitability({ data, onChange, currency }: StepProps<Reven
                             prefix={currency.prefix}
                             className="bg-black/20 border-white/10 font-mono text-lg h-12"
                         />
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Total Transactions (Count)</Label>
+                    </InputField>
+                    <InputField label={t('fip_lite.steps.total_transactions_label')} tooltip={t('fip_lite.tooltips.transaction_count')}>
                         <CurrencyInput
                             value={data.transactionCount || 0}
                             onValueChange={(val) => updateField('transactionCount', val)}
@@ -878,7 +915,7 @@ function Step1RevenueProfitability({ data, onChange, currency }: StepProps<Reven
                             prefix=""
                             className="bg-black/20 border-white/10 font-mono text-lg h-12"
                         />
-                    </div>
+                    </InputField>
                 </div>
             </div>
         </div>
@@ -886,6 +923,7 @@ function Step1RevenueProfitability({ data, onChange, currency }: StepProps<Reven
 }
 
 function Step2CashFlow({ data, onChange, currency }: StepProps<CashFlowInputs>) {
+    const { t } = useTranslation()
     const updateField = (field: keyof CashFlowInputs, value: any) => {
         onChange({ ...data, [field]: value })
     }
@@ -895,14 +933,13 @@ function Step2CashFlow({ data, onChange, currency }: StepProps<CashFlowInputs>) 
                 <div className="flex items-center gap-3 mb-6">
                     <div className="p-2 bg-primary/10 rounded-lg"><Scale className="w-5 h-5 text-primary" /></div>
                     <div>
-                        <h3 className="text-sm font-black uppercase tracking-widest text-white">COGS & Materials</h3>
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Cost of Goods Sold Breakdown</p>
+                        <h3 className="text-sm font-black uppercase tracking-widest text-white">{t('fip_lite.card.title_step2')}</h3>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{t('fip_lite.steps.margin_leakage')}</p>
                     </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Ideal COGS (Recipe Cost)</Label>
+                    <InputField label={t('fip_lite.steps.theoretical_gp_label')} tooltip={t('fip_lite.tooltips.ideal_cogs')}>
                         <CurrencyInput
                             value={data.idealCogs || 0}
                             onValueChange={(val) => updateField('idealCogs', val)}
@@ -910,9 +947,8 @@ function Step2CashFlow({ data, onChange, currency }: StepProps<CashFlowInputs>) 
                             prefix={currency.prefix}
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Actual Material Purchases</Label>
+                    </InputField>
+                    <InputField label={t('fip_lite.steps.actual_gp_label')} tooltip={t('fip_lite.tooltips.actual_material')}>
                         <CurrencyInput
                             value={data.actualMaterial || 0}
                             onValueChange={(val) => updateField('actualMaterial', val)}
@@ -920,9 +956,8 @@ function Step2CashFlow({ data, onChange, currency }: StepProps<CashFlowInputs>) 
                             prefix={currency.prefix}
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Direct Labor Production</Label>
+                    </InputField>
+                    <InputField label={t('fip_lite.steps.total_gp_label')} tooltip={t('fip_lite.tooltips.direct_labor')}>
                         <CurrencyInput
                             value={data.directLabor || 0}
                             onValueChange={(val) => updateField('directLabor', val)}
@@ -930,9 +965,8 @@ function Step2CashFlow({ data, onChange, currency }: StepProps<CashFlowInputs>) 
                             prefix={currency.prefix}
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Known Waste / Spoilage</Label>
+                    </InputField>
+                    <InputField label={t('fip_lite.steps.inv_spoilage_label')} tooltip={t('fip_lite.tooltips.waste_spoilage')}>
                         <CurrencyInput
                             value={data.wasteSpoilage || 0}
                             onValueChange={(val) => updateField('wasteSpoilage', val)}
@@ -940,7 +974,7 @@ function Step2CashFlow({ data, onChange, currency }: StepProps<CashFlowInputs>) 
                             prefix={currency.prefix}
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
+                    </InputField>
                 </div>
             </div>
         </div>
@@ -948,6 +982,7 @@ function Step2CashFlow({ data, onChange, currency }: StepProps<CashFlowInputs>) 
 }
 
 function Step3Operational({ data, onChange, currency }: StepProps<OperationalEfficiencyInputs>) {
+    const { t } = useTranslation()
     const updateField = (field: keyof OperationalEfficiencyInputs, value: any) => {
         onChange({ ...data, [field]: value })
     }
@@ -957,14 +992,13 @@ function Step3Operational({ data, onChange, currency }: StepProps<OperationalEff
                 <div className="flex items-center gap-3 mb-6">
                     <div className="p-2 bg-primary/10 rounded-lg"><PieChart className="w-5 h-5 text-primary" /></div>
                     <div>
-                        <h3 className="text-sm font-black uppercase tracking-widest text-white">OpEx & Assets</h3>
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Operational Expenditures</p>
+                        <h3 className="text-sm font-black uppercase tracking-widest text-white">{t('fip_lite.progress.phase3')}</h3>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{t('fip_lite.card.title_step3')}</p>
                     </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Rent & Utilities</Label>
+                    <InputField label={t('fip_lite.steps.fixed_costs_label')} tooltip={t('fip_lite.tooltips.rent_utilities')}>
                         <CurrencyInput
                             value={data.rentUtilities || 0}
                             onValueChange={(val) => updateField('rentUtilities', val)}
@@ -972,9 +1006,8 @@ function Step3Operational({ data, onChange, currency }: StepProps<OperationalEff
                             prefix={currency.prefix}
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Payroll (Management)</Label>
+                    </InputField>
+                    <InputField label={t('fip_lite.steps.monthly_opex_label')} tooltip={t('fip_lite.tooltips.payroll_mgmt')}>
                         <CurrencyInput
                             value={data.payrollMgmt || 0}
                             onValueChange={(val) => updateField('payrollMgmt', val)}
@@ -982,9 +1015,8 @@ function Step3Operational({ data, onChange, currency }: StepProps<OperationalEff
                             prefix={currency.prefix}
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Marketing Spend</Label>
+                    </InputField>
+                    <InputField label={t('fip_lite.steps.top_sku_var_costs_label')} tooltip={t('fip_lite.tooltips.marketing_spend')}>
                         <CurrencyInput
                             value={data.marketingSpend || 0}
                             onValueChange={(val) => updateField('marketingSpend', val)}
@@ -992,9 +1024,8 @@ function Step3Operational({ data, onChange, currency }: StepProps<OperationalEff
                             prefix={currency.prefix}
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">General & Admin</Label>
+                    </InputField>
+                    <InputField label={t('fip_lite.steps.ap_label')} tooltip={t('fip_lite.tooltips.general_admin')}>
                         <CurrencyInput
                             value={data.generalAdmin || 0}
                             onValueChange={(val) => updateField('generalAdmin', val)}
@@ -1002,9 +1033,8 @@ function Step3Operational({ data, onChange, currency }: StepProps<OperationalEff
                             prefix={currency.prefix}
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Cash on Hand</Label>
+                    </InputField>
+                    <InputField label={t('fip_lite.steps.current_cash_label')} tooltip={t('fip_lite.tooltips.cash_on_hand')}>
                         <CurrencyInput
                             value={data.cashOnHand || 0}
                             onValueChange={(val) => updateField('cashOnHand', val)}
@@ -1012,9 +1042,8 @@ function Step3Operational({ data, onChange, currency }: StepProps<OperationalEff
                             prefix={currency.prefix}
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Inventory Value (At Close)</Label>
+                    </InputField>
+                    <InputField label={t('fip_lite.steps.inventory_value_label')} tooltip={t('fip_lite.tooltips.inventory_value')}>
                         <CurrencyInput
                             value={data.inventoryValue || 0}
                             onValueChange={(val) => updateField('inventoryValue', val)}
@@ -1022,7 +1051,7 @@ function Step3Operational({ data, onChange, currency }: StepProps<OperationalEff
                             prefix={currency.prefix}
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
+                    </InputField>
                 </div>
             </div>
         </div>
@@ -1030,6 +1059,7 @@ function Step3Operational({ data, onChange, currency }: StepProps<OperationalEff
 }
 
 function Step4Growth({ data, onChange, currency }: StepProps<GrowthRiskInputs>) {
+    const { t } = useTranslation()
     const updateField = (field: keyof GrowthRiskInputs, value: any) => {
         onChange({ ...data, [field]: value })
     }
@@ -1039,14 +1069,13 @@ function Step4Growth({ data, onChange, currency }: StepProps<GrowthRiskInputs>) 
                 <div className="flex items-center gap-3 mb-6">
                     <div className="p-2 bg-primary/10 rounded-lg"><Shield className="w-5 h-5 text-primary" /></div>
                     <div>
-                        <h3 className="text-sm font-black uppercase tracking-widest text-white">Liabilities & Ops</h3>
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Debt and Workforce Data</p>
+                        <h3 className="text-sm font-black uppercase tracking-widest text-white">{t('fip_lite.progress.phase4')}</h3>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{t('fip_lite.card.title_step4')}</p>
                     </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Accounts Payable</Label>
+                    <InputField label={t('fip_lite.steps.ap_label')} tooltip={t('fip_lite.tooltips.accounts_payable')}>
                         <CurrencyInput
                             value={data.accountsPayable || 0}
                             onValueChange={(val) => updateField('accountsPayable', val)}
@@ -1054,9 +1083,8 @@ function Step4Growth({ data, onChange, currency }: StepProps<GrowthRiskInputs>) 
                             prefix={currency.prefix}
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Short-Term Debt</Label>
+                    </InputField>
+                    <InputField label={t('fip_lite.steps.liabilities_label')} tooltip={t('fip_lite.tooltips.short_term_debt')}>
                         <CurrencyInput
                             value={data.shortTermDebt || 0}
                             onValueChange={(val) => updateField('shortTermDebt', val)}
@@ -1064,9 +1092,8 @@ function Step4Growth({ data, onChange, currency }: StepProps<GrowthRiskInputs>) 
                             prefix={currency.prefix}
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Total Headcount</Label>
+                    </InputField>
+                    <InputField label={t('fip_lite.steps.headcount')} tooltip={t('fip_lite.tooltips.headcount')}>
                         <CurrencyInput
                             value={data.headcount || 0}
                             onValueChange={(val) => updateField('headcount', val)}
@@ -1074,9 +1101,8 @@ function Step4Growth({ data, onChange, currency }: StepProps<GrowthRiskInputs>) 
                             prefix=""
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
-                    <div className="space-y-2">
-                        <Label className="text-[10px] font-bold uppercase tracking-wider opacity-60">Total Working Hours (Mo)</Label>
+                    </InputField>
+                    <InputField label={t('fip_lite.steps.labor_hours_label')} tooltip={t('fip_lite.tooltips.total_working_hours')}>
                         <CurrencyInput
                             value={data.totalWorkingHours || 0}
                             onValueChange={(val) => updateField('totalWorkingHours', val)}
@@ -1084,7 +1110,7 @@ function Step4Growth({ data, onChange, currency }: StepProps<GrowthRiskInputs>) 
                             prefix=""
                             className="bg-black/20 border-white/10 font-mono"
                         />
-                    </div>
+                    </InputField>
                 </div>
             </div>
         </div>
