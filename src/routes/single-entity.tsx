@@ -109,7 +109,7 @@ function SingleEntityPage() {
 
                             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
                                 <Button asChild size="lg" className="h-16 px-10 text-lg font-black bg-primary text-black hover:bg-white shadow-xl shadow-primary/20">
-                                    <Link to="/calculator">
+                                    <Link to="/fip-lite">
                                         {t('single_entity.cta_health_score')}
                                         <ArrowRight className="ml-2 w-5 h-5" />
                                     </Link>
@@ -197,7 +197,7 @@ function SingleEntityPage() {
 
                             <div className="pt-4 flex flex-col sm:flex-row gap-4">
                                 <Button asChild size="lg" className="h-14 px-8 bg-primary hover:bg-primary/90 text-black font-black uppercase tracking-widest text-xs shadow-[0_0_30px_rgba(56,189,248,0.3)]">
-                                    <Link to="/calculator">
+                                    <Link to="/fip-lite">
                                         Open Surgical Calculator <ArrowRight className="ml-2 w-4 h-4" />
                                     </Link>
                                 </Button>
@@ -374,7 +374,7 @@ function SingleEntityPage() {
                     </p>
                     <div className="space-y-4">
                         <Button asChild size="lg" className="h-16 px-12 text-lg font-black bg-primary text-black shadow-2xl shadow-primary/30">
-                            <Link to="/calculator">{t('single_entity.cta_health_score')}</Link>
+                            <Link to="/fip-lite">{t('single_entity.cta_health_score')}</Link>
                         </Button>
                         <p className="text-xs text-muted-foreground italic flex items-center justify-center gap-2">
                             <Clock className="w-3 h-3" /> {t('single_entity.final_cta_meta')}

@@ -22,7 +22,6 @@ import { Route as GetAccessRouteImport } from './routes/get-access'
 import { Route as ForensicsPillarsRouteImport } from './routes/forensics-pillars'
 import { Route as FipLiteRouteImport } from './routes/fip-lite'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as AboutGustiDevittoRouteImport } from './routes/about-gusti-devitto'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
@@ -94,11 +93,6 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CalculatorRoute = CalculatorRouteImport.update({
-  id: '/calculator',
-  path: '/calculator',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AboutGustiDevittoRoute = AboutGustiDevittoRouteImport.update({
   id: '/about-gusti-devitto',
   path: '/about-gusti-devitto',
@@ -128,7 +122,6 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-gusti-devitto': typeof AboutGustiDevittoRoute
-  '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
   '/fip-lite': typeof FipLiteRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
@@ -149,7 +142,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-gusti-devitto': typeof AboutGustiDevittoRoute
-  '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
   '/fip-lite': typeof FipLiteRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
@@ -171,7 +163,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about-gusti-devitto': typeof AboutGustiDevittoRoute
-  '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
   '/fip-lite': typeof FipLiteRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
@@ -194,7 +185,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about-gusti-devitto'
-    | '/calculator'
     | '/contact'
     | '/fip-lite'
     | '/forensics-pillars'
@@ -215,7 +205,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about-gusti-devitto'
-    | '/calculator'
     | '/contact'
     | '/fip-lite'
     | '/forensics-pillars'
@@ -236,7 +225,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about-gusti-devitto'
-    | '/calculator'
     | '/contact'
     | '/fip-lite'
     | '/forensics-pillars'
@@ -258,7 +246,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutGustiDevittoRoute: typeof AboutGustiDevittoRoute
-  CalculatorRoute: typeof CalculatorRoute
   ContactRoute: typeof ContactRoute
   FipLiteRoute: typeof FipLiteRoute
   ForensicsPillarsRoute: typeof ForensicsPillarsRoute
@@ -370,13 +357,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/calculator': {
-      id: '/calculator'
-      path: '/calculator'
-      fullPath: '/calculator'
-      preLoaderRoute: typeof CalculatorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/about-gusti-devitto': {
       id: '/about-gusti-devitto'
       path: '/about-gusti-devitto'
@@ -418,7 +398,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutGustiDevittoRoute: AboutGustiDevittoRoute,
-  CalculatorRoute: CalculatorRoute,
   ContactRoute: ContactRoute,
   FipLiteRoute: FipLiteRoute,
   ForensicsPillarsRoute: ForensicsPillarsRoute,

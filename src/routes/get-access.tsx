@@ -44,7 +44,7 @@ function GetAccess() {
             // Navigate to calculator
             setTimeout(() => {
                 setIsLoading(false)
-                navigate({ to: '/calculator' })
+                navigate({ to: '/fip-lite' })
             }, 800)
 
         } catch (error) {

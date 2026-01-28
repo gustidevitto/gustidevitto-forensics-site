@@ -119,7 +119,7 @@ function AboutGustiDevitto() {
 
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Button asChild size="lg" className="h-14 px-8 font-black tracking-wide text-lg">
-                                    <Link to="/calculator">
+                                    <Link to="/fip-lite">
                                         {t('about_page.cta_ready')}
                                         <ArrowRight className="ml-2 w-5 h-5" />
                                     </Link>
