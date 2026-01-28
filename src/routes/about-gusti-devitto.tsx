@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
-import { BadgeCheck, ShieldCheck, Activity, Microscope, Target, ArrowRight, Brain, Zap, Search } from "lucide-react"
+import { ShieldCheck, Activity, Microscope, Target, ArrowRight, Brain, Zap, Search } from "lucide-react"
 import { useTranslation, Trans } from 'react-i18next'
 
 export const Route = createFileRoute('/about-gusti-devitto')({

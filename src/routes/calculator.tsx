@@ -1,12 +1,9 @@
 import { createFileRoute, redirect } from '@tanstack/react-router'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
 import { CurrencyInput } from '@/components/ui/currency-input'
 import { usePhantomCalculator } from '@/hooks/use-phantom-calculator'
-import { formatRupiah } from '@/lib/format'
-import { AlertTriangle, Download, RefreshCcw, ArrowRight, TrendingDown, Activity, Microscope, Target, Zap, DollarSign, Users } from 'lucide-react'
+import { AlertTriangle, Download, RefreshCcw, ArrowRight, TrendingDown, Activity, Microscope, Target, Zap, Users, Lock, Brain } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { useTranslation, Trans } from 'react-i18next'
 
