@@ -1,200 +1,339 @@
 import type {
-    FIPLiteFormData,
-    HealthScoreResult,
-    PillarResult,
+    FIPLiteInputs,
+    FIPLiteResult,
+    IndustryType,
+    IndustryBenchmarks,
+    Layer1Numbers,
+    Layer2Comparison,
+    Layer3LockedXray,
+    LockedPillar,
     PillarCategory
 } from '@/types/fip-lite';
 
 /**
- * FIP™ Lite - Calculation Engine
- * Processes 16-pillar diagnostic data to generate business health scores.
+ * FIP™ Lite v2 - "The MRI Scan" Calculation Engine
+ * Generates 4-layer psychological output from 8 inputs
  */
 
-export function calculateFIPLiteResults(formData: FIPLiteFormData): HealthScoreResult {
-    const pillars: PillarResult[] = [];
+// ============================================================================
+// INDUSTRY BENCHMARK DATABASE
+// ============================================================================
 
-    // Destructure Inputs
-    const { totalRevenue } = formData.step1 || { totalRevenue: 0, transactionCount: 1 };
-    const { idealCogs, actualMaterial, wasteSpoilage } = formData.step2 || { idealCogs: 0, actualMaterial: 0, wasteSpoilage: 0 };
-    const { rentUtilities, payrollMgmt, marketingSpend, generalAdmin, cashOnHand, inventoryValue } = formData.step3 || { rentUtilities: 0, payrollMgmt: 0, marketingSpend: 0, generalAdmin: 0, cashOnHand: 0, inventoryValue: 0 };
-    const { shortTermDebt, totalWorkingHours } = formData.step4 || { accountsPayable: 0, shortTermDebt: 0, headcount: 1, totalWorkingHours: 1 };
-
-    // Derived Values
-    // actualMaterial is used as Actual Gross Profit % in the UI
-    const grossProfit = totalRevenue * (actualMaterial / 100);
-    const totalOpEx = rentUtilities + payrollMgmt + marketingSpend + generalAdmin;
-    const netProfit = grossProfit - totalOpEx;
-    const monthlyBurnRate = totalOpEx + (shortTermDebt * 0.1); // Approx interest/principal
-
-    // --- PILLAR 1: GROSS PROFIT LEAKAGE ---
-    // In this context, idealCogs is Target GP% and actualMaterial is Actual GP% from the Lite UI
-    const targetGP = idealCogs;
-    const actualGP = actualMaterial;
-
-    const leakagePercent = Math.max(0, targetGP - actualGP);
-
-    pillars.push(createPillar({
-        id: 'gp-leakage',
-        name: 'Gross Profit Leakage',
-        category: 'revenue-profitability',
-        value: leakagePercent,
-        benchmark: 2, // < 2% is good
-        scoring: (val) => val <= 2 ? 100 : val <= 5 ? 60 : 20,
-        recommendation: leakagePercent > 5 ? `Critical Leakage (${leakagePercent.toFixed(1)}%). Audit kitchen waste and vendor prices immediately.` : 'Supply chain integrity is intact.'
-    }));
-
-    // --- PILLAR 2: LABOR EFFICIENCY (GP / Man Hour) ---
-    const gpPerManHour = totalWorkingHours > 0 ? grossProfit / totalWorkingHours : 0;
-    pillars.push(createPillar({
-        id: 'labor-efficiency',
-        name: 'Labor Efficiency (GP/Hour)',
-        category: 'operational-efficiency',
-        value: gpPerManHour,
-        benchmark: 100000,
-        scoring: (val) => val > 150000 ? 100 : val > 75000 ? 70 : 30,
-        recommendation: gpPerManHour < 75000 ? 'Labor is dragging margins down. Optimize scheduling or increase throughput.' : 'Workforce productivity is healthy.'
-    }));
-
-    // --- PILLAR 3: OPEX RATIO ---
-    const opexRatio = totalRevenue > 0 ? (totalOpEx / totalRevenue) * 100 : 0;
-    pillars.push(createPillar({
-        id: 'opex-ratio',
-        name: 'OpEx Structure Ratio',
-        category: 'operational-efficiency',
-        value: opexRatio,
-        benchmark: 30,
-        scoring: (val) => val <= 30 ? 100 : val <= 45 ? 60 : 20,
-        recommendation: opexRatio > 45 ? 'Overhead is too heavy. Cut General Admin or Rent costs.' : 'Lean operational structure.'
-    }));
-
-    // --- PILLAR 4: NET PROFIT MARGIN ---
-    const netMargin = totalRevenue > 0 ? (netProfit / totalRevenue) * 100 : 0;
-    pillars.push(createPillar({
-        id: 'net-margin',
-        name: 'Net Profit Margin',
-        category: 'revenue-profitability',
-        value: netMargin,
-        benchmark: 20,
-        scoring: (val) => val >= 20 ? 100 : val >= 10 ? 60 : 10,
-        recommendation: netMargin < 10 ? 'Profitability is dangerously low. Review pricing structure.' : 'Strong bottom-line performance.'
-    }));
-
-    // --- PILLAR 5: CASH RUNWAY ---
-    const runwayMonths = monthlyBurnRate > 0 ? cashOnHand / monthlyBurnRate : 0;
-    pillars.push(createPillar({
-        id: 'cash-runway',
-        name: 'Cash Runway (Liquidity)',
-        category: 'cash-flow',
-        value: runwayMonths,
-        benchmark: 6,
-        scoring: (val) => val >= 6 ? 100 : val >= 2 ? 40 : 0,
-        recommendation: runwayMonths < 2 ? 'CRITICAL: Insolvency imminent. Secure capital or freeze spending.' : 'Liquidity reserves are sufficient.'
-    }));
-
-    // --- PILLAR 6: BREAK-EVEN POINT SAFETY ---
-    const gpMargin = totalRevenue > 0 ? grossProfit / totalRevenue : 0;
-    const bepRevenue = gpMargin > 0 ? totalOpEx / gpMargin : 0;
-    const safetyMargin = bepRevenue > 0 ? ((totalRevenue - bepRevenue) / totalRevenue) * 100 : 0;
-
-    pillars.push(createPillar({
-        id: 'bep-safety',
-        name: 'Break-Even Safety Margin',
-        category: 'growth-risk',
-        value: safetyMargin,
-        benchmark: 20,
-        scoring: (val) => val >= 20 ? 100 : val >= 0 ? 50 : 0,
-        recommendation: safetyMargin < 0 ? `You are burning cash on every sale. Need ${Math.abs(safetyMargin).toFixed(1)}% more revenue to survive.` : 'Revenue is comfortably above survival line.'
-    }));
-
-    // --- PILLAR 7: INVENTORY DECAY RISK ---
-    const inventoryRisk = inventoryValue > 0 ? (wasteSpoilage / inventoryValue) * 100 : 0;
-    pillars.push(createPillar({
-        id: 'inventory-decay',
-        name: 'Inventory Decay Rate',
-        category: 'operational-efficiency',
-        value: inventoryRisk,
-        benchmark: 5,
-        scoring: (val) => val <= 5 ? 100 : val <= 10 ? 60 : 30,
-        recommendation: inventoryRisk > 10 ? 'High spoilage detected. Check storage protocols.' : 'Inventory retention is good.'
-    }));
-
-    // --- PILLAR 8: MARKETING ROI ESTIMATE ---
-    const marketingRoi = marketingSpend > 0 ? totalRevenue / marketingSpend : 10;
-    pillars.push(createPillar({
-        id: 'marketing-roi',
-        name: 'Marketing Yield (ROAS Proxy)',
-        category: 'growth-risk',
-        value: marketingRoi,
-        benchmark: 8,
-        scoring: (val) => val >= 8 ? 100 : val >= 4 ? 60 : 30,
-        recommendation: marketingRoi < 4 ? 'Marketing spend is inefficient. Pause ads and review CAC.' : 'Marketing is driving efficiency.'
-    }));
-
-    // --- AGGREGATION ---
-    const overallScore = pillars.reduce((acc, p) => acc + p.score, 0) / pillars.length;
-
-    let verdict: 'fortress' | 'warning' | 'critical' = 'warning';
-    let verdictLabel = 'WARNING: VULNERABILITIES DETECTED';
-    let verdictColor = 'text-yellow-500';
-
-    if (overallScore >= 80) {
-        verdict = 'fortress';
-        verdictLabel = 'FORTRESS: STRUCTURALLY SOUND';
-        verdictColor = 'text-emerald-500';
-    } else if (overallScore < 50) {
-        verdict = 'critical';
-        verdictLabel = 'CRITICAL: FAILURE IMMINENT';
-        verdictColor = 'text-red-500';
+const INDUSTRY_BENCHMARKS: Record<IndustryType, IndustryBenchmarks> = {
+    'restaurant-cafe': {
+        grossProfitMin: 60,
+        grossProfitMax: 70,
+        opexRatioMax: 35,
+        netMarginMin: 15,
+        runwayMonthsMin: 3,
+        revenuePerHeadMin: 15000
+    },
+    'retail-ecommerce': {
+        grossProfitMin: 40,
+        grossProfitMax: 55,
+        opexRatioMax: 30,
+        netMarginMin: 10,
+        runwayMonthsMin: 4,
+        revenuePerHeadMin: 25000
+    },
+    'saas-tech': {
+        grossProfitMin: 75,
+        grossProfitMax: 90,
+        opexRatioMax: 50,
+        netMarginMin: 20,
+        runwayMonthsMin: 12,
+        revenuePerHeadMin: 50000
+    },
+    'manufacturing': {
+        grossProfitMin: 30,
+        grossProfitMax: 45,
+        opexRatioMax: 25,
+        netMarginMin: 8,
+        runwayMonthsMin: 4,
+        revenuePerHeadMin: 30000
+    },
+    'professional-services': {
+        grossProfitMin: 50,
+        grossProfitMax: 65,
+        opexRatioMax: 40,
+        netMarginMin: 15,
+        runwayMonthsMin: 6,
+        revenuePerHeadMin: 40000
+    },
+    'healthcare': {
+        grossProfitMin: 45,
+        grossProfitMax: 60,
+        opexRatioMax: 35,
+        netMarginMin: 12,
+        runwayMonthsMin: 6,
+        revenuePerHeadMin: 35000
+    },
+    'construction': {
+        grossProfitMin: 25,
+        grossProfitMax: 40,
+        opexRatioMax: 20,
+        netMarginMin: 5,
+        runwayMonthsMin: 3,
+        revenuePerHeadMin: 40000
+    },
+    'other': {
+        grossProfitMin: 40,
+        grossProfitMax: 60,
+        opexRatioMax: 35,
+        netMarginMin: 10,
+        runwayMonthsMin: 6,
+        revenuePerHeadMin: 30000
     }
+};
 
-    const sortedPillars = [...pillars].sort((a, b) => a.score - b.score);
-    const topRisks = sortedPillars.slice(0, 3);
-    const strengths = [...pillars].sort((a, b) => b.score - a.score).slice(0, 3);
+// ============================================================================
+// MAIN CALCULATION FUNCTION
+// ============================================================================
 
-    const getCategoryScore = (cat: PillarCategory) => {
-        const catPillars = pillars.filter(p => p.category === cat);
-        return catPillars.length ? catPillars.reduce((acc, p) => acc + p.score, 0) / catPillars.length : 0;
-    };
+export function calculateFIPLiteResults(inputs: FIPLiteInputs): FIPLiteResult {
+    const benchmark = INDUSTRY_BENCHMARKS[inputs.industryType];
+
+    // Layer 1: The Numbers (Specific, Scary)
+    const layer1 = calculateLayer1Numbers(inputs);
+
+    // Layer 2: The Comparison (Vague, Creates Gap)
+    const layer2 = calculateLayer2Comparison(inputs, layer1, benchmark);
+
+    // Layer 3: Locked X-Ray (Conversion Engine)
+    const layer3 = generateLayer3LockedXray(inputs, layer1, layer2, benchmark);
 
     return {
-        overallScore: Math.round(overallScore),
-        verdict,
-        verdictLabel,
-        verdictColor,
-        pillars,
-        topRisks,
-        strengths,
-        categoryScores: {
-            revenueProfitability: Math.round(getCategoryScore('revenue-profitability')),
-            cashFlow: Math.round(getCategoryScore('cash-flow')),
-            operationalEfficiency: Math.round(getCategoryScore('operational-efficiency')),
-            growthRisk: Math.round(getCategoryScore('growth-risk'))
-        }
+        layer1,
+        layer2,
+        layer3
     };
 }
 
-function createPillar(config: {
-    id: string;
-    name: string;
-    category: PillarCategory;
-    value: number;
-    benchmark: number;
-    scoring: (val: number) => number;
-    recommendation: string;
-}): PillarResult {
-    const score = config.scoring(config.value);
-    let status: 'healthy' | 'warning' | 'critical' = 'warning';
-    if (score >= 80) status = 'healthy';
-    else if (score < 50) status = 'critical';
+// ============================================================================
+// LAYER 1: THE NUMBERS
+// ============================================================================
+
+function calculateLayer1Numbers(inputs: FIPLiteInputs): Layer1Numbers {
+    const grossProfit = inputs.monthlyRevenue - inputs.monthlyCOGS;
+    const grossProfitPercent = inputs.monthlyRevenue > 0
+        ? (grossProfit / inputs.monthlyRevenue) * 100
+        : 0;
+
+    const netBurnRate = inputs.monthlyOpEx + inputs.monthlyDebtService;
+    const netProfit = grossProfit - netBurnRate;
+
+    const cashRunwayDays = netBurnRate > 0
+        ? Math.floor((inputs.currentCash / netBurnRate) * 30)
+        : 999;
+
+    const cashZeroDate = new Date();
+    cashZeroDate.setDate(cashZeroDate.getDate() + cashRunwayDays);
+
+    // Break-even calculation
+    const gpMargin = inputs.monthlyRevenue > 0 ? grossProfit / inputs.monthlyRevenue : 0;
+    const breakEvenRevenue = gpMargin > 0 ? netBurnRate / gpMargin : 0;
 
     return {
-        id: config.id,
-        name: config.name,
-        category: config.category,
-        score,
-        status,
-        value: config.value,
-        benchmark: config.benchmark,
-        recommendation: config.recommendation
+        cashRunwayDays,
+        cashZeroDate: cashZeroDate.toISOString(),
+        grossProfitPercent: Math.round(grossProfitPercent * 10) / 10,
+        netBurnRate: Math.round(netBurnRate),
+        breakEvenRevenue: Math.round(breakEvenRevenue),
+        currentRevenue: inputs.monthlyRevenue
+    };
+}
+
+// ============================================================================
+// LAYER 2: THE COMPARISON
+// ============================================================================
+
+function calculateLayer2Comparison(
+    inputs: FIPLiteInputs,
+    layer1: Layer1Numbers,
+    benchmark: IndustryBenchmarks
+): Layer2Comparison {
+    const yourGP = layer1.grossProfitPercent;
+    const industryMin = benchmark.grossProfitMin;
+    const industryMax = benchmark.grossProfitMax;
+    const gap = yourGP - ((industryMin + industryMax) / 2);
+
+    // Estimated leakage calculation (range-based for curiosity)
+    const potentialGPGap = Math.max(0, industryMin - yourGP);
+    const leakageMin = (potentialGPGap / 100) * inputs.monthlyRevenue * 0.6; // Conservative
+    const leakageMax = (potentialGPGap / 100) * inputs.monthlyRevenue * 1.4; // Aggressive
+
+    // Efficiency index (composite score)
+    const opexRatio = inputs.monthlyRevenue > 0
+        ? (inputs.monthlyOpEx / inputs.monthlyRevenue) * 100
+        : 0;
+    const opexScore = opexRatio <= benchmark.opexRatioMax ? 100 : (benchmark.opexRatioMax / opexRatio) * 100;
+
+    const gpScore = yourGP >= industryMin ? 100 : (yourGP / industryMin) * 100;
+
+    const revenuePerHead = inputs.teamSize > 0 ? inputs.monthlyRevenue / inputs.teamSize : 0;
+    const revenueScore = revenuePerHead >= benchmark.revenuePerHeadMin
+        ? 100
+        : (revenuePerHead / benchmark.revenuePerHeadMin) * 100;
+
+    const efficiencyIndex = Math.round((opexScore + gpScore + revenueScore) / 3);
+
+    // Risk verdict
+    let riskVerdict: 'fortress' | 'warning' | 'critical' = 'warning';
+    let verdictLabel = 'WARNING: VULNERABILITIES DETECTED';
+    let verdictColor = 'text-yellow-500';
+
+    if (layer1.cashRunwayDays < 60 || efficiencyIndex < 50) {
+        riskVerdict = 'critical';
+        verdictLabel = 'CRITICAL: FAILURE IMMINENT';
+        verdictColor = 'text-red-500';
+    } else if (layer1.cashRunwayDays >= 180 && efficiencyIndex >= 80) {
+        riskVerdict = 'fortress';
+        verdictLabel = 'FORTRESS: STRUCTURALLY SOUND';
+        verdictColor = 'text-emerald-500';
+    }
+
+    return {
+        gpVsIndustry: {
+            yourGP,
+            industryMin,
+            industryMax,
+            gap
+        },
+        estimatedLeakage: {
+            min: Math.round(leakageMin),
+            max: Math.round(leakageMax)
+        },
+        efficiencyIndex,
+        riskVerdict,
+        verdictLabel,
+        verdictColor
+    };
+}
+
+// ============================================================================
+// LAYER 3: LOCKED X-RAY (The Conversion Engine)
+// ============================================================================
+
+function generateLayer3LockedXray(
+    inputs: FIPLiteInputs,
+    layer1: Layer1Numbers,
+    layer2: Layer2Comparison,
+    benchmark: IndustryBenchmarks
+): Layer3LockedXray {
+    const pillars: LockedPillar[] = [];
+
+    // Generate 18 locked pillars with realistic status distribution
+    const pillarConfigs = [
+        { id: 'gp-leakage', name: 'Gross Profit Leakage Analysis', category: 'revenue-profitability' as PillarCategory },
+        { id: 'pricing-power', name: 'Pricing Power Index', category: 'revenue-profitability' as PillarCategory },
+        { id: 'revenue-quality', name: 'Revenue Quality Score', category: 'revenue-profitability' as PillarCategory },
+        { id: 'cash-velocity', name: 'Cash Velocity Index', category: 'cash-flow' as PillarCategory },
+        { id: 'cash-runway', name: 'Liquidity Runway Analysis', category: 'cash-flow' as PillarCategory },
+        { id: 'working-capital', name: 'Working Capital Efficiency', category: 'cash-flow' as PillarCategory },
+        { id: 'labor-efficiency', name: 'Labor Efficiency Ratio', category: 'operational-efficiency' as PillarCategory },
+        { id: 'opex-structure', name: 'OpEx Structure Analysis', category: 'operational-efficiency' as PillarCategory },
+        { id: 'overhead-ratio', name: 'Overhead Burden Index', category: 'operational-efficiency' as PillarCategory },
+        { id: 'inventory-decay', name: 'Inventory Decay Rate', category: 'operational-efficiency' as PillarCategory },
+        { id: 'bep-dynamics', name: 'Break-Even Point Dynamics', category: 'growth-risk' as PillarCategory },
+        { id: 'debt-coverage', name: 'Debt Service Coverage Ratio', category: 'growth-risk' as PillarCategory },
+        { id: 'growth-sustainability', name: 'Growth Sustainability Index', category: 'growth-risk' as PillarCategory },
+        { id: 'market-resilience', name: 'Market Resilience Score', category: 'growth-risk' as PillarCategory },
+        { id: 'customer-concentration', name: 'Customer Concentration Risk', category: 'growth-risk' as PillarCategory },
+        { id: 'supplier-dependency', name: 'Supplier Dependency Analysis', category: 'operational-efficiency' as PillarCategory },
+        { id: 'cash-conversion', name: 'Cash Conversion Cycle', category: 'cash-flow' as PillarCategory },
+        { id: 'profit-quality', name: 'Profit Quality Assessment', category: 'revenue-profitability' as PillarCategory }
+    ];
+
+    // Determine status based on actual metrics
+    let criticalCount = 0;
+    let warningCount = 0;
+
+    pillarConfigs.forEach((config, index) => {
+        let status: 'healthy' | 'warning' | 'critical' = 'healthy';
+        let barWidth = 75 + Math.random() * 20; // Default healthy range
+
+        // Apply real logic to key pillars
+        if (config.id === 'gp-leakage') {
+            status = layer2.gpVsIndustry.gap < -10 ? 'critical' : layer2.gpVsIndustry.gap < 0 ? 'warning' : 'healthy';
+            barWidth = layer2.gpVsIndustry.gap < -10 ? 30 : layer2.gpVsIndustry.gap < 0 ? 55 : 85;
+        } else if (config.id === 'cash-runway') {
+            status = layer1.cashRunwayDays < 60 ? 'critical' : layer1.cashRunwayDays < 120 ? 'warning' : 'healthy';
+            barWidth = layer1.cashRunwayDays < 60 ? 25 : layer1.cashRunwayDays < 120 ? 50 : 90;
+        } else if (config.id === 'bep-dynamics') {
+            const bepGap = layer1.currentRevenue - layer1.breakEvenRevenue;
+            status = bepGap < 0 ? 'critical' : bepGap < layer1.breakEvenRevenue * 0.2 ? 'warning' : 'healthy';
+            barWidth = bepGap < 0 ? 20 : bepGap < layer1.breakEvenRevenue * 0.2 ? 45 : 80;
+        } else if (config.id === 'opex-structure') {
+            const opexRatio = inputs.monthlyRevenue > 0 ? (inputs.monthlyOpEx / inputs.monthlyRevenue) * 100 : 0;
+            status = opexRatio > benchmark.opexRatioMax * 1.3 ? 'critical' : opexRatio > benchmark.opexRatioMax ? 'warning' : 'healthy';
+            barWidth = opexRatio > benchmark.opexRatioMax * 1.3 ? 35 : opexRatio > benchmark.opexRatioMax ? 60 : 85;
+        } else {
+            // For other pillars, distribute based on overall risk
+            if (layer2.riskVerdict === 'critical') {
+                status = index % 3 === 0 ? 'critical' : index % 3 === 1 ? 'warning' : 'healthy';
+                barWidth = index % 3 === 0 ? 30 + Math.random() * 15 : index % 3 === 1 ? 50 + Math.random() * 20 : 75 + Math.random() * 20;
+            } else if (layer2.riskVerdict === 'warning') {
+                status = index % 4 === 0 ? 'critical' : index % 2 === 0 ? 'warning' : 'healthy';
+                barWidth = index % 4 === 0 ? 35 + Math.random() * 15 : index % 2 === 0 ? 55 + Math.random() * 20 : 75 + Math.random() * 20;
+            } else {
+                status = index % 5 === 0 ? 'warning' : 'healthy';
+                barWidth = index % 5 === 0 ? 60 + Math.random() * 15 : 80 + Math.random() * 15;
+            }
+        }
+
+        if (status === 'critical') criticalCount++;
+        if (status === 'warning') warningCount++;
+
+        pillars.push({
+            id: config.id,
+            name: config.name,
+            category: config.category,
+            status,
+            barWidth: Math.round(barWidth),
+            isLocked: true
+        });
+    });
+
+    // Estimated annual impact (12x monthly leakage with variance)
+    const estimatedAnnualImpact = {
+        min: layer2.estimatedLeakage.min * 12,
+        max: layer2.estimatedLeakage.max * 12
+    };
+
+    return {
+        pillars,
+        criticalCount,
+        warningCount,
+        estimatedAnnualImpact
+    };
+}
+
+// ============================================================================
+// LEGACY COMPATIBILITY LAYER
+// ============================================================================
+
+/**
+ * @deprecated Use calculateFIPLiteResults instead
+ * Kept for backward compatibility with existing UI
+ */
+export function calculateFIPLiteResultsLegacy(formData: any): any {
+    // This will be removed once UI is fully migrated
+    console.warn('Using deprecated calculateFIPLiteResultsLegacy. Please migrate to new API.');
+
+    // Return mock data to prevent crashes during migration
+    return {
+        overallScore: 50,
+        verdict: 'warning',
+        verdictLabel: 'MIGRATION IN PROGRESS',
+        verdictColor: 'text-yellow-500',
+        pillars: [],
+        topRisks: [],
+        strengths: [],
+        categoryScores: {
+            revenueProfitability: 50,
+            cashFlow: 50,
+            operationalEfficiency: 50,
+            growthRisk: 50
+        }
     };
 }
