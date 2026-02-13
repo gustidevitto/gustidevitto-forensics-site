@@ -1,8 +1,12 @@
-export const formatRupiah = (number: number) => {
-    return new Intl.NumberFormat('id-ID', {
+export const formatCurrency = (amount: number, currency: string = 'USD', locale: string = 'en-US') => {
+    return new Intl.NumberFormat(locale, {
         style: 'currency',
-        currency: 'IDR',
+        currency: currency,
         minimumFractionDigits: 0,
         maximumFractionDigits: 0,
-    }).format(number)
+    }).format(amount)
+}
+
+export const formatRupiah = (number: number) => {
+    return formatCurrency(number, 'IDR', 'id-ID')
 }

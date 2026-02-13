@@ -120,7 +120,6 @@ function calculateLayer1Numbers(inputs: FIPLiteInputs): Layer1Numbers {
         : 0;
 
     const netBurnRate = inputs.monthlyOpEx + inputs.monthlyDebtService;
-    const netProfit = grossProfit - netBurnRate;
 
     const cashRunwayDays = netBurnRate > 0
         ? Math.floor((inputs.currentCash / netBurnRate) * 30)
@@ -316,7 +315,7 @@ function generateLayer3LockedXray(
  * @deprecated Use calculateFIPLiteResults instead
  * Kept for backward compatibility with existing UI
  */
-export function calculateFIPLiteResultsLegacy(formData: any): any {
+export function calculateFIPLiteResultsLegacy(_formData: any): any {
     // This will be removed once UI is fully migrated
     console.warn('Using deprecated calculateFIPLiteResultsLegacy. Please migrate to new API.');
 

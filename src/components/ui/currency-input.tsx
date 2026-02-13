@@ -10,7 +10,7 @@ interface CurrencyInputProps extends Omit<React.InputHTMLAttributes<HTMLInputEle
 }
 
 export const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputProps>(
-    ({ value, onValueChange, className, locale = 'id-ID', prefix = 'Rp', suffix = '', ...props }, ref) => {
+    ({ value, onValueChange, className, locale = 'en-US', prefix = '$', suffix = '', ...props }, ref) => {
         // Format number to display string with thousand separators
         const formatDisplay = (val: number) => {
             if (val === 0) return ''
