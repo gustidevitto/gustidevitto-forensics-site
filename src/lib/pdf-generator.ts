@@ -32,7 +32,7 @@ export async function generateFIPLitePDF(results: HealthScoreResult, name: strin
     doc.setFontSize(10);
     doc.setFont('helvetica', 'normal');
     doc.setTextColor(255, 255, 255);
-    doc.text('CLINICAL BUSINESS HEALTH FORENSICS // L-9 AUTHORIZATION', 20, 38);
+    doc.text('CLINICAL BUSINESS HEALTH FORENSICS // VERIFIED ACCESS', 20, 38);
     doc.text(`ID: ${Math.random().toString(36).substring(2, 9).toUpperCase()}`, 160, 38);
 
     doc.setDrawColor(primaryColor);

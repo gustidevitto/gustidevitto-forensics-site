@@ -34,7 +34,7 @@ function InvestasiPage() {
                 t('pricing.feature_starter_1'),
                 t('pricing.feature_starter_2'),
                 t('pricing.feature_strategy'),
-                "Corrective Action Plan"
+                t('investasi.feature_corrective')
             ],
             cta: t('pricing.cta_starter'),
             link: "/single-entity"
@@ -47,10 +47,10 @@ function InvestasiPage() {
             period: t('investasi.per_growth'), // /quarter
             desc: "Quarterly forensic oversight to ensure sustained operational integrity.",
             features: [
-                "Everything in Rescue Audit",
+                t('investasi.feature_everything'),
                 t('pricing.feature_checkins'),
-                "Quarterly Forensic Analysis",
-                "Continuous Variance Monitoring"
+                t('investasi.feature_quarterly'),
+                t('investasi.feature_variance')
             ],
             cta: t('pricing.cta_growth'),
             link: "/single-entity",
@@ -67,10 +67,10 @@ function InvestasiPage() {
             period: t('investasi.per_scale'), // /3 months
             desc: " Battlefield test for networks to surface hidden systemic failure patterns.",
             features: [
-                "16-Pillar Network Diagnostic",
-                "Outlier Detection Training",
-                "Systemic Fraud Vector Mapping",
-                "50% Refund Guarantee"
+                t('investasi.feature_pillars'),
+                t('investasi.feature_outlier'),
+                t('investasi.feature_fraud'),
+                t('investasi.feature_refund')
             ],
             cta: t('pricing.cta_scale'),
             link: "/network-intelligence"
@@ -83,10 +83,10 @@ function InvestasiPage() {
             period: t('investasi.per_enterprise'), // /year
             desc: "Year-round institutional-grade forensic surveillance for total network control.",
             features: [
-                "Continuous Network Intelligence",
-                "Strategic Crisis Briefings",
-                "Master Lab Configuration",
-                "Unlimited Pattern Training"
+                t('investasi.feature_continuous'),
+                t('investasi.feature_crisis'),
+                t('investasi.feature_lab'),
+                t('investasi.feature_pattern')
             ],
             cta: t('pricing.cta_enterprise'),
             link: "/network-intelligence",
@@ -97,7 +97,7 @@ function InvestasiPage() {
     return (
         <div
             onMouseMove={handleMouseMove}
-            className="flex flex-col min-h-screen bg-[#0a0a0a] text-white relative overflow-x-hidden transition-colors duration-500"
+            className="flex-1 flex flex-col bg-[#0a0a0a] text-white relative transition-colors duration-500"
         >
             {/* Dynamic Spotlight Effect - "The Forensic Torch" */}
             <div
@@ -207,7 +207,7 @@ function InvestasiPage() {
                                 className={`p-10 rounded-[2.5rem] border ${plan.highlight ? 'border-blue-500 bg-blue-500/5 shadow-2x-strong shadow-blue-500/10' : 'border-border/50 bg-[#111111]'} flex flex-col relative transition-all duration-500 hover:scale-[1.02] hover:bg-zinc-900/80 group animate-fade-in delay-${idx * 200}`}
                             >
                                 {plan.highlight && (
-                                    <div className="absolute -top-4 left-10 bg-blue-500 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">ENTERPRISE HUB</div>
+                                    <div className="absolute -top-4 left-10 bg-blue-500 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">{t('investasi.enterprise_hub')}</div>
                                 )}
                                 <div className="mb-8">
                                     <h3 className="text-3xl font-black text-white uppercase mb-1 group-hover:text-blue-400 transition-colors">{plan.name}</h3>

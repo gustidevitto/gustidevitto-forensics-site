@@ -1,4 +1,4 @@
-import { createRootRoute, Outlet, useLocation } from '@tanstack/react-router'
+import { createRootRoute, Outlet, useLocation, ScrollRestoration } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { LanguageToggle } from '@/components/language-toggle'
 import { ThemeProvider } from "@/components/theme-provider"
@@ -77,117 +77,116 @@ function RootComponent() {
                 })}
             </script>
             <link rel="alternate" type="application/ld+json" href="/ontology.jsonld" title="Semantic Knowledge Graph" />
-            <div className="min-h-screen bg-background font-sans antialiased relative">
-                {/* Subtle Moving Background Lights */}
-                <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-                    <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] animate-subtle-glow"></div>
-                    <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 rounded-full blur-[120px] animate-subtle-glow [animation-delay:-5s]"></div>
-                </div>
+            {/* Subtle Moving Background Lights */}
+            <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] animate-subtle-glow"></div>
+                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 rounded-full blur-[120px] animate-subtle-glow [animation-delay:-5s]"></div>
+            </div>
 
-                <div className="relative flex min-h-screen flex-col z-10">
-                    {!isEntranceGate && (
-                        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-                            <div className="container flex h-16 items-center justify-between px-4 md:px-8">
-                                {/* Logo */}
-                                <div className="flex items-center gap-3">
-                                    <img src="/assets/images/android-chrome-192x192.png" alt="Gusti Devitto Logo" className="h-8 w-8" />
-                                    <div className="flex flex-col -space-y-1">
-                                        <a className="font-bold text-xl tracking-tight" href="/">
-                                            Gusti Devitto<span className="text-[#FFD700] italic">™</span>
-                                        </a>
-                                        <div className="flex items-center gap-1.5">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-status-blink"></div>
-                                            <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/80">Auth L-9 // Sovereign Intelligence Access</span>
-                                        </div>
+            <div className="relative flex-1 flex flex-col z-10">
+                {!isEntranceGate && (
+                    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+                        <div className="container flex h-16 items-center justify-between px-4 md:px-8">
+                            {/* Logo */}
+                            <div className="flex items-center gap-3">
+                                <img src="/assets/images/android-chrome-192x192.png" alt="Gusti Devitto Logo" className="h-8 w-8" />
+                                <div className="flex flex-col -space-y-1">
+                                    <a className="font-bold text-xl tracking-tight" href="/">
+                                        Gusti Devitto<span className="text-[#FFD700] italic">™</span>
+                                    </a>
+                                    <div className="flex items-center gap-1.5">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-status-blink"></div>
+                                        <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/80">Diagnostic Level: Verified // Forensic Intelligence Access</span>
                                     </div>
                                 </div>
-
-                                {/* Desktop Navigation */}
-                                <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
-                                    <a
-                                        href={typeof window !== 'undefined' && localStorage.getItem('preferredPath') === 'network' ? '/network-intelligence' : '/single-entity'}
-                                        className="transition-colors hover:text-primary font-bold"
-                                    >
-                                        {t('nav.home')}
-                                    </a>
-                                    <a href="/fip-lite" className="transition-colors hover:text-primary nav-gold-glow">{t('nav.calculator')}</a>
-                                    <a href="/about-gusti-devitto" className="transition-colors hover:text-primary">{t('nav.about')}</a>
-                                    <a href="/blog" className="transition-colors hover:text-primary">{t('nav.blog')}</a>
-                                    <a href="/forensics-pillars" className="transition-colors hover:text-primary">{t('nav.pillars')}</a>
-                                    <a href="/investasi" className="transition-colors hover:text-primary font-bold decoration-primary underline-offset-4 decoration-2">{t('nav.pricing')}</a>
-                                    <a href="/contact" className="transition-colors hover:text-primary">{t('nav.contact')}</a>
-                                    <LanguageToggle />
-                                    {/* <ModeToggle /> */}
-                                </nav>
-
-                                {/* Mobile Navigation */}
-                                <div className="lg:hidden flex items-center gap-4">
-                                    <LanguageToggle />
-                                    {/* <ModeToggle /> */}
-                                    <Sheet>
-                                        <SheetTrigger asChild>
-                                            <Button variant="ghost" size="icon">
-                                                <Menu className="h-5 w-5" />
-                                                <span className="sr-only">Toggle Menu</span>
-                                            </Button>
-                                        </SheetTrigger>
-                                        <SheetContent side="right">
-                                            <div className="flex flex-col space-y-6 mt-6">
-                                                <a
-                                                    href={typeof window !== 'undefined' && localStorage.getItem('preferredPath') === 'network' ? '/network-intelligence' : '/single-entity'}
-                                                    className="text-lg font-medium hover:text-primary font-bold"
-                                                >
-                                                    {t('nav.home')}
-                                                </a>
-                                                <a href="/fip-lite" className="text-lg font-medium hover:text-primary nav-gold-glow">{t('nav.calculator')}</a>
-                                                <a href="/about-gusti-devitto" className="text-lg font-medium hover:text-primary">{t('nav.about')}</a>
-                                                <a href="/blog" className="text-lg font-medium hover:text-primary">{t('nav.blog')}</a>
-                                                <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">{t('nav.pillars')}</a>
-                                                <a href="/investasi" className="text-lg font-medium hover:text-primary">{t('nav.pricing')}</a>
-                                                <a href="/contact" className="text-lg font-medium hover:text-primary">{t('nav.contact')}</a>
-                                            </div>
-                                        </SheetContent>
-                                    </Sheet>
-                                </div>
                             </div>
-                        </header>
-                    )}
-                    <main className="flex-1">
-                        <Outlet />
-                    </main>
-                    {!isEntranceGate && (
-                        <footer className="border-t bg-card py-6 md:px-8 md:py-0">
-                            <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-                                <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 md:mt-0">
-                                    <a href="/about-gusti-devitto" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                                        {t('footer.about')}
-                                    </a>
-                                    <a href="/master-index" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                                        {t('footer.index')}
-                                    </a>
-                                    <a href="/methodology" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                                        {t('footer.methodology')}
-                                    </a>
-                                    <a href="/verdict" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                                        {t('footer.verdict')}
-                                    </a>
-                                    <a href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                                        {t('footer.terms')}
-                                    </a>
-                                    <a href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                                        {t('footer.privacy')}
-                                    </a>
-                                </div>
-                                <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-                                    © {new Date().getFullYear()} Gusti Devitto™. {t('footer.rights')}
-                                    <span className="mx-2 text-muted-foreground/40">|</span>
-                                    <span className="text-xs text-muted-foreground/60 font-mono">FIP™ Protocol v4</span>
-                                </p>
+
+                            {/* Desktop Navigation */}
+                            <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
+                                <a
+                                    href={typeof window !== 'undefined' && localStorage.getItem('preferredPath') === 'network' ? '/network-intelligence' : '/single-entity'}
+                                    className="transition-colors hover:text-primary font-bold"
+                                >
+                                    {t('nav.home')}
+                                </a>
+                                <a href="/fip-lite" className="transition-colors hover:text-primary nav-gold-glow">{t('nav.calculator')}</a>
+                                <a href="/about-gusti-devitto" className="transition-colors hover:text-primary">{t('nav.about')}</a>
+                                <a href="/blog" className="transition-colors hover:text-primary">{t('nav.blog')}</a>
+                                <a href="/forensics-pillars" className="transition-colors hover:text-primary">{t('nav.pillars')}</a>
+                                <a href="/investasi" className="transition-colors hover:text-primary font-bold decoration-primary underline-offset-4 decoration-2">{t('nav.pricing')}</a>
+                                <a href="/contact" className="transition-colors hover:text-primary">{t('nav.contact')}</a>
+                                <LanguageToggle />
+                                {/* <ModeToggle /> */}
+                            </nav>
+
+                            {/* Mobile Navigation */}
+                            <div className="lg:hidden flex items-center gap-4">
+                                <LanguageToggle />
+                                {/* <ModeToggle /> */}
+                                <Sheet>
+                                    <SheetTrigger asChild>
+                                        <Button variant="ghost" size="icon">
+                                            <Menu className="h-5 w-5" />
+                                            <span className="sr-only">Toggle Menu</span>
+                                        </Button>
+                                    </SheetTrigger>
+                                    <SheetContent side="right">
+                                        <div className="flex flex-col space-y-6 mt-6">
+                                            <a
+                                                href={typeof window !== 'undefined' && localStorage.getItem('preferredPath') === 'network' ? '/network-intelligence' : '/single-entity'}
+                                                className="text-lg font-medium hover:text-primary font-bold"
+                                            >
+                                                {t('nav.home')}
+                                            </a>
+                                            <a href="/fip-lite" className="text-lg font-medium hover:text-primary nav-gold-glow">{t('nav.calculator')}</a>
+                                            <a href="/about-gusti-devitto" className="text-lg font-medium hover:text-primary">{t('nav.about')}</a>
+                                            <a href="/blog" className="text-lg font-medium hover:text-primary">{t('nav.blog')}</a>
+                                            <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">{t('nav.pillars')}</a>
+                                            <a href="/investasi" className="text-lg font-medium hover:text-primary">{t('nav.pricing')}</a>
+                                            <a href="/contact" className="text-lg font-medium hover:text-primary">{t('nav.contact')}</a>
+                                        </div>
+                                    </SheetContent>
+                                </Sheet>
                             </div>
-                        </footer>
-                    )}
-                    {!isEntranceGate && <BackToTop />}
-                </div>
+                        </div>
+                    </header>
+                )}
+                <main className="flex-1">
+                    <Outlet />
+                </main>
+                {!isEntranceGate && (
+                    <footer className="border-t bg-card py-6 md:px-8 md:py-0">
+                        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+                            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 md:mt-0">
+                                <a href="/about-gusti-devitto" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                                    {t('footer.about')}
+                                </a>
+                                <a href="/master-index" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                                    {t('footer.index')}
+                                </a>
+                                <a href="/methodology" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                                    {t('footer.methodology')}
+                                </a>
+                                <a href="/verdict" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                                    {t('footer.verdict')}
+                                </a>
+                                <a href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                                    {t('footer.terms')}
+                                </a>
+                                <a href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                                    {t('footer.privacy')}
+                                </a>
+                            </div>
+                            <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
+                                © {new Date().getFullYear()} Gusti Devitto™. {t('footer.rights')}
+                                <span className="mx-2 text-muted-foreground/40">|</span>
+                                <span className="text-xs text-muted-foreground/60 font-mono">FIP™ Protocol v4</span>
+                            </p>
+                        </div>
+                    </footer>
+                )}
+                {!isEntranceGate && <BackToTop />}
+                <ScrollRestoration />
             </div>
         </ThemeProvider>
     )

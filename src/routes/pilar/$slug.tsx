@@ -180,7 +180,7 @@ function PilarPage() {
     }
 
     return (
-        <div className="min-h-screen bg-background pb-20">
+        <div className="flex-1 flex flex-col bg-background pb-20">
             <title>{`${displayTitle} - Financial Forensics Pillar`}</title>
             <meta name="description" content={(metadata as any).description || t(`pillars.${pillar.id}.definition`)} />
 

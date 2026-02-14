@@ -17,7 +17,6 @@ function SingleEntityPage() {
     const { t, i18n } = useTranslation()
     const [networkSize, setNetworkSize] = useState(0)
     const [currentSlide, setCurrentSlide] = useState(0)
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
 
     const heroImages = [
         '/assets/images/audit.png',
@@ -33,45 +32,30 @@ function SingleEntityPage() {
         return () => clearInterval(timer)
     }, [heroImages.length])
 
-    const handleMouseMove = (e: React.MouseEvent) => {
-        if (typeof window === 'undefined') return
-        const x = (e.clientX / window.innerWidth) - 0.5
-        const y = (e.clientY / window.innerHeight) - 0.5
-        setMousePos({ x, y })
-    }
-
     const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroImages.length)
     const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length)
 
     return (
         <div
-            onMouseMove={handleMouseMove}
-            className="flex flex-col min-h-screen bg-[#0a1628] text-white perspective-1000 overflow-x-hidden relative"
+            className="flex-1 flex flex-col bg-[#0a1628] text-white relative"
         >
-            {/* Dynamic Spotlight Effect - "The Forensic Torch" */}
+            {/* Automatic Spotlight Effect */}
             <div
-                className="absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 ease-out"
+                className="absolute inset-0 pointer-events-none z-0 animate-spotlight-roam opacity-20"
                 style={{
-                    background: `radial-gradient(800px circle at ${50 + (mousePos.x * 100)}% ${50 + (mousePos.y * 100)}%, rgba(56, 189, 248, 0.1), transparent 50%)`
+                    background: `radial-gradient(800px circle at center, rgba(56, 189, 248, 0.15), transparent 50%)`
                 }}
             />
 
-            {/* Ambient Background Elements with Parallax */}
+            {/* Ambient Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse transition-transform duration-[50ms] ease-linear"
-                    style={{ transform: `translate(calc(-50% + ${mousePos.x * -40}px), calc(-50% + ${mousePos.y * -40}px))` }}
-                ></div>
-                <div
-                    className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] animate-pulse delay-700 transition-transform duration-[50ms] ease-linear"
-                    style={{ transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 40}px)` }}
-                ></div>
+                <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse-slow"></div>
+                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] animate-pulse delay-700"></div>
                 {/* Grid Pattern */}
-                <div className="absolute inset-0 opacity-[0.05] transition-transform duration-[50ms] ease-linear"
+                <div className="absolute inset-0 opacity-[0.05]"
                     style={{
                         backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
                         backgroundSize: '40px 40px',
-                        transform: `translate(${mousePos.x * -20}px, ${mousePos.y * -20}px)`
                     }}></div>
             </div>
             {/* SEO Meta Tags */}
@@ -81,16 +65,12 @@ function SingleEntityPage() {
             <meta property="og:title" content={t('global.og_home_title')} />
             <meta property="og:description" content={t('global.og_home_desc')} />
             <meta property="og:type" content="website" />
+            <meta name="geo.region" content="ID-JK" />
+            <meta name="geo.placename" content="Jakarta" />
+            <meta name="geo.position" content="-6.200000;106.816666" />
 
             {/* Hero Section */}
             <section className="relative py-24 px-4 md:px-8 border-b border-white/5 overflow-hidden">
-                <div
-                    className="absolute inset-0 pointer-events-none z-0"
-                    style={{
-                        background: `radial-gradient(600px circle at ${50 + (mousePos.x * 100)}% ${50 + (mousePos.y * 100)}%, rgba(56, 189, 248, 0.1), transparent 40%)`
-                    }}
-                />
-
                 <div className="container mx-auto max-w-6xl relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-8 animate-fade-in text-center lg:text-left">
@@ -126,11 +106,7 @@ function SingleEntityPage() {
 
                         <div className="relative perspective-1000 hidden lg:block">
                             <div
-                                className="relative rounded-2xl border border-white/10 bg-zinc-900/50 overflow-hidden backdrop-blur-sm group shadow-2xl transition-all duration-100 ease-out"
-                                style={{
-                                    transform: `rotateY(${mousePos.x * 10}deg) rotateX(${mousePos.y * -10}deg) translateZ(20px)`,
-                                    transformStyle: 'preserve-3d'
-                                }}
+                                className="relative rounded-2xl border border-white/10 bg-zinc-900/50 overflow-hidden backdrop-blur-sm group shadow-2xl transition-all duration-500 hover:scale-[1.02]"
                             >
                                 <div className="relative aspect-[4/3] transform-style-3d">
                                     {heroImages.map((img, idx) => (

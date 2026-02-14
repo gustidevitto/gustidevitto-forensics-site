@@ -45,7 +45,7 @@ function MultiOutletPage() {
     return (
         <div
             onMouseMove={handleMouseMove}
-            className="flex flex-col min-h-screen bg-gradient-to-b from-[#0a1628] via-[#0f1f3a] to-[#0a1628] perspective-1000 overflow-x-hidden"
+            className="flex-1 flex flex-col bg-gradient-to-b from-[#0a1628] via-[#0f1f3a] to-[#0a1628] perspective-1000"
         >
             {/* SEO Meta Tags */}
             <title>{t('global.seo_home_title')}</title>

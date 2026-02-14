@@ -74,20 +74,28 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/verdict" />
   </url>
   <url>
-    <loc>https://www.gustidevitto.com/multi-outlet</loc>
-    <lastmod>2026-01-18</lastmod>
+    <loc>https://www.gustidevitto.com/single-entity</loc>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/multi-outlet" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/multi-outlet" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/single-entity" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/single-entity" />
   </url>
   <url>
     <loc>https://www.gustidevitto.com/network-intelligence</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/network-intelligence" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/network-intelligence" />
+  </url>
+  <url>
+    <loc>https://www.gustidevitto.com/fip-lite</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.gustidevitto.com/fip-lite" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gustidevitto.com/fip-lite" />
   </url>
 </urlset>
 

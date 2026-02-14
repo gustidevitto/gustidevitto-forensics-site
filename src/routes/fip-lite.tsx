@@ -1,5 +1,6 @@
 import { useNavigate, createFileRoute } from '@tanstack/react-router'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
     Activity,
     Lock,
@@ -14,7 +15,8 @@ import {
     DollarSign,
     CreditCard,
     Briefcase,
-    Clock
+    Clock,
+    Terminal
 } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -55,6 +57,7 @@ const INDUSTRY_OPTIONS: { value: IndustryType; label: string; icon: string }[] =
 ]
 
 function FIPLiteV2Page() {
+    const { t } = useTranslation()
     const navigate = useNavigate()
     const [isCalculating, setIsCalculating] = useState(false)
     const [results, setResults] = useState<FIPLiteResult | null>(null)
@@ -71,17 +74,18 @@ function FIPLiteV2Page() {
     const handleCalculate = () => {
         // Validate required fields
         if (!inputs.monthlyRevenue || !inputs.monthlyCOGS || !inputs.monthlyOpEx || !inputs.currentCash || !inputs.industryType || !inputs.businessAge || !inputs.teamSize) {
-            alert('Please fill in all required fields')
+            alert(t('get_access.validation_error'))
             return
         }
 
         setIsCalculating(true)
+        // Simulation time for the "Terminal" effect
         setTimeout(() => {
             const result = calculateFIPLiteResults(inputs as FIPLiteInputs)
             setResults(result)
             setIsCalculating(false)
             window.scrollTo({ top: 0, behavior: 'smooth' })
-        }, 2000)
+        }, 4500) // Increased to 4.5s to let the terminal animation play out
     }
 
     const handleReset = () => {
@@ -124,9 +128,24 @@ function FIPLiteV2Page() {
     }
 
     return (
-        <div className="min-h-screen bg-black text-white">
-            <title>FIP™ Lite - Business Health MRI Scan</title>
-            <meta name="description" content="Free 30-second business health diagnostic. Get your cash runway, leakage estimate, and risk assessment." />
+        <div className="flex-1 flex flex-col bg-black text-white relative">
+            {/* Automatic Spotlight Effect */}
+            <div
+                className="absolute inset-0 pointer-events-none z-0 animate-spotlight-roam opacity-20"
+                style={{
+                    background: `radial-gradient(800px circle at center, rgba(56, 189, 248, 0.15), transparent 50%)`
+                }}
+            />
+            {/* SEO Meta Tags */}
+            <title>FIP™ Lite - Business Health Diagnositc | Gusti Devitto</title>
+            <meta name="description" content="Instant 30-second forensic business MRI. Calculate cash runway, detect phantom cost leakage, and assess insolvency risk. Free tool by Gusti Devitto." />
+            <meta name="keywords" content="Business Health Check, Cash Runway Calculator, Profit Leakage Detection, Financial Stress Test, Gusti Devitto" />
+            <meta property="og:title" content="FIP™ Lite - Is Your Business Bleeding?" />
+            <meta property="og:description" content="run a 30-second forensic diagnostic on your business. Detect hidden leaks before they become fatal." />
+            <meta property="og:type" content="website" />
+            <meta name="geo.region" content="ID-JK" />
+            <meta name="geo.placename" content="Jakarta" />
+            <meta name="geo.position" content="-6.200000;106.816666" />
             {/* Header */}
             <header className="border-b border-white/10 bg-black/50 backdrop-blur-xl sticky top-0 z-50">
                 <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -136,7 +155,7 @@ function FIPLiteV2Page() {
                         </div>
                         <div>
                             <h1 className="text-lg font-black uppercase tracking-tight">FIP™ Lite</h1>
-                            <p className="text-[9px] text-muted-foreground uppercase tracking-widest font-bold">Business Health MRI</p>
+                            <p className="text-[9px] text-muted-foreground uppercase tracking-widest font-bold">Business Health Scan</p>
                         </div>
                     </div>
                     <Button variant="ghost" size="sm" onClick={handleReset} className="gap-2">
@@ -146,7 +165,7 @@ function FIPLiteV2Page() {
                 </div>
             </header>
 
-            <div className="container mx-auto px-4 py-12 max-w-6xl">
+            <div className="container mx-auto px-4 py-12 max-w-6xl relative z-10">
                 {!results ? (
                     <InputForm
                         inputs={inputs}
@@ -155,15 +174,16 @@ function FIPLiteV2Page() {
                         isCalculating={isCalculating}
                     />
                 ) : (
-                    <ResultsDashboard 
-                        results={results} 
-                        onReset={handleReset} 
+                    <ResultsDashboard
+                        results={results}
+                        onReset={handleReset}
                         isEmailUnlocked={isEmailUnlocked}
                         email={email}
                         setEmail={setEmail}
                         onEmailSubmit={handleEmailSubmit}
                         isSubmittingEmail={isSubmittingEmail}
                         onAuditClick={() => navigate({ to: '/contact' })}
+                        industryType={inputs.industryType || 'other'}
                     />
                 )}
             </div>
@@ -186,37 +206,30 @@ function InputForm({
         <div className="space-y-12 animate-in fade-in duration-1000">
             {/* Hero Section */}
             <div className="text-center space-y-6 max-w-3xl mx-auto">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
-                    <Zap className="w-3 h-3 text-primary" />
-                    <span className="text-[10px] font-black uppercase tracking-widest text-primary">Confidential Forensic Analysis</span>
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20">
+                    <Zap className="w-3 h-3 text-red-500" />
+                    <span className="text-[10px] font-black uppercase tracking-widest text-red-500">Free Forensic Analysis</span>
                 </div>
                 <h1 className="text-5xl md:text-7xl font-black tracking-tighter">
                     Where is your money <span className="text-primary italic">actually</span> going?
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
                     Stop the guesswork. Get a 30-second <span className="text-white font-bold underline decoration-primary/50">Forensic MRI Scan</span> of your business health.
-                    <br /><span className="text-sm uppercase tracking-widest font-bold text-primary/80">Detect leaks. Assess risks. Recover capital.</span>
+                    <br /><span className="text-sm uppercase tracking-widest font-bold text-red-400">Find the leaks. Stop the bleeding.</span>
                 </p>
             </div>
 
             {/* Input Card */}
-            <Card className="border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl">
+            <Card className="border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl relative overflow-hidden">
                 {isCalculating && (
-                    <div className="absolute inset-0 z-50 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 rounded-lg">
-                        <div className="relative">
-                            <div className="w-24 h-24 border-2 border-primary/20 rounded-full animate-ping" />
-                            <Activity className="w-12 h-12 text-primary absolute inset-0 m-auto animate-pulse" />
-                        </div>
-                        <div className="text-center space-y-2">
-                            <h3 className="text-xl font-black uppercase tracking-widest text-primary animate-pulse">RUNNING DIAGNOSTIC</h3>
-                            <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-[0.2em]">Analyzing 18 forensic pillars...</p>
-                        </div>
+                    <div className="absolute inset-0 z-50 bg-black/95 flex flex-col items-center justify-center p-6">
+                        <DiagnosticTerminal />
                     </div>
                 )}
 
                 <CardHeader>
                     <CardTitle className="text-2xl font-black uppercase tracking-tight">Input Your Numbers</CardTitle>
-                    <CardDescription>8 fields. 30 seconds. Brutal honesty.</CardDescription>
+                    <CardDescription>8 fields. 30 seconds. Brutal honesty required.</CardDescription>
                 </CardHeader>
 
                 <CardContent className="space-y-8">
@@ -233,8 +246,8 @@ function InputForm({
                                         <TooltipTrigger asChild>
                                             <HelpCircle className="w-3.5 h-3.5 text-muted-foreground cursor-help hover:text-primary transition-colors" />
                                         </TooltipTrigger>
-                                        <TooltipContent side="left" className="max-w-[200px] text-[10px]">
-                                            <p>Total sales generated in a typical month before any costs are deducted.</p>
+                                        <TooltipContent side="left" className="max-w-[200px] text-[10px] bg-red-900/90 border-red-500 text-white font-bold">
+                                            <p>Be honest. Inflating this only hides your problems.</p>
                                         </TooltipContent>
                                     </Tooltip>
                                 </TooltipProvider>
@@ -243,7 +256,7 @@ function InputForm({
                                 placeholder="e.g., 150,000"
                                 value={inputs.monthlyRevenue || 0}
                                 onValueChange={(value) => setInputs({ ...inputs, monthlyRevenue: value })}
-                                className="h-12 bg-black/20 border-white/10 text-lg"
+                                className="h-12 bg-black/20 border-white/10 text-lg focus:border-primary/50"
                             />
                         </div>
                         <div className="space-y-2">
@@ -257,8 +270,8 @@ function InputForm({
                                         <TooltipTrigger asChild>
                                             <HelpCircle className="w-3.5 h-3.5 text-muted-foreground cursor-help hover:text-primary transition-colors" />
                                         </TooltipTrigger>
-                                        <TooltipContent side="left" className="max-w-[200px] text-[10px]">
-                                            <p>Cost of Goods Sold. Direct costs like raw materials and direct labor.</p>
+                                        <TooltipContent side="left" className="max-w-[200px] text-[10px] bg-red-900/90 border-red-500 text-white font-bold">
+                                            <p>WARNING: Most owners underestimate this. Includes materials, direct labor, and shipping.</p>
                                         </TooltipContent>
                                     </Tooltip>
                                 </TooltipProvider>
@@ -267,7 +280,7 @@ function InputForm({
                                 placeholder="e.g., 60,000"
                                 value={inputs.monthlyCOGS || 0}
                                 onValueChange={(value) => setInputs({ ...inputs, monthlyCOGS: value })}
-                                className="h-12 bg-black/20 border-white/10 text-lg"
+                                className="h-12 bg-black/20 border-white/10 text-lg focus:border-primary/50"
                             />
                         </div>
                     </div>
@@ -285,8 +298,8 @@ function InputForm({
                                         <TooltipTrigger asChild>
                                             <HelpCircle className="w-3.5 h-3.5 text-muted-foreground cursor-help hover:text-primary transition-colors" />
                                         </TooltipTrigger>
-                                        <TooltipContent side="left" className="max-w-[200px] text-[10px]">
-                                            <p>Regular monthly expenses like rent, salaries, and utilities.</p>
+                                        <TooltipContent side="left" className="max-w-[200px] text-[10px] bg-red-900/90 border-red-500 text-white font-bold">
+                                            <p>Rent, salaries, internet. The stuff you pay even if you sell ZERO.</p>
                                         </TooltipContent>
                                     </Tooltip>
                                 </TooltipProvider>
@@ -295,7 +308,7 @@ function InputForm({
                                 placeholder="e.g., 45,000"
                                 value={inputs.monthlyOpEx || 0}
                                 onValueChange={(value) => setInputs({ ...inputs, monthlyOpEx: value })}
-                                className="h-12 bg-black/20 border-white/10 text-lg"
+                                className="h-12 bg-black/20 border-white/10 text-lg focus:border-primary/50"
                             />
                         </div>
                         <div className="space-y-2">
@@ -309,8 +322,8 @@ function InputForm({
                                         <TooltipTrigger asChild>
                                             <HelpCircle className="w-3.5 h-3.5 text-muted-foreground cursor-help hover:text-primary transition-colors" />
                                         </TooltipTrigger>
-                                        <TooltipContent side="left" className="max-w-[200px] text-[10px]">
-                                            <p>Total liquid cash available in business accounts.</p>
+                                        <TooltipContent side="left" className="max-w-[200px] text-[10px] bg-red-900/90 border-red-500 text-white font-bold">
+                                            <p>Real money in the bank TODAY. Not invoices. Not hopes. Cash.</p>
                                         </TooltipContent>
                                     </Tooltip>
                                 </TooltipProvider>
@@ -319,7 +332,7 @@ function InputForm({
                                 placeholder="e.g., 80,000"
                                 value={inputs.currentCash || 0}
                                 onValueChange={(value) => setInputs({ ...inputs, currentCash: value })}
-                                className="h-12 bg-black/20 border-white/10 text-lg"
+                                className="h-12 bg-black/20 border-white/10 text-lg focus:border-primary/50"
                             />
                         </div>
                     </div>
@@ -329,25 +342,25 @@ function InputForm({
                         <div className="space-y-2">
                             <Label className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                                 <CreditCard className="w-4 h-4 text-muted-foreground" />
-                                Monthly Debt Service (Optional)
+                                Monthly Loan Payments (Optional)
                             </Label>
                             <CurrencyInput
                                 placeholder="e.g., 5,000"
                                 value={inputs.monthlyDebtService || 0}
                                 onValueChange={(value) => setInputs({ ...inputs, monthlyDebtService: value })}
-                                className="h-12 bg-black/20 border-white/10 text-lg"
+                                className="h-12 bg-black/20 border-white/10 text-lg focus:border-primary/50"
                             />
                         </div>
                         <div className="space-y-2">
                             <Label className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                                 <Briefcase className="w-4 h-4 text-primary" />
-                                Industry Type * <span className="text-[9px] text-primary/60 normal-case">(for benchmarking)</span>
+                                Industry Type * <span className="text-[9px] text-primary/60 normal-case">(so we can compare you)</span>
                             </Label>
                             <Select
                                 value={inputs.industryType}
                                 onValueChange={(value) => setInputs({ ...inputs, industryType: value as IndustryType })}
                             >
-                                <SelectTrigger className="h-12 bg-black/20 border-white/10 text-lg">
+                                <SelectTrigger className="h-12 bg-black/20 border-white/10 text-lg focus:border-primary/50">
                                     <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent className="bg-black/95 border-white/10 backdrop-blur-xl">
@@ -372,7 +385,7 @@ function InputForm({
                                 value={inputs.businessAge?.toString()}
                                 onValueChange={(value) => setInputs({ ...inputs, businessAge: Number(value) })}
                             >
-                                <SelectTrigger className="h-12 bg-black/20 border-white/10 text-lg">
+                                <SelectTrigger className="h-12 bg-black/20 border-white/10 text-lg focus:border-primary/50">
                                     <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent className="bg-black/95 border-white/10 backdrop-blur-xl">
@@ -394,7 +407,7 @@ function InputForm({
                                 placeholder="e.g., 12"
                                 value={inputs.teamSize || ''}
                                 onChange={(e) => setInputs({ ...inputs, teamSize: Number(e.target.value) })}
-                                className="h-12 bg-black/20 border-white/10 text-lg"
+                                className="h-12 bg-black/20 border-white/10 text-lg focus:border-primary/50"
                             />
                         </div>
                     </div>
@@ -404,22 +417,22 @@ function InputForm({
                         <Button
                             onClick={onCalculate}
                             disabled={isCalculating}
-                            className="w-full h-16 text-lg font-black uppercase tracking-widest shadow-2xl shadow-primary/30"
+                            className="w-full h-16 text-lg font-black uppercase tracking-widest shadow-2xl shadow-primary/30 bg-primary hover:bg-primary/90 text-black"
                         >
                             {isCalculating ? (
                                 <>
                                     <RefreshCcw className="w-5 h-5 mr-2 animate-spin" />
-                                    Running Diagnostic...
+                                    Starting Scan...
                                 </>
                             ) : (
                                 <>
                                     <Activity className="w-5 h-5 mr-2" />
-                                    Run Diagnostic Scan
+                                    SCAN MY BUSINESS NOW
                                 </>
                             )}
                         </Button>
                         <p className="text-center text-[9px] text-muted-foreground uppercase tracking-widest mt-4">
-                            🔒 Your data never leaves your browser. 100% private.
+                            🔒 100% Private. Your data never leaves this browser until you say so.
                         </p>
                     </div>
                 </CardContent>
@@ -428,17 +441,61 @@ function InputForm({
     )
 }
 
-function ResultsDashboard({ 
-    results, 
+function DiagnosticTerminal() {
+    const [lines, setLines] = useState<string[]>([])
+    const logs = [
+        "Initializing forensic core...",
+        "Connecting to benchmark database...",
+        "Analyzing COGS vs Industry Standard...",
+        "Searching for payroll redundancies...",
+        "Detecting hidden OPEX leaks...",
+        "Checking vendor contract elasticity...",
+        "Calculating true cash runway...",
+        "Generating risk profile...",
+        "Compiling leakage report..."
+    ]
+
+    useEffect(() => {
+        let delay = 0
+        logs.forEach((log) => {
+            delay += Math.random() * 400 + 100
+            setTimeout(() => {
+                setLines(prev => [...prev, log])
+            }, delay)
+        })
+    }, [])
+
+    return (
+        <div className="w-full max-w-md bg-black border border-green-500/30 p-6 rounded-lg font-mono text-sm shadow-[0_0_30px_rgba(34,197,94,0.1)]">
+            <div className="flex items-center gap-2 mb-4 border-b border-green-500/20 pb-2">
+                <Terminal className="w-4 h-4 text-green-500" />
+                <span className="text-xs uppercase tracking-widest text-green-500">Forensic_Terminal_V4</span>
+            </div>
+            <div className="space-y-2 h-[200px] overflow-hidden flex flex-col justify-end">
+                {lines.map((line, i) => (
+                    <div key={i} className="text-green-400/80 animate-fade-in-up">
+                        <span className="text-green-600 mr-2">{'>'}</span>
+                        {line}
+                    </div>
+                ))}
+                <div className="animate-pulse text-green-500 font-bold">_</div>
+            </div>
+        </div>
+    )
+}
+
+function ResultsDashboard({
+    results,
     onReset,
     isEmailUnlocked,
     email,
     setEmail,
     onEmailSubmit,
     isSubmittingEmail,
-    onAuditClick
-}: { 
-    results: FIPLiteResult; 
+    onAuditClick,
+    industryType
+}: {
+    results: FIPLiteResult;
     onReset: () => void;
     isEmailUnlocked: boolean;
     email: string;
@@ -446,6 +503,7 @@ function ResultsDashboard({
     onEmailSubmit: (e: React.FormEvent) => void;
     isSubmittingEmail: boolean;
     onAuditClick: () => void;
+    industryType: IndustryType;
 }) {
     const { layer1, layer2, layer3 } = results
     const cashZeroDate = new Date(layer1.cashZeroDate)
@@ -456,14 +514,14 @@ function ResultsDashboard({
             <div className="space-y-6">
                 <div className="text-center space-y-2">
                     <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-[10px] font-black uppercase tracking-widest ${layer2.riskVerdict === 'fortress'
-                            ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-500'
-                            : layer2.riskVerdict === 'critical'
-                                ? 'bg-red-500/10 border-red-500/20 text-red-500'
-                                : 'bg-yellow-500/10 border-yellow-500/20 text-yellow-500'
+                        ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-500'
+                        : layer2.riskVerdict === 'critical'
+                            ? 'bg-red-500/10 border-red-500/20 text-red-500'
+                            : 'bg-yellow-500/10 border-yellow-500/20 text-yellow-500'
                         }`}>
                         <div className={`w-2 h-2 rounded-full animate-pulse ${layer2.riskVerdict === 'fortress' ? 'bg-emerald-500' : layer2.riskVerdict === 'critical' ? 'bg-red-500' : 'bg-yellow-500'
                             }`} />
-                        DIAGNOSTIC COMPLETE
+                        SCAN COMPLETE
                     </div>
                     <h2 className={`text-4xl md:text-6xl font-black uppercase tracking-tight ${layer2.verdictColor}`}>
                         {layer2.verdictLabel}
@@ -478,10 +536,10 @@ function ResultsDashboard({
                         </CardHeader>
                         <CardContent className="space-y-2">
                             <div className="text-5xl font-black tabular-nums text-red-400">{layer1.cashRunwayDays}</div>
-                            <div className="text-xs text-muted-foreground uppercase tracking-wider">days remaining</div>
+                            <div className="text-xs text-muted-foreground uppercase tracking-wider">days left to live</div>
                             <div className="flex items-center gap-2 text-[10px] text-red-400/80 pt-2 border-t border-red-500/10">
                                 <Calendar className="w-3 h-3" />
-                                <span className="font-mono">Zero: {cashZeroDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                                <span className="font-mono">Dead Date: {cashZeroDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                             </div>
                         </CardContent>
                     </Card>
@@ -504,18 +562,18 @@ function ResultsDashboard({
                         </CardHeader>
                         <CardContent className="space-y-2">
                             <div className="text-4xl font-black tabular-nums text-red-400">{formatCurrency(layer1.netBurnRate)}</div>
-                            <div className="text-xs text-muted-foreground uppercase tracking-wider">bleeding monthly</div>
+                            <div className="text-xs text-muted-foreground uppercase tracking-wider">lost every month</div>
                         </CardContent>
                     </Card>
 
                     {/* Break-Even Revenue */}
                     <Card className="border-yellow-500/20 bg-yellow-500/5">
                         <CardHeader className="pb-3">
-                            <CardDescription className="text-[9px] font-black uppercase tracking-widest text-yellow-400/60">Break-Even Point</CardDescription>
+                            <CardDescription className="text-[9px] font-black uppercase tracking-widest text-yellow-400/60">Break-Even Goal</CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-2">
                             <div className="text-3xl font-black tabular-nums text-yellow-400">{formatCurrency(layer1.breakEvenRevenue)}</div>
-                            <div className="text-xs text-muted-foreground uppercase tracking-wider">needed monthly</div>
+                            <div className="text-xs text-muted-foreground uppercase tracking-wider">needed to survive</div>
                             <div className="text-[10px] text-yellow-400/80 pt-2 border-t border-yellow-500/10">
                                 You make: {formatCurrency(layer1.currentRevenue)}
                             </div>
@@ -529,9 +587,9 @@ function ResultsDashboard({
                 <CardHeader>
                     <CardTitle className="text-xl font-black uppercase tracking-tight flex items-center gap-2">
                         <TrendingDown className="w-5 h-5 text-primary" />
-                        Industry Benchmark Comparison
+                        Industry Comparison
                     </CardTitle>
-                    <CardDescription>How you stack up against your peers</CardDescription>
+                    <CardDescription>Are you winning or losing against competitors?</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                     <div className="grid md:grid-cols-3 gap-6">
@@ -542,11 +600,11 @@ function ResultsDashboard({
                                 Your GP: <span className={layer2.gpVsIndustry.gap < 0 ? 'text-red-400' : 'text-emerald-400'}>{layer2.gpVsIndustry.yourGP.toFixed(1)}%</span>
                             </div>
                             <div className="text-sm text-muted-foreground">
-                                Industry: {layer2.gpVsIndustry.industryMin}% - {layer2.gpVsIndustry.industryMax}%
+                                Typical {INDUSTRY_OPTIONS.find(o => o.value === industryType)?.label || industryType}: {layer2.gpVsIndustry.industryMin}% - {layer2.gpVsIndustry.industryMax}%
                             </div>
                             {layer2.gpVsIndustry.gap < 0 && (
                                 <div className="text-xs text-red-400 font-bold">
-                                    ⚠ {Math.abs(layer2.gpVsIndustry.gap).toFixed(1)}% below industry median
+                                    ⚠ {Math.abs(layer2.gpVsIndustry.gap).toFixed(1)}% below standard
                                 </div>
                             )}
                         </div>
@@ -558,7 +616,7 @@ function ResultsDashboard({
                                 {formatCurrency(layer2.estimatedLeakage.min)} — {formatCurrency(layer2.estimatedLeakage.max)}
                             </div>
                             <div className="text-sm text-muted-foreground">
-                                Hidden capital drain detected
+                                Money vanishing into thin air
                             </div>
                             <div className="text-xs text-red-400/80 font-bold">
                                 {isEmailUnlocked ? "Identified across 18 pillars" : "WHERE is it going?! 🔒"}
@@ -567,18 +625,18 @@ function ResultsDashboard({
 
                         {/* Efficiency Index */}
                         <div className="space-y-3">
-                            <div className="text-[9px] font-black uppercase tracking-widest text-muted-foreground">Operational Efficiency</div>
+                            <div className="text-[9px] font-black uppercase tracking-widest text-muted-foreground">Health Score</div>
                             <div className="text-2xl font-black">
                                 <span className={layer2.efficiencyIndex >= 80 ? 'text-emerald-400' : layer2.efficiencyIndex < 50 ? 'text-red-400' : 'text-yellow-400'}>
-                                    {layer2.efficiencyIndex}%
+                                    {layer2.efficiencyIndex}/100
                                 </span>
                             </div>
                             <div className="text-sm text-muted-foreground">
-                                vs industry peers
+                                Operational Strength
                             </div>
                             {layer2.efficiencyIndex < 80 && (
                                 <div className="text-xs text-yellow-400 font-bold">
-                                    {100 - layer2.efficiencyIndex}% below optimal
+                                    {100 - layer2.efficiencyIndex}% room for improvement
                                 </div>
                             )}
                         </div>
@@ -587,9 +645,8 @@ function ResultsDashboard({
             </Card>
 
             {/* Layer 3: LOCKED FORENSIC HEAT MAP (THE CONVERSION ENGINE) */}
-            <LockedForensicHeatMap 
-                layer3={layer3} 
-                layer2={layer2} 
+            <LockedForensicHeatMap
+                layer3={layer3}
                 isEmailUnlocked={isEmailUnlocked}
                 email={email}
                 setEmail={setEmail}
@@ -598,35 +655,37 @@ function ResultsDashboard({
             />
 
             {/* Layer 4: THE CTA (Relief from Anxiety) */}
-            <CTASection 
-                layer1={layer1} 
-                layer2={layer2} 
-                layer3={layer3} 
-                onReset={onReset} 
-                isEmailUnlocked={isEmailUnlocked} 
+            <CTASection
+                layer1={layer1}
+                layer2={layer2}
+                layer3={layer3}
+                onReset={onReset}
+                isEmailUnlocked={isEmailUnlocked}
                 onAuditClick={onAuditClick}
             />
         </div>
     )
 }
 
-function LockedForensicHeatMap({ 
-    layer3, 
-    layer2,
+function LockedForensicHeatMap({
+    layer3,
     isEmailUnlocked,
     email,
     setEmail,
     onEmailSubmit,
     isSubmittingEmail
-}: { 
-    layer3: FIPLiteResult['layer3']; 
-    layer2: FIPLiteResult['layer2'];
+}: {
+    layer3: FIPLiteResult['layer3'];
     isEmailUnlocked: boolean;
     email: string;
     setEmail: (email: string) => void;
     onEmailSubmit: (e: React.FormEvent) => void;
     isSubmittingEmail: boolean;
 }) {
+    // Teaser Logic: Always show the first "Critical" or "Warning" pillar as a teaser
+    const teaserPillarIndex = layer3.pillars.findIndex(p => p.status === 'critical' || p.status === 'warning')
+    const teaserIndex = teaserPillarIndex !== -1 ? teaserPillarIndex : 0;
+
     return (
         <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-transparent relative overflow-hidden">
             <div className="absolute inset-0 bg-grain opacity-[0.02] pointer-events-none" />
@@ -636,57 +695,71 @@ function LockedForensicHeatMap({
                     <div>
                         <CardTitle className="text-2xl font-black uppercase tracking-tight flex items-center gap-2">
                             {isEmailUnlocked ? <Activity className="w-6 h-6 text-primary" /> : <Lock className="w-6 h-6 text-primary" />}
-                            Forensic Heat Map — 18 Pillar Scan
+                            Forensic Heat Map — 18 Points
                         </CardTitle>
                         <CardDescription>
-                            {isEmailUnlocked ? "Full diagnostic scan results" : "Full diagnostic requires unlock"}
+                            {isEmailUnlocked ? "Full diagnostic scan results" : "Result Locked. Unlock to see where you are bleeding."}
                         </CardDescription>
                     </div>
                     <div className="text-right">
-                                <div className="text-3xl font-black text-primary">{layer3.criticalCount}</div>
-                                <div className="text-[9px] uppercase tracking-widest text-muted-foreground">Failures</div>
-                            </div>
+                        <div className="text-3xl font-black text-primary">{layer3.criticalCount}</div>
+                        <div className="text-[9px] uppercase tracking-widest text-muted-foreground">Critical Fails</div>
+                    </div>
                 </div>
             </CardHeader>
 
             <CardContent className="space-y-6 relative">
                 {/* Locked Pillars Grid */}
-                <div className={`space-y-3 transition-all duration-1000 ${!isEmailUnlocked ? 'filter blur-[4px] pointer-events-none select-none' : ''}`}>
-                    {layer3.pillars.slice(0, 10).map((pillar) => (
-                        <div key={pillar.id} className="relative group">
-                            <div className="flex items-center gap-4 p-4 rounded-xl bg-black/20 border border-white/5 hover:border-white/10 transition-all">
-                                <div className="flex-1 space-y-2">
-                                    <div className="flex items-center justify-between">
-                                        <span className="text-sm font-bold uppercase tracking-wider">{pillar.name}</span>
-                                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${pillar.status === 'critical' ? 'bg-red-500/10 border border-red-500/20' :
+                <div className={`space-y-3 transition-opacity duration-500`}>
+                    {layer3.pillars.slice(0, 10).map((pillar, index) => {
+                        // Is this the teaser pillar?
+                        const isTeaser = !isEmailUnlocked && index === teaserIndex;
+                        const isLocked = !isEmailUnlocked && !isTeaser;
+
+                        return (
+                            <div key={pillar.id} className={`relative group ${isLocked ? 'filter blur-[4px] opacity-50 select-none' : ''}`}>
+                                <div className={`flex items-center gap-4 p-4 rounded-xl border transition-all ${isTeaser ? 'bg-red-500/10 border-red-500 animate-pulse' : 'bg-black/20 border-white/5'
+                                    }`}>
+                                    <div className="flex-1 space-y-2">
+                                        <div className="flex items-center justify-between">
+                                            <span className={`text-sm font-bold uppercase tracking-wider ${isTeaser ? 'text-red-500' : ''}`}>
+                                                {isTeaser ? `⚠ CRITICAL LEAK: ${pillar.name}` : pillar.name}
+                                            </span>
+                                            <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${pillar.status === 'critical' ? 'bg-red-500/10 border border-red-500/20' :
                                                 pillar.status === 'warning' ? 'bg-yellow-500/10 border border-yellow-500/20' :
                                                     'bg-emerald-500/10 border border-emerald-500/20'
-                                            }`}>
-                                            {isEmailUnlocked ? (
-                                                <span className={`text-[10px] font-black ${pillar.status === 'critical' ? 'text-red-500' : pillar.status === 'warning' ? 'text-yellow-500' : 'text-emerald-500'}`}>
-                                                    {pillar.status === 'critical' ? 'FAIL' : pillar.status === 'warning' ? 'WARN' : 'PASS'}
-                                                </span>
-                                            ) : (
-                                                <Lock className={`w-4 h-4 ${pillar.status === 'critical' ? 'text-red-500' :
+                                                }`}>
+                                                {!isLocked ? (
+                                                    <span className={`text-[10px] font-black ${pillar.status === 'critical' ? 'text-red-500' : pillar.status === 'warning' ? 'text-yellow-500' : 'text-emerald-500'}`}>
+                                                        {pillar.status === 'critical' ? 'FAIL' : pillar.status === 'warning' ? 'WARN' : 'PASS'}
+                                                    </span>
+                                                ) : (
+                                                    <Lock className={`w-4 h-4 ${pillar.status === 'critical' ? 'text-red-500' :
                                                         pillar.status === 'warning' ? 'text-yellow-500' :
                                                             'text-emerald-500'
-                                                    }`} />
-                                            )}
+                                                        }`} />
+                                                )}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="relative h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                                        <div
-                                            className={`h-full transition-all duration-1000 ${pillar.status === 'critical' ? 'bg-red-500' :
+                                        <div className="relative h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                                            <div
+                                                className={`h-full transition-all duration-1000 ${pillar.status === 'critical' ? 'bg-red-500' :
                                                     pillar.status === 'warning' ? 'bg-yellow-500' :
                                                         'bg-emerald-500'
-                                                } ${!isEmailUnlocked ? 'blur-sm' : ''}`}
-                                            style={{ width: `${pillar.barWidth}%` }}
-                                        />
+                                                    }`}
+                                                style={{ width: `${pillar.barWidth}%` }}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
+                                {isTeaser && (
+                                    <div className="absolute -top-3 left-6 bg-red-600 text-white text-[9px] font-black px-2 py-0.5 rounded shadow-lg uppercase tracking-widest">
+                                        Evidence Found
+                                    </div>
+                                )}
                             </div>
-                        </div>
-                    ))}
+                        )
+                    })}
 
                     {/* "... and 8 more" indicator */}
                     <div className="p-4 rounded-xl bg-black/40 border border-white/5 text-center">
@@ -699,46 +772,46 @@ function LockedForensicHeatMap({
 
                 {/* Email Gate Overlay */}
                 {!isEmailUnlocked && (
-                    <div className="absolute inset-0 flex items-center justify-center p-6 z-10">
-                        <Card className="w-full max-w-md bg-black/80 backdrop-blur-xl border-primary/30 shadow-2xl animate-in zoom-in-95 duration-500">
-                        <CardHeader className="text-center">
+                    <div className="absolute inset-0 flex items-center justify-center p-6 z-10 top-20">
+                        <Card className="w-full max-w-md bg-black/90 backdrop-blur-xl border-primary/30 shadow-2xl animate-in zoom-in-95 duration-500">
+                            <CardHeader className="text-center">
                                 <div className="mx-auto w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center mb-4 border border-red-500/20">
                                     <Lock className="w-6 h-6 text-red-500 animate-pulse" />
                                 </div>
-                                <CardTitle className="text-xl font-black uppercase tracking-tight">Vulnerability Detected</CardTitle>
+                                <CardTitle className="text-xl font-black uppercase tracking-tight">Full Report Locked</CardTitle>
                                 <CardDescription className="text-xs">
-                                    We've identified <span className="text-red-400 font-black">{layer3.criticalCount} red-zone failures</span> that are draining your capital. 
-                                    <br/><span className="text-white font-bold">Unlock the 18-pillar breakdown to see where the bleeding is.</span>
+                                    We found <span className="text-red-400 font-black">{layer3.criticalCount} severe leaks</span> that are costing you money every day.
+                                    <br /><span className="text-white font-bold">See exactly where they are.</span>
                                 </CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <form onSubmit={onEmailSubmit} className="space-y-4">
                                     <div className="space-y-2">
-                                        <Input 
-                                            type="email" 
-                                            placeholder="you@company.com" 
+                                        <Input
+                                            type="email"
+                                            placeholder="you@company.com"
                                             required
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
                                             className="h-12 bg-white/5 border-white/10"
                                         />
                                     </div>
-                                    <Button 
-                                        type="submit" 
-                                        className="w-full h-12 font-black uppercase tracking-widest"
+                                    <Button
+                                        type="submit"
+                                        className="w-full h-12 font-black uppercase tracking-widest bg-primary hover:bg-white hover:text-black transition-colors"
                                         disabled={isSubmittingEmail}
                                     >
                                         {isSubmittingEmail ? (
                                             <>
                                                 <RefreshCcw className="w-4 h-4 mr-2 animate-spin" />
-                                                Unlocking...
+                                                Opening Report...
                                             </>
                                         ) : (
-                                            "Get My Results Now"
+                                            "REVEAL MY RESULTS"
                                         )}
                                     </Button>
                                     <p className="text-[9px] text-center text-muted-foreground uppercase tracking-widest">
-                                        No spam. Just your forensic report and strategic insights.
+                                        No spam. Just your forensic report and fixes.
                                     </p>
                                 </form>
                             </CardContent>
@@ -750,28 +823,13 @@ function LockedForensicHeatMap({
                 <div className="p-6 rounded-2xl bg-red-500/5 border border-red-500/20 space-y-3">
                     <div className="flex items-center gap-2 text-red-400">
                         <HelpCircle className="w-5 h-5" />
-                        <span className="text-sm font-black uppercase tracking-widest">Estimated Annual Impact</span>
+                        <span className="text-sm font-black uppercase tracking-widest">Estimated Annual Loss</span>
                     </div>
                     <div className="text-3xl font-black text-red-400">
                         {formatCurrency(layer3.estimatedAnnualImpact.min)} — {formatCurrency(layer3.estimatedAnnualImpact.max)}
                     </div>
                     <div className="text-sm text-muted-foreground">
-                        Potential annual loss from {layer3.criticalCount} critical + {layer3.warningCount} warning vulnerabilities
-                    </div>
-                </div>
-
-                {/* Ticker Urgensi/Social Proof */}
-                <div className="pt-4 border-t border-white/5">
-                    <div className="flex items-center justify-center gap-4 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-                        <div className="flex items-center gap-1.5">
-                            <Users className="w-3 h-3 text-primary" />
-                            <span>3 peers in {layer2.gpVsIndustry.industryMin > 0 ? 'your industry' : 'this sector'} scanned today</span>
-                        </div>
-                        <div className="w-1 h-1 rounded-full bg-white/20" />
-                        <div className="flex items-center gap-1.5">
-                            <Clock className="w-3 h-3 text-primary" />
-                            <span>Average recovery: $42k/year</span>
-                        </div>
+                        Money you could have kept if these were fixed.
                     </div>
                 </div>
             </CardContent>
@@ -797,14 +855,14 @@ function CTASection({ layer1, layer2, layer3, onReset, isEmailUnlocked, onAuditC
             <CardContent className="p-12 space-y-8">
                 <div className="text-center space-y-4 max-w-3xl mx-auto">
                     <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tight">
-                        {isCritical 
+                        {isCritical
                             ? <>Stop the Bleeding Before <span className="text-red-400">{new Date(layer1.cashZeroDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span></>
                             : <>Fortify Your <span className="text-emerald-400">Market Position</span></>
                         }
                     </h3>
                     <p className="text-xl text-muted-foreground leading-relaxed">
-                        {isCritical 
-                            ? <>Your business is losing up to <span className="text-red-400 font-bold">{leakageAmount}/mo</span>. A full audit identifies the EXACT sources across all 18 pillars.</>
+                        {isCritical
+                            ? <>Your business is losing up to <span className="text-red-400 font-bold">{leakageAmount}/mo</span>. We can help you plug these holes.</>
                             : <>You've built a solid foundation. Now, let's extract the remaining <span className="text-emerald-400 font-bold">{leakageAmount}/mo</span> in hidden efficiency.</>
                         }
                     </p>
@@ -812,7 +870,7 @@ function CTASection({ layer1, layer2, layer3, onReset, isEmailUnlocked, onAuditC
 
                 <div className="bg-black/40 rounded-2xl p-8 space-y-6 border border-white/10">
                     <h4 className="text-xl font-black uppercase tracking-tight">
-                        {isCritical ? "The Forensic Recovery Roadmap:" : "The Expansion Science Framework:"}
+                        {isCritical ? "The Recovery Plan:" : "The Expansion Plan:"}
                     </h4>
                     <div className="grid md:grid-cols-3 gap-6">
                         <div className="flex items-start gap-3">
@@ -820,7 +878,7 @@ function CTASection({ layer1, layer2, layer3, onReset, isEmailUnlocked, onAuditC
                                 <span className="text-primary text-xs font-black">✓</span>
                             </div>
                             <div>
-                                <div className="font-bold text-sm">Surgical Intervention</div>
+                                <div className="font-bold text-sm">Surgical Fixes</div>
                                 <div className="text-xs text-muted-foreground">Fixing the {layer3.criticalCount} critical leaks</div>
                             </div>
                         </div>
@@ -829,8 +887,8 @@ function CTASection({ layer1, layer2, layer3, onReset, isEmailUnlocked, onAuditC
                                 <span className="text-primary text-xs font-black">✓</span>
                             </div>
                             <div>
-                                <div className="font-bold text-sm">Prioritized Recovery</div>
-                                <div className="text-xs text-muted-foreground">Step-by-step 90-day execution plan</div>
+                                <div className="font-bold text-sm">90-Day Sprint</div>
+                                <div className="text-xs text-muted-foreground">Step-by-step execution guide</div>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -838,38 +896,38 @@ function CTASection({ layer1, layer2, layer3, onReset, isEmailUnlocked, onAuditC
                                 <span className="text-primary text-xs font-black">✓</span>
                             </div>
                             <div>
-                                <div className="font-bold text-sm">12-Month Trajectory</div>
-                                <div className="text-xs text-muted-foreground">Projection of recovered capital</div>
+                                <div className="font-bold text-sm">Cash Recovery</div>
+                                <div className="text-xs text-muted-foreground">Get your money back in the bank</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button 
-                        size="lg" 
+                    <Button
+                        size="lg"
                         onClick={onAuditClick}
                         className="h-16 px-12 text-lg font-black uppercase tracking-widest shadow-2xl shadow-primary/30 group bg-primary hover:bg-primary/90"
                     >
                         <Zap className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                        Execute Full Audit & Recovery → {formatCurrency(1200)}
+                        Book Audit & Fix It → {formatCurrency(1200)}
                     </Button>
                     <Button variant="outline" size="lg" onClick={onReset} className="h-16 px-8 border-white/10 hover:bg-white/5">
                         <RefreshCcw className="w-5 h-5 mr-2" />
-                        New Diagnostic
+                        New Scan
                     </Button>
                 </div>
 
                 {!isEmailUnlocked && (
                     <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex items-center justify-center">
                         <div className="bg-black border border-white/10 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-muted-foreground">
-                            Unlock Heat Map Above to Enable Booking
+                            Unlock Report Above to Enable Booking
                         </div>
                     </div>
                 )}
 
                 <p className="text-center text-[9px] text-muted-foreground uppercase tracking-widest">
-                    🔒 One-time investment. {isCritical ? "Immediate recovery." : "Strategic scaling."} No subscriptions.
+                    🔒 One-time fee. Immediate recovery. No subscriptions.
                 </p>
             </CardContent>
         </Card>

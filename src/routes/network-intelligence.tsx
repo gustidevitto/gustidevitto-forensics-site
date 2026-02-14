@@ -15,7 +15,6 @@ function NetworkIntelligencePage() {
     const { t } = useTranslation()
     const [showMasterLab, setShowMasterLab] = useState(false)
     const [currentSlide, setCurrentSlide] = useState(0)
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
 
     const heroImages = [
         '/assets/images/audit.png',
@@ -31,20 +30,12 @@ function NetworkIntelligencePage() {
         return () => clearInterval(timer)
     }, [])
 
-    const handleMouseMove = (e: React.MouseEvent) => {
-        if (typeof window === 'undefined') return
-        const x = (e.clientX / window.innerWidth) - 0.5
-        const y = (e.clientY / window.innerHeight) - 0.5
-        setMousePos({ x, y })
-    }
-
     const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroImages.length)
     const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length)
 
     return (
         <div
-            onMouseMove={handleMouseMove}
-            className="flex flex-col min-h-screen bg-gradient-to-b from-[#0a1628] via-[#0f1f3a] to-[#0a1628] text-white perspective-1000 overflow-x-hidden"
+            className="flex-1 flex flex-col bg-gradient-to-b from-[#0a1628] via-[#0f1f3a] to-[#0a1628] text-white"
         >
             {/* SEO Meta Tags */}
             <title>{t('global.seo_home_title')} - Enterprise Network Intelligence</title>
@@ -59,29 +50,22 @@ function NetworkIntelligencePage() {
 
             {/* Hero Section with Carousel */}
             <section className="relative py-24 px-4 md:px-8 border-b border-white/5 overflow-hidden">
-                {/* Dynamic Spotlight Effect - "The Forensic Torch" (Red for Enterprise) */}
+                {/* Automatic Spotlight Effect - "The Forensic Torch" (Red for Enterprise) */}
                 <div
-                    className="absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 ease-out"
+                    className="absolute inset-0 pointer-events-none z-0 animate-spotlight-roam opacity-20"
                     style={{
-                        background: `radial-gradient(800px circle at ${50 + (mousePos.x * 100)}% ${50 + (mousePos.y * 100)}%, rgba(220, 38, 38, 0.2), transparent 50%)`
+                        background: `radial-gradient(800px circle at center, rgba(220, 38, 38, 0.2), transparent 50%)`
                     }}
                 />
 
                 <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-                    <div
-                        className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[120px] opacity-50 animate-pulse transition-transform duration-[50ms] ease-linear"
-                        style={{ transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 40}px)` }}
-                    ></div>
-                    <div
-                        className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-red-900/20 rounded-full blur-[100px] transition-transform duration-[50ms] ease-linear"
-                        style={{ transform: `translate(${mousePos.x * 60}px, ${mousePos.y * 60}px)` }}
-                    ></div>
-                    {/* Enhanced Grid Pattern for Parallax Reference */}
-                    <div className="absolute inset-0 opacity-[0.08] transition-transform duration-[50ms] ease-linear"
+                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[120px] opacity-50 animate-pulse-slow"></div>
+                    <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-red-900/20 rounded-full blur-[100px] animate-pulse delay-700"></div>
+                    {/* Enhanced Grid Pattern */}
+                    <div className="absolute inset-0 opacity-[0.08]"
                         style={{
                             backgroundImage: 'radial-gradient(circle, #fff 1.5px, transparent 1.5px)',
                             backgroundSize: '40px 40px',
-                            transform: `translate(${mousePos.x * -20}px, ${mousePos.y * -20}px)`
                         }}></div>
                 </div>
 
@@ -123,11 +107,7 @@ function NetworkIntelligencePage() {
                         {/* Right: Image Carousel */}
                         <div className="relative perspective-1000">
                             <div
-                                className="relative rounded-2xl border border-white/10 bg-zinc-900/50 overflow-hidden backdrop-blur-sm group shadow-2xl transition-all duration-100 ease-out"
-                                style={{
-                                    transform: `rotateY(${mousePos.x * 10}deg) rotateX(${mousePos.y * -10}deg) translateZ(20px)`,
-                                    transformStyle: 'preserve-3d'
-                                }}
+                                className="relative rounded-2xl border border-white/10 bg-zinc-900/50 overflow-hidden backdrop-blur-sm group shadow-2xl transition-all duration-500 hover:scale-[1.02]"
                             >
                                 {/* Carousel Images */}
                                 <div className="relative aspect-[4/3] transform-style-3d">

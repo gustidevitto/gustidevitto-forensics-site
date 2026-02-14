@@ -12,7 +12,7 @@
             "image": "https://www.gustidevitto.com/assets/images/aboutme.jpg",
             "knowsAbout": [
                 "Financial Auditing",
-                "Sovereign Intelligence",
+                "Forensic Intelligence",
                 "Phantom Cost",
                 "Business Intelligence",
                 "Unit Economics",
@@ -45,7 +45,7 @@
                 },
                 {
                     "@type": "DefinedTerm",
-                    "name": "Sovereign Intelligence",
+                    "name": "Forensic Intelligence",
                     "description": "A deterministic data analysis method using pattern recognition to identify financial anomalies."
                 }
             ]

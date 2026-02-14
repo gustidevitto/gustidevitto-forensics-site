@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
-import { ArrowRight, Lock, Globe, Zap } from "lucide-react"
+import { ArrowRight, Lock, Globe, Zap, AlertTriangle } from "lucide-react"
 import { useTranslation, Trans } from 'react-i18next'
 import { LanguageSlider } from '@/components/LanguageSlider'
+import { Button } from '@/components/ui/button'
+import { SingleEntityGraphic, NetworkGraphic } from '@/components/EntranceGraphics'
 
 export const Route = createFileRoute('/')({
     component: Index,
@@ -11,18 +13,10 @@ export const Route = createFileRoute('/')({
 function Index() {
     const { t } = useTranslation()
     const [mounted, setMounted] = useState(false)
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
 
     useEffect(() => {
         setMounted(true)
     }, [])
-
-    const handleMouseMove = (e: React.MouseEvent) => {
-        if (typeof window === 'undefined') return
-        const x = (e.clientX / window.innerWidth) - 0.5
-        const y = (e.clientY / window.innerHeight) - 0.5
-        setMousePos({ x, y })
-    }
 
     const handlePathSelection = (path: 'single' | 'network') => {
         if (typeof window !== 'undefined') {
@@ -34,40 +28,37 @@ function Index() {
 
     return (
         <div
-            onMouseMove={handleMouseMove}
-            className="min-h-screen w-full bg-[#0a1628] text-white font-sans flex items-start md:items-center justify-center overflow-x-hidden selection:bg-primary selection:text-black relative p-6 pb-24 md:p-12 lg:p-20 perspective-1000"
+            className="flex-1 w-full bg-[#0a1628] text-white font-sans flex items-start md:items-center justify-center selection:bg-primary selection:text-black relative p-6 pb-24 md:p-12 lg:p-20"
         >
-            {/* Dynamic Spotlight Effect - "The Forensic Torch" */}
+            {/* Automatic Spotlight Effect */}
             <div
-                className="absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 ease-out"
+                className="absolute inset-0 pointer-events-none z-0 animate-spotlight-roam opacity-40"
                 style={{
-                    background: `radial-gradient(800px circle at ${50 + (mousePos.x * 100)}% ${50 + (mousePos.y * 100)}%, rgba(56, 189, 248, 0.15), transparent 50%)`
+                    background: `radial-gradient(800px circle at center, rgba(56, 189, 248, 0.15), transparent 50%)`
                 }}
             />
 
             {/* SEO Overlay */}
-            <title>GUSTI DEVITTO™ — Forensic Business Practice</title>
+            {/* SEO Overlay */}
+            <title>{t('global.seo_home_title')}</title>
+            <meta name="description" content={t('global.seo_home_desc')} />
+            <meta name="keywords" content={t('global.seo_home_keywords')} />
+            <meta property="og:title" content={t('global.og_home_title')} />
+            <meta property="og:description" content={t('global.og_home_desc')} />
+            <meta property="og:type" content="website" />
+            <meta name="geo.region" content="ID-JK" />
+            <meta name="geo.placename" content="Jakarta" />
+            <meta name="geo.position" content="-6.200000;106.816666" />
 
-            {/* Ambient Background Elements with Parallax */}
+            {/* Ambient Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse transition-transform duration-[50ms] ease-linear"
-                    style={{ transform: `translate(calc(-50% + ${mousePos.x * -40}px), calc(-50% + ${mousePos.y * -40}px))` }}
-                ></div>
-                <div
-                    className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] animate-pulse delay-700 transition-transform duration-[50ms] ease-linear"
-                    style={{ transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 40}px)` }}
-                ></div>
-                <div
-                    className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-blue-900/20 rounded-full blur-[100px] transition-transform duration-[50ms] ease-linear"
-                    style={{ transform: `translate(${mousePos.x * 60}px, ${mousePos.y * 60}px)` }}
-                ></div>
-                {/* Enhanced Grid Pattern for Parallax Reference */}
-                <div className="absolute inset-0 opacity-[0.08] transition-transform duration-[50ms] ease-linear"
+                <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse-slow"></div>
+
+                {/* Enhanced Grid Pattern */}
+                <div className="absolute inset-0 opacity-[0.08]"
                     style={{
                         backgroundImage: 'radial-gradient(circle, #fff 1.5px, transparent 1.5px)',
                         backgroundSize: '40px 40px',
-                        transform: `translate(${mousePos.x * -20}px, ${mousePos.y * -20}px)`
                     }}></div>
             </div>
 
@@ -75,9 +66,19 @@ function Index() {
 
                 {/* LEFT SIDE: Brand & Identity */}
                 <div className="space-y-10 animate-fade-in-left">
+                    {/* Emergency Button - Mobile Top */}
+                    <div className="lg:hidden mb-8">
+                        <Link to="/fip-lite">
+                            <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-widest animate-pulse shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-400/50">
+                                <AlertTriangle className="w-4 h-4 mr-2" />
+                                Emergency Diagnostic
+                            </Button>
+                        </Link>
+                    </div>
+
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-md">
-                        <Lock className="w-3 h-3 text-primary" />
-                        <span className="text-[9px] uppercase tracking-[0.3em] font-black text-primary">L-9 SECURE ACCESS // ID_VERIFIED</span>
+                        <Zap className="w-3 h-3 text-primary" />
+                        <span className="text-[10px] uppercase tracking-[0.3em] font-black text-primary">BUSINESS FORENSICS UNIT</span>
                     </div>
 
                     <div className="space-y-4">
@@ -102,16 +103,26 @@ function Index() {
                     </div>
 
                     <div className="space-y-4">
-                        <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Initialization Prompt:</p>
+                        <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Status Report:</p>
                         <p className="text-base md:text-lg text-white border-l-2 border-primary/50 pl-6 py-2 leading-relaxed max-w-md font-bold">
                             {t('entrance_gate.init_prompt')}
                         </p>
-                        <p className="text-xs text-white/40 italic leading-relaxed max-w-xs font-medium pl-6">
-                            {t('entrance_gate.proprietary_note')}
-                        </p>
+
+                        {/* Desktop Emergency Button */}
+                        <div className="hidden lg:block pt-4">
+                            <Link to="/fip-lite">
+                                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-widest animate-pulse shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-400/50 px-8 h-14">
+                                    <AlertTriangle className="w-5 h-5 mr-3" />
+                                    Start Emergency Scan (Free)
+                                </Button>
+                            </Link>
+                            <p className="text-[10px] text-red-400 mt-2 font-bold uppercase tracking-wider pl-1">
+                                * Find out exactly where you are losing money in 30 seconds.
+                            </p>
+                        </div>
                     </div>
 
-                    {/* Metadata Footer (Left Side) - Hidden on mobile to save space */}
+                    {/* Footer Credentials */}
                     <div className="hidden lg:flex flex-col gap-4 pt-12 border-t border-white/5 opacity-30">
                         <div className="flex gap-8 text-[9px] font-black tracking-widest uppercase">
                             <div className="flex flex-col gap-1">
@@ -122,34 +133,26 @@ function Index() {
                                 <span className="text-white/40">REGION</span>
                                 <span className="text-white/60">SEA_IDN</span>
                             </div>
-                            <div className="flex flex-col gap-1">
-                                <span className="text-white/40">AUTHORITY</span>
-                                <span className="text-white/60">SOVEREIGN_INTEL</span>
-                            </div>
                         </div>
                     </div>
                 </div>
 
                 {/* RIGHT SIDE: Vertical Segment Selection */}
-                <div className="flex flex-col gap-6 animate-fade-in-right perspective-1000">
+                <div className="flex flex-col gap-6 animate-fade-in-right">
 
                     {/* Option 1: Single Entity (SME) */}
                     <Link
                         to="/single-entity"
                         onClick={() => handlePathSelection('single')}
-                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-primary/50 transition-all duration-100 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-primary/10"
-                        style={{
-                            transform: `rotateY(${mousePos.x * 15}deg) rotateX(${mousePos.y * -15}deg) translateZ(30px)`,
-                            transformStyle: 'preserve-3d'
-                        }}
+                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-primary/50 transition-all duration-300 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1"
                     >
-                        {/* Background Thumbnail */}
-                        <div className="absolute inset-0 opacity-10 grayscale group-hover:grayscale-0 group-hover:opacity-30 group-hover:scale-105 transition-all duration-700">
-                            <img src="/assets/images/forensic_dashboard.png" alt="" className="w-full h-full object-cover" />
+                        {/* Background Illustration */}
+                        <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-1000">
+                            <SingleEntityGraphic />
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/80 to-transparent"></div>
 
-                        <div className="relative z-10 space-y-4 transform transition-transform duration-300 group-hover:translate-z-10">
+                        <div className="relative z-10 space-y-4">
                             <div className="flex items-center justify-between">
                                 <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                                     <Zap className="w-5 h-5" />
@@ -170,19 +173,15 @@ function Index() {
                     <Link
                         to="/network-intelligence"
                         onClick={() => handlePathSelection('network')}
-                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-red-500/50 transition-all duration-100 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-red-500/10"
-                        style={{
-                            transform: `rotateY(${mousePos.x * 15}deg) rotateX(${mousePos.y * -15}deg) translateZ(30px)`,
-                            transformStyle: 'preserve-3d'
-                        }}
+                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-red-500/50 transition-all duration-300 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-red-500/10 hover:-translate-y-1"
                     >
-                        {/* Background Thumbnail */}
-                        <div className="absolute inset-0 opacity-10 grayscale group-hover:grayscale-0 group-hover:opacity-30 group-hover:scale-105 transition-all duration-700">
-                            <img src="/assets/images/network_monitoring.png" alt="" className="w-full h-full object-cover" />
+                        {/* Background Illustration */}
+                        <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-1000">
+                            <NetworkGraphic />
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/80 to-transparent"></div>
 
-                        <div className="relative z-10 space-y-4 transform transition-transform duration-300 group-hover:translate-z-10">
+                        <div className="relative z-10 space-y-4">
                             <div className="flex items-center justify-between">
                                 <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 group-hover:scale-110 transition-transform">
                                     <Globe className="w-5 h-5" />
@@ -203,7 +202,7 @@ function Index() {
 
             {/* Absolute Footer Credential */}
             <div className="absolute bottom-8 left-12 md:left-20 right-12 md:right-20 flex justify-between items-center opacity-10 pointer-events-none">
-                <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap">NON_DISCLOSURE_ENABLED</span>
+                <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap">CONFIDENTIAL</span>
                 <div className="h-px flex-1 mx-8 bg-white/20 hidden md:block"></div>
                 <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap">© 2026 GUSTI DEVITTO</span>
             </div>
@@ -212,7 +211,6 @@ function Index() {
                 <p>Gusti Devitto - Forensic Business Diagnostician.</p>
                 <p>Specializing in Profit Leakage Detection, Phantom Cost Analysis, and Network Intelligence for Multi-Outlet Businesses.</p>
                 <p>Layanan Audit Forensik Bisnis untuk mendeteksi uang siluman dan inefisiensi operasional.</p>
-                <p>Auth Level: L-9 Sovereign Intelligence. FIP Protocol v4.00.</p>
             </div>
         </div>
     )

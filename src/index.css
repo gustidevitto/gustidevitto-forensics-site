@@ -66,8 +66,19 @@
         @apply border-border;
     }
 
+    html {
+        @apply scroll-smooth;
+        overflow-y: auto;
+    }
+
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground font-sans antialiased;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    #root {
+        @apply flex flex-col min-h-screen relative;
     }
 }
 
@@ -133,12 +144,12 @@
         }
 
         50% {
-            transform: translateY(-8px);
+            transform: translateY(-15px);
         }
     }
 
     .animate-float {
-        animation: float 3s ease-in-out infinite;
+        animation: float 6s ease-in-out infinite;
     }
 
     /* Glow Pulse for Buttons */
@@ -237,17 +248,41 @@
     }
 
     @keyframes scanline {
-        from {
-            transform: translateX(-100%);
+        0% {
+            transform: translateX(0);
+            opacity: 0;
         }
 
-        to {
-            transform: translateX(100%);
+        5% {
+            opacity: 0.5;
+        }
+
+        95% {
+            opacity: 0.5;
+        }
+
+        100% {
+            transform: translateX(300px);
+            opacity: 0;
         }
     }
 
     .animate-scanline {
-        animation: scanline 2s linear infinite;
+        animation: scanline 8s linear infinite;
+    }
+
+    @keyframes scanline-vertical {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(100%);
+        }
+    }
+
+    .animate-scanline-vertical {
+        animation: scanline-vertical 6s linear infinite;
     }
 
     /* Pulse Color Animation (No Opacity) */
@@ -266,6 +301,50 @@
 
     .animate-pulse-color {
         animation: pulse-color 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Pulse Slow */
+    @keyframes pulse-slow {
+
+        0%,
+        100% {
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: 0.8;
+        }
+    }
+
+    .animate-pulse-slow {
+        animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Spotlight Roam */
+    @keyframes spotlight-roam {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        25% {
+            transform: translate(10%, 10%);
+        }
+
+        50% {
+            transform: translate(-5%, 15%);
+        }
+
+        75% {
+            transform: translate(-10%, -5%);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    .animate-spotlight-roam {
+        animation: spotlight-roam 20s ease-in-out infinite;
     }
 
     /* Gold Glow Pulse for Navigation */
@@ -362,5 +441,23 @@
         pointer-events: none;
         animation: grain 8s steps(10) infinite;
         z-index: 0;
+    }
+
+    /* Custom Scrollbar for 'Obsidian Spear' feel */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: hsl(var(--primary) / 0.3);
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: hsl(var(--primary));
     }
 }

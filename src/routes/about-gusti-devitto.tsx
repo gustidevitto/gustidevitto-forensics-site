@@ -10,7 +10,7 @@ export const Route = createFileRoute('/about-gusti-devitto')({
 function AboutGustiDevitto() {
     const { t } = useTranslation()
     return (
-        <div className="flex flex-col min-h-[calc(100vh-4rem)]">
+        <div className="flex-1 flex flex-col">
             {/* SEO & GEO Meta Tags */}
             <title>{t('about_page.seo_title')}</title>
             <meta name="description" content={t('about_page.seo_desc')} />
@@ -69,10 +69,19 @@ function AboutGustiDevitto() {
                                     <img
                                         src="/assets/images/aboutme.jpg"
                                         alt="Gusti Devitto - Financial Forensics Specialist"
-                                        className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700"
+                                        className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700"
                                     />
+                                    {/* HUD Overlay */}
+                                    <div className="absolute inset-0 pointer-events-none">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+                                        <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-primary/40"></div>
+                                        <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-primary/40"></div>
+                                        <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-primary/40"></div>
+                                        <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-primary/40"></div>
+                                        <div className="absolute top-1/2 left-0 w-full h-[1px] bg-primary/10 animate-scanline"></div>
+                                        <div className="absolute top-0 left-1/2 h-full w-[1px] bg-primary/10 animate-scanline-vertical"></div> {/* Added vertical scanline */}
+                                    </div>
                                     {/* Overlay Elements */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
                                     <div className="absolute bottom-6 left-6 right-6">
                                         <div className="flex items-center gap-3 px-4 py-2 rounded-lg bg-background/80 backdrop-blur-md border border-primary/20 w-fit">
                                             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
@@ -100,14 +109,14 @@ function AboutGustiDevitto() {
                                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
                                     <Trans i18nKey="about_page.hero_title">
                                         Meet The Surgeon: <br />
-                                        <span className="text-primary">Presisi di Balik Angka</span>
+                                        <span className="text-primary">Precision Behind Numbers</span>
                                     </Trans>
                                 </h1>
                             </div>
 
                             <div className="prose prose-invert prose-lg max-w-none">
                                 <p className="text-xl text-muted-foreground leading-relaxed">
-                                    <Trans i18nKey="about_page.hero_intro">Halo, saya <strong className="text-foreground">Gusti Devitto</strong>.</Trans>
+                                    <Trans i18nKey="about_page.hero_intro">Hello, I am <strong className="text-foreground">Gusti Devitto</strong>.</Trans>
                                 </p>
                                 <p className="text-muted-foreground leading-relaxed">
                                     <Trans i18nKey="about_page.hero_p1">Saya bukan akuntan pajak, dan saya bukan perencana keuangan konvensional. Saya adalah seorang <strong className="text-primary">Financial Forensics Specialist</strong> yang berdedikasi membantu <em>founder</em> bisnis multi-outlet dan <em>brand owners</em> untuk membedah apa yang sebenarnya terjadi di balik laporan keuangan mereka.</Trans>
