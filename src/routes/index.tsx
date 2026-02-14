@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
-import { ArrowRight, Lock, Globe, Zap, AlertTriangle } from "lucide-react"
+import { ArrowRight, Globe, Zap, AlertTriangle } from "lucide-react"
 import { useTranslation, Trans } from 'react-i18next'
 import { LanguageSlider } from '@/components/LanguageSlider'
 import { Button } from '@/components/ui/button'
