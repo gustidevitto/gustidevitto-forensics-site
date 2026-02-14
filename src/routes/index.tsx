@@ -31,12 +31,14 @@ function Index() {
             className="flex-1 w-full bg-[#0a1628] text-white font-sans flex items-start md:items-center justify-center selection:bg-primary selection:text-black relative p-6 pb-24 md:p-12 lg:p-20"
         >
             {/* Automatic Spotlight Effect */}
-            <div
-                className="absolute inset-0 pointer-events-none z-0 animate-spotlight-roam opacity-40"
-                style={{
-                    background: `radial-gradient(800px circle at center, rgba(56, 189, 248, 0.15), transparent 50%)`
-                }}
-            />
+            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                <div
+                    className="absolute inset-0 animate-spotlight-roam opacity-40"
+                    style={{
+                        background: `radial-gradient(800px circle at center, rgba(56, 189, 248, 0.15), transparent 50%)`
+                    }}
+                />
+            </div>
 
             {/* SEO Overlay */}
             {/* SEO Overlay */}

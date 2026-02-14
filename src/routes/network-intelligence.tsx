@@ -51,12 +51,14 @@ function NetworkIntelligencePage() {
             {/* Hero Section with Carousel */}
             <section className="relative py-24 px-4 md:px-8 border-b border-white/5 overflow-hidden">
                 {/* Automatic Spotlight Effect - "The Forensic Torch" (Red for Enterprise) */}
-                <div
-                    className="absolute inset-0 pointer-events-none z-0 animate-spotlight-roam opacity-20"
-                    style={{
-                        background: `radial-gradient(800px circle at center, rgba(220, 38, 38, 0.2), transparent 50%)`
-                    }}
-                />
+                <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                    <div
+                        className="absolute inset-0 animate-spotlight-roam opacity-20"
+                        style={{
+                            background: `radial-gradient(800px circle at center, rgba(220, 38, 38, 0.2), transparent 50%)`
+                        }}
+                    />
+                </div>
 
                 <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
                     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[120px] opacity-50 animate-pulse-slow"></div>

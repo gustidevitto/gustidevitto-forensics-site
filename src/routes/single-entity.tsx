@@ -40,12 +40,14 @@ function SingleEntityPage() {
             className="flex-1 flex flex-col bg-[#0a1628] text-white relative"
         >
             {/* Automatic Spotlight Effect */}
-            <div
-                className="absolute inset-0 pointer-events-none z-0 animate-spotlight-roam opacity-20"
-                style={{
-                    background: `radial-gradient(800px circle at center, rgba(56, 189, 248, 0.15), transparent 50%)`
-                }}
-            />
+            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                <div
+                    className="absolute inset-0 animate-spotlight-roam opacity-20"
+                    style={{
+                        background: `radial-gradient(800px circle at center, rgba(56, 189, 248, 0.15), transparent 50%)`
+                    }}
+                />
+            </div>
 
             {/* Ambient Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">

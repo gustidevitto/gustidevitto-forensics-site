@@ -1,5 +1,5 @@
 import { useNavigate, createFileRoute } from '@tanstack/react-router'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
     Activity,
@@ -71,6 +71,15 @@ function FIPLiteV2Page() {
         teamSize: 1
     })
 
+    // Persist calculate timeout to allow cleanup
+    const calculateTimerRef = useRef<number | null>(null)
+
+    useEffect(() => {
+        return () => {
+            if (calculateTimerRef.current) window.clearTimeout(calculateTimerRef.current)
+        }
+    }, [])
+
     const handleCalculate = () => {
         // Validate required fields
         if (!inputs.monthlyRevenue || !inputs.monthlyCOGS || !inputs.monthlyOpEx || !inputs.currentCash || !inputs.industryType || !inputs.businessAge || !inputs.teamSize) {
@@ -80,11 +89,12 @@ function FIPLiteV2Page() {
 
         setIsCalculating(true)
         // Simulation time for the "Terminal" effect
-        setTimeout(() => {
+        calculateTimerRef.current = window.setTimeout(() => {
             const result = calculateFIPLiteResults(inputs as FIPLiteInputs)
             setResults(result)
             setIsCalculating(false)
-            window.scrollTo({ top: 0, behavior: 'smooth' })
+            calculateTimerRef.current = null
+            window.scrollTo(0, 0)
         }, 4500) // Increased to 4.5s to let the terminal animation play out
     }
 
@@ -98,7 +108,7 @@ function FIPLiteV2Page() {
             businessAge: 1,
             teamSize: 1
         })
-        window.scrollTo({ top: 0, behavior: 'smooth' })
+        window.scrollTo(0, 0)
     }
 
     const handleEmailSubmit = async (e: React.FormEvent) => {
@@ -130,22 +140,14 @@ function FIPLiteV2Page() {
     return (
         <div className="flex-1 flex flex-col bg-black text-white relative">
             {/* Automatic Spotlight Effect */}
-            <div
-                className="absolute inset-0 pointer-events-none z-0 animate-spotlight-roam opacity-20"
-                style={{
-                    background: `radial-gradient(800px circle at center, rgba(56, 189, 248, 0.15), transparent 50%)`
-                }}
-            />
-            {/* SEO Meta Tags */}
-            <title>FIP™ Lite - Business Health Diagnositc | Gusti Devitto</title>
-            <meta name="description" content="Instant 30-second forensic business MRI. Calculate cash runway, detect phantom cost leakage, and assess insolvency risk. Free tool by Gusti Devitto." />
-            <meta name="keywords" content="Business Health Check, Cash Runway Calculator, Profit Leakage Detection, Financial Stress Test, Gusti Devitto" />
-            <meta property="og:title" content="FIP™ Lite - Is Your Business Bleeding?" />
-            <meta property="og:description" content="run a 30-second forensic diagnostic on your business. Detect hidden leaks before they become fatal." />
-            <meta property="og:type" content="website" />
-            <meta name="geo.region" content="ID-JK" />
-            <meta name="geo.placename" content="Jakarta" />
-            <meta name="geo.position" content="-6.200000;106.816666" />
+            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                <div
+                    className="absolute inset-0 animate-spotlight-roam opacity-20"
+                    style={{
+                        background: `radial-gradient(800px circle at center, rgba(56, 189, 248, 0.15), transparent 50%)`
+                    }}
+                />
+            </div>
             {/* Header */}
             <header className="border-b border-white/10 bg-black/50 backdrop-blur-xl sticky top-0 z-50">
                 <div className="container mx-auto px-4 py-4 flex items-center justify-between">

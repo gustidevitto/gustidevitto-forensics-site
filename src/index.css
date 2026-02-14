@@ -67,18 +67,22 @@
     }
 
     html {
-        @apply scroll-smooth;
+        height: 100%;
         overflow-y: auto;
+        scrollbar-gutter: stable;
     }
 
     body {
         @apply bg-background text-foreground font-sans antialiased;
+        min-height: 100%;
         overflow-x: hidden;
+        overflow-y: visible;
+        /* Let html handle the vertical scroll */
         width: 100%;
     }
 
     #root {
-        @apply flex flex-col min-h-screen relative;
+        @apply flex flex-col min-h-full relative;
     }
 }
 
