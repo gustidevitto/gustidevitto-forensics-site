@@ -17,10 +17,10 @@ function NetworkIntelligencePage() {
     const [showMasterLab, setShowMasterLab] = useState(false)
     const [currentSlide, setCurrentSlide] = useState(0)
     const [modalOpen, setModalOpen] = useState(false);
-    const [selectedTier, setSelectedTier] = useState(null);
-    const [commitmentType, setCommitmentType] = useState(null);
+    const [selectedTier, setSelectedTier] = useState<any>(null);
+    const [commitmentType, setCommitmentType] = useState<any>(null);
 
-    const openModal = (tier, type) => {
+    const openModal = (tier: any, type: any) => {
         setSelectedTier(tier);
         setCommitmentType(type);
         setModalOpen(true);
@@ -32,74 +32,74 @@ function NetworkIntelligencePage() {
         setCommitmentType(null);
     };
 
-    const tiers = [ 
-   { 
-     id: 'network', 
-     name: 'NETWORK', 
-     tagline: 'X-ray the entire fleet', 
-     positioning: 'How sick is my entire fleet?', 
-     color: 'amber', 
-     pricing: { 
-       oneTime: 8000, 
-       quarterly: { total: 20400, perAudit: 6800, audits: 3 }, 
-       annual: { total: 24000, perAudit: 6000, audits: 4, access: true } 
-     }, 
- features: { 
-   included: [ 
-     'Everything in FORENSIC', 
-     'Multi-Outlet Analysis (up to 50)', 
-     'Network Health Index', 
-     'Territory Productivity Mapping', 
-     'Franchise Intelligence Suite', 
-     '12-Month Risk Projection™', 
-     'Scenario Simulator', 
-     'Network Report (30-50 pages)' 
-   ], 
-   excluded: [ 
-     'AI neural pattern learning', 
-     'Monte Carlo stress testing', 
-     'Wealth impact analysis' 
-   ] 
- }, 
- bestFor: [ 
-   '10-50 outlets', 
-   '$10M-$100M revenue', 
-   'Franchise/chain operators', 
-   'Network optimization' 
- ] 
-   }, 
-   { 
-     id: 'sovereign', 
-     name: 'SOVEREIGN', 
-     tagline: 'Own the intelligence', 
-     positioning: 'I control the machine', 
-     color: 'red', 
-     pricing: { 
-       oneTime: 25000, 
-       quarterly: { total: 63750, perAudit: 21250, audits: 3 }, 
-       annual: { total: 75000, perAudit: 18750, audits: 4, access: true } 
-     }, 
- features: { 
-   included: [ 
-     'Everything in NETWORK', 
-     'AI Neural Pattern Learning', 
-     'Predictive Intelligence Engine', 
-     'Monte Carlo Stress Testing', 
-     'Founder Wealth Impact Analysis™', 
-     'Unlimited Outlet Profiles', 
-     'Priority Strategic Access', 
-     'Enterprise-grade security' 
-   ], 
-   excluded: [] 
- }, 
- bestFor: [ 
-   '50-500 outlets', 
-   '$100M+ revenue', 
-   'Enterprise sophistication', 
-   'Wealth preservation & exit planning' 
- ] 
-   } 
- ];
+    const tiers = [
+        {
+            id: 'network',
+            name: 'NETWORK',
+            tagline: 'X-ray the entire fleet',
+            positioning: 'How sick is my entire fleet?',
+            color: 'amber',
+            pricing: {
+                oneTime: 8000,
+                quarterly: { total: 20400, perAudit: 6800, audits: 3 },
+                annual: { total: 24000, perAudit: 6000, audits: 4, access: true }
+            },
+            features: {
+                included: [
+                    'Everything in FORENSIC',
+                    'Multi-Outlet Analysis (up to 50)',
+                    'Network Health Index',
+                    'Territory Productivity Mapping',
+                    'Franchise Intelligence Suite',
+                    '12-Month Risk Projection™',
+                    'Scenario Simulator',
+                    'Network Report (30-50 pages)'
+                ],
+                excluded: [
+                    'AI neural pattern learning',
+                    'Monte Carlo stress testing',
+                    'Wealth impact analysis'
+                ]
+            },
+            bestFor: [
+                '10-50 outlets',
+                '$10M-$100M revenue',
+                'Franchise/chain operators',
+                'Network optimization'
+            ]
+        },
+        {
+            id: 'sovereign',
+            name: 'SOVEREIGN',
+            tagline: 'Own the intelligence',
+            positioning: 'I control the machine',
+            color: 'red',
+            pricing: {
+                oneTime: 25000,
+                quarterly: { total: 63750, perAudit: 21250, audits: 3 },
+                annual: { total: 75000, perAudit: 18750, audits: 4, access: true }
+            },
+            features: {
+                included: [
+                    'Everything in NETWORK',
+                    'AI Neural Pattern Learning',
+                    'Predictive Intelligence Engine',
+                    'Monte Carlo Stress Testing',
+                    'Founder Wealth Impact Analysis™',
+                    'Unlimited Outlet Profiles',
+                    'Priority Strategic Access',
+                    'Enterprise-grade security'
+                ],
+                excluded: []
+            },
+            bestFor: [
+                '50-500 outlets',
+                '$100M+ revenue',
+                'Enterprise sophistication',
+                'Wealth preservation & exit planning'
+            ]
+        }
+    ];
 
     const heroImages = [
         '/assets/images/audit.png',
@@ -135,19 +135,19 @@ function NetworkIntelligencePage() {
 
             {/* Hero Section with Carousel */}
             <section className="relative py-24 px-4 md:px-8 border-b border-white/5 overflow-hidden">
-                {/* Automatic Spotlight Effect - "The Forensic Torch" (Red for Enterprise) */}
+                {/* Automatic Spotlight Effect - Amber for Network */}
                 <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
                     <div
                         className="absolute inset-0 animate-spotlight-roam opacity-20"
                         style={{
-                            background: `radial-gradient(800px circle at center, rgba(220, 38, 38, 0.2), transparent 50%)`
+                            background: `radial-gradient(800px circle at center, rgba(245, 158, 11, 0.15), transparent 50%)`
                         }}
                     />
                 </div>
 
                 <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[120px] opacity-50 animate-pulse-slow"></div>
-                    <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-red-900/20 rounded-full blur-[100px] animate-pulse delay-700"></div>
+                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[120px] opacity-50 animate-pulse-slow"></div>
+                    <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-amber-900/15 rounded-full blur-[100px] animate-pulse delay-700"></div>
                     {/* Enhanced Grid Pattern */}
                     <div className="absolute inset-0 opacity-[0.08]"
                         style={{
@@ -174,15 +174,15 @@ function NetworkIntelligencePage() {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                                <Button asChild size="lg" className="h-16 px-10 text-lg font-black bg-primary text-black hover:bg-white shadow-xl shadow-primary/20 group">
+                                <Button asChild size="lg" className="h-16 px-10 text-lg font-black bg-primary text-black hover:bg-white shadow-xl shadow-primary/20 group transition-all">
                                     <Link to="/investasi">
                                         {t('network_intelligence.cta_demo')}
                                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                 </Button>
                                 <div className="flex flex-col justify-center px-6 py-2 rounded-xl bg-white/5 border border-white/10">
-                                    <div className="text-[10px] uppercase font-black text-muted-foreground tracking-widest">{t('network_intelligence.clearance_label')}</div>
-                                    <div className="text-sm font-black text-primary">{t('network_intelligence.clearance_value')}</div>
+                                    <div className="text-[10px] uppercase font-black text-muted-foreground tracking-widest">Covers</div>
+                                    <div className="text-sm font-black text-primary">20–500+ Locations</div>
                                 </div>
                             </div>
 
@@ -250,16 +250,16 @@ function NetworkIntelligencePage() {
             {/* Social Proof */}
             <section className="py-16 px-4 md:px-8 bg-white/[0.02] border-b border-white/5">
                 <div className="container mx-auto max-w-5xl">
-                    <div className="grid md:grid-cols-3 gap-8 text-center">
-                        <div className="space-y-2">
+                    <div className="grid md:grid-cols-3 gap-0 text-center">
+                        <div className="space-y-2 py-6 md:border-r border-white/5">
                             <div className="text-4xl font-black text-primary">{t('network_intelligence.social_nodes_val')}</div>
                             <div className="text-sm text-muted-foreground uppercase tracking-wide">{t('network_intelligence.social_nodes')}</div>
                         </div>
-                        <div className="space-y-2">
+                        <div className="space-y-2 py-6 md:border-r border-white/5">
                             <div className="text-4xl font-black text-primary">{t('network_intelligence.social_leakage_val')}</div>
                             <div className="text-sm text-muted-foreground uppercase tracking-wide">{t('network_intelligence.social_leakage')}</div>
                         </div>
-                        <div className="space-y-2">
+                        <div className="space-y-2 py-6">
                             <div className="text-4xl font-black text-primary">{t('network_intelligence.social_compliance_val')}</div>
                             <div className="text-sm text-muted-foreground uppercase tracking-wide">{t('network_intelligence.social_compliance')}</div>
                         </div>
@@ -473,7 +473,7 @@ function NetworkIntelligencePage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {tiers.map((tier) => {
-                            const colorMap = {
+                            const colorMap: Record<string, { base: string; text: string; bg: string; border: string }> = {
                                 green: { base: 'green', text: 'text-green-400', bg: 'bg-green-500', border: 'border-green-500' },
                                 blue: { base: 'blue', text: 'text-blue-400', bg: 'bg-blue-500', border: 'border-blue-500' },
                                 amber: { base: 'amber', text: 'text-amber-400', bg: 'bg-amber-500', border: 'border-amber-500' },
@@ -591,11 +591,11 @@ function NetworkIntelligencePage() {
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-4xl font-black tracking-tight">{t('network_intelligence.faq_title', 'Common Questions')}</h2>
                     </div>
-                    <Accordion type="single" collapsible className="w-full space-y-4">
+                    <Accordion type="single" collapsible className="w-full space-y-3">
                         {[1, 2, 3, 4, 5].map((num) => (
-                            <AccordionItem key={num} value={`item-${num}`} className="border border-border/50 bg-card/30 rounded-xl px-4">
-                                <AccordionTrigger className="hover:no-underline font-bold text-left">{t(`faq.q${num}`)}</AccordionTrigger>
-                                <AccordionContent className="text-muted-foreground leading-relaxed">
+                            <AccordionItem key={num} value={`item-${num}`} className="border border-white/[0.06] bg-white/[0.02] rounded-xl px-5">
+                                <AccordionTrigger className="hover:no-underline font-bold text-left py-5">{t(`faq.q${num}`)}</AccordionTrigger>
+                                <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
                                     <Trans i18nKey={`faq.a${num}`} components={{ 1: <strong className="text-foreground" />, br: <br /> }} />
                                 </AccordionContent>
                             </AccordionItem>
@@ -605,16 +605,16 @@ function NetworkIntelligencePage() {
             </section>
 
             {/* Final CTA */}
-            <section className="py-32 px-4 md:px-8">
+            <section className="py-32 px-4 md:px-8 bg-gradient-to-b from-transparent via-primary/[0.04] to-transparent">
                 <div className="container mx-auto max-w-3xl text-center space-y-8">
-                    <h2 className="text-3xl md:text-4xl font-bold">
+                    <h2 className="text-3xl md:text-4xl font-black">
                         {t('network_intelligence.final_cta_title')} <span className="text-primary">{t('network_intelligence.final_cta_title_accent')}</span>
                     </h2>
-                    <p className="text-lg text-muted-foreground">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
                         {t('network_intelligence.final_cta_desc')}
                     </p>
                     <div className="pt-4">
-                        <Button asChild size="lg" className="text-lg h-14 px-10 shadow-lg shadow-primary/30 bg-primary hover:bg-primary/90 text-primary-foreground group">
+                        <Button asChild size="lg" className="text-lg h-16 px-10 shadow-xl shadow-primary/20 bg-primary hover:bg-white text-black group transition-all">
                             <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
                                 <span className="flex items-center font-black">
                                     {t('network_intelligence.cta_demo')}

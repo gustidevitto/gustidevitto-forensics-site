@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Activity, ArrowRight, CheckCircle2, Zap, ChevronLeft, ChevronRight, Clock, ShieldCheck } from "lucide-react"
+import { Activity, ArrowRight, CheckCircle2, ChevronLeft, ChevronRight, Clock, ShieldCheck } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslation, Trans } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
@@ -15,14 +15,14 @@ export const Route = createFileRoute('/single-entity')({
 })
 
 function SingleEntityPage() {
-    const { t, i18n } = useTranslation()
+    const { t } = useTranslation()
     const [networkSize, setNetworkSize] = useState(0)
     const [currentSlide, setCurrentSlide] = useState(0)
     const [modalOpen, setModalOpen] = useState(false);
-    const [selectedTier, setSelectedTier] = useState(null);
-    const [commitmentType, setCommitmentType] = useState(null);
+    const [selectedTier, setSelectedTier] = useState<any>(null);
+    const [commitmentType, setCommitmentType] = useState<any>(null);
 
-    const openModal = (tier, type) => {
+    const openModal = (tier: any, type: any) => {
         setSelectedTier(tier);
         setCommitmentType(type);
         setModalOpen(true);
@@ -34,78 +34,78 @@ function SingleEntityPage() {
         setCommitmentType(null);
     };
 
-    const tiers = [ 
-   { 
-     id: 'diagnostic', 
-     name: 'DIAGNOSTIC', 
-     tagline: 'Find the bleeding', 
-     positioning: 'Am I sick?', 
-     color: 'green', 
-     pricing: { 
-       oneTime: 1500, 
-       quarterly: { total: 3825, perAudit: 1275, audits: 3 }, 
-       annual: { total: 4500, perAudit: 1125, audits: 4, access: true } 
-     },
-     features: {
-       included: [
-         '8 Core Forensic Pillars',
-         'Syndrome Detection',
-         'Anomaly Detection',
-         'Basic Health Score',
-         'Executive Summary PDF',
-         'Multi-currency support',
-         'Bilingual reports (EN/ID)'
-       ],
-       excluded: [
-         'Full 19 pillars',
-         'Logic trace analysis',
-         'Multi-outlet analysis',
-         'AI neural intelligence'
-       ]
-     },
-     bestFor: [
-       '1-3 outlets',
-       '$500K-$2M revenue',
-       'First-time diagnostic',
-       'Budget entry point'
-     ] 
-   }, 
-   { 
-     id: 'forensic', 
-     name: 'FORENSIC', 
-     tagline: 'Understand the disease', 
-     positioning: 'Why am I sick, and what\'s the cure?', 
-     color: 'blue', 
-     pricing: { 
-       oneTime: 3500, 
-       quarterly: { total: 8925, perAudit: 2975, audits: 3 }, 
-       annual: { total: 10500, perAudit: 2625, audits: 4, access: true } 
-     }, 
- features: { 
-   included: [ 
-     'Everything in DIAGNOSTIC', 
-     'Full 19 Forensic Pillars', 
-     'Logic Trace Analysis', 
-     'Decision Intelligence Engine', 
-     'Data Integrity Scoring', 
-     'Advanced Analytics™', 
-     'Detailed Report (15-20 pages)' 
-   ], 
-   excluded: [ 
-     'Multi-outlet network analysis', 
-     'Franchise intelligence', 
-     'AI neural learning', 
-     'Wealth impact analysis' 
-   ] 
- }, 
- bestFor: [ 
-   '3-8 outlets', 
-   '$2M-$10M revenue', 
-   'Comprehensive structural fix', 
-   'Action-oriented' 
- ] 
-   }
- ];
+    const tiers = [
+        {
+            id: 'diagnostic',
+            name: 'DIAGNOSTIC',
+            tagline: 'Find the bleeding',
+            positioning: 'Am I sick?',
+            color: 'green',
+            pricing: {
+                oneTime: 1500,
+                quarterly: { total: 3825, perAudit: 1275, audits: 3 },
+                annual: { total: 4500, perAudit: 1125, audits: 4, access: true }
+            },
+            features: {
+                included: [
+                    '8 Core Forensic Pillars',
+                    'Syndrome Detection',
+                    'Anomaly Detection',
+                    'Basic Health Score',
+                    'Executive Summary PDF',
+                    'Multi-currency support',
+                    'Bilingual reports (EN/ID)'
+                ],
+                excluded: [
+                    'Full 19 pillars',
+                    'Logic trace analysis',
+                    'Multi-outlet analysis',
+                    'AI neural intelligence'
+                ]
+            },
+            bestFor: [
+                '1-3 outlets',
+                '$500K-$2M revenue',
+                'First-time diagnostic',
+                'Budget entry point'
+            ]
+        },
+        {
+            id: 'forensic',
+            name: 'FORENSIC',
+            tagline: 'Understand the disease',
+            positioning: 'Why am I sick, and what\'s the cure?',
+            color: 'blue',
+            pricing: {
+                oneTime: 3500,
+                quarterly: { total: 8925, perAudit: 2975, audits: 3 },
+                annual: { total: 10500, perAudit: 2625, audits: 4, access: true }
+            },
+            features: {
+                included: [
+                    'Everything in DIAGNOSTIC',
+                    'Full 19 Forensic Pillars',
+                    'Logic Trace Analysis',
+                    'Decision Intelligence Engine',
+                    'Data Integrity Scoring',
+                    'Advanced Analytics™',
+                    'Detailed Report (15-20 pages)'
+                ],
+                excluded: [
+                    'Multi-outlet network analysis',
+                    'Franchise intelligence',
+                    'AI neural learning',
+                    'Wealth impact analysis'
+                ]
+            },
+            bestFor: [
+                '3-8 outlets',
+                '$2M-$10M revenue',
+                'Comprehensive structural fix',
+                'Action-oriented'
+            ]
+        }
+    ];
 
     const heroImages = [
         '/assets/images/audit.png',
@@ -222,16 +222,16 @@ function SingleEntityPage() {
             {/* Social Stats */}
             <section className="py-16 px-4 md:px-8 bg-white/[0.02] border-b border-white/5">
                 <div className="container mx-auto max-w-5xl">
-                    <div className="grid md:grid-cols-3 gap-8 text-center uppercase tracking-widest">
-                        <div className="space-y-2">
+                    <div className="grid md:grid-cols-3 gap-0 text-center uppercase tracking-widest">
+                        <div className="space-y-2 py-6 md:border-r border-white/5">
                             <div className="text-4xl font-black text-primary">{t('single_entity.social_leaks_val')}</div>
                             <div className="text-xs text-muted-foreground">{t('single_entity.social_leaks')}</div>
                         </div>
-                        <div className="space-y-2">
+                        <div className="space-y-2 py-6 md:border-r border-white/5">
                             <div className="text-4xl font-black text-primary">{t('single_entity.social_verdict_val')}</div>
                             <div className="text-xs text-muted-foreground">{t('single_entity.social_verdict')}</div>
                         </div>
-                        <div className="space-y-2">
+                        <div className="space-y-2 py-6">
                             <div className="text-4xl font-black text-primary">{t('single_entity.social_diagnosed_val')}</div>
                             <div className="text-xs text-muted-foreground">{t('single_entity.social_diagnosed')}</div>
                         </div>
@@ -244,18 +244,19 @@ function SingleEntityPage() {
             {/* Case Studies / War Stories */}
             <ForensicCaseFiles />
 
-            {/* Quick Calculator (Forensic Preview Console) */}
-            <section className="py-24 px-4 md:px-8 bg-[#0a0a0a] border-b border-white/5 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.05] pointer-events-none" />
+            {/* Quick Calculator */}
+            <section className="py-24 px-4 md:px-8 bg-[#060810] border-b border-white/5 relative overflow-hidden">
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
                 <div className="container mx-auto max-w-5xl relative z-10">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8 text-left">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 mb-4">
-                                <Activity className="w-4 h-4 text-red-500 animate-pulse" />
-                                <span className="text-[10px] uppercase tracking-[0.2em] font-black text-red-500">System Alert</span>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
+                                <Activity className="w-4 h-4 text-primary" />
+                                <span className="text-[10px] uppercase tracking-[0.2em] font-black text-primary">Quick Estimate</span>
                             </div>
-                            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-white leading-tight">
+                            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">
                                 {t('single_entity.calc_title')}
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -263,29 +264,28 @@ function SingleEntityPage() {
                             </p>
 
                             <div className="pt-4 flex flex-col sm:flex-row gap-4">
-                                <Button asChild size="lg" className="h-14 px-8 bg-primary hover:bg-primary/90 text-black font-black uppercase tracking-widest text-xs shadow-[0_0_30px_rgba(56,189,248,0.3)]">
+                                <Button asChild size="lg" className="h-14 px-8 bg-primary hover:bg-white text-black font-black uppercase tracking-widest text-xs shadow-lg shadow-primary/20 transition-all">
                                     <Link to="/fip-lite">
-                                        Launch FIP™ Lite <Zap className="ml-2 w-4 h-4" />
+                                        Try Free Diagnostic <ArrowRight className="ml-2 w-4 h-4" />
                                     </Link>
                                 </Button>
                             </div>
                         </div>
 
-                        {/* Interactive Mini-Console */}
-                        <div className="bg-[#111] border border-white/10 rounded-3xl p-8 relative overflow-hidden shadow-2xl group">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent animate-scan-fast" />
+                        {/* Interactive Calculator Card */}
+                        <div className="bg-zinc-900/80 border border-white/10 rounded-2xl p-8 relative overflow-hidden shadow-2xl backdrop-blur-sm">
+                            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
                             <div className="space-y-8">
                                 <div>
-                                    <label className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-3 block flex items-center justify-between">
-                                        <span>INPUT_SEQUENCE: REVENUE_ESTIMATE</span>
-                                        <span className="text-primary animate-pulse">● LIVE</span>
+                                    <label className="text-[10px] uppercase tracking-widest text-muted-foreground mb-3 block font-bold">
+                                        Enter your monthly revenue
                                     </label>
                                     <div className="relative">
                                         <span className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl font-mono text-muted-foreground">$</span>
                                         <Input
                                             type="number"
-                                            placeholder="0"
+                                            placeholder="e.g. 150,000"
                                             className="text-right text-3xl font-mono h-20 bg-black/50 border-white/10 text-white focus:border-primary/50 focus:ring-0 pl-12 pr-6 rounded-xl"
                                             onChange={(e) => setNetworkSize(parseInt(e.target.value) || 0)}
                                         />
@@ -295,19 +295,19 @@ function SingleEntityPage() {
                                 <div className="space-y-4">
                                     <div className="p-4 rounded-xl bg-red-500/5 border border-red-500/10 flex items-center justify-between">
                                         <div>
-                                            <p className="text-[9px] uppercase font-black tracking-widest text-red-500/70 mb-1">Daily Leakage</p>
-                                            <p className="text-xl font-mono font-bold text-red-500">${(networkSize * 0.0006).toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
+                                            <p className="text-[10px] uppercase font-bold tracking-widest text-red-400/70 mb-1">Est. Daily Leakage</p>
+                                            <p className="text-xl font-mono font-bold text-red-400">${(networkSize * 0.0006).toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
                                         </div>
                                         <ArrowRight className="w-4 h-4 text-red-500/30" />
                                     </div>
 
                                     <div className="p-6 rounded-xl bg-primary/5 border border-primary/10">
-                                        <p className="text-[9px] uppercase font-black tracking-widest text-primary/70 mb-2">Projected Annual Loss</p>
+                                        <p className="text-[10px] uppercase font-bold tracking-widest text-primary/70 mb-2">Projected Annual Loss</p>
                                         <p className="text-4xl font-mono font-black text-white tracking-tight">
                                             $<span className="text-primary">{(networkSize * 0.018 * 12).toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
                                         </p>
                                         <p className="text-[10px] text-muted-foreground mt-2 italic">
-                                            *Based on global average phantom cost index (1.8% / mo)
+                                            *Based on industry average trapped cost rate (~1.8%/mo)
                                         </p>
                                     </div>
                                 </div>
@@ -361,7 +361,7 @@ function SingleEntityPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {tiers.map((tier) => {
-                            const colorMap = {
+                            const colorMap: Record<string, { base: string; text: string; bg: string; border: string }> = {
                                 green: { base: 'green', text: 'text-green-400', bg: 'bg-green-500', border: 'border-green-500' },
                                 blue: { base: 'blue', text: 'text-blue-400', bg: 'bg-blue-500', border: 'border-blue-500' },
                                 amber: { base: 'amber', text: 'text-amber-400', bg: 'bg-amber-500', border: 'border-amber-500' },
@@ -474,31 +474,33 @@ function SingleEntityPage() {
             </section>
 
             {/* FAQ */}
-            <section className="py-20 px-4 md:px-8 container mx-auto max-w-4xl">
-                <h2 className="text-2xl md:text-4xl font-black text-center mb-12 uppercase">{t('single_entity.faq_title', 'Common Questions')}</h2>
-                <Accordion type="single" collapsible className="space-y-4">
-                    {[1, 2, 3, 4, 5].map((num) => (
-                        <AccordionItem key={num} value={`item-${num}`} className="border border-white/10 bg-zinc-900/50 rounded-xl px-4">
-                            <AccordionTrigger className="hover:no-underline font-bold text-left py-6">{t(`faq.q${num}`)}</AccordionTrigger>
-                            <AccordionContent className="text-muted-foreground pb-6">
-                                <Trans i18nKey={`faq.a${num}`} components={{ 1: <strong className="text-white" />, br: <br /> }} />
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
+            <section className="py-20 px-4 md:px-8 border-b border-white/5">
+                <div className="container mx-auto max-w-3xl">
+                    <h2 className="text-2xl md:text-4xl font-black text-center mb-12">{t('single_entity.faq_title', 'Common Questions')}</h2>
+                    <Accordion type="single" collapsible className="space-y-3">
+                        {[1, 2, 3, 4, 5].map((num) => (
+                            <AccordionItem key={num} value={`item-${num}`} className="border border-white/[0.06] bg-white/[0.02] rounded-xl px-5">
+                                <AccordionTrigger className="hover:no-underline font-bold text-left py-5">{t(`faq.q${num}`)}</AccordionTrigger>
+                                <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
+                                    <Trans i18nKey={`faq.a${num}`} components={{ 1: <strong className="text-white" />, br: <br /> }} />
+                                </AccordionContent>
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
+                </div>
             </section>
 
             {/* Final CTA */}
-            <section className="py-24 px-4 md:px-8 text-center bg-gradient-to-b from-transparent to-primary/10">
+            <section className="py-32 px-4 md:px-8 text-center bg-gradient-to-b from-transparent via-primary/[0.04] to-transparent">
                 <div className="max-w-3xl mx-auto space-y-8">
-                    <h2 className="text-4xl font-black">
+                    <h2 className="text-3xl md:text-4xl font-black">
                         <Trans i18nKey="single_entity.final_cta_title" components={{ 1: <span className="text-primary" /> }} />
                     </h2>
-                    <p className="text-muted-foreground text-lg">
+                    <p className="text-muted-foreground text-lg leading-relaxed">
                         <Trans i18nKey="single_entity.final_cta_desc" components={{ 1: <strong className="text-white" />, br: <br /> }} />
                     </p>
-                    <div className="space-y-4">
-                        <Button asChild size="lg" className="h-16 px-12 text-lg font-black bg-primary text-black shadow-2xl shadow-primary/30">
+                    <div className="space-y-4 pt-4">
+                        <Button asChild size="lg" className="h-16 px-12 text-lg font-black bg-primary text-black hover:bg-white shadow-xl shadow-primary/20 transition-all">
                             <Link to="/fip-lite">{t('single_entity.cta_health_score')}</Link>
                         </Button>
                         <p className="text-xs text-muted-foreground italic flex items-center justify-center gap-2">
