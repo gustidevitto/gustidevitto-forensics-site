@@ -1,11 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { ShieldAlert, Maximize2, X, Activity, CheckCircle2, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
+import { ShieldAlert, Maximize2, X, Activity, CheckCircle2, ChevronLeft, ChevronRight, ArrowRight, ShieldCheck } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslation, Trans } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
 import { WavingDots } from "@/components/ui/waving-dots"
+import PricingModal from '@/components/PricingModal';
 
 export const Route = createFileRoute('/network-intelligence')({
     component: NetworkIntelligencePage,
@@ -15,6 +16,90 @@ function NetworkIntelligencePage() {
     const { t } = useTranslation()
     const [showMasterLab, setShowMasterLab] = useState(false)
     const [currentSlide, setCurrentSlide] = useState(0)
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedTier, setSelectedTier] = useState(null);
+    const [commitmentType, setCommitmentType] = useState(null);
+
+    const openModal = (tier, type) => {
+        setSelectedTier(tier);
+        setCommitmentType(type);
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+        setSelectedTier(null);
+        setCommitmentType(null);
+    };
+
+    const tiers = [ 
+   { 
+     id: 'network', 
+     name: 'NETWORK', 
+     tagline: 'X-ray the entire fleet', 
+     positioning: 'How sick is my entire fleet?', 
+     color: 'amber', 
+     pricing: { 
+       oneTime: 8000, 
+       quarterly: { total: 20400, perAudit: 6800, audits: 3 }, 
+       annual: { total: 24000, perAudit: 6000, audits: 4, access: true } 
+     }, 
+ features: { 
+   included: [ 
+     'Everything in FORENSIC', 
+     'Multi-Outlet Analysis (up to 50)', 
+     'Network Health Index', 
+     'Territory Productivity Mapping', 
+     'Franchise Intelligence Suite', 
+     '12-Month Risk Projection™', 
+     'Scenario Simulator', 
+     'Network Report (30-50 pages)' 
+   ], 
+   excluded: [ 
+     'AI neural pattern learning', 
+     'Monte Carlo stress testing', 
+     'Wealth impact analysis' 
+   ] 
+ }, 
+ bestFor: [ 
+   '10-50 outlets', 
+   '$10M-$100M revenue', 
+   'Franchise/chain operators', 
+   'Network optimization' 
+ ] 
+   }, 
+   { 
+     id: 'sovereign', 
+     name: 'SOVEREIGN', 
+     tagline: 'Own the intelligence', 
+     positioning: 'I control the machine', 
+     color: 'red', 
+     pricing: { 
+       oneTime: 25000, 
+       quarterly: { total: 63750, perAudit: 21250, audits: 3 }, 
+       annual: { total: 75000, perAudit: 18750, audits: 4, access: true } 
+     }, 
+ features: { 
+   included: [ 
+     'Everything in NETWORK', 
+     'AI Neural Pattern Learning', 
+     'Predictive Intelligence Engine', 
+     'Monte Carlo Stress Testing', 
+     'Founder Wealth Impact Analysis™', 
+     'Unlimited Outlet Profiles', 
+     'Priority Strategic Access', 
+     'Enterprise-grade security' 
+   ], 
+   excluded: [] 
+ }, 
+ bestFor: [ 
+   '50-500 outlets', 
+   '$100M+ revenue', 
+   'Enterprise sophistication', 
+   'Wealth preservation & exit planning' 
+ ] 
+   } 
+ ];
 
     const heroImages = [
         '/assets/images/audit.png',
@@ -380,64 +465,122 @@ function NetworkIntelligencePage() {
             {/* Simplified Pricing - Enterprise */}
             <section className="py-24 px-4 md:px-8 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border-y border-primary/20 relative overflow-hidden">
                 <WavingDots color="rgba(30, 58, 138, 0.3)" className="opacity-50" />
-                <div className="container mx-auto max-w-4xl relative z-10">
+                <div className="container mx-auto max-w-5xl relative z-10">
                     <div className="text-center mb-16 space-y-4">
                         <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight">{t('network_intelligence.pilot_title')}</h2>
                         <p className="text-muted-foreground">{t('network_intelligence.pilot_desc')}</p>
                     </div>
 
-                    <div className="max-w-2xl mx-auto">
-                        <div className="p-8 md:p-12 rounded-2xl bg-gradient-to-b from-primary/20 to-black border-2 border-primary shadow-2xl relative overflow-hidden">
-                            <div className="absolute top-0 right-0 p-4">
-                                <div className="px-3 py-1 bg-primary text-black text-[10px] font-black rounded-full uppercase tracking-widest">
-                                    {t('network_intelligence.pilot_grade', 'Enterprise Grade')}
-                                </div>
-                            </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {tiers.map((tier) => {
+                            const colorMap = {
+                                green: { base: 'green', text: 'text-green-400', bg: 'bg-green-500', border: 'border-green-500' },
+                                blue: { base: 'blue', text: 'text-blue-400', bg: 'bg-blue-500', border: 'border-blue-500' },
+                                amber: { base: 'amber', text: 'text-amber-400', bg: 'bg-amber-500', border: 'border-amber-500' },
+                                red: { base: 'red', text: 'text-red-400', bg: 'bg-red-500', border: 'border-red-500' }
+                            };
+                            const theme = colorMap[tier.color] || colorMap.green;
 
-                            <div className="space-y-8 relative z-10">
-                                <div className="space-y-2">
-                                    <h3 className="text-3xl font-black uppercase text-white">{t('network_intelligence.pilot_card_title')}</h3>
-                                    <p className="text-primary font-bold">{t('network_intelligence.pilot_card_sub')}</p>
-                                </div>
+                            return (
+                                <div key={tier.id} className={`border rounded-xl p-8 flex flex-col transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] border-${theme.base}-500/20 bg-black/40 hover:shadow-${theme.base}-500/10 relative overflow-hidden group text-left`}>
+                                    <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${theme.base}-500 to-transparent opacity-50 group-hover:opacity-100 transition-opacity`}></div>
 
-                                <div className="py-6 border-y border-white/10 space-y-2">
-                                    <div className="text-5xl font-black text-white">{t('network_intelligence.pilot_price')}</div>
-                                    <div className="text-sm text-muted-foreground">{t('network_intelligence.pilot_price_meta')}</div>
-                                </div>
-
-                                <div className="grid md:grid-cols-2 gap-8">
-                                    <div className="space-y-4">
-                                        <h4 className="text-xs font-black uppercase text-primary tracking-widest">{t('network_intelligence.pilot_includes_label')}</h4>
-                                        <ul className="space-y-4 text-sm text-white/80">
-                                            {[1, 2, 3, 4, 5].map((i) => (
-                                                <li key={i} className="flex items-start gap-2">
-                                                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                                    {t(`network_intelligence.pilot_f${i}`)}
-                                                </li>
-                                            ))}
-                                        </ul>
+                                    <div className="mb-6 text-center">
+                                        <h3 className={`text-3xl font-black ${theme.text} tracking-tight mb-2`}>{tier.name}</h3>
+                                        <p className="italic text-muted-foreground font-serif text-lg">{tier.tagline}</p>
                                     </div>
-                                    <div className="space-y-4">
-                                        <h4 className="text-xs font-black uppercase text-primary tracking-widest">{t('network_intelligence.pilot_guarantee_label')}</h4>
-                                        <p className="text-sm text-white/80 italic leading-relaxed">
-                                            {t('network_intelligence.pilot_guarantee_text')}
-                                        </p>
-                                        <div className="mt-6 p-4 rounded-xl bg-white/5 border border-white/10">
-                                            <p className="text-[10px] font-black uppercase text-muted-foreground mb-1">{t('network_intelligence.pilot_slots')}</p>
-                                            <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
-                                                <div className="w-1/3 h-full bg-primary" />
+
+                                    <div className="space-y-4 my-6 flex-grow">
+                                        {/* One-Time Option */}
+                                        <div className="p-5 border border-white/5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-between group/option">
+                                            <div className="text-left">
+                                                <h4 className="font-bold uppercase tracking-widest text-xs text-muted-foreground mb-1 group-hover/option:text-white transition-colors">One-Time Audit</h4>
+                                                <div className="flex flex-col">
+                                                    <span className="text-2xl font-bold text-white">${tier.pricing.oneTime.toLocaleString()}</span>
+                                                    <span className="text-xs text-muted-foreground">Single Comprehensive Audit</span>
+                                                </div>
                                             </div>
+                                            <Button variant="outline" size="sm" onClick={() => openModal(tier, 'one-time')} className="border-white/20 hover:border-white hover:bg-white hover:text-black transition-all h-auto py-2">
+                                                Select
+                                            </Button>
+                                        </div>
+
+                                        {/* Quarterly Option */}
+                                        <div className="p-5 border border-white/5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-between group/option">
+                                            <div className="text-left">
+                                                <h4 className="font-bold uppercase tracking-widest text-xs text-muted-foreground mb-1 group-hover/option:text-white transition-colors">Quarterly Program</h4>
+                                                <div className="flex flex-col gap-0.5">
+                                                    <div className="flex items-baseline gap-2">
+                                                        <span className="text-xl font-bold text-white">${tier.pricing.quarterly.total.toLocaleString()}</span>
+                                                        <span className="text-xs text-muted-foreground">Total</span>
+                                                    </div>
+                                                    <div className="text-xs text-muted-foreground">
+                                                        ${tier.pricing.quarterly.perAudit.toLocaleString()} / audit
+                                                    </div>
+                                                    <div className="text-xs text-muted-foreground italic">
+                                                        3x Audits (Monthly)
+                                                    </div>
+                                                    <span className="text-xs text-green-400 font-bold mt-1">Save ${(tier.pricing.oneTime * 3 - tier.pricing.quarterly.total).toLocaleString()}</span>
+                                                </div>
+                                            </div>
+                                            <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')} className="border-white/20 hover:border-white hover:bg-white hover:text-black transition-all h-auto py-2">
+                                                Select
+                                            </Button>
+                                        </div>
+
+                                        {/* Annual Option */}
+                                        <div className={`p-5 border border-${theme.base}-500/30 rounded-lg bg-${theme.base}-500/10 hover:bg-${theme.base}-500/20 transition-colors flex items-center justify-between relative ring-1 ring-${theme.base}-500/20`}>
+                                            <div className={`absolute -top-3 left-4 ${theme.bg} text-black text-[10px] font-black px-3 py-1 rounded uppercase tracking-wider shadow-lg`}>Recommended</div>
+                                            <div className="text-left mt-1">
+                                                <h4 className={`font-bold uppercase tracking-widest text-xs ${theme.text} mb-1`}>Annual Partnership</h4>
+                                                <div className="flex flex-col gap-0.5">
+                                                    <div className="flex items-baseline gap-2">
+                                                        <span className="text-xl font-bold text-white">${tier.pricing.annual.total.toLocaleString()}</span>
+                                                        <span className="text-xs text-muted-foreground">/ Year</span>
+                                                    </div>
+                                                    <div className="text-xs text-muted-foreground">
+                                                        ${tier.pricing.annual.perAudit.toLocaleString()} / audit
+                                                    </div>
+                                                    <div className="text-xs text-muted-foreground italic">
+                                                        4x Audits (Quarterly)
+                                                    </div>
+                                                    <span className="text-xs text-green-400 font-bold mt-1">Save ${(tier.pricing.oneTime * 4 - tier.pricing.annual.total).toLocaleString()} + Benefits</span>
+                                                </div>
+                                            </div>
+                                            <Button size="sm" onClick={() => openModal(tier, 'annual')} className={`${theme.bg} text-black hover:bg-white hover:text-black border-none font-bold transition-all shadow-lg shadow-${theme.base}-500/20 h-auto py-2`}>
+                                                Select
+                                            </Button>
+                                        </div>
+                                    </div>
+
+                                    <div className="pt-6 border-t border-white/5">
+                                        <div className="mb-4">
+                                            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Key Features</p>
+                                            <ul className="space-y-3">
+                                                {tier.features.included.slice(0, 5).map((feature, i) => (
+                                                    <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                                                        <ShieldCheck className={`w-4 h-4 ${theme.text} shrink-0 mt-0.5`} />
+                                                        <span className="leading-snug">{feature}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        <div className="mt-6 p-4 bg-black/20 rounded-lg border border-white/5">
+                                            <p className="font-bold text-xs uppercase tracking-widest text-muted-foreground mb-2">Best for:</p>
+                                            <ul className="space-y-1">
+                                                {tier.bestFor.slice(0, 2).map((item, i) => (
+                                                    <li key={i} className="text-xs text-gray-400 flex items-center gap-2">
+                                                        <span className={`w-1 h-1 rounded-full bg-${theme.base}-500/50`}></span>
+                                                        {item}
+                                                    </li>
+                                                ))}
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-
-                                <Button asChild className="w-full h-16 text-lg font-black bg-primary text-black hover:bg-white shadow-xl shadow-primary/20">
-                                    <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
-                                        {t('network_intelligence.pilot_cta')}
-                                    </a>
-                                </Button>
-                            </div>
-                        </div>
+                            )
+                        })}
                     </div>
                 </div>
             </section>
@@ -512,6 +655,9 @@ function NetworkIntelligencePage() {
                         onClick={(e) => e.stopPropagation()}
                     />
                 </div>
+            )}
+            {modalOpen && selectedTier && commitmentType && (
+                <PricingModal tier={selectedTier} commitmentType={commitmentType} onClose={closeModal} />
             )}
         </div>
     )

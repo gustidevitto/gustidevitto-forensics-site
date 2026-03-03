@@ -2,12 +2,13 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Activity, ArrowRight, CheckCircle2, Zap, ChevronLeft, ChevronRight, Clock } from "lucide-react"
+import { Activity, ArrowRight, CheckCircle2, Zap, ChevronLeft, ChevronRight, Clock, ShieldCheck } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslation, Trans } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
 import { WavingDots } from "@/components/ui/waving-dots"
 import { ForensicCaseFiles } from "@/components/ForensicCaseFiles"
+import PricingModal from '@/components/PricingModal';
 
 export const Route = createFileRoute('/single-entity')({
     component: SingleEntityPage,
@@ -17,6 +18,94 @@ function SingleEntityPage() {
     const { t, i18n } = useTranslation()
     const [networkSize, setNetworkSize] = useState(0)
     const [currentSlide, setCurrentSlide] = useState(0)
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedTier, setSelectedTier] = useState(null);
+    const [commitmentType, setCommitmentType] = useState(null);
+
+    const openModal = (tier, type) => {
+        setSelectedTier(tier);
+        setCommitmentType(type);
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+        setSelectedTier(null);
+        setCommitmentType(null);
+    };
+
+    const tiers = [ 
+   { 
+     id: 'diagnostic', 
+     name: 'DIAGNOSTIC', 
+     tagline: 'Find the bleeding', 
+     positioning: 'Am I sick?', 
+     color: 'green', 
+     pricing: { 
+       oneTime: 1500, 
+       quarterly: { total: 3825, perAudit: 1275, audits: 3 }, 
+       annual: { total: 4500, perAudit: 1125, audits: 4, access: true } 
+     },
+     features: {
+       included: [
+         '8 Core Forensic Pillars',
+         'Syndrome Detection',
+         'Anomaly Detection',
+         'Basic Health Score',
+         'Executive Summary PDF',
+         'Multi-currency support',
+         'Bilingual reports (EN/ID)'
+       ],
+       excluded: [
+         'Full 19 pillars',
+         'Logic trace analysis',
+         'Multi-outlet analysis',
+         'AI neural intelligence'
+       ]
+     },
+     bestFor: [
+       '1-3 outlets',
+       '$500K-$2M revenue',
+       'First-time diagnostic',
+       'Budget entry point'
+     ] 
+   }, 
+   { 
+     id: 'forensic', 
+     name: 'FORENSIC', 
+     tagline: 'Understand the disease', 
+     positioning: 'Why am I sick, and what\'s the cure?', 
+     color: 'blue', 
+     pricing: { 
+       oneTime: 3500, 
+       quarterly: { total: 8925, perAudit: 2975, audits: 3 }, 
+       annual: { total: 10500, perAudit: 2625, audits: 4, access: true } 
+     }, 
+ features: { 
+   included: [ 
+     'Everything in DIAGNOSTIC', 
+     'Full 19 Forensic Pillars', 
+     'Logic Trace Analysis', 
+     'Decision Intelligence Engine', 
+     'Data Integrity Scoring', 
+     'Advanced Analytics™', 
+     'Detailed Report (15-20 pages)' 
+   ], 
+   excluded: [ 
+     'Multi-outlet network analysis', 
+     'Franchise intelligence', 
+     'AI neural learning', 
+     'Wealth impact analysis' 
+   ] 
+ }, 
+ bestFor: [ 
+   '3-8 outlets', 
+   '$2M-$10M revenue', 
+   'Comprehensive structural fix', 
+   'Action-oriented' 
+ ] 
+   }
+ ];
 
     const heroImages = [
         '/assets/images/audit.png',
@@ -270,53 +359,116 @@ function SingleEntityPage() {
                         <p className="text-muted-foreground">{t('single_entity.pricing_desc')}</p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                        {/* Rescue Audit */}
-                        <div className="p-8 rounded-2xl bg-black border border-white/10 text-left space-y-6 flex flex-col">
-                            <h3 className="text-xl font-black uppercase">Rescue Audit</h3>
-                            <div className="flex items-baseline gap-2">
-                                <span className="text-4xl font-black">$1,200</span>
-                                <span className="text-xs text-muted-foreground">/audit</span>
-                            </div>
-                            <ul className="space-y-3 flex-1">
-                                {[1, 2, 3, 4].map(i => (
-                                    <li key={i} className="flex gap-2 text-xs text-muted-foreground">
-                                        <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                                        {t(`single_entity.pricing_paid_f${i}`)}
-                                    </li>
-                                ))}
-                            </ul>
-                            <Button asChild className="w-full bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 font-black">
-                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">BOOK RESCUE AUDIT</a>
-                            </Button>
-                        </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {tiers.map((tier) => {
+                            const colorMap = {
+                                green: { base: 'green', text: 'text-green-400', bg: 'bg-green-500', border: 'border-green-500' },
+                                blue: { base: 'blue', text: 'text-blue-400', bg: 'bg-blue-500', border: 'border-blue-500' },
+                                amber: { base: 'amber', text: 'text-amber-400', bg: 'bg-amber-500', border: 'border-amber-500' },
+                                red: { base: 'red', text: 'text-red-400', bg: 'bg-red-500', border: 'border-red-500' }
+                            };
+                            const theme = colorMap[tier.color] || colorMap.green;
 
-                        {/* Integrity Program */}
-                        <div className="p-8 rounded-2xl bg-primary/10 border-2 border-primary text-left space-y-6 flex flex-col relative shadow-2xl shadow-primary/20">
-                            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-black text-[10px] font-black rounded-full uppercase">RECOMMENDED</div>
-                            <h3 className="text-xl font-black uppercase">Integrity Program</h3>
-                            <div className="flex items-baseline gap-2">
-                                <span className="text-4xl font-black">$1,800</span>
-                                <span className="text-xs text-muted-foreground">/quarter</span>
-                            </div>
-                            <ul className="space-y-3 flex-1">
-                                <li className="flex gap-2 text-xs">
-                                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                                    {i18n.language === 'id' ? 'Audit Kuartalan (4x/tahun)' : 'Quarterly Audits (4x/year)'}
-                                </li>
-                                <li className="flex gap-2 text-xs">
-                                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                                    {i18n.language === 'id' ? 'Sesi Strategi On-Demand' : 'On-Demand Strategy Sessions'}
-                                </li>
-                                <li className="flex gap-2 text-xs">
-                                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                                    {t('single_entity.pricing_paid_f3')}
-                                </li>
-                            </ul>
-                            <Button asChild className="w-full bg-primary text-black hover:bg-white font-black">
-                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">ACTIVATE INTEGRITY</a>
-                            </Button>
-                        </div>
+                            return (
+                                <div key={tier.id} className={`border rounded-xl p-8 flex flex-col transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] border-${theme.base}-500/20 bg-black/40 hover:shadow-${theme.base}-500/10 relative overflow-hidden group text-left`}>
+                                    <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${theme.base}-500 to-transparent opacity-50 group-hover:opacity-100 transition-opacity`}></div>
+
+                                    <div className="mb-6 text-center">
+                                        <h3 className={`text-3xl font-black ${theme.text} tracking-tight mb-2`}>{tier.name}</h3>
+                                        <p className="italic text-muted-foreground font-serif text-lg">{tier.tagline}</p>
+                                    </div>
+
+                                    <div className="space-y-4 my-6 flex-grow">
+                                        {/* One-Time Option */}
+                                        <div className="p-5 border border-white/5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-between group/option">
+                                            <div className="text-left">
+                                                <h4 className="font-bold uppercase tracking-widest text-xs text-muted-foreground mb-1 group-hover/option:text-white transition-colors">One-Time Audit</h4>
+                                                <div className="flex flex-col">
+                                                    <span className="text-2xl font-bold text-white">${tier.pricing.oneTime.toLocaleString()}</span>
+                                                    <span className="text-xs text-muted-foreground">Single Comprehensive Audit</span>
+                                                </div>
+                                            </div>
+                                            <Button variant="outline" size="sm" onClick={() => openModal(tier, 'one-time')} className="border-white/20 hover:border-white hover:bg-white hover:text-black transition-all h-auto py-2">
+                                                Select
+                                            </Button>
+                                        </div>
+
+                                        {/* Quarterly Option */}
+                                        <div className="p-5 border border-white/5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-between group/option">
+                                            <div className="text-left">
+                                                <h4 className="font-bold uppercase tracking-widest text-xs text-muted-foreground mb-1 group-hover/option:text-white transition-colors">Quarterly Program</h4>
+                                                <div className="flex flex-col gap-0.5">
+                                                    <div className="flex items-baseline gap-2">
+                                                        <span className="text-xl font-bold text-white">${tier.pricing.quarterly.total.toLocaleString()}</span>
+                                                        <span className="text-xs text-muted-foreground">Total</span>
+                                                    </div>
+                                                    <div className="text-xs text-muted-foreground">
+                                                        ${tier.pricing.quarterly.perAudit.toLocaleString()} / audit
+                                                    </div>
+                                                    <div className="text-xs text-muted-foreground italic">
+                                                        3x Audits (Monthly)
+                                                    </div>
+                                                    <span className="text-xs text-green-400 font-bold mt-1">Save ${(tier.pricing.oneTime * 3 - tier.pricing.quarterly.total).toLocaleString()}</span>
+                                                </div>
+                                            </div>
+                                            <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')} className="border-white/20 hover:border-white hover:bg-white hover:text-black transition-all h-auto py-2">
+                                                Select
+                                            </Button>
+                                        </div>
+
+                                        {/* Annual Option */}
+                                        <div className={`p-5 border border-${theme.base}-500/30 rounded-lg bg-${theme.base}-500/10 hover:bg-${theme.base}-500/20 transition-colors flex items-center justify-between relative ring-1 ring-${theme.base}-500/20`}>
+                                            <div className={`absolute -top-3 left-4 ${theme.bg} text-black text-[10px] font-black px-3 py-1 rounded uppercase tracking-wider shadow-lg`}>Recommended</div>
+                                            <div className="text-left mt-1">
+                                                <h4 className={`font-bold uppercase tracking-widest text-xs ${theme.text} mb-1`}>Annual Partnership</h4>
+                                                <div className="flex flex-col gap-0.5">
+                                                    <div className="flex items-baseline gap-2">
+                                                        <span className="text-xl font-bold text-white">${tier.pricing.annual.total.toLocaleString()}</span>
+                                                        <span className="text-xs text-muted-foreground">/ Year</span>
+                                                    </div>
+                                                    <div className="text-xs text-muted-foreground">
+                                                        ${tier.pricing.annual.perAudit.toLocaleString()} / audit
+                                                    </div>
+                                                    <div className="text-xs text-muted-foreground italic">
+                                                        4x Audits (Quarterly)
+                                                    </div>
+                                                    <span className="text-xs text-green-400 font-bold mt-1">Save ${(tier.pricing.oneTime * 4 - tier.pricing.annual.total).toLocaleString()} + Benefits</span>
+                                                </div>
+                                            </div>
+                                            <Button size="sm" onClick={() => openModal(tier, 'annual')} className={`${theme.bg} text-black hover:bg-white hover:text-black border-none font-bold transition-all shadow-lg shadow-${theme.base}-500/20 h-auto py-2`}>
+                                                Select
+                                            </Button>
+                                        </div>
+                                    </div>
+
+                                    <div className="pt-6 border-t border-white/5">
+                                        <div className="mb-4">
+                                            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Key Features</p>
+                                            <ul className="space-y-3">
+                                                {tier.features.included.slice(0, 5).map((feature, i) => (
+                                                    <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                                                        <ShieldCheck className={`w-4 h-4 ${theme.text} shrink-0 mt-0.5`} />
+                                                        <span className="leading-snug">{feature}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        <div className="mt-6 p-4 bg-black/20 rounded-lg border border-white/5">
+                                            <p className="font-bold text-xs uppercase tracking-widest text-muted-foreground mb-2">Best for:</p>
+                                            <ul className="space-y-1">
+                                                {tier.bestFor.slice(0, 2).map((item, i) => (
+                                                    <li key={i} className="text-xs text-gray-400 flex items-center gap-2">
+                                                        <span className={`w-1 h-1 rounded-full bg-${theme.base}-500/50`}></span>
+                                                        {item}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </section>
@@ -369,6 +521,9 @@ function SingleEntityPage() {
                     {t('single_entity.footer_badge')}
                 </p>
             </section>
+            {modalOpen && selectedTier && commitmentType && (
+                <PricingModal tier={selectedTier} commitmentType={commitmentType} onClose={closeModal} />
+            )}
         </div >
     )
 }
