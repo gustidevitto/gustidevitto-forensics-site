@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from "@/components/ui/button";
 
 interface Tier {
     id: string;
@@ -25,7 +26,7 @@ interface PricingModalProps {
 }
 
 const PricingModal: React.FC<PricingModalProps> = ({ tier, commitmentType, onClose }) => {
-    const getPricingDetails = () => {
+    const getPricingDetails = (): { title: string; commitment: string; total: number; perAudit: number; savings: number; features: string[] } => {
         switch (commitmentType) {
             case 'one-time':
                 return {
@@ -58,8 +59,6 @@ const PricingModal: React.FC<PricingModalProps> = ({ tier, commitmentType, onClo
                         'Priority scheduling & strategic calls'
                     ],
                 };
-            default:
-                return {};
         }
     };
 
@@ -69,10 +68,10 @@ const PricingModal: React.FC<PricingModalProps> = ({ tier, commitmentType, onClo
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
             <div className="bg-zinc-900 text-white border border-primary/20 shadow-lg shadow-primary/10 p-8 rounded-lg max-w-2xl w-full relative">
                 <button onClick={onClose} className="absolute top-4 right-4 text-2xl text-muted-foreground hover:text-white">&times;</button>
-                
+
                 <h2 className="text-3xl font-black text-primary">{tier.name}</h2>
                 <p className="text-lg font-bold uppercase tracking-wider">{details.title}</p>
-                
+
                 <div className="my-6 border-y border-white/10 py-4">
                     <p><span className="font-bold">Commitment:</span> {details.commitment}</p>
                     <p><span className="font-bold">Total Investment:</span> ${details.total.toLocaleString()}</p>

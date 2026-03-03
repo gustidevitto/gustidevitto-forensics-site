@@ -23,7 +23,7 @@ export const getPillarCount = (tier: TierLevel): number => {
 }
 
 export const hasFeature = (tier: TierLevel, feature: string): boolean => {
-    const featureMap = {
+    const featureMap: Record<string, string[]> = {
         'logicTrace': ['forensic', 'network', 'sovereign'],
         'auditTrail': ['forensic', 'network', 'sovereign'],
         'decisionIntelligence': ['forensic', 'network', 'sovereign'],
