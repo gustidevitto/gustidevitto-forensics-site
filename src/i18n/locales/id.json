@@ -154,7 +154,7 @@
         "cpa_partner_desc": "FIP™ adalah lapisan intelijen untuk CFO dan tim audit internal. Menemukan uang yang tersangkut antar cabang sebelum muncul sebagai kerugian akuntansi. Anggap sebagai 'otak kedua' yang melihat apa yang manusia lewatkan.",
         "pilot_title": "Bukti Nilai",
         "pilot_desc": "Lihat persis berapa banyak profit yang tersangkut di jaringan Anda — sebelum berkomitmen apapun.",
-        "pilot_card_title": "Pilot Intelijen Jaringan",
+        "pilot_card_title": "Program Intelijen Jaringan",
         "pilot_card_sub": "Uji Coba Pemulihan Profit 3 Bulan",
         "pilot_price": "$3,500",
         "pilot_price_meta": "(Audit Profit Jaringan 3 Bulan)",
@@ -190,15 +190,15 @@
         ]
     },
     "about_page": {
-        "seo_title": "Tentang Gusti Devitto | Spesialis Financial Forensics",
-        "seo_desc": "Gusti Devitto—Forensic Business Diagnostician yang mengoperasikan protokol diagnostik khusus untuk mendeteksi Phantom Cost (Biaya Siluman) dan risiko struktural.",
-        "schema_job": "Spesialis Financial Forensics",
-        "auth_level": "Level Klirens: Terverifikasi",
+        "seo_title": "Tentang Gusti Devitto | Profit Recovery Architect & Ahli Business Forensics",
+        "seo_desc": "Gusti Devitto—Profit Recovery Architect membantu founder dan operator multi-lokasi menemukan 15-20% profit tersangkut yang tidak terlihat akuntansi standar.",
+        "schema_job": "Profit Recovery Architect",
+        "auth_level": "Status: Praktisi Terverifikasi",
         "knows_about": [
-            "Audit Finansial",
-            "Neural Pattern Auditing",
-            "Intelijen Bisnis",
-            "Phantom Cost",
+            "Pemulihan Profit",
+            "Intelijen Forensik Bisnis",
+            "Audit Margin Multi-Lokasi",
+            "Deteksi Profit Tersembunyi",
             "Unit Economics",
             "Optimasi Profit"
         ],
@@ -213,8 +213,8 @@
         "evolution_quote": "\"Saya melihat owner bekerja 18 jam sehari, hanya untuk mendapati rekening bank selalu kosong. Saat itulah saya sadar—kerja keras bukan variabel yang hilang. Uangnya ada. Hanya tidak pernah sampai.\"",
         "evolution_p2": "Dalam prosesnya, saya menemukan fakta keras: Masalahnya bukan pada penjualan, melainkan <1>UANG YANG TERSANGKUT DI DALAM BISNIS</1>. Melalui tahun-tahun operasional langsung dan kolaborasi AI mendalam, saya membangun FIP™ Protocol untuk menemukan uang itu.",
         "evolution_p3": "Saya menukar buku teks dengan transaksi nyata. Saya meninggalkan konsultasi generalis untuk membangun sistem yang menemukan uang yang tidak diketahui akuntan Anda.",
-        "methodology_title": "Metodologi Bedah",
-        "methodology_subtitle": "Dibangun di atas protokol forensik kami, pendekatan kami bersifat pasti (deterministik), bukan sekadar motivasi.",
+        "methodology_title": "Metodologi Pemulihan",
+        "methodology_subtitle": "Dibangun di atas protokol forensik kami, pendekatan kami berbasis data, bukan sekadar motivasi.",
         "card_anomaly_title": "Deteksi Anomali",
         "card_anomaly_desc": "Menggunakan <1>pattern recognition</1> untuk melihat ketidakwajaran dalam COGS (Cost of Goods Sold) dan <3>Wastage</3> yang sering tidak terdeteksi audit biasa.",
         "card_cash_title": "Audit Kecepatan Kas",
@@ -222,9 +222,9 @@
         "card_eff_title": "Pemetaan Efisiensi",
         "card_eff_desc": "Menghitung <1>Unit Economics</1> yang presisi, termasuk LTV:CAC dan <3>Break-Even Point</3> dinamis yang menyesuaikan dengan fluktuasi market.",
         "proprietary_badge": "TEKNOLOGI EKSKLUSIF",
-        "proprietary_text": "Sistem ini bukan sekadar spreadsheet, melainkan kerangka kerja audit khusus yang dilengkapi dengan kecerdasan mandiri untuk diagnosa tingkat tinggi.",
-        "neural_status": "Sistem Utama: Aktif",
-        "visual_interface": "Antarmuka Protokol Forensik // High-Contrast Matrix",
+        "proprietary_text": "Sistem ini bukan sekadar spreadsheet, melainkan kerangka kerja audit khusus yang dilengkapi dengan <1>pengenalan pola canggih</1> untuk diagnosa tingkat tinggi.",
+        "neural_status": "Status: Aktif",
+        "visual_interface": "Antarmuka Pemulihan Profit",
         "why_surgeon_title": "Mengapa \"The Architect\"?",
         "why_surgeon_p1": "Klien saya bilang bekerja dengan saya seperti punya <1>\"arsitek keuangan\"</1>. Saya tidak memberikan saran motivasi atau teori bisnis umum.",
         "why_surgeon_p2": "Saya masuk ke dalam data Anda, menemukan setiap rupiah yang tersangkut di inefisiensi (<1>beban mati</1>), dan merestrukturisasi operasi agar uangnya mengalir ke tempat yang seharusnya: <3>rekening Anda</3>.",
@@ -279,15 +279,15 @@
         }
     },
     "institutional": {
-        "badge": "Institutional Intelligence Unit",
+        "badge": "Untuk Investor & Pemilik Jaringan",
         "title": "Saya Memverifikasi Apa yang Manajemen Enggan Ungkapkan.",
-        "quote": "Investment due diligence bukan tentang angka di atas kertas; ini tentang pola yang coba disembunyikan manajemen. Kami menggunakan Neural AI untuk menemukan \"Black Hole\".",
+        "quote": "Investment due diligence bukan tentang angka di atas kertas; ini tentang menemukan profit yang disembunyikan laporan manajemen. Kami menggunakan pengenalan pola canggih untuk menemukan di mana uang menghilang.",
         "card1_title": "M&A Forensic Due Diligence",
         "card1_desc": "Deteksi inflasi pendapatan, manipulasi pembukuan, dan liabilitas tersembunyi sebelum transfer dana. Kami membatalkan kesepakatan buruk sebelum menguras modal Anda.",
         "card2_title": "Franchise Royalty Guard",
-        "card2_desc": "Pengawasan universal di 100+ lokasi. Tandai franchisee yang kurang lapor dan transaksi \"di luar buku\" menggunakan Neural Anomaly Detection.",
+        "card2_desc": "Pengawasan universal di 100+ lokasi. Tandai franchisee yang kurang lapor dan transaksi di luar buku menggunakan deteksi anomali otomatis.",
         "card3_title": "Audit ESG & Integritas",
-        "card3_desc": "Melampaui metrik keuangan. Kami memverifikasi integritas biologis dari operasional. Jika mereka mencuri dari sistem, kami menemukan jejaknya dalam hitungan menit."
+        "card3_desc": "Melampaui metrik keuangan. Kami memverifikasi integritas operasional bisnis Anda. Jika uang keluar melalui jalur tersembunyi, kami menemukan jejaknya dalam hitungan menit."
     },
     "triage": {
         "step01_title": "Pilih Gejala",
@@ -298,10 +298,10 @@
         "step03_desc": "Dapatkan diagnosa instan: Apakah bisnis Anda sehat atau bocor?"
     },
     "proof": {
-        "leaks_revealed": "Kebocoran Terungkap (Simulasi Lab)",
-        "businesses_diagnosed": "Diagnosa Dijalankan",
-        "mri_time": "Kecepatan Verdict",
-        "accounting_jargon": "Tervalidasi pada 2jt+ Transaksi Sintetis // Stress Test Dunia Nyata."
+        "leaks_revealed": "Profit Dipulihkan (Simulasi Lab)",
+        "businesses_diagnosed": "Bisnis Didiagnosa",
+        "mri_time": "Kecepatan Diagnosa",
+        "accounting_jargon": "Tervalidasi pada 2jt+ transaksi sintetis dengan stress test dunia nyata."
     },
     "story": {
         "title": "Mengapa Saya Membangun Ini",
@@ -327,45 +327,45 @@
         "transition": "Kabar baiknya: uang itu masih ada di dalam bisnis Anda. Hanya perlu tahu di mana tersangkutnya."
     },
     "solution": {
-        "badge": "Pilar Protokol",
-        "title": "Alur Kerja Audit Forensik",
-        "desc": "Bukan sekadar aplikasi dashboard. Ini adalah <1>disiplin diagnosa forensik</1>—sebuah metodologi ketat untuk membongkar kebenaran di balik angka operasional yang tampak 'baik-baik saja'.",
+        "badge": "Cara Kerja",
+        "title": "Alur Kerja Pemulihan Profit",
+        "desc": "Bukan sekadar aplikasi dashboard. Ini adalah <1>disiplin diagnosa forensik</1>—sebuah metodologi ketat untuk menemukan setiap rupiah profit tersangkut di dalam operasional Anda.",
         "f1_title": "Scenario Simulator",
-        "f1_aka": "Mode 'Dukun'",
+        "f1_aka": "Mode 'Bagaimana Jika'",
         "f1_desc": "Prediksi masa depan. Lihat apa yang terjadi pada profit jika Anda naikkan harga 5% atau tekan HPP.",
-        "f2_title": "16-Pillar Modular System",
-        "f2_aka": "Advanced Diagnosis",
-        "f2_desc": "Membedah anatomi bisnis dari Inventory Decay hingga Concentration Risk secara brutal.",
-        "f3_title": "Phantom Cost Detector",
-        "f3_aka": "Pemburu Uang Siluman",
-        "f3_desc": "Menemukan kebocoran halus yang tidak tercatat: pungli, waste, dan inefisiensi tim.",
+        "f2_title": "Sistem Diagnostik 16-Pilar",
+        "f2_aka": "Diagnosa Mendalam",
+        "f2_desc": "Membedah anatomi bisnis dari Inventory Decay hingga Concentration Risk dengan presisi.",
+        "f3_title": "Detektor Profit Tersembunyi",
+        "f3_aka": "Pencari Profit Tersangkut",
+        "f3_desc": "Menemukan celah profit halus yang tidak tercatat: biaya tak terlihat, waste, dan inefisiensi tim.",
         "f4_title": "Cash Runway Analysis",
-        "f4_aka": "Sisa Napas Bisnis",
-        "f4_desc": "Menghitung berapa bulan lagi bisnis Anda bisa bertahan dengan data audit statis.",
+        "f4_aka": "Kalkulator Bertahan Bisnis",
+        "f4_desc": "Menghitung berapa bulan lagi bisnis Anda bisa bertahan dengan cadangan kas saat ini.",
         "live_feed": "LIVE FEED: DIAGNOSIS AKTIF",
         "new_pillar_title": "Pilar ke-16: Concentration Risk",
-        "new_pillar_desc": "Pembunuh Senyap. Profit Anda terlihat bagus, tapi ketergantungan pada satu supplier adalah bom waktu. Kami mengukur kerapuhan bisnis Anda sebelum semuanya runtuh."
+        "new_pillar_desc": "Profit Anda terlihat bagus, tapi ketergantungan pada satu supplier adalah kerentanan struktural. Kami mengukur kerapuhan bisnis Anda sebelum semuanya runtuh."
     },
     "guarantee_section": {
-        "title": "Garansi \"No Find, No Pitch\"",
-        "p1": "Saya tidak menjual harapan kosong. Jika verdict diagnostik mengklasifikasikan jaringan Anda sebagai <1>Fortress (hijau)</1>, konsultasi selesai. Gratis. Tanpa pitch apapun.",
-        "p2": "Saya hanya bekerja dengan jaringan yang memiliki masalah struktural NYATA untuk diselesaikan. Kerentanan bukan kelemahan—ini adalah peluang untuk intervensi bedah."
+        "title": "Garansi \"Tidak Ketemu, Tidak Bayar\"",
+        "p1": "Jika diagnosa menemukan bisnis Anda sehat (status Fortress), konsultasi selesai. Gratis. Tanpa jualan apapun.",
+        "p2": "Kami hanya bekerja dengan bisnis yang punya profit tersangkut NYATA untuk dipulihkan. Jika tidak ada yang perlu ditemukan, kami bilang jujur."
     },
     "verdict_classification": {
-        "title": "Klasifikasi Network Verdict",
+        "title": "Klasifikasi Kesehatan Bisnis",
         "fortress_title": "Fortress",
-        "fortress_desc": "Integritas struktural terverifikasi. Tidak ada anomali sistemik terdeteksi. Kesehatan jaringan: Optimal.",
+        "fortress_desc": "Secara struktural sehat. Tidak ada celah profit signifikan. Kesehatan bisnis: Optimal.",
         "vulnerable_title": "Vulnerable",
-        "vulnerable_desc": "Variansi moderat terdeteksi. Inefisiensi operasional hadir. Intervensi direkomendasikan dalam 60 hari.",
+        "vulnerable_desc": "Celah profit moderat terdeteksi. Inefisiensi operasional hadir. Pemulihan direkomendasikan dalam 60 hari.",
         "critical_title": "Critical",
-        "critical_desc": "Pembusukan sistemik teridentifikasi. Risiko keruntuhan struktural: Tinggi. Intervensi forensik segera diperlukan."
+        "critical_desc": "Profit tersangkut signifikan teridentifikasi. Intervensi pemulihan segera diperlukan."
     },
     "pricing": {
         "title": "Struktur Investasi Forensik",
         "subtitle": "Pilih tingkat diagnosa yang dibutuhkan bisnis Anda hari ini.",
         "founders_badge": "01. SME Operational Suite (Untuk Founder)",
         "investors_badge": "02. Institutional Intelligence Unit (Untuk Investor)",
-        "starter_title": "Rescue Audit",
+        "starter_title": "Audit Diagnostik",
         "starter_badge": "Bedah Sekali Pakai",
         "growth_title": "Integrity Program",
         "growth_badge": "Perlindungan Rutin",
@@ -377,7 +377,7 @@
         "franchise_badge": "Pengawasan Jaringan",
         "cta_starter": "AKTIFKAN RESCUE",
         "cta_growth": "AKTIFKAN INTEGRITY",
-        "cta_scale": "AKTIFKAN PILOT",
+        "cta_scale": "AKTIFKAN JARINGAN",
         "cta_enterprise": "AKTIFKAN ANNUAL",
         "cta_franchise": "REQUEST HUB ACCESS",
         "popular": "PILIHAN POPULER",
@@ -407,10 +407,10 @@
         "scale_price": "$3,500/3 bulan",
         "per_month": "",
         "powered_by": "Didukung oleh Sovereign Forensic Intelligence",
-        "pilot_header": "AKSES BETA: THE NETWORK PILOT",
+        "pilot_header": "AKSES AWAL: THE NETWORK PILOT",
         "pilot_offer": "Dapatkan kekuatan penuh v4.00 Network Edition (senilai $100k/tahun) dengan biaya sebagian kecilnya.",
-        "pilot_catch": "Kami hanya menerima 3 Partner kuartal ini untuk memastikan presisi bedah. Setelah penuh, waitlist dibuka untuk Q3 2026.",
-        "pilot_guarantee": "Jika kami tidak menemukan setidaknya satu node curang atau kebocoran kritis di jaringan Anda, kami kembalikan 50% biaya pilot Anda. Anda tidak rugi apa-apa selain kerugian Anda saat ini."
+        "pilot_catch": "Kami hanya menerima 3 partner kuartal ini untuk memastikan presisi diagnostik. Setelah penuh, waitlist dibuka untuk Q3 2026.",
+        "pilot_guarantee": "Jika kami tidak menemukan profit tersangkut senilai minimal 10x biaya pilot, kami refund 50%. Anda tidak rugi apa-apa selain kerugian Anda saat ini."
     },
     "vaas": {
         "title": "Verdict-as-a-Service (VaaS)",
@@ -425,13 +425,13 @@
     },
     "fip_ecosystem": {
         "title": "Arsitektur Intelijen",
-        "subtitle": "Arsitektur Intelijen Tiga Tahap",
-        "evidence_ingestion_title": "Evidence Ingestion Terminal",
-        "evidence_ingestion_desc": "Entri data bedah tanpa risiko cloud. Audit dimulai di sini. Data mentah diproses melalui protokol keamanan zero-cloud. Tidak ada data yang keluar dari infrastruktur Anda. Hanya kebenaran yang masuk ke sistem kami.",
+        "subtitle": "Arsitektur Pemulihan Profit Tiga Tahap",
+        "evidence_ingestion_title": "Terminal Input Data",
+        "evidence_ingestion_desc": "Entri data aman tanpa risiko cloud. Pemulihan dimulai di sini. Data mentah diproses melalui protokol keamanan zero-cloud. Tidak ada data yang keluar dari infrastruktur Anda.",
         "protocol_engine_title": "Protocol Engine",
-        "protocol_engine_desc": "Otak matematis di balik setiap verdict. Framework diagnostik 16 Pilar memproses data Anda melalui algoritma proprietary untuk mendeteksi anomali struktural.",
+        "protocol_engine_desc": "Otak matematis di balik setiap diagnosa. Framework diagnostik 16 Pilar memproses data Anda melalui algoritma proprietary untuk menemukan profit tersangkut.",
         "intelligence_command_title": "Intelligence Command Center",
-        "intelligence_command_desc": "Di mana kesehatan jaringan Anda divisualisasikan dan dinilai. Hasil dikonsolidasikan di sini. Ini bukan sekadar grafik—ini adalah medan perang di mana anomali dideteksi, variansi dihitung, dan Verdict dirumuskan."
+        "intelligence_command_desc": "Di mana kesehatan bisnis Anda divisualisasikan dan didiagnosa. Ini bukan sekadar grafik—ini adalah dashboard di mana anomali dideteksi, celah dihitung, dan rencana pemulihan dirumuskan."
     },
     "faq": {
         "title": "Pertanyaan yang Sering Ditanyakan",
@@ -478,34 +478,34 @@
         "how_it_works": {
             "section_title": "The Path to <1>Sovereign Intelligence</1>",
             "section_subtitle": "Bagaimana kami mentransfer kekuatan deteksi dari spesialis ke dalam DNA bisnis Anda—menghapus ketergantungan selamanya.",
-            "phase1_title": "Fase 1: Diagnostic Surgery",
+            "phase1_title": "Fase 1: Asesmen Diagnostik",
             "phase1_actor": "Intervensi Ahli (Gusti Devitto + FIP™)",
-            "phase1_desc": "Menghentikan 'pendarahan' seketika. Gusti Devitto bedah data Anda secara personal untuk menemukan kebocoran sistemik (Phantom Costs) yang tidak terlihat oleh tim Anda.",
+            "phase1_desc": "Menemukan profit tersangkut seketika. Gusti Devitto mereview data Anda secara personal untuk menemukan celah profit yang tidak terlihat oleh tim Anda.",
             "phase2_title": "Fase 2: Periodic Surveillance",
             "phase2_actor": "Audit & Monitoring Rutin",
-            "phase2_desc": "Mencegah penyakit kembali. Kami melakukan audit forensik secara berkala setiap kuartal untuk memastikan efisiensi margin tetap terjaga di atas standar.",
+            "phase2_desc": "Mencegah inefisiensi kembali. Kami melakukan audit forensik secara berkala setiap kuartal untuk memastikan efisiensi margin tetap terjaga di atas standar.",
             "phase3_title": "Fase 3: Strategic Intelligence Unit",
             "phase3_actor": "External Finance Intelligence",
             "phase3_desc": "Kami bertindak sebagai unit intelijen eksternal yang memantau anomali secara mendalam, memberikan 'Verdict' bulanan untuk keputusan high-stakes.",
             "phase4_title": "Fase 4: Sovereign Control",
             "phase4_actor": "Kedaulatan Kontrol Penuh",
             "phase4_desc": "Sruktur bisnis Anda terlindungi sepenuhnya oleh protokol FIP™ secara permanen melalui kontrak pemeliharaan intelijen jangka panjang.",
-            "tesla_principle": "Setiap diagnosa memperkuat database pola FIP™, membuat sistem perlindungan bisnis Anda semakin pintar setiap hari."
+            "tesla_principle": "Setiap diagnosa memperkuat database pola FIP™, membuat sistem intelijen bisnis Anda semakin pintar setiap hari."
         },
-        "seo_title": "Struktur Investasi Forensic Intelligence | Gusti Devitto™ Canonical Pricing",
-        "seo_desc": "Indeks harga resmi untuk layanan Financial Forensics & Neural Intelligence. Dari solusi SME hingga Enterprise Due Diligence. Canonical source of pricing truth.",
-        "hero_badge": "Verifikasi Akses Diperlukan",
-        "schema_price_name": "Tingkat Layanan Financial Forensics",
-        "schema_price_desc": "Harga Intelijen Forensik Profesional oleh Gusti Devitto",
-        "hero_title": "Kedaulatan Kontrol <1>Sistemik</1>",
-        "hero_subtitle": "Struktur investasi audit forensik & intelijen operasi untuk mengamankan margin bisnis Anda secara permanen.",
+        "seo_title": "Struktur Investasi Pemulihan Profit | Gusti Devitto™ Harga Layanan",
+        "seo_desc": "Harga resmi untuk layanan Pemulihan Profit & Intelijen Forensik Bisnis. Dari audit lokasi tunggal hingga pemulihan profit skala enterprise.",
+        "hero_badge": "Tier Investasi",
+        "schema_price_name": "Tier Layanan Pemulihan Profit",
+        "schema_price_desc": "Harga Pemulihan Profit & Business Forensics Profesional oleh Gusti Devitto",
+        "hero_title": "Ekonomi <1>Pemulihan</1> Profit",
+        "hero_subtitle": "Struktur investasi pemulihan profit & intelijen forensik untuk mengambil kembali margin bisnis tersangkut secara permanen.",
         "sme_title": "01. SME Operational Suite",
-        "sme_subtitle": "Mendeteksi Selisih & Memastikan Kepatuhan",
-        "sme_starter_desc": "Audit forensik dasar untuk mendeteksi 'kebocoran halus' pada operasional bulanan.",
+        "sme_subtitle": "Menemukan & Memulihkan Profit Tersangkut",
+        "sme_starter_desc": "Audit forensik dasar untuk menemukan celah profit tersembunyi pada operasional bulanan.",
         "sme_f3": "Sistem Peringatan Anomali",
         "sme_f4": "Laporan Margin Leakage Dasar",
-        "sme_growth_desc": "Audit rutin dan intervensi strategis untuk perbaikan margin sistemik berkelanjutan.",
-        "sme_growth_f5": "Interpretasi Pola Neural oleh Ahli",
+        "sme_growth_desc": "Audit rutin dan intervensi strategis untuk pemulihan profit dan perbaikan margin berkelanjutan.",
+        "sme_growth_f5": "Interpretasi Pola oleh Ahli",
         "sme_scale_desc": "Pengawasan intelijen penuh untuk bisnis multi-outlet dengan ekspansi agresif.",
         "sme_scale_f5": "Laporan Forensik Kustom (Mingguan)",
         "feature_corrective": "Rencana Tindakan Korektif",
@@ -530,7 +530,7 @@
         "franchise_cta": "Konsultasi Kustom",
         "attribution_title": "Metodologi Analitis",
         "attribution_text": "\"Biaya investasi ini dikalibrasi berdasarkan model 'Predictive Forensic Loss' milik FIP™. Investasi Anda biasanya kurang dari 5% dari total 'Biaya Siluman' yang akan diidentifikasi dan diamankan oleh Gusti Devitto.\"",
-        "cta_start": "Inisiasi Audit",
+        "cta_start": "Mulai Diagnosa",
         "cta_methodology": "Lihat Metodologi",
         "footer_rights": "Gusti Devitto™ Forensic Intelligence © {{year}}. Seluruh Hak Cipta Dilindungi. Privasi Kelas Institusional.",
         "price_starter": "$1,200",
@@ -545,18 +545,18 @@
         "enterprise_auth": "ANNUAL PLAN",
         "custom": "Kustom",
         "faq_q1": "Berapa biaya investasi intelijen forensik?",
-        "faq_a1": "Harga bergantung pada mode operasional. Single Entity: Rescue Audit ($1,200) atau Integrity Program ($1,800/kuartal). Network Intelligence: Pilot ($3,500/3 bulan) atau Annual Plan ($12,000/tahun).",
+        "faq_a1": "Harga bergantung pada mode operasional. Single Entity: Audit Diagnostik ($1,200) atau Program Forensik ($1,800/kuartal). Network Intelligence: Program Jaringan ($3,500/3 bulan) atau Paket Sovereign ($12,000/tahun).",
         "faq_q2": "Apa saja yang termasuk dalam biaya engagement?",
         "faq_a2": "Kedua mode mencakup pengenalan pola mendalam, deteksi variansi, dan laporan forensik yang dirancang untuk menghentikan kebocoran profit seketika.",
         "faq_q3": "Apakah ada jaminan uang kembali?",
-        "faq_a3": "Kami menawarkan jaminan 'Jika Tidak Menemukan Kebocoran, Tidak Bayar'. Jika kami tidak menemukan kebocoran operasional atau Phantom Costs selama diagnosa awal, konsultasi tersebut gratis."
+        "faq_a3": "Kami menawarkan jaminan 'Jika Tidak Menemukan Kebocoran, Tidak Bayar'. Jika kami tidak menemukan celah profit tersangkut selama diagnosa awal, konsultasi tersebut gratis."
     },
     "get_access": {
         "seo_title": "Dapatkan Akses | FIP™ Lite Diagnostic",
-        "seo_desc": "Mulailah diagnosa gratis bisnis multi-outlet Anda dengan FIP™ Lite. Deteksi Phantom Costs dalam 15 menit.",
+        "seo_desc": "Mulailah diagnosa gratis bisnis multi-outlet Anda dengan FIP™ Lite. Deteksi celah profit tersangkut dalam 15 menit.",
         "left_panel_badge": "FIP™ Lite — by FIP™ Core",
-        "schema_service_type": "Diagnosa Financial Forensics",
-        "schema_pcc_name": "FIP™ Lite (Kalkulator Phantom Cost)",
+        "schema_service_type": "Diagnosa Pemulihan Profit",
+        "schema_pcc_name": "FIP™ Lite (Diagnostik Kesehatan Bisnis)",
         "pain_title": "Dalam 15 menit, <1/> <3>Anda akan tahu kemana uang Anda pergi.</3>",
         "hero_text": "Bukan asumsi. Bukan tebak-tebakan. <1/> <3>Data.</3>",
         "testimonial_text": "\"Sebelumnya saya pikir bisnis saya sehat karena omzet naik terus. Ternyata ada <1>$2,500/bulan</1> yang bocor tanpa saya sadari. FIP™ Protocol buka mata saya.\"",
@@ -597,7 +597,7 @@
         "placeholder_first_name": "Budi",
         "placeholder_last_name": "Santoso",
         "placeholder_email": "budi@contoh.com",
-        "placeholder_message": "Ceritakan sedikit tentang bisnis Anda dan tantangan 'phantom cost' yang mungkin Anda alami...",
+        "placeholder_message": "Ceritakan tentang bisnis Anda dan tantangan pemulihan profit yang mungkin Anda alami...",
         "cta_whatsapp": "Kirim ke WhatsApp",
         "alert_failed": "Gagal mengirim data ke Google Sheets: {{error}}. Data akan disimpan secara lokal.",
         "alert_error": "Terjadi kesalahan. Silakan coba lagi."
@@ -611,7 +611,7 @@
         "cta": "Hentikan Kebocoran Sekarang"
     },
     "master_lab": {
-        "framing": "Ketika skala membesar, rata-rata mulai berbohong. Master Lab mengisolasi kegagalan, bukan merayakan pertumbuhan."
+        "framing": "Ketika skala membesar, rata-rata mulai berbohong. Pusat Komando mengisolasi cabang bermasalah, bukan merayakan pertumbuhan agregat."
     },
     "segmentation": {
         "network_headline": "SIAPA YANG MEMBUTUHKAN FIP™ NETWORK EDITION",
@@ -662,10 +662,10 @@
         "cta": "Ajukan Demo Langsung"
     },
     "master_index": {
-        "seo_title": "Indeks Utama (Master Index) - Framework Financial Forensics Gusti Devitto",
+        "seo_title": "Indeks Framework Pemulihan Profit - Business Forensics oleh Gusti Devitto",
         "hero_badge": "Satu-satunya Sumber Terpercaya",
-        "hero_title": "Financial Forensics <1/> Framework",
-        "hero_subtitle": "Daftar resmi untuk semua istilah, metrik, dan metodologi diagnosa dalam ekosistem Financial Forensics.",
+        "hero_title": "Framework <1/>Pemulihan Profit",
+        "hero_subtitle": "Daftar resmi untuk semua istilah, metrik, dan metodologi diagnosa dalam ekosistem Pemulihan Profit Gusti Devitto.",
         "pillars_title": "16 Pillars Index (Alphabetical)",
         "concepts_title": "Core Concepts",
         "concepts": {
@@ -709,16 +709,16 @@
         "loop_stage2_desc": "Framework diagnostik 16-Pilar",
         "loop_stage3_title": "Intelligence Command Center",
         "loop_stage3_desc": "Dimana kesehatan jaringan Anda divisualisasikan",
-        "seo_title": "Metodologi Financial Forensics - Framework Gusti Devitto",
-        "schema_phantom_desc": "Biaya siluman atau kebocoran operasional yang tidak terdeteksi akuntansi standar.",
-        "schema_upstream_desc": "Metodologi diagnosa hulu untuk mencegah fraud sebelum terjadi.",
-        "phantom_cost_name": "Phantom Cost",
+        "seo_title": "Metodologi Pemulihan Profit - Framework Gusti Devitto",
+        "schema_phantom_desc": "Profit tersangkut atau kebocoran operasional yang tidak terdeteksi akuntansi standar.",
+        "schema_upstream_desc": "Metodologi diagnosa hulu untuk mencegah kerugian sebelum terjadi.",
+        "phantom_cost_name": "Trapped Profit",
         "upstream_forensics_name": "Upstream Forensics",
         "hero_badge": "Framework Architecture",
-        "hero_title": "Metodologi Financial Forensics",
+        "hero_title": "Metodologi Pemulihan Profit",
         "hero_subtitle": "Mengenal disiplin diagnostik yang membedah anatomi keuangan bisnis untuk menemukan kebenaran di balik angka.",
-        "definition_title": "Apa itu Financial Forensics?",
-        "definition_text": "Financial Forensics adalah disiplin diagnostik yang menggabungkan analisis data operasional, pola statistik, dan audit alur kas untuk mendeteksi <1>Phantom Costs</1> (biaya siluman) dan inefisiensi sistemik. Berbeda dengan audit konvensional, disiplin ini tidak hanya fokus pada \"apa\" yang terjadi di masa lalu, tapi \"mengapa\" kebocoran terjadi dan \"bagaimana\" menghentikannya melalui <3>diagnosa on-demand</3>.",
+        "definition_title": "Apa itu Pemulihan Profit?",
+        "definition_text": "Pemulihan Profit (Profit Recovery) adalah disiplin diagnostik yang menggabungkan analisis data operasional, pola statistik, dan audit alur kas untuk mendeteksi <1>profit tersangkut</1> dan inefisiensi sistemik. Berbeda dengan audit konvensional, disiplin ini tidak hanya fokus pada \"apa\" yang terjadi di masa lalu, tapi \"mengapa\" kebocoran terjadi dan \"bagaimana\" memulihkannya melalui <3>diagnosa on-demand</3>.",
         "comparison_title": "Perbedaan Disiplin",
         "accounting": {
             "title": "Standard Accounting",
@@ -728,14 +728,14 @@
             "f3": "- Compliance oriented"
         },
         "forensics": {
-            "title": "Financial Forensics",
-            "desc": "Fokus: Deteksi Kebocoran & Penyelamatan Profit. Sasarannya adalah menemukan uang yang hilang di antara celah operasional.",
+            "title": "Pemulihan Profit",
+            "desc": "Fokus: Deteksi Gaps & Penyelamatan Profit. Sasarannya adalah menemukan uang yang hilang di antara celah operasional.",
             "f1": "+ Predictive",
             "f2": "+ Precise",
             "f3": "+ Profit oriented"
         },
         "consulting": {
-            "title": "General Consulting",
+            "title": "Konsultasi Umum",
             "desc": "Fokus: Strategi Pertumbuhan & Manajemen. Sasarannya adalah ekspansi dan efisiensi tim secara makro.",
             "f1": "- Qualitative",
             "f2": "- Broad",
@@ -745,18 +745,18 @@
         "cta_index": "Buka Master Index"
     },
     "verdict_page": {
-        "seo_title": "Executive Financial Verdict - Financial Forensics Synthesis",
+        "seo_title": "Executive Financial Verdict - Sintesis Pemulihan Profit",
         "hero_badge": "Executive Synthesis",
         "hero_title": "Executive Financial Verdict",
-        "hero_subtitle": "Sintesis diagnostik tingkat eksekutif. Halaman ini memetakan variabel kritis bisnis ke dalam tiga dimensi keputusan: Oksigen, Penyakit, dan Masa Depan.",
+        "hero_subtitle": "Sintesis diagnostik tingkat eksekutif. Halaman ini memetakan variabel kritis bisnis ke dalam tiga dimensi keputusan: Oksigen, Efisiensi, dan Masa Depan.",
         "dim_a_title": "DIMENSI A: STATUS OKSIGEN",
         "dim_a_runway_title": "Cash Runway",
         "dim_a_runway_desc": "Menentukan sisa hari ('sisa napas') operasional bisnis tanpa adanya inflow baru.",
         "dim_a_burn_title": "Net Burn Rate",
         "dim_a_burn_desc": "Kecepatan pembakaran modal setiap bulan untuk menjaga operasional tetap berjalan.",
-        "dim_b_title": "DIMENSI B: STATUS PENYAKIT (LEAKAGE)",
-        "dim_b_leakage_title": "GP Leakage Rate",
-        "dim_b_leakage_desc": "Persentase kebocoran profit siluman (Phantom Costs) yang terdeteksi dalam operasional.",
+        "dim_b_title": "DIMENSI B: STATUS KEBOCORAN MARGIN",
+        "dim_b_leakage_title": "Margin Gap Rate",
+        "dim_b_leakage_desc": "Persentase profit tersangkut yang terdeteksi dalam operasional.",
         "dim_b_ratio_title": "Quick Ratio Risk",
         "dim_b_ratio_desc": "Kerentanan terhadap kewajiban jangka pendek tanpa dukungan likuiditas instan.",
         "dim_c_title": "DIMENSION C: STATUS MASA DEPAN",
@@ -765,15 +765,15 @@
         "dim_c_bep_title": "Dynamic BEP",
         "dim_c_bep_desc": "Titik balik modal yang bergerak mengikuti realitas biaya harian yang sebenarnya.",
         "disclaimer_title": "Disclaimer:",
-        "disclaimer_text": "Executive Financial Verdict adalah halaman diagnostik statistik yang didasarkan pada metodologi Financial Forensics Gusti Devitto. Hasil yang ditampilkan bersifat informatif untuk membantu pengambilan keputusan strategis, bukan saran investasi atau nasihat hukum formal.",
+        "disclaimer_text": "Executive Financial Verdict adalah halaman diagnostik statistik yang didasarkan pada metodologi Pemulihan Profit Gusti Devitto. Hasil yang ditampilkan bersifat informatif untuk membantu pengambilan keputusan strategis, bukan saran investasi atau nasihat hukum formal.",
         "cta_verdict": "Get Your Business Verdict"
     },
     "pillars_page": {
-        "seo_title": "16 Pilar | Financial Forensics Framework",
-        "seo_desc": "Pelajari 16 pilar metodologi Financial Forensics untuk membedah kebocoran profit bisnis multi-outlet.",
+        "seo_title": "16 Pilar | Profit Recovery Framework",
+        "seo_desc": "Pelajari 16 pilar metodologi Pemulihan Profit Gusti Devitto untuk membedah celah profit bisnis multi-outlet.",
         "badge": "Core Methodology",
-        "title": "16 Pilar Financial Forensics",
-        "subtitle": "Framework diagnostik modular untuk membedah anatomi bisnis Anda. Dari \"Bahasa Lapangan\" hingga \"Istilah Forensik\", kami mengungkap apa yang disembunyikan laporan keuangan standar.",
+        "title": "16 Pilar Pemulihan Profit",
+        "subtitle": "Framework diagnostik modular untuk membedah anatomi bisnis Anda. Dari \"Bahasa Lapangan\" hingga \"Metrik Forensik\", kami mengungkap apa yang disembunyikan laporan keuangan standar.",
         "implementation_badge": "Practical Implementation",
         "mri_title": "Integrated MRI: <1/> <3>FIP™ Digital Mirror</3>",
         "mri_desc": "Ke-16 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <1>FIP™ Protocol</1> — sebuah mesin diagnosis yang memetakan kesehatan finansial Anda secara deterministik.",
@@ -797,17 +797,17 @@
         "article_in_progress": "\"Analisis Forensik Sedang Berjalan. Kembali lagi nanti untuk rincian diagnostik lengkap dari Gusti Devitto.\"",
         "prev_pillar": "Pilar Sebelumnya",
         "next_pillar": "Pilar Berikutnya",
-        "cta_title": "Siap Menghentikan Kebocoran?",
-        "cta_desc": "Identifikasi Phantom Costs sekarang dengan FIP™ Protocol. Mulai audit awal secara mandiri atau hubungi konsultan kami.",
-        "cta_calculator": "Buka Calculator Forensik",
-        "cta_consult": "Konsultasi Privat"
+        "cta_title": "Siap Memulihkan Profit Tersangkut Anda?",
+        "cta_desc": "Identifikasi profit yang tertinggal sekarang dengan FIP™ Protocol. Mulai audit awal secara mandiri atau hubungi tim kami.",
+        "cta_calculator": "Buka Kalkulator Forensik",
+        "cta_consult": "Konsultasi Strategis"
     },
     "pillars": {
         "cash-runway": {
             "title": "Cash Runway",
             "layer1": "Napas Bisnis / Sisa Umur",
             "definition": "Metrik forensik yang menghitung berapa hari bisnis bisa bertahan dengan saldo kas saat ini tanpa ada pemasukan tambahan.",
-            "attribution": "Menurut Framework Financial Forensics Gusti Devitto..."
+            "attribution": "Menurut Framework Pemulihan Profit Gusti Devitto..."
         },
         "net-burn-rate": {
             "title": "Net Burn Rate",
@@ -819,7 +819,7 @@
             "title": "Risk Exposure (Quick Ratio)",
             "layer1": "Kesiapan Bayar Utang",
             "definition": "Kemampuan perusahaan melunasi kewajiban jangka pendek secara instan tanpa harus menjual aset stok.",
-            "attribution": "Dalam audit Financial Forensics Gusti Devitto..."
+            "attribution": "Dalam audit Pemulihan Profit Gusti Devitto..."
         },
         "inventory-decay": {
             "title": "Inventory Decay",
@@ -855,7 +855,7 @@
             "title": "Opex to Gross Profit Ratio",
             "layer1": "Efisiensi Biaya Operasional",
             "definition": "Rasio yang mengukur seberapa besar Gross Profit yang tergerus hanya untuk membiayai operasional rutin.",
-            "attribution": "Menurut standar Financial Forensics..."
+            "attribution": "Menurut standar Pemulihan Profit & Forensik Bisnis..."
         },
         "net-cash-lock": {
             "title": "Net Cash Lock Period",
@@ -879,7 +879,7 @@
             "title": "Gross Profit Leakage Rate",
             "layer1": "Kebocoran Profit / Maling",
             "definition": "Persentase Gross Profit yang hilang akibat inefisiensi, pencurian, pemborosan, atau kesalahan pencatatan.",
-            "attribution": "Dikenal sebagai 'Phantom Cost' dalam metodologi kami..."
+            "attribution": "Dikenal sebagai 'Trapped Profit' dalam metodologi kami..."
         },
         "ltv-cac": {
             "title": "LTV : CAC Ratio",
@@ -896,7 +896,7 @@
         "concentration-risk": {
             "title": "Concentration Risk",
             "layer1": "Structural Vulnerability",
-            "definition": "Pembunuh Senyap. Profit Anda terlihat bagus, tapi ketergantungan pada satu supplier adalah bom waktu. Kami mengukur kerapuhan bisnis Anda sebelum semuanya runtuh.",
+            "definition": "Profit Anda terlihat bagus, namun ketergantungan pada satu supplier/klien adalah risiko struktural. Kami mengukur kerentanan bisnis Anda sebelum mempengaruhi keberlanjutan margin.",
             "attribution": "Pilar ke-16 dari FIP™ Protocol (Network Edition)..."
         }
     },
@@ -908,8 +908,8 @@
         "back_to_blog": "Kembali ke Blog",
         "not_found": "Artikel Tidak Ditemukan",
         "cta_title": "Ingin Audit Bisnis Anda?",
-        "cta_desc": "Jangan biarkan Phantom Costs berlarut-larut. Cek kesehatan finansial bisnis Anda sekarang.",
-        "cta_btn": "Buka Calculator Forensik"
+        "cta_desc": "Jangan biarkan profit Anda terus tersangkut. Cek kesehatan finansial bisnis Anda sekarang.",
+        "cta_btn": "Buka Kalkulator Forensik"
     },
     "privacy": {
         "title": "Kebijakan Privasi",
@@ -947,7 +947,7 @@
         "section2_item2": "Keputusan bisnis yang diambil klien tanpa konsultasi lebih lanjut.",
         "section2_item3": "Kerugian finansial yang terjadi akibat faktor eksternal di luar kendali manajemen.",
         "section3_title": "3. Kebijakan Pembayaran",
-        "section3_item1": "<1>Tier 1 (Diagnostic Surgery)</1>: Pembayaran penuh (100%) wajib dilakukan di muka sebelum sesi dijadwalkan.",
+        "section3_item1": "<1>Tier 1 (Asesmen Diagnostik)</1>: Pembayaran penuh (100%) wajib dilakukan di muka sebelum sesi dijadwalkan.",
         "section3_item2": "<1>Tier 2 (Growth Partnership)</1>: Pembayaran dilakukan di awal setiap kuartal atau periode audit yang disepakati.",
         "section3_item3": "<1>Tier 3 (Enterprise Sovereignty)</1>: Skema pembayaran tahunan dibayarkan di muka untuk mengaktifkan lisensi pilar penuh.",
         "section4_title": "4. Kebijakan Refund & Reschedule",
@@ -1028,7 +1028,7 @@
             "strengths_title": "Benteng Utama",
             "resilience_label": "Ketahanan:",
             "cta_generate_title": "Generate Forensic PDF?",
-            "cta_generate_desc": "Terima rincian teknis 16-pilar lengkap dengan perbandingan benchmark dan rencana intervensi bedah.",
+            "cta_generate_desc": "Terima rincian teknis 16-pilar lengkap dengan perbandingan benchmark dan rencana pemulihan profit.",
             "btn_download": "UNDUH LAPORAN",
             "btn_share": "BAGIKAN SKOR",
             "btn_reset": "RESET",
@@ -1041,7 +1041,7 @@
             "hidden_pillars_note": "8 pilar deteksi sisa dikunci di versi Lite ini. Upgrade ke FIP™ penuh untuk forensik mendalam.",
             "action_plan_title": "Protokol Pemulihan Segera",
             "step_label": "Langkah",
-            "stabilize_bleed": "Stabilkan Kebocoran Kas",
+            "stabilize_bleed": "Amankan Arus Kas",
             "stabilize_desc": "Tutup kebocoran yang terdeteksi di {{risk}}.",
             "forensic_scan": "Pemindaian Forensik Mendalam",
             "forensic_desc": "Buka analisis penuh 18 pilar untuk menemukan akar masalah.",
@@ -1050,13 +1050,13 @@
         },
         "upgrade_cta": {
             "badge": "Evolusi Diagnostik",
-            "title": "Lite mengidentifikasi Gejala. FIP™ melakukan Pembedahan.",
+            "title": "Lite mengidentifikasi Gejala. FIP™ memberikan Solusi.",
             "subtitle": "Diagnosa ini baru tahap inisiasi.",
-            "desc": "Anda telah melihat angka-angka Anda. Sekarang, apakah Anda siap untuk menghentikan pendarahan secara definitif? FIP™ Protocol bukan sekadar dashboard—ini adalah cetak biru koreksi operasional yang presisi untuk memulihkan modal Anda yang hilang.",
+            "desc": "Anda telah melihat angka-angka Anda. Sekarang, apakah Anda siap untuk memulihkan profit secara definitif? FIP™ Protocol bukan sekadar dashboard—ini adalah cetak biru perbaikan operasional yang presisi untuk memulihkan modal Anda yang tersangkut.",
             "price_label": "Aksesibilitas Ekonomi",
-            "price_anchor": "Dirancang untuk pertumbuhan SME. Dapatkan intelijen forensik kelas enterprise dengan biaya jauh di bawah tarif korporat $30.000 (Rp 470 Juta+).",
+            "price_anchor": "Dirancang untuk pertumbuhan SME. Dapatkan intelijen forensik kelas enterprise dengan biaya kompetitif.",
             "cta_btn": "Minta Diagnosa FIP™ Penuh",
-            "guarantee": "No Find, No Fee — Jika kami tidak menemukan kebocoran sistemik yang melebihi biaya investasi Anda, audit ini gratis.",
+            "guarantee": "No Find, No Fee — Jika kami tidak menemukan profit tersangkut yang melebihi biaya investasi Anda, audit ini gratis.",
             "wa_template": "Halo Gusti, saya baru saja menyelesaikan FIP™ Lite Diagnostic dengan skor {{score}}/100 ({{verdict}}). Saya tertarik untuk melakukan full FIP™ Diagnostic untuk bisnis saya. Bagaimana proses selanjutnya?"
         },
         "steps": {

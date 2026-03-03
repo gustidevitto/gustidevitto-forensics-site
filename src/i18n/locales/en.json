@@ -154,7 +154,7 @@
         "cpa_partner_desc": "FIP™ is an intelligence layer for CFOs and internal audit teams. It finds money trapped between branches before it shows up as accounting losses. Think of it as a second brain that sees what humans miss.",
         "pilot_title": "Proof of Value",
         "pilot_desc": "See exactly how much profit is trapped inside your network — before committing to anything.",
-        "pilot_card_title": "Network Intelligence Pilot",
+        "pilot_card_title": "Network Intelligence Program",
         "pilot_card_sub": "3-Month Profit Recovery Trial",
         "pilot_price": "$3,500",
         "pilot_price_meta": "(3-Month Network Profit Audit)",
@@ -190,15 +190,15 @@
         ]
     },
     "about_page": {
-        "seo_title": "About Gusti Devitto | Financial Forensics Specialist",
-        "seo_desc": "Gusti Devitto—Forensic Business Diagnostician operating the proprietary diagnostic protocol to detect Phantom Costs and structural risks.",
-        "schema_job": "Financial Forensics Specialist",
-        "auth_level": "Vigilance Level: Verified",
+        "seo_title": "About Gusti Devitto | Profit Recovery Architect & Business Forensics Expert",
+        "seo_desc": "Gusti Devitto—Profit Recovery Architect helping business founders and multi-location operators find 15-20% of trapped profit that standard accounting misses. Serving clients in the US, ASEAN, and globally.",
+        "schema_job": "Profit Recovery Architect",
+        "auth_level": "Status: Verified Practitioner",
         "knows_about": [
-            "Financial Auditing",
-            "Neural Pattern Auditing",
-            "Business Intelligence",
-            "Phantom Cost",
+            "Profit Recovery",
+            "Business Forensic Intelligence",
+            "Multi-Location Margin Audit",
+            "Hidden Profit Detection",
             "Unit Economics",
             "Profit Optimization"
         ],
@@ -213,8 +213,8 @@
         "evolution_quote": "\"I saw owners working 18 hours a day, only to find their bank accounts always empty. That was the moment I realized—hard work wasn't the missing variable. The money was there. It just wasn't arriving.\"",
         "evolution_p2": "In the process, I discovered a hard truth: The problem wasn't sales, it was <1>MONEY GETTING STUCK INSIDE THE BUSINESS</1>. Over years of direct operation and deep AI collaboration, I built the FIP™ Protocol to find it.",
         "evolution_p3": "I traded textbooks for transactions. I moved away from general consulting to build a system that finds money your accountant doesn't know exists.",
-        "methodology_title": "Surgical Methodology",
-        "methodology_subtitle": "Built on our forensic protocol, our approach is deterministic, not motivational.",
+        "methodology_title": "Recovery Methodology",
+        "methodology_subtitle": "Built on our forensic protocol, our approach is data-driven, not motivational.",
         "card_anomaly_title": "Anomaly Detection",
         "card_anomaly_desc": "Using <1>pattern recognition</1> to see irregularities in COGS (Cost of Goods Sold) and <3>Wastage</3> that often go undetected by standard audits.",
         "card_cash_title": "Cash Velocity Audit",
@@ -222,9 +222,9 @@
         "card_eff_title": "Efficiency Mapping",
         "card_eff_desc": "Calculating precise <1>Unit Economics</1>, including LTV:CAC and dynamic <3>Break-Even Points</3> that adjust with market fluctuations.",
         "proprietary_badge": "PROPRIETARY TECHNOLOGY",
-        "proprietary_text": "This system is not just a spreadsheet, but an audit framework equipped with <1>Advanced Logic</1> for high-level deterministic diagnosis.",
+        "proprietary_text": "This system is not just a spreadsheet, but an audit framework equipped with <1>advanced pattern recognition</1> for high-level deterministic diagnosis.",
         "neural_status": "Status: Active",
-        "visual_interface": "Forensic Protocol Interface",
+        "visual_interface": "Profit Recovery Interface",
         "why_surgeon_title": "Why \"The Architect\"?",
         "why_surgeon_p1": "My clients say working with me is like having a <1>\"financial architect\"</1>. I don't give generic advice or motivational speeches.",
         "why_surgeon_p2": "I get into your data, find every dollar that's trapped in inefficiency (<1>dead weight</1>), and restructure your operations so the money flows to where it should: <3>your bank account</3>.",
@@ -279,15 +279,15 @@
         }
     },
     "institutional": {
-        "badge": "Institutional Intelligence Unit",
+        "badge": "For Investors & Network Owners",
         "title": "I Verify What Management Refuses to Disclose.",
-        "quote": "Investment due diligence isn't about numbers on a page; it's about the patterns the management tries to hide. We use Neural AI to find the \"Black Holes.\"",
+        "quote": "Investment due diligence isn't about numbers on a page; it's about finding the profit that management reports hide. We use advanced pattern recognition to find where money disappears.",
         "card1_title": "M&A Forensic Due Diligence",
         "card1_desc": "Detect revenue inflation, cooked books, and hidden liabilities before the wire transfer. We invalidate bad deals before they drain your capital.",
         "card2_title": "Franchise Royalty Guard",
-        "card2_desc": "Universal oversight across 100+ locations. Flag underreporting franchisees and \"off-the-books\" transactions using Neural Anomaly Detection.",
+        "card2_desc": "Universal oversight across 100+ locations. Flag underreporting franchisees and off-book transactions using automated anomaly detection.",
         "card3_title": "ESG & Integrity Audit",
-        "card3_desc": "Beyond financial metrics. We verify the biological integrity of the operation. If they're stealing from the system, we find the trail in minutes."
+        "card3_desc": "Beyond financial metrics. We verify the operational integrity of your business. If money is leaving the system through hidden channels, we find the trail in minutes."
     },
     "triage": {
         "step01_title": "Select Symptoms",
@@ -298,10 +298,10 @@
         "step03_desc": "Get instant diagnosis: Is your business healthy or leaking?"
     },
     "proof": {
-        "leaks_revealed": "Leaks Exposed (Lab Simulations)",
-        "businesses_diagnosed": "Diagnostics Run",
-        "mri_time": "Verdict Speed",
-        "accounting_jargon": "Validated on 2M+ Synthetic Transactions // Real-world Stress Tests."
+        "leaks_revealed": "Profit Recovered (Lab Simulations)",
+        "businesses_diagnosed": "Businesses Diagnosed",
+        "mri_time": "Diagnosis Speed",
+        "accounting_jargon": "Validated on 2M+ synthetic transactions with real-world stress tests."
     },
     "story": {
         "title": "Why I Built This",
@@ -327,45 +327,45 @@
         "transition": "The good news: that money is still inside your business. You just need to know where it's stuck."
     },
     "solution": {
-        "badge": "Protocol Pillars",
-        "title": "The Forensic Audit Workflow",
-        "desc": "This isn't just software. This is a <1>diagnostic discipline</1>—a rigorous methodology aimed at isolating the truth from your messy operational reality.",
+        "badge": "How It Works",
+        "title": "The Profit Recovery Workflow",
+        "desc": "This isn't just software. This is a <1>diagnostic discipline</1>—a rigorous methodology aimed at finding every dollar of trapped profit inside your operations.",
         "f1_title": "Scenario Simulator",
-        "f1_aka": "The 'Witch' Mode",
+        "f1_aka": "'What If' Mode",
         "f1_desc": "Predict the future. See what happens to profit if you raise prices by 5% or squeeze COGS.",
-        "f2_title": "16-Pillar Modular System",
-        "f2_aka": "Advanced Diagnosis",
-        "f2_desc": "Dissect business anatomy from Inventory Decay to Concentration Risk brutally.",
-        "f3_title": "Phantom Cost Detector",
-        "f3_aka": "Phantom Cost Hunter",
-        "f3_desc": "Find subtle leaks that are not recorded: illegal levies, waste, and team inefficiency.",
+        "f2_title": "16-Pillar Diagnostic System",
+        "f2_aka": "Deep Diagnosis",
+        "f2_desc": "Dissect your business anatomy from Inventory Decay to Concentration Risk with precision.",
+        "f3_title": "Hidden Profit Detector",
+        "f3_aka": "Trapped Profit Finder",
+        "f3_desc": "Find subtle profit gaps that never appear in reports: unrecorded costs, waste, and team inefficiency.",
         "f4_title": "Cash Runway Analysis",
-        "f4_aka": "Business Breath",
-        "f4_desc": "Calculate exactly how many more months your business can survive with static audit data.",
+        "f4_aka": "Business Survival Calculator",
+        "f4_desc": "Calculate exactly how many more months your business can survive with current cash reserves.",
         "live_feed": "LIVE FEED: DIAGNOSTIC ACTIVE",
         "new_pillar_title": "16th Pillar: Concentration Risk",
-        "new_pillar_desc": "The Silent Killer. Your profit looks good, but your dependence on one supplier is a ticking time bomb. We quantify your fragility before it snaps."
+        "new_pillar_desc": "Your profit looks good, but your dependence on one supplier is a structural vulnerability. We quantify your fragility before it breaks."
     },
     "guarantee_section": {
-        "title": "\"No Find, No Pitch\" Guarantee",
-        "p1": "I don't sell empty hopes. If the diagnostic verdict classifies your network as <1>Fortress (green)</1>, the consultation is over. Free. No pitch whatsoever.",
-        "p2": "I only work with networks that have REAL structural issues to resolve. Vulnerability is not weakness—it's an opportunity for surgical intervention."
+        "title": "\"No Find, No Fee\" Guarantee",
+        "p1": "If our diagnostic finds your business is healthy (Fortress status), the consultation is over. Free. No upsell whatsoever.",
+        "p2": "We only work with businesses that have REAL trapped profit to recover. If there's nothing to find, we tell you honestly."
     },
     "verdict_classification": {
-        "title": "Network Verdict Classification",
+        "title": "Business Health Classification",
         "fortress_title": "Fortress",
-        "fortress_desc": "Structural integrity verified. No systemic anomalies detected. Network health: Optimal.",
+        "fortress_desc": "Structurally sound. No significant profit gaps detected. Business health: Optimal.",
         "vulnerable_title": "Vulnerable",
-        "vulnerable_desc": "Moderate variance detected. Operational inefficiencies present. Intervention recommended within 60 days.",
+        "vulnerable_desc": "Moderate profit gaps detected. Operational inefficiencies present. Recovery recommended within 60 days.",
         "critical_title": "Critical",
-        "critical_desc": "Systemic rot identified. Structural collapse risk: High. Immediate forensic intervention required."
+        "critical_desc": "Significant trapped profit identified. Immediate recovery intervention required."
     },
     "pricing": {
         "title": "Transparent Intelligence Economics",
         "subtitle": "Predictable pricing for precise forensic intervention. No hidden fees, only hidden profit recovery.",
         "founders_badge": "01. SME Operational Suite (For Founders)",
         "investors_badge": "02. Institutional Intelligence Unit (For Investors)",
-        "starter_title": "Rescue Audit",
+        "starter_title": "Diagnostic Audit",
         "starter_badge": "One-Time Surgery",
         "growth_title": "Integrity Program",
         "growth_badge": "Ongoing Protection",
@@ -376,8 +376,8 @@
         "franchise_title": "Enterprise HQ",
         "franchise_badge": "Network Oversight",
         "cta_starter": "ACTIVATE RESCUE",
-        "cta_growth": "ACTIVATE INTEGRITY",
-        "cta_scale": "ACTIVATE PILOT",
+        "cta_growth": "ACTIVATE FORENSIC",
+        "cta_scale": "ACTIVATE NETWORK",
         "cta_enterprise": "ACTIVATE ANNUAL",
         "cta_franchise": "REQUEST HUB ACCESS",
         "popular": "POPULAR CHOICE",
@@ -407,10 +407,10 @@
         "scale_price": "$350",
         "per_month": "/mo",
         "powered_by": "Powered by Forensic Intelligence",
-        "pilot_header": "BETA ACCESS: THE NETWORK PILOT",
+        "pilot_header": "EARLY ACCESS: THE NETWORK PILOT",
         "pilot_offer": "Get the full power of v4.00 Network Edition (worth $100k/year) for a fraction of the cost.",
-        "pilot_catch": "We can only onboard 3 Partners this quarter to ensure surgical precision. Once these spots are filled, the waitlist opens for Q3 2026.",
-        "pilot_guarantee": "If we don't find at least one fraudulent node or critical leak in your network, we refund 50% of your pilot fee. You have literally nothing to lose except your losses."
+        "pilot_catch": "We can only onboard 3 partners this quarter to ensure diagnostic precision. Once these spots are filled, the waitlist opens for Q3 2026.",
+        "pilot_guarantee": "If we don't find trapped profit worth at least 10x your pilot fee, we refund 50%. You have literally nothing to lose except your losses."
     },
     "vaas": {
         "title": "Verdict-as-a-Service (VaaS)",
@@ -425,13 +425,13 @@
     },
     "fip_ecosystem": {
         "title": "The Intelligence Architecture",
-        "subtitle": "Three-Stage Intelligence Architecture",
-        "evidence_ingestion_title": "Evidence Ingestion Terminal",
-        "evidence_ingestion_desc": "Surgical data entry without cloud risk. Audit begins here. Raw data is processed through zero-cloud security protocol. No data leaves your infrastructure. Only truth enters our system.",
+        "subtitle": "Three-Stage Profit Recovery Architecture",
+        "evidence_ingestion_title": "Data Ingestion Terminal",
+        "evidence_ingestion_desc": "Secure data entry without cloud risk. Recovery begins here. Raw data is processed through zero-cloud security protocol. No data leaves your infrastructure. Only accurate insights enter our system.",
         "protocol_engine_title": "Protocol Engine",
-        "protocol_engine_desc": "The mathematical brain behind every verdict. 16-Pillar diagnostic framework processes your data through proprietary algorithms to detect structural anomalies.",
+        "protocol_engine_desc": "The mathematical brain behind every diagnosis. 16-Pillar diagnostic framework processes your data through proprietary algorithms to detect trapped profit.",
         "intelligence_command_title": "Intelligence Command Center",
-        "intelligence_command_desc": "Where your network's health is visualized and judged. Results are consolidated here. This isn't just graphs—it's a battlefield where anomalies are detected, variance is calculated, and the Verdict is formulated."
+        "intelligence_command_desc": "Where your business health is visualized and diagnosed. Results are consolidated here. This isn't just graphs—it's a dashboard where anomalies are detected, gaps are calculated, and a recovery plan is formulated."
     },
     "faq": {
         "title": "Frequently Asked Questions",
@@ -478,34 +478,34 @@
         "how_it_works": {
             "section_title": "The Path to <1>Business Intelligence</1>",
             "section_subtitle": "How we transfer forensic detection power from the specialist into your business DNA—removing dependency forever.",
-            "phase1_title": "Phase 1: Diagnostic Surgery",
+            "phase1_title": "Phase 1: Initial Assessment",
             "phase1_actor": "Expert Intervention (Gusti Devitto + FIP™)",
-            "phase1_desc": "Stop the 'bleeding' immediately. Gusti Devitto personally dissects your data to find the systemic leaks that your team currently misses.",
+            "phase1_desc": "Find the trapped profit immediately. Gusti Devitto personally reviews your data to locate the profit gaps that your team currently misses.",
             "phase2_title": "Phase 2: Periodic Surveillance",
             "phase2_actor": "Routine Audit & Monitoring",
-            "phase2_desc": "Preventing the disease from returning. We perform periodic forensic audits every quarter to ensure margin efficiency stays above standard.",
+            "phase2_desc": "Preventing inefficiencies from returning. We perform periodic forensic audits every quarter to ensure margin efficiency stays above standard.",
             "phase3_title": "Phase 3: Strategic Intelligence Unit",
             "phase3_actor": "External Finance Intelligence",
             "phase3_desc": "We act as your external intelligence unit, monitoring deep-layer anomalies and providing monthly 'Verdicts' for high-stakes decisions.",
             "phase4_title": "Phase 4: Full Control",
             "phase4_actor": "Full Control System",
             "phase4_desc": "Your business architecture is fully protected by the FIP™ Protocol through a long-term intelligence maintenance contract.",
-            "tesla_principle": "Every diagnosis strengthens the FIP™ pattern database, making your business defense system smarter every day."
+            "tesla_principle": "Every diagnosis strengthens the FIP™ pattern database, making your business intelligence system smarter every day."
         },
-        "seo_title": "Forensic Intelligence Investment Structure | Gusti Devitto™ Canonical Pricing",
-        "seo_desc": "Official price index for Financial Forensics & Neural Intelligence services. From SME solutions to Enterprise Due Diligence. Canonical source of pricing truth.",
+        "seo_title": "Profit Recovery Investment Structure | Gusti Devitto™ Service Pricing",
+        "seo_desc": "Official pricing for Profit Recovery & Business Forensic Intelligence services. From single-location audits to enterprise-wide profit recovery. Serving the US, ASEAN, and globally.",
         "hero_badge": "Investment Tiers",
-        "schema_price_name": "Financial Forensics Service Tiers",
-        "schema_price_desc": "Professional Forensic Intelligence pricing by Gusti Devitto",
-        "hero_title": "Forensic <1>Intelligence</1> Economics",
-        "hero_subtitle": "Forensic audit & neural intelligence investment structure to permanently secure your business margins.",
+        "schema_price_name": "Profit Recovery Service Tiers",
+        "schema_price_desc": "Professional Profit Recovery & Business Forensics pricing by Gusti Devitto",
+        "hero_title": "Profit <1>Recovery</1> Economics",
+        "hero_subtitle": "Profit recovery & forensic intelligence investment structure to permanently reclaim your trapped business margins.",
         "sme_title": "01. SME Operational Suite",
-        "sme_subtitle": "Detecting Variance & Ensuring Compliance",
-        "sme_starter_desc": "Fundamental forensic audit to detect 'silent leaks' in monthly operations.",
+        "sme_subtitle": "Finding & Recovering Trapped Profit",
+        "sme_starter_desc": "Foundational forensic audit to find hidden profit gaps in your monthly operations.",
         "sme_f3": "Anomaly Alert System",
         "sme_f4": "Basic Margin Leakage Report",
-        "sme_growth_desc": "Routine audit and strategic intervention for sustainable systemic margin improvement.",
-        "sme_growth_f5": "Expert Neural Pattern Interpretation",
+        "sme_growth_desc": "Routine audit and strategic intervention for sustainable profit recovery and margin improvement.",
+        "sme_growth_f5": "Expert Pattern Interpretation",
         "sme_scale_desc": "Full intelligence oversight for multi-outlet businesses with aggressive expansion.",
         "sme_scale_f5": "Custom Forensic Report (Weekly)",
         "feature_corrective": "Corrective Action Plan",
@@ -530,7 +530,7 @@
         "franchise_cta": "Inquire Custom Plan",
         "attribution_title": "Analytical Methodology",
         "attribution_text": "\"This retention structure is calibrated based on FIP™ 'Predictive Forensic Loss' model. Your investment cost is often less than 5% of the total potential 'Phantom Costs' we will identify and secure back through forensic intervention.\"",
-        "cta_start": "Initiate Audit",
+        "cta_start": "Start Diagnosis",
         "cta_methodology": "See Methodology",
         "footer_rights": "Gusti Devitto™ Forensic Intelligence © {{year}}. All Rights Reserved. Institutional-Grade Privacy Applied.",
         "price_starter": "$1,200",
@@ -545,7 +545,7 @@
         "enterprise_auth": "ANNUAL PLAN",
         "custom": "Custom",
         "faq_q1": "What is the investment for forensic intelligence?",
-        "faq_a1": "Pricing depends on operational mode. Single Entity: Rescue Audit ($1,200) or Integrity Program ($1,800/quarter). Network Intelligence: Pilot ($3,500/3 months) or Annual Plan ($12,000/year).",
+        "faq_a1": "Pricing depends on operational mode. Single Entity: Diagnostic Audit ($1,200) or Forensic Program ($1,800/quarter). Network Intelligence: Network Program ($3,500/3 months) or Sovereign Plan ($12,000/year).",
         "faq_q2": "What is included in the engagement?",
         "faq_a2": "Both modes include deep-layer pattern recognition, variance detection, and actionable forensic reporting designed to stop profit leakage immediately.",
         "faq_q3": "Is there a guarantee?",
@@ -557,14 +557,14 @@
         "input_placeholder": "Number of locations",
         "daily_loss": "Daily Loss",
         "monthly_loss": "Monthly Loss",
-        "cta": "Stop the Bleeding Now"
+        "cta": "Start Recovery Now"
     },
     "get_access": {
         "seo_title": "Get Access | FIP™ Lite Diagnostic",
         "seo_desc": "Start your free multi-outlet business diagnosis with FIP™ Lite. Detect Phantom Costs in 15 minutes.",
         "left_panel_badge": "FIP™ Lite — by FIP™ Core",
-        "schema_service_type": "Financial Forensics Diagnosis",
-        "schema_pcc_name": "FIP™ Lite (Phantom Cost Calculator)",
+        "schema_service_type": "Profit Recovery Diagnosis",
+        "schema_pcc_name": "FIP™ Lite (Business Health Diagnostic)",
         "pain_title": "In 15 minutes, <1/> <3>you will know where your money goes.</3>",
         "hero_text": "Not assumptions. Not guessing. <1/> <3>Data.</3>",
         "testimonial_text": "\"Previously, I thought my business was healthy because turnover kept rising. Turns out there was <1>$2,500/month</1> leaking without me realizing it. Gusti Devitto's FIP™ Protocol opened my eyes.\"",
@@ -605,13 +605,13 @@
         "placeholder_first_name": "Budi",
         "placeholder_last_name": "Santoso",
         "placeholder_email": "budi@example.com",
-        "placeholder_message": "Tell us a bit about your business and the 'phantom cost' challenges you might be experiencing...",
+        "placeholder_message": "Tell us about your business and the profit recovery challenges you might be experiencing...",
         "cta_whatsapp": "Inquiry via WhatsApp",
         "alert_failed": "Submission failed: {{error}}",
         "alert_error": "An unexpected error occurred. Please try again or contact us via WhatsApp."
     },
     "master_lab": {
-        "framing": "When scale increases, averages lie. Master Lab isolates failure instead of celebrating growth."
+        "framing": "When scale increases, averages lie. The Command Center isolates underperforming branches instead of celebrating aggregate growth."
     },
     "segmentation": {
         "network_headline": "WHO FIP™ NETWORK EDITION IS FOR",
@@ -644,10 +644,10 @@
         "criteria_2": "Identify ≥3 operational outliers requiring intervention",
         "guarantee_title": "Risk Reversal:",
         "guarantee_text": "50% refund if the FIP™ Protocol fails to identify a 10x ROI potential relative to your pilot fee.",
-        "scarcity": "Next Allocation: Q3 2026 | 3 validation slots remaining",
-        "cta": "Initiate Protocol Deployment",
+        "scarcity": "Next Intake: Q3 2026 | 3 pilot slots remaining",
+        "cta": "Start Pilot Deployment",
         "cost_of_delay_title": "Cost of Delay:",
-        "cost_of_delay_text": "Every 24 hours of undetected variance in a 50-unit network costs an average of $1,600. Mathematically, this audit pays for itself before the first verdict is delivered."
+        "cost_of_delay_text": "Every 24 hours of undetected margin loss in a 50-unit network costs an average of $1,600. Mathematically, this pilot pays for itself before the first report is delivered."
     },
     "transparency": {
         "p1": "FIP™ Protocol is mathematically validated. The detection engine has been stress-tested using chaotic and adversarial data.",
@@ -664,10 +664,10 @@
         "cta": "Request Live Demo"
     },
     "master_index": {
-        "seo_title": "Master Index - Financial Forensics Framework by Gusti Devitto",
+        "seo_title": "Profit Recovery Framework Index - Business Forensics by Gusti Devitto",
         "hero_badge": "Single Source of Truth",
-        "hero_title": "Financial Forensics <1/> Framework",
-        "hero_subtitle": "Canonical index for all terminology, metrics, and diagnostic methodologies within the Financial Forensics ecosystem.",
+        "hero_title": "Profit Recovery <1/>Framework",
+        "hero_subtitle": "Canonical index for all terminology, metrics, and diagnostic methodologies within the Gusti Devitto Profit Recovery ecosystem.",
         "pillars_title": "16 Pillars Index (Alphabetical)",
         "concepts_title": "Core Concepts",
         "concepts": {
@@ -711,16 +711,16 @@
         "loop_stage2_desc": "16-Pillar diagnostic framework",
         "loop_stage3_title": "Intelligence Command Center",
         "loop_stage3_desc": "Where your network's health is visualized",
-        "seo_title": "Financial Forensics Methodology - Gusti Devitto Framework",
-        "schema_phantom_desc": "Phantom costs or operational leakage undetected by standard accounting.",
-        "schema_upstream_desc": "Upstream diagnostic methodology to prevent fraud before it occurs.",
-        "phantom_cost_name": "Phantom Cost",
+        "seo_title": "Profit Recovery Methodology - Gusti Devitto Framework",
+        "schema_phantom_desc": "Trapped profit or operational leakage undetected by standard accounting.",
+        "schema_upstream_desc": "Upstream diagnostic methodology to prevent margin loss before it occurs.",
+        "phantom_cost_name": "Trapped Profit",
         "upstream_forensics_name": "Upstream Forensics",
         "hero_badge": "Framework Architecture",
-        "hero_title": "Financial Forensics Methodology",
+        "hero_title": "Profit Recovery Methodology",
         "hero_subtitle": "Understanding the diagnostic discipline that dissects business financial anatomy to find the truth behind the numbers.",
-        "definition_title": "What is Financial Forensics?",
-        "definition_text": "Financial Forensics is a diagnostic discipline that combines operational data analysis, statistical patterns, and cash flow audits to detect <1>Phantom Costs</1> (invisible leaks) and systemic inefficiencies. Unlike conventional audits, this discipline focuses not just on \"what\" happened in the past, but \"why\" leakage occurred and \"how\" to stop it through <3>on-demand diagnostics</3>.",
+        "definition_title": "What is Profit Recovery Forensics?",
+        "definition_text": "Profit Recovery Forensics is a diagnostic discipline that combines operational data analysis, statistical patterns, and cash flow audits to detect <1>trapped profit</1> (invisible leaks) and systemic inefficiencies. Unlike conventional audits, this discipline focuses not just on \"what\" happened in the past, but \"why\" leakage occurred and \"how\" to recover it through <3>on-demand diagnostics</3>.",
         "comparison_title": "Disciplinary Differences",
         "accounting": {
             "title": "Standard Accounting",
@@ -730,7 +730,7 @@
             "f3": "- Compliance oriented"
         },
         "forensics": {
-            "title": "Financial Forensics",
+            "title": "Profit Recovery",
             "desc": "Focus: Leakage Detection & Profit Recovery. The goal is to find missing money between operational gaps.",
             "f1": "+ Predictive",
             "f2": "+ Precise",
@@ -747,18 +747,18 @@
         "cta_index": "Open Master Index"
     },
     "verdict_page": {
-        "seo_title": "Executive Financial Verdict - Financial Forensics Synthesis",
+        "seo_title": "Executive Financial Verdict - Profit Recovery Synthesis",
         "hero_badge": "Executive Synthesis",
         "hero_title": "Executive Financial Verdict",
-        "hero_subtitle": "Executive-level diagnostic synthesis. This page maps critical business variables into three decision dimensions: Oxygen, Disease, and Future.",
+        "hero_subtitle": "Executive-level diagnostic synthesis. This page maps critical business variables into three decision dimensions: Oxygen, Efficiency, and Future.",
         "dim_a_title": "DIMENSION A: OXYGEN STATUS",
         "dim_a_runway_title": "Cash Runway",
         "dim_a_runway_desc": "Determines the remaining days ('breath') of business operations without new inflows.",
         "dim_a_burn_title": "Net Burn Rate",
         "dim_a_burn_desc": "The speed of capital burn each month to keep operations running.",
-        "dim_b_title": "DIMENSION B: DISEASE STATUS (LEAKAGE)",
-        "dim_b_leakage_title": "GP Leakage Rate",
-        "dim_b_leakage_desc": "Percentage of phantom profit leakage detected in operations.",
+        "dim_b_title": "DIMENSION B: LEAKAGE STATUS",
+        "dim_b_leakage_title": "Margin Gap Rate",
+        "dim_b_leakage_desc": "Percentage of hidden profit loss detected in operations.",
         "dim_b_ratio_title": "Quick Ratio Risk",
         "dim_b_ratio_desc": "Vulnerability to short-term obligations without instant liquidity support.",
         "dim_c_title": "DIMENSION C: FUTURE STATUS",
@@ -771,11 +771,11 @@
         "cta_verdict": "Get Your Business Verdict"
     },
     "pillars_page": {
-        "seo_title": "16 Pillars | Financial Forensics Framework",
-        "seo_desc": "Study the 16 pillars of Financial Forensics methodology to dissect profit leaks in multi-outlet businesses.",
+        "seo_title": "16 Pillars | Profit Recovery Framework",
+        "seo_desc": "Study the 16 pillars of the Gusti Devitto profit recovery methodology to find and recover trapped profit in multi-outlet businesses.",
         "badge": "Core Methodology",
-        "title": "16 Pillars of Financial Forensics",
-        "subtitle": "Modular diagnostic framework to dissect your business anatomy. From \"Field Language\" to \"Forensic Terms\", we reveal what standard financial reports hide.",
+        "title": "16 Pillars of Profit Recovery",
+        "subtitle": "Modular diagnostic framework to dissect your business anatomy. From \"Field Language\" to \"Forensic Metrics\", we reveal what standard financial reports hide.",
         "implementation_badge": "Practical Implementation",
         "mri_title": "Integrated MRI: <1/> <3>FIP™ Digital Mirror</3>",
         "mri_desc": "The 16 pillars below are not just theory. They are all integrated into the <1>FIP™ Protocol</1> — a diagnostic engine that maps your financial health deterministically.",
@@ -799,18 +799,18 @@
         "article_in_progress": "\"Forensic Analysis Article in Progress. Check back soon for the full diagnostic breakdown by Gusti Devitto.\"",
         "prev_pillar": "Previous Pillar",
         "next_pillar": "Next Pillar",
-        "cta_title": "Ready to Stop the Bleeding?",
-        "cta_desc": "Identify Phantom Costs now with FIP™ Protocol. Start an initial self-audit or contact our consultant.",
+        "cta_title": "Ready to Recover Your Trapped Profit?",
+        "cta_desc": "Find hidden profit gaps now with FIP™ Protocol. Start an initial self-audit or contact our team.",
         "cta_calculator": "Open Forensic Calculator",
         "cta_consult": "Private Consultation",
-        "schema_service_desc": "15-minute initial diagnosis to detect profit leakage and Phantom Costs in multi-outlet businesses."
+        "schema_service_desc": "15-minute initial diagnosis to detect profit leakage and trapped profit in multi-outlet businesses."
     },
     "pillars": {
         "cash-runway": {
             "title": "Cash Runway",
             "layer1": "Business Breath / Remaining Life",
             "definition": "Forensic metric that calculates how many days a business can survive with the current cash balance without any additional income.",
-            "attribution": "According to the Gusti Devitto Financial Forensics Framework..."
+            "attribution": "According to the Gusti Devitto Profit Recovery Framework..."
         },
         "net-burn-rate": {
             "title": "Net Burn Rate",
@@ -822,7 +822,7 @@
             "title": "Risk Exposure (Quick Ratio)",
             "layer1": "Debt Payment Readiness",
             "definition": "The ability of a company to pay off short-term obligations instantly without having to sell stock assets.",
-            "attribution": "In the Gusti Devitto Financial Forensics audit..."
+            "attribution": "In the Gusti Devitto Profit Recovery audit..."
         },
         "inventory-decay": {
             "title": "Inventory Decay",
@@ -858,7 +858,7 @@
             "title": "Opex to Gross Profit Ratio",
             "layer1": "Operational Cost Efficiency",
             "definition": "A ratio that measures how much Gross Profit is eroded just to finance routine operations.",
-            "attribution": "According to Financial Forensics standards..."
+            "attribution": "According to Profit Recovery & Business Forensics standards..."
         },
         "net-cash-lock": {
             "title": "Net Cash Lock Period",
@@ -882,7 +882,7 @@
             "title": "Gross Profit Leakage Rate",
             "layer1": "Profit Leakage / Theft",
             "definition": "The percentage of Gross Profit lost due to inefficiency, theft, waste, or recording errors.",
-            "attribution": "Known as 'Phantom Cost' in our methodology..."
+            "attribution": "Known as 'Trapped Profit' in our methodology..."
         },
         "ltv-cac": {
             "title": "LTV : CAC Ratio",
@@ -899,7 +899,7 @@
         "concentration-risk": {
             "title": "Concentration Risk",
             "layer1": "Structural Vulnerability",
-            "definition": "The Silent Killer. Your profit looks good, but your dependence on one supplier is a ticking time bomb. We quantify your fragility before it snaps.",
+            "definition": "Your profit may appear stable, but high dependence on a single supplier or client is a structural risk. We quantify your business fragility before it impacts margin sustainability.",
             "attribution": "The 16th Pillar of FIP™ Protocol..."
         }
     },
@@ -911,7 +911,7 @@
         "back_to_blog": "Back to Blog",
         "not_found": "Article Not Found",
         "cta_title": "Want to Audit Your Business?",
-        "cta_desc": "Don't let Phantom Costs linger. Check your business financial health now.",
+        "cta_desc": "Don't let trapped profit stay hidden. Check your business financial health now.",
         "cta_btn": "Open Forensic Calculator"
     },
     "privacy": {
@@ -950,7 +950,7 @@
         "section2_item2": "Business decisions taken by the client without further consultation.",
         "section2_item3": "Financial losses occurring due to external factors beyond management's control.",
         "section3_title": "3. Payment Policy",
-        "section3_item1": "<1>Tier 1 (Diagnostic Surgery)</1>: Full payment (100%) must be made in advance before the session is scheduled.",
+        "section3_item1": "<1>Tier 1 (Diagnostic Assessment)</1>: Full payment (100%) must be made in advance before the session is scheduled.",
         "section3_item2": "<1>Tier 2 (Growth Partnership)</1>: Payment is due at the beginning of each quarter or agreed audit period.",
         "section3_item3": "<1>Tier 3 (Enterprise Sovereignty)</1>: Annual subscription fee must be paid in full to activate the full 16-pillar intelligence license.",
         "section4_title": "4. Refund & Reschedule Policy",
@@ -1038,13 +1038,13 @@
             "share_text": "My business scored {{score}}/100 on the FIP™ Forensic Diagnostic. A higher score means structural resilience. Check yours at {{url}}",
             "share_title": "FIP™ Forensic Diagnostic Result",
             "copy_alert": "Score breakdown copied to clipboard.",
-            "surgeon_verdict": "Surgeon's Verdict",
+            "surgeon_verdict": "Specialist's Verdict",
             "confirmed_pillars": "Confirmed Pillars",
             "hidden_blindspots": "Hidden Blindspots",
             "hidden_pillars_note": "The remaining 8 detection pillars are locked in this Lite version. Upgrade to full FIP™ for deep-dive forensics.",
-            "action_plan_title": "Immediate Surgical Protocol",
+            "action_plan_title": "Immediate Recovery Protocol",
             "step_label": "Step",
-            "stabilize_bleed": "Stabilize Cash Bleed",
+            "stabilize_bleed": "Secure Cash Flow",
             "stabilize_desc": "Plug the leakage identified in {{risk}}.",
             "forensic_scan": "Forensic Deep Scan",
             "forensic_desc": "Unlock the full 18-pillar analysis to find hidden roots.",
@@ -1053,9 +1053,9 @@
         },
         "upgrade_cta": {
             "badge": "Diagnostic Evolution",
-            "title": "Lite identifies Symptoms. FIP™ performs the Surgery.",
+            "title": "Lite identifies Symptoms. FIP™ provides the Solution.",
             "subtitle": "The diagnostic is just the beginning.",
-            "desc": "You've seen the numbers. Now, are you ready to stop the bleeding definitively? The FIP™ Protocol isn't just a dashboard—it's a precision-engineered operational correction blueprint designed to recover your hidden capital.",
+            "desc": "You've seen the numbers. Now, are you ready to restore your profit definitively? The FIP™ Protocol isn't just a dashboard—it's a precision-engineered operational correction blueprint designed to recover your trapped capital.",
             "price_label": "Economic Accessibility",
             "price_anchor": "Engineered for SME growth. Access enterprise-grade forensics at a fraction of the $30,000 corporate rate.",
             "cta_btn": "Request Full FIP™ Diagnostic",

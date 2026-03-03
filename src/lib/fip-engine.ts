@@ -10,6 +10,32 @@ import type {
     PillarCategory
 } from '@/types/fip-lite';
 
+export type TierLevel = 'diagnostic' | 'forensic' | 'network' | 'sovereign';
+
+export const getPillarCount = (tier: TierLevel): number => {
+    switch (tier) {
+        case 'diagnostic': return 8;
+        case 'forensic': return 19;
+        case 'network': return 19;
+        case 'sovereign': return 19;
+        default: return 8;
+    }
+}
+
+export const hasFeature = (tier: TierLevel, feature: string): boolean => {
+    const featureMap = {
+        'logicTrace': ['forensic', 'network', 'sovereign'],
+        'auditTrail': ['forensic', 'network', 'sovereign'],
+        'decisionIntelligence': ['forensic', 'network', 'sovereign'],
+        'multiOutlet': ['network', 'sovereign'],
+        'franchiseIntelligence': ['network', 'sovereign'],
+        'neuralAI': ['sovereign'],
+        'monteCarlo': ['sovereign'],
+        'wealthImpact': ['sovereign']
+    }
+    return featureMap[feature]?.includes(tier) ?? false
+}
+
 /**
  * FIP™ Lite v2 - "The MRI Scan" Calculation Engine
  * Generates 4-layer psychological output from 8 inputs
