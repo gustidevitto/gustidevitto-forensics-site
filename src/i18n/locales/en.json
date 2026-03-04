@@ -24,7 +24,9 @@
         "enterprise_label": "Multi-Location or Portfolio",
         "enterprise_title": "I manage multiple branches or brands.",
         "enterprise_desc": "Find out which location is eating the others' profit.",
-        "enterprise_cta": "Start Network Intelligence"
+        "enterprise_cta": "Start Network Intelligence",
+        "choose_path": "Choose your path",
+        "emergency_cta": "Free Emergency Scan — Find where your money leaks in 30 seconds"
     },
     "single_entity": {
         "seo_desc": "Find the profit trapped inside your business. Precision forensic audit by Gusti Devitto recovers the 15-20% margin you didn't know was missing.",

@@ -24,7 +24,9 @@
         "enterprise_label": "Multi-Lokasi atau Portofolio",
         "enterprise_title": "Saya mengelola banyak cabang atau brand.",
         "enterprise_desc": "Cari tahu cabang mana yang makan profit cabang lain.",
-        "enterprise_cta": "Mulai Intelijen Jaringan"
+        "enterprise_cta": "Mulai Intelijen Jaringan",
+        "choose_path": "Pilih jalur Anda",
+        "emergency_cta": "Scan Darurat Gratis — Temukan kebocoran uang Anda dalam 30 detik"
     },
     "single_entity": {
         "seo_desc": "Temukan profit yang terjebak di dalam bisnis Anda. Audit forensik presisi oleh Gusti Devitto untuk memulihkan margin 15-20% yang hilang tanpa disadari.",

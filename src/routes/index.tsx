@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
-import { ArrowRight, Globe, Zap, AlertTriangle } from "lucide-react"
+import { ArrowRight, Zap } from "lucide-react"
 import { useTranslation, Trans } from 'react-i18next'
 import { LanguageSlider } from '@/components/LanguageSlider'
 import { Button } from '@/components/ui/button'
@@ -41,7 +41,6 @@ function Index() {
             </div>
 
             {/* SEO Overlay */}
-            {/* SEO Overlay */}
             <title>{t('global.seo_home_title')}</title>
             <meta name="description" content={t('global.seo_home_desc')} />
             <meta name="keywords" content={t('global.seo_home_keywords')} />
@@ -71,17 +70,14 @@ function Index() {
                     {/* Emergency Button - Mobile Top */}
                     <div className="lg:hidden mb-8">
                         <Link to="/fip-lite">
-                            <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-widest animate-pulse shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-400/50">
-                                <AlertTriangle className="w-4 h-4 mr-2" />
-                                Emergency Diagnostic
+                            <Button className="w-full bg-white/5 hover:bg-white/10 text-white hover:text-primary transition-colors font-bold border border-white/20 hover:border-primary/50 backdrop-blur-sm rounded-full">
+                                <Zap className="w-4 h-4 mr-2 text-primary" />
+                                {t('entrance_gate.emergency_cta', 'Free Emergency Scan')}
                             </Button>
                         </Link>
                     </div>
 
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-md">
-                        <Zap className="w-3 h-3 text-primary" />
-                        <span className="text-[10px] uppercase tracking-[0.3em] font-black text-primary">BUSINESS FORENSICS UNIT</span>
-                    </div>
+                    {/* REDUNDANT CAPSULE REMOVED */}
 
                     <div className="space-y-4">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-none uppercase">
@@ -93,7 +89,7 @@ function Index() {
                         </h1>
                         <div className="flex items-center gap-4">
                             <div className="h-px w-12 bg-primary"></div>
-                            <p className="text-xs md:text-sm text-white/40 font-bold tracking-[0.3em] uppercase">
+                            <p className="text-sm md:text-lg text-white/50 font-bold tracking-[0.3em] uppercase">
                                 {t('entrance_gate.hero_subtitle')}
                             </p>
                         </div>
@@ -105,36 +101,17 @@ function Index() {
                     </div>
 
                     <div className="space-y-4">
-                        <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Status Report:</p>
-                        <p className="text-base md:text-lg text-white border-l-2 border-primary/50 pl-6 py-2 leading-relaxed max-w-md font-bold">
+                        <p className="text-base md:text-xl text-white/90 border-l-2 border-primary/50 pl-6 py-2 leading-relaxed max-w-md font-medium">
                             {t('entrance_gate.init_prompt')}
                         </p>
 
-                        {/* Desktop Emergency Button */}
-                        <div className="hidden lg:block pt-4">
-                            <Link to="/fip-lite">
-                                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-widest animate-pulse shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-400/50 px-8 h-14">
-                                    <AlertTriangle className="w-5 h-5 mr-3" />
-                                    Start Emergency Scan (Free)
-                                </Button>
+                        {/* Desktop Emergency Button - Simplified & Elegant */}
+                        <div className="hidden lg:block pt-6">
+                            <Link to="/fip-lite" className="inline-flex items-center gap-3 text-sm font-bold text-white hover:text-primary transition-colors py-3 px-6 rounded-full border border-white/20 hover:border-primary/50 bg-white/5 backdrop-blur-sm group">
+                                <Zap className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
+                                {t('entrance_gate.emergency_cta', 'Free Emergency Scan')}
+                                <ArrowRight className="w-4 h-4 ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                             </Link>
-                            <p className="text-[10px] text-red-400 mt-2 font-bold uppercase tracking-wider pl-1">
-                                * Find out exactly where you are losing money in 30 seconds.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Footer Credentials */}
-                    <div className="hidden lg:flex flex-col gap-4 pt-12 border-t border-white/5 opacity-30">
-                        <div className="flex gap-8 text-[9px] font-black tracking-widest uppercase">
-                            <div className="flex flex-col gap-1">
-                                <span className="text-white/40">PROTOCOL</span>
-                                <span className="text-primary">FIP™ V4.00</span>
-                            </div>
-                            <div className="flex flex-col gap-1">
-                                <span className="text-white/40">REGION</span>
-                                <span className="text-white/60">SEA_IDN</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -142,30 +119,36 @@ function Index() {
                 {/* RIGHT SIDE: Vertical Segment Selection */}
                 <div className="flex flex-col gap-6 animate-fade-in-right">
 
+                    {/* Choose Path explicit label */}
+                    <p className="text-xs font-black tracking-[0.2em] text-white/30 uppercase pl-1">
+                        {t('entrance_gate.choose_path', 'Choose your path')}
+                    </p>
+
                     {/* Option 1: Single Entity (SME) */}
                     <Link
                         to="/single-entity"
                         onClick={() => handlePathSelection('single')}
-                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-primary/50 transition-all duration-300 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1"
+                        className="group relative min-h-[200px] md:min-h-[240px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-primary/50 transition-all duration-300 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1"
                     >
                         {/* Background Illustration */}
                         <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-1000">
                             <SingleEntityGraphic />
                         </div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/80 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1628]/95 via-[#0a1628]/80 to-transparent"></div>
 
-                        <div className="relative z-10 space-y-4">
-                            <div className="flex items-center justify-between">
-                                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                                    <Zap className="w-5 h-5" />
-                                </div>
-                                <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em]">{t('entrance_gate.multi_outlet_label')}</span>
+                        <div className="relative z-10 space-y-3">
+                            <div className="flex flex-col gap-1">
+                                <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white group-hover:text-primary transition-colors leading-none">
+                                    {t('entrance_gate.multi_outlet_label')}
+                                </h3>
+                                <p className="text-sm md:text-base font-medium text-white/80 group-hover:text-white transition-colors">
+                                    {t('entrance_gate.multi_outlet_title')}
+                                </p>
                             </div>
-                            <div className="space-y-1">
-                                <h3 className="text-3xl font-black uppercase tracking-tighter group-hover:text-primary transition-colors">{t('entrance_gate.multi_outlet_title')}</h3>
-                                <p className="text-sm text-white/60 font-medium">{t('entrance_gate.multi_outlet_desc')}</p>
-                            </div>
-                            <div className="flex items-center gap-2 text-[10px] font-black uppercase text-primary transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+                            <p className="text-xs md:text-sm text-white/40 block max-w-sm leading-relaxed">
+                                {t('entrance_gate.multi_outlet_desc')}
+                            </p>
+                            <div className="flex items-center gap-2 text-[10px] font-black uppercase text-primary transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all pt-2">
                                 {t('entrance_gate.multi_outlet_cta')} <ArrowRight className="w-3 h-3" />
                             </div>
                         </div>
@@ -175,26 +158,27 @@ function Index() {
                     <Link
                         to="/network-intelligence"
                         onClick={() => handlePathSelection('network')}
-                        className="group relative h-[250px] md:h-[280px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-red-500/50 transition-all duration-300 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-red-500/10 hover:-translate-y-1"
+                        className="group relative min-h-[200px] md:min-h-[240px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-red-500/50 transition-all duration-300 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-red-500/10 hover:-translate-y-1"
                     >
                         {/* Background Illustration */}
                         <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-1000">
                             <NetworkGraphic />
                         </div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/80 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1628]/95 via-[#0a1628]/80 to-transparent"></div>
 
-                        <div className="relative z-10 space-y-4">
-                            <div className="flex items-center justify-between">
-                                <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 group-hover:scale-110 transition-transform">
-                                    <Globe className="w-5 h-5" />
-                                </div>
-                                <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em]">{t('entrance_gate.enterprise_label')}</span>
+                        <div className="relative z-10 space-y-3">
+                            <div className="flex flex-col gap-1">
+                                <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white group-hover:text-red-500 transition-colors leading-none">
+                                    {t('entrance_gate.enterprise_label')}
+                                </h3>
+                                <p className="text-sm md:text-base font-medium text-white/80 group-hover:text-white transition-colors">
+                                    {t('entrance_gate.enterprise_title')}
+                                </p>
                             </div>
-                            <div className="space-y-1">
-                                <h3 className="text-3xl font-black uppercase tracking-tighter group-hover:text-red-500 transition-colors">{t('entrance_gate.enterprise_title')}</h3>
-                                <p className="text-sm text-white/60 font-medium">{t('entrance_gate.enterprise_desc')}</p>
-                            </div>
-                            <div className="flex items-center gap-2 text-[10px] font-black uppercase text-red-500 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+                            <p className="text-xs md:text-sm text-white/40 block max-w-sm leading-relaxed">
+                                {t('entrance_gate.enterprise_desc')}
+                            </p>
+                            <div className="flex items-center gap-2 text-[10px] font-black uppercase text-red-500 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all pt-2">
                                 {t('entrance_gate.enterprise_cta')} <ArrowRight className="w-3 h-3" />
                             </div>
                         </div>
@@ -204,10 +188,10 @@ function Index() {
 
             {/* Absolute Footer Credential */}
             <div className="absolute bottom-8 left-12 md:left-20 right-12 md:right-20 flex justify-between items-center opacity-10 pointer-events-none">
-                <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap">CONFIDENTIAL</span>
-                <div className="h-px flex-1 mx-8 bg-white/20 hidden md:block"></div>
-                <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap">© 2026 GUSTI DEVITTO</span>
+                <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap">FIP™ V4.00</span>
+                <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap hidden md:block">© 2026 GUSTI DEVITTO</span>
             </div>
+
             {/* Hidden Aesthetic SEO Gate */}
             <div className="sr-only">
                 <p>Gusti Devitto - Forensic Business Diagnostician.</p>
