@@ -1,11 +1,9 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { useState } from 'react'
 import { submitLead } from '@/lib/googleSheetsAPI'
-import { Clock, ShieldCheck, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { useTranslation, Trans } from 'react-i18next'
 
 export const Route = createFileRoute('/get-access')({
@@ -29,7 +27,6 @@ function GetAccess() {
         }
 
         try {
-            // Submit to Google Sheets
             const result = await submitLead(leadData)
 
             if (!result.success) {
@@ -37,11 +34,9 @@ function GetAccess() {
                 alert(t('contact_page.alert_failed', { error: result.error || 'Unknown Error' }))
             }
 
-            // Create Session Token (only after successful submission or fallback)
             const sessionToken = 'access-' + Math.random().toString(36).substr(2, 9)
             localStorage.setItem('pcc_session_token', sessionToken)
 
-            // Navigate to calculator
             setTimeout(() => {
                 setIsLoading(false)
                 navigate({ to: '/fip-lite' })
@@ -55,7 +50,7 @@ function GetAccess() {
     }
 
     return (
-        <div className="container relative flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0 min-h-[calc(100vh-4rem)]">
+        <div className="flex-1 flex flex-col bg-[#060a12] text-white relative min-h-[calc(100vh-4rem)]">
             <title>{t('get_access.seo_title')}</title>
             <meta name="description" content={t('get_access.seo_desc')} />
 
@@ -80,143 +75,126 @@ function GetAccess() {
                     "areaServed": "ID"
                 })}
             </script>
-            {/* Left Panel - Storyselling */}
-            <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
-                {/* Background Image with Overlay */}
-                <div className="absolute inset-0 bg-[url('/assets/images/devitto-forensics.jpg')] bg-cover bg-center"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/60"></div>
 
-                {/* Logo */}
-                <div className="relative z-20 flex items-center text-lg font-medium">
-                    <span className="text-foreground">{t('get_access.left_panel_badge')}</span>
-                </div>
+            {/* ═══ FULL-HEIGHT SPLIT ═══ */}
+            <section className="flex-1 flex flex-col lg:flex-row">
 
-                {/* Hero Content */}
-                <div className="relative z-20 mt-auto space-y-6">
-                    {/* Pain Statement */}
-                    <h2 className="text-3xl font-bold text-foreground leading-tight">
-                        <Trans i18nKey="get_access.pain_title">In 15 minutes, <br /> <span className="text-primary">you will know where your money goes.</span></Trans>
-                    </h2>
+                {/* Left Panel — Photo + Testimonial, bleeds full height */}
+                <div className="relative hidden lg:flex lg:w-[50%] overflow-hidden">
+                    <img
+                        src="/assets/images/devitto-forensics.jpg"
+                        alt="Gusti Devitto Forensics"
+                        className="absolute inset-0 w-full h-full object-cover opacity-30 grayscale-[0.3] contrast-[1.2]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#060a12]/60 via-transparent to-[#060a12]" />
 
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                        <Trans i18nKey="get_access.hero_text">Not assumptions. Not guessing. <br /> <strong className="text-foreground">Data.</strong></Trans>
-                    </p>
+                    {/* Content — bottom-anchored */}
+                    <div className="relative z-10 mt-auto p-12 lg:p-16 space-y-8 max-w-lg">
+                        <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight">
+                            <Trans i18nKey="get_access.pain_title">In 15 minutes, <br /> <span className="text-amber-500">you will know where your money goes.</span></Trans>
+                        </h2>
 
-                    {/* Testimonial */}
-                    <div className="bg-card/50 backdrop-blur-md rounded-xl p-6 border border-border/50">
-                        <blockquote className="space-y-3">
-                            <p className="text-base leading-relaxed text-foreground">
-                                <Trans i18nKey="get_access.testimonial_text">"Previously, I thought my business was healthy because turnover kept rising. Turns out there was <strong className="text-destructive">$2,500/month</strong> leaking without me realizing it. FIP™ Protocol opened my eyes."</Trans>
+                        <p className="text-white/40 text-base leading-relaxed font-light">
+                            <Trans i18nKey="get_access.hero_text">Not assumptions. Not guessing. <br /> <strong className="text-white">Data.</strong></Trans>
+                        </p>
+
+                        {/* Testimonial — inline quote, not a card */}
+                        <blockquote className="border-l-2 border-amber-500/30 pl-6 py-2 space-y-3">
+                            <p className="text-white/70 text-sm leading-relaxed italic">
+                                <Trans i18nKey="get_access.testimonial_text">Previously, I thought my business was healthy because turnover kept rising. Turns out there was <strong className="text-red-400 font-mono">$2,500/month</strong> leaking without me realizing it. FIP™ Protocol opened my eyes.</Trans>
                             </p>
                             <footer className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
-                                    {t('get_access.testimonial_name')[0]}
-                                </div>
-                                <div>
-                                    <p className="font-medium text-foreground">{t('get_access.testimonial_name')}</p>
-                                    <p className="text-sm text-muted-foreground">{t('get_access.testimonial_role')}</p>
+                                <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                                <div className="text-[10px] font-mono text-white/40 uppercase tracking-widest">
+                                    {t('get_access.testimonial_name')} — {t('get_access.testimonial_role')}
                                 </div>
                             </footer>
                         </blockquote>
-                    </div>
 
-                    {/* Guarantee */}
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <ShieldCheck className="w-5 h-5 text-green-500" />
-                        <span>{t('get_access.guarantee')}</span>
-                    </div>
-                </div>
-            </div>
-
-            {/* Right Panel - Form */}
-            <div className="lg:p-8 p-4">
-                <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
-                    {/* Header */}
-                    <div className="flex flex-col space-y-2 text-center">
-                        <h1 className="text-2xl font-bold tracking-tight">{t('get_access.form_title')}</h1>
-                        <p className="text-muted-foreground">
-                            {t('get_access.form_subtitle')}
-                        </p>
-                    </div>
-
-                    {/* Capacity Badge */}
-                    <div className="flex items-center justify-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                        <Clock className="w-4 h-4" />
-                        <span>{t('get_access.slots_left', { count: 3 })}</span>
-                    </div>
-
-                    {/* Form Card */}
-                    <Card className="border-border/50 shadow-xl">
-                        <CardHeader className="pb-4">
-                            <CardTitle className="text-lg">{t('get_access.form_header')}</CardTitle>
-                            <CardDescription>
-                                {t('get_access.form_disclaimer')}
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <form onSubmit={handleSubmit} className="space-y-4">
-                                <div className="space-y-2">
-                                    <Label htmlFor="name">{t('get_access.label_name')}</Label>
-                                    <Input
-                                        id="name"
-                                        name="name"
-                                        placeholder={t('get_access.placeholder_name')}
-                                        required
-                                        className="h-12"
-                                    />
-                                </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="phone">{t('get_access.label_phone')}</Label>
-                                    <Input
-                                        id="phone"
-                                        name="phone"
-                                        type="tel"
-                                        placeholder={t('get_access.placeholder_phone')}
-                                        required
-                                        className="h-12"
-                                    />
-                                    <p className="text-xs text-muted-foreground">{t('get_access.phone_desc')}</p>
-                                </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="email">{t('get_access.label_email')}</Label>
-                                    <Input
-                                        id="email"
-                                        name="email"
-                                        type="email"
-                                        placeholder={t('get_access.placeholder_email')}
-                                        required
-                                        className="h-12"
-                                    />
-                                </div>
-                                <Button
-                                    type="submit"
-                                    className="w-full h-12 text-base font-bold shadow-lg shadow-primary/20 group"
-                                    disabled={isLoading}
-                                >
-                                    {isLoading ? (
-                                        t('get_access.cta_processing')
-                                    ) : (
-                                        <>
-                                            {t('get_access.cta_run')}
-                                            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                        </>
-                                    )}
-                                </Button>
-                            </form>
-                        </CardContent>
-                    </Card>
-
-                    {/* Trust Signals */}
-                    <div className="text-center space-y-2">
-                        <p className="text-xs text-muted-foreground">
-                            <Trans i18nKey="get_access.privacy_policy">By clicking "Continue", you agree to our <a href="/privacy" className="underline hover:text-primary">Privacy Policy</a>.</Trans>
-                        </p>
-                        <p className="text-xs text-muted-foreground">
-                            {t('get_access.ssl_text')}
-                        </p>
+                        <div className="flex items-center gap-2 text-[10px] font-mono text-white/20 uppercase tracking-widest">
+                            <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                            {t('get_access.guarantee')}
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                {/* Right Panel — Form */}
+                <div className="flex-1 flex items-center justify-center p-8 md:p-12 lg:p-20">
+                    <div className="w-full max-w-md space-y-10">
+                        <div className="space-y-4">
+                            <h1 className="text-2xl font-black tracking-tight">{t('get_access.form_title')}</h1>
+                            <p className="text-sm text-white/30">{t('get_access.form_subtitle')}</p>
+                        </div>
+
+                        {/* Capacity — monospace inline, not pill badge */}
+                        <div className="flex items-center gap-3">
+                            <div className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                            <span className="text-[10px] font-mono text-amber-500/80 uppercase tracking-widest">
+                                {t('get_access.slots_left', { count: 3 })}
+                            </span>
+                        </div>
+
+                        {/* Form — minimal, no Card wrapper */}
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            <div className="space-y-2">
+                                <label htmlFor="name" className="text-[10px] font-mono text-white/30 uppercase tracking-widest">{t('get_access.label_name')}</label>
+                                <Input
+                                    id="name"
+                                    name="name"
+                                    placeholder={t('get_access.placeholder_name')}
+                                    required
+                                    className="h-12 bg-white/[0.03] border-white/[0.08] text-white focus:border-amber-500/50 focus:ring-0 rounded-none"
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <label htmlFor="phone" className="text-[10px] font-mono text-white/30 uppercase tracking-widest">{t('get_access.label_phone')}</label>
+                                <Input
+                                    id="phone"
+                                    name="phone"
+                                    type="tel"
+                                    placeholder={t('get_access.placeholder_phone')}
+                                    required
+                                    className="h-12 bg-white/[0.03] border-white/[0.08] text-white focus:border-amber-500/50 focus:ring-0 rounded-none"
+                                />
+                                <p className="text-[10px] text-white/20 font-mono">{t('get_access.phone_desc')}</p>
+                            </div>
+                            <div className="space-y-2">
+                                <label htmlFor="email" className="text-[10px] font-mono text-white/30 uppercase tracking-widest">{t('get_access.label_email')}</label>
+                                <Input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    placeholder={t('get_access.placeholder_email')}
+                                    required
+                                    className="h-12 bg-white/[0.03] border-white/[0.08] text-white focus:border-amber-500/50 focus:ring-0 rounded-none"
+                                />
+                            </div>
+                            <Button
+                                type="submit"
+                                className="w-full h-14 bg-amber-500 text-black hover:bg-white font-bold uppercase tracking-widest text-xs rounded-none transition-colors group"
+                                disabled={isLoading}
+                            >
+                                {isLoading ? (
+                                    <span className="font-mono animate-pulse">{t('get_access.cta_processing')}</span>
+                                ) : (
+                                    <span className="flex items-center gap-3">
+                                        {t('get_access.cta_run')}
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                    </span>
+                                )}
+                            </Button>
+                        </form>
+
+                        {/* Trust */}
+                        <div className="space-y-2 pt-4 border-t border-white/[0.06]">
+                            <p className="text-[10px] text-white/20 font-mono">
+                                <Trans i18nKey="get_access.privacy_policy">By clicking "Continue", you agree to our <a href="/privacy" className="underline hover:text-amber-500 transition-colors">Privacy Policy</a>.</Trans>
+                            </p>
+                            <p className="text-[10px] text-white/15 font-mono">{t('get_access.ssl_text')}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     )
 }

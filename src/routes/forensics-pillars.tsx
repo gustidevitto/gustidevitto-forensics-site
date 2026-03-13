@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { ChevronRight, Microscope } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
 import pillarsData from '@/data/pillarsData.json'
 import { useTranslation, Trans } from 'react-i18next'
 
@@ -13,7 +12,7 @@ function ForensicsPillars() {
     const { t } = useTranslation()
 
     return (
-        <div className="container py-12 md:py-20 max-w-7xl mx-auto px-4">
+        <div className="flex-1 flex flex-col bg-[#060a12] text-white relative">
             <title>{t('pillars_page.seo_title')}</title>
             <meta name="description" content={t('pillars_page.seo_desc')} />
 
@@ -33,136 +32,132 @@ function ForensicsPillars() {
                     }))
                 })}
             </script>
-            <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wider uppercase">
-                    {t('pillars_page.badge')}
-                </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
-                    {t('pillars_page.title')}
-                </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                    {t('pillars_page.subtitle')}
-                </p>
-            </div>
 
-            {/* FIP™ Protocol Interface Visual Context */}
-            <div className="mb-20">
-                <div className="relative rounded-[2rem] border border-primary/20 bg-muted/30 overflow-hidden shadow-2xl group">
-                    <div className="grid lg:grid-cols-2 gap-8 items-center p-8 md:p-12">
-                        <div className="space-y-6">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/20">
-                                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            {/* ═══ HERO — Left-anchored, not centered ═══ */}
+            <section className="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] min-h-[50vh] flex flex-col justify-end">
+                <div className="max-w-5xl">
+                    <div className="flex items-center gap-4 mb-8">
+                        <div className="w-8 h-px bg-amber-400/60" />
+                        <p className="text-[10px] text-white/30 font-medium tracking-[0.3em] uppercase">
+                            {t('pillars_page.badge')}
+                        </p>
+                    </div>
+                    <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-black tracking-tighter leading-[0.9] uppercase max-w-4xl">
+                        {t('pillars_page.title')}
+                    </h1>
+                    <p className="mt-6 text-lg md:text-xl text-white/40 max-w-2xl font-light leading-relaxed">
+                        {t('pillars_page.subtitle')}
+                    </p>
+                </div>
+            </section>
+
+            {/* ═══ FIP™ Protocol Context — Asymmetric, not centered card ═══ */}
+            <section className="relative border-b border-white/[0.05] overflow-hidden">
+                <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_1.2fr] items-stretch">
+                    {/* Left — The claim */}
+                    <div className="py-20 px-6 md:px-12 lg:px-20 space-y-8">
+                        <div className="flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                            <span className="text-[10px] font-mono text-amber-500/60 uppercase tracking-[0.2em]">
                                 {t('pillars_page.implementation_badge')}
-                            </div>
-                            <h2 className="text-3xl font-black tracking-tight leading-tight">
-                                <Trans i18nKey="pillars_page.mri_title">
-                                    Integrated MRI: <br />
-                                    <span className="text-primary text-4xl">FIP™ Digital Mirror</span>
-                                </Trans>
-                            </h2>
-                            <p className="text-muted-foreground leading-relaxed">
-                                <Trans i18nKey="pillars_page.mri_desc">
-                                    Ke-16 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <strong className="text-foreground">FIP™ Protocol Interface</strong> — sebuah mesin diagnosis yang memetakan kesehatan finansial Anda secara real-time.
-                                </Trans>
-                            </p>
-                            <div className="pt-2">
-                                <Button asChild variant="outline" className="border-primary/50 text-primary hover:bg-primary/5 h-12 px-6 font-bold">
-                                    <Link to="/fip-lite">{t('pillars_page.demo_btn')}</Link>
-                                </Button>
-                            </div>
+                            </span>
                         </div>
-                        <div className="relative">
-                            <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition duration-700"></div>
-                            <div className="relative rounded-xl border border-white/10 overflow-hidden shadow-2xl">
-                                <img
-                                    src="/assets/images/ffd1.png"
-                                    alt="FIP™ Protocol Interface"
-                                    className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                                <p className="absolute bottom-4 left-4 text-[10px] font-mono text-white/70 uppercase tracking-widest">
-                                    {t('about_page.auth_level')}
-                                </p>
-                            </div>
+                        <h2 className="text-3xl font-black tracking-tighter leading-tight">
+                            <Trans i18nKey="pillars_page.mri_title">
+                                Integrated MRI: <br />
+                                <span className="text-amber-500 text-4xl">FIP™ Digital Mirror</span>
+                            </Trans>
+                        </h2>
+                        <p className="text-white/40 leading-relaxed font-light">
+                            <Trans i18nKey="pillars_page.mri_desc">
+                                Ke-16 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <strong className="text-white/70">FIP™ Protocol Interface</strong> — sebuah mesin diagnosis yang memetakan kesehatan finansial Anda secara real-time.
+                            </Trans>
+                        </p>
+                        <Button asChild className="h-auto py-4 px-8 bg-amber-500 text-black hover:bg-white rounded-none font-bold uppercase tracking-widest text-xs transition-colors">
+                            <Link to="/fip-lite">{t('pillars_page.demo_btn')}</Link>
+                        </Button>
+                    </div>
+
+                    {/* Right — Dashboard bleeds */}
+                    <div className="relative min-h-[300px] lg:min-h-0 border-l border-white/[0.04]">
+                        <img
+                            src="/assets/images/ffd1.png"
+                            alt="FIP™ Protocol Interface"
+                            className="absolute inset-0 w-full h-full object-cover object-left opacity-40 grayscale-[0.3] contrast-[1.1]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#060a12] via-[#060a12]/30 to-transparent" />
+                        <div className="absolute bottom-6 right-6 text-right">
+                            <p className="text-[10px] font-mono text-amber-500/50 uppercase tracking-[0.2em]">{t('about_page.auth_level')}</p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {pillarsData.map((pillar, index) => (
-                    <Link
-                        key={pillar.id}
-                        to="/pilar/$slug"
-                        params={{ slug: pillar.id }}
-                        className="group"
-                    >
-                        <Card className="h-full border-muted hover:border-primary/50 transition-all duration-300 hover:shadow-2xl bg-card/50 backdrop-blur-sm relative overflow-hidden">
-                            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                                <span className="text-6xl font-black italic">
+            {/* ═══ PILLAR INDEX — Not identical rounded cards. Table-like rows. ═══ */}
+            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20">
+                <div className="max-w-6xl mx-auto">
+                    <div className="flex items-center gap-4 mb-16">
+                        <span className="text-amber-500 font-mono text-xs tracking-widest uppercase">Index</span>
+                        <div className="w-12 h-[1px] bg-amber-500/30" />
+                    </div>
+
+                    <div className="divide-y divide-white/[0.04]">
+                        {pillarsData.map((pillar, index) => (
+                            <Link
+                                key={pillar.id}
+                                to="/pilar/$slug"
+                                params={{ slug: pillar.id }}
+                                className="group flex items-start md:items-center gap-4 md:gap-8 py-6 md:py-8 hover:bg-white/[0.01] -mx-4 px-4 transition-colors"
+                            >
+                                {/* Number */}
+                                <span className="text-amber-500/30 font-mono text-xs tracking-widest shrink-0 w-8 mt-1 md:mt-0 group-hover:text-amber-500 transition-colors">
                                     {(index + 1).toString().padStart(2, '0')}
                                 </span>
-                            </div>
 
-                            <CardHeader className="relative z-10">
-                                <div className="space-y-1">
-                                    <span className="text-xs font-bold text-primary uppercase tracking-tighter">
-                                        {t('pillars_page.pillar_label', { index: (index + 1).toString().padStart(2, '0') })}
-                                    </span>
-                                    <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors">
+                                {/* Title + Layer1 */}
+                                <div className="flex-1 min-w-0">
+                                    <h3 className="text-base md:text-lg font-bold text-white/80 group-hover:text-white transition-colors truncate">
                                         {t(`pillars.${pillar.id}.title`)}
-                                    </CardTitle>
-                                </div>
-                            </CardHeader>
-
-                            <CardContent className="space-y-4 relative z-10">
-                                <div className="space-y-2">
-                                    <div className="flex flex-col">
-                                        <span className="text-[10px] uppercase font-bold text-muted-foreground">{t('pillars_page.field_language')}</span>
-                                        <span className="font-semibold text-secondary dark:text-primary/90 text-sm">
-                                            {t(`pillars.${pillar.id}.layer1`)}
-                                        </span>
-                                    </div>
+                                    </h3>
+                                    <p className="text-xs text-white/30 mt-1 truncate">
+                                        {t(`pillars.${pillar.id}.layer1`)}
+                                    </p>
                                 </div>
 
-                                <CardDescription className="text-sm line-clamp-3 min-h-[4.5rem]">
+                                {/* Definition — hidden on mobile */}
+                                <p className="hidden lg:block text-sm text-white/25 max-w-xs truncate shrink-0 group-hover:text-white/40 transition-colors">
                                     {t(`pillars.${pillar.id}.definition`)}
-                                </CardDescription>
+                                </p>
 
-                                <div className="pt-4 flex items-center text-primary text-sm font-bold group-hover:gap-2 transition-all">
-                                    {t('pillars_page.view_analysis')} <ChevronRight className="w-4 h-4" />
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </Link>
-                ))}
-            </div>
-
-            <div className="mt-24 relative overflow-hidden rounded-[3rem] border border-primary/20 bg-card/50 backdrop-blur-xl p-8 md:p-16">
-                <div className="absolute top-0 right-0 -m-12 opacity-5 pointer-events-none">
-                    <Microscope className="w-64 h-64" />
-                </div>
-
-                <div className="relative z-10 text-center space-y-8">
-                    <h2 className="text-3xl md:text-4xl font-extrabold">{t('pillars_page.cta_title')}</h2>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto italic">
-                        {t('pillars_page.cta_quote')}
-                    </p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-6">
-                        <Button asChild size="lg" className="h-14 px-10 text-lg font-bold shadow-xl shadow-primary/20">
-                            <Link to="/fip-lite">
-                                {t('pillars_page.cta_pcc')}
+                                {/* Arrow */}
+                                <ArrowRight className="w-4 h-4 text-white/10 group-hover:text-amber-500 group-hover:translate-x-1 transition-all shrink-0" />
                             </Link>
-                        </Button>
-                        <Button asChild variant="outline" size="lg" className="h-14 px-10 text-lg font-bold">
-                            <Link to="/contact">
-                                {t('pillars_page.cta_consult')}
-                            </Link>
-                        </Button>
+                        ))}
                     </div>
                 </div>
-            </div>
+            </section>
+
+            {/* ═══ CTA — Not centered card with rounded corners ═══ */}
+            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-[#03060a] border-t border-white/[0.05]">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start">
+                    <div className="flex-1 space-y-8">
+                        <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-tight">
+                            {t('pillars_page.cta_title')}
+                        </h2>
+                        <p className="text-white/40 text-lg leading-relaxed font-light italic max-w-xl">
+                            {t('pillars_page.cta_quote')}
+                        </p>
+                        <div className="flex flex-wrap gap-4 pt-4">
+                            <Button asChild className="h-auto py-4 px-8 bg-amber-500 text-black hover:bg-white rounded-none font-bold uppercase tracking-widest text-xs transition-colors">
+                                <Link to="/fip-lite">{t('pillars_page.cta_pcc')}</Link>
+                            </Button>
+                            <Button asChild variant="outline" className="h-auto py-4 px-8 border-white/10 text-white/60 hover:text-white hover:border-white rounded-none font-bold uppercase tracking-widest text-xs transition-colors">
+                                <Link to="/contact">{t('pillars_page.cta_consult')}</Link>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     )
 }
-

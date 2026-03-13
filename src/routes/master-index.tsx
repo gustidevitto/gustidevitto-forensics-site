@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
-import { BookOpen, Layers, ShieldAlert, Target } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import pillarsData from '@/data/pillarsData.json'
 import { useTranslation, Trans } from 'react-i18next'
 
@@ -26,104 +26,135 @@ function MasterIndex() {
     ]
 
     return (
-        <div className="container py-16 px-4 md:px-8 max-w-5xl mx-auto space-y-24">
+        <div className="flex-1 flex flex-col bg-[#060a12] text-white relative">
             <title>{t('master_index.seo_title')}</title>
 
-            {/* Hero */}
-            <header className="text-center space-y-8 relative group">
-                <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-transparent rounded-[3rem] blur-2xl opacity-50"></div>
-                <div className="relative mx-auto max-w-2xl h-48 rounded-2xl overflow-hidden border border-border shadow-xl mb-8">
-                    <img
-                        src="/assets/images/ffd.png"
-                        alt="FIP™ Framework Visual"
-                        className="w-full h-full object-cover grayscale-[0.2] transition-all duration-700 group-hover:grayscale-0"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
-                </div>
-                <div className="space-y-4">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
-                        <BookOpen className="w-4 h-4" /> {t('master_index.hero_badge')}
+            {/* ═══ HERO — Reference visual + left text ═══ */}
+            <section className="relative border-b border-white/[0.05] overflow-hidden">
+                <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_1fr] items-stretch">
+                    {/* Left — Title */}
+                    <div className="pt-32 pb-20 px-6 md:px-12 lg:px-20 space-y-6">
+                        <div className="flex items-center gap-4 mb-4">
+                            <div className="w-8 h-px bg-amber-400/60" />
+                            <p className="text-[10px] text-white/30 font-medium tracking-[0.3em] uppercase">
+                                {t('master_index.hero_badge')}
+                            </p>
+                        </div>
+                        <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-black tracking-tighter leading-[0.9] uppercase">
+                            <Trans i18nKey="master_index.hero_title">Financial Forensics <br />Framework</Trans>
+                        </h1>
+                        <p className="text-white/40 text-base leading-relaxed max-w-md font-light">
+                            by <Link to="/about-gusti-devitto" className="text-amber-500 hover:text-white transition-colors font-medium">{t('master_index.by_author')}</Link>
+                        </p>
+                        <p className="text-white/30 text-base leading-relaxed max-w-md font-light">
+                            {t('master_index.hero_subtitle')}
+                        </p>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-balance">
-                        <Trans i18nKey="master_index.hero_title">Financial Forensics <br /> Framework</Trans> <br />
-                        <Link to="/about-gusti-devitto" className="text-primary hover:underline">{t('master_index.by_author')}</Link>
-                    </h1>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                        {t('master_index.hero_subtitle')}
-                    </p>
-                </div>
-            </header>
 
-            {/* Pillar Index */}
-            <section className="space-y-8">
-                <div className="flex items-center gap-3 border-b pb-4">
-                    <Layers className="w-6 h-6 text-primary" />
-                    <h2 className="text-2xl font-bold">{t('master_index.pillars_title')}</h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {sortedPillars.map((pillar) => (
-                        <Link
-                            key={pillar.id}
-                            to="/pilar/$slug"
-                            params={{ slug: pillar.id }}
-                            className="p-4 rounded-xl border bg-card hover:border-primary/50 transition-all group"
-                        >
-                            <span className="font-bold group-hover:text-primary transition-colors">{t(`pillars.${pillar.id}.title`)}</span>
-                            <p className="text-xs text-muted-foreground mt-1 line-clamp-1">{t(`pillars.${pillar.id}.layer1`)}</p>
-                        </Link>
-                    ))}
-                </div>
-            </section>
-
-            {/* Core Concepts */}
-            <section className="space-y-8">
-                <div className="flex items-center gap-3 border-b pb-4">
-                    <Target className="w-6 h-6 text-primary" />
-                    <h2 className="text-2xl font-bold">{t('master_index.concepts_title')}</h2>
-                </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                    {coreConcepts.map((concept) => (
-                        <div key={concept.name} className="p-6 rounded-2xl bg-muted/30 border">
-                            <h3 className="text-lg font-bold mb-2">{concept.name}</h3>
-                            <p className="text-muted-foreground text-sm">{concept.desc}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* Cross-Narrative Patterns */}
-            <section className="space-y-8">
-                <div className="flex items-center gap-3 border-b pb-4">
-                    <ShieldAlert className="w-6 h-6 text-primary" />
-                    <h2 className="text-2xl font-bold">{t('master_index.narrative_title')}</h2>
-                </div>
-                <div className="grid md:grid-cols-1 gap-4">
-                    {narrativePatterns.map((pattern) => (
-                        <div key={pattern.name} className="p-6 rounded-2xl bg-card border border-destructive/20 hover:border-destructive/40 transition-colors">
-                            <h3 className="text-lg font-bold text-destructive mb-1">{pattern.name}</h3>
-                            <p className="text-muted-foreground text-sm">{pattern.desc}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* Footer CTA */}
-            <footer className="pt-16 border-t">
-                <div className="bg-primary/5 rounded-[2rem] p-8 md:p-12 text-center space-y-6">
-                    <h2 className="text-2xl md:text-3xl font-bold">{t('master_index.footer_title')}</h2>
-                    <p className="text-muted-foreground">
-                        {t('master_index.footer_desc')}
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button asChild size="lg" className="h-12 px-8 font-bold">
-                            <Link to="/fip-lite">{t('master_index.cta_pcc')}</Link>
-                        </Button>
-                        <Button asChild variant="outline" size="lg" className="h-12 px-8 font-bold">
-                            <Link to="/investasi">{t('master_index.cta_investasi')}</Link>
-                        </Button>
+                    {/* Right — Framework image */}
+                    <div className="relative min-h-[200px] lg:min-h-0 border-l border-white/[0.04]">
+                        <img
+                            src="/assets/images/ffd.png"
+                            alt="FIP™ Framework Visual"
+                            className="absolute inset-0 w-full h-full object-cover opacity-30 grayscale-[0.3]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#060a12] via-[#060a12]/40 to-transparent" />
                     </div>
                 </div>
-            </footer>
+            </section>
+
+            {/* ═══ PILLAR INDEX — Table rows, not grid cards ═══ */}
+            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05]">
+                <div className="max-w-6xl mx-auto">
+                    <div className="flex items-center gap-4 mb-12">
+                        <span className="text-amber-500 font-mono text-xs tracking-widest uppercase">Pillar Index</span>
+                        <div className="w-12 h-[1px] bg-amber-500/30" />
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-black tracking-tighter mb-12">{t('master_index.pillars_title')}</h2>
+
+                    <div className="divide-y divide-white/[0.04]">
+                        {sortedPillars.map((pillar) => (
+                            <Link
+                                key={pillar.id}
+                                to="/pilar/$slug"
+                                params={{ slug: pillar.id }}
+                                className="group flex items-center gap-6 py-5 hover:bg-white/[0.01] -mx-4 px-4 transition-colors"
+                            >
+                                <span className="text-white/80 font-bold group-hover:text-amber-500 transition-colors flex-1 truncate">
+                                    {t(`pillars.${pillar.id}.title`)}
+                                </span>
+                                <span className="text-xs text-white/20 hidden md:block truncate max-w-xs">
+                                    {t(`pillars.${pillar.id}.layer1`)}
+                                </span>
+                                <ArrowRight className="w-3 h-3 text-white/10 group-hover:text-amber-500 group-hover:translate-x-1 transition-all shrink-0" />
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══ CORE CONCEPTS — Not a 2x2 card grid ═══ */}
+            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] bg-[#03060a]">
+                <div className="max-w-6xl mx-auto">
+                    <div className="flex items-center gap-4 mb-12">
+                        <span className="text-amber-500 font-mono text-xs tracking-widest uppercase">Core Concepts</span>
+                        <div className="w-12 h-[1px] bg-amber-500/30" />
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-black tracking-tighter mb-16">{t('master_index.concepts_title')}</h2>
+
+                    <div className="space-y-12">
+                        {coreConcepts.map((concept, i) => (
+                            <div key={concept.name} className={`grid md:grid-cols-[200px_1fr] gap-4 md:gap-8 ${i % 2 !== 0 ? 'md:ml-24' : ''}`}>
+                                <h3 className="text-sm font-bold text-amber-500/80 uppercase tracking-wider">{concept.name}</h3>
+                                <p className="text-white/40 leading-relaxed">{concept.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══ NARRATIVE PATTERNS — Not identical bordered cards ═══ */}
+            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05]">
+                <div className="max-w-6xl mx-auto">
+                    <div className="flex items-center gap-4 mb-12">
+                        <span className="text-red-400 font-mono text-xs tracking-widest uppercase">Warning Patterns</span>
+                        <div className="w-12 h-[1px] bg-red-500/30" />
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-black tracking-tighter mb-16">{t('master_index.narrative_title')}</h2>
+
+                    <div className="space-y-16">
+                        {narrativePatterns.map((pattern, i) => (
+                            <div key={pattern.name} className={`max-w-xl ${i % 2 !== 0 ? 'md:ml-auto' : ''}`}>
+                                <div className={`flex items-center gap-3 mb-4 ${i % 2 !== 0 ? 'md:justify-end' : ''}`}>
+                                    <div className="w-2 h-2 rounded-full bg-red-500" />
+                                    <h3 className="text-base font-bold text-red-400">{pattern.name}</h3>
+                                </div>
+                                <p className={`text-white/40 leading-relaxed ${i % 2 !== 0 ? 'md:text-right' : ''}`}>{pattern.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══ FOOTER CTA ═══ */}
+            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start">
+                    <div className="flex-1 space-y-8">
+                        <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-tight">{t('master_index.footer_title')}</h2>
+                        <p className="text-white/40 text-lg font-light leading-relaxed max-w-xl">
+                            {t('master_index.footer_desc')}
+                        </p>
+                        <div className="flex flex-wrap gap-4 pt-4">
+                            <Button asChild className="h-auto py-4 px-8 bg-amber-500 text-black hover:bg-white rounded-none font-bold uppercase tracking-widest text-xs transition-colors">
+                                <Link to="/fip-lite">{t('master_index.cta_pcc')}</Link>
+                            </Button>
+                            <Button asChild variant="outline" className="h-auto py-4 px-8 border-white/10 text-white/60 hover:text-white hover:border-white rounded-none font-bold uppercase tracking-widest text-xs transition-colors">
+                                <Link to="/investasi">{t('master_index.cta_investasi')}</Link>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     )
 }

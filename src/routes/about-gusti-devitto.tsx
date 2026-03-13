@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
-import { ShieldCheck, Activity, Microscope, Target, ArrowRight, Brain, Zap, Search } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { useTranslation, Trans } from 'react-i18next'
 
 export const Route = createFileRoute('/about-gusti-devitto')({
@@ -10,7 +10,7 @@ export const Route = createFileRoute('/about-gusti-devitto')({
 function AboutGustiDevitto() {
     const { t } = useTranslation()
     return (
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col bg-[#060a12] text-white relative">
             {/* SEO & GEO Meta Tags */}
             <title>{t('about_page.seo_title')}</title>
             <meta name="description" content={t('about_page.seo_desc')} />
@@ -52,243 +52,293 @@ function AboutGustiDevitto() {
                 })}
             </script>
 
-            {/* Hero Section - The Surgeon Profile */}
-            <section className="relative py-20 px-4 md:px-8 overflow-hidden">
-                <div className="absolute inset-0 -z-10">
-                    <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background"></div>
-                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl opacity-50 animate-pulse"></div>
+            {/* ═══ HERO — THE NAMEPLATE (Human Anchor First) ═══ */}
+            <section className="relative min-h-[85vh] flex flex-col justify-end overflow-hidden">
+                {/* Gusti's photo as background — the FIRST thing you see */}
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src="/assets/images/aboutme.jpg"
+                        alt="Gusti Devitto"
+                        className="w-full h-full object-cover object-[50%_20%] opacity-50 grayscale-[0.3] contrast-[1.1]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#060a12] via-[#060a12]/70 to-[#060a12]/10" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#060a12]/70 via-transparent to-[#060a12]/30" />
                 </div>
 
-                <div className="container mx-auto max-w-6xl">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        {/* Profile Image with Surgical Aesthetic */}
-                        <div className="relative order-2 lg:order-1">
-                            <div className="relative group">
-                                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-                                <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-2xl bg-card border border-border/50 overflow-hidden shadow-2xl">
-                                    <img
-                                        src="/assets/images/aboutme.jpg"
-                                        alt="Gusti Devitto - Financial Forensics Specialist"
-                                        className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700"
-                                    />
-                                    {/* HUD Overlay */}
-                                    <div className="absolute inset-0 pointer-events-none">
-                                        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
-                                        <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-primary/40"></div>
-                                        <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-primary/40"></div>
-                                        <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-primary/40"></div>
-                                        <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-primary/40"></div>
-                                        <div className="absolute top-1/2 left-0 w-full h-[1px] bg-primary/10 animate-scanline"></div>
-                                        <div className="absolute top-0 left-1/2 h-full w-[1px] bg-primary/10 animate-scanline-vertical"></div> {/* Added vertical scanline */}
-                                    </div>
-                                    {/* Overlay Elements */}
-                                    <div className="absolute bottom-6 left-6 right-6">
-                                        <div className="flex items-center gap-3 px-4 py-2 rounded-lg bg-background/80 backdrop-blur-md border border-primary/20 w-fit">
-                                            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground">{t('about_page.auth_level')}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Experience Badge */}
-                            <div className="absolute -top-6 -left-6 md:top-12 md:-left-8 bg-card border border-primary/30 p-4 rounded-xl shadow-xl animate-float hidden sm:block">
-                                <Activity className="w-8 h-8 text-primary mb-2" />
-                                <p className="text-[10px] font-bold text-muted-foreground uppercase">Diagnosis Core</p>
-                                <p className="text-xl font-black text-foreground">FIP™ Protocol</p>
-                            </div>
+                {/* Content — bottom-left anchored like the entrance gate */}
+                <div className="relative z-10 px-6 md:px-12 lg:px-20 pb-16 md:pb-24 pt-[30vh]">
+                    <div className="max-w-5xl">
+                        {/* Role — understated, above the name */}
+                        <div className="flex items-center gap-4 mb-6">
+                            <div className="w-8 h-px bg-amber-400/60" />
+                            <p className="text-[10px] text-white/30 font-medium tracking-[0.3em] uppercase">
+                                {t('about_page.hero_badge')}
+                            </p>
                         </div>
 
-                        {/* Profile Content */}
-                        <div className="space-y-8 order-1 lg:order-2">
-                            <div className="space-y-4">
-                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20 uppercase tracking-widest">
-                                    <ShieldCheck className="w-4 h-4" />
-                                    {t('about_page.hero_badge')}
-                                </div>
-                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
-                                    <Trans i18nKey="about_page.hero_title">
-                                        Meet The Surgeon: <br />
-                                        <span className="text-primary">Precision Behind Numbers</span>
-                                    </Trans>
-                                </h1>
-                            </div>
+                        <h1 className="text-[clamp(3rem,8vw,7rem)] font-black tracking-[-0.04em] leading-[0.85] uppercase">
+                            <Trans i18nKey="about_page.hero_title">
+                                Meet The Surgeon: <br />
+                                <span className="text-amber-500">Precision Behind Numbers</span>
+                            </Trans>
+                        </h1>
 
-                            <div className="prose prose-invert prose-lg max-w-none">
-                                <p className="text-xl text-muted-foreground leading-relaxed">
-                                    <Trans i18nKey="about_page.hero_intro">Hello, I am <strong className="text-foreground">Gusti Devitto</strong>.</Trans>
-                                </p>
-                                <p className="text-muted-foreground leading-relaxed">
-                                    <Trans i18nKey="about_page.hero_p1">Saya bukan akuntan pajak, dan saya bukan perencana keuangan konvensional. Saya adalah seorang <strong className="text-primary">Financial Forensics Specialist</strong> yang berdedikasi membantu <em>founder</em> bisnis multi-outlet dan <em>brand owners</em> untuk membedah apa yang sebenarnya terjadi di balik laporan keuangan mereka.</Trans>
-                                </p>
-                                <p className="text-muted-foreground leading-relaxed">
-                                    <Trans i18nKey="about_page.hero_p2">Dalam dunia bisnis yang bergerak cepat, seringkali "bocor halus" tidak terlihat di permukaan. Fokus saya adalah menemukan kebocoran tersebut—apa yang saya sebut sebagai <strong className="text-foreground underline decoration-primary decoration-2 underline-offset-4">Phantom Costs</strong>—dan memperbaikinya sebelum menjadi pendarahan fatal.</Trans>
-                                </p>
-                            </div>
-
-                            <div className="flex flex-col sm:flex-row gap-4">
-                                <Button asChild size="lg" className="h-14 px-8 font-black tracking-wide text-lg">
-                                    <Link to="/fip-lite">
-                                        {t('about_page.cta_ready')}
-                                        <ArrowRight className="ml-2 w-5 h-5" />
-                                    </Link>
-                                </Button>
-                                <div className="flex items-center gap-3 px-6 py-2 border border-border/50 rounded-xl bg-muted/20">
-                                    <Zap className="w-5 h-5 text-primary" />
-                                    <span className="text-sm font-medium text-muted-foreground">{t('about_page.certified')}</span>
-                                </div>
-                            </div>
-                        </div>
+                        <p className="mt-8 text-lg md:text-xl text-white/50 max-w-xl leading-relaxed font-light">
+                            <Trans i18nKey="about_page.hero_intro">Hello, I am <strong className="text-white">Gusti Devitto</strong>.</Trans>
+                        </p>
                     </div>
                 </div>
+
+                {/* Thin amber rule */}
+                <div className="relative z-10 mx-6 md:mx-12 lg:mx-20 h-px bg-gradient-to-r from-amber-400/40 via-amber-400/10 to-transparent" />
             </section>
 
-            {/* Evolution Section */}
-            <section className="py-20 px-4 md:px-8 bg-muted/30">
-                <div className="container mx-auto max-w-4xl">
-                    <div className="grid md:grid-cols-3 gap-12 items-start">
-                        <div className="md:col-span-1">
-                            <div className="sticky top-24 space-y-4">
-                                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
-                                    <Zap className="w-6 h-6" />
-                                </div>
-                                <h2 className="text-3xl font-bold tracking-tight">{t('about_page.evolution_title')}</h2>
-                            </div>
-                        </div>
-                        <div className="md:col-span-2 space-y-6 text-muted-foreground leading-relaxed">
+            {/* ═══ THE DECLARATION — Who I Am, Not What I Sell ═══ */}
+            <section className="py-24 md:py-40 px-6 md:px-12 lg:px-20 border-b border-white/[0.05]">
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid lg:grid-cols-[2fr_1fr] gap-16 lg:gap-24 items-start">
+                        {/* Left — Prose, staggered paragraphs */}
+                        <div className="space-y-10 text-white/60 text-lg leading-relaxed font-light">
                             <p>
-                                <Trans i18nKey="about_page.evolution_p1">Perjalanan saya tidak dimulai di ruang rapat korporat, melainkan dari lapangan. Saya mendirikan <strong className="text-foreground">LAPA</strong>, sebuah inisiatif yang awalnya menargetkan UMKM dan solopreneur rumahan.</Trans>
+                                <Trans i18nKey="about_page.hero_p1">Saya bukan akuntan pajak, dan saya bukan perencana keuangan konvensional. Saya adalah seorang <strong className="text-white font-bold">Financial Forensics Specialist</strong> yang berdedikasi membantu <em>founder</em> bisnis multi-outlet dan <em>brand owners</em> untuk membedah apa yang sebenarnya terjadi di balik laporan keuangan mereka.</Trans>
                             </p>
-                            <p className="bg-background/50 p-6 rounded-2xl border-l-4 border-primary italic">
+                            <p>
+                                <Trans i18nKey="about_page.hero_p2">Dalam dunia bisnis yang bergerak cepat, seringkali "bocor halus" tidak terlihat di permukaan. Fokus saya adalah menemukan kebocoran tersebut—apa yang saya sebut sebagai <strong className="text-white underline decoration-amber-500 decoration-2 underline-offset-4">Phantom Costs</strong>—dan memperbaikinya sebelum menjadi pendarahan fatal.</Trans>
+                            </p>
+
+                            {/* Pull quote — indented, different size, breaks the column rhythm */}
+                            <blockquote className="pl-6 border-l-2 border-amber-500/30 text-xl md:text-2xl text-white/80 font-light italic leading-snug py-4">
                                 {t('about_page.evolution_quote')}
-                            </p>
+                            </blockquote>
+
                             <p>
-                                <Trans i18nKey="about_page.evolution_p2">Namun, dalam prosesnya, saya menemukan fakta keras: Masalahnya bukan pada penjualan, melainkan pada <strong className="text-foreground uppercase tracking-wider font-bold">Inefisiensi Tersembunyi</strong>.</Trans>
+                                <Trans i18nKey="about_page.evolution_p2">Namun, dalam prosesnya, saya menemukan fakta keras: Masalahnya bukan pada penjualan, melainkan pada <strong className="text-white uppercase tracking-wider font-bold">Inefisiensi Tersembunyi</strong>.</Trans>
                             </p>
-                            <p>
-                                <Trans i18nKey="about_page.evolution_p3">Dari pengalaman tersebut, saya melakukan <em className="text-primary italic font-medium">pivot strategis</em>. Saya meninggalkan pendekatan generalis dan membangun sistem diagnosis mendalam yang kini menjadi fondasi layanan saya.</Trans>
-                            </p>
+                        </div>
+
+                        {/* Right — Sticky metadata column */}
+                        <div className="lg:sticky lg:top-28 space-y-8">
+                            <div className="space-y-6">
+                                <div>
+                                    <p className="text-[10px] font-mono text-white/25 uppercase tracking-[0.3em] mb-2">Discipline</p>
+                                    <p className="text-sm text-white/70 font-medium">Financial Forensics</p>
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-mono text-white/25 uppercase tracking-[0.3em] mb-2">Method</p>
+                                    <p className="text-sm text-white/70 font-medium">FIP™ Protocol v4.00</p>
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-mono text-white/25 uppercase tracking-[0.3em] mb-2">Focus</p>
+                                    <p className="text-sm text-white/70 font-medium">{t('about_page.focus')}</p>
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-mono text-white/25 uppercase tracking-[0.3em] mb-2">Status</p>
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                                        <p className="text-sm text-white/70 font-medium">{t('about_page.auth_level')}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Monospace data strip */}
+                            <div className="p-4 border border-white/[0.06] bg-white/[0.01]">
+                                <p className="text-[10px] font-mono text-amber-500/60 uppercase tracking-[0.2em] mb-3">Verified Metrics</p>
+                                <div className="space-y-2 font-mono text-sm text-amber-500">
+                                    <div className="flex justify-between">
+                                        <span className="text-white/30">Outlets Diagnosed</span>
+                                        <span>500+</span>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <span className="text-white/30">Avg Recovery</span>
+                                        <span>18.6%</span>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <span className="text-white/30">Protocol Version</span>
+                                        <span>v4.00</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Methodology Section - FIP™ Protocol & Sovereign Intelligence Engine */}
-            <section className="py-24 px-4 md:px-8 relative overflow-hidden">
-                <div className="container mx-auto max-w-5xl">
-                    <div className="text-center mb-16 space-y-4">
-                        <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight">{t('about_page.methodology_title')}</h2>
-                        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            {/* ═══ EVOLUTION — From LAPA to Forensics ═══ */}
+            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] relative">
+                <div className="max-w-6xl mx-auto">
+                    {/* Section label — left, monospace */}
+                    <div className="flex items-center gap-4 mb-12">
+                        <span className="text-amber-500 font-mono text-sm tracking-widest">ORIGIN</span>
+                        <div className="w-12 h-[1px] bg-amber-500/30" />
+                    </div>
+
+                    <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.95] mb-16 max-w-3xl">
+                        {t('about_page.evolution_title')}
+                    </h2>
+
+                    <div className="space-y-8 max-w-2xl text-white/50 text-lg leading-relaxed font-light">
+                        <p>
+                            <Trans i18nKey="about_page.evolution_p1">Perjalanan saya tidak dimulai di ruang rapat korporat, melainkan dari lapangan. Saya mendirikan <strong className="text-white font-bold">LAPA</strong>, sebuah inisiatif yang awalnya menargetkan UMKM dan solopreneur rumahan.</Trans>
+                        </p>
+                        <p>
+                            <Trans i18nKey="about_page.evolution_p3">Dari pengalaman tersebut, saya melakukan <em className="text-amber-500/80 italic">pivot strategis</em>. Saya meninggalkan pendekatan generalis dan membangun sistem diagnosis mendalam yang kini menjadi fondasi layanan saya.</Trans>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══ THE SYSTEM — Not cards, but an anchor image + prose ═══ */}
+            <section className="relative border-b border-white/[0.05] overflow-hidden">
+                {/* Dashboard image bleeds off the right edge */}
+                <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_1.2fr] items-stretch">
+                    {/* Left — The claim */}
+                    <div className="py-24 md:py-32 px-6 md:px-12 lg:px-20 space-y-10">
+                        <div className="flex items-center gap-4">
+                            <span className="text-amber-500 font-mono text-sm tracking-widest">SYSTEM</span>
+                            <div className="w-12 h-[1px] bg-amber-500/30" />
+                        </div>
+
+                        <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-[0.95]">
+                            {t('about_page.methodology_title')}
+                        </h2>
+
+                        <p className="text-white/50 text-lg leading-relaxed font-light max-w-lg">
                             {t('about_page.methodology_subtitle')}
                         </p>
+
+                        {/* Not a grid. A list. Staggered, not equal. */}
+                        <div className="space-y-6 pt-4">
+                            <div className="flex items-start gap-4">
+                                <span className="text-amber-500 font-mono text-xs mt-1.5 shrink-0 w-8">01</span>
+                                <div>
+                                    <h3 className="text-base font-bold text-white/90 mb-1">{t('about_page.card_anomaly_title')}</h3>
+                                    <p className="text-sm text-white/40 leading-relaxed">
+                                        <Trans i18nKey="about_page.card_anomaly_desc">Using <strong className="text-white/60">pattern recognition</strong> to spot anomalies in COGS and Wastage that often go undetected by standard audits.</Trans>
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-4">
+                                <span className="text-amber-500 font-mono text-xs mt-1.5 shrink-0 w-8">02</span>
+                                <div>
+                                    <h3 className="text-base font-bold text-white/90 mb-1">{t('about_page.card_cash_title')}</h3>
+                                    <p className="text-sm text-white/40 leading-relaxed">
+                                        <Trans i18nKey="about_page.card_cash_desc">Memetakan secara presisi melalui analisis <strong className="text-white/60 uppercase tracking-tighter">Cash Conversion Cycle (CCC)</strong> and A-R Gaps untuk memastikan likuiditas Anda nyata.</Trans>
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-4">
+                                <span className="text-amber-500 font-mono text-xs mt-1.5 shrink-0 w-8">03</span>
+                                <div>
+                                    <h3 className="text-base font-bold text-white/90 mb-1">{t('about_page.card_eff_title')}</h3>
+                                    <p className="text-sm text-white/40 leading-relaxed">
+                                        <Trans i18nKey="about_page.card_eff_desc">Menghitung <strong className="text-white/60">Unit Economics</strong> yang presisi, termasuk LTV:CAC and Break-Even Point dinamis yang menyesuaikan dengan fluktuasi market.</Trans>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Proprietary badge — inline, not a card */}
+                        <div className="pt-6 border-t border-white/[0.06]">
+                            <p className="text-[10px] font-mono text-amber-500/50 uppercase tracking-[0.2em] mb-2">{t('about_page.proprietary_badge')}</p>
+                            <p className="text-sm text-white/40 leading-relaxed">
+                                <Trans i18nKey="about_page.proprietary_text">Sistem ini bukan sekadar spreadsheet, melainkan kerangka kerja audit yang dilengkapi dengan <strong className="text-white/70">Sovereign Intelligence</strong> untuk diagnosis deterministik tingkat tinggi.</Trans>
+                            </p>
+                        </div>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
-                        <div className="p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 group">
-                            <Brain className="w-10 h-10 text-primary mb-6 group-hover:scale-110 transition-transform" />
-                            <h3 className="text-xl font-bold mb-4">{t('about_page.card_anomaly_title')}</h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                                <Trans i18nKey="about_page.card_anomaly_desc">Using <strong className="text-foreground underline decoration-primary/30">pattern recognition</strong> to spot anomalies in COGS (Cost of Goods Sold) and <em className="italic">Wastage</em> that often go undetected by standard audits.</Trans>
-                            </p>
-                        </div>
-                        <div className="p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 group">
-                            <Activity className="w-10 h-10 text-primary mb-6 group-hover:scale-110 transition-transform" />
-                            <h3 className="text-xl font-bold mb-4">{t('about_page.card_cash_title')}</h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                                <Trans i18nKey="about_page.card_cash_desc">Memetakan secara presisi melalui analisis <strong className="text-foreground uppercase tracking-tighter">Cash Conversion Cycle (CCC)</strong> and <em className="italic">A-R Gaps</em> untuk memastikan likuiditas Anda nyata.</Trans>
-                            </p>
-                        </div>
-                        <div className="p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 group">
-                            <Microscope className="w-10 h-10 text-primary mb-6 group-hover:scale-110 transition-transform" />
-                            <h3 className="text-xl font-bold mb-4">{t('about_page.card_eff_title')}</h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                                <Trans i18nKey="about_page.card_eff_desc">Menghitung <strong className="text-foreground">Unit Economics</strong> yang presisi, termasuk LTV:CAC and <em className="italic font-medium">Break-Even Point</em> dinamis yang menyesuaikan dengan fluktuasi market.</Trans>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="mt-12 space-y-6">
-                        <div className="p-8 rounded-2xl bg-primary/5 border border-primary/20 flex flex-col md:flex-row items-center gap-8 shadow-inner">
-                            <div className="flex-1 space-y-4 text-center md:text-left">
-                                <p className="text-sm font-mono text-primary uppercase font-bold tracking-[0.3em]">{t('about_page.proprietary_badge')}</p>
-                                <p className="text-muted-foreground">
-                                    <Trans i18nKey="about_page.proprietary_text">Sistem ini bukan sekadar spreadsheet, melainkan kerangka kerja audit yang dilengkapi dengan <strong className="text-foreground">Sovereign Intelligence</strong> untuk diagnosis deterministik tingkat tinggi.</Trans>
-                                </p>
-                            </div>
-                            <Button variant="secondary" className="px-8 h-12 font-bold cursor-default">
-                                {t('about_page.neural_status')}
-                            </Button>
-                        </div>
-
-                        <div className="relative rounded-2xl border border-border/50 overflow-hidden shadow-2xl group">
-                            <img
-                                src="/assets/images/ffd1.png"
-                                alt="Dashboard Preview"
-                                className="w-full h-auto grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-[1.01]"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
-                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] font-mono text-muted-foreground uppercase tracking-[0.4em] bg-background/50 backdrop-blur-sm px-4 py-1 rounded-full border border-border/50">
-                                {t('about_page.visual_interface')}
-                            </div>
+                    {/* Right — Dashboard image, breaks container, bleeds right */}
+                    <div className="relative min-h-[400px] lg:min-h-0 border-l border-white/[0.04]">
+                        <img
+                            src="/assets/images/ffd1.png"
+                            alt="FIP™ Protocol Interface"
+                            className="absolute inset-0 w-full h-full object-cover object-left opacity-40 grayscale-[0.4] contrast-[1.1]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#060a12] via-[#060a12]/30 to-transparent" />
+                        <div className="absolute bottom-8 right-8 text-right">
+                            <p className="text-[10px] font-mono text-amber-500/60 uppercase tracking-[0.2em]">{t('about_page.visual_interface')}</p>
+                            <p className="text-[9px] font-mono text-white/20 uppercase tracking-[0.3em] mt-1">{t('about_page.neural_status')}</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Why The Surgeon Section */}
-            <section className="py-20 px-4 md:px-8 bg-muted/20 border-y border-border/50">
-                <div className="container mx-auto max-w-4xl">
-                    <div className="flex flex-col md:flex-row gap-12 items-center">
-                        <div className="w-24 h-24 md:w-32 md:h-32 rounded-3xl bg-primary/20 flex items-center justify-center text-primary shrink-0 animate-pulse">
-                            <Search className="w-12 h-12 md:w-16 md:h-16" />
-                        </div>
-                        <div className="space-y-6">
-                            <h2 className="text-3xl font-bold">{t('about_page.why_surgeon_title')}</h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
-                                <Trans i18nKey="about_page.why_surgeon_p1">Klien saya sering menyebut pendekatan saya seperti <strong className="text-foreground">"bedah operasi"</strong>. Saya tidak memberikan "obat generik" berupa saran motivasi bisnis.</Trans>
+            {/* ═══ WHY THE SURGEON — Not a card, not centered ═══ */}
+            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05]">
+                <div className="max-w-6xl mx-auto">
+                    <div className="flex items-center gap-4 mb-12 md:justify-end">
+                        <div className="w-12 h-[1px] bg-amber-500/30 hidden md:block" />
+                        <span className="text-amber-500 font-mono text-sm tracking-widest">PHILOSOPHY</span>
+                        <div className="w-12 h-[1px] bg-amber-500/30 md:hidden" />
+                    </div>
+
+                    <div className="max-w-xl md:ml-auto">
+                        <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-[0.95] mb-8 md:text-right">
+                            {t('about_page.why_surgeon_title')}
+                        </h2>
+                        <div className="space-y-6 text-white/50 text-lg leading-relaxed font-light md:text-right">
+                            <p>
+                                <Trans i18nKey="about_page.why_surgeon_p1">Klien saya sering menyebut pendekatan saya seperti <strong className="text-white">"bedah operasi"</strong>. Saya tidak memberikan "obat generik" berupa saran motivasi bisnis.</Trans>
                             </p>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
-                                <Trans i18nKey="about_page.why_surgeon_p2">Saya masuk ke dalam data Anda, melakukan diagnosis spesifik, memotong inefisiensi (<em className="text-destructive font-medium">jaringan mati</em>), dan menjahit kembali sistem operasional Anda agar lebih sehat dan <strong className="text-primary font-bold">profitable</strong>.</Trans>
+                            <p>
+                                <Trans i18nKey="about_page.why_surgeon_p2">Saya masuk ke dalam data Anda, melakukan diagnosis spesifik, memotong inefisiensi (<em className="text-red-400/80 font-medium">jaringan mati</em>), dan menjahit kembali sistem operasional Anda agar lebih sehat dan <strong className="text-amber-500 font-bold">profitable</strong>.</Trans>
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Final CTA Diagnostic */}
-            <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-background to-muted/30">
-                <div className="container mx-auto max-w-3xl text-center space-y-8">
-                    <div className="space-y-4">
-                        <h2 className="text-4xl md:text-5xl font-black tracking-tight underline decoration-primary decoration-4 underline-offset-8">{t('about_page.final_cta_title')}</h2>
-                        <p className="text-xl text-muted-foreground pt-4">
+            {/* ═══ FINAL CTA — The Closing Statement ═══ */}
+            <section className="py-24 md:py-40 px-6 md:px-12 lg:px-20 relative overflow-hidden">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start md:items-end">
+                    {/* Left: Huge Copy */}
+                    <div className="flex-1 space-y-8">
+                        <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.9] tracking-tighter">
+                            {t('about_page.final_cta_title')}
+                        </h2>
+                        <p className="text-white/40 text-xl leading-relaxed max-w-lg font-light">
                             {t('about_page.final_cta_p1')}
                         </p>
-                        <p className="text-xl font-medium italic text-foreground">
+                        <p className="text-white/70 text-xl font-medium italic">
                             {t('about_page.final_cta_quote')}
                         </p>
-                    </div>
-
-                    <div className="pt-8">
-                        <Button asChild size="lg" className="h-16 px-12 text-xl font-black rounded-2xl shadow-2xl shadow-primary/20 hover:scale-105 transition-transform group">
-                            <Link to="/fip-lite" className="flex items-center">
-                                {t('about_page.final_cta_button')}
-                                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
-                            </Link>
-                        </Button>
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row justify-center items-center gap-6 pt-12">
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <Target className="w-5 h-5 text-primary" />
-                            <span>{t('about_page.focus')}</span>
+                        <div className="pt-6">
+                            <Button asChild className="h-auto w-full md:w-auto py-6 px-8 md:px-12 text-lg font-bold bg-amber-500 text-black hover:bg-white transition-colors rounded-none shadow-none text-left flex items-center justify-start max-w-xl group">
+                                <Link to="/fip-lite" className="flex flex-col items-start h-full justify-center">
+                                    <span className="flex items-center text-xl md:text-2xl font-black whitespace-normal leading-tight">
+                                        {t('about_page.final_cta_button')}
+                                        <ArrowRight className="ml-3 w-5 h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                                    </span>
+                                    <span className="text-[10px] opacity-70 font-mono tracking-widest uppercase mt-2">
+                                        {t('about_page.certified')}
+                                    </span>
+                                </Link>
+                            </Button>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <ShieldCheck className="w-5 h-5 text-primary" />
-                            <span>{t('about_page.auth_level')}</span>
+                    </div>
+
+                    {/* Right: Small validation tag, not a huge portrait again */}
+                    <div className="hidden md:block shrink-0">
+                        <div className="bg-[#060a12] border border-white/[0.06] p-5 space-y-3">
+                            <div className="flex items-center gap-3">
+                                <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                                <div className="text-[10px] font-mono leading-tight">
+                                    <span className="text-white/30 uppercase tracking-widest">VERIFIED BY</span><br />
+                                    <span className="text-white font-bold uppercase tracking-widest">GUSTI DEVITTO</span>
+                                </div>
+                            </div>
+                            <div className="text-[9px] font-mono text-white/15 uppercase tracking-[0.3em]">
+                                FIP™ PROTOCOL V4.00
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            {/* Footer Badge */}
+            <div className="px-6 md:px-12 lg:px-20 pb-8 flex justify-between items-center text-white/[0.08]">
+                <span className="text-[9px] font-mono uppercase tracking-[0.4em]">FIP™ V4.00</span>
+                <span className="text-[9px] font-mono uppercase tracking-[0.4em] hidden md:block">© 2026 GUSTI DEVITTO</span>
+            </div>
         </div>
     )
 }

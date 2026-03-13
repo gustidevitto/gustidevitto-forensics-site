@@ -1,12 +1,10 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import type { ChangeEvent } from 'react'
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ShieldCheck, Activity, CheckCircle2, ChevronLeft, ChevronRight, Clock } from "lucide-react"
+import { ArrowRight, ShieldCheck } from "lucide-react"
 import { Input } from "@/components/ui/input"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslation, Trans } from 'react-i18next'
-import { WavingDots } from "@/components/ui/waving-dots"
 
 export const Route = createFileRoute('/multi-outlet')({
     component: MultiOutletPage,
@@ -15,219 +13,126 @@ export const Route = createFileRoute('/multi-outlet')({
 function MultiOutletPage() {
     const { t, i18n } = useTranslation()
     const [networkSize, setNetworkSize] = useState<number>(0)
-    const [currentSlide, setCurrentSlide] = useState(0)
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
-
-    const heroImages = [
-        '/assets/images/audit.png',
-        '/assets/images/forensic_dashboard.png',
-        '/assets/images/network_monitoring.png',
-        '/assets/images/dachicken.png'
-    ]
-
-    const handleMouseMove = (e: React.MouseEvent) => {
-        if (typeof window === 'undefined') return
-        const x = (e.clientX / window.innerWidth) - 0.5
-        const y = (e.clientY / window.innerHeight) - 0.5
-        setMousePos({ x, y })
-    }
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % heroImages.length)
-        }, 5000)
-        return () => clearInterval(timer)
-    }, [])
-
-    const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroImages.length)
-    const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length)
 
     return (
-        <div
-            onMouseMove={handleMouseMove}
-            className="flex-1 flex flex-col bg-gradient-to-b from-[#0a1628] via-[#0f1f3a] to-[#0a1628] perspective-1000"
-        >
+        <div className="flex-1 flex flex-col bg-[#060a12] text-white relative">
             {/* SEO Meta Tags */}
             <title>{t('global.seo_home_title')}</title>
             <meta name="description" content={t('multi_outlet.seo_desc')} />
             <meta name="keywords" content={t('multi_outlet.seo_keywords')} />
-            <meta property="og:title" content={t('global.og_home_title')} />
-            <meta property="og:description" content={t('global.og_home_desc')} />
-            <meta property="og:type" content="website" />
-            <meta name="geo.region" content="ID-JK" />
-            <meta name="geo.placename" content="Jakarta" />
-            <meta name="geo.position" content="-6.200000;106.816666" />
 
-            {/* Hero Section with Carousel */}
-            <section className="relative py-24 px-4 md:px-8 border-b border-white/5 overflow-hidden">
-                {/* Dynamic Spotlight Effect - "The Forensic Torch" */}
-                <div
-                    className="absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 ease-out"
+            {/* Subtle Authority UI Indicator */}
+            <div className="absolute top-6 left-6 md:left-12 lg:left-20 z-50 pointer-events-none flex items-center gap-3">
+                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse shadow-[0_0_10px_rgba(30,58,138,0.8)]" />
+                 <span className="text-[10px] font-black tracking-[0.3em] text-primary/80 uppercase">
+                    Diagnostic Level: Verified // Multi-Outlet Protocol
+                 </span>
+            </div>
+
+            {/* Ambient Background Elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse-slow"></div>
+                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] animate-pulse delay-700"></div>
+                <div className="absolute inset-0 opacity-[0.05]"
                     style={{
-                        background: `radial-gradient(800px circle at ${50 + (mousePos.x * 100)}% ${50 + (mousePos.y * 100)}%, rgba(56, 189, 248, 0.15), transparent 50%)`
-                    }}
-                />
+                        backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                        backgroundSize: '40px 40px',
+                    }}></div>
+            </div>
 
-                <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-                    <div
-                        className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] opacity-50 animate-pulse transition-transform duration-[50ms] ease-linear"
-                        style={{ transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 40}px)` }}
-                    ></div>
-                    <div
-                        className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-900/20 rounded-full blur-[100px] transition-transform duration-[50ms] ease-linear"
-                        style={{ transform: `translate(${mousePos.x * 60}px, ${mousePos.y * 60}px)` }}
-                    ></div>
-                    {/* Enhanced Grid Pattern for Parallax Reference */}
-                    <div className="absolute inset-0 opacity-[0.08] transition-transform duration-[50ms] ease-linear"
-                        style={{
-                            backgroundImage: 'radial-gradient(circle, #fff 1.5px, transparent 1.5px)',
-                            backgroundSize: '40px 40px',
-                            transform: `translate(${mousePos.x * -20}px, ${mousePos.y * -20}px)`
-                        }}></div>
-                </div>
+            {/* ═══ HERO — The Statement Wall ═══ */}
+            <section className="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 overflow-hidden min-h-[85vh] flex flex-col justify-center border-b border-white/[0.05]">
+                <div className="max-w-6xl relative z-10">
+                    <div className="text-left">
+                        <h1 className="text-[clamp(3.5rem,8vw,7.5rem)] font-black tracking-tighter leading-[0.9] w-full lg:w-[90%]">
+                            <span className="text-white/90">{t('multi_outlet.hero_title')}</span>
+                            <br />
+                            <span className="text-primary">{t('multi_outlet.hero_title_accent')}</span>
+                        </h1>
 
-                <div className="container mx-auto max-w-6xl relative z-10">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        {/* Left: Copy */}
-                        <div className="space-y-8 animate-fade-in">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest border border-primary/20">
-                                <Activity className="w-3 h-3" /> {t('multi_outlet.hero_badge')}
-                            </div>
+                        <p className="mt-8 text-xl md:text-2xl text-white/50 leading-relaxed max-w-2xl font-light">
+                            {t('multi_outlet.hero_desc')}
+                        </p>
 
-                            <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.1]">
-                                {t('multi_outlet.hero_title')} <br />
-                                <span className="text-primary">{t('multi_outlet.hero_title_accent')}</span>
-                            </h1>
+                        {/* Raw Data Strip — monospace, not centered stats */}
+                        <div className="mt-12 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm md:text-base font-mono text-amber-500 uppercase tracking-widest">
+                            <span className="font-bold">{t('multi_outlet.social_leaks_val')} {t('multi_outlet.social_leaks')}</span>
+                            <span className="text-white/20">/</span>
+                            <span className="font-bold">{t('multi_outlet.social_verdict_val')} {t('multi_outlet.social_verdict')}</span>
+                            <span className="text-white/20">/</span>
+                            <span className="font-bold">{t('multi_outlet.social_diagnosed_val')} {t('multi_outlet.social_diagnosed')}</span>
+                        </div>
 
-                            <p className="text-xl text-muted-foreground leading-relaxed">
-                                {t('multi_outlet.hero_desc')}
-                            </p>
-
-                            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                                <Button asChild size="lg" className="h-16 px-10 text-lg font-black bg-primary text-black hover:bg-white shadow-xl shadow-primary/20">
-                                    <Link to="/fip-lite">
-                                        {t('multi_outlet.cta_health_score')}
-                                        <ArrowRight className="ml-2 w-5 h-5" />
-                                    </Link>
+                        {/* CTA */}
+                        <div className="mt-16 flex items-center gap-6">
+                            <Link to="/fip-lite" className="w-full sm:w-auto">
+                                <Button size="lg" className="h-auto py-5 px-6 md:px-10 text-base md:text-lg font-bold bg-amber-500 text-black hover:bg-white transition-colors rounded-none whitespace-normal text-left sm:text-center w-full sm:w-auto leading-snug">
+                                    {t('multi_outlet.cta_health_score')}
+                                    <ArrowRight className="ml-3 w-5 h-5 flex-shrink-0" />
                                 </Button>
-                                <Button asChild variant="outline" size="lg" className="h-16 px-10 border-white/10 hover:bg-white/5 text-white font-bold">
-                                    <a href="#benefits">{t('multi_outlet.cta_see_catch')}</a>
-                                </Button>
-                            </div>
+                            </Link>
+                            <a href="#benefits" className="hidden sm:block text-sm font-bold text-white/30 hover:text-white transition-colors uppercase tracking-[0.15em]">
+                                {t('multi_outlet.cta_see_catch')}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                            <p className="text-sm text-muted-foreground/60 italic">
-                                {t('multi_outlet.hero_meta')}
+            {/* ═══ Quick Calculator ═══ */}
+            <section className="py-24 px-4 md:px-8 bg-[#03060a] border-b border-white/5 relative overflow-hidden">
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+
+                <div className="container mx-auto max-w-5xl relative z-10">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="space-y-8 text-left">
+                            <div className="flex items-center gap-4">
+                                <span className="text-amber-500 font-mono text-sm tracking-widest">ESTIMATE</span>
+                                <div className="w-12 h-[1px] bg-amber-500/30" />
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">
+                                {t('multi_outlet.calc_title')}
+                            </h2>
+                            <p className="text-lg text-muted-foreground leading-relaxed">
+                                {t('multi_outlet.calc_desc')}
                             </p>
                         </div>
 
-                        {/* Right: Image Carousel */}
-                        <div className="relative perspective-1000">
-                            <div
-                                className="relative rounded-2xl border border-white/10 bg-zinc-900/50 overflow-hidden backdrop-blur-sm group shadow-2xl transition-all duration-100 ease-out"
-                                style={{
-                                    transform: `rotateY(${mousePos.x * 10}deg) rotateX(${mousePos.y * -10}deg) translateZ(20px)`,
-                                    transformStyle: 'preserve-3d'
-                                }}
-                            >
-                                {/* Carousel Images */}
-                                <div className="relative aspect-[4/3] transform-style-3d">
-                                    {heroImages.map((img, idx) => (
-                                        <div
-                                            key={idx}
-                                            className={`absolute inset-0 transition-opacity duration-1000 ${idx === currentSlide ? 'opacity-100' : 'opacity-0'
-                                                }`}
-                                        >
-                                            <img
-                                                src={img}
-                                                alt={`Forensic Audit ${idx + 1}`}
-                                                className="w-full h-full object-cover"
-                                            />
-                                        </div>
-                                    ))}
-
-                                    {/* Gradient Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                                </div>
-
-                                {/* Carousel Controls */}
-                                <button
-                                    onClick={prevSlide}
-                                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all opacity-0 group-hover:opacity-100 z-20"
-                                >
-                                    <ChevronLeft className="w-5 h-5" />
-                                </button>
-                                <button
-                                    onClick={nextSlide}
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all opacity-0 group-hover:opacity-100 z-20"
-                                >
-                                    <ChevronRight className="w-5 h-5" />
-                                </button>
-
-                                {/* Dots Indicator */}
-                                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-                                    {heroImages.map((_, idx) => (
-                                        <button
-                                            key={idx}
-                                            onClick={() => setCurrentSlide(idx)}
-                                            className={`w-2 h-2 rounded-full transition-all ${idx === currentSlide ? 'bg-primary w-8' : 'bg-white/50'
-                                                }`}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Social Proof */}
-            <section className="py-16 px-4 md:px-8 bg-white/[0.02] border-b border-white/5">
-                <div className="container mx-auto max-w-5xl">
-                    <div className="grid md:grid-cols-3 gap-8 text-center">
-                        <div className="space-y-2">
-                            <div className="text-4xl font-black text-primary">{t('multi_outlet.social_leaks_val')}</div>
-                            <div className="text-sm text-muted-foreground uppercase tracking-wide">{t('multi_outlet.social_leaks')}</div>
-                        </div>
-                        <div className="space-y-2">
-                            <div className="text-4xl font-black text-primary">{t('multi_outlet.social_verdict_val')}</div>
-                            <div className="text-sm text-muted-foreground uppercase tracking-wide">{t('multi_outlet.social_verdict')}</div>
-                        </div>
-                        <div className="space-y-2">
-                            <div className="text-4xl font-black text-primary">{t('multi_outlet.social_diagnosed_val')}</div>
-                            <div className="text-sm text-muted-foreground uppercase tracking-wide">{t('multi_outlet.social_diagnosed')}</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Cost Calculator */}
-            <section className="py-24 px-4 md:px-8 bg-white/[0.01] border-b border-white/5">
-                <div className="container mx-auto max-w-4xl text-center space-y-12">
-                    <div className="space-y-4">
-                        <h2 className="text-3xl font-black tracking-tight">{t('multi_outlet.calc_title')}</h2>
-                        <p className="text-muted-foreground">{t('multi_outlet.calc_desc')}</p>
-                    </div>
-
-                    <div className="max-w-md mx-auto bg-black/50 border border-white/10 rounded-2xl p-8 shadow-2xl backdrop-blur-sm">
-                        <div className="space-y-6">
-                            <div>
-                                <label className="text-[10px] font-black uppercase tracking-widest text-primary mb-2 block">{t('multi_outlet.calc_label')}</label>
-                                <Input
-                                    type="number"
-                                    placeholder={t('multi_outlet.calc_placeholder')}
-                                    className="text-center text-3xl font-black h-16 bg-zinc-900 border-white/10 text-white focus:border-primary"
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setNetworkSize(parseInt(e.target.value) || 0)}
-                                />
-                            </div>
-
-                            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+                        {/* Interactive Calculator */}
+                        <div className="bg-[#03060a] border border-white/[0.05] p-8 md:p-10 relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
+                            <div className="space-y-8">
                                 <div>
-                                    <p className="text-[10px] uppercase font-bold text-muted-foreground mb-1">{t('multi_outlet.calc_daily')}</p>
-                                    <p className="text-2xl font-black text-red-500">{i18n.language === 'id' ? `Rp ${(networkSize * 450000).toLocaleString('id-ID')}` : `$${(networkSize * 32).toLocaleString()}`}</p>
+                                    <label className="text-[10px] uppercase tracking-widest text-muted-foreground mb-3 block font-bold">
+                                        {t('multi_outlet.calc_label')}
+                                    </label>
+                                    <Input
+                                        type="number"
+                                        placeholder={t('multi_outlet.calc_placeholder')}
+                                        className="text-center text-3xl font-mono h-20 bg-white/[0.02] border-white/10 text-white focus:border-amber-500/50 focus:ring-0 rounded-none outline-none"
+                                        onChange={(e: ChangeEvent<HTMLInputElement>) => setNetworkSize(parseInt(e.target.value) || 0)}
+                                    />
                                 </div>
-                                <div>
-                                    <p className="text-[10px] uppercase font-bold text-muted-foreground mb-1">{t('multi_outlet.calc_monthly')}</p>
-                                    <p className="text-2xl font-black text-red-500">{i18n.language === 'id' ? `Rp ${(networkSize * 450000 * 30).toLocaleString('id-ID')}` : `$${(networkSize * 32 * 30).toLocaleString()}`}</p>
+
+                                <div className="space-y-4">
+                                    <div className="p-5 border border-white/[0.05] bg-white/[0.01] flex items-center justify-between">
+                                        <div>
+                                            <p className="text-[10px] uppercase font-mono tracking-widest text-white/40 mb-1">{t('multi_outlet.calc_daily')}</p>
+                                            <p className="text-xl font-mono text-white/90">{i18n.language === 'id' ? `Rp ${(networkSize * 450000).toLocaleString('id-ID')}` : `$${(networkSize * 32).toLocaleString()}`}</p>
+                                        </div>
+                                        <ArrowRight className="w-4 h-4 text-white/10" />
+                                    </div>
+
+                                    <div className="p-6 border border-white/[0.05] bg-white/[0.01]">
+                                        <p className="text-[10px] uppercase font-mono tracking-widest text-amber-500/80 mb-2">{t('multi_outlet.calc_monthly')}</p>
+                                        <p className="text-4xl font-mono font-black text-white tracking-tight">
+                                            {i18n.language === 'id' ? `Rp ${(networkSize * 450000 * 30).toLocaleString('id-ID')}` : `$${(networkSize * 32 * 30).toLocaleString()}`}
+                                        </p>
+                                        <p className="text-[10px] font-mono text-white/30 mt-3 uppercase tracking-widest">
+                                            *Based on avg trapped cost per outlet/day
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -235,318 +140,208 @@ function MultiOutletPage() {
                 </div>
             </section>
 
-            {/* Benefits-First Features with Forensics Image */}
-            <section id="benefits" className="py-24 px-4 md:px-8 border-b border-white/5">
-                <div className="container mx-auto max-w-6xl space-y-16">
-                    <div className="text-center space-y-4">
-                        <h2 className="text-3xl md:text-5xl font-black tracking-tight">{t('multi_outlet.benefits_title')}</h2>
-                        <p className="text-muted-foreground max-w-2xl mx-auto">{t('multi_outlet.benefits_desc')}</p>
-                    </div>
+            {/* ═══ Benefits — Staggered, not identical cards ═══ */}
+            <section id="benefits" className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] relative">
+                <div className="max-w-6xl mx-auto space-y-24 md:space-y-40">
 
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        {/* Left: Benefits List */}
-                        <div className="space-y-8">
-                            {/* Benefit 1 */}
-                            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-primary/50 transition-all space-y-3">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                                        <CheckCircle2 className="w-5 h-5" />
-                                    </div>
-                                    <div className="flex-1 space-y-2">
-                                        <h3 className="text-xl font-black">{t('multi_outlet.benefit1_title')}</h3>
-                                        <div className="text-sm text-muted-foreground leading-relaxed">
-                                            <Trans i18nKey="multi_outlet.benefit1_desc" components={{ 1: <span className="text-primary font-bold" /> }} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Benefit 2 */}
-                            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-primary/50 transition-all space-y-3">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                                        <CheckCircle2 className="w-5 h-5" />
-                                    </div>
-                                    <div className="flex-1 space-y-2">
-                                        <h3 className="text-xl font-black">{t('multi_outlet.benefit2_title')}</h3>
-                                        <div className="text-sm text-muted-foreground leading-relaxed">
-                                            <Trans i18nKey="multi_outlet.benefit2_desc" components={{ 1: <span className="text-primary font-bold" /> }} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Benefit 3 */}
-                            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-primary/50 transition-all space-y-3">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                                        <CheckCircle2 className="w-5 h-5" />
-                                    </div>
-                                    <div className="flex-1 space-y-2">
-                                        <h3 className="text-xl font-black">{t('multi_outlet.benefit3_title')}</h3>
-                                        <div className="text-sm text-muted-foreground leading-relaxed">
-                                            <Trans i18nKey="multi_outlet.benefit3_desc" components={{ 1: <span className="text-primary font-bold" /> }} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Benefit 4 */}
-                            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-primary/50 transition-all space-y-3">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                                        <CheckCircle2 className="w-5 h-5" />
-                                    </div>
-                                    <div className="flex-1 space-y-2">
-                                        <h3 className="text-xl font-black">{t('multi_outlet.benefit4_title')}</h3>
-                                        <div className="text-sm text-muted-foreground leading-relaxed">
-                                            <Trans i18nKey="multi_outlet.benefit4_desc" components={{ 1: <span className="text-primary font-bold" /> }} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    {/* Benefit 1: Left */}
+                    <div className="max-w-2xl">
+                        <div className="flex items-center gap-4 mb-6">
+                            <span className="text-amber-500 font-mono text-sm tracking-widest leading-none">01</span>
+                            <div className="w-12 h-[1px] bg-amber-500/30" />
                         </div>
-
-                        {/* Right: Forensics Image */}
-                        <div className="relative">
-                            <div className="relative rounded-2xl border border-primary/20 bg-zinc-900/50 overflow-hidden backdrop-blur-sm">
-                                <img
-                                    src="/assets/images/forensics.png"
-                                    alt="Forensic Analysis Dashboard"
-                                    className="w-full h-auto"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                                <div className="absolute bottom-6 left-6 right-6">
-                                    <p className="text-xs font-black uppercase tracking-widest text-primary mb-2">{t('multi_outlet.benefits_img_badge')}</p>
-                                    <p className="text-sm text-white/80">{t('multi_outlet.benefits_img_text')}</p>
-                                </div>
-                            </div>
+                        <h3 className="text-2xl md:text-3xl font-black mb-4 leading-tight">{t('multi_outlet.benefit1_title')}</h3>
+                        <div className="text-white/60 leading-relaxed text-lg">
+                            <Trans i18nKey="multi_outlet.benefit1_desc" components={{ 1: <span className="text-white font-bold" /> }} />
                         </div>
                     </div>
 
-                    <div className="text-center pt-8">
-                        <Button asChild size="lg" className="h-16 px-12 font-black bg-primary text-black hover:bg-white shadow-xl shadow-primary/20">
-                            <Link to="/fip-lite">{t('multi_outlet.cta_health_score')}</Link>
+                    {/* Benefit 2: Right */}
+                    <div className="max-w-xl md:ml-auto">
+                        <div className="flex items-center gap-4 mb-6 md:justify-end">
+                            <div className="w-12 h-[1px] bg-amber-500/30 hidden md:block" />
+                            <span className="text-amber-500 font-mono text-sm tracking-widest leading-none">02</span>
+                            <div className="w-12 h-[1px] bg-amber-500/30 md:hidden" />
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-black mb-4 md:text-right leading-tight">{t('multi_outlet.benefit2_title')}</h3>
+                        <div className="text-white/60 leading-relaxed text-lg md:text-right">
+                            <Trans i18nKey="multi_outlet.benefit2_desc" components={{ 1: <span className="text-white font-bold" /> }} />
+                        </div>
+                    </div>
+
+                    {/* Photo Anchor Bleeding off right edge */}
+                    <div className="relative w-[110%] md:w-[85%] md:ml-auto aspect-[21/9] md:aspect-[2.5/1] bg-[#03060a] border-y md:border-l border-white/5 overflow-hidden -mx-6 md:mx-0 -translate-x-6 md:translate-x-12 lg:translate-x-20">
+                        <img src="/assets/images/forensics.png" alt="Forensic Analysis" className="w-full h-full object-cover opacity-30 grayscale contrast-125 mix-blend-screen" />
+                        <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#060a12] to-transparent pointer-events-none" />
+                        <div className="absolute bottom-6 left-6 md:left-12">
+                            <p className="text-[10px] font-mono text-amber-500 mb-2 uppercase tracking-widest">{t('multi_outlet.benefits_img_badge')}</p>
+                            <p className="text-sm md:text-base text-white/90 font-bold">{t('multi_outlet.benefits_img_text')}</p>
+                        </div>
+                    </div>
+
+                    {/* Benefit 3: Left */}
+                    <div className="max-w-2xl">
+                        <div className="flex items-center gap-4 mb-6">
+                            <span className="text-amber-500 font-mono text-sm tracking-widest leading-none">03</span>
+                            <div className="w-12 h-[1px] bg-amber-500/30" />
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-black mb-4 leading-tight">{t('multi_outlet.benefit3_title')}</h3>
+                        <div className="text-white/60 leading-relaxed text-lg">
+                            <Trans i18nKey="multi_outlet.benefit3_desc" components={{ 1: <span className="text-white font-bold" /> }} />
+                        </div>
+                    </div>
+
+                    {/* Benefit 4: Right */}
+                    <div className="max-w-xl md:ml-auto">
+                        <div className="flex items-center gap-4 mb-6 md:justify-end">
+                            <div className="w-12 h-[1px] bg-amber-500/30 hidden md:block" />
+                            <span className="text-amber-500 font-mono text-sm tracking-widest leading-none">04</span>
+                            <div className="w-12 h-[1px] bg-amber-500/30 md:hidden" />
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-black mb-4 md:text-right leading-tight">{t('multi_outlet.benefit4_title')}</h3>
+                        <div className="text-white/60 leading-relaxed text-lg md:text-right">
+                            <Trans i18nKey="multi_outlet.benefit4_desc" components={{ 1: <span className="text-white font-bold" /> }} />
+                        </div>
+                    </div>
+
+                    {/* FAQ Callout — Integrated, not accordion */}
+                    <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-amber-500/20 py-2">
+                        <p className="text-xs font-bold text-amber-500/60 mb-3 uppercase tracking-widest">{t('faq.q1')}</p>
+                        <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
+                            " <Trans i18nKey="faq.a1" components={{ 1: <strong className="text-white font-bold" />, br: <br /> }} /> "
+                        </p>
+                    </div>
+
+                    <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-amber-500/20 py-2">
+                        <p className="text-xs font-bold text-amber-500/60 mb-3 uppercase tracking-widest">{t('faq.q2')}</p>
+                        <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
+                            " <Trans i18nKey="faq.a2" components={{ 1: <strong className="text-white font-bold" />, br: <br /> }} /> "
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══ Demo Video ═══ */}
+            <section className="py-24 px-6 md:px-12 lg:px-20 border-b border-white/[0.05]">
+                <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
+                    <div className="lg:w-1/2 space-y-8">
+                        <div className="flex items-center gap-4">
+                            <span className="text-amber-500 font-mono text-xs tracking-widest uppercase">{t('multi_outlet.demo_badge')}</span>
+                            <div className="w-12 h-[1px] bg-amber-500/30" />
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-tight">{t('multi_outlet.demo_title')}</h2>
+
+                        <div className="relative aspect-video border border-white/10 bg-black">
+                             <iframe
+                                className="absolute inset-0 w-full h-full grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                src={t('demo_video.url')}
+                                title="FIP Protocol Demo"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                            ></iframe>
+                        </div>
+                    </div>
+
+                    <div className="lg:w-1/2 space-y-8 lg:pt-24">
+                        <p className="text-white/40 text-lg leading-relaxed font-light">
+                            {t('multi_outlet.demo_disclaimer')}
+                        </p>
+                        <Button asChild variant="outline" className="h-auto py-4 px-8 border-white/20 text-white/70 hover:text-white hover:border-white rounded-none transition-all uppercase tracking-widest font-bold text-xs">
+                            <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
+                                {t('multi_outlet.demo_cta')}
+                            </a>
                         </Button>
                     </div>
                 </div>
             </section>
 
-            {/* Demo Video */}
-            <section className="py-24 px-4 md:px-8 border-b border-white/5">
-                <div className="container mx-auto max-w-4xl text-center space-y-8">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] font-black tracking-[0.2em] border border-primary/20 uppercase">
-                        {t('multi_outlet.demo_badge')}
+            {/* ═══ Pricing — Redirects to investasi ═══ */}
+            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-[#03060a] border-b border-white/[0.05]">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start">
+                    <div className="flex-1 space-y-8">
+                        <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.95]">
+                            {t('multi_outlet.pricing_title')}
+                        </h2>
+                        <p className="text-white/40 text-lg leading-relaxed max-w-lg font-light">
+                            {t('multi_outlet.pricing_desc')}
+                        </p>
+                        <div className="flex items-center gap-1.5 text-white/20">
+                            <ShieldCheck className="w-3 h-3" />
+                            <span className="text-[9px] font-mono uppercase tracking-widest">{t('multi_outlet.pricing_guarantee')}</span>
+                        </div>
                     </div>
-                    <h2 className="text-3xl font-black tracking-tight">{t('multi_outlet.demo_title')}</h2>
-
-                    <div className="relative aspect-video rounded-2xl border border-white/10 bg-black overflow-hidden shadow-2xl">
-                        <iframe
-                            className="absolute inset-0 w-full h-full"
-                            src={t('demo_video.url')}
-                            title="FIP Protocol Demo"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen
-                        ></iframe>
+                    <div className="shrink-0">
+                        <Button asChild className="h-auto py-6 px-10 text-lg font-bold bg-amber-500 text-black hover:bg-white transition-colors rounded-none group">
+                            <Link to="/investasi" className="flex flex-col items-start">
+                                <span className="flex items-center text-xl font-black">
+                                    {t('multi_outlet.cta_health_score')}
+                                    <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                </span>
+                                <span className="text-[10px] opacity-70 font-mono tracking-widest uppercase mt-2">
+                                    View Full Rate Card
+                                </span>
+                            </Link>
+                        </Button>
                     </div>
-
-                    <Button asChild variant="outline" size="lg" className="border-primary/50 hover:bg-primary/10 text-white font-bold text-center">
-                        <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
-                            {t('multi_outlet.demo_cta')}
-                        </a>
-                    </Button>
-                    <p className="text-xs text-muted-foreground/60 max-w-md mx-auto italic mt-2">
-                        {t('multi_outlet.demo_disclaimer')}
-                    </p>
                 </div>
             </section>
 
-            {/* Simplified Pricing */}
-            <section className="py-24 px-4 md:px-8 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border-y border-primary/20 relative overflow-hidden">
-                <WavingDots color="rgba(56, 189, 248, 0.15)" className="opacity-50" />
-                <div className="container mx-auto max-w-5xl relative z-10">
-                    <div className="text-center mb-16 space-y-4">
-                        <h2 className="text-3xl md:text-4xl font-black">{t('multi_outlet.pricing_title')}</h2>
-                        <p className="text-muted-foreground">{t('multi_outlet.pricing_desc')}</p>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                        {/* Tier 1: Diagnostic Surgery */}
-                        <div className="p-8 rounded-2xl bg-black/50 border border-white/10 backdrop-blur-sm space-y-6 flex flex-col">
-                            <div className="space-y-2">
-                                <h3 className="text-xl font-black uppercase text-white">{t('pricing.starter_title')}</h3>
-                                <p className="text-xs text-primary font-bold uppercase tracking-widest">{t('pricing.starter_badge')}</p>
-                            </div>
-
-                            <div className="space-y-4 flex-1">
-                                <div className="flex items-baseline gap-2">
-                                    <span className="text-4xl font-black text-white">{t('investasi.price_starter')}</span>
-                                    <span className="text-xs text-muted-foreground">/audit</span>
-                                </div>
-
-                                <ul className="space-y-3 text-xs text-muted-foreground">
-                                    <li className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('pricing.feature_starter_1')}
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('pricing.feature_starter_2')}
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('investasi.sme_f3')}
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <Button asChild className="w-full h-12 font-black bg-white/10 hover:bg-white/20 text-white border border-white/20">
-                                <Link to="/fip-lite">{t('pricing.cta_starter')}</Link>
-                            </Button>
-                        </div>
-
-                        {/* Tier 2: Growth Partnership */}
-                        <div className="p-8 rounded-2xl bg-primary/10 border-2 border-primary backdrop-blur-sm space-y-6 flex flex-col relative shadow-2xl shadow-primary/10">
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-black text-[10px] font-black uppercase rounded-full">
-                                {t('pricing.popular')}
-                            </div>
-
-                            <div className="space-y-2">
-                                <h3 className="text-xl font-black uppercase text-white">{t('pricing.growth_title')}</h3>
-                                <p className="text-xs text-primary font-bold uppercase tracking-widest">{t('pricing.growth_badge')}</p>
-                            </div>
-
-                            <div className="space-y-4 flex-1">
-                                <div className="flex items-baseline gap-2">
-                                    <span className="text-4xl font-black text-white">{t('investasi.price_growth')}</span>
-                                    <span className="text-xs text-muted-foreground">{i18n.language === 'id' ? '/kuartal' : '/quarter'}</span>
-                                </div>
-
-                                <ul className="space-y-3 text-xs text-white/80">
-                                    <li className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('pricing.feature_checkins')}
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('pricing.feature_strategy')}
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('investasi.sme_growth_f5')}
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <Button asChild className="w-full h-12 font-black bg-primary text-black hover:bg-white">
-                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
-                                    {t('pricing.cta_growth')}
-                                </a>
-                            </Button>
-                        </div>
-
-                        {/* Tier 3: Enterprise Sovereignty */}
-                        <div className="p-8 rounded-2xl bg-black/50 border border-white/10 backdrop-blur-sm space-y-6 flex flex-col">
-                            <div className="space-y-2">
-                                <h3 className="text-xl font-black uppercase text-white">{t('pricing.scale_title')}</h3>
-                                <p className="text-xs text-primary font-bold uppercase tracking-widest">{t('pricing.scale_badge')}</p>
-                            </div>
-
-                            <div className="space-y-4 flex-1">
-                                <div className="flex items-baseline gap-2">
-                                    <span className="text-4xl font-black text-white">{t('investasi.price_scale')}</span>
-                                    <span className="text-xs text-muted-foreground">/year</span>
-                                </div>
-
-                                <ul className="space-y-3 text-xs text-muted-foreground">
-                                    <li className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('pricing.feature_everything_growth')}
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('pricing.feature_pulse')}
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                        {t('investasi.sme_scale_f5')}
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <Button asChild className="w-full h-12 font-black bg-white/10 hover:bg-white/20 text-white border border-white/20">
-                                <Link to="/investasi">{t('pricing.cta_scale')}</Link>
+            {/* ═══ Final CTA — Human Anchor ═══ */}
+            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 text-left relative overflow-hidden">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start md:items-stretch">
+                    <div className="flex-1 space-y-10 order-2 md:order-1">
+                        <h2 className="text-[clamp(2.75rem,5vw,5rem)] font-black leading-[0.9] tracking-tighter w-full lg:w-[120%] z-10 relative">
+                            <Trans i18nKey="multi_outlet.final_cta_title" components={{ 1: <span className="text-amber-500" /> }} />
+                        </h2>
+                        <p className="text-white/50 text-xl md:text-2xl leading-relaxed max-w-xl font-light">
+                            <Trans i18nKey="multi_outlet.final_cta_desc" components={{ 1: <strong className="text-white" />, br: <br /> }} />
+                        </p>
+                        <div className="pt-8">
+                            <Button asChild className="h-auto w-full md:w-auto py-6 px-8 md:px-12 text-lg font-bold bg-amber-500 text-black hover:bg-white transition-colors rounded-none shadow-none text-left flex items-center justify-start max-w-xl">
+                                <Link to="/fip-lite" className="flex flex-col items-start h-full justify-center">
+                                    <span className="text-xl md:text-2xl font-black whitespace-normal leading-tight">{t('multi_outlet.cta_health_score')}</span>
+                                    <span className="text-[10px] opacity-70 font-mono tracking-widest uppercase mt-2">
+                                        {t('multi_outlet.final_cta_meta')}
+                                    </span>
+                                </Link>
                             </Button>
                         </div>
                     </div>
 
-                    <p className="text-center text-sm text-muted-foreground mt-12 italic">
-                        <ShieldCheck className="w-4 h-4 inline mr-1" />
-                        {t('multi_outlet.pricing_guarantee')}
-                    </p>
-                </div>
-            </section>
-
-            {/* FAQ */}
-            <section className="py-20 px-4 md:px-8 container mx-auto max-w-4xl">
-                <div className="max-w-3xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-2xl md:text-4xl font-black tracking-tight">{t('multi_outlet.faq_title', 'Common Questions')}</h2>
+                    <div className="hidden md:flex flex-col justify-end items-end relative shrink-0 order-1 md:order-2 w-64 md:ml-auto">
+                        <div className="w-full aspect-[4/5] border border-white/10 relative p-3 bg-white/[0.02]">
+                            <img
+                                src="/assets/images/aboutme.jpg"
+                                alt="Gusti Devitto"
+                                className="w-full h-full object-cover object-[50%_20%] opacity-80 grayscale-[0.6] contrast-[1.1]"
+                            />
+                            <div className="absolute -bottom-6 -left-12 bg-[#060a12] border border-white/10 p-4 shadow-xl z-20">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                                    <div className="text-[10px] font-mono leading-tight">
+                                        <span className="text-white/40 uppercase tracking-widest">VERIFIED BY</span><br />
+                                        <span className="text-white font-bold uppercase tracking-widest">GUSTI DEVITTO</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <Accordion type="single" collapsible className="w-full space-y-4">
-                        {[1, 2, 3, 4, 5].map((num) => (
-                            <AccordionItem key={num} value={`item-${num}`} className="border border-border/50 bg-card/30 rounded-xl px-4">
-                                <AccordionTrigger className="hover:no-underline font-bold text-left">{t(`faq.q${num}`)}</AccordionTrigger>
-                                <AccordionContent className="text-muted-foreground leading-relaxed">
-                                    <Trans i18nKey={`faq.a${num}`} components={{ 1: <strong className="text-foreground" />, br: <br /> }} />
-                                </AccordionContent>
-                            </AccordionItem>
-                        ))}
-                    </Accordion>
                 </div>
             </section>
 
-            {/* Final CTA */}
-            <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-muted/20 to-background">
-                <div className="container mx-auto max-w-3xl text-center space-y-8">
-                    <h2 className="text-3xl md:text-4xl font-bold">
-                        <Trans i18nKey="multi_outlet.final_cta_title" components={{ 1: <span className="text-primary" /> }} />
-                    </h2>
-                    <div className="text-lg text-muted-foreground">
-                        <Trans i18nKey="multi_outlet.final_cta_desc" components={{ 1: <strong className="text-foreground" />, br: <br /> }} />
-                    </div>
-                    <Button asChild size="lg" className="text-lg h-14 px-10 shadow-lg shadow-primary/30 bg-primary hover:bg-primary/90 text-primary-foreground group">
-                        <Link to="/fip-lite">
-                            <span className="flex items-center font-black">
-                                {t('multi_outlet.cta_health_score')}
-                                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </span>
-                        </Link>
-                    </Button>
-                    <p className="text-sm text-muted-foreground mt-4">
-                        <Clock className="w-4 h-4 inline mr-1" />
-                        {t('multi_outlet.final_cta_meta')}
-                    </p>
-                </div>
-            </section>
-
-            {/* Cross-Link Strategy */}
-            <section className="py-8 px-4 md:px-8 border-t border-white/5 bg-black/20">
-                <div className="container mx-auto max-w-4xl text-center">
-                    <p className="text-sm text-muted-foreground">
-                        {t('multi_outlet.cross_link_label')} <Link to="/network-intelligence" onClick={() => window.scrollTo(0, 0)} className="text-primary font-bold hover:underline px-1">{t('multi_outlet.cross_link_cta')}</Link>
-                    </p>
-                </div>
+            {/* Cross-Link */}
+            <section className="py-12 border-t border-white/5 bg-zinc-900/30 text-center">
+                <p className="text-sm text-muted-foreground">
+                    {t('multi_outlet.cross_link_label')} <Link to="/network-intelligence" onClick={() => window.scrollTo(0, 0)} className="text-primary font-bold hover:underline px-1">{t('multi_outlet.cross_link_cta')}</Link>
+                </p>
             </section>
 
             {/* Footer Badge */}
-            <section className="py-8 px-4 md:px-8 border-t border-white/5">
-                <div className="container mx-auto max-w-4xl text-center">
-                    <p className="text-xs text-muted-foreground/60 uppercase tracking-widest">
-                        {t('multi_outlet.footer_badge')}
-                    </p>
-                </div>
+            <section className="py-8 border-t border-white/5 text-center">
+                <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/60">
+                    {t('multi_outlet.footer_badge')}
+                </p>
             </section>
         </div>
     )

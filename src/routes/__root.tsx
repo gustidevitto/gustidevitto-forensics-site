@@ -77,15 +77,9 @@ function RootComponent() {
                 })}
             </script>
             <link rel="alternate" type="application/ld+json" href="/ontology.jsonld" title="Semantic Knowledge Graph" />
-            {/* Subtle Moving Background Lights */}
-            <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] animate-subtle-glow"></div>
-                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 rounded-full blur-[120px] animate-subtle-glow [animation-delay:-5s]"></div>
-            </div>
-
             <div className="relative flex-1 flex flex-col z-10">
                 {!isEntranceGate && (
-                    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+                    <header className="sticky top-0 z-50 w-full border-b border-white/[0.06] bg-[#060a12]/95 backdrop-blur-xl supports-[backdrop-filter]:bg-[#060a12]/80">
                         <div className="container flex h-16 items-center justify-between px-4 md:px-8">
                             {/* Logo */}
                             <div className="flex items-center gap-3">
@@ -96,7 +90,7 @@ function RootComponent() {
                                     </a>
                                     <div className="flex items-center gap-1.5">
                                         <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-status-blink"></div>
-                                        <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/80">Diagnostic Level: Verified // Forensic Intelligence Access</span>
+                                        <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/80">{t('nav.status_badge', 'Diagnostic Level: Verified // Forensic Intelligence Access')}</span>
                                     </div>
                                 </div>
                             </div>
@@ -155,32 +149,30 @@ function RootComponent() {
                     <Outlet />
                 </main>
                 {!isEntranceGate && (
-                    <footer className="border-t bg-card py-6 md:px-8 md:py-0">
-                        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-                            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 md:mt-0">
-                                <a href="/about-gusti-devitto" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                    <footer className="border-t border-white/[0.04] bg-[#03060a] py-8 md:py-0">
+                        <div className="container flex flex-col items-center justify-between gap-6 md:h-20 md:flex-row px-6 md:px-12 lg:px-20">
+                            <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2">
+                                <a href="/about-gusti-devitto" className="text-xs text-white/25 hover:text-white/60 transition-colors">
                                     {t('footer.about')}
                                 </a>
-                                <a href="/master-index" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                                <a href="/master-index" className="text-xs text-white/25 hover:text-white/60 transition-colors">
                                     {t('footer.index')}
                                 </a>
-                                <a href="/methodology" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                                <a href="/methodology" className="text-xs text-white/25 hover:text-white/60 transition-colors">
                                     {t('footer.methodology')}
                                 </a>
-                                <a href="/verdict" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                                <a href="/verdict" className="text-xs text-white/25 hover:text-white/60 transition-colors">
                                     {t('footer.verdict')}
                                 </a>
-                                <a href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                                <a href="/terms" className="text-xs text-white/15 hover:text-white/40 transition-colors">
                                     {t('footer.terms')}
                                 </a>
-                                <a href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                                <a href="/privacy" className="text-xs text-white/15 hover:text-white/40 transition-colors">
                                     {t('footer.privacy')}
                                 </a>
                             </div>
-                            <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-                                © {new Date().getFullYear()} Gusti Devitto™. {t('footer.rights')}
-                                <span className="mx-2 text-muted-foreground/40">|</span>
-                                <span className="text-xs text-muted-foreground/60 font-mono">FIP™ Protocol v4</span>
+                            <p className="text-[10px] font-mono text-white/15 uppercase tracking-[0.3em]">
+                                © {new Date().getFullYear()} Gusti Devitto™ · FIP™ v4.00
                             </p>
                         </div>
                     </footer>

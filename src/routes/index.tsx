@@ -1,10 +1,8 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
-import { ArrowRight, Zap } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { useTranslation, Trans } from 'react-i18next'
 import { LanguageSlider } from '@/components/LanguageSlider'
-import { Button } from '@/components/ui/button'
-import { SingleEntityGraphic, NetworkGraphic } from '@/components/EntranceGraphics'
 
 export const Route = createFileRoute('/')({
     component: Index,
@@ -27,20 +25,8 @@ function Index() {
     if (!mounted) return null
 
     return (
-        <div
-            className="flex-1 w-full bg-[#0a1628] text-white font-sans flex items-start md:items-center justify-center selection:bg-primary selection:text-black relative p-6 pb-24 md:p-12 lg:p-20"
-        >
-            {/* Automatic Spotlight Effect */}
-            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-                <div
-                    className="absolute inset-0 animate-spotlight-roam opacity-40"
-                    style={{
-                        background: `radial-gradient(800px circle at center, rgba(56, 189, 248, 0.15), transparent 50%)`
-                    }}
-                />
-            </div>
-
-            {/* SEO Overlay */}
+        <div className="flex-1 w-full bg-[#060a12] text-white font-sans relative selection:bg-amber-400 selection:text-black overflow-hidden">
+            {/* SEO */}
             <title>{t('global.seo_home_title')}</title>
             <meta name="description" content={t('global.seo_home_desc')} />
             <meta name="keywords" content={t('global.seo_home_keywords')} />
@@ -51,148 +37,133 @@ function Index() {
             <meta name="geo.placename" content="Jakarta" />
             <meta name="geo.position" content="-6.200000;106.816666" />
 
-            {/* Ambient Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse-slow"></div>
+            {/* ═══════════ HERO — THE NAMEPLATE ═══════════ */}
+            <section className="relative min-h-[100dvh] flex flex-col justify-end">
 
-                {/* Enhanced Grid Pattern */}
-                <div className="absolute inset-0 opacity-[0.08]"
-                    style={{
-                        backgroundImage: 'radial-gradient(circle, #fff 1.5px, transparent 1.5px)',
-                        backgroundSize: '40px 40px',
-                    }}></div>
-            </div>
+                {/* Gusti's photo as background — the anchor */}
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src="/assets/images/aboutme.jpg"
+                        alt="Gusti Devitto"
+                        className="w-full h-full object-cover object-[50%_20%] opacity-50 grayscale-[0.4] contrast-[1.1]"
+                    />
+                    {/* Gradient scrim: transparent top → solid bottom for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#060a12] via-[#060a12]/70 to-[#060a12]/20" />
+                    {/* Subtle side vignette */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#060a12]/60 via-transparent to-[#060a12]/40" />
+                </div>
 
-            <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10">
-
-                {/* LEFT SIDE: Brand & Identity */}
-                <div className="space-y-10 animate-fade-in-left">
-                    {/* Emergency Button - Mobile Top */}
-                    <div className="lg:hidden mb-8">
-                        <Link to="/fip-lite">
-                            <Button className="w-full bg-white/5 hover:bg-white/10 text-white hover:text-primary transition-colors font-bold border border-white/20 hover:border-primary/50 backdrop-blur-sm rounded-full">
-                                <Zap className="w-4 h-4 mr-2 text-primary" />
-                                {t('entrance_gate.emergency_cta', 'Free Emergency Scan')}
-                            </Button>
-                        </Link>
-                    </div>
-
-                    {/* REDUNDANT CAPSULE REMOVED */}
-
-                    <div className="space-y-4">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-none uppercase">
+                {/* Content overlay — bottom-left anchored */}
+                <div className="relative z-10 px-6 md:px-12 lg:px-20 pb-12 md:pb-20 pt-[25vh] md:pt-[30vh]">
+                    <div className="max-w-6xl">
+                        {/* Name — massive, left-aligned, uppercase */}
+                        <h1 className="text-[clamp(3.5rem,12vw,10rem)] font-black tracking-[-0.04em] leading-[0.85] uppercase">
                             <Trans i18nKey="entrance_gate.hero_title">
                                 GUSTI <br />
                                 DEVITTO
                             </Trans>
-                            <span className="text-[#FFD700] italic ml-1">™</span>
                         </h1>
-                        <div className="flex items-center gap-4">
-                            <div className="h-px w-12 bg-primary"></div>
-                            <p className="text-sm md:text-lg text-white/50 font-bold tracking-[0.3em] uppercase">
+
+                        {/* Role — understated */}
+                        <div className="mt-4 md:mt-6 flex items-center gap-4">
+                            <div className="w-8 h-px bg-amber-400/60" />
+                            <p className="text-xs md:text-sm text-white/40 font-medium tracking-[0.25em] uppercase">
                                 {t('entrance_gate.hero_subtitle')}
                             </p>
                         </div>
-                    </div>
 
-                    {/* Language Toggle Slider - Integrated beneath title */}
-                    <div className="animate-fade-in delay-300">
-                        <LanguageSlider />
-                    </div>
-
-                    <div className="space-y-4">
-                        <p className="text-base md:text-xl text-white/90 border-l-2 border-primary/50 pl-6 py-2 leading-relaxed max-w-md font-medium">
+                        {/* The hook — single sentence, not boxed */}
+                        <p className="mt-8 md:mt-10 text-base md:text-lg text-white/70 max-w-md leading-relaxed font-light">
                             {t('entrance_gate.init_prompt')}
                         </p>
 
-                        {/* Desktop Emergency Button - Simplified & Elegant */}
-                        <div className="hidden lg:block pt-6">
-                            <Link to="/fip-lite" className="inline-flex items-center gap-3 text-sm font-bold text-white hover:text-primary transition-colors py-3 px-6 rounded-full border border-white/20 hover:border-primary/50 bg-white/5 backdrop-blur-sm group">
-                                <Zap className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
-                                {t('entrance_gate.emergency_cta', 'Free Emergency Scan')}
-                                <ArrowRight className="w-4 h-4 ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-                            </Link>
+                        {/* Language toggle — small, functional, not decorative */}
+                        <div className="mt-6">
+                            <LanguageSlider />
                         </div>
                     </div>
                 </div>
 
-                {/* RIGHT SIDE: Vertical Segment Selection */}
-                <div className="flex flex-col gap-6 animate-fade-in-right">
+                {/* Thin amber rule separating hero from paths */}
+                <div className="relative z-10 mx-6 md:mx-12 lg:mx-20 h-px bg-gradient-to-r from-amber-400/40 via-amber-400/10 to-transparent" />
+            </section>
 
-                    {/* Choose Path explicit label */}
-                    <p className="text-xs font-black tracking-[0.2em] text-white/30 uppercase pl-1">
+            {/* ═══════════ PATH SELECTION — BELOW THE FOLD ═══════════ */}
+            <section className="relative z-10 px-6 md:px-12 lg:px-20 py-16 md:py-24">
+                <div className="max-w-6xl">
+                    {/* Label — left-aligned, no decoration */}
+                    <p className="text-[10px] font-medium tracking-[0.3em] text-white/25 uppercase mb-8 md:mb-12">
                         {t('entrance_gate.choose_path', 'Choose your path')}
                     </p>
 
-                    {/* Option 1: Single Entity (SME) */}
-                    <Link
-                        to="/single-entity"
-                        onClick={() => handlePathSelection('single')}
-                        className="group relative min-h-[200px] md:min-h-[240px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-primary/50 transition-all duration-300 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1"
-                    >
-                        {/* Background Illustration */}
-                        <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-1000">
-                            <SingleEntityGraphic />
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1628]/95 via-[#0a1628]/80 to-transparent"></div>
+                    {/* Path cards — stacked, not equal height, left-aligned */}
+                    <div className="flex flex-col gap-4 max-w-2xl">
 
-                        <div className="relative z-10 space-y-3">
-                            <div className="flex flex-col gap-1">
-                                <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white group-hover:text-primary transition-colors leading-none">
+                        {/* Path 1: Single Business */}
+                        <Link
+                            to="/single-entity"
+                            onClick={() => handlePathSelection('single')}
+                            className="group relative flex items-center justify-between py-6 md:py-8 border-b border-white/[0.06] hover:border-white/20 transition-colors duration-500"
+                        >
+                            <div className="space-y-1.5">
+                                <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white/90 group-hover:text-white transition-colors duration-300">
                                     {t('entrance_gate.multi_outlet_label')}
                                 </h3>
-                                <p className="text-sm md:text-base font-medium text-white/80 group-hover:text-white transition-colors">
-                                    {t('entrance_gate.multi_outlet_title')}
+                                <p className="text-sm text-white/30 group-hover:text-white/50 transition-colors duration-300 max-w-sm">
+                                    {t('entrance_gate.multi_outlet_desc')}
                                 </p>
                             </div>
-                            <p className="text-xs md:text-sm text-white/40 block max-w-sm leading-relaxed">
-                                {t('entrance_gate.multi_outlet_desc')}
-                            </p>
-                            <div className="flex items-center gap-2 text-[10px] font-black uppercase text-primary transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all pt-2">
-                                {t('entrance_gate.multi_outlet_cta')} <ArrowRight className="w-3 h-3" />
+                            <div className="flex items-center gap-3 shrink-0 ml-8">
+                                <span className="hidden md:block text-[10px] tracking-[0.15em] uppercase text-white/20 group-hover:text-amber-400/60 transition-colors duration-300 font-medium">
+                                    {t('entrance_gate.multi_outlet_cta')}
+                                </span>
+                                <ArrowRight className="w-4 h-4 text-white/90 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
                             </div>
-                        </div>
-                    </Link>
+                        </Link>
 
-                    {/* Option 2: Enterprise (Network Intelligence) */}
-                    <Link
-                        to="/network-intelligence"
-                        onClick={() => handlePathSelection('network')}
-                        className="group relative min-h-[200px] md:min-h-[240px] flex flex-col justify-end p-8 border border-white/10 bg-zinc-900/40 hover:border-red-500/50 transition-all duration-300 rounded-2xl overflow-hidden backdrop-blur-sm ease-out hover:shadow-2xl hover:shadow-red-500/10 hover:-translate-y-1"
-                    >
-                        {/* Background Illustration */}
-                        <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-1000">
-                            <NetworkGraphic />
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1628]/95 via-[#0a1628]/80 to-transparent"></div>
-
-                        <div className="relative z-10 space-y-3">
-                            <div className="flex flex-col gap-1">
-                                <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white group-hover:text-red-500 transition-colors leading-none">
+                        {/* Path 2: Multi-Location / Network */}
+                        <Link
+                            to="/network-intelligence"
+                            onClick={() => handlePathSelection('network')}
+                            className="group relative flex items-center justify-between py-6 md:py-8 border-b border-white/[0.06] hover:border-white/20 transition-colors duration-500"
+                        >
+                            <div className="space-y-1.5">
+                                <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white/90 group-hover:text-white transition-colors duration-300">
                                     {t('entrance_gate.enterprise_label')}
                                 </h3>
-                                <p className="text-sm md:text-base font-medium text-white/80 group-hover:text-white transition-colors">
-                                    {t('entrance_gate.enterprise_title')}
+                                <p className="text-sm text-white/30 group-hover:text-white/50 transition-colors duration-300 max-w-sm">
+                                    {t('entrance_gate.enterprise_desc')}
                                 </p>
                             </div>
-                            <p className="text-xs md:text-sm text-white/40 block max-w-sm leading-relaxed">
-                                {t('entrance_gate.enterprise_desc')}
-                            </p>
-                            <div className="flex items-center gap-2 text-[10px] font-black uppercase text-red-500 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all pt-2">
-                                {t('entrance_gate.enterprise_cta')} <ArrowRight className="w-3 h-3" />
+                            <div className="flex items-center gap-3 shrink-0 ml-8">
+                                <span className="hidden md:block text-[10px] tracking-[0.15em] uppercase text-white/20 group-hover:text-amber-400/60 transition-colors duration-300 font-medium">
+                                    {t('entrance_gate.enterprise_cta')}
+                                </span>
+                                <ArrowRight className="w-4 h-4 text-white/90 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
                             </div>
-                        </div>
-                    </Link>
+                        </Link>
+
+                        {/* Emergency scan — inline, not a button, not decorated */}
+                        <Link
+                            to="/fip-lite"
+                            className="group inline-flex items-center gap-3 mt-6 md:mt-10 text-xs text-white/30 hover:text-amber-400 transition-colors duration-300"
+                        >
+                            <span className="font-mono tracking-wider uppercase">
+                                {t('entrance_gate.emergency_cta', 'Free Emergency Scan')}
+                            </span>
+                            <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
+                        </Link>
+                    </div>
                 </div>
+            </section>
+
+            {/* Footer credential — absolute bottom */}
+            <div className="px-6 md:px-12 lg:px-20 pb-8 flex justify-between items-center text-white/[0.08]">
+                <span className="text-[9px] font-mono uppercase tracking-[0.4em]">FIP™ V4.00</span>
+                <span className="text-[9px] font-mono uppercase tracking-[0.4em] hidden md:block">© 2026 GUSTI DEVITTO</span>
             </div>
 
-            {/* Absolute Footer Credential */}
-            <div className="absolute bottom-8 left-12 md:left-20 right-12 md:right-20 flex justify-between items-center opacity-10 pointer-events-none">
-                <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap">FIP™ V4.00</span>
-                <span className="text-[9px] font-black uppercase tracking-[0.5em] whitespace-nowrap hidden md:block">© 2026 GUSTI DEVITTO</span>
-            </div>
-
-            {/* Hidden Aesthetic SEO Gate */}
+            {/* Accessible SEO content */}
             <div className="sr-only">
                 <p>Gusti Devitto - Forensic Business Diagnostician.</p>
                 <p>Specializing in Profit Leakage Detection, Phantom Cost Analysis, and Network Intelligence for Multi-Outlet Businesses.</p>
