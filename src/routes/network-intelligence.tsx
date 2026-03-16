@@ -104,7 +104,7 @@ function NetworkIntelligencePage() {
 
     return (
         <div
-            className="flex-1 flex flex-col bg-gradient-to-b from-[#0a1628] via-[#0f1f3a] to-[#0a1628] text-white"
+            className="flex-1 flex flex-col bg-gradient-to-b from-[#0a1628] via-[#0f1f3a] to-[#0a1628] text-white relative"
         >
             {/* SEO & Authority Meta Tags */}
             <title>{t('network_intelligence.hero_title')} | Gusti Devitto Forensics</title>
