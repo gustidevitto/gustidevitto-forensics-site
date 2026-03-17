@@ -23,7 +23,7 @@ Transform existing calculator into **FIP™ Lite**: A comprehensive, shareable b
 ## 🔧 Phase 2: Multi-Step Calculator (4-5 hours)
 
 ### 2.1 Data Model & Types
-- [x] Define 16 pillars data structure
+- [x] Define 19 pillars data structure
 - [x] Create input validation schemas
 - [x] Define health score calculation logic
 - [x] Create verdict classification system
@@ -51,7 +51,7 @@ Transform existing calculator into **FIP™ Lite**: A comprehensive, shareable b
 ### 3.1 PDF Template Design
 - [x] Page 1: Cover page with branding
 - [x] Page 2: Executive Summary
-- [x] Page 3: 16 Pillars Breakdown
+- [x] Page 3: 19 Pillars Breakdown
 - [x] Page 4: Recommendations & Next Steps
 
 ### 3.2 PDF Generation Logic
@@ -111,7 +111,7 @@ Transform existing calculator into **FIP™ Lite**: A comprehensive, shareable b
 ## 🧪 Phase 7: Testing & QA (1-2 hours)
 
 ### 7.1 Functional Testing
-- [x] Test all 16 pillar inputs
+- [x] Test all 19 pillar inputs
 - [x] Test calculation accuracy
 - [x] Test PDF generation
 - [x] Test lead capture
@@ -184,7 +184,7 @@ Transform existing calculator into **FIP™ Lite**: A comprehensive, shareable b
 ## 🎯 MVP Definition (COMPLETED)
 
 **Must Have:**
-- ✅ Multi-step form (16 pillars)
+- ✅ Multi-step form (19 pillars)
 - ✅ Health score calculation
 - ✅ PDF report generation
 - ✅ Lead capture

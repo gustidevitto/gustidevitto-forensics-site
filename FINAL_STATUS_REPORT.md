@@ -62,7 +62,7 @@
 ```json
 // id.json - Pillars Page
 "mri_title": "Integrated MRI: <1/> <3>FIP™ Digital Mirror</3>",
-"mri_desc": "Ke-16 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <1>FIP™ Protocol</1>",
+"mri_desc": "Ke-19 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <1>FIP™ Protocol</1>",
 "cta_desc": "Identifikasi Phantom Costs sekarang dengan FIP™ Protocol"
 
 // id.json - Pillar Attributions (8 instances)
@@ -197,7 +197,7 @@ All FFD™ references → FIP™
 
 2. **Protocol Engine**
    - Icon: Brain/Processor
-   - Text: "16-Pillar diagnostic framework"
+   - Text: "19-Pillar diagnostic framework"
 
 3. **Intelligence Command Center**
    - Icon: Dashboard/Monitor
@@ -221,7 +221,7 @@ All FFD™ references → FIP™
         <div className="stage">
             <div className="icon">🧠</div>
             <h3>Protocol Engine</h3>
-            <p>16-Pillar diagnostic framework</p>
+            <p>19-Pillar diagnostic framework</p>
         </div>
         
         <div className="arrow">→</div>

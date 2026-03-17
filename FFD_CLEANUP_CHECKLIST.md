@@ -48,7 +48,7 @@
 - [ ] Line 522: `header` - "LIHAT FFD™ NETWORK EDITION BERAKSI"
 
 #### **Master Index Section:**
-- [ ] Line 554: `footer_desc` - "FFD™ v4.00 untuk pemetaan 16 pilar"
+- [ ] Line 554: `footer_desc` - "FFD™ v4.00 untuk pemetaan 19 pilar"
 
 #### **Pillars Page Section:**
 - [ ] Line 625: `mri_title` - "FFD™ v4.00 Digital Mirror"

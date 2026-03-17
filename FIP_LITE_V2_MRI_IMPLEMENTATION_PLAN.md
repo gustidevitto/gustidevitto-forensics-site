@@ -16,7 +16,7 @@ HOOK → VALIDATE → SCARE → TEASE → CONVERT
 2. **VALIDATE:** Show real, accurate numbers (GP%, Runway, Burn Rate)
 3. **SCARE:** Compare to industry benchmarks — show the GAP
 4. **TEASE:** Show LOCKED forensic pillars, blurred heat map
-5. **CONVERT:** "Unlock full 18-pillar diagnosis → $1,200"
+5. **CONVERT:** "Unlock full 19-pillar diagnosis → $1,200"
 
 ---
 
@@ -72,7 +72,7 @@ Show forensic pillar names and colors (red/yellow/green), but BLUR/LOCK the scor
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│  FORENSIC HEAT MAP — 18 PILLAR SCAN                 │
+│  FORENSIC HEAT MAP — 19 PILLAR SCAN                 │
 │                                                     │
 │  ██ GP Leakage Analysis        🔴 ██████░░ [🔒]    │
 │  ██ Cash Velocity Index        🟡 ████████░ [🔒]    │
@@ -101,7 +101,7 @@ Position the paid audit as RELIEF, not a product.
  $3,200 — $7,800/month in hidden leakage across 3 critical pillars.
  
  A full FIP™ Forensic Audit will:
- ✓ Identify the EXACT sources of leakage across all 18 pillars
+ ✓ Identify the EXACT sources of leakage across all 19 pillars
  ✓ Provide a prioritized recovery roadmap
  ✓ Project your 12-month financial trajectory
  
@@ -121,7 +121,7 @@ Position the paid audit as RELIEF, not a product.
 ### **For CFOs/CPAs (Analytical Brain)**
 - See GP%, BEP, Burn Rate → "These are legitimate metrics"
 - See industry benchmarks → "I can present this to the board"
-- See 18-pillar framework → "This tool has depth I respect"
+- See 19-pillar framework → "This tool has depth I respect"
 - **Trigger:** "This tool knows things I should know. I need the full version."
 
 ---
@@ -223,7 +223,7 @@ Position the paid audit as RELIEF, not a product.
 │  in hidden leakage across 3 critical pillars.               │
 │                                                             │
 │  A full FIP™ Forensic Audit will:                           │
-│  ✓ Identify EXACT sources of leakage across 18 pillars     │
+│  ✓ Identify EXACT sources of leakage across 19 pillars     │
 │  ✓ Provide prioritized recovery roadmap                    │
 │  ✓ Project 12-month financial trajectory                   │
 │                                                             │

@@ -70,7 +70,7 @@ function ForensicsPillars() {
                         </h2>
                         <p className="text-white/40 leading-relaxed font-light">
                             <Trans i18nKey="pillars_page.mri_desc">
-                                Ke-16 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <strong className="text-white/70">FIP™ Protocol Interface</strong> — sebuah mesin diagnosis yang memetakan kesehatan finansial Anda secara real-time.
+                                 Ke-19 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <strong className="text-white/70">FIP™ Protocol Interface</strong> — sebuah mesin diagnosis yang memetakan kesehatan finansial Anda secara real-time.
                             </Trans>
                         </p>
                         <Button asChild className="h-auto py-4 px-8 bg-amber-500 text-black hover:bg-white rounded-none font-bold uppercase tracking-widest text-xs transition-colors">

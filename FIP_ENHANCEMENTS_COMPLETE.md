@@ -47,7 +47,7 @@ All instances of "FFD", "Neural Engine", and legacy versioning have been systema
 *Location: Methodology Page (`/methodology.tsx`)*
 - A 3-stage architectural diagram visualizing the flow of intelligence:
     1.  **Evidence Ingestion Terminal**: Safe data entry.
-    2.  **Protocol Engine**: The 16-pillar analysis.
+    2.  **Protocol Engine**: The 19-pillar analysis.
     3.  **Intelligence Command Center**: The visualization output.
 - **Purpose:** Elevates the tool from a "dashboard" to an "Ecosystem".
 

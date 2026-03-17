@@ -97,7 +97,7 @@ export async function generateFIPLitePDF(results: HealthScoreResult, name: strin
 
     addFooter(1);
 
-    // --- PAGE 2: THE 16 PILLARS BREAKDOWN ---
+    // --- PAGE 2: THE 19 PILLARS BREAKDOWN ---
     doc.addPage();
     doc.setFillColor(0, 0, 0);
     doc.rect(0, 0, 210, 297, 'F');
@@ -105,12 +105,12 @@ export async function generateFIPLitePDF(results: HealthScoreResult, name: strin
     doc.setTextColor(primaryColor);
     doc.setFontSize(18);
     doc.setFont('helvetica', 'bold');
-    doc.text('16-PILLAR GRANULAR AUDIT', 20, 25);
+    doc.text('19-PILLAR GRANULAR AUDIT', 20, 25);
 
     y = 40;
     results.pillars.forEach((p, i) => {
         if (i === 8) { // Split to Page 3 if needed, but we'll try to fit or add page
-            // For 16, we might need a 3rd page or smaller rows. 
+            // For 19, we will definitely need a 3rd page or smaller rows. 
             // Let's use two columns per page maybe? No, let's just make rows compact.
         }
 
@@ -135,7 +135,7 @@ export async function generateFIPLitePDF(results: HealthScoreResult, name: strin
             addFooter(2);
             doc.addPage(); y = 25;
             doc.setFillColor(0, 0, 0); doc.rect(0, 0, 210, 297, 'F');
-            doc.setTextColor(primaryColor); doc.setFontSize(18); doc.text('16-PILLAR AUDIT (CONT.)', 20, 25);
+            doc.setTextColor(primaryColor); doc.setFontSize(18); doc.text('19-PILLAR AUDIT (CONT.)', 20, 25);
             y = 40;
         }
     });

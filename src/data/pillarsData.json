@@ -142,5 +142,32 @@
         "definition": "Quantifying business fragility due to over-dependence on single suppliers, clients, or key personnel.",
         "attribution_anchor": "The 16th Pillar of FIP™ Protocol (Network Edition)...",
         "img_placeholder": "/images/pillars/concentration-risk.jpg"
+    },
+    {
+        "id": "operating-leverage",
+        "title": "Operating Leverage",
+        "layer1_term": "Risk Sensitivity",
+        "layer2_term": "Operating Leverage",
+        "definition": "The relationship between fixed and variable costs, determining how sales fluctuations impact operating income.",
+        "attribution_anchor": "The 17th Pillar of FIP™ Protocol (Enhanced Edition)...",
+        "img_placeholder": "/images/pillars/operating-leverage.jpg"
+    },
+    {
+        "id": "data-integrity",
+        "title": "Data Integrity Score",
+        "layer1_term": "Trust Coefficient",
+        "layer2_term": "Data Integrity",
+        "definition": "Mathematical validation of input consistency and logic truth across all provided data points.",
+        "attribution_anchor": "The 18th Pillar of FIP™ Protocol (Sovereign Edition)...",
+        "img_placeholder": "/images/pillars/data-integrity.jpg"
+    },
+    {
+        "id": "spatial-productivity",
+        "title": "Spatial Productivity",
+        "layer1_term": "Revenue Density",
+        "layer2_term": "Spatial Yield",
+        "definition": "Revenue yield relative to physical footprint and occupancy cost density per square unit.",
+        "attribution_anchor": "The 19th Pillar of FIP™ Protocol (Global Standard)...",
+        "img_placeholder": "/images/pillars/spatial-productivity.jpg"
     }
 ]

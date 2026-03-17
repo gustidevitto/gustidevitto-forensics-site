@@ -36,7 +36,7 @@
 
 ### 2. **Protocol Engine**
 **Website Copy:**
-> "The mathematical brain behind every verdict. 16-Pillar diagnostic framework processes your data through proprietary algorithms."
+> "The mathematical brain behind every verdict. 19-Pillar diagnostic framework processes your data through proprietary algorithms."
 
 **Dashboard Name:** (Background processing)  
 **Purpose:** The computational core
@@ -58,7 +58,7 @@
 - **Price:** $10,000
 - **Use Case:** M&A, restructuring, emergency recovery
 - **Deliverable:** Comprehensive Verdict on structural health
-- **Includes:** Full 16-Pillar analysis, executive summary, recovery roadmap
+- **Includes:** Full 19-Pillar analysis, executive summary, recovery roadmap
 
 #### 2. **Monthly Verdict (VaaS)**
 - **Price:** From $350/month
