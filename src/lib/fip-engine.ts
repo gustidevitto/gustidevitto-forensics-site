@@ -182,11 +182,6 @@ function calculateLayer2Comparison(
     const industryMax = benchmark.grossProfitMax;
     const gap = yourGP - ((industryMin + industryMax) / 2);
 
-    // Estimated leakage calculation (range-based for curiosity)
-    const potentialGPGap = Math.max(0, industryMin - yourGP);
-    const leakageMin = (potentialGPGap / 100) * inputs.monthlyRevenue * 0.6; // Conservative
-    const leakageMax = (potentialGPGap / 100) * inputs.monthlyRevenue * 1.4; // Aggressive
-
     // Efficiency index (composite score)
     const opexRatio = inputs.monthlyRevenue > 0
         ? (inputs.monthlyOpEx / inputs.monthlyRevenue) * 100
@@ -215,6 +210,23 @@ function calculateLayer2Comparison(
         riskVerdict = 'fortress';
         verdictLabel = 'FORTRESS: STRUCTURALLY SOUND';
         verdictColor = 'text-emerald-500';
+    }
+
+    // Estimated leakage calculation (range-based for curiosity)
+    const potentialGPGap = Math.max(0, industryMin - yourGP);
+    const potentialOpexGap = Math.max(0, opexRatio - benchmark.opexRatioMax);
+    const totalPotentialGap = potentialGPGap + potentialOpexGap;
+
+    let leakageMin = 0;
+    let leakageMax = 0;
+
+    if (totalPotentialGap > 0) {
+        leakageMin = (totalPotentialGap / 100) * inputs.monthlyRevenue * 0.6; // Conservative
+        leakageMax = (totalPotentialGap / 100) * inputs.monthlyRevenue * 1.4; // Aggressive
+    } else if (riskVerdict !== 'fortress' && inputs.monthlyRevenue > 0) {
+        // If there's no major benchmark gap but runway/efficiency is failing
+        leakageMin = inputs.monthlyRevenue * 0.03;
+        leakageMax = inputs.monthlyRevenue * 0.08;
     }
 
     return {

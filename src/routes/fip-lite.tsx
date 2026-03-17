@@ -272,7 +272,7 @@ function InputForm({
                                 placeholder="0.00"
                                 value={inputs.monthlyRevenue || 0}
                                 onValueChange={(value) => setInputs({ ...inputs, monthlyRevenue: value })}
-                                className="h-14 bg-transparent border-0 border-b border-white/10 rounded-none text-2xl font-black focus:ring-0 focus:border-amber-500 transition-colors p-0 tabular-nums"
+                                className="h-14 bg-transparent border-0 border-b border-white/10 rounded-none text-2xl font-black focus:ring-0 focus:border-amber-500 transition-colors py-0 pl-8 pr-0 tabular-nums"
                             />
                             <p className="text-[9px] text-white/30 uppercase tracking-widest leading-relaxed">
                                 {t('fip_lite_v2.input_form.tooltip_revenue', 'Be honest. Inflating this only hides your problems.')}
@@ -291,7 +291,7 @@ function InputForm({
                                 placeholder="0.00"
                                 value={inputs.monthlyCOGS || 0}
                                 onValueChange={(value) => setInputs({ ...inputs, monthlyCOGS: value })}
-                                className="h-14 bg-transparent border-0 border-b border-white/10 rounded-none text-2xl font-black focus:ring-0 focus:border-amber-500 transition-colors p-0 tabular-nums text-red-400"
+                                className="h-14 bg-transparent border-0 border-b border-white/10 rounded-none text-2xl font-black focus:ring-0 focus:border-amber-500 transition-colors py-0 pl-8 pr-0 tabular-nums text-red-400"
                             />
                             <p className="text-[9px] text-white/30 uppercase tracking-widest leading-relaxed">
                                 {t('fip_lite_v2.input_form.tooltip_cogs', 'Includes materials, direct labor, and shipping.')}
@@ -310,7 +310,7 @@ function InputForm({
                                 placeholder="0.00"
                                 value={inputs.monthlyOpEx || 0}
                                 onValueChange={(value) => setInputs({ ...inputs, monthlyOpEx: value })}
-                                className="h-14 bg-transparent border-0 border-b border-white/10 rounded-none text-2xl font-black focus:ring-0 focus:border-amber-500 transition-colors p-0 tabular-nums"
+                                className="h-14 bg-transparent border-0 border-b border-white/10 rounded-none text-2xl font-black focus:ring-0 focus:border-amber-500 transition-colors py-0 pl-8 pr-0 tabular-nums"
                             />
                             <p className="text-[9px] text-white/30 uppercase tracking-widest leading-relaxed">
                                 {t('fip_lite_v2.input_form.tooltip_opex', 'Rent, salaries, internet. Fixed overhead.')}
@@ -329,7 +329,7 @@ function InputForm({
                                 placeholder="0.00"
                                 value={inputs.currentCash || 0}
                                 onValueChange={(value) => setInputs({ ...inputs, currentCash: value })}
-                                className="h-14 bg-transparent border-0 border-b border-white/10 rounded-none text-2xl font-black focus:ring-0 focus:border-amber-500 transition-colors p-0 tabular-nums text-emerald-400"
+                                className="h-14 bg-transparent border-0 border-b border-white/10 rounded-none text-2xl font-black focus:ring-0 focus:border-amber-500 transition-colors py-0 pl-8 pr-0 tabular-nums text-emerald-400"
                             />
                             <p className="text-[9px] text-white/30 uppercase tracking-widest leading-relaxed">
                                 {t('fip_lite_v2.input_form.tooltip_cash', 'Real money in the bank TODAY.')}
