@@ -97,7 +97,7 @@ export async function generateFIPLitePDF(results: HealthScoreResult, name: strin
 
     addFooter(1);
 
-    // --- PAGE 2: THE 19 PILLARS BREAKDOWN ---
+    // --- PAGE 2: THE 25 PILLARS BREAKDOWN ---
     doc.addPage();
     doc.setFillColor(0, 0, 0);
     doc.rect(0, 0, 210, 297, 'F');
@@ -105,7 +105,7 @@ export async function generateFIPLitePDF(results: HealthScoreResult, name: strin
     doc.setTextColor(primaryColor);
     doc.setFontSize(18);
     doc.setFont('helvetica', 'bold');
-    doc.text('19-PILLAR GRANULAR AUDIT', 20, 25);
+    doc.text('25-PILLAR GRANULAR AUDIT', 20, 25);
 
     y = 40;
     results.pillars.forEach((p, i) => {
@@ -135,7 +135,7 @@ export async function generateFIPLitePDF(results: HealthScoreResult, name: strin
             addFooter(2);
             doc.addPage(); y = 25;
             doc.setFillColor(0, 0, 0); doc.rect(0, 0, 210, 297, 'F');
-            doc.setTextColor(primaryColor); doc.setFontSize(18); doc.text('19-PILLAR AUDIT (CONT.)', 20, 25);
+            doc.setTextColor(primaryColor); doc.setFontSize(18); doc.text('25-PILLAR AUDIT (CONT.)', 20, 25);
             y = 40;
         }
     });

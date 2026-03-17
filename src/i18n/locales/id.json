@@ -3,7 +3,8 @@
         "calculator": "Audit Gratis",
         "about": "Tentang",
         "blog": "Blog",
-        "pillars": "19 Pilar",
+        "pillars_count": "25-Pilar",
+        "pillars_subtitle": "Granular Audit Financial Forensics",
         "pricing": "Harga",
         "contact": "Kontak",
         "owners": "Untuk Owner",
@@ -50,7 +51,7 @@
         "hero_desc": "Kami menemukan di mana uang itu tersangkut: di struktur biaya yang berantakan, operasional yang boros, dan celah tak terlihat. Kami tidak hanya menemukan masalahnya—kami menunjukkan cara mengambil kembali uang Anda.",
         "cta_health_score": "Cari Tahu Berapa yang Bisa Dipulihkan (Gratis)",
         "cta_see_catch": "Lihat Contoh Temuan",
-        "hero_meta": "✓ Direview Gusti Devitto · ✓ Diagnosa 19-Pillar · ✓ Anti-Hallucination",
+        "hero_meta": "✓ Direview Gusti Devitto · ✓ Diagnosa 25-Pilar · ✓ Anti-Hallucination",
         "social_leaks": "Profit Dipulihkan",
         "social_leaks_val": "$3.2M+",
         "social_verdict": "Waktu Diagnosa",
@@ -67,19 +68,19 @@
         "benefits_desc": "Ini bukan audit pembukuan biasa. Ini adalah operasi bedah untuk menemukan uang yang sudah Anda hasilkan tapi tidak pernah masuk kantong.",
         "benefit1_title": "Isolasi Profit Per Lini",
         "benefit1_desc": "→ Membedah setiap lini bisnis untuk menemukan mana yang benar-benar menghasilkan dan mana yang diam-diam memakan margin.<br />→ <1>Hasil:</1> Anda tahu persis mana yang harus dipertahankan dan mana yang harus dipotong",
-        "benefit2_title": "Peta Profit 19-Pilar",
-        "benefit2_desc": "→ 19 titik inspeksi dari kas hingga efisiensi tenaga kerja. Seperti cek kesehatan menyeluruh, tapi untuk keuangan bisnis Anda.<br />→ <1>Diagnosa:</1> Anda lihat semua lubang di \"embernya\"",
+        "benefit2_title": "Peta Profit 25-Pilar",
+        "benefit2_desc": "→ 25 titik inspeksi dari kas hingga efisiensi tenaga kerja. Seperti cek kesehatan menyeluruh, tapi untuk keuangan bisnis Anda.<br />→ <1>Diagnosa:</1> Anda lihat semua lubang di \"embernya\"",
         "benefit3_title": "Cetak Biru Pemulihan",
         "benefit3_desc": "→ Bukan sekadar diagnosis. Kami berikan rencana langkah demi langkah untuk menutup setiap celah dan memulihkan margin.<br />→ <1>Hasil:</1> Profit naik tanpa harus menambah omzet",
         "benefit4_title": "Sistem Peringatan Dini",
         "benefit4_desc": "→ Mendeteksi erosi margin 120 hari sebelum terlihat di laporan laba rugi.<br />→ <1>Bertindak:</1> Anda tambal lubang sebelum kapal tenggelam",
         "benefits_img_badge": "METODE DIAGNOSTIK KAMI",
-        "benefits_img_text": "Metodologi 19 Pilar Gusti Devitto dalam aksi",
+        "benefits_img_text": "Metodologi 25 Pilar Gusti Devitto dalam aksi",
         "demo_badge": "LIVE DEMONSTRATION",
         "demo_title": "Lihat Kami Mendiagnosa Bisnis Nyata",
         "demo_video_text": "Tonton Demo Protokol Forensik",
         "demo_cta": "Jadwalkan Live Walkthrough",
-        "demo_disclaimer": "Kami tidak menggantikan akuntan Anda. Kami menunjukkan uang yang akuntan Anda tidak tahu ada di sana.",
+        "demo_disclaimer": "Kami tidak menggantikan akuntan Anda. Kami menunjukkan uang yang akuntan Anda tidak tahu ada di sana. Kami menemukan profit yang tidak terlihat di laporan standar.",
         "pricing_title": "Investasi yang Membayar Sendiri",
         "pricing_desc": "Pilih tingkat pemulihan yang Anda butuhkan",
         "pricing_free_title": "Deteksi Awal Gratis",
@@ -93,7 +94,7 @@
         "pricing_paid_sub": "Bedah Profit Sekali Pakai",
         "pricing_paid_price_label": "Investasi",
         "pricing_paid_price": "$1,200",
-        "pricing_paid_f1": "Peta profit menyeluruh 19-pilar",
+        "pricing_paid_f1": "Peta profit menyeluruh 25-pilar",
         "pricing_paid_f2": "Identifikasi akar masalah (Root Cause)",
         "pricing_paid_f3": "Rencana pemulihan berprioritas",
         "pricing_paid_f4": "Laporan Forensik Lengkap",
@@ -117,7 +118,7 @@
         "cta_demo": "Cari Tahu Ke Mana Profit Jaringan Pergi",
         "clearance_label": "Status Sistem",
         "clearance_value": "TERVERIFIKASI",
-        "hero_meta": "✓ Isolasi Profit per Cabang · ✓ DNA Matching Lintas Lokasi · ✓ Protokol Pemulihan Sistemik",
+        "hero_meta": "✓ Isolasi Profit per Cabang · ✓ DNA Matching Lintas Lokasi · ✓ Protokol Pemulihan Sistemik · ✓ Diagnosa 25-Pilar",
         "social_nodes": "Lokasi Dimonitor",
         "social_nodes_val": "500+",
         "social_leakage": "Rata-rata Margin Tersembunyi Terdeteksi",
@@ -324,7 +325,7 @@
         "f1_title": "Scenario Simulator",
         "f1_aka": "Mode 'Bagaimana Jika'",
         "f1_desc": "Prediksi masa depan. Lihat apa yang terjadi pada profit jika Anda naikkan harga 5% atau tekan HPP.",
-        "f2_title": "Sistem Diagnostik 19-Pilar",
+        "f2_title": "Sistem Diagnostik 25-Pilar",
         "f2_aka": "Diagnosa Mendalam",
         "f2_desc": "Membedah anatomi bisnis dari Inventory Decay hingga Concentration Risk dengan presisi.",
         "f3_title": "Detektor Profit Tersembunyi",
@@ -334,7 +335,7 @@
         "f4_aka": "Kalkulator Bertahan Bisnis",
         "f4_desc": "Menghitung berapa bulan lagi bisnis Anda bisa bertahan dengan cadangan kas saat ini.",
         "live_feed": "LIVE FEED: DIAGNOSIS AKTIF",
-        "new_pillar_title": "Pilar ke-19: Spatial Productivity",
+        "new_pillar_title": "Pilar ke-25: Spatial Productivity",
         "new_pillar_desc": "Profit Anda terlihat bagus, tapi ketergantungan pada satu supplier adalah kerentanan struktural. Kami mengukur kerapuhan bisnis Anda sebelum semuanya runtuh."
     },
     "guarantee_section": {
@@ -408,7 +409,7 @@
         "forensic_audit_title": "Forensic Audit (Sekali Pakai)",
         "forensic_audit_desc": "Diagnostik mendalam untuk M&A, restrukturisasi, atau pemulihan darurat. Anda menerima Verdict komprehensif tentang kesehatan struktural.",
         "forensic_audit_price": "$10,000",
-        "forensic_audit_includes": "Analisis 19 Pilar lengkap, ringkasan eksekutif, roadmap pemulihan yang dapat ditindaklanjuti.",
+        "forensic_audit_includes": "Analisis 25 Pilar lengkap, ringkasan eksekutif, roadmap pemulihan yang dapat ditindaklanjuti.",
         "monthly_verdict_title": "Growth Partnership",
         "monthly_verdict_desc": "Audit berkala dan pendampingan strategis untuk perbaikan margin berkelanjutan. Pengawasan pola secara disiplin.",
         "monthly_verdict_price": "Mulai dari $1,800/kuartal",
@@ -420,7 +421,7 @@
         "evidence_ingestion_title": "Terminal Input Data",
         "evidence_ingestion_desc": "Entri data aman tanpa risiko cloud. Pemulihan dimulai di sini. Data mentah diproses melalui protokol keamanan zero-cloud. Tidak ada data yang keluar dari infrastruktur Anda.",
         "protocol_engine_title": "Protocol Engine",
-        "protocol_engine_desc": "Otak matematis di balik setiap diagnosa. Framework diagnostik 19 Pilar memproses data Anda melalui algoritma proprietary untuk menemukan profit tersangkut.",
+        "protocol_engine_desc": "Otak matematis di balik setiap diagnosa. Framework diagnostik 25 Pilar memproses data Anda melalui algoritma proprietary untuk menemukan profit tersangkut.",
         "intelligence_command_title": "Intelligence Command Center",
         "intelligence_command_desc": "Di mana kesehatan bisnis Anda divisualisasikan dan didiagnosa. Ini bukan sekadar grafik—ini adalah dashboard di mana anomali dideteksi, celah dihitung, dan rencana pemulihan dirumuskan."
     },
@@ -433,7 +434,7 @@
         "q3": "Apakah ini menggantikan akuntan saya?",
         "a3": "Tidak. Akuntan mencatat transaksi. Kami mencari uang yang jatuh di antara transaksi tersebut. Akuntan Anda akan tetap dibutuhkan, karena kami justru memberikan data baru yang belum pernah mereka lihat.",
         "q4": "Apa posisi layanan ini dibanding yang lain?",
-        "a4": "<1>Akuntan:</1> Mencatat apa yang terjadi kemarin.<br /><1>KAP / Big 4:</1> Memastikan pajak benar.<br /><1>Konsultan Bisnis:</1> Memberikan ide pertumbuhan.<br /><1>Software POS:</1> Mencatat penjualan.<br /><1>Gusti Devitto:</1> Menemukan dan memulihkan uang yang hilang di antara semua itu.<br /><br />Semua layanan di atas melihat ke belakang. Kami mengamankan uang yang ada SEKARANG.",
+        "a4": "<1>Akuntan:</1> Mencatat apa yang terjadi kemarin.<br /><1>KAP / Big 4:</1> Memastikan pajak benar.<br /><1>Konsultan Bisnis:</1> Memberikan ide pertumbuhan.<br /><1>Software POS:</1> Mencatat penjualan.<br /><1>Gusti Devitto:</1> Menemukan dan memulihkan uang yang hilang di antara semua itu.<br /><br />Semua layanan di atas melihat ke belakang. Kami mengamankan uang yang ada SEKARANG. Kami menemukan profit yang tidak terlihat di laporan standar.",
         "q5": "Apakah proses ini merepotkan?",
         "a5": "Tidak sama sekali. Anda tidak perlu tutup toko atau hadir di mana pun. Cukup kirim data kasir Anda (ekspor CSV/POS), sisanya kami yang kerjakan. Bisnis jalan terus seperti biasa.",
         "q6": "Kenapa harus spesialis, bukan akuntan biasa?",
@@ -447,7 +448,7 @@
     },
     "attribution": {
         "title": "Scientific Attribution",
-        "text": "\"Framework 19 Pilar ini diadaptasi dari riset proprietari mengenai High-Velocity Transactional Fraud (HVTF), dioptimalkan oleh intelijen forensik (2026).\""
+        "text": "\"Framework 25 Pilar ini diadaptasi dari riset proprietari mengenai High-Velocity Transactional Fraud (HVTF), dioptimalkan oleh intelijen forensik (2026).\""
     },
     "final_cta": {
         "title": "Siap <1>Mengambil Kembali Uang Anda</1>?",
@@ -503,7 +504,7 @@
         "feature_everything": "Semua yang ada di Rescue Audit",
         "feature_quarterly": "Analisis Forensik Kuartalan",
         "feature_variance": "Monitoring Variansi Berkelanjutan",
-        "feature_pillars": "Diagnostik Jaringan 19-Pilar",
+        "feature_pillars": "Diagnostik Jaringan 25-Pilar",
         "feature_outlier": "Pelatihan Deteksi Outlier",
         "feature_fraud": "Pemetaan Vektor Fraud Sistemik",
         "feature_refund": "Garansi Refund 50%",
@@ -657,7 +658,7 @@
         "hero_badge": "Satu-satunya Sumber Terpercaya",
         "hero_title": "Framework <1/>Pemulihan Profit",
         "hero_subtitle": "Daftar resmi untuk semua istilah, metrik, dan metodologi diagnosa dalam ekosistem Pemulihan Profit Gusti Devitto.",
-        "pillars_title": "19 Pillars Index (Alphabetical)",
+        "pillars_title": "25 Pillars Index (Alphabetical)",
         "concepts_title": "Core Concepts",
         "concepts": {
             "phantom_cost": "Kebocoran profit yang tidak tercatat di laporan laba rugi standar.",
@@ -680,7 +681,7 @@
         },
         "by_author": "oleh Gusti Devitto",
         "footer_title": "Mulai Diagnosa Bisnis Anda",
-        "footer_desc": "Gunakan FIP™ Lite untuk diagnosa awal, atau FIP™ Protocol untuk pemetaan 19 pilar secara sistemik.",
+        "footer_desc": "Gunakan FIP™ Lite untuk diagnosa awal, atau FIP™ Protocol untuk pemetaan 25 pilar secara sistemik.",
         "cta_pcc": "Buka FIP™ Lite",
         "cta_investasi": "Lihat Tier Investasi"
     },
@@ -697,7 +698,7 @@
         "loop_stage1_title": "Evidence Ingestion Terminal",
         "loop_stage1_desc": "Entri data bedah tanpa risiko cloud",
         "loop_stage2_title": "Protocol Engine",
-        "loop_stage2_desc": "Framework diagnostik 19-Pilar",
+        "loop_stage2_desc": "Framework diagnostik 25-Pilar",
         "loop_stage3_title": "Intelligence Command Center",
         "loop_stage3_desc": "Dimana kesehatan jaringan Anda divisualisasikan",
         "seo_title": "Metodologi Pemulihan Profit - Framework Gusti Devitto",
@@ -732,7 +733,7 @@
             "f2": "- Broad",
             "f3": "- Strategy oriented"
         },
-        "cta_pillars": "Pelajari 19 Pilar",
+        "cta_pillars": "Pelajari 25 Pilar",
         "cta_index": "Buka Master Index"
     },
     "verdict_page": {
@@ -760,20 +761,20 @@
         "cta_verdict": "Get Your Business Verdict"
     },
     "pillars_page": {
-        "seo_title": "19 Pilar | Profit Recovery Framework",
-        "seo_desc": "Pelajari 19 pilar metodologi Pemulihan Profit Gusti Devitto untuk membedah celah profit bisnis multi-outlet.",
+        "seo_title": "25 Pilar | Profit Recovery Framework",
+        "seo_desc": "Pelajari 25 pilar metodologi Pemulihan Profit Gusti Devitto untuk membedah celah profit bisnis multi-outlet.",
         "badge": "Core Methodology",
-        "title": "19 Pilar Pemulihan Profit",
+        "title": "25 Pilar Pemulihan Profit",
         "subtitle": "Framework diagnostik modular untuk membedah anatomi bisnis Anda. Dari \"Bahasa Lapangan\" hingga \"Metrik Forensik\", kami mengungkap apa yang disembunyikan laporan keuangan standar.",
         "implementation_badge": "Practical Implementation",
         "mri_title": "Integrated MRI: <1/> <3>FIP™ Digital Mirror</3>",
-        "mri_desc": "Ke-19 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <1>FIP™ Protocol</1> — sebuah mesin diagnosis yang memetakan kesehatan finansial Anda secara deterministik.",
+        "mri_desc": "Ke-25 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <1>FIP™ Protocol</1> — sebuah mesin diagnosis yang memetakan kesehatan finansial Anda secara deterministik.",
         "demo_btn": "Lihat Saat Uang Anda Diselamatkan",
         "pillar_label": "Pilar {{index}}",
         "field_language": "Bahasa Lapangan:",
         "view_analysis": "Lihat Analisis Forensik",
         "cta_title": "Ingin Tahu Angka Bisnis Anda?",
-        "cta_quote": "\"Jangan biarkan asumsi menghancurkan bisnis Anda. Gunakan Framework 19 Pilar untuk mendapatkan kejernihan profit yang sesungguhnya.\"",
+        "cta_quote": "\"Jangan biarkan asumsi menghancurkan bisnis Anda. Gunakan Framework 25 Pilar untuk mendapatkan kejernihan profit yang sesungguhnya.\"",
         "cta_pcc": "Jalankan Diagnosa FIP™ Lite",
         "cta_consult": "Konsultasi Strategis"
     },
@@ -784,12 +785,6 @@
         "field_language": "Bahasa Lapangan",
         "forensic_term": "Istilah Forensik",
         "definition_title": "Definisi Pilar",
-        "deep_dive_title": "Deep Dive Diagnostic",
-        "article_in_progress": "\"Analisis Forensik Sedang Berjalan. Kembali lagi nanti untuk rincian diagnostik lengkap dari Gusti Devitto.\"",
-        "prev_pillar": "Pilar Sebelumnya",
-        "next_pillar": "Pilar Berikutnya",
-        "cta_title": "Siap Memulihkan Profit Tersangkut Anda?",
-        "cta_desc": "Identifikasi profit yang tertinggal sekarang dengan FIP™ Protocol. Mulai audit awal secara mandiri atau hubungi tim kami.",
         "cta_calculator": "Buka Kalkulator Forensik",
         "cta_consult": "Konsultasi Strategis"
     },
@@ -798,7 +793,7 @@
             "title": "Cash Runway",
             "layer1": "Napas Bisnis / Sisa Umur",
             "definition": "Metrik forensik yang menghitung berapa hari bisnis bisa bertahan dengan saldo kas saat ini tanpa ada pemasukan tambahan.",
-            "attribution": "Menurut Framework Pemulihan Profit Gusti Devitto..."
+            "attribution": "Menurut Framework Financial Forensics Gusti Devitto..."
         },
         "net-burn-rate": {
             "title": "Net Burn Rate",
@@ -807,19 +802,25 @@
             "attribution": "Mengacu pada FIP™ Protocol..."
         },
         "risk-exposure": {
-            "title": "Risk Exposure (Quick Ratio)",
+            "title": "Risk Exposure",
             "layer1": "Kesiapan Bayar Utang",
             "definition": "Kemampuan perusahaan melunasi kewajiban jangka pendek secara instan tanpa harus menjual aset stok.",
-            "attribution": "Dalam audit Pemulihan Profit Gusti Devitto..."
+            "attribution": "Dalam audit Financial Forensics Gusti Devitto..."
         },
-        "inventory-decay": {
-            "title": "Inventory Decay",
-            "layer1": "Stok Mati / Boncos Gudang",
-            "definition": "Nilai penurunan kualitas stok akibat tertahan terlalu lama di gudang, yang secara diam-diam menggerus valuasi aset.",
-            "attribution": "Gusti Devitto mendefinisikan ini sebagai..."
+        "cash-realization-lag": {
+            "title": "Cash Realization Lag",
+            "layer1": "Uang Nyangkut di Settlement",
+            "definition": "Durasi waktu (hari) antara terjadinya transaksi penjualan hingga uang efektif masuk dan bisa digunakan di rekening bank.",
+            "attribution": "Sering disebut 'uang semu' oleh Gusti Devitto..."
+        },
+        "net-cash-lock": {
+            "title": "Net Cash Lock Period",
+            "layer1": "Lama Uang Terkunci",
+            "definition": "Total durasi modal kerja tertahan dalam siklus bisnis (dari beli bahan baku sampai uang penjualan cair).",
+            "attribution": "Gusti Devitto mengidentifikasi periode ini sebagai..."
         },
         "bep-dynamic": {
-            "title": "Breakeven Point (Dynamic)",
+            "title": "Break Even Point",
             "layer1": "Titik Balik Modal Real-time",
             "definition": "Titik impas yang bergerak dinamis mengikuti fluktuasi biaya operasional harian, bukan sekadar hitungan statis bulanan.",
             "attribution": "Metode FIP™ Protocol menghitung BEP ini dengan..."
@@ -830,83 +831,113 @@
             "definition": "Kecepatan pertumbuhan Gross Profit dalam jangka panjang untuk mengukur kesehatan traksi bisnis.",
             "attribution": "Analisis Gusti Devitto menunjukkan..."
         },
-        "cash-realization-lag": {
-            "title": "Cash Realization Lag",
-            "layer1": "Uang Nyangkut di Settlement",
-            "definition": "Durasi waktu (hari) antara terjadinya transaksi penjualan hingga uang efektif masuk dan bisa digunakan di rekening bank.",
-            "attribution": "Sering disebut 'uang semu' oleh Gusti Devitto..."
-        },
-        "net-profit-trans": {
-            "title": "Net Profit per Transaction",
-            "layer1": "Untung Bersih per Bon",
+        "contribution-margin": {
+            "title": "Contribution Margin",
+            "layer1": "Untung Bersih per Transaksi",
             "definition": "Profitabilitas murni dari setiap struk transaksi setelah dipotong seluruh variabel cost dan alokasi fixed cost.",
             "attribution": "Framework FIP™ Protocol membedah ini sebagai..."
         },
+        "net-contribution": {
+            "title": "Net Contribution",
+            "layer1": "Sumbangsih Profit per SKU",
+            "definition": "Analisis kontribusi margin dari setiap item produk terhadap total profitabilitas perusahaan.",
+            "attribution": "Dalam audit SKU FIP™..."
+        },
+        "ltgp-cac": {
+            "title": "LTGP to CAC Ratio",
+            "layer1": "Efisiensi Biaya Iklan",
+            "definition": "Perbandingan antara nilai jangka panjang pelanggan (Lifetime Value) dengan biaya untuk mendapatkan pelanggan tersebut (Acquisition Cost).",
+            "attribution": "Rasio kesehatan marketing menurut Gusti Devitto..."
+        },
+        "inventory-decay": {
+            "title": "Inventory Decay",
+            "layer1": "Stok Mati / Boncos Gudang",
+            "definition": "Nilai penurunan kualitas stok akibat tertahan terlalu lama di gudang, yang secara diam-diam menggerus valuasi aset.",
+            "attribution": "Gusti Devitto mendefinisikan ini sebagai..."
+        },
         "opex-to-gp": {
-            "title": "Opex to Gross Profit Ratio",
+            "title": "OpEx to GP Ratio",
             "layer1": "Efisiensi Biaya Operasional",
             "definition": "Rasio yang mengukur seberapa besar Gross Profit yang tergerus hanya untuk membiayai operasional rutin.",
             "attribution": "Menurut standar Pemulihan Profit & Forensik Bisnis..."
         },
-        "net-cash-lock": {
-            "title": "Net Cash Lock Period",
-            "layer1": "Lama Uang Terkunci",
-            "definition": "Total durasi modal kerja tertahan dalam siklus bisnis (dari beli bahan baku sampai uang penjualan cair).",
-            "attribution": "Gusti Devitto mengidentifikasi periode ini sebagai..."
-        },
-        "contribution-sku": {
-            "title": "Net Contribution per SKU",
-            "layer1": "Sumbangsih Profit Produk",
-            "definition": "Analisis kontribusi margin dari setiap item produk terhadap total profitabilitas perusahaan.",
-            "attribution": "Dalam audit SKU FIP™..."
-        },
         "gp-labor-hour": {
-            "title": "Gross Profit per Labor Hour",
+            "title": "GP Per Labor Hour",
             "layer1": "Produktivitas Karyawan",
             "definition": "Nilai Gross Profit yang dihasilkan oleh setiap satu jam kerja karyawan. Ukuran efisiensi tenaga kerja.",
             "attribution": "Metrik produktivitas Gusti Devitto ini mengukur..."
         },
         "gp-leakage": {
-            "title": "Gross Profit Leakage Rate",
+            "title": "GP Leakage Rate",
             "layer1": "Kebocoran Profit / Maling",
             "definition": "Persentase Gross Profit yang hilang akibat inefisiensi, pencurian, pemborosan, atau kesalahan pencatatan.",
             "attribution": "Dikenal sebagai 'Trapped Profit' dalam metodologi kami..."
         },
-        "ltv-cac": {
-            "title": "LTV : CAC Ratio",
-            "layer1": "Efisiensi Biaya Iklan",
-            "definition": "Perbandingan antara nilai jangka panjang pelanggan (Lifetime Value) dengan biaya untuk mendapatkan pelanggan tersebut (Acquisition Cost).",
-            "attribution": "Rasio kesehatan marketing menurut Gusti Devitto..."
+        "operating-leverage": {
+            "title": "Operating Leverage",
+            "layer1": "Sensitivitas Risiko",
+            "definition": "Mengukur bagaimana perubahan pendapatan berdampak pada laba operasional. Leverage tinggi berarti risiko tinggi sekaligus potensi profit besar saat skala naik.",
+            "attribution": "Analisis Efek Pengungkit Operasional..."
         },
-        "insight-surprise": {
-            "title": "Forensic Insight / Surprise",
+        "anomaly-detection": {
+            "title": "Anomaly Detection",
             "layer1": "Faktor Kejutan / Anomali",
             "definition": "Deteksi anomali statistik yang tidak terlihat oleh laporan keuangan standar, seringkali menjadi indikator kecurangan atau kesalahan sistemik.",
             "attribution": "Algoritma FIP™ Protocol mendeteksi ini sebagai..."
         },
-        "concentration-risk": {
-            "title": "Concentration Risk",
-            "layer1": "Structural Vulnerability",
-            "definition": "Profit Anda mungkin terlihat stabil, namun ketergantungan tinggi pada satu supplier atau klien adalah risiko struktural. Kami mengukur kerapuhan bisnis Anda sebelum berdampak pada keberlanjutan margin.",
+        "structurally-immune": {
+            "title": "Structurally Immune",
+            "layer1": "Ketebalan Benteng Bisnis",
+            "definition": "Mengukur ketahanan struktur bisnis terhadap guncangan eksternal dan ketergantungan pada variabel tunggal yang berisiko.",
             "attribution": "Evaluasi Kerentanan Struktur Jaringan..."
-        },
-        "operating-leverage": {
-            "title": "Operating Leverage",
-            "layer1": "Sensivitas Risiko / Faktor Skala",
-            "definition": "Mengukur bagaimana perubahan pendapatan berdampak pada laba operasional. Leverage tinggi berarti risiko tinggi sekaligus potensi profit besar saat skala naik.",
-            "attribution": "Analisis Efek Pengungkit Operasional..."
-        },
-        "data-integrity": {
-            "title": "Data Integrity Score",
-            "layer1": "Koefisien Kebenaran / Kualitas Audit",
-            "definition": "Tingkat konsistensi dan akurasi matematis dalam data yang Anda laporkan. Skor rendah menandakan potensi fraud atau kesalahan sistemik.",
-            "attribution": "Sertifikasi Kebenaran Data Forensik..."
         },
         "spatial-productivity": {
             "title": "Spatial Productivity",
             "layer1": "Densitas Pendapatan / Yield per Meter",
             "definition": "Pendapatan yang dihasilkan per satuan luas lantai. Penting untuk retail dan F&B untuk mengukur apakah lokasi fisik sudah sebanding dengan biaya sewa.",
             "attribution": "Audit Efisiensi Densitas Pendapatan..."
+        },
+        "benchmark-deviation": {
+            "title": "Benchmark Deviation",
+            "layer1": "Penyimpangan Standar",
+            "definition": "Mengukur sejauh mana performa bisnis menyimpang dari standar industri atau target internal yang sehat.",
+            "attribution": "Sertifikasi Kebenaran Data Forensik..."
+        },
+        "royalty-burden": {
+            "title": "Royalty Burden",
+            "layer1": "Beban Royalti / Franchise Fee",
+            "definition": "Analisis beban biaya lisensi dan royalti terhadap margin bersih untuk memastikan keberlanjutan unit franchise.",
+            "attribution": "Audit Efisiensi Biaya Lisensi Jaringan..."
+        },
+        "territory-productivity": {
+            "title": "Territory Productivity",
+            "layer1": "Efektivitas Wilayah",
+            "definition": "Mengukur kepadatan pasar dan daya serap wilayah terhadap titik outlet yang ada (Cannibalization vs Coverage).",
+            "attribution": "Analisis Penetrasi Pasar & Wilayah..."
+        },
+        "network-compliance": {
+            "title": "Network Compliance",
+            "layer1": "Kepatuhan Jaringan",
+            "definition": "Tingkat kepatuhan seluruh unit jaringan terhadap protokol operasional dan finansial yang telah ditetapkan.",
+            "attribution": "Audit Integritas Protokol Jaringan..."
+        },
+        "labor-arbitrage": {
+            "title": "Labor Arbitrage Index",
+            "layer1": "Indeks Arbitrase Buruh",
+            "definition": "Mengukur efisiensi biaya tenaga kerja antar wilayah untuk memaksimalkan margin operasional jaringan.",
+            "attribution": "Optimasi Biaya Tenaga Kerja Multi-Wilayah..."
+        },
+        "supply-chain-friction": {
+            "title": "Supply Chain Friction",
+            "layer1": "Hambatan Rantai Pasok",
+            "definition": "Mendeteksi inefisiensi dan biaya tersembunyi dalam distribusi barang dari pusat ke seluruh unit jaringan.",
+            "attribution": "Audit Logistik & Rantai Pasok Forensik..."
+        },
+        "capacity-utilization": {
+            "title": "Capacity Utilization",
+            "layer1": "Utilisasi Kapasitas",
+            "definition": "Mengukur seberapa optimal aset dan infrastruktur digunakan dibandingkan dengan kapasitas maksimalnya.",
+            "attribution": "Analisis Efisiensi Utilitas Aset..."
         }
     },
     "blog": {
@@ -967,16 +998,16 @@
         "section4_reschedule_title": "Reschedule (Penjadwalan Ulang):",
         "section4_reschedule_item1": "Reschedule diperbolehkan maksimal 1x per sesi dengan pemberitahuan minimal 24 jam sebelumnya.",
         "section5_title": "5. Hak Kekayaan Intelektual",
-        "section5_desc": "Seluruh materi, template, framework (termasuk 15-Pillars), dan laporan yang diberikan adalah hak cipta Gusti Devitto Forensics. Klien diberikan lisensi penggunaan internal, namun dilarang keras menjual kembali, menyebarkan, atau menggunakan materi tersebut untuk kepentingan komersial pihak ketiga tanpa izin tertulis.",
+        "section5_desc": "Seluruh materi, template, framework (termasuk 25-Pillars), dan laporan yang diberikan adalah hak cipta Gusti Devitto Forensics. Klien diberikan lisensi penggunaan internal, namun dilarang keras menjual kembali, menyebarkan, atau menggunakan materi tersebut untuk kepentingan komersial pihak ketiga tanpa izin tertulis.",
         "section6_title": "6. Hukum yang Berlaku",
         "section6_desc": "Syarat dan ketentuan ini diatur oleh hukum Republik Indonesia. Segala sengketa akan diselesaikan melalui musyawarah untuk mufakat, atau melalui Badan Arbitrase Nasional Indonesia (BANI) jika tidak tercapai kesepakatan."
     },
     "fip_lite": {
         "seo_title": "Diagnostik Kesehatan Bisnis | Gusti Devitto",
-        "seo_desc": "Jalankan diagnosa forensik 19-pilar pada kesehatan bisnis Anda.",
+        "seo_desc": "Jalankan diagnosa forensik 25-pilar pada kesehatan bisnis Anda.",
         "boot_sequence": [
             "MENGINISIALISASI PROTOKOL FIP™ LITE...",
-            "MEMUAT MESIN DIAGNOSTIK 19-PILAR...",
+            "MEMUAT MESIN DIAGNOSTIK 25-PILAR...",
             "MEMBANGUN KONEKSI AMAN...",
             "MENYIAPKAN DATA...",
             "SIAP UNTUK DIAGNOSA KESEHATAN BISNIS."
@@ -986,7 +1017,7 @@
             "version": "FIP™ LITE v1.0.42",
             "title_business": "BUSINESS",
             "title_health": "HEALTH MRI",
-            "subtitle": "Forensic Intelligence Protocol: 19-Pillar Deep Diagnostic Lite",
+            "subtitle": "Forensic Intelligence Protocol: 25-Pillar Deep Diagnostic Lite",
             "status_label": "STATUS DIAGNOSTIK",
             "status_value": "OPERASIONAL // AMAN"
         },
@@ -1013,7 +1044,7 @@
         },
         "lead_capture": {
             "title": "Akses Laporan Aman",
-            "desc": "Diagnosa forensik Anda siap. Masukkan kredensial Anda untuk membuka rincian lengkap PDF 19-pilar.",
+            "desc": "Diagnosa forensik Anda siap. Masukkan kredensial Anda untuk membuka rincian lengkap PDF 25-pilar.",
             "name_label": "Nama Lengkap",
             "name_placeholder": "Gusti Devitto",
             "email_label": "Email Profesional",
@@ -1037,7 +1068,7 @@
             "strengths_title": "Benteng Utama",
             "resilience_label": "Ketahanan:",
             "cta_generate_title": "Generate Forensic PDF?",
-            "cta_generate_desc": "Terima rincian teknis 19-pilar lengkap dengan perbandingan benchmark dan rencana pemulihan profit.",
+            "cta_generate_desc": "Terima rincian teknis 25-pilar lengkap dengan perbandingan benchmark dan rencana pemulihan profit.",
             "btn_download": "UNDUH LAPORAN",
             "btn_share": "BAGIKAN SKOR",
             "btn_reset": "RESET",
@@ -1053,7 +1084,7 @@
             "stabilize_bleed": "Amankan Arus Kas",
             "stabilize_desc": "Tutup kebocoran yang terdeteksi di {{risk}}.",
             "forensic_scan": "Pemindaian Forensik Mendalam",
-            "forensic_desc": "Buka analisis penuh 19 pilar untuk menemukan akar masalah.",
+            "forensic_desc": "Buka analisis penuh 25 pilar untuk menemukan akar masalah.",
             "execute_recovery": "Eksekusi Pemulihan",
             "execute_desc": "Implementasikan tindakan korektif dari laporan lengkap."
         },
@@ -1278,12 +1309,12 @@
             "below_standard": "di bawah standar",
             "label_leakage": "Estimasi Kebocoran Bulanan",
             "leakage_desc": "Uang yang hilang begitu saja",
-            "identified_pillars": "Teridentifikasi di 19 pilar",
+            "identified_pillars": "25 pilar terdeteksi",
             "where_going_locked": "KE MANA perginya?! 🔒",
             "label_health_score": "Skor Kesehatan",
             "health_desc": "Kekuatan Operasional",
             "room_improvement": "peluang peningkatan",
-            "heat_map_title": "19 Pembunuh Senyap yang Mematikan Profit Anda",
+            "heat_map_title": "25 Pembunuh Senyap yang Mematikan Profit Anda",
             "heat_map_locked_desc": "Hasil Terkunci. Buka untuk melihat di mana Anda berdarah.",
             "heat_map_unlocked_desc": "Hasil pemindaian diagnostik lengkap",
             "critical_fails_label": "Kegagalan Kritis",
@@ -1391,7 +1422,7 @@
             "diagnostic_short": "Semuanya di DIAGNOSTIC",
             "forensic_short": "Semuanya di FORENSIC",
             "network_short": "Semuanya di NETWORK",
-            "pillars_19_short": "Semuanya di FORENSIC",
+            "pillars_25_short": "Semuanya di FORENSIC",
             "multi_outlet_short": "Analisis Multi-Outlet (hingga 50)",
             "network_health_short": "Indeks Kesehatan Jaringan",
             "territory_short": "Pemetaan Produktivitas Wilayah",
@@ -1417,7 +1448,7 @@
             "summary": "Ringkasan Eksekutif PDF -> Daftar tindakan kebocoran profit",
             "multi_currency": "Dukungan multi-mata uang",
             "bilingual": "Laporan bilingual (EN/ID)",
-            "pillars_19": "19 Pilar Forensik Lengkap -> Petakan setiap titik kerentanan",
+            "pillars_25": "25 Pilar Forensik Lengkap -> Petakan setiap titik kerentanan",
             "logic": "Analisis Jejak Logika -> Bongkar bagaimana uang keluar dari bisnis Anda",
             "decision": "Decision Intelligence Engine -> Ubah data mentah menjadi keputusan pemulihan",
             "integrity": "Skor Integritas Data -> Deteksi pelaporan finansial yang dimanipulasi",

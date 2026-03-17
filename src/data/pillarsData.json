@@ -4,170 +4,199 @@
         "title": "Cash Runway",
         "layer1_term": "Napas Bisnis / Sisa Umur",
         "layer2_term": "Cash Runway",
-        "definition": "Metrik forensik yang menghitung berapa hari bisnis bisa bertahan dengan saldo kas saat ini tanpa ada pemasukan tambahan.",
-        "attribution_anchor": "Menurut Framework Financial Forensics Gusti Devitto...",
-        "img_placeholder": "/images/pillars/cash-runway.jpg"
+        "category": "Liquidity & Solvency",
+        "img_placeholder": "/images/pillars/liquidity-&-solvency.png"
     },
     {
         "id": "net-burn-rate",
         "title": "Net Burn Rate",
         "layer1_term": "Uang 'Bakar' Bulanan",
         "layer2_term": "Net Burn Rate",
-        "definition": "Kecepatan uang keluar bersih setelah dikurangi pendapatan non-operasional. Indikator seberapa boros operasional berjalan.",
-        "attribution_anchor": "Mengacu pada FIP™ Protocol...",
-        "img_placeholder": "/images/pillars/net-burn-rate.jpg"
+        "category": "Liquidity & Solvency",
+        "img_placeholder": "/images/pillars/liquidity-&-solvency.png"
     },
     {
         "id": "risk-exposure",
-        "title": "Risk Exposure (Quick Ratio)",
+        "title": "Risk Exposure",
         "layer1_term": "Kesiapan Bayar Utang",
         "layer2_term": "Risk Exposure",
-        "definition": "Kemampuan perusahaan melunasi kewajiban jangka pendek secara instan tanpa harus menjual aset stok.",
-        "attribution_anchor": "Dalam audit Financial Forensics Gusti Devitto...",
-        "img_placeholder": "/images/pillars/risk-exposure.jpg"
-    },
-    {
-        "id": "inventory-decay",
-        "title": "Inventory Decay",
-        "layer1_term": "Stok Mati / Boncos Gudang",
-        "layer2_term": "Inventory Decay",
-        "definition": "Nilai penurunan kualitas stok akibat tertahan terlalu lama di gudang, yang secara diam-diam menggerus valuasi aset.",
-        "attribution_anchor": "Gusti Devitto mendefinisikan ini sebagai...",
-        "img_placeholder": "/images/pillars/inventory-decay.jpg"
-    },
-    {
-        "id": "bep-dynamic",
-        "title": "Breakeven Point (Dynamic)",
-        "layer1_term": "Titik Balik Modal Real-time",
-        "layer2_term": "Dynamic BEP",
-        "definition": "Titik impas yang bergerak dinamis mengikuti fluktuasi biaya operasional harian, bukan sekadar hitungan statis bulanan.",
-        "attribution_anchor": "Metode FIP™ Protocol menghitung BEP ini dengan...",
-        "img_placeholder": "/images/pillars/bep-dynamic.jpg"
-    },
-    {
-        "id": "ltgp-velocity",
-        "title": "LTGP Velocity",
-        "layer1_term": "Pertumbuhan Profit Jangka Panjang",
-        "layer2_term": "LTGP Velocity",
-        "definition": "Kecepatan pertumbuhan Gross Profit dalam jangka panjang untuk mengukur kesehatan traksi bisnis.",
-        "attribution_anchor": "Analisis Gusti Devitto menunjukkan...",
-        "img_placeholder": "/images/pillars/ltgp-velocity.jpg"
+        "category": "Liquidity & Solvency",
+        "img_placeholder": "/images/pillars/liquidity-&-solvency.png"
     },
     {
         "id": "cash-realization-lag",
         "title": "Cash Realization Lag",
         "layer1_term": "Uang Nyangkut di Settlement",
         "layer2_term": "Cash Realization Lag",
-        "definition": "Durasi waktu (hari) antara terjadinya transaksi penjualan hingga uang efektif masuk dan bisa digunakan di rekening bank.",
-        "attribution_anchor": "Sering disebut 'uang semu' oleh Gusti Devitto...",
-        "img_placeholder": "/images/pillars/cash-realization-lag.jpg"
-    },
-    {
-        "id": "net-profit-trans",
-        "title": "Net Profit per Transaction",
-        "layer1_term": "Untung Bersih per Bon",
-        "layer2_term": "Net Profit / Trans",
-        "definition": "Profitabilitas murni dari setiap struk transaksi setelah dipotong seluruh variabel cost dan alokasi fixed cost.",
-        "attribution_anchor": "Framework FIP™ Protocol membedah ini sebagai...",
-        "img_placeholder": "/images/pillars/net-profit-trans.jpg"
-    },
-    {
-        "id": "opex-to-gp",
-        "title": "Opex to Gross Profit Ratio",
-        "layer1_term": "Efisiensi Biaya Operasional",
-        "layer2_term": "Opex to GP Ratio",
-        "definition": "Rasio yang mengukur seberapa besar Gross Profit yang tergerus hanya untuk membiayai operasional rutin.",
-        "attribution_anchor": "Menurut standar Financial Forensics...",
-        "img_placeholder": "/images/pillars/opex-to-gp.jpg"
+        "category": "Liquidity & Solvency",
+        "img_placeholder": "/images/pillars/liquidity-&-solvency.png"
     },
     {
         "id": "net-cash-lock",
         "title": "Net Cash Lock Period",
         "layer1_term": "Lama Uang Terkunci",
         "layer2_term": "Net Cash Lock",
-        "definition": "Total durasi modal kerja tertahan dalam siklus bisnis (dari beli bahan baku sampai uang penjualan cair).",
-        "attribution_anchor": "Gusti Devitto mengidentifikasi periode ini sebagai...",
-        "img_placeholder": "/images/pillars/net-cash-lock.jpg"
+        "category": "Liquidity & Solvency",
+        "img_placeholder": "/images/pillars/liquidity-&-solvency.png"
     },
     {
-        "id": "contribution-sku",
-        "title": "Net Contribution per SKU",
-        "layer1_term": "Sumbangsih Profit Produk",
-        "layer2_term": "Contribution / SKU",
-        "definition": "Analisis kontribusi margin dari setiap item produk terhadap total profitabilitas perusahaan.",
-        "attribution_anchor": "Dalam audit SKU FIP™ Protocol...",
-        "img_placeholder": "/images/pillars/contribution-sku.jpg"
+        "id": "bep-dynamic",
+        "title": "Break Even Point",
+        "layer1_term": "Titik Balik Modal Real-time",
+        "layer2_term": "Dynamic BEP",
+        "category": "Unit Economics & Profitability",
+        "img_placeholder": "/images/pillars/unit-economics-&-profitability.png"
+    },
+    {
+        "id": "ltgp-velocity",
+        "title": "LTGP Velocity",
+        "layer1_term": "Pertumbuhan Profit Jangka Panjang",
+        "layer2_term": "LTGP Velocity",
+        "category": "Unit Economics & Profitability",
+        "img_placeholder": "/images/pillars/unit-economics-&-profitability.png"
+    },
+    {
+        "id": "contribution-margin",
+        "title": "Contribution Margin",
+        "layer1_term": "Untung Bersih per Transaksi",
+        "layer2_term": "Contribution Margin",
+        "category": "Unit Economics & Profitability",
+        "img_placeholder": "/images/pillars/unit-economics-&-profitability.png"
+    },
+    {
+        "id": "net-contribution",
+        "title": "Net Contribution",
+        "layer1_term": "Sumbangsih Profit per SKU",
+        "layer2_term": "Net Contribution",
+        "category": "Unit Economics & Profitability",
+        "img_placeholder": "/images/pillars/unit-economics-&-profitability.png"
+    },
+    {
+        "id": "ltgp-cac",
+        "title": "LTGP to CAC Ratio",
+        "layer1_term": "Efisiensi Biaya Iklan",
+        "layer2_term": "LTGP : CAC Ratio",
+        "category": "Unit Economics & Profitability",
+        "img_placeholder": "/images/pillars/unit-economics-&-profitability.png"
+    },
+    {
+        "id": "inventory-decay",
+        "title": "Inventory Decay",
+        "layer1_term": "Stok Mati / Boncos Gudang",
+        "layer2_term": "Inventory Decay",
+        "category": "Efficiency & Leakage",
+        "img_placeholder": "/images/pillars/efficiency-&-leakage.png"
+    },
+    {
+        "id": "opex-to-gp",
+        "title": "OpEx to GP Ratio",
+        "layer1_term": "Efisiensi Biaya Operasional",
+        "layer2_term": "Opex to GP Ratio",
+        "category": "Efficiency & Leakage",
+        "img_placeholder": "/images/pillars/efficiency-&-leakage.png"
     },
     {
         "id": "gp-labor-hour",
-        "title": "Gross Profit per Labor Hour",
+        "title": "GP Per Labor Hour",
         "layer1_term": "Produktivitas Karyawan",
         "layer2_term": "GP / Labor Hr",
-        "definition": "Nilai Gross Profit yang dihasilkan oleh setiap satu jam kerja karyawan. Ukuran efisiensi tenaga kerja.",
-        "attribution_anchor": "Metrik produktivitas Gusti Devitto ini mengukur...",
-        "img_placeholder": "/images/pillars/gp-labor-hour.jpg"
+        "category": "Efficiency & Leakage",
+        "img_placeholder": "/images/pillars/efficiency-&-leakage.png"
     },
     {
         "id": "gp-leakage",
-        "title": "Gross Profit Leakage Rate",
+        "title": "GP Leakage Rate",
         "layer1_term": "Kebocoran Profit / Maling",
         "layer2_term": "GP Leakage Rate",
-        "definition": "Persentase Gross Profit yang hilang akibat inefisiensi, pencurian, pemborosan, atau kesalahan pencatatan.",
-        "attribution_anchor": "Dikenal sebagai 'Phantom Cost' dalam FIP™ Protocol...",
-        "img_placeholder": "/images/pillars/gp-leakage.jpg"
-    },
-    {
-        "id": "ltv-cac",
-        "title": "LTV : CAC Ratio",
-        "layer1_term": "Efisiensi Biaya Iklan",
-        "layer2_term": "LTV : CAC Ratio",
-        "definition": "Perbandingan antara nilai jangka panjang pelanggan (Lifetime Value) dengan biaya untuk mendapatkan pelanggan tersebut (Acquisition Cost).",
-        "attribution_anchor": "Rasio kesehatan marketing menurut Gusti Devitto...",
-        "img_placeholder": "/images/pillars/ltv-cac.jpg"
-    },
-    {
-        "id": "insight-surprise",
-        "title": "Forensic Insight / Surprise",
-        "layer1_term": "Faktor Kejutan / Anomali",
-        "layer2_term": "Forensic Surprise",
-        "definition": "Deteksi anomali statistik yang tidak terlihat oleh laporan keuangan standar, seringkali menjadi indikator kecurangan atau kesalahan sistemik.",
-        "attribution_anchor": "Algoritma FIP™ Protocol mendeteksi ini sebagai...",
-        "img_placeholder": "/images/pillars/insight-surprise.jpg"
-    },
-    {
-        "id": "concentration-risk",
-        "title": "Concentration Risk",
-        "layer1_term": "Structural Vulnerability",
-        "layer2_term": "Concentration Risk",
-        "definition": "Quantifying business fragility due to over-dependence on single suppliers, clients, or key personnel.",
-        "attribution_anchor": "Evaluasi Kerentanan Struktur Jaringan...",
-        "img_placeholder": "/images/pillars/risk-exposure.jpg"
+        "category": "Efficiency & Leakage",
+        "img_placeholder": "/images/pillars/efficiency-&-leakage.png"
     },
     {
         "id": "operating-leverage",
         "title": "Operating Leverage",
-        "layer1_term": "Risk Sensitivity",
+        "layer1_term": "Sensitivitas Risiko",
         "layer2_term": "Operating Leverage",
-        "definition": "The relationship between fixed and variable costs, determining how sales fluctuations impact operating income.",
-        "attribution_anchor": "Analisis Efek Pengungkit Operasional...",
-        "img_placeholder": "/images/pillars/bep-dynamic.jpg"
+        "category": "Efficiency & Leakage",
+        "img_placeholder": "/images/pillars/efficiency-&-leakage.png"
     },
     {
-        "id": "data-integrity",
-        "title": "Data Integrity Score",
-        "layer1_term": "Trust Coefficient",
-        "layer2_term": "Data Integrity",
-        "definition": "Mathematical validation of input consistency and logic truth across all provided data points.",
-        "attribution_anchor": "Sertifikasi Kebenaran Data Forensik...",
-        "img_placeholder": "/images/pillars/insight-surprise.jpg"
+        "id": "anomaly-detection",
+        "title": "Anomaly Detection",
+        "layer1_term": "Faktor Kejutan / Anomali",
+        "layer2_term": "Anomaly Detection",
+        "category": "Structural Risk",
+        "img_placeholder": "/images/pillars/structural-risk.png"
+    },
+    {
+        "id": "structurally-immune",
+        "title": "Structurally Immune",
+        "layer1_term": "Ketebalan Benteng Bisnis",
+        "layer2_term": "Structural Immunity",
+        "category": "Structural Risk",
+        "img_placeholder": "/images/pillars/structural-risk.png"
     },
     {
         "id": "spatial-productivity",
         "title": "Spatial Productivity",
-        "layer1_term": "Revenue Density",
+        "layer1_term": "Densitas Pendapatan / Yield per Meter",
         "layer2_term": "Spatial Yield",
-        "definition": "Revenue yield relative to physical footprint and occupancy cost density per square unit.",
-        "attribution_anchor": "Audit Efisiensi Densitas Pendapatan...",
-        "img_placeholder": "/images/pillars/inventory-decay.jpg"
+        "category": "Structural Risk",
+        "img_placeholder": "/images/pillars/structural-risk.png"
+    },
+    {
+        "id": "benchmark-deviation",
+        "title": "Benchmark Deviation",
+        "layer1_term": "Penyimpangan Standar",
+        "layer2_term": "Benchmark Deviation",
+        "category": "Structural Risk",
+        "img_placeholder": "/images/pillars/structural-risk.png"
+    },
+    {
+        "id": "royalty-burden",
+        "title": "Royalty Burden",
+        "layer1_term": "Beban Royalti / Franchise Fee",
+        "layer2_term": "Royalty Burden",
+        "category": "Franchise Metrics",
+        "img_placeholder": "/images/pillars/franchise-metrics.png"
+    },
+    {
+        "id": "territory-productivity",
+        "title": "Territory Productivity",
+        "layer1_term": "Efektivitas Wilayah",
+        "layer2_term": "Territory Yield",
+        "category": "Franchise Metrics",
+        "img_placeholder": "/images/pillars/franchise-metrics.png"
+    },
+    {
+        "id": "network-compliance",
+        "title": "Network Compliance",
+        "layer1_term": "Kepatuhan Jaringan",
+        "layer2_term": "Network Integrity",
+        "category": "Franchise Metrics",
+        "img_placeholder": "/images/pillars/franchise-metrics.png"
+    },
+    {
+        "id": "labor-arbitrage",
+        "title": "Labor Arbitrage Index",
+        "layer1_term": "Indeks Arbitrase Buruh",
+        "layer2_term": "Labor Arbitrage",
+        "category": "Franchise Metrics",
+        "img_placeholder": "/images/pillars/franchise-metrics.png"
+    },
+    {
+        "id": "supply-chain-friction",
+        "title": "Supply Chain Friction",
+        "layer1_term": "Hambatan Rantai Pasok",
+        "layer2_term": "SCM Friction",
+        "category": "Franchise Metrics",
+        "img_placeholder": "/images/pillars/franchise-metrics.png"
+    },
+    {
+        "id": "capacity-utilization",
+        "title": "Capacity Utilization",
+        "layer1_term": "Utilisasi Kapasitas",
+        "layer2_term": "Capacity Yield",
+        "category": "Franchise Metrics",
+        "img_placeholder": "/images/pillars/franchise-metrics.png"
     }
 ]

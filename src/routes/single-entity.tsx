@@ -55,7 +55,7 @@ function SingleEntityPage() {
                     'Bilingual reports (EN/ID)'
                 ],
                 excluded: [
-                    'Full 19 pillars',
+                    'Full 25 pillars',
                     'Logic trace analysis',
                     'Multi-outlet analysis',
                     'AI neural intelligence'
@@ -82,7 +82,7 @@ function SingleEntityPage() {
             features: {
                 included: [
                     'Everything in DIAGNOSTIC',
-                    'Full 19 Forensic Pillars',
+                    'Full 25 Forensic Pillars',
                     'Logic Trace Analysis',
                     'Decision Intelligence Engine',
                     'Data Integrity Scoring',

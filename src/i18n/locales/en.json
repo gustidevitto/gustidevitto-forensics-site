@@ -3,8 +3,8 @@
         "calculator": "Free Diagnostic",
         "about": "About",
         "blog": "Blog",
-        "pillars": "19 Pillars",
-        "pricing": "Pricing",
+        "pillars_count": "25-Pillar",
+        "pillars_subtitle": "Granular Audit Financial Forensics",
         "contact": "Contact",
         "owners": "For Owners",
         "investors": "For Investors & PE",
@@ -762,20 +762,20 @@
         "cta_verdict": "Get Your Business Verdict"
     },
     "pillars_page": {
-        "seo_title": "19 Pillars | Profit Recovery Framework",
-        "seo_desc": "Study the 19 pillars of the Gusti Devitto profit recovery methodology to find and recover trapped profit in multi-outlet businesses.",
+        "seo_title": "25 Pillars | Profit Recovery Framework",
+        "seo_desc": "Study the 25 pillars of the Gusti Devitto profit recovery methodology to find and recover trapped profit in multi-outlet businesses.",
         "badge": "Core Methodology",
-        "title": "19 Pillars of Profit Recovery",
+        "title": "25 Pillars of Profit Recovery",
         "subtitle": "Modular diagnostic framework to dissect your business anatomy. From \"Field Language\" to \"Forensic Metrics\", we reveal what standard financial reports hide.",
         "implementation_badge": "Practical Implementation",
         "mri_title": "Integrated MRI: <1/> <3>FIP™ Digital Mirror</3>",
-        "mri_desc": "The 19 pillars below are not just theory. They are all integrated into the <1>FIP™ Protocol</1> — a diagnostic engine that maps your financial health deterministically.",
+        "mri_desc": "The 25 pillars below are not just theory. They are all integrated into the <1>FIP™ Protocol</1> — a diagnostic engine that maps your financial health deterministically.",
         "demo_btn": "See The Interception In Action",
         "pillar_label": "Pillar {{index}}",
         "field_language": "Field Language:",
         "view_analysis": "View Forensic Analysis",
         "cta_title": "Want to Know Your Business Numbers?",
-        "cta_quote": "\"Don't let assumptions destroy your business. Use the 19 Pillars Framework to get true profit clarity.\"",
+        "cta_quote": "\"Don't let assumptions destroy your business. Use the 25 Pillars Framework to get true profit clarity.\"",
         "cta_pcc": "Run FIP™ Lite Diagnosis",
         "cta_consult": "Strategic Consultation"
     },
@@ -800,29 +800,35 @@
         "cash-runway": {
             "title": "Cash Runway",
             "layer1": "Business Breath / Remaining Life",
-            "definition": "Forensic metric that calculates how many days a business can survive with the current cash balance without any additional income.",
-            "attribution": "According to the Gusti Devitto Profit Recovery Framework..."
+            "definition": "A forensic metric that calculates how many days a business can survive with the current cash balance without any additional income.",
+            "attribution": "According to Gusti Devitto's Financial Forensics Framework..."
         },
         "net-burn-rate": {
             "title": "Net Burn Rate",
-            "layer1": "Monthly 'Burn' Cash",
+            "layer1": "Monthly 'Burn' Money",
             "definition": "The speed of net cash outflow after deducting non-operational income. An indicator of how wasteful operations are.",
-            "attribution": "Referring to the FIP™ diagnostic protocol..."
+            "attribution": "Referring to the FIP™ Protocol..."
         },
         "risk-exposure": {
-            "title": "Risk Exposure (Quick Ratio)",
+            "title": "Risk Exposure",
             "layer1": "Debt Payment Readiness",
-            "definition": "The ability of a company to pay off short-term obligations instantly without having to sell stock assets.",
-            "attribution": "In the Gusti Devitto Profit Recovery audit..."
+            "definition": "The ability of a company to settle short-term obligations instantly without having to sell stock assets.",
+            "attribution": "In Gusti Devitto's Financial Forensics audit..."
         },
-        "inventory-decay": {
-            "title": "Inventory Decay",
-            "layer1": "Dead Stock / Warehouse Loss",
-            "definition": "The decrease in stock quality due to being held too long in the warehouse, which quietly erodes asset valuation.",
-            "attribution": "Gusti Devitto defines this as..."
+        "cash-realization-lag": {
+            "title": "Cash Realization Lag",
+            "layer1": "Money Stuck in Settlement",
+            "definition": "The duration (days) between a sales transaction occurring and the money effectively entering and being usable in the bank account.",
+            "attribution": "Often called 'pseudo money' by Gusti Devitto..."
+        },
+        "net-cash-lock": {
+            "title": "Net Cash Lock Period",
+            "layer1": "Duration of Locked Money",
+            "definition": "The total duration of working capital held in the business cycle (from buying raw materials to sales cash being realized).",
+            "attribution": "Gusti Devitto identifies this period as..."
         },
         "bep-dynamic": {
-            "title": "Breakeven Point (Dynamic)",
+            "title": "Break Even Point",
             "layer1": "Real-time Break-even Point",
             "definition": "A break-even point that moves dynamically following daily operational cost fluctuations, not just monthly static calculations.",
             "attribution": "The FIP™ method calculates this BEP with..."
@@ -833,83 +839,113 @@
             "definition": "The growth speed of Gross Profit in the long term to measure the health of business traction.",
             "attribution": "Gusti Devitto's analysis shows..."
         },
-        "cash-realization-lag": {
-            "title": "Cash Realization Lag",
-            "layer1": "Money Stuck in Settlement",
-            "definition": "The duration (days) between a sales transaction occurring and the money effectively entering and being usable in the bank account.",
-            "attribution": "Often called 'pseudo money' by Gusti Devitto..."
-        },
-        "net-profit-trans": {
-            "title": "Net Profit per Transaction",
-            "layer1": "Net Profit per Bill",
+        "contribution-margin": {
+            "title": "Contribution Margin",
+            "layer1": "Net Profit per Transaction",
             "definition": "Pure profitability from each transaction receipt after deducting all variable costs and fixed cost allocations.",
             "attribution": "The FIP™ framework dissects this as..."
         },
-        "opex-to-gp": {
-            "title": "Opex to Gross Profit Ratio",
-            "layer1": "Operational Cost Efficiency",
-            "definition": "A ratio that measures how much Gross Profit is eroded just to finance routine operations.",
-            "attribution": "According to Profit Recovery & Business Forensics standards..."
-        },
-        "net-cash-lock": {
-            "title": "Net Cash Lock Period",
-            "layer1": "Duration of Locked Money",
-            "definition": "The total duration of working capital held in the business cycle (from buying raw materials to sales cash being realized).",
-            "attribution": "Gusti Devitto identifies this period as..."
-        },
-        "contribution-sku": {
-            "title": "Net Contribution per SKU",
+        "net-contribution": {
+            "title": "Net Contribution",
             "layer1": "Product Profit Contribution",
             "definition": "Analysis of the margin contribution from each product item towards the company's total profitability.",
             "attribution": "In the FIP™ SKU audit..."
         },
+        "ltgp-cac": {
+            "title": "LTGP to CAC Ratio",
+            "layer1": "Ad Cost Efficiency",
+            "definition": "The comparison between the long-term value of a customer (Lifetime Value) and the cost to acquire that customer (Acquisition Cost).",
+            "attribution": "The marketing health ratio according to Gusti Devitto..."
+        },
+        "inventory-decay": {
+            "title": "Inventory Decay",
+            "layer1": "Dead Stock / Warehouse Loss",
+            "definition": "The decrease in stock quality due to being held too long in the warehouse, which quietly erodes asset valuation.",
+            "attribution": "Gusti Devitto defines this as..."
+        },
+        "opex-to-gp": {
+            "title": "OpEx to GP Ratio",
+            "layer1": "Operational Cost Efficiency",
+            "definition": "A ratio that measures how much Gross Profit is eroded just to finance routine operations.",
+            "attribution": "According to Profit Recovery & Business Forensics standards..."
+        },
         "gp-labor-hour": {
-            "title": "Gross Profit per Labor Hour",
+            "title": "GP Per Labor Hour",
             "layer1": "Employee Productivity",
             "definition": "The value of Gross Profit generated by each hour of employee work. A measure of labor efficiency.",
             "attribution": "This Gusti Devitto productivity metric measures..."
         },
         "gp-leakage": {
-            "title": "Gross Profit Leakage Rate",
+            "title": "GP Leakage Rate",
             "layer1": "Profit Leakage / Theft",
             "definition": "The percentage of Gross Profit lost due to inefficiency, theft, waste, or recording errors.",
             "attribution": "Known as 'Trapped Profit' in our methodology..."
         },
-        "ltv-cac": {
-            "title": "LTV : CAC Ratio",
-            "layer1": "Ad Cost Efficiency",
-            "definition": "The comparison between the long-term value of a customer (Lifetime Value) and the cost to acquire that customer (Acquisition Cost).",
-            "attribution": "The marketing health ratio according to Gusti Devitto..."
+        "operating-leverage": {
+            "title": "Operating Leverage",
+            "layer1": "Risk Sensitivity",
+            "definition": "Measures how a change in revenue impacts operating income. High leverage means high risk but high reward during growth.",
+            "attribution": "Operational Scalability & Risk Analysis..."
         },
-        "insight-surprise": {
-            "title": "Forensic Insight / Surprise",
+        "anomaly-detection": {
+            "title": "Anomaly Detection",
             "layer1": "Surprise Factor / Anomaly",
             "definition": "Detection of statistical anomalies invisible to standard financial reports, often an indicator of fraud or systemic error.",
             "attribution": "The FIP™ algorithm detects this as..."
         },
-        "concentration-risk": {
-            "title": "Concentration Risk",
-            "layer1": "Structural Vulnerability",
-            "definition": "Your profit may appear stable, but high dependence on a single supplier or client is a structural risk. We quantify your business fragility before it impacts margin sustainability.",
+        "structurally-immune": {
+            "title": "Structurally Immune",
+            "layer1": "Business Fortress Thickness",
+            "definition": "Measures the resilience of the business structure against external shocks and dependence on risky single variables.",
             "attribution": "Network Dependency & Fragility Audit..."
-        },
-        "operating-leverage": {
-            "title": "Operating Leverage",
-            "layer1": "Risk Sensitivity / Scaling Factor",
-            "definition": "Measures how a change in revenue impacts operating income. High leverage means high risk but high reward during growth.",
-            "attribution": "Operational Scalability & Risk Analysis..."
-        },
-        "data-integrity": {
-            "title": "Data Integrity Score",
-            "layer1": "Truth Coefficient / Audit Quality",
-            "definition": "The degree of consistency and mathematical accuracy in your reported data. Low scores indicate potential fraud or systemic recording errors.",
-            "attribution": "Forensic Data Accuracy Validation..."
         },
         "spatial-productivity": {
             "title": "Spatial Productivity",
             "layer1": "Revenue Density / Yield per Sqm",
             "definition": "Revenue generated per unit of floor space. Essential for retail and F&B to measure if the physical location is paying for itself.",
             "attribution": "Revenue Density & Yield Optimization..."
+        },
+        "benchmark-deviation": {
+            "title": "Benchmark Deviation",
+            "layer1": "Standard Deviation",
+            "definition": "Measures the extent to which business performance deviates from healthy industrial standards or internal targets.",
+            "attribution": "Forensic Data Accuracy Validation..."
+        },
+        "royalty-burden": {
+            "title": "Royalty Burden",
+            "layer1": "Royalty / Franchise Fee Burden",
+            "definition": "Analysis of the license and royalty cost burden on net margins to ensure the sustainability of the franchise unit.",
+            "attribution": "Network License Cost Efficiency Audit..."
+        },
+        "territory-productivity": {
+            "title": "Territory Productivity",
+            "layer1": "Territory Effectiveness",
+            "definition": "Measures market density and the territory's absorption capacity for existing outlet points (Cannibalization vs Coverage).",
+            "attribution": "Market Penetration & Territory Analysis..."
+        },
+        "network-compliance": {
+            "title": "Network Compliance",
+            "layer1": "Network Compliance",
+            "definition": "The level of compliance of all network units with established operational and financial protocols.",
+            "attribution": "Network Protocol Integrity Audit..."
+        },
+        "labor-arbitrage": {
+            "title": "Labor Arbitrage Index",
+            "layer1": "Labor Arbitrage Index",
+            "definition": "Measures labor cost efficiency across regions to maximize the network's operational margins.",
+            "attribution": "Multi-Regional Labor Cost Optimization..."
+        },
+        "supply-chain-friction": {
+            "title": "Supply Chain Friction",
+            "layer1": "Supply Chain Obstacles",
+            "definition": "Detects inefficiencies and hidden costs in the distribution of goods from the center to all network units.",
+            "attribution": "Forensic Logistics & Supply Chain Audit..."
+        },
+        "capacity-utilization": {
+            "title": "Capacity Utilization",
+            "layer1": "Capacity Utilization",
+            "definition": "Measures how optimally assets and infrastructure are used compared to their maximum capacity.",
+            "attribution": "Asset Utility Efficiency Analysis..."
         }
     },
     "blog": {
@@ -989,7 +1025,7 @@
             "version": "FIP™ LITE v1.0.42",
             "title_business": "BUSINESS",
             "title_health": "HEALTH MRI",
-            "subtitle": "Forensic Intelligence Protocol: 19-Pillar Deep Diagnostic Lite",
+            "subtitle": "Forensic Intelligence Protocol: 25-Pillar Deep Diagnostic Lite",
             "status_label": "DIAGNOSTIC STATUS",
             "status_value": "OPERATIONAL // SECURED"
         },
@@ -1139,43 +1175,6 @@
             "total_working_hours": "Total hours everyone worked this month."
         }
     },
-    "case_files": {
-        "badge": "VERIFIED CASE FILES",
-        "title": "Forensic Chronicles",
-        "subtitle": "A retrospective look at how we identified and stopped leakage across industries.",
-        "case1_title": "Systemic Inventory Theft",
-        "case1_desc": "Deep audit found raw material anomalies disguised as 'waste' over an 8-month period.",
-        "case1_impact": "$12,000 Recovered / mo",
-        "case2_title": "Phantom Payroll Scandal",
-        "case2_desc": "Behavioral data analysis revealed fictitious overtime payments for 14 staff who were never on-site.",
-        "case2_impact": "8.4% Margin Lift",
-        "case3_title": "Vendor Pricing Leakage",
-        "case3_desc": "Internal purchasing manipulation resulting in unauthorized COGS bloat.",
-        "case3_impact": "$45,000 Secured",
-        "sector_fb_chain": "F&B Chain",
-        "type_inventory_fraud": "Inventory Fraud",
-        "sector_retail": "Retail Fashion",
-        "type_phantom_labor": "Phantom Labor",
-        "sector_automotive": "Automotive Service",
-        "type_pricing_leakage": "Pricing Leakage",
-        "label_impact": "Impact Verified",
-        "disclaimer": "ALL DATA HAS BEEN ANONYMIZED TO PROTECT CLIENT PRIVACY"
-    },
-    "pricing_modal": {
-        "one_time_title": "One-Time Audit",
-        "one_time_commitment": "1 comprehensive audit",
-        "quarterly_title": "Quarterly Program",
-        "quarterly_commitment": "{{count}} audits over 9 months",
-        "annual_title": "Annual Partnership",
-        "annual_commitment": "{{count}} audits over 12 months",
-        "feature_access": "Continuous access: unlimited consultation",
-        "feature_priority": "Priority scheduling & strategic calls",
-        "label_commitment": "Commitment",
-        "label_total": "Total Investment",
-        "label_savings": "Total Savings",
-        "label_included": "What's Included",
-        "cta_schedule": "SCHEDULE DISCOVERY CALL"
-    },
     "fip_lite_v2": {
         "input_form": {
             "hero_badge": "Free Forensic Analysis",
@@ -1243,12 +1242,12 @@
             "below_standard": "below standard",
             "label_leakage": "Estimated Monthly Leakage",
             "leakage_desc": "Money vanishing into thin air",
-            "identified_pillars": "Identified across 19 pillars",
+            "identified_pillars": "25 pillars detected",
             "where_going_locked": "WHERE is it going?! 🔒",
             "label_health_score": "Health Score",
             "health_desc": "Operational Strength",
             "room_improvement": "room for improvement",
-            "heat_map_title": "19 Silent Killers Draining Your Profit",
+            "heat_map_title": "25 Silent Killers Draining Your Profit",
             "heat_map_locked_desc": "Result Locked. Unlock to see where you are bleeding.",
             "heat_map_unlocked_desc": "Full diagnostic scan results",
             "critical_fails_label": "Critical Fails",
@@ -1353,7 +1352,7 @@
             "footer_rights": "© {{year}} GUSTI DEVITTO. ALL RIGHTS RESERVED."
         },
         "features": {
-            "pillars_19_short": "Everything in FORENSIC",
+            "pillars_25_short": "Everything in FORENSIC",
             "diagnostic_short": "Everything in DIAGNOSTIC",
             "forensic_short": "Everything in FORENSIC",
             "network_short": "Everything in NETWORK",
@@ -1382,7 +1381,7 @@
             "summary": "Executive Summary PDF -> Actionable hit-list of profit leaks",
             "multi_currency": "Multi-currency support",
             "bilingual": "Bilingual reports (EN/ID)",
-            "pillars_19": "Full 19 Forensic Pillars -> Map every single vulnerability point",
+            "pillars_25": "Full 25 Forensic Pillars -> Map every single vulnerability point",
             "logic": "Logic Trace Analysis -> Expose how money exits your business",
             "decision": "Decision Intelligence Engine -> Turn raw data into recovery decisions",
             "integrity": "Data Integrity Scoring -> Detect manipulated financial reporting",
@@ -1402,7 +1401,7 @@
             "unlimited": "Unlimited Outlet Profiles -> Full visibility across infinite locations",
             "priority": "Priority Strategic Access -> Direct intervention when massive leaks occur",
             "security": "Enterprise-grade security",
-            "full_19": "Full 19 pillars",
+            "full_25": "Full 25 pillars",
             "logic_trace": "Logic trace analysis",
             "multi_outlet_analysis": "Multi-outlet analysis",
             "ai_neural": "AI neural intelligence",

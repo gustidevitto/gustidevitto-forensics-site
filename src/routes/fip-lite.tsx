@@ -562,7 +562,7 @@ function ResultsDashboard({
                                 {formatCurrency(layer2.estimatedLeakage.max)}
                             </div>
                             <div className="text-xs text-white/40 leading-relaxed">
-                                {isEmailUnlocked ? t('fip_lite_v2.results.identified_pillars', 'Identified across 19 pillars') : t('fip_lite_v2.results.where_going_locked', 'Location tracking locked. 🔒')}
+                                {isEmailUnlocked ? t('fip_lite_v2.results.identified_pillars', 'Identified across 25 pillars') : t('fip_lite_v2.results.where_going_locked', 'Location tracking locked. 🔒')}
                             </div>
                         </div>
                      </div>

@@ -61,7 +61,7 @@ function InvestasiPage() {
                     t('investasi_page.features.bilingual', 'Bilingual reports (EN/ID)')
                 ],
                 excluded: [
-                    t('investasi_page.features.full_19', 'Full 19 pillars'),
+                    t('investasi_page.features.full_25', 'Full 25 pillars'),
                     t('investasi_page.features.logic_trace', 'Logic trace analysis'),
                     t('investasi_page.features.multi_outlet_analysis', 'Multi-outlet analysis'),
                     t('investasi_page.features.ai_neural', 'AI neural intelligence')
@@ -88,7 +88,7 @@ function InvestasiPage() {
             features: {
                 included: [
                     t('investasi_page.features.diagnostic_short', 'Everything in DIAGNOSTIC'),
-                    t('investasi_page.features.pillars_19', 'Full 19 Forensic Pillars -> Map every single vulnerability point'),
+                    t('investasi_page.features.pillars_25', 'Full 25 Forensic Pillars -> Map every single vulnerability point'),
                     t('investasi_page.features.logic', 'Logic Trace Analysis -> Expose how money exits your business'),
                     t('investasi_page.features.decision', 'Decision Intelligence Engine -> Turn raw data into recovery decisions'),
                     t('investasi_page.features.integrity', 'Data Integrity Scoring -> Detect manipulated financial reporting'),
@@ -192,7 +192,7 @@ function InvestasiPage() {
         [t('investasi_page.features.bilingual', 'Bilingual reports (EN/ID)')]: 'diagnostic',
 
         // Forensic Features
-        [t('investasi_page.features.pillars_19', 'Full 19 Forensic Pillars -> Map every single vulnerability point')]: 'forensic',
+        [t('investasi_page.features.pillars_25', 'Full 25 Forensic Pillars -> Map every single vulnerability point')]: 'forensic',
         [t('investasi_page.features.logic', 'Logic Trace Analysis -> Expose how money exits your business')]: 'forensic',
         [t('investasi_page.features.decision', 'Decision Intelligence Engine -> Turn raw data into recovery decisions')]: 'forensic',
         [t('investasi_page.features.integrity', 'Data Integrity Scoring -> Detect manipulated financial reporting')]: 'forensic',

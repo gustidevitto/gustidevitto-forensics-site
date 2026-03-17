@@ -15,9 +15,9 @@ export type TierLevel = 'diagnostic' | 'forensic' | 'network' | 'sovereign';
 export const getPillarCount = (tier: TierLevel): number => {
     switch (tier) {
         case 'diagnostic': return 8;
-        case 'forensic': return 19;
-        case 'network': return 19;
-        case 'sovereign': return 19;
+        case 'forensic': return 25;
+        case 'network': return 25;
+        case 'sovereign': return 25;
         default: return 8;
     }
 }
@@ -247,7 +247,7 @@ function generateLayer3LockedXray(
 ): Layer3LockedXray {
     const pillars: LockedPillar[] = [];
 
-    // Generate 18 locked pillars with realistic status distribution
+    // Generate 25 locked pillars with realistic status distribution
     const pillarConfigs = [
         { id: 'gp-leakage', name: 'Gross Profit Leakage Analysis', category: 'revenue-profitability' as PillarCategory },
         { id: 'pricing-power', name: 'Pricing Power Index', category: 'revenue-profitability' as PillarCategory },
@@ -266,7 +266,14 @@ function generateLayer3LockedXray(
         { id: 'customer-concentration', name: 'Customer Concentration Risk', category: 'growth-risk' as PillarCategory },
         { id: 'supplier-dependency', name: 'Supplier Dependency Analysis', category: 'operational-efficiency' as PillarCategory },
         { id: 'cash-conversion', name: 'Cash Conversion Cycle', category: 'cash-flow' as PillarCategory },
-        { id: 'profit-quality', name: 'Profit Quality Assessment', category: 'revenue-profitability' as PillarCategory }
+        { id: 'profit-quality', name: 'Profit Quality Assessment', category: 'revenue-profitability' as PillarCategory },
+        { id: 'net-burn-rate', name: 'Net Burn Rate Analysis', category: 'cash-flow' as PillarCategory },
+        { id: 'ltgp-velocity', name: 'LTGP Velocity Tracker', category: 'revenue-profitability' as PillarCategory },
+        { id: 'operating-leverage', name: 'Operating Leverage Index', category: 'operational-efficiency' as PillarCategory },
+        { id: 'anomaly-detection', name: 'Anomaly Detection Score', category: 'growth-risk' as PillarCategory },
+        { id: 'benchmark-deviation', name: 'Benchmark Deviation Analysis', category: 'growth-risk' as PillarCategory },
+        { id: 'network-compliance', name: 'Network Compliance Audit', category: 'operational-efficiency' as PillarCategory },
+        { id: 'capacity-utilization', name: 'Capacity Utilization Index', category: 'operational-efficiency' as PillarCategory }
     ];
 
     // Determine status based on actual metrics
