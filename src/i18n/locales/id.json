@@ -83,6 +83,7 @@
         "demo_video_text": "Tonton Demo Protokol Forensik",
         "demo_cta": "Jadwalkan Live Walkthrough",
         "demo_disclaimer": "Kami tidak menggantikan akuntan Anda. Kami menunjukkan uang yang akuntan Anda tidak tahu ada di sana. Kami menemukan profit yang tidak terlihat di laporan standar.",
+        "cta_demo": "Jalankan Pemindaian",
         "pricing_title": "Investasi yang Membayar Sendiri",
         "pricing_desc": "Pilih tingkat pemulihan yang Anda butuhkan",
         "pricing_free_title": "Deteksi Awal Gratis",
@@ -1207,28 +1208,6 @@
             "total_working_hours": "Total jam kerja semua orang sebulan ini."
         }
     },
-    "case_files": {
-        "badge": "LAPORAN KASUS TERVERIFIKASI",
-        "title": "Catatan Forensik",
-        "subtitle": "Kilas balik bagaimana kami menemukan dan menghentikan kebocoran di berbagai industri.",
-        "case1_title": "Pencurian Inventaris Sistematis",
-        "case1_desc": "Audit mendalam menemukan anomali pada pencatatan bahan baku yang disamarkan sebagai 'waste' selama 8 bulan.",
-        "case1_impact": "$12.000 Pulih / bln",
-        "case2_title": "Skandal Payroll 'Hantu'",
-        "case2_desc": "Analisis perilaku data mengungkap pembayaran lembur fiktif pada 14 staf yang tidak pernah berada di lokasi.",
-        "case2_impact": "Margin Naik 8,4%",
-        "case3_title": "Kebocoran Harga Vendor",
-        "case3_desc": "Manipulasi harga beli oleh internal purchasing yang mengakibatkan pembengkakan COGS tanpa izin.",
-        "case3_impact": "$45.000 Diselamatkan",
-        "sector_fb_chain": "Rantai F&B",
-        "type_inventory_fraud": "Fraud Inventaris",
-        "sector_retail": "Retail Fashion",
-        "type_phantom_labor": "Tenaga Kerja Fiktif",
-        "sector_automotive": "Servis Otomotif",
-        "type_pricing_leakage": "Kebocoran Harga",
-        "label_impact": "Dampak Terverifikasi",
-        "disclaimer": "SEMUA DATA TELAH ANONIM UNTUK MELINDUNGI PRIVASI KLIEN"
-    },
     "pricing_modal": {
         "one_time_title": "Audit Sekali Jalan",
         "one_time_commitment": "1 audit komprehensif",
@@ -1565,5 +1544,27 @@
             "Pengiriman 48 jam dari penyerahan data",
             "Garansi kerahasiaan 100%"
         ]
+    },
+    "case_files": {
+        "badge": "Case Files",
+        "title": "Kasus Forensik: Angka Nyata, Keputusan Nyata",
+        "subtitle": "Ini bukan studi hipotetis. Setiap kasus diaudit melalui FIP™ Protocol, dengan data terverifikasi sebelum dan sesudah intervensi.",
+        "label_impact": "Dampak Terverifikasi",
+        "disclaimer": "Semua data identitas telah dianonimkan. Angka keuangan diverifikasi oleh audit forensik independen.",
+        "sector_fb_chain": "F&B Chain",
+        "sector_retail": "Retail Fashion",
+        "sector_automotive": "Otomotif & Servis",
+        "type_inventory_fraud": "Manipulasi Inventori",
+        "type_phantom_labor": "Phantom Labor",
+        "type_pricing_leakage": "Kebocoran Harga",
+        "case1_title": "Dapur yang Memakan Dirinya Sendiri",
+        "case1_desc": "Sebuah F&B chain dengan 7 outlet melaporkan margin GP yang sehat di atas kertas. Forensik FIP™ mengungkap tingkat penyusutan inventori 19,4% — sebagian dari pemborosan tak tercatat, sebagian dari over-portioning sistematis di 3 lokasi. Pemilik tidak mengetahuinya sama sekali.",
+        "case1_impact": "+Rp 1,3 Miliar profit tahunan dipulihkan",
+        "case2_title": "Penggajian Hantu",
+        "case2_desc": "Brand fashion retail dengan 9 outlet membayar gaji untuk peran yang hanya ada di atas kertas. Rekonsiliasi absensi dengan throughput POS mengungkap tingkat idle labor 22%. Setiap shift 'jam sibuk' memiliki kelebihan staf — semuanya dengan gaji penuh.",
+        "case2_impact": "Rp 950 Juta/tahun biaya tenaga kerja dieliminasi",
+        "case3_title": "Perang Harga yang Tak Terlihat",
+        "case3_desc": "Chain servis otomotif telah menetapkan harga dengan benar. Namun audit lapangan menunjukkan teknisi memberikan 'diskon loyalitas' tanpa otorisasi sistem — rata-rata 8,7% per faktur. Pemilik mengira margin tipis karena persaingan.",
+        "case3_impact": "Net margin dipulihkan dari 4,1% → 11,8%"
     }
 }

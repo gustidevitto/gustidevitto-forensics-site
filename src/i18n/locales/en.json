@@ -82,6 +82,7 @@
         "demo_video_text": "Watch Forensic Protocol Demo",
         "demo_cta": "Schedule Live Walkthrough",
         "demo_disclaimer": "We don't replace your accountant. We show you money your accountant didn't know was there.",
+        "cta_demo": "Run Profit Leakage Scan",
         "pricing_title": "An Investment That Pays For Itself",
         "pricing_desc": "Choose your recovery level",
         "pricing_free_title": "Free Early Detection",
@@ -1498,5 +1499,27 @@
             "48-hour delivery from data submission",
             "100% confidentiality guarantee"
         ]
+    },
+    "case_files": {
+        "badge": "Case Files",
+        "title": "Forensic Cases: Real Numbers, Real Decisions",
+        "subtitle": "These are not hypothetical. Each case was audited through the FIP™ Protocol, with verified pre- and post-intervention data.",
+        "label_impact": "Impact Verified",
+        "disclaimer": "All identifying data anonymised. Financial figures verified by independent forensic audit.",
+        "sector_fb_chain": "F&B Chain",
+        "sector_retail": "Retail Fashion",
+        "sector_automotive": "Automotive Service",
+        "type_inventory_fraud": "Inventory Fraud",
+        "type_phantom_labor": "Phantom Labor",
+        "type_pricing_leakage": "Pricing Leakage",
+        "case1_title": "The Kitchen That Was Eating Itself",
+        "case1_desc": "A 7-outlet F&B chain reported healthy GP margins on paper. FIP™ forensics revealed a 19.4% inventory shrinkage rate — partly from unrecorded waste, partly from systematic over-portioning across 3 locations. The owner had no idea.",
+        "case1_impact": "+$84,000 annual profit recovered",
+        "case2_title": "The Phantom Payroll",
+        "case2_desc": "A retail fashion brand with 9 outlets was paying salaries for roles that existed on paper only. Cross-referencing attendance logs against POS throughput revealed a 22% idle labor rate. Every 'peak hours' shift had excess staff — all on full pay.",
+        "case2_impact": "$61,000/year in labor cost eliminated",
+        "case3_title": "The Invisible Price War",
+        "case3_desc": "An automotive service chain had set pricing correctly. But field audits showed technicians granting 'loyalty discounts' without system authorization — an average of 8.7% per invoice. The owner thought margins were thin due to competition.",
+        "case3_impact": "Net margin restored from 4.1% → 11.8%"
     }
 }
