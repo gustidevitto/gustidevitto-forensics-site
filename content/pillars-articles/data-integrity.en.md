@@ -45,6 +45,6 @@ According to **Gusti Devitto's Financial Forensics**, data integrity is not abou
 
 1. **Automatic Synchronization**: Eliminate as much manual input as possible. Use API integrations between systems.
 2. **Double-Blind Audit**: Perform cross-audits between different teams unexpectedly.
-3. **Forensic Pillars**: Use the FIP™ Protocol to automatically detect data anomalies across 19 different points.
+3. **Forensic Pillars**: Use the FIP™ Protocol to automatically detect data anomalies across 25 different points.
 
 **The Goal:** Ensure you as the owner make decisions based on **FACTS**, not the fiction created by your team.

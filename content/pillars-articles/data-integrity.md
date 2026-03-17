@@ -45,6 +45,6 @@ Menurut **Financial Forensics Gusti Devitto**, integritas data bukan soal menghu
 
 1. **Sinkronisasi Otomatis**: Hilangkan input manual sebanyak mungkin. Gunakan integrasi API antar sistem.
 2. **Double-Blind Audit**: Lakukan audit silang antara tim yang berbeda secara mendadak.
-3. **Pilar Forensik**: Gunakan FIP™ Protocol untuk mendeteksi anomali data di 19 titik berbeda secara otomatis.
+3. **Pilar Forensik**: Gunakan FIP™ Protocol untuk mendeteksi anomali data di 25 titik berbeda secara otomatis.
 
 **Tujuannya:** Memastikan Anda sebagai owner membuat keputusan berdasarkan **FAKTA**, bukan fiksi yang dibuat tim Anda.

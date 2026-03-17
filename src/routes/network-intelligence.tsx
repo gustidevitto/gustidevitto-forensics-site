@@ -45,7 +45,7 @@ function NetworkIntelligencePage() {
             },
             features: {
                 included: [
-                    t('investasi_page.features.pillars_19_short', 'Everything in FORENSIC'),
+                    t('investasi_page.features.pillars_25_short', 'Everything in FORENSIC'),
                     t('investasi_page.features.multi_outlet_short', 'Multi-Outlet Analysis (up to 50)'),
                     t('investasi_page.features.network_health_short', 'Network Health Index'),
                     t('investasi_page.features.territory_short', 'Territory Productivity Mapping'),

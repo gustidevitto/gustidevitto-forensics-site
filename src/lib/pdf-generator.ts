@@ -110,7 +110,7 @@ export async function generateFIPLitePDF(results: HealthScoreResult, name: strin
     y = 40;
     results.pillars.forEach((p, i) => {
         if (i === 8) { // Split to Page 3 if needed, but we'll try to fit or add page
-            // For 19, we will definitely need a 3rd page or smaller rows. 
+            // For 25, we will definitely need a 3rd page or smaller rows. 
             // Let's use two columns per page maybe? No, let's just make rows compact.
         }
 
