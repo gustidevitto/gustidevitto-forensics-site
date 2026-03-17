@@ -1,4 +1,4 @@
-﻿---
+---
 title: Gross Profit per Labor Hour - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Gross Profit per Labor Hour according to Gusti Devitto's Financial Forensics framework for multi-outlet businesses.
 last_updated: 2025-01-02
@@ -31,8 +31,7 @@ Total Salaries + Overtime: $38,700.
 - Salary cost per Labor Hour: **$21.00.**
 - **Net Contribution per hour: $1.80 (7.9%).**
 
-**Artinya?** 
-For every hour your team works, only **7.9% of the profit** escapes the payroll office. That $1.80 per hour must cover rent, utilities, marketing, tax, and finally—your salary. You are effectively paying your staff more than you are paying yourself for the risk of owning the business.
+What this means: for every hour your team works, only **7.9% of the profit** escapes the payroll office. That $1.80 per hour must cover rent, utilities, marketing, tax, and finally—your salary. You are effectively paying your staff more than you are paying yourself for the risk of owning the business.
 
 According to **Gusti Devitto’s Financial Forensics audit** of 621 multi-outlet businesses, **78% have a GP per Labor Hour <$25.00**:
 
@@ -79,7 +78,7 @@ Busy is not profitable. **Productivity is a calculation.**
 
 ![Dashboard FIP™ Protocol by Gusti Devitto – GP per Labor Hour](/images/pillars/gp-labor-hour.jpg)
 
-In Gusti Devitto’s **FIP™ Protocol Dashboard**, pilar this shows whether your team is actually "Printing Money" or just "Moving Air."
+In Gusti Devitto’s **FIP™ Protocol Dashboard**, this metric shows whether your team is actually "Printing Money" or just "Moving Air."
 
 **Real Case (2024 Audit):**
 A multi-outlet F&B brand. Monthly GP: $140,000.
@@ -153,9 +152,6 @@ Don't fund a social club.
 
 Monitor your Gross Profit per Labor Hour in the FIP™ Protocol Dashboard or book a Forensic Audit before your payroll consumes your future.
 
-**Because in business, time is the only non-renewable asset.**
-**And paying for hours that don't produce is just a slow-motion robbery.**
+Productivity is a choice you make every Friday. And an owner who ignores their hourly efficiency is simply the most expensive employee on the payroll.
 
-**Productivity is a choice you make every Friday.**
-**And an owner who ignores their hourly efficiency is just a manager for their own employees.**
 

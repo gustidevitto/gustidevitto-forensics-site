@@ -1,4 +1,4 @@
-﻿---
+---
 title: Net Profit per Transaction - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Net Profit per Transaction according to Gusti Devitto's Financial Forensics framework for multi-outlet businesses.
 ---
@@ -147,9 +147,5 @@ Don't be a victim of your own success.
 
 Monitor your Net Profit per Transaction in the FIP™ Protocol Dashboard or book a Forensic Audit before your "busy" business breaks you permanently.
 
-**Because in business, effort is not reward.**
-**And a busy business with no profit is just a high-stress tragedy.**
-
-**Volume is a trap for those who can't count.**
-**And a transaction without net profit is a theft from your future.**
+Volume is a trap for those who can’t count. A transaction without net profit is not a sale — it’s a slow drain.
 

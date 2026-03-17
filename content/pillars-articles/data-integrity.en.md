@@ -1,3 +1,4 @@
+---
 title: Data Integrity Score (Trust Coefficient) - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Data Integrity as a fundamental pillar in the Gusti Devitto Financial Forensics framework.
 last_updated: 2026-03-17

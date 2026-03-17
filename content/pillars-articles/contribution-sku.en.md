@@ -1,4 +1,4 @@
-﻿---
+---
 title: Net Contribution per SKU - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Net Contribution per SKU according to Gusti Devitto's Financial Forensics framework for multi-outlet businesses.
 ---
@@ -157,9 +157,5 @@ Stop the charity.
 
 Monitor your Net Contribution per SKU in the FIP™ Protocol Dashboard or book a Forensic Audit before your parasites eat your entire business.
 
-**Because in business, every item on your menu must earn its keep.**
-**And a product without profit is just a hobby that isn't fun.**
-
-**Volume is for the ego. Margin is for the family.**
-**And an owner who loves a Parasite SKU is a hostage of their own nostalgia.**
+Volume is for the ego. Margin is for the business. An owner who loves a Parasite SKU is choosing nostalgia over survival.
 

@@ -106,8 +106,8 @@ function RootComponent() {
                                 <a href="/fip-lite" className="transition-colors hover:text-primary nav-gold-glow">{t('nav.calculator')}</a>
                                 <a href="/about-gusti-devitto" className="transition-colors hover:text-primary">{t('nav.about')}</a>
                                 <a href="/blog" className="transition-colors hover:text-primary">{t('nav.blog')}</a>
-                                <a href="/forensics-pillars" className="transition-colors hover:text-primary">{t('nav.pillars')}</a>
-                                <a href="/investasi" className="transition-colors hover:text-primary font-bold decoration-primary underline-offset-4 decoration-2">{t('nav.pricing')}</a>
+                                <a href="/forensics-pillars" className="transition-colors hover:text-primary">{t('nav.pillars', '25 Pillars')}</a>
+                                <a href="/investasi" className="transition-colors hover:text-primary font-bold decoration-primary underline-offset-4 decoration-2">{t('nav.pricing', 'Investment')}</a>
                                 <a href="/contact" className="transition-colors hover:text-primary">{t('nav.contact')}</a>
                                 <LanguageToggle />
                                 {/* <ModeToggle /> */}
@@ -135,8 +135,8 @@ function RootComponent() {
                                             <a href="/fip-lite" className="text-lg font-medium hover:text-primary nav-gold-glow">{t('nav.calculator')}</a>
                                             <a href="/about-gusti-devitto" className="text-lg font-medium hover:text-primary">{t('nav.about')}</a>
                                             <a href="/blog" className="text-lg font-medium hover:text-primary">{t('nav.blog')}</a>
-                                            <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">{t('nav.pillars')}</a>
-                                            <a href="/investasi" className="text-lg font-medium hover:text-primary">{t('nav.pricing')}</a>
+                                            <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">{t('nav.pillars', '25 Pillars')}</a>
+                                            <a href="/investasi" className="text-lg font-medium hover:text-primary">{t('nav.pricing', 'Investment')}</a>
                                             <a href="/contact" className="text-lg font-medium hover:text-primary">{t('nav.contact')}</a>
                                         </div>
                                     </SheetContent>

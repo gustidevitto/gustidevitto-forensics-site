@@ -1,4 +1,4 @@
-﻿---
+---
 title: Gross Profit Leakage Rate - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of GP Leakage according to Gusti Devitto's Financial Forensics framework for preventing hidden financial loss.
 last_updated: 2025-01-02
@@ -149,9 +149,5 @@ Plug the holes.
 
 Monitor your GP Leakage in the FIP™ Protocol Dashboard or book a Forensic Audit before the invisible thief takes everything.
 
-**Because in business, what you keep is more important than what you sell.**
-**And leakage is a tax you pay for lack of precision.**
-
-**A business with leakage is a business being robbed from the inside.**
-**And an owner who ignores the drift is an accomplice to the theft.**
+A business with leakage is being robbed from the inside. What you keep matters more than what you sell — and precision is the only guard that works.
 

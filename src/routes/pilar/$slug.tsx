@@ -18,18 +18,24 @@ const mdToHtml = (md: string) => {
         if (trimmed.startsWith('###')) return `<h3 class="text-xl font-bold mt-8 mb-4">${trimmed.substring(3).trim()}</h3>`
         if (trimmed.startsWith('##')) return `<h2 class="text-2xl font-bold mt-10 mb-6">${trimmed.substring(2).trim()}</h2>`
         if (trimmed.startsWith('#')) return `<h1 class="text-3xl font-extrabold mt-12 mb-8">${trimmed.substring(1).trim()}</h1>`
-        if (trimmed.startsWith('*') || trimmed.startsWith('-')) return `<li class="ml-4 list-disc mb-2">${trimmed.substring(1).trim()}</li>`
+        // Only treat as list item if it's "* text" (asterisk + space) or "- text", NOT "**bold**"
+        if (/^[*-] /.test(trimmed)) return `<li class="ml-4 list-disc mb-2">${trimmed.substring(2).trim()}</li>`
         if (trimmed === '---') return '<hr class="my-8 border-border" />'
         if (trimmed.length > 0) return `<p class="mb-4">${trimmed}</p>`
-        return ''
+        return '<p class="mb-2"></p>'
     })
 
-    return processedLines.join('\n')
+    // Wrap consecutive <li> elements in <ul> tags
+    const html = processedLines.join('\n')
+        .replace(/((?:<li[^>]*>.*?<\/li>\n?)+)/g, '<ul class="list-disc pl-5 mb-4 space-y-1">$1</ul>')
+
+    return html
         .replace(/™/g, '&trade;')
         .replace(/®/g, '&reg;')
         .replace(/©/g, '&copy;')
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        // Bold MUST run before italic to avoid consuming asterisks incorrectly
+        .replace(/\*\*([^*]+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*([^*\n]+?)\*/g, '<em>$1</em>')
         .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="rounded-lg my-8 w-full shadow-md" />')
         .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary underline font-medium hover:text-primary/80 transition-colors">$1</a>')
 }

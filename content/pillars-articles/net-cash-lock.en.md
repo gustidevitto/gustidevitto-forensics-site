@@ -1,4 +1,4 @@
-﻿---
+---
 title: Net Cash Lock Period - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Net Cash Lock Period according to Gusti Devitto's Financial Forensics framework for multi-outlet businesses.
 last_updated: 2025-01-02
@@ -37,8 +37,7 @@ Payroll is due in 2 days: $18,000.
 
 **Net Cash Lock Period = 45 + 21 - 14 = 52 Days.**
 
-**Artinya?** 
-Your own cash is **kidnapped** by your operations for 52 days before you can even touch it. You are working for a future that is nearly two months away, while trying to pay for today with $1,420.
+What this means: your own cash is **kidnapped** by your operations for 52 days before you can even touch it. You are working for a future that is nearly two months away, while trying to pay for today with $1,420.
 
 According to **Gusti Devitto’s Financial Forensics audit** of 412 multi-outlet businesses, **79% have a Cash Lock Period >40 days**:
 
@@ -155,9 +154,5 @@ Free your money.
 
 Monitor your Net Cash Lock Period in the FIP™ Protocol Dashboard or book a Forensic Audit before your "stuck" cash becomes a permanent loss.
 
-**Because in business, velocity is strength.**
-**And a long cash lock is just bankruptcy with a slow fuse.**
-
-**Trapped money is a symptom of a weak leader.**
-**And an owner who ignores the hostage situation is just a victim in waiting.**
+Trapped money is a symptom of a weak system. And an owner who ignores the hostage situation is just financing their own constraints.
 

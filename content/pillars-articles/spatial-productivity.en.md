@@ -1,3 +1,4 @@
+---
 title: Spatial Productivity (Revenue Density) - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of spatial productivity as a key pillar in the Gusti Devitto Financial Forensics framework.
 last_updated: 2026-03-17

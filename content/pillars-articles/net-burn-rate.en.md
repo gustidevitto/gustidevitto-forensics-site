@@ -1,4 +1,4 @@
-﻿---
+---
 title: Net Burn Rate - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Net Burn Rate according to Gusti Devitto's Financial Forensics framework for business sustainability.
 last_updated: 2025-01-02
@@ -146,9 +146,5 @@ Stop the bonfire.
 
 Monitor your Net Burn Rate in the FIP™ Protocol Dashboard or book a Forensic Audit before your "empire" turns into a pile of ash.
 
-**Because in business, survival is the only metric that matters.**
-**And a negative burn rate is a clock that always hits zero.**
-
-**A business that burns cash is a business that hates itself.**
-**And a leader who ignores the burn is a captain who ignores the leak.**
+A business that burns cash without a clear path to profitability is not growing — it’s just running a more expensive countdown.
 

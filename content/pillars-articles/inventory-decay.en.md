@@ -1,4 +1,4 @@
-﻿---
+---
 title: Inventory Decay Rate - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Inventory Decay according to Gusti Devitto's Financial Forensics framework for cash flow optimization.
 last_updated: 2025-01-02
@@ -147,9 +147,5 @@ Free your cash.
 
 Monitor your Inventory Decay in the FIP™ Protocol Dashboard or book a Forensic Audit before your "assets" become your obituary.
 
-**Because in business, liquidity is the only true strength.**
-**And unbought stock is just a very expensive mistake.**
-
-**Profit is found in movement, not in storage.**
-**And a warehouse that doesn't flow is a vault that is locked from the inside.**
+Profit is found in movement, not in storage. Dead stock is not an asset — it’s a liability in disguise.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: LTV : CAC Ratio - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of LTV to CAC Ratio according to Gusti Devitto's Financial Forensics framework for scaling and acquisition viability.
 last_updated: 2025-01-02
@@ -26,13 +26,12 @@ You check the profit report.
 Lifetime Gross Profit (LTGP) from those 247 new customers: **$68,000.**
 **Wait... I spent $94,000 to earn $68,000?!**
 
-**The Breakdown:**
+**Breakdown:**
 - CAC (Customer Acquisition Cost): **$380.**
 - LTGP (Lifetime Gross Profit) per customer: **$275.**
 - **LTV : CAC Ratio = 0.72.**
 
-**Artinya?** 
-Every new customer you gain **is a structural loss of $105.** The more you "grow," the faster you go bankrupt. You are effectively paying your customers to take your products.
+What this means: every new customer you gain **is a structural loss of $105.** The more you "grow," the faster you go bankrupt. You are effectively paying your customers to take your products.
 
 According to **Gusti Devitto’s Financial Forensics audit** of 543 growth-stage businesses, **71% have an LTV : CAC ratio <1.5**:
 
@@ -150,9 +149,5 @@ Fix the math.
 
 Monitor your LTV : CAC Ratio in the FIP™ Protocol Dashboard or book a Forensic Audit before you scale yourself into a grave.
 
-**Because in business, efficiency is the father of scale.**
-**And an owner who scales a negative ratio is just a very efficient failure.**
-
-**Marketing is a tool, not a miracle.**
-**And a leader who doesn't track their LTV : CAC is just throwing money at a ghost.**
+Marketing is a tool, not a miracle. And a leader who doesn’t track their LTV : CAC is building a growth story with a broken foundation.
 

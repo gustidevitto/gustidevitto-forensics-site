@@ -1,4 +1,4 @@
-﻿---
+---
 title: Opex to Gross Profit Ratio - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Opex to Gross Profit Ratio according to Gusti Devitto's Financial Forensics framework for multi-outlet businesses.
 last_updated: 2025-01-02
@@ -31,8 +31,7 @@ You check the Net Profit: **$1,800.**
 
 **Your Ratio: 95.7%.**
 
-**Artinya?** 
-For every $100 in gross profit you earn, **$95.70 is stolen by your own operations.** You are working for your landlord, your staff, and the electric company. You are the last person to get paid in your own company.
+What this means: for every $100 in gross profit you earn, **$95.70 is consumed by your own operations.** You are working for your landlord, your staff, and the electric company. You are the last person to get paid in your own company.
 
 According to **Gusti Devitto’s Financial Forensics audit** of 621 multi-outlet businesses, **83% have an OPEX to GP ratio >70%**:
 
@@ -151,9 +150,5 @@ Lighten the load.
 
 Monitor your Opex to Gross Profit Ratio in the FIP™ Protocol Dashboard or book a Forensic Audit before the weight of your business crushes you.
 
-**Because in business, efficiency is the only true competitive advantage.**
-**And a bloated business is just a slow-motion disaster.**
-
-**Growth hides bloat. Contraction exposes it.**
-**And an owner who ignores their ratio is just funding their own obsolescence.**
+Growth hides bloat. Contraction exposes it — and by then, every day of delay has a price.
 

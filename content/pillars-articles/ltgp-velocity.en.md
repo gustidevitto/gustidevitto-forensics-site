@@ -1,4 +1,4 @@
-﻿---
+---
 title: LTGP Velocity - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Long-Term Gross Profit Velocity according to Gusti Devitto's Financial Forensics framework for multi-outlet businesses.
 last_updated: 2025-01-02
@@ -152,9 +152,5 @@ Check your speed.
 
 Monitor your LTGP Velocity in the FIP™ Protocol Dashboard or book a Forensic Audit before your "Growth" leads you off a cliff.
 
-**Because in business, momentum is life.**
-**And a stalling engine is a invitation to a predator.**
-
-**Scaling a stalling engine is just a faster way to hit zero.**
-**And a leader who doesn't track velocity is just a passenger on their own sinking ship.**
+Scaling a stalling engine is just a faster way to hit zero. Momentum is not optional — it is the only real proof that your growth is healthy.
 

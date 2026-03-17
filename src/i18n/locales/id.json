@@ -1,11 +1,13 @@
 {
     "nav": {
+        "pillars": "25 Pilar",
+        "pricing": "Investasi",
         "calculator": "Audit Gratis",
         "about": "Tentang",
         "blog": "Blog",
         "pillars_count": "25-Pilar",
         "pillars_subtitle": "Granular Audit Financial Forensics",
-        "pricing": "Harga",
+
         "contact": "Kontak",
         "owners": "Untuk Owner",
         "investors": "Untuk Investor & PE",

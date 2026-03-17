@@ -1,4 +1,4 @@
-﻿---
+---
 title: Risk Exposure (Quick Ratio) - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Risk Exposure and Liquidity according to Gusti Devitto's Financial Forensics framework for business resilience.
 last_updated: 2025-01-02
@@ -140,9 +140,5 @@ Build your moat.
 
 Monitor your Risk Exposure in the FIP™ Protocol Dashboard or book a Forensic Audit before the next "Shock" hits your bank account.
 
-**Because in business, cash is the only true shield.**
-**And a low Quick Ratio is a vulnerability your competitors will eventually exploit.**
-
-**Liquidity is the oxygen of the brand.**
-**And an owner who ignores their exposure is a gambler, not a leader.**
+Liquidity is the oxygen of the brand. And an owner who ignores their exposure is not being bold — they’re being reckless.
 

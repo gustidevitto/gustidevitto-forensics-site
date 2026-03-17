@@ -1,4 +1,4 @@
-﻿---
+---
 title: Cash Runway - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Cash Runway according to Gusti Devitto's Financial Forensics framework for business survival.
 last_updated: 2025-01-02
@@ -142,9 +142,5 @@ Don't wait for the fuel light to turn red.
 
 Monitor your Cash Runway in the FIP™ Protocol Dashboard or book a Forensic Audit before your "oxygen" runs out permanently.
 
-**Because in business, time is the ultimate luxury.**
-**And a short runway is a crash waiting to happen.**
-
-**A business without a runway is a plane without an engine.**
-**And a leader who doesn't know their Cash-Zero Date is a pilot with their eyes closed.**
+A runway that shrinks silently is the most dangerous kind. By the time it shows up in your P&L, your options are already gone.
 

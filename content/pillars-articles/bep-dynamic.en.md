@@ -1,4 +1,4 @@
-﻿---
+---
 title: Breakeven Point (Dynamic) - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Dynamic Breakeven Point according to Gusti Devitto's Financial Forensics framework for multi-outlet businesses.
 last_updated: 2025-01-02
@@ -144,9 +144,5 @@ Stop chasing ghosts.
 
 Monitor your Dynamic BEP in the FIP™ Protocol Dashboard or book a Forensic Audit before the horizon moves too far for you to reach.
 
-**Because in business, the only safe number is the one that reflects today.**
-**And a target that never moves is a target you will eventually miss.**
-
-**Static targets lead to dynamic failures.**
-**And an owner who doesn't track their drift is a captain who doesn't check the tide.**
+Static targets lead to dynamic failures. An outdated BEP is not a strategy — it is a delayed reckoning.
 

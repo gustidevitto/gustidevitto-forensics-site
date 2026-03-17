@@ -1,3 +1,4 @@
+---
 title: Operating Leverage (Risk Sensitivity) - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Operating Leverage as an essential pillar in the Gusti Devitto Financial Forensics framework.
 last_updated: 2026-03-17

@@ -135,8 +135,4 @@ Don't wait for the email.
 
 Monitor your SPOF risk in the FIP™ Protocol Dashboard or book a Forensic Audit before your "major contract" becomes your final obituary.
 
-**This is the statistical reality for businesses with Concentration Risk.**
-**And a Single Point of Failure is a death sentence with a delayed execution date.**
-
-**A business that relies on one leg is a business waiting to fall.**
-**And structural negligence is a choice you make every day you don't diversify.**
+A business that relies on one leg is a business waiting to fall. Structural negligence is a choice — made every day you don’t diversify.

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Insight Surprise - Gusti Devitto Financial Forensics Guide
 description: Diagnosis of the "Insight Surprise" phenomenon in Gusti Devitto's Financial Forensics—where data reveals a reality you never suspected.
 last_updated: 2025-01-02
@@ -124,9 +124,5 @@ Face the reality.
 
 See the gap between your gut and your bank account in the FIP™ Protocol Dashboard, or book a Forensic Audit before the next surprise comes in the form of a bankruptcy notice.
 
-**Because in business, a surprise is a symptom of system failure.**
-**And an owner who rejects data is a captain who rejects the compass.**
-
-**Intuition without data is a high-stakes delusion.**
-**And the Insight Surprise is the difference between a survivor and a statistic.**
+Intuition without data is a high-stakes delusion. The Insight Surprise is not a crisis — it’s a diagnosis. And a diagnosis is always better than a funeral.
 
