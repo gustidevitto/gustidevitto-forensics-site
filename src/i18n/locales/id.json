@@ -888,25 +888,25 @@
             "title": "Concentration Risk",
             "layer1": "Structural Vulnerability",
             "definition": "Profit Anda mungkin terlihat stabil, namun ketergantungan tinggi pada satu supplier atau klien adalah risiko struktural. Kami mengukur kerapuhan bisnis Anda sebelum berdampak pada keberlanjutan margin.",
-            "attribution": "Pilar ke-16 dari FIP™ Protocol..."
+            "attribution": "Evaluasi Kerentanan Struktur Jaringan..."
         },
         "operating-leverage": {
             "title": "Operating Leverage",
             "layer1": "Sensivitas Risiko / Faktor Skala",
             "definition": "Mengukur bagaimana perubahan pendapatan berdampak pada laba operasional. Leverage tinggi berarti risiko tinggi sekaligus potensi profit besar saat skala naik.",
-            "attribution": "Pilar ke-17 dari FIP™ Protocol..."
+            "attribution": "Analisis Efek Pengungkit Operasional..."
         },
         "data-integrity": {
             "title": "Data Integrity Score",
             "layer1": "Koefisien Kebenaran / Kualitas Audit",
             "definition": "Tingkat konsistensi dan akurasi matematis dalam data yang Anda laporkan. Skor rendah menandakan potensi fraud atau kesalahan sistemik.",
-            "attribution": "Pilar ke-18 dari FIP™ Protocol..."
+            "attribution": "Sertifikasi Kebenaran Data Forensik..."
         },
         "spatial-productivity": {
             "title": "Spatial Productivity",
             "layer1": "Densitas Pendapatan / Yield per Meter",
             "definition": "Pendapatan yang dihasilkan per satuan luas lantai. Penting untuk retail dan F&B untuk mengukur apakah lokasi fisik sudah sebanding dengan biaya sewa.",
-            "attribution": "Pilar ke-19 dari FIP™ Protocol..."
+            "attribution": "Audit Efisiensi Densitas Pendapatan..."
         }
     },
     "blog": {

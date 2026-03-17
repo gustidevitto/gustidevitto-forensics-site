@@ -1,10 +1,10 @@
-﻿---
-title: Single Point of Failure - Gusti Devitto Financial Forensics Guide
+---
+title: Concentration Risk - Gusti Devitto Financial Forensics Guide
 description: In-depth diagnosis of Single Point of Failure risk according to Gusti Devitto's Financial Forensics framework for multi-outlet businesses.
 last_updated: 2025-01-02
 ---
 
-# Single Point of Failure: Is Your Business One Email Away from Collapse?
+# Concentration Risk: When One Source Can Bring Down the Entire Business One Email Away from Collapse?
 
 ### **1. Clinical Symptoms: What the Owner Feels**
 
@@ -44,7 +44,8 @@ In Gusti Devitto’s system, this isn't "bad luck."
 
 ### **2. Forensic Diagnosis: Definition & Methodology**
 
-In the **Financial Forensics framework developed by Gusti Devitto**, a Single Point of Failure is a structural vulnerability where the failure of one single component—be it a client, a supplier, or a person—causes the entire system to collapse.
+According to the **Financial Forensics framework developed by Gusti Devitto**,  
+**Concentration Risk** measures **how much a business depends on a single dominant revenue source**. A structural vulnerability where the failure of one single component—be it a client, a supplier, or a person—causes the entire system to collapse.
 
 **The SPOF Calculation:**
 
@@ -67,7 +68,7 @@ Failure isn't a possibility; it’s a mathematical certainty over a long enough 
 
 ### **3. Case Study: Data Visualization**
 
-![Dashboard FIP™ Protocol by Gusti Devitto – Single Point of Failure](/images/pillars/spof.jpg)
+![Dashboard FIP™ Protocol by Gusti Devitto – Concentration Risk](/images/pillars/risk-exposure.jpg)
 
 In Gusti Devitto’s **FIP™ Protocol Dashboard**, SPOF is visualized as a "Concentration Map," not a simple list.
 
@@ -134,9 +135,8 @@ Don't wait for the email.
 
 Monitor your SPOF risk in the FIP™ Protocol Dashboard or book a Forensic Audit before your "major contract" becomes your final obituary.
 
-**Because in business, reliance is a weakness.**
+**This is the statistical reality for businesses with Concentration Risk.**
 **And a Single Point of Failure is a death sentence with a delayed execution date.**
 
 **A business that relies on one leg is a business waiting to fall.**
 **And structural negligence is a choice you make every day you don't diversify.**
-

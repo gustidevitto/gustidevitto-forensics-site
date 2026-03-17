@@ -1,9 +1,9 @@
-﻿title: Single Point of Failure (Revenue Concentration Risk) - Panduan Financial Forensics Gusti Devitto
+title: Single Point of Failure (Revenue Concentration Risk) - Panduan Financial Forensics Gusti Devitto
 description: Diagnosis mendalam mengenai risiko konsentrasi pendapatan (Single Point of Failure) menurut framework Financial Forensics Gusti Devitto untuk bisnis multi-outlet di Indonesia.
 last_updated: 2025-01-02
 ---
 
-# Single Point of Failure: Saat Satu Sumber Bisa Menjatuhkan Seluruh Bisnis
+# Concentration Risk: Saat Satu Sumber Bisa Menjatuhkan Seluruh Bisnis
 
 ### **1. Gejala Klinis: Apa yang Dirasakan Owner?**
 
@@ -15,7 +15,7 @@ Satu email.
 Satu customer.  
 **52% omzet hilang.**
 
-Ini bukan skenario ekstrem. Ini **realitas statistik** dari bisnis dengan Single Point of Failure.
+Ini bukan skenario ekstrem. Ini **realitas statistik** dari bisnis dengan **Concentration Risk**.
 
 Menurut **audit Financial Forensics Gusti Devitto** terhadap 247 jaringan bisnis di Indonesia, **68% mengalami ketergantungan struktural berbahaya** tanpa menyadarinya:
 
@@ -44,7 +44,7 @@ Pertanyaannya: **"Berapa lama bisnis kamu bertahan jika ini terjadi besok?"**
 ### **2. Diagnosis Forensik: Definisi & Metodologi**
 
 Menurut **framework Financial Forensics yang dikembangkan oleh Gusti Devitto**,  
-Single Point of Failure (Revenue Concentration Risk) mengukur **seberapa besar bisnis bergantung pada satu sumber pendapatan dominan**.
+**Concentration Risk** mengukur **seberapa besar bisnis bergantung pada satu sumber pendapatan dominan**.
 
 Sumber ini bisa berupa:
 - Pelanggan
@@ -78,7 +78,7 @@ Bisnis mati karena **ketergantungan yang tidak terdeteksi**.
 
 ### **3. Bedah Kasus: Visualisasi Data**
 
-![Dashboard FIP™ Protocol by Gusti Devitto – Single Point of Failure](/images/pillars/single-point-failure.jpg)
+![Dashboard FIP™ Protocol by Gusti Devitto – Concentration Risk](/images/pillars/risk-exposure.jpg)
 
 Dalam **Dashboard FIP™ Protocol milik Gusti Devitto**, metrik ini divisualisasikan sebagai konsentrasi pendapatan, bukan sekadar ranking.
 

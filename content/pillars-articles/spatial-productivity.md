@@ -1,5 +1,5 @@
 title: Spatial Productivity (Revenue Density) - Panduan Financial Forensics Gusti Devitto
-description: Diagnosis mendalam mengenai produktivitas ruang sebagai pilar ke-19 dalam framework Financial Forensics Gusti Devitto.
+description: Diagnosis mendalam mengenai produktivitas ruang sebagai pilar kunci dalam framework Financial Forensics Gusti Devitto.
 last_updated: 2026-03-17
 ---
 
@@ -36,7 +36,13 @@ Dalam audit Gusti Devitto:
 
 ---
 
-### **3. Intervensi: Langkah Perbaikan**
+### **3. Bedah Kasus: Visualisasi Data**
+
+![Dashboard FIP™ Protocol by Gusti Devitto – Spatial Productivity](/images/pillars/inventory-decay.jpg)
+
+---
+
+### **4. Intervensi: Langkah Perbaikan**
 
 Menurut **Financial Forensics Gusti Devitto**, spatial productivity bukan sekadar menambah kursi atau rak, tapi memaksimalkan arus kas per meter.
 

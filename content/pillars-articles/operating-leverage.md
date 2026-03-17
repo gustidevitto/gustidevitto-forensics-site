@@ -1,5 +1,5 @@
 title: Operating Leverage (Risk Sensitivity) - Panduan Financial Forensics Gusti Devitto
-description: Diagnosis mendalam mengenai Operating Leverage sebagai pilar ke-17 dalam framework Financial Forensics Gusti Devitto.
+description: Diagnosis mendalam mengenai Operating Leverage sebagai pilar esensial dalam framework Financial Forensics Gusti Devitto.
 last_updated: 2026-03-17
 ---
 
@@ -38,7 +38,13 @@ Dalam audit Gusti Devitto:
 
 ---
 
-### **3. Intervensi: Langkah Perbaikan**
+### **3. Bedah Kasus: Visualisasi Data**
+
+![Dashboard FIP™ Protocol by Gusti Devitto – Operating Leverage](/images/pillars/bep-dynamic.jpg)
+
+---
+
+### **4. Intervensi: Langkah Perbaikan**
 
 Menurut **Gusti Devitto**, solusi untuk leverage yang terlalu kaku adalah "variabelisasi" biaya.
 

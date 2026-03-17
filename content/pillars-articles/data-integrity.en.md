@@ -1,5 +1,5 @@
 title: Data Integrity Score (Trust Coefficient) - Gusti Devitto Financial Forensics Guide
-description: In-depth diagnosis of Data Integrity as the 18th pillar in the Gusti Devitto Financial Forensics framework.
+description: In-depth diagnosis of Data Integrity as a fundamental pillar in the Gusti Devitto Financial Forensics framework.
 last_updated: 2026-03-17
 ---
 
@@ -33,7 +33,13 @@ In Gusti Devitto's audit:
 
 ---
 
-### **3. Intervention: Improvement Steps**
+### **3. Case Study: Data Visualization**
+
+![Dashboard FIP™ Protocol by Gusti Devitto – Data Integrity Score](/images/pillars/insight-surprise.jpg)
+
+---
+
+### **4. Intervention: Improvement Steps**
 
 According to **Gusti Devitto's Financial Forensics**, data integrity is not about punishing people, but about building systems that are antithetical to dishonesty.
 

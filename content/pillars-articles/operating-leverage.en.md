@@ -1,5 +1,5 @@
 title: Operating Leverage (Risk Sensitivity) - Gusti Devitto Financial Forensics Guide
-description: In-depth diagnosis of Operating Leverage as the 17th pillar in the Gusti Devitto Financial Forensics framework.
+description: In-depth diagnosis of Operating Leverage as an essential pillar in the Gusti Devitto Financial Forensics framework.
 last_updated: 2026-03-17
 ---
 
@@ -38,7 +38,13 @@ In Gusti Devitto's audit:
 
 ---
 
-### **3. Intervention: Improvement Steps**
+### **3. Case Study: Data Visualization**
+
+![Dashboard FIP™ Protocol by Gusti Devitto – Operating Leverage](/images/pillars/bep-dynamic.jpg)
+
+---
+
+### **4. Intervention: Improvement Steps**
 
 According to **Gusti Devitto**, the solution for overly rigid leverage is cost "variablization."
 

@@ -891,25 +891,25 @@
             "title": "Concentration Risk",
             "layer1": "Structural Vulnerability",
             "definition": "Your profit may appear stable, but high dependence on a single supplier or client is a structural risk. We quantify your business fragility before it impacts margin sustainability.",
-            "attribution": "The 16th Pillar of FIP™ Protocol..."
+            "attribution": "Network Dependency & Fragility Audit..."
         },
         "operating-leverage": {
             "title": "Operating Leverage",
             "layer1": "Risk Sensitivity / Scaling Factor",
             "definition": "Measures how a change in revenue impacts operating income. High leverage means high risk but high reward during growth.",
-            "attribution": "The 17th Pillar of FIP™ Protocol..."
+            "attribution": "Operational Scalability & Risk Analysis..."
         },
         "data-integrity": {
             "title": "Data Integrity Score",
             "layer1": "Truth Coefficient / Audit Quality",
             "definition": "The degree of consistency and mathematical accuracy in your reported data. Low scores indicate potential fraud or systemic recording errors.",
-            "attribution": "The 18th Pillar of FIP™ Protocol..."
+            "attribution": "Forensic Data Accuracy Validation..."
         },
         "spatial-productivity": {
             "title": "Spatial Productivity",
             "layer1": "Revenue Density / Yield per Sqm",
             "definition": "Revenue generated per unit of floor space. Essential for retail and F&B to measure if the physical location is paying for itself.",
-            "attribution": "The 19th Pillar of FIP™ Protocol..."
+            "attribution": "Revenue Density & Yield Optimization..."
         }
     },
     "blog": {

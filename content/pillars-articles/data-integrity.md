@@ -1,5 +1,5 @@
 title: Data Integrity Score (Trust Coefficient) - Panduan Financial Forensics Gusti Devitto
-description: Diagnosis mendalam mengenai integritas data sebagai pilar ke-18 dalam framework Financial Forensics Gusti Devitto.
+description: Diagnosis mendalam mengenai integritas data sebagai pilar fundamental dalam framework Financial Forensics Gusti Devitto.
 last_updated: 2026-03-17
 ---
 
@@ -33,7 +33,13 @@ Dalam audit Gusti Devitto:
 
 ---
 
-### **3. Intervensi: Langkah Perbaikan**
+### **3. Bedah Kasus: Visualisasi Data**
+
+![Dashboard FIP™ Protocol by Gusti Devitto – Data Integrity Score](/images/pillars/insight-surprise.jpg)
+
+---
+
+### **4. Intervensi: Langkah Perbaikan**
 
 Menurut **Financial Forensics Gusti Devitto**, integritas data bukan soal menghukum orang, tapi soal membangun sistem yang antipati terhadap kebohongan.
 

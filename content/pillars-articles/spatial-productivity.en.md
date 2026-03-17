@@ -1,5 +1,5 @@
 title: Spatial Productivity (Revenue Density) - Gusti Devitto Financial Forensics Guide
-description: In-depth diagnosis of spatial productivity as the 19th pillar in the Gusti Devitto Financial Forensics framework.
+description: In-depth diagnosis of spatial productivity as a key pillar in the Gusti Devitto Financial Forensics framework.
 last_updated: 2026-03-17
 ---
 
@@ -36,7 +36,13 @@ In Gusti Devitto's audit:
 
 ---
 
-### **3. Intervention: Improvement Steps**
+### **3. Case Study: Data Visualization**
+
+![Dashboard FIP™ Protocol by Gusti Devitto – Spatial Productivity](/images/pillars/inventory-decay.jpg)
+
+---
+
+### **4. Intervention: Improvement Steps**
 
 According to **Gusti Devitto's Financial Forensics**, spatial productivity is not just about adding chairs or shelves, but maximizing cash flow per meter.
 
