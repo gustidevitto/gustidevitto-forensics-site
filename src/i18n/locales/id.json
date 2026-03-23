@@ -7,7 +7,6 @@
         "blog": "Blog",
         "pillars_count": "25-Pilar",
         "pillars_subtitle": "Granular Audit Financial Forensics",
-
         "contact": "Kontak",
         "owners": "Untuk Owner",
         "investors": "Untuk Investor & PE",
@@ -106,9 +105,14 @@
         "final_cta_title": "Siap <1>Mengambil Kembali Profit Anda</1>?",
         "final_cta_desc": "Uang itu sudah ada di dalam bisnis Anda. <br /><1>Tinggal tahu cara mengambilnya.</1>",
         "final_cta_meta": "Hanya 5 menit · Tersedia 24/7 · Hasil instan",
-        "footer_badge": "Gusti Devitto™ · Profit Recovery Architecture"
+        "footer_badge": "Gusti Devitto™ · Profit Recovery Architecture",
+        "tension": "Anda sudah profit. Namun sebagian profit tersebut tidak pernah sampai ke rekening Anda.",
+        "why_reports_title": "Mengapa Laporan Keuangan Anda Tidak Menunjukkan Ini",
+        "why_reports_p1": "Pendapatan dicatat sebelum uang kas tiba.",
+        "why_reports_p2": "Biaya dikelompokkan, menyembunyikan inefisiensi.",
+        "why_reports_p3": "Profit terlihat sehat padahal uang kas bocor secara diam-diam.",
+        "why_reports_close": "Laporan Anda menunjukkan performa. Laporan tidak menunjukkan di mana uang tersangkut."
     },
-
     "network_intelligence": {
         "seo_desc": "Cari tahu cabang mana yang menguras profit dari jaringan Anda. Intelijen forensik instan untuk HQ Franchise, PE firms, dan operator multi-lokasi (20-500+ cabang) di Indonesia & ASEAN.",
         "seo_keywords": "Pemulihan Profit Multi-Lokasi Indonesia, Audit Profit Franchise Jakarta, Intelijen Bisnis Jaringan ASEAN, Pemulihan Margin Enterprise Surabaya, Spesialis Kepatuhan HQ Franchise, Optimasi Profit Multi-Outlet",
@@ -173,7 +177,13 @@
         "pilot_cta": "Mulai Pilot",
         "final_cta_title": "Jaringan Anda Punya",
         "final_cta_title_accent": "Profit Tersangkut yang Menunggu Ditemukan.",
-        "final_cta_desc": "Hubungi Gusti Devitto untuk audit profit jaringan strategis atau Annual Recovery Plan."
+        "final_cta_desc": "Hubungi Gusti Devitto untuk audit profit jaringan strategis atau Annual Recovery Plan.",
+        "tension": "Anda sudah profit. Namun sebagian profit tersebut tidak pernah sampai ke rekening Anda.",
+        "why_reports_title": "Mengapa Laporan Keuangan Anda Tidak Menunjukkan Ini",
+        "why_reports_p1": "Pendapatan dicatat sebelum uang kas tiba.",
+        "why_reports_p2": "Biaya dikelompokkan, menyembunyikan inefisiensi.",
+        "why_reports_p3": "Profit terlihat sehat padahal uang kas bocor secara diam-diam.",
+        "why_reports_close": "Laporan Anda menunjukkan performa. Laporan tidak menunjukkan di mana uang tersangkut."
     },
     "global": {
         "schema_desc": "Gusti Devitto—Profit Recovery Architect. Menemukan profit tersangkut di dalam bisnis melalui intelijen forensik, memulihkan 15-20% margin yang tidak terlihat akuntansi standar.",
@@ -473,19 +483,23 @@
         "how_it_works": {
             "section_title": "The Path to <1>Sovereign Intelligence</1>",
             "section_subtitle": "Bagaimana kami mentransfer kekuatan deteksi dari spesialis ke dalam DNA bisnis Anda—menghapus ketergantungan selamanya.",
-            "phase1_title": "Fase 1: Asesmen Diagnostik",
+            "phase1_title": "Phase 1: Menghentikan Pendarahan",
             "phase1_actor": "Intervensi Ahli (Gusti Devitto + Tim)",
             "phase1_desc": "Menemukan profit tersangkut seketika. Gusti Devitto mereview data Anda secara personal untuk menemukan celah profit yang tidak terlihat oleh tim Anda.",
-            "phase2_title": "Fase 2: Periodic Surveillance",
+            "phase2_title": "Phase 2: Mencegah Kebocoran Berulang",
             "phase2_actor": "Audit & Monitoring Rutin",
             "phase2_desc": "Mencegah inefisiensi kembali. Kami melakukan audit forensik secara berkala setiap kuartal untuk memastikan efisiensi margin tetap terjaga di atas standar.",
-            "phase3_title": "Fase 3: Strategic Intelligence Unit",
+            "phase3_title": "Phase 3: Lapisan Intelejen",
             "phase3_actor": "External Finance Intelligence",
             "phase3_desc": "Kami bertindak sebagai unit intelijen eksternal yang memantau anomali secara mendalam, memberikan 'Verdict' bulanan untuk keputusan high-stakes.",
-            "phase4_title": "Fase 4: Sovereign Control",
+            "phase4_title": "Phase 4: Kontrol Penuh",
             "phase4_actor": "Kedaulatan Kontrol Penuh",
             "phase4_desc": "Struktur bisnis Anda terlindungi sepenuhnya melalui kontrak pemeliharaan intelijen jangka panjang dengan Gusti Devitto.",
-            "tesla_principle": "Setiap diagnosa memperkuat database pola kami, membuat sistem intelijen bisnis Anda semakin pintar setiap hari."
+            "tesla_principle": "Setiap diagnosa memperkuat database pola kami, membuat sistem intelijen bisnis Anda semakin pintar setiap hari.",
+            "phase1_desc_upgrade": "Tindakan segera untuk menghentikan kerugian profit yang sedang berlangsung, seringkali dalam hitungan minggu.",
+            "phase2_desc_upgrade": "Memastikan profit yang pulih tidak bocor lagi.",
+            "phase3_desc_upgrade": "Mendukung keputusan berisiko tinggi dengan visibilitas keuangan yang lebih dalam.",
+            "phase4_desc_upgrade": "Bisnis Anda beroperasi dengan perlindungan bawaan terhadap kerugian tersembunyi."
         },
         "seo_title": "Struktur Investasi Pemulihan Profit | Gusti Devitto™ Harga Layanan",
         "seo_desc": "Harga resmi untuk layanan Pemulihan Profit & Intelijen Forensik Bisnis. Dari audit lokasi tunggal hingga pemulihan profit skala enterprise.",
@@ -544,7 +558,29 @@
         "faq_q2": "Apa saja yang termasuk dalam biaya engagement?",
         "faq_a2": "Kedua mode mencakup pengenalan pola mendalam, deteksi variansi, dan laporan forensik yang dirancang untuk menghentikan kebocoran profit seketika.",
         "faq_q3": "Apakah ada jaminan uang kembali?",
-        "faq_a3": "Kami menawarkan jaminan 'Jika Tidak Menemukan Kebocoran, Tidak Bayar'. Jika kami tidak menemukan celah profit tersangkut selama diagnosa awal, konsultasi tersebut gratis."
+        "faq_a3": "Kami menawarkan jaminan 'Jika Tidak Menemukan Kebocoran, Tidak Bayar'. Jika kami tidak menemukan celah profit tersangkut selama diagnosa awal, konsultasi tersebut gratis.",
+        "bridge_title": "Bagaimana Kami Benar-Benar Memulihkan Profit Anda",
+        "bridge_s1_title": "Step 1 — Identify",
+        "bridge_s1_desc": "Kami menemukan secara pasti di mana uang menyangkut atau bocor di dalam operasional Anda.",
+        "bridge_s2_title": "Step 2 — Quantify",
+        "bridge_s2_desc": "Kami menghitung berapa banyak profit yang hilang, tertunda, atau terperangkap.",
+        "bridge_s3_title": "Step 3 — Extract",
+        "bridge_s3_desc": "Kami memberi Anda panduan dan prioritas langkah untuk memulihkan uang tersebut.",
+        "bridge_s4_title": "Step 4 — Stabilize",
+        "bridge_s4_desc": "Kami mencegah kebocoran yang sama terulang kembali.",
+        "outcome_anchor": "Sebagian besar bisnis multi-outlet yang kami audit berhasil memulihkan antara 15–30% dari kebocoran profit tersembunyi setelah tindakan yang tepat diambil.",
+        "micro_proof": "Contoh: Sebuah operator 12 outlet menemukan lebih dari $180K/tahun kebocoran profit tersembunyi pada efisiensi tenaga kerja dan inventaris di audit pertama.",
+        "reassurance": "Jika Anda tidak yakin di mana masalahnya, mulailah dengan satu diagnostik. Jika masalahnya struktural, kami akan menunjukkan seberapa dalam dampaknya.",
+        "reassurance_btn": "Mulai dengan Diagnostik",
+        "tier_diagnostic_focus": "Fokus: Visibilitas",
+        "tier_diagnostic_outcome": "Hasil: Mengungkap mayoritas penyebab kebocoran",
+        "tier_forensic_focus": "Fokus: Analisis Mendalam",
+        "tier_forensic_outcome": "Hasil: Mengidentifikasi kerugian profit struktural",
+        "tier_network_focus": "Fokus: Perbandingan Jaringan",
+        "tier_network_outcome": "Hasil: Menemukan cabang mana yang paling merugikan",
+        "tier_sovereign_focus": "Fokus: Sistem Kontrol Penuh",
+        "tier_sovereign_outcome": "Hasil: Mengubah bisnis menjadi sistem yang dapat mengoreksi diri",
+        "seo_keywords": "Harga Pemulihan Profit, Biaya Audit Forensik Finansial, Biaya Gusti Devitto, Harga Audit Profit Multi-Outlet, Deteksi Phantom Costs"
     },
     "get_access": {
         "seo_title": "Dapatkan Akses | Diagnostik Gratis oleh Gusti Devitto",
@@ -1342,7 +1378,6 @@
             "other": "Lainnya"
         }
     },
-
     "investasi_page": {
         "seo_title": "Investasi",
         "seo_desc": "Pilih kedalaman audit yang Anda butuhkan. Sebagian besar operator multi-outlet kehilangan 15-30% profit karena kebocoran struktural yang tidak terlihat di P&L.",

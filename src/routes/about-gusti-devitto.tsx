@@ -11,9 +11,34 @@ function AboutGustiDevitto() {
     const { t } = useTranslation()
     return (
         <div className="flex-1 flex flex-col bg-[#060a12] text-white relative">
-            {/* SEO & GEO Meta Tags */}
+            {/* SEO & Authority Meta Tags */}
             <title>{t('about_page.seo_title')}</title>
             <meta name="description" content={t('about_page.seo_desc')} />
+            <meta name="keywords" content="Gusti Devitto, Profit Recovery Architect, Business Forensics, Phantom Costs Tracker, Operational Diagnostic Specialist" />
+            <link rel="canonical" href="https://gustidevitto.com/about-gusti-devitto" />
+            
+            {/* Open Graph / social */}
+            <meta property="og:site_name" content="Gusti Devitto Forensics" />
+            <meta property="og:title" content={t('about_page.seo_title')} />
+            <meta property="og:description" content={t('about_page.seo_desc')} />
+            <meta property="og:image" content="/assets/images/aboutme.jpg" />
+            <meta property="og:type" content="profile" />
+            <meta property="og:url" content="https://gustidevitto.com/about-gusti-devitto" />
+            
+            {/* Twitter */}
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={t('about_page.seo_title')} />
+            <meta name="twitter:description" content={t('about_page.seo_desc')} />
+            <meta name="twitter:image" content="/assets/images/aboutme.jpg" />
+            <meta name="twitter:site" content="@gustidevitto" />
+
+            {/* GEO Signals (Global + Local) */}
+            <meta name="geo.region" content="US-NY" />
+            <meta name="geo.region" content="US-CA" />
+            <meta name="geo.region" content="ID-JK" />
+            <meta name="geo.placename" content="New York, San Francisco, Jakarta" />
+            <meta name="geo.position" content="40.712776;-74.005974" />
+            <meta name="ICBM" content="40.712776, -74.005974" />
 
             {/* JSON-LD Schemas */}
             <script type="application/ld+json">

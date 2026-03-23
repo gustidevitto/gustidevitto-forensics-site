@@ -42,8 +42,8 @@ function InvestasiPage() {
         {
             id: 'diagnostic',
             name: t('investasi_page.tiers.diagnostic.name', 'DIAGNOSTIC'),
-            tagline: t('investasi_page.tiers.diagnostic.tagline', 'Find the bleeding'),
-            positioning: t('investasi_page.tiers.diagnostic.positioning', 'Am I sick?'),
+            tagline: t('investasi.tier_diagnostic_focus', 'Focus: visibility'),
+            positioning: t('investasi.tier_diagnostic_outcome', 'Outcome: uncover majority of visible leaks'),
             color: 'green',
             pricing: {
                 oneTime: 1500,
@@ -52,7 +52,7 @@ function InvestasiPage() {
             },
             features: {
                 included: [
-                    t('investasi_page.features.pillars_8', '8 Core Forensic Pillars -> Locate trapped cash across your operation'),
+                    t('investasi_page.features.pillars_8', 'Advanced forensic analysis methods -> Locate trapped cash across your operation'),
                     t('investasi_page.features.syndrome', 'Syndrome Detection -> Prevent recurring margin erosion'),
                     t('investasi_page.features.anomaly', 'Anomaly Detection -> Flag suspicious financial behavior instantly'),
                     t('investasi_page.features.health', 'Basic Health Score -> Reveal how fast your cash is burning'),
@@ -61,7 +61,7 @@ function InvestasiPage() {
                     t('investasi_page.features.bilingual', 'Bilingual reports (EN/ID)')
                 ],
                 excluded: [
-                    t('investasi_page.features.full_25', 'Full 25 pillars'),
+                    t('investasi_page.features.full_25', 'Full forensic depth'),
                     t('investasi_page.features.logic_trace', 'Logic trace analysis'),
                     t('investasi_page.features.multi_outlet_analysis', 'Multi-outlet analysis'),
                     t('investasi_page.features.ai_neural', 'AI neural intelligence')
@@ -77,8 +77,8 @@ function InvestasiPage() {
         {
             id: 'forensic',
             name: t('investasi_page.tiers.forensic.name', 'FORENSIC'),
-            tagline: t('investasi_page.tiers.forensic.tagline', 'Understand the disease'),
-            positioning: t('investasi_page.tiers.forensic.positioning', 'Why am I sick, and what\'s the cure?'),
+            tagline: t('investasi.tier_forensic_focus', 'Focus: depth'),
+            positioning: t('investasi.tier_forensic_outcome', 'Outcome: identify structural profit loss'),
             color: 'blue',
             pricing: {
                 oneTime: 3500,
@@ -88,9 +88,9 @@ function InvestasiPage() {
             features: {
                 included: [
                     t('investasi_page.features.diagnostic_short', 'Everything in DIAGNOSTIC'),
-                    t('investasi_page.features.pillars_25', 'Full 25 Forensic Pillars -> Map every single vulnerability point'),
+                    t('investasi_page.features.pillars_25', 'Full Forensic Protocol -> Map every single vulnerability point'),
                     t('investasi_page.features.logic', 'Logic Trace Analysis -> Expose how money exits your business'),
-                    t('investasi_page.features.decision', 'Decision Intelligence Engine -> Turn raw data into recovery decisions'),
+                    t('investasi_page.features.decision', 'Advanced decision matrix -> Turn raw data into recovery decisions'),
                     t('investasi_page.features.integrity', 'Data Integrity Scoring -> Detect manipulated financial reporting'),
                     t('investasi_page.features.analytics', 'Advanced Analytics™ -> Deep-dive into operational friction'),
                     t('investasi_page.features.detailed_report', 'Detailed Report (15-20 pages) -> Your blueprint to recover stranded capital')
@@ -112,8 +112,8 @@ function InvestasiPage() {
         {
             id: 'network',
             name: t('investasi_page.tiers.network.name', 'NETWORK'),
-            tagline: t('investasi_page.tiers.network.tagline', 'X-ray the entire fleet'),
-            positioning: t('investasi_page.tiers.network.positioning', 'How sick is my entire fleet?'),
+            tagline: t('investasi.tier_network_focus', 'Focus: comparison'),
+            positioning: t('investasi.tier_network_outcome', 'Outcome: find which locations are destroying profit'),
             color: 'amber',
             pricing: {
                 oneTime: 8000,
@@ -149,8 +149,8 @@ function InvestasiPage() {
         {
             id: 'sovereign',
             name: t('investasi_page.tiers.sovereign.name', 'SOVEREIGN'),
-            tagline: t('investasi_page.tiers.sovereign.tagline', 'Own the intelligence'),
-            positioning: t('investasi_page.tiers.sovereign.positioning', 'I control the machine'),
+            tagline: t('investasi.tier_sovereign_focus', 'Focus: control'),
+            positioning: t('investasi.tier_sovereign_outcome', 'Outcome: turn business into self-correcting system'),
             color: 'red',
             pricing: {
                 oneTime: 25000,
@@ -261,9 +261,34 @@ function InvestasiPage() {
                 ></div>
             </div>
 
-            {/* SEO Meta Tags */}
-            <title>{t('investasi.seo_title')} - Forensic Economics</title>
+            {/* SEO & Authority Meta Tags */}
+            <title>{t('investasi.seo_title')} | Gusti Devitto Forensics</title>
             <meta name="description" content={t('investasi.seo_desc')} />
+            <meta name="keywords" content={t('investasi.seo_keywords')} />
+            <link rel="canonical" href="https://gustidevitto.com/investasi" />
+            
+            {/* Open Graph / social */}
+            <meta property="og:site_name" content="Gusti Devitto Forensics" />
+            <meta property="og:title" content={`${t('investasi.seo_title')} | Gusti Devitto Forensics`} />
+            <meta property="og:description" content={t('investasi.seo_desc')} />
+            <meta property="og:image" content="/assets/images/forensic_dashboard.png" />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://gustidevitto.com/investasi" />
+            
+            {/* Twitter */}
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={`${t('investasi.seo_title')} | Gusti Devitto Forensics`} />
+            <meta name="twitter:description" content={t('investasi.seo_desc')} />
+            <meta name="twitter:image" content="/assets/images/forensic_dashboard.png" />
+            <meta name="twitter:site" content="@gustidevitto" />
+
+            {/* GEO Signals (Global + Local) */}
+            <meta name="geo.region" content="US-NY" />
+            <meta name="geo.region" content="US-CA" />
+            <meta name="geo.region" content="ID-JK" />
+            <meta name="geo.placename" content="New York, San Francisco, Jakarta" />
+            <meta name="geo.position" content="40.712776;-74.005974" />
+            <meta name="ICBM" content="40.712776, -74.005974" />
 
             {/* Hero Header */}
             <section className="pt-32 pb-24 px-4 md:px-8 border-b border-white/5 bg-gradient-to-b from-[#121212] to-[#0a0a0a] relative z-10">
@@ -274,9 +299,36 @@ function InvestasiPage() {
                     <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase italic leading-none">
                         {t('investasi_page.hero_title', 'Choose How Deep We Go')}
                     </h1>
-                    <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed border-l-2 border-primary/30 pl-8 py-2">
-                        {t('investasi_page.hero_desc', 'How deep do you need to go? Most multi-outlet operators lose 15-30% of profit to structural leakage they can\'t see on their P&L. We make the invisible, visible.')}
+                    <p className="text-amber-500 font-bold text-lg md:text-xl max-w-2xl mx-auto leading-relaxed border-l-2 border-amber-500/30 pl-8 py-2">
+                        {t('investasi.outcome_anchor')}
                     </p>
+                </div>
+            </section>
+            
+            {/* Bridge Section */}
+            <section className="py-24 px-4 md:px-8 border-b border-white/5 bg-[#03060a] relative">
+                <div className="container mx-auto max-w-5xl">
+                    <div className="text-center mb-16 space-y-4">
+                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">{t('investasi.bridge_title')}</h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        <div className="border border-white/10 p-6 bg-white/[0.02] text-left hover:bg-white/[0.04] transition-colors group">
+                            <span className="text-amber-500/50 font-mono text-xs block mb-2">{t('investasi.bridge_s1_title')}</span>
+                            <p className="text-white/80 font-light group-hover:text-amber-500 transition-colors">{t('investasi.bridge_s1_desc', 'We locate exactly where money gets stuck or leaks inside your operation.')}</p>
+                        </div>
+                        <div className="border border-white/10 p-6 bg-white/[0.02] text-left hover:bg-white/[0.04] transition-colors group">
+                            <span className="text-amber-500/50 font-mono text-xs block mb-2">{t('investasi.bridge_s2_title')}</span>
+                            <p className="text-white/80 font-light group-hover:text-amber-500 transition-colors">{t('investasi.bridge_s2_desc', 'We calculate how much profit is being lost, delayed, or trapped.')}</p>
+                        </div>
+                        <div className="border border-white/10 p-6 bg-white/[0.02] text-left hover:bg-white/[0.04] transition-colors group">
+                            <span className="text-amber-500/50 font-mono text-xs block mb-2">{t('investasi.bridge_s3_title')}</span>
+                            <p className="text-white/80 font-light group-hover:text-amber-500 transition-colors">{t('investasi.bridge_s3_desc', 'We give you a clear, prioritized action path to recover that money.')}</p>
+                        </div>
+                        <div className="border border-white/10 p-6 bg-white/[0.02] text-left hover:bg-white/[0.04] transition-colors group">
+                            <span className="text-amber-500/50 font-mono text-xs block mb-2">{t('investasi.bridge_s4_title')}</span>
+                            <p className="text-white/80 font-light group-hover:text-amber-500 transition-colors">{t('investasi.bridge_s4_desc', 'We prevent the same leakage from happening again.')}</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -519,17 +571,22 @@ function InvestasiPage() {
             {/* Attribution / Footer Copy */}
             <section className="py-24 px-4 md:px-8 bg-zinc-950 border-t border-white/5">
                 <div className="container mx-auto max-w-4xl text-center space-y-8">
-                    <h2 className="text-3xl font-black">{t('investasi_page.labels.not_sure_title', 'Not sure how deep you need us to go?')}</h2>
-                    <p className="text-muted-foreground">{t('investasi_page.labels.not_sure_desc', 'Schedule a 15-minute discovery call with Gusti Devitto to discuss your specific needs.')}</p>
-                    <div className="text-left max-w-md mx-auto space-y-2">
-                        <p className="font-bold">{t('investasi_page.labels.all_tiers_include', 'All tiers include:')}</p>
-                        <ul className="list-disc list-inside">
-                            {(t('investasi_page.footer_features', { returnObjects: true }) as string[]).map((item: string, i: number) => (
-                                <li key={i}>✓ {item}</li>
-                            ))}
-                        </ul>
+                    {/* Micro Proof Block */}
+                    <div className="mb-12 p-8 border border-amber-500/20 bg-amber-500/5 text-left max-w-3xl mx-auto rounded-md relative overflow-hidden">
+                        <div className="absolute left-0 top-0 bottom-0 w-1 flex flex-col items-center">
+                             <div className="flex-1 w-full bg-amber-500"></div>
+                        </div>
+                        <p className="text-white/80 italic text-lg leading-relaxed pl-4">
+                            "{t('investasi.micro_proof')}"
+                        </p>
                     </div>
-                    <Button>{t('investasi_page.labels.cta_schedule', 'SCHEDULE DISCOVERY CALL')}</Button>
+
+                    <h2 className="text-3xl font-black">{t('investasi_page.labels.not_sure_title', 'Not sure how deep you need us to go?')}</h2>
+                    <p className="text-muted-foreground text-lg">{t('investasi.reassurance')}</p>
+                    
+                    <div className="pt-6">
+                        <Button className="font-bold tracking-widest uppercase bg-amber-500 text-black hover:bg-white rounded-none px-8 py-6">{t('investasi.reassurance_btn', 'Start with a Diagnostic')}</Button>
+                    </div>
                 </div>
             </section>
 

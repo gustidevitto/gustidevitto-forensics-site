@@ -108,30 +108,32 @@ function NetworkIntelligencePage() {
         >
             {/* SEO & Authority Meta Tags */}
             <title>{t('network_intelligence.hero_title')} | Gusti Devitto Forensics</title>
-            <meta name="description" content={t('network_intelligence.hero_desc')} />
-            <meta name="keywords" content="business forensics, profit recovery, supply chain intelligence, network diagnostics, Gusti Devitto, fraud detection, enterprise audit" />
+            <meta name="description" content={t('network_intelligence.seo_desc')} />
+            <meta name="keywords" content={t('network_intelligence.seo_keywords')} />
             <link rel="canonical" href="https://gustidevitto.com/network-intelligence" />
             
             {/* Open Graph / social */}
             <meta property="og:site_name" content="Gusti Devitto Forensics" />
-            <meta property="og:title" content={`${t('network_intelligence.hero_title')} | Forensic Intelligence`} />
-            <meta property="og:description" content={t('network_intelligence.hero_desc')} />
+            <meta property="og:title" content={`${t('network_intelligence.hero_title')} | Gusti Devitto Forensics`} />
+            <meta property="og:description" content={t('network_intelligence.seo_desc')} />
             <meta property="og:image" content="/assets/images/network_monitoring.png" />
             <meta property="og:type" content="website" />
             <meta property="og:url" content="https://gustidevitto.com/network-intelligence" />
             
             {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={t('network_intelligence.hero_title')} />
-            <meta name="twitter:description" content={t('network_intelligence.hero_desc')} />
+            <meta name="twitter:title" content={`${t('network_intelligence.hero_title')} | Gusti Devitto Forensics`} />
+            <meta name="twitter:description" content={t('network_intelligence.seo_desc')} />
             <meta name="twitter:image" content="/assets/images/network_monitoring.png" />
             <meta name="twitter:site" content="@gustidevitto" />
 
-            {/* GEO Signals */}
+            {/* GEO Signals (Global + Local) */}
+            <meta name="geo.region" content="US-NY" />
+            <meta name="geo.region" content="US-CA" />
             <meta name="geo.region" content="ID-JK" />
-            <meta name="geo.placename" content="Jakarta" />
-            <meta name="geo.position" content="-6.200000;106.816666" />
-            <meta name="ICBM" content="-6.200000, 106.816666" />
+            <meta name="geo.placename" content="New York, San Francisco, Jakarta" />
+            <meta name="geo.position" content="40.712776;-74.005974" />
+            <meta name="ICBM" content="40.712776, -74.005974" />
 
             {/* JSON-LD Structured Data — Authority Signal */}
             <script type="application/ld+json">
@@ -214,6 +216,12 @@ function NetworkIntelligencePage() {
 
                 <div className="max-w-6xl relative z-10">
                     <div className="text-left">
+                        {/* 0. Economic Tension */}
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-amber-500/20 bg-amber-500/10 mb-6 rounded-sm">
+                            <Activity className="w-4 h-4 text-amber-500" />
+                            <span className="text-xs md:text-sm font-bold text-amber-500 uppercase tracking-widest leading-snug">{t('network_intelligence.tension')}</span>
+                        </div>
+
                         {/* 1. Massive Enterprise Headline */}
                         <h1 className="text-[clamp(3rem,7vw,7rem)] font-black tracking-tighter leading-[0.9] w-full lg:w-[95%] uppercase">
                             <span className="text-white/90">{t('network_intelligence.hero_title')}</span>
@@ -256,6 +264,32 @@ function NetworkIntelligencePage() {
                                 {t('network_intelligence.hero_meta')}
                             </a>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Why This Happens Block */}
+            <section className="py-20 px-6 md:px-12 lg:px-20 bg-[#03060a] border-b border-white/[0.05] relative overflow-hidden">
+                <div className="max-w-4xl mx-auto text-center space-y-12">
+                    <h2 className="text-3xl md:text-4xl font-black text-white uppercase">{t('network_intelligence.why_reports_title')}</h2>
+                    <div className="grid md:grid-cols-3 gap-8 text-left">
+                        <div className="p-6 border border-white/10 bg-white/[0.02]">
+                            <span className="text-amber-500 font-mono text-xl block mb-4">01</span>
+                            <p className="text-white/80 font-light text-lg">{t('network_intelligence.why_reports_p1')}</p>
+                        </div>
+                        <div className="p-6 border border-white/10 bg-white/[0.02]">
+                            <span className="text-amber-500 font-mono text-xl block mb-4">02</span>
+                            <p className="text-white/80 font-light text-lg">{t('network_intelligence.why_reports_p2')}</p>
+                        </div>
+                        <div className="p-6 border border-white/10 bg-white/[0.02]">
+                            <span className="text-amber-500 font-mono text-xl block mb-4">03</span>
+                            <p className="text-white/80 font-light text-lg">{t('network_intelligence.why_reports_p3')}</p>
+                        </div>
+                    </div>
+                    <div className="pt-6 border-t border-white/10 text-center">
+                        <p className="text-xl md:text-2xl font-light text-white/50 italic">
+                            "{t('network_intelligence.why_reports_close')}"
+                        </p>
                     </div>
                 </div>
             </section>

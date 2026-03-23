@@ -10,7 +10,7 @@ export const HowFIPWorks: React.FC = () => {
             id: 1,
             title: t('investasi.how_it_works.phase1_title'),
             actor: t('investasi.how_it_works.phase1_actor'),
-            desc: t('investasi.how_it_works.phase1_desc'),
+            desc: t('investasi.how_it_works.phase1_desc_upgrade'),
             icon: <Zap className="w-6 h-6 text-primary" />,
             status: 'active'
         },
@@ -18,7 +18,7 @@ export const HowFIPWorks: React.FC = () => {
             id: 2,
             title: t('investasi.how_it_works.phase2_title'),
             actor: t('investasi.how_it_works.phase2_actor'),
-            desc: t('investasi.how_it_works.phase2_desc'),
+            desc: t('investasi.how_it_works.phase2_desc_upgrade'),
             icon: <Users className="w-6 h-6 text-primary/80" />,
             status: 'upcoming'
         },
@@ -26,7 +26,7 @@ export const HowFIPWorks: React.FC = () => {
             id: 3,
             title: t('investasi.how_it_works.phase3_title'),
             actor: t('investasi.how_it_works.phase3_actor'),
-            desc: t('investasi.how_it_works.phase3_desc'),
+            desc: t('investasi.how_it_works.phase3_desc_upgrade'),
             icon: <Cpu className="w-6 h-6 text-primary/60" />,
             status: 'upcoming'
         },
@@ -34,7 +34,7 @@ export const HowFIPWorks: React.FC = () => {
             id: 4,
             title: t('investasi.how_it_works.phase4_title'),
             actor: t('investasi.how_it_works.phase4_actor'),
-            desc: t('investasi.how_it_works.phase4_desc'),
+            desc: t('investasi.how_it_works.phase4_desc_upgrade'),
             icon: <ShieldCheck className="w-6 h-6 text-primary/40" />,
             status: 'upcoming'
         }

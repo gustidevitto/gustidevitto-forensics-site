@@ -130,19 +130,33 @@ function FIPLiteV2Page() {
     return (
         <div className="flex-1 flex flex-col bg-[#0a0f1a] text-white relative">
             {/* SEO & Authority Meta Tags */}
-            <title>FIP™ Lite: Hidden Profit MRI Scan | Gusti Devitto Forensics</title>
-            <meta name="description" content="Calculate hidden profit leakage and business risk in 30 seconds. Forensic-grade diagnostic for enterprise margins." />
-            <meta name="keywords" content="profit calculator, leakage audit, business health scan, Gusti Devitto, forensic intelligence, margin recovery" />
+            <title>{t('fip_lite.seo_title', 'FIP™ Lite: Hidden Profit MRI Scan | Gusti Devitto Forensics')}</title>
+            <meta name="description" content={t('fip_lite.seo_desc', 'Calculate hidden profit leakage and business risk in 30 seconds. Forensic-grade diagnostic for enterprise margins.')} />
+            <meta name="keywords" content={t('fip_lite.seo_keywords', 'profit calculator, leakage audit, business health scan, Gusti Devitto, forensic intelligence, margin recovery')} />
             <link rel="canonical" href="https://gustidevitto.com/fip-lite" />
             
-            {/* Open Graph */}
-            <meta property="og:title" content="FIP™ Lite: Hidden Profit MRI Scan" />
-            <meta property="og:description" content="Stop the bleeding. Expose hidden leaks in your business margins." />
+            {/* Open Graph / social */}
+            <meta property="og:site_name" content="Gusti Devitto Forensics" />
+            <meta property="og:title" content={t('fip_lite.seo_title', 'FIP™ Lite: Hidden Profit MRI Scan | Gusti Devitto Forensics')} />
+            <meta property="og:description" content={t('fip_lite.og_desc', 'Stop the bleeding. Expose hidden leaks in your business margins.')} />
             <meta property="og:image" content="/assets/images/forensic_dashboard.png" />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://gustidevitto.com/fip-lite" />
             
-            {/* GEO Signals */}
+            {/* Twitter */}
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={t('fip_lite.seo_title', 'FIP™ Lite: Hidden Profit MRI Scan | Gusti Devitto Forensics')} />
+            <meta name="twitter:description" content={t('fip_lite.seo_desc', 'Calculate hidden profit leakage and business risk in 30 seconds.')} />
+            <meta name="twitter:image" content="/assets/images/forensic_dashboard.png" />
+            <meta name="twitter:site" content="@gustidevitto" />
+
+            {/* GEO Signals (Global + Local) */}
+            <meta name="geo.region" content="US-NY" />
+            <meta name="geo.region" content="US-CA" />
             <meta name="geo.region" content="ID-JK" />
-            <meta name="geo.placename" content="Jakarta" />
+            <meta name="geo.placename" content="New York, San Francisco, Jakarta" />
+            <meta name="geo.position" content="40.712776;-74.005974" />
+            <meta name="ICBM" content="40.712776, -74.005974" />
 
             {/* Subtle Authority UI Indicator */}
             <div className="absolute top-6 left-6 md:left-12 lg:left-20 z-50 pointer-events-none flex items-center gap-3">

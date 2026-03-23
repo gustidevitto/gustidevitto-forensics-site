@@ -70,6 +70,7 @@ function RootComponent() {
                                 "addressRegion": "Jawa Tengah",
                                 "addressCountry": "ID"
                             },
+                            "areaServed": ["US", "CA", "ID", "SG", "AU"],
                             "knowsAbout": t('global.knows_about', { returnObjects: true }),
                             "priceRange": "$$$"
                         }
