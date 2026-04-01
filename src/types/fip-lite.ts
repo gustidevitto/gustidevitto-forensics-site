@@ -86,6 +86,8 @@ export interface LockedPillar {
     status: 'healthy' | 'warning' | 'critical' // Color only, no score
     barWidth: number // 0-100, for visual only (blurred)
     isLocked: true
+    computedValue: string // The actual calculated metric, e.g. "0.6x", "12.3%"
+    computedLabel: string // Human-readable context, e.g. "Quick Ratio", "GP per Hour"
 }
 
 export interface Layer3LockedXray {
@@ -235,3 +237,96 @@ export interface HealthScoreResult {
         growthRisk: number
     }
 }
+
+// ============================================================================
+// STANDALONE APP 1: CASH AUTOPSY
+// ============================================================================
+
+export interface CashAutopsyInputs {
+    revenue: number
+    cogs: number
+    opex: number
+    cash: number
+    shortDebt: number
+    ap: number
+}
+
+export interface CashAutopsyResult {
+    layer1: {
+        cashRunwayDays: number
+        cashZeroDate: string
+        netBurnRate: number
+        quickRatio: number
+    }
+    layer2: {
+        runwayVerdict: 'fortress' | 'warning' | 'critical'
+        quickRatioVerdict: 'fortress' | 'warning' | 'critical'
+        liquidityTrapRisk: boolean
+    }
+    layer3: {
+        pillars: LockedPillar[]
+    }
+}
+
+// ============================================================================
+// STANDALONE APP 2: MARGIN AUDIT
+// ============================================================================
+
+export interface MarginAuditInputs {
+    revenue: number
+    idealCogs: number
+    actualCogs: number
+    labor: number
+    opex: number
+    workingHours: number
+    headcount: number
+}
+
+export interface MarginAuditResult {
+    layer1: {
+        grossProfitPercent: number
+        gpLeakagePercent: number
+        opexToGpRatio: number
+        gpPerLaborHour: number
+    }
+    layer2: {
+        efficiencyVerdict: 'fortress' | 'warning' | 'critical'
+        phantomDrainRisk: boolean
+        leakageValue: { min: number, max: number }
+    }
+    layer3: {
+        pillars: LockedPillar[]
+    }
+}
+
+// ============================================================================
+// STANDALONE APP 3: GROWTH SCAN
+// ============================================================================
+
+export interface GrowthScanInputs {
+    revenue: number
+    materials: number
+    fees: number
+    returns: number
+    opex: number
+    marketing: number
+    newCustomers: number
+    ltv: number
+}
+
+export interface GrowthScanResult {
+    layer1: {
+        contributionMarginPercent: number
+        breakEvenPoint: number
+        cac: number
+        ltvCacRatio: number
+    }
+    layer2: {
+        viabilityVerdict: 'fortress' | 'warning' | 'critical'
+        deathSpiralRisk: boolean
+    }
+    layer3: {
+        pillars: LockedPillar[]
+    }
+}
+

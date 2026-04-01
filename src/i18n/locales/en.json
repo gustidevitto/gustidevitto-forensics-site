@@ -1557,5 +1557,181 @@
         "case3_title": "The Invisible Price War",
         "case3_desc": "An automotive service chain had set pricing correctly. But field audits showed technicians granting 'loyalty discounts' without system authorization — an average of 8.7% per invoice. The owner thought margins were thin due to competition.",
         "case3_impact": "Net margin restored from 4.1% → 11.8%"
+    },
+    "fip_lite_hub": {
+        "seo_title": "Free Diagnostics | Gusti Devitto",
+        "seo_desc": "Specialized free forensic diagnostics for your business operations.",
+        "hero_badge": "FIP™ Lite Triage",
+        "hero_title": "Where is the leak?",
+        "hero_subtitle": "Standard calculators give you generic numbers. Our forensic triage analyzes your specific blindspots. Choose your focus area.",
+        "card_cash_title": "Cash Autopsy",
+        "card_cash_desc": "Revenue looks good, but the bank account is empty. Find your actual runway, burn rate, and calculate immediate insolvency risk.",
+        "card_cash_cta": "Run Survival Scan",
+        "card_margin_title": "Margin Audit",
+        "card_margin_desc": "Your team is busy, but profit is flat. Isolate your exact GP Leakage, labor inefficiency, and unrecorded operational waste.",
+        "card_margin_cta": "Run Efficiency Audit",
+        "card_growth_title": "Scalability Scan",
+        "card_growth_desc": "You want to expand, but something feels off. Calculate your true contribution margin, dynamic break-even, and acquisition viability.",
+        "card_growth_cta": "Run Growth Scan"
+    },
+    "wizard_shared": {
+        "btn_next": "Next Step",
+        "btn_prev": "Go Back",
+        "btn_submit": "Reveal My Results",
+        "step_of": "Step {{current}} of {{total}}",
+        "privacy_note": "Data processed locally. Zero cloud risk.",
+        "processing": "Processing variables...",
+        "cross_links_title": "Explore Other Blindspots",
+        "cta_cash": "Check Cash Runway",
+        "cta_margin": "Check Margin Leakage",
+        "cta_growth": "Check Scalability",
+        "cta_full_audit": "Book Full Forensic Audit"
+    },
+    "cash_autopsy": {
+        "seo_title": "Cash Autopsy | Free Survival Scan",
+        "title": "Cash Autopsy",
+        "intro": "Find out exactly how long your business can survive on current reserves.",
+        "form": {
+            "revenue": {
+                "label": "Monthly Revenue",
+                "hint": "Total top-line, before expenses."
+            },
+            "cogs": {
+                "label": "Total Monthly COGS",
+                "hint": "Materials, direct labor, waste."
+            },
+            "opex": {
+                "label": "Total Monthly OpEx",
+                "hint": "Rent, salaries, marketing, etc."
+            },
+            "cash": {
+                "label": "Current Cash Balance",
+                "hint": "Liquid cash in the bank today."
+            },
+            "short_debt": {
+                "label": "Short-Term Debt",
+                "hint": "Loans due within 12 months."
+            },
+            "ap": {
+                "label": "Accounts Payable",
+                "hint": "Money you currently owe suppliers."
+            }
+        },
+        "encouragement": [
+            "Let's get the absolute basics.",
+            "Halfway there. Just a few more numbers.",
+            "Last step before the verdict."
+        ],
+        "results": {
+            "layer12_title": "Immediate Verdict",
+            "runway_label": "Cash Runway",
+            "burn_label": "Net Burn Rate",
+            "quick_ratio_label": "Risk Exposure (Quick Ratio)",
+            "cliffhanger": "We also detected a potential Liquidity Trap syndrome forming. Specific details on this anomaly are locked in your full report below..."
+        },
+        "gatekeeper": {
+            "title": "Unlock Deep Cash Analysis",
+            "desc": "Enter your email to reveal the exact severity of your structural cash risk.",
+            "btn": "Unlock Report"
+        }
+    },
+    "margin_audit": {
+        "seo_title": "Margin Audit | Free Efficiency Scan",
+        "title": "Margin Audit",
+        "intro": "Where is your margin disappearing before it reaches the bank?",
+        "form": {
+            "revenue": {
+                "label": "Monthly Revenue"
+            },
+            "ideal_cogs": {
+                "label": "Ideal (Recipe) COGS",
+                "hint": "What it should cost perfectly."
+            },
+            "actual_cogs": {
+                "label": "Actual Material Cost",
+                "hint": "What you actually spent."
+            },
+            "labor": {
+                "label": "Direct Labor Cost",
+                "hint": "Wages tied to production."
+            },
+            "opex": {
+                "label": "Total Monthly OpEx",
+                "hint": "Fixed overhead."
+            },
+            "working_hours": {
+                "label": "Total Working Hours",
+                "hint": "Production hours this month."
+            },
+            "headcount": {
+                "label": "Headcount",
+                "hint": "Full-time equivalent count."
+            }
+        },
+        "encouragement": [
+            "Let's look at the top line.",
+            "Now let's find the leakage.",
+            "Almost done. Let's analyze your people."
+        ],
+        "results": {
+            "layer12_title": "Efficiency Diagnostics",
+            "leakage_label": "GP Leakage Rate",
+            "opex_ratio_label": "OpEx to GP Ratio",
+            "labor_prod_label": "GP per Labor Hour",
+            "cliffhanger": "We found significant operational friction. The specific Phantom Drain is isolated in the restricted report below..."
+        },
+        "gatekeeper": {
+            "title": "Unlock Full Efficiency Report",
+            "desc": "Enter your email to reveal exactly where your margin is leaking.",
+            "btn": "Unlock Report"
+        }
+    },
+    "growth_scan": {
+        "seo_title": "Scalability Scan | Free Growth Viability",
+        "title": "Scalability Scan",
+        "intro": "Can you actually afford to scale right now?",
+        "form": {
+            "revenue": {
+                "label": "Monthly Revenue"
+            },
+            "materials": {
+                "label": "Material Cost"
+            },
+            "fees": {
+                "label": "Platform/Transaction Fees"
+            },
+            "returns": {
+                "label": "Returns/Refunds"
+            },
+            "opex": {
+                "label": "Total Monthly OpEx"
+            },
+            "marketing": {
+                "label": "Monthly Marketing Spend"
+            },
+            "new_customers": {
+                "label": "New Customers This Month"
+            },
+            "ltv": {
+                "label": "Avg Customer Lifetime Value"
+            }
+        },
+        "encouragement": [
+            "Let's establish your baseline.",
+            "Let's look at your variable costs.",
+            "Finally, your acquisition engine."
+        ],
+        "results": {
+            "layer12_title": "Growth Diagnostics",
+            "cm_label": "Contribution Margin",
+            "bep_label": "Break-Even Point",
+            "ratio_label": "LTV:CAC Ratio",
+            "cliffhanger": "Your Operating Leverage shows aggressive vulnerability if sales drop 10%. See the structural failure points below..."
+        },
+        "gatekeeper": {
+            "title": "Unlock Viability Report",
+            "desc": "Enter your email to reveal if your expansion model is structurally sound.",
+            "btn": "Unlock Report"
+        }
     }
 }

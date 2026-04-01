@@ -25,6 +25,11 @@ function RootComponent() {
     const canonicalUrl = `https://www.gustidevitto.com${location.pathname === '/' ? '' : location.pathname}`
     const isEntranceGate = location.pathname === '/'
 
+    // Scroll to top on every route change
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [location.pathname])
+
     return (
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
             <title>Gusti Devitto — Forensic Business Practice</title>

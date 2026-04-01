@@ -1601,5 +1601,181 @@
         "case3_title": "Perang Harga yang Tak Terlihat",
         "case3_desc": "Chain servis otomotif telah menetapkan harga dengan benar. Namun audit lapangan menunjukkan teknisi memberikan 'diskon loyalitas' tanpa otorisasi sistem — rata-rata 8,7% per faktur. Pemilik mengira margin tipis karena persaingan.",
         "case3_impact": "Net margin dipulihkan dari 4,1% → 11,8%"
+    },
+    "fip_lite_hub": {
+        "seo_title": "Diagnostik Gratis | Gusti Devitto",
+        "seo_desc": "Analisis operasional bisnis Anda dengan diagnostik forensik khusus secara gratis.",
+        "hero_badge": "Triage FIP™ Lite",
+        "hero_title": "Di mana letak kebocorannya?",
+        "hero_subtitle": "Kalkulator standar hanya memberikan angka umum. Triage forensik kami menganalisis titik buta spesifik Anda. Pilih fokus Anda.",
+        "card_cash_title": "Cash Autopsy",
+        "card_cash_desc": "Pendapatan terlihat bagus, tapi rekening bank kosong. Temukan runway, burn rate, dan hitung risiko kepailitan seketika.",
+        "card_cash_cta": "Jalankan Survival Scan",
+        "card_margin_title": "Margin Audit",
+        "card_margin_desc": "Tim sibuk, tapi profit mandek. Isolasi Kebocoran GP, inefisiensi tenaga kerja, dan pemborosan yang tak tercatat.",
+        "card_margin_cta": "Jalankan Efficiency Audit",
+        "card_growth_title": "Scalability Scan",
+        "card_growth_desc": "Ingin ekspansi, tapi ada yang terasa salah. Hitung contribution margin aktual, break-even dinamis, dan kelayakan akuisisi.",
+        "card_growth_cta": "Jalankan Growth Scan"
+    },
+    "wizard_shared": {
+        "btn_next": "Langkah Selanjutnya",
+        "btn_prev": "Kembali",
+        "btn_submit": "Ungkap Hasil Saya",
+        "step_of": "Langkah {{current}} dari {{total}}",
+        "privacy_note": "Data diproses secara lokal. Bebas risiko kebocoran cloud.",
+        "processing": "Memproses variabel...",
+        "cross_links_title": "Eksplorasi Titik Buta Lainnya",
+        "cta_cash": "Cek Runway Kas",
+        "cta_margin": "Cek Kebocoran Margin",
+        "cta_growth": "Cek Skalabilitas",
+        "cta_full_audit": "Pesan Full Forensic Audit"
+    },
+    "cash_autopsy": {
+        "seo_title": "Cash Autopsy | Survival Scan Gratis",
+        "title": "Cash Autopsy",
+        "intro": "Cari tahu persis berapa lama bisnis Anda bisa bertahan dengan cadangan saat ini.",
+        "form": {
+            "revenue": {
+                "label": "Pendapatan Bulanan",
+                "hint": "Total omzet, sebelum dipotong pengeluaran."
+            },
+            "cogs": {
+                "label": "Total HPP (COGS) Bulanan",
+                "hint": "Bahan, tenaga kerja langsung, barang rusak."
+            },
+            "opex": {
+                "label": "Total OpEx Bulanan",
+                "hint": "Sewa, gaji admin, pemasaran, dll."
+            },
+            "cash": {
+                "label": "Saldo Kas Saat Ini",
+                "hint": "Uang tunai cair di bank hari ini."
+            },
+            "short_debt": {
+                "label": "Hutang Jangka Pendek",
+                "hint": "Pinjaman jatuh tempo dalam 12 bulan."
+            },
+            "ap": {
+                "label": "Hutang Usaha (AP)",
+                "hint": "Uang yang saat ini Anda utang ke pemasok."
+            }
+        },
+        "encouragement": [
+            "Mari kita mulai dari dasar.",
+            "Sudah setengah jalan. Hanya butuh beberapa angka lagi.",
+            "Langkah terakhir sebelum vonis."
+        ],
+        "results": {
+            "layer12_title": "Vonis Langsung",
+            "runway_label": "Runway Kas",
+            "burn_label": "Net Burn Rate",
+            "quick_ratio_label": "Eksposur Risiko (Quick Ratio)",
+            "cliffhanger": "Kami juga mendeteksi potensi sindrom Liquidity Trap mulai terbentuk. Detail spesifik dari anomali ini terkunci di laporan lengkap Anda di bawah..."
+        },
+        "gatekeeper": {
+            "title": "Buka Analisis Kas Mendalam",
+            "desc": "Masukkan email Anda untuk mengungkap tingkat keparahan sebenarnya dari risiko kas struktural Anda.",
+            "btn": "Buka Laporan"
+        }
+    },
+    "margin_audit": {
+        "seo_title": "Margin Audit | Efficiency Scan Gratis",
+        "title": "Margin Audit",
+        "intro": "Di mana margin Anda menghilang sebelum sampai ke bank?",
+        "form": {
+            "revenue": {
+                "label": "Pendapatan Bulanan"
+            },
+            "ideal_cogs": {
+                "label": "HPP Ideal (Resep)",
+                "hint": "Berapa biaya yang seharusnya jika sempurna."
+            },
+            "actual_cogs": {
+                "label": "Biaya Bahan Aktual",
+                "hint": "Apa yang Anda benarkan belanjakan."
+            },
+            "labor": {
+                "label": "Biaya Tenaga Kerja Langsung",
+                "hint": "Gaji yang terikat dengan produksi."
+            },
+            "opex": {
+                "label": "Total OpEx Bulanan",
+                "hint": "Overhead tetap."
+            },
+            "working_hours": {
+                "label": "Total Jam Kerja",
+                "hint": "Jam produksi bulan ini."
+            },
+            "headcount": {
+                "label": "Jumlah Karyawan",
+                "hint": "Jumlah ekuivalen penuh waktu."
+            }
+        },
+        "encouragement": [
+            "Mari lihat garis atas Anda.",
+            "Sekarang mari kita cari kebocorannya.",
+            "Hampir selesai. Mari analisis tim Anda."
+        ],
+        "results": {
+            "layer12_title": "Diagnostik Efisiensi",
+            "leakage_label": "Tingkat Kebocoran GP",
+            "opex_ratio_label": "Rasio OpEx ke GP",
+            "labor_prod_label": "GP per Jam Kerja",
+            "cliffhanger": "Kami menemukan gesekan operasional yang signifikan. Phantom Drain yang spesifik terisolasi di dalam laporan terbatas di bawah ini..."
+        },
+        "gatekeeper": {
+            "title": "Buka Laporan Efisiensi Penuh",
+            "desc": "Masukkan email Anda untuk mengungkap tepat di mana margin Anda bocor.",
+            "btn": "Buka Laporan"
+        }
+    },
+    "growth_scan": {
+        "seo_title": "Scalability Scan | Viabilitas Pertumbuhan Gratis",
+        "title": "Scalability Scan",
+        "intro": "Apakah Anda benar-benar mampu untuk berekspansi saat ini?",
+        "form": {
+            "revenue": {
+                "label": "Pendapatan Bulanan"
+            },
+            "materials": {
+                "label": "Biaya Bahan Baku"
+            },
+            "fees": {
+                "label": "Biaya Platform/Transaksi"
+            },
+            "returns": {
+                "label": "Retur/Pengembalian Dana"
+            },
+            "opex": {
+                "label": "Total OpEx Bulanan"
+            },
+            "marketing": {
+                "label": "Pengeluaran Marketing Bulanan"
+            },
+            "new_customers": {
+                "label": "Pelanggan Baru Bulan Ini"
+            },
+            "ltv": {
+                "label": "Rata-rata Customer Lifetime Value"
+            }
+        },
+        "encouragement": [
+            "Mari kita tetapkan baseline Anda.",
+            "Mari lihat biaya variabel Anda.",
+            "Terakhir, mesin akuisisi Anda."
+        ],
+        "results": {
+            "layer12_title": "Diagnostik Pertumbuhan",
+            "cm_label": "Contribution Margin",
+            "bep_label": "Break-Even Point",
+            "ratio_label": "Rasio LTV:CAC",
+            "cliffhanger": "Operating Leverage Anda menunjukkan kerentanan agresif jika penjualan turun 10%. Lihat titik kegagalan struktural di bawah ini..."
+        },
+        "gatekeeper": {
+            "title": "Buka Laporan Viabilitas",
+            "desc": "Masukkan email Anda untuk mengungkap apakah model ekspansi Anda kuat secara struktural.",
+            "btn": "Buka Laporan"
+        }
     }
 }

@@ -7,7 +7,13 @@ import type {
     Layer2Comparison,
     Layer3LockedXray,
     LockedPillar,
-    PillarCategory
+    PillarCategory,
+    CashAutopsyInputs,
+    CashAutopsyResult,
+    MarginAuditInputs,
+    MarginAuditResult,
+    GrowthScanInputs,
+    GrowthScanResult
 } from '@/types/fip-lite';
 
 export type TierLevel = 'diagnostic' | 'forensic' | 'network' | 'sovereign';
@@ -334,7 +340,9 @@ function generateLayer3LockedXray(
             category: config.category,
             status,
             barWidth: Math.round(barWidth),
-            isLocked: true
+            isLocked: true,
+            computedValue: '—',
+            computedLabel: 'Full analysis available in paid report'
         });
     });
 
@@ -379,5 +387,108 @@ export function calculateFIPLiteResultsLegacy(_formData: any): any {
             operationalEfficiency: 50,
             growthRisk: 50
         }
+    };
+}
+
+// ============================================================================
+// STANDALONE APP CALCULATORS
+// ============================================================================
+
+export function calculateCashAutopsy(inputs: CashAutopsyInputs): CashAutopsyResult {
+    const netBurnRate = inputs.opex + inputs.shortDebt;
+    const currentLiabilities = inputs.ap + inputs.shortDebt;
+    
+    // Quick ratio matches FIP logic: Cash / Current Liabilities
+    const quickRatio = currentLiabilities > 0 ? inputs.cash / currentLiabilities : 99;
+    
+    // Runway based on total cash outflows
+    const totalOutflow = inputs.cogs + inputs.opex + inputs.shortDebt;
+    const cashRunwayDays = totalOutflow > 0 ? Math.floor((inputs.cash / totalOutflow) * 30) : 999;
+    
+    const cashZeroDateObj = new Date();
+    cashZeroDateObj.setDate(cashZeroDateObj.getDate() + cashRunwayDays);
+    const cashZeroDate = cashZeroDateObj.toISOString();
+
+    const runwayVerdict = cashRunwayDays < 60 ? 'critical' : cashRunwayDays < 180 ? 'warning' : 'fortress';
+    const quickRatioVerdict = quickRatio < 1 ? 'critical' : quickRatio < 1.5 ? 'warning' : 'fortress';
+    const liquidityTrapRisk = runwayVerdict === 'critical' && quickRatioVerdict === 'critical';
+
+    // Working capital ratio: cash vs monthly outflow
+    const workingCapitalRatio = totalOutflow > 0 ? inputs.cash / totalOutflow : 99;
+    const wcStatus = workingCapitalRatio < 0.5 ? 'critical' : workingCapitalRatio < 1.5 ? 'warning' : 'healthy';
+
+    // Operating leverage: burn rate as % of revenue
+    const burnAsPercentOfRevenue = inputs.revenue > 0 ? (netBurnRate / inputs.revenue) * 100 : 100;
+    const leverageStatus = burnAsPercentOfRevenue > 50 ? 'critical' : burnAsPercentOfRevenue > 30 ? 'warning' : 'healthy';
+
+    const pillars: LockedPillar[] = [
+        { id: 'cash-conversion', name: 'Cash Conversion Cycle', category: 'cash-flow', status: runwayVerdict === 'fortress' ? 'healthy' : runwayVerdict, barWidth: Math.min(100, cashRunwayDays / 3), isLocked: true, computedValue: `${cashRunwayDays} days`, computedLabel: 'Time until cash reaches zero at current burn rate' },
+        { id: 'working-capital', name: 'Working Capital Efficiency', category: 'cash-flow', status: wcStatus, barWidth: Math.min(100, workingCapitalRatio * 40), isLocked: true, computedValue: `${workingCapitalRatio.toFixed(2)}x`, computedLabel: 'Cash reserves relative to monthly cash outflow' },
+        { id: 'debt-coverage', name: 'Debt Service Coverage Ratio', category: 'growth-risk', status: quickRatioVerdict === 'fortress' ? 'healthy' : quickRatioVerdict, barWidth: Math.min(100, quickRatio * 40), isLocked: true, computedValue: `${quickRatio.toFixed(2)}x`, computedLabel: 'Cash available per dollar of short-term obligations' },
+        { id: 'operating-leverage', name: 'Operating Leverage Index', category: 'operational-efficiency', status: leverageStatus, barWidth: Math.max(5, 100 - burnAsPercentOfRevenue), isLocked: true, computedValue: `${burnAsPercentOfRevenue.toFixed(1)}%`, computedLabel: 'Fixed costs consuming this share of your revenue' }
+    ];
+
+    return {
+        layer1: { cashRunwayDays, cashZeroDate, netBurnRate, quickRatio },
+        layer2: { runwayVerdict, quickRatioVerdict, liquidityTrapRisk },
+        layer3: { pillars }
+    };
+}
+
+export function calculateMarginAudit(inputs: MarginAuditInputs): MarginAuditResult {
+    const gpLeakagePercent = inputs.revenue > 0 ? ((inputs.actualCogs - inputs.idealCogs) / inputs.revenue) * 100 : 0;
+    const grossProfit = inputs.revenue - inputs.actualCogs - inputs.labor;
+    const grossProfitPercent = inputs.revenue > 0 ? (grossProfit / inputs.revenue) * 100 : 0;
+    
+    const opexToGpRatio = grossProfit > 0 ? (inputs.opex / grossProfit) * 100 : 999;
+    const gpPerLaborHour = inputs.workingHours > 0 ? grossProfit / inputs.workingHours : 0;
+
+    const efficiencyVerdict = gpLeakagePercent > 10 ? 'critical' : gpLeakagePercent > 5 ? 'warning' : 'fortress';
+    const phantomDrainRisk = gpLeakagePercent > 5 && opexToGpRatio > 40;
+    const leakageMin = inputs.revenue * (Math.max(0, gpLeakagePercent) / 100) * 0.8;
+    const leakageMax = inputs.revenue * (Math.max(0, gpLeakagePercent) / 100) * 1.2;
+
+    const pillars: LockedPillar[] = [
+        { id: 'revenue-quality', name: 'Revenue Quality Score', category: 'revenue-profitability', status: grossProfitPercent < 20 ? 'critical' : grossProfitPercent < 40 ? 'warning' : 'healthy', barWidth: Math.min(100, grossProfitPercent * 1.5), isLocked: true, computedValue: `${grossProfitPercent.toFixed(1)}%`, computedLabel: 'Gross profit retained from every dollar of revenue' },
+        { id: 'labor-efficiency', name: 'Labor Efficiency Ratio', category: 'operational-efficiency', status: gpPerLaborHour < 15 ? 'critical' : gpPerLaborHour < 30 ? 'warning' : 'healthy', barWidth: Math.min(100, gpPerLaborHour * 2), isLocked: true, computedValue: `$${gpPerLaborHour.toFixed(0)}/hr`, computedLabel: 'Gross profit generated per hour of labor invested' },
+        { id: 'inventory-decay', name: 'Inventory Decay Rate', category: 'operational-efficiency', status: phantomDrainRisk ? 'critical' : gpLeakagePercent > 3 ? 'warning' : 'healthy', barWidth: Math.max(5, 100 - gpLeakagePercent * 8), isLocked: true, computedValue: `${gpLeakagePercent.toFixed(1)}%`, computedLabel: 'Revenue lost to the gap between ideal and actual material costs' },
+        { id: 'anomaly-detection', name: 'Anomaly Detection Score', category: 'growth-risk', status: efficiencyVerdict === 'fortress' ? 'healthy' : efficiencyVerdict, barWidth: Math.max(5, 100 - opexToGpRatio), isLocked: true, computedValue: `${opexToGpRatio.toFixed(1)}%`, computedLabel: 'How much of your gross profit is consumed by operating expenses' }
+    ];
+
+    return {
+        layer1: { grossProfitPercent, gpLeakagePercent, opexToGpRatio, gpPerLaborHour },
+        layer2: { efficiencyVerdict, phantomDrainRisk, leakageValue: { min: leakageMin, max: leakageMax } },
+        layer3: { pillars }
+    };
+}
+
+export function calculateGrowthScan(inputs: GrowthScanInputs): GrowthScanResult {
+    const variableCosts = inputs.materials + inputs.fees + inputs.returns;
+    const cm = inputs.revenue - variableCosts;
+    const contributionMarginPercent = inputs.revenue > 0 ? (cm / inputs.revenue) * 100 : 0;
+    
+    const cmRatio = contributionMarginPercent / 100;
+    const breakEvenPoint = cmRatio > 0 ? inputs.opex / cmRatio : 0;
+    
+    const cac = inputs.newCustomers > 0 ? inputs.marketing / inputs.newCustomers : 0;
+    const ltvCacRatio = cac > 0 ? inputs.ltv / cac : 99;
+
+    const viabilityVerdict = ltvCacRatio < 2 ? 'critical' : ltvCacRatio < 3 ? 'warning' : 'fortress';
+    const deathSpiralRisk = viabilityVerdict === 'critical' && inputs.revenue < breakEvenPoint;
+
+    // Revenue gap from break-even
+    const revenueGapPercent = breakEvenPoint > 0 ? ((inputs.revenue - breakEvenPoint) / breakEvenPoint) * 100 : 0;
+
+    const pillars: LockedPillar[] = [
+        { id: 'pricing-power', name: 'Pricing Power Index', category: 'revenue-profitability', status: contributionMarginPercent < 20 ? 'critical' : contributionMarginPercent < 40 ? 'warning' : 'healthy', barWidth: Math.min(100, contributionMarginPercent * 1.5), isLocked: true, computedValue: `${contributionMarginPercent.toFixed(1)}%`, computedLabel: 'Revenue remaining after all variable costs are subtracted' },
+        { id: 'profit-quality', name: 'Profit Quality Assessment', category: 'revenue-profitability', status: deathSpiralRisk ? 'critical' : revenueGapPercent < 10 ? 'warning' : 'healthy', barWidth: Math.max(5, Math.min(100, 50 + revenueGapPercent)), isLocked: true, computedValue: `${revenueGapPercent > 0 ? '+' : ''}${revenueGapPercent.toFixed(1)}%`, computedLabel: 'How far your revenue sits above or below your break-even point' },
+        { id: 'growth-sustainability', name: 'Growth Sustainability Index', category: 'growth-risk', status: viabilityVerdict === 'fortress' ? 'healthy' : viabilityVerdict, barWidth: Math.min(100, ltvCacRatio * 20), isLocked: true, computedValue: `${ltvCacRatio.toFixed(1)}x`, computedLabel: 'Customer lifetime value relative to the cost of acquiring them' },
+        { id: 'market-resilience', name: 'Market Resilience Score', category: 'growth-risk', status: cac > inputs.ltv * 0.5 ? 'critical' : cac > inputs.ltv * 0.33 ? 'warning' : 'healthy', barWidth: Math.max(5, Math.min(100, (1 - cac / Math.max(1, inputs.ltv)) * 100)), isLocked: true, computedValue: `$${cac.toFixed(0)}`, computedLabel: 'Your current cost to acquire a single new customer' }
+    ];
+
+    return {
+        layer1: { contributionMarginPercent, breakEvenPoint, cac, ltvCacRatio },
+        layer2: { viabilityVerdict, deathSpiralRisk },
+        layer3: { pillars }
     };
 }

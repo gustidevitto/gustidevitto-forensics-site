@@ -17,11 +17,14 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as NetworkIntelligenceRouteImport } from './routes/network-intelligence'
 import { Route as MultiOutletRouteImport } from './routes/multi-outlet'
 import { Route as MethodologyRouteImport } from './routes/methodology'
+import { Route as MarginAuditRouteImport } from './routes/margin-audit'
 import { Route as InvestasiRouteImport } from './routes/investasi'
+import { Route as GrowthScanRouteImport } from './routes/growth-scan'
 import { Route as GetAccessRouteImport } from './routes/get-access'
 import { Route as ForensicsPillarsRouteImport } from './routes/forensics-pillars'
 import { Route as FipLiteRouteImport } from './routes/fip-lite'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CashAutopsyRouteImport } from './routes/cash-autopsy'
 import { Route as AboutGustiDevittoRouteImport } from './routes/about-gusti-devitto'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
@@ -68,9 +71,19 @@ const MethodologyRoute = MethodologyRouteImport.update({
   path: '/methodology',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MarginAuditRoute = MarginAuditRouteImport.update({
+  id: '/margin-audit',
+  path: '/margin-audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InvestasiRoute = InvestasiRouteImport.update({
   id: '/investasi',
   path: '/investasi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GrowthScanRoute = GrowthScanRouteImport.update({
+  id: '/growth-scan',
+  path: '/growth-scan',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GetAccessRoute = GetAccessRouteImport.update({
@@ -91,6 +104,11 @@ const FipLiteRoute = FipLiteRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CashAutopsyRoute = CashAutopsyRouteImport.update({
+  id: '/cash-autopsy',
+  path: '/cash-autopsy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutGustiDevittoRoute = AboutGustiDevittoRouteImport.update({
@@ -122,11 +140,14 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-gusti-devitto': typeof AboutGustiDevittoRoute
+  '/cash-autopsy': typeof CashAutopsyRoute
   '/contact': typeof ContactRoute
   '/fip-lite': typeof FipLiteRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
   '/get-access': typeof GetAccessRoute
+  '/growth-scan': typeof GrowthScanRoute
   '/investasi': typeof InvestasiRoute
+  '/margin-audit': typeof MarginAuditRoute
   '/master-index': typeof MasterIndexRoute
   '/methodology': typeof MethodologyRoute
   '/multi-outlet': typeof MultiOutletRoute
@@ -142,11 +163,14 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-gusti-devitto': typeof AboutGustiDevittoRoute
+  '/cash-autopsy': typeof CashAutopsyRoute
   '/contact': typeof ContactRoute
   '/fip-lite': typeof FipLiteRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
   '/get-access': typeof GetAccessRoute
+  '/growth-scan': typeof GrowthScanRoute
   '/investasi': typeof InvestasiRoute
+  '/margin-audit': typeof MarginAuditRoute
   '/master-index': typeof MasterIndexRoute
   '/methodology': typeof MethodologyRoute
   '/multi-outlet': typeof MultiOutletRoute
@@ -163,11 +187,14 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about-gusti-devitto': typeof AboutGustiDevittoRoute
+  '/cash-autopsy': typeof CashAutopsyRoute
   '/contact': typeof ContactRoute
   '/fip-lite': typeof FipLiteRoute
   '/forensics-pillars': typeof ForensicsPillarsRoute
   '/get-access': typeof GetAccessRoute
+  '/growth-scan': typeof GrowthScanRoute
   '/investasi': typeof InvestasiRoute
+  '/margin-audit': typeof MarginAuditRoute
   '/master-index': typeof MasterIndexRoute
   '/methodology': typeof MethodologyRoute
   '/multi-outlet': typeof MultiOutletRoute
@@ -185,11 +212,14 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about-gusti-devitto'
+    | '/cash-autopsy'
     | '/contact'
     | '/fip-lite'
     | '/forensics-pillars'
     | '/get-access'
+    | '/growth-scan'
     | '/investasi'
+    | '/margin-audit'
     | '/master-index'
     | '/methodology'
     | '/multi-outlet'
@@ -205,11 +235,14 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about-gusti-devitto'
+    | '/cash-autopsy'
     | '/contact'
     | '/fip-lite'
     | '/forensics-pillars'
     | '/get-access'
+    | '/growth-scan'
     | '/investasi'
+    | '/margin-audit'
     | '/master-index'
     | '/methodology'
     | '/multi-outlet'
@@ -225,11 +258,14 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about-gusti-devitto'
+    | '/cash-autopsy'
     | '/contact'
     | '/fip-lite'
     | '/forensics-pillars'
     | '/get-access'
+    | '/growth-scan'
     | '/investasi'
+    | '/margin-audit'
     | '/master-index'
     | '/methodology'
     | '/multi-outlet'
@@ -246,11 +282,14 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutGustiDevittoRoute: typeof AboutGustiDevittoRoute
+  CashAutopsyRoute: typeof CashAutopsyRoute
   ContactRoute: typeof ContactRoute
   FipLiteRoute: typeof FipLiteRoute
   ForensicsPillarsRoute: typeof ForensicsPillarsRoute
   GetAccessRoute: typeof GetAccessRoute
+  GrowthScanRoute: typeof GrowthScanRoute
   InvestasiRoute: typeof InvestasiRoute
+  MarginAuditRoute: typeof MarginAuditRoute
   MasterIndexRoute: typeof MasterIndexRoute
   MethodologyRoute: typeof MethodologyRoute
   MultiOutletRoute: typeof MultiOutletRoute
@@ -322,11 +361,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MethodologyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/margin-audit': {
+      id: '/margin-audit'
+      path: '/margin-audit'
+      fullPath: '/margin-audit'
+      preLoaderRoute: typeof MarginAuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/investasi': {
       id: '/investasi'
       path: '/investasi'
       fullPath: '/investasi'
       preLoaderRoute: typeof InvestasiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/growth-scan': {
+      id: '/growth-scan'
+      path: '/growth-scan'
+      fullPath: '/growth-scan'
+      preLoaderRoute: typeof GrowthScanRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/get-access': {
@@ -355,6 +408,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cash-autopsy': {
+      id: '/cash-autopsy'
+      path: '/cash-autopsy'
+      fullPath: '/cash-autopsy'
+      preLoaderRoute: typeof CashAutopsyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about-gusti-devitto': {
@@ -398,11 +458,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutGustiDevittoRoute: AboutGustiDevittoRoute,
+  CashAutopsyRoute: CashAutopsyRoute,
   ContactRoute: ContactRoute,
   FipLiteRoute: FipLiteRoute,
   ForensicsPillarsRoute: ForensicsPillarsRoute,
   GetAccessRoute: GetAccessRoute,
+  GrowthScanRoute: GrowthScanRoute,
   InvestasiRoute: InvestasiRoute,
+  MarginAuditRoute: MarginAuditRoute,
   MasterIndexRoute: MasterIndexRoute,
   MethodologyRoute: MethodologyRoute,
   MultiOutletRoute: MultiOutletRoute,
