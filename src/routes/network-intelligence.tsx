@@ -6,6 +6,7 @@ import { useTranslation, Trans } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
 import { WavingDots } from "@/components/ui/waving-dots"
 import PricingModal from '@/components/PricingModal';
+import { NeuralMesh3D } from '@/components/ui/neural-mesh-3d';
 
 export const Route = createFileRoute('/network-intelligence')({
     component: NetworkIntelligencePage,
@@ -213,6 +214,9 @@ function NetworkIntelligencePage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/80 to-[#0a1628]/20" />
                 </div>
+
+                {/* 3D Neural Mesh Background — Modular Switch */}
+                <NeuralMesh3D color="245, 158, 11" nodeCount={45} opacity={0.35} />
 
                 <div className="max-w-6xl relative z-10">
                     <div className="text-left">

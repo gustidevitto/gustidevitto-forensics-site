@@ -8,6 +8,7 @@ import { Link } from '@tanstack/react-router'
 import { WavingDots } from "@/components/ui/waving-dots"
 import { ForensicCaseFiles } from "@/components/ForensicCaseFiles"
 import PricingModal from '@/components/PricingModal';
+import { NeuralMesh3D } from '@/components/ui/neural-mesh-3d';
 
 export const Route = createFileRoute('/single-entity')({
     component: SingleEntityPage,
@@ -198,6 +199,9 @@ function SingleEntityPage() {
 
             {/* Hero Section — The Statement Wall */}
             <section className="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 overflow-hidden min-h-[85vh] flex flex-col justify-center border-b border-white/[0.05]">
+                {/* 3D Neural Mesh Background — Modular Switch */}
+                <NeuralMesh3D color="56, 189, 248" nodeCount={45} opacity={0.35} />
+
                 <div className="max-w-6xl relative z-10">
                     <div className="animate-fade-in text-left">
                         {/* 0. Economic Tension */}
