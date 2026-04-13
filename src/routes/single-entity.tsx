@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Activity, ArrowRight, ShieldCheck } from "lucide-react"
+import { Activity, ArrowRight, ShieldCheck, Star } from "lucide-react"
 import { useTranslation, Trans } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
 import { WavingDots } from "@/components/ui/waving-dots"
@@ -47,13 +47,13 @@ function SingleEntityPage() {
             },
             features: {
                 included: [
-                    '8 Core Forensic Pillars',
-                    'Syndrome Detection',
-                    'Anomaly Detection',
-                    'Basic Health Score',
-                    'Executive Summary PDF',
-                    'Multi-currency support',
-                    'Bilingual reports (EN/ID)'
+                    { key: 'investasi_page.features.pillars_8', default: '8 Core Forensic Pillars' },
+                    { key: 'investasi_page.features.syndrome', default: 'Syndrome Detection' },
+                    { key: 'investasi_page.features.anomaly', default: 'Anomaly Detection', highlight: true },
+                    { key: 'investasi_page.features.health', default: 'Basic Health Score' },
+                    { key: 'investasi_page.features.summary', default: 'Executive Summary PDF' },
+                    { key: 'investasi_page.features.multi_currency', default: 'Multi-currency support' },
+                    { key: 'investasi_page.features.bilingual', default: 'Bilingual reports (EN/ID)' }
                 ],
                 excluded: [
                     'Full 25 pillars',
@@ -63,7 +63,7 @@ function SingleEntityPage() {
                 ]
             },
             bestFor: [
-                '1-3 outlets',
+                '1 Outlet (Single Unit)',
                 '$500K-$2M revenue',
                 'First-time diagnostic',
                 'Budget entry point'
@@ -82,13 +82,13 @@ function SingleEntityPage() {
             },
             features: {
                 included: [
-                    'Everything in DIAGNOSTIC',
-                    'Full 25 Forensic Pillars',
-                    'Logic Trace Analysis',
-                    'Decision Intelligence Engine',
-                    'Data Integrity Scoring',
-                    'Advanced Analytics™',
-                    'Detailed Report (15-20 pages)'
+                    { key: 'investasi_page.features.pillars_25', default: 'Everything in DIAGNOSTIC' },
+                    { key: 'investasi_page.features.pillars_25', default: 'Full 25 Forensic Pillars' },
+                    { key: 'investasi_page.features.logic', default: 'Logic Trace Analysis', highlight: true },
+                    { key: 'investasi_page.features.decision', default: 'Decision Intelligence Engine', highlight: true },
+                    { key: 'investasi_page.features.integrity', default: 'Data Integrity Scoring' },
+                    { key: 'investasi_page.features.analytics', default: 'Advanced Analytics™' },
+                    { key: 'investasi_page.features.detailed_report', default: 'Detailed Report (15-20 pages)' }
                 ],
                 excluded: [
                     'Multi-outlet network analysis',
@@ -98,7 +98,7 @@ function SingleEntityPage() {
                 ]
             },
             bestFor: [
-                '3-8 outlets',
+                '1 Outlet (Deep Audit)',
                 '$2M-$10M revenue',
                 'Comprehensive structural fix',
                 'Action-oriented'
@@ -532,13 +532,26 @@ function SingleEntityPage() {
                                     <div className="pt-6 border-t border-white/5">
                                         <div className="mb-4">
                                             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Key Features</p>
-                                            <ul className="space-y-3">
-                                                {tier.features.included.slice(0, 5).map((feature, i) => (
-                                                    <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                                                        <ShieldCheck className={`w-4 h-4 ${theme.text} shrink-0 mt-0.5`} />
-                                                        <span className="leading-snug">{feature}</span>
+                                            <ul className="space-y-4">
+                                                {tier.features.included.slice(0, 10).map((featureObj: any, i: number) => {
+                                                    const isHighlighted = featureObj.highlight;
+                                                    const text = typeof featureObj === 'string' ? featureObj : t(featureObj.key, featureObj.default);
+
+                                                    return (
+                                                    <li key={i} className={`flex items-start gap-3 text-sm transition-all duration-300 ${isHighlighted ? 'bg-amber-500/5 -mx-2 px-2 py-1 rounded-md border-l border-amber-500/30' : 'text-gray-300'}`}>
+                                                        {isHighlighted ? (
+                                                            <Star className="w-4 h-4 text-amber-500 shrink-0 mt-0.5 fill-amber-500 animate-pulse-slow" />
+                                                        ) : (
+                                                            <ShieldCheck className={`w-4 h-4 ${theme.text} shrink-0 mt-0.5`} />
+                                                        )}
+                                                        <div className="leading-snug">
+                                                            <span className={`${isHighlighted ? 'text-amber-400 font-bold' : ''}`}>
+                                                                {text}
+                                                                {isHighlighted && <span className="ml-1 text-[10px] opacity-70">★</span>}
+                                                            </span>
+                                                        </div>
                                                     </li>
-                                                ))}
+                                                )})}
                                             </ul>
                                         </div>
 

@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
-import { ShieldAlert, Maximize2, X, Activity, ArrowRight, ShieldCheck } from "lucide-react"
+import { ShieldAlert, Maximize2, X, Activity, ArrowRight, ShieldCheck, Star } from "lucide-react"
 import { useTranslation, Trans } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
 import { WavingDots } from "@/components/ui/waving-dots"
@@ -46,14 +46,15 @@ function NetworkIntelligencePage() {
             },
             features: {
                 included: [
-                    t('investasi_page.features.pillars_25_short', 'Everything in FORENSIC'),
-                    t('investasi_page.features.multi_outlet_short', 'Multi-Outlet Analysis (up to 50)'),
-                    t('investasi_page.features.network_health_short', 'Network Health Index'),
-                    t('investasi_page.features.territory_short', 'Territory Productivity Mapping'),
-                    t('investasi_page.features.franchise_short', 'Franchise Intelligence Suite'),
-                    t('investasi_page.features.risk_short', '12-Month Risk Projection™'),
-                    t('investasi_page.features.scenario_short', 'Scenario Simulator'),
-                    t('investasi_page.features.network_report_short', 'Network Report (30-50 pages)')
+                    { key: 'investasi_page.features.pillars_25_short', default: 'Everything in FORENSIC' },
+                    { key: 'investasi_page.features.multi_outlet_short', default: 'Multi-Outlet Analysis (up to 50)' },
+                    { key: 'investasi_page.features.network_health_short', default: 'Network Health Index' },
+                    { key: 'investasi_page.features.territory_short', default: 'Territory Productivity Mapping' },
+                    { key: 'investasi_page.features.franchise_short', default: 'Franchise Intelligence Suite' },
+                    { key: 'investasi_page.features.velocity_short', default: 'Change Point Detection', highlight: true },
+                    { key: 'investasi_page.features.risk_short', default: '12-Month Risk Projection™', highlight: true },
+                    { key: 'investasi_page.features.scenario_short', default: 'Scenario Simulator', highlight: true },
+                    { key: 'investasi_page.features.network_report_short', default: 'Network Report (30-50 pages)' }
                 ],
                 excluded: [
                     t('investasi_page.features.ai_neural_short', 'AI neural pattern learning'),
@@ -81,14 +82,14 @@ function NetworkIntelligencePage() {
             },
             features: {
                 included: [
-                    t('investasi_page.features.multi_outlet_short_base', 'Everything in NETWORK'),
-                    t('investasi_page.features.neural_short', 'AI Neural Pattern Learning'),
-                    t('investasi_page.features.predictive_short', 'Predictive Intelligence Engine'),
-                    t('investasi_page.features.monte_carlo_short', 'Monte Carlo Stress Testing'),
-                    t('investasi_page.features.wealth_short', 'Founder Wealth Impact Analysis™'),
-                    t('investasi_page.features.unlimited_short', 'Unlimited Outlet Profiles'),
-                    t('investasi_page.features.priority_short', 'Priority Strategic Access'),
-                    t('investasi_page.features.security_short', 'Enterprise-grade security')
+                    { key: 'investasi_page.features.multi_outlet_short_base', default: 'Everything in NETWORK' },
+                    { key: 'investasi_page.features.neural_short', default: 'AI Neural Pattern Learning', highlight: true },
+                    { key: 'investasi_page.features.predictive_short', default: 'Predictive Intelligence Engine', highlight: true },
+                    { key: 'investasi_page.features.monte_carlo_short', default: 'Monte Carlo Stress Testing' },
+                    { key: 'investasi_page.features.wealth_short', default: 'Founder Wealth Impact Analysis™', highlight: true },
+                    { key: 'investasi_page.features.unlimited_short', default: 'Unlimited Outlet Profiles' },
+                    { key: 'investasi_page.features.priority_short', default: 'Priority Strategic Access' },
+                    { key: 'investasi_page.features.security_short', default: 'Enterprise-grade security' }
                 ],
                 excluded: []
             },
@@ -541,13 +542,26 @@ function NetworkIntelligencePage() {
                                     <div className="pt-6 border-t border-white/5 space-y-6">
                                         <div>
                                             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">{t('investasi_page.labels.key_features')}</p>
-                                            <ul className="space-y-3">
-                                                {tier.features.included.slice(0, 6).map((feature: string, i: number) => (
-                                                    <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                                                        <ShieldCheck className={`w-4 h-4 ${theme.text} shrink-0 mt-0.5`} />
-                                                        <span className="leading-snug">{feature}</span>
+                                            <ul className="space-y-4">
+                                                {tier.features.included.slice(0, 10).map((featureObj: any, i: number) => {
+                                                    const isHighlighted = featureObj.highlight;
+                                                    const text = typeof featureObj === 'string' ? featureObj : t(featureObj.key, featureObj.default);
+
+                                                    return (
+                                                    <li key={i} className={`flex items-start gap-3 text-sm transition-all duration-300 ${isHighlighted ? 'bg-amber-500/5 -mx-2 px-2 py-1 rounded-md border-l border-amber-500/30' : 'text-gray-300'}`}>
+                                                        {isHighlighted ? (
+                                                            <Star className="w-4 h-4 text-amber-500 shrink-0 mt-0.5 fill-amber-500 animate-pulse-slow" />
+                                                        ) : (
+                                                            <ShieldCheck className={`w-4 h-4 ${theme.text} shrink-0 mt-0.5`} />
+                                                        )}
+                                                        <div className="leading-snug">
+                                                            <span className={`${isHighlighted ? 'text-amber-400 font-bold' : ''}`}>
+                                                                {text}
+                                                                {isHighlighted && <span className="ml-1 text-[10px] opacity-70">★</span>}
+                                                            </span>
+                                                        </div>
                                                     </li>
-                                                ))}
+                                                )})}
                                             </ul>
                                         </div>
 

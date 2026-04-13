@@ -1492,11 +1492,11 @@
             "wealth_impact": "Analisis dampak kekayaan"
         },
         "best_for_items": {
-            "outlets_1_3": "1-3 outlet",
+            "outlets_1_3": "1 Outlet (Single Unit)",
             "rev_500k_2m": "$500K-$2M pendapatan",
             "first_time": "Diagnostik pertama kali",
             "budget_entry": "Titik masuk anggaran",
-            "outlets_3_8": "3-8 outlet",
+            "outlets_3_8": "1 Outlet (Audit Mendalam)",
             "rev_2m_10m": "$2M-$10M pendapatan",
             "structural_fix": "Perbaikan struktural komprehensif",
             "action_oriented": "Berorientasi tindakan",
@@ -1511,15 +1511,15 @@
         },
         "comparison": {
             "diagnostic_if": [
-                "Anda mengoperasikan 1-3 outlet",
+                "Anda mengoperasikan unit bisnis tunggal (1 outlet)",
                 "Ini diagnostik forensik pertama Anda",
                 "Anda butuh gambaran cepat kesehatan bisnis",
                 "Anggaran adalah perhatian utama",
                 "Pendapatan tahunan di bawah $2M"
             ],
             "forensic_if": [
-                "Anda mengoperasikan 3-8 outlet",
-                "Anda ingin kedalaman diagnostik penuh",
+                "Anda mengoperasikan 1 unit dengan kompleksitas tinggi",
+                "Anda ingin kedalaman diagnostik penuh untuk 1 outlet",
                 "Anda butuh prioritas yang bisa ditindaklanjuti",
                 "Anda serius tentang perbaikan struktural",
                 "Pendapatan tahunan $2M-$10M"

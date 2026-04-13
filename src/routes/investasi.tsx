@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
-import { ShieldCheck, Lock } from "lucide-react"
+import { ShieldCheck, Lock, Star } from "lucide-react"
 import { useTranslation } from 'react-i18next'
 import { HowFIPWorks } from "@/components/HowFIPWorks"
 import PricingModal from "@/components/PricingModal"
@@ -52,13 +52,13 @@ function InvestasiPage() {
             },
             features: {
                 included: [
-                    t('investasi_page.features.pillars_8', 'Advanced forensic analysis methods -> Locate trapped cash across your operation'),
-                    t('investasi_page.features.syndrome', 'Syndrome Detection -> Prevent recurring margin erosion'),
-                    t('investasi_page.features.anomaly', 'Anomaly Detection -> Flag suspicious financial behavior instantly'),
-                    t('investasi_page.features.health', 'Basic Health Score -> Reveal how fast your cash is burning'),
-                    t('investasi_page.features.summary', 'Executive Summary PDF -> Actionable hit-list of profit leaks'),
-                    t('investasi_page.features.multi_currency', 'Multi-currency support'),
-                    t('investasi_page.features.bilingual', 'Bilingual reports (EN/ID)')
+                    { key: 'investasi_page.features.pillars_8', default: 'Advanced forensic analysis methods -> Locate trapped cash across your operation' },
+                    { key: 'investasi_page.features.syndrome', default: 'Syndrome Detection -> Prevent recurring margin erosion' },
+                    { key: 'investasi_page.features.anomaly', default: 'Anomaly Detection -> Flag suspicious financial behavior instantly', highlight: true },
+                    { key: 'investasi_page.features.health', default: 'Basic Health Score -> Reveal how fast your cash is burning' },
+                    { key: 'investasi_page.features.summary', default: 'Executive Summary PDF -> Actionable hit-list of profit leaks' },
+                    { key: 'investasi_page.features.multi_currency', default: 'Multi-currency support' },
+                    { key: 'investasi_page.features.bilingual', default: 'Bilingual reports (EN/ID)' }
                 ],
                 excluded: [
                     t('investasi_page.features.full_25', 'Full forensic depth'),
@@ -87,13 +87,13 @@ function InvestasiPage() {
             },
             features: {
                 included: [
-                    t('investasi_page.features.diagnostic_short', 'Everything in DIAGNOSTIC'),
-                    t('investasi_page.features.pillars_25', 'Full Forensic Protocol -> Map every single vulnerability point'),
-                    t('investasi_page.features.logic', 'Logic Trace Analysis -> Expose how money exits your business'),
-                    t('investasi_page.features.decision', 'Advanced decision matrix -> Turn raw data into recovery decisions'),
-                    t('investasi_page.features.integrity', 'Data Integrity Scoring -> Detect manipulated financial reporting'),
-                    t('investasi_page.features.analytics', 'Advanced Analytics™ -> Deep-dive into operational friction'),
-                    t('investasi_page.features.detailed_report', 'Detailed Report (15-20 pages) -> Your blueprint to recover stranded capital')
+                    { key: 'investasi_page.features.diagnostic_short', default: 'Everything in DIAGNOSTIC' },
+                    { key: 'investasi_page.features.pillars_25', default: 'Full Forensic Protocol -> Map every single vulnerability point' },
+                    { key: 'investasi_page.features.logic', default: 'Logic Trace Analysis -> Expose how money exits your business', highlight: true },
+                    { key: 'investasi_page.features.decision', default: 'Decision Intelligence Engine -> Turn raw data into recovery decisions', highlight: true },
+                    { key: 'investasi_page.features.integrity', default: 'Data Integrity Scoring -> Detect manipulated financial reporting' },
+                    { key: 'investasi_page.features.analytics', default: 'Advanced Analytics™ -> Deep-dive into operational friction' },
+                    { key: 'investasi_page.features.detailed_report', default: 'Detailed Report (15-20 pages) -> Your blueprint to recover stranded capital' }
                 ],
                 excluded: [
                     t('investasi_page.features.multi_outlet_analysis', 'Multi-outlet network analysis'),
@@ -122,16 +122,16 @@ function InvestasiPage() {
             },
             features: {
                 included: [
-                    t('investasi_page.features.forensic_short', 'Everything in FORENSIC'),
-                    t('investasi_page.features.multi_outlet', 'Multi-Outlet Analysis (up to 50) -> Compare locations, expose the bleeders'),
-                    t('investasi_page.features.network_health', 'Network Health Index -> See which branches are silently failing'),
-                    t('investasi_page.features.territory', 'Territory Productivity Mapping -> Know exactly where you lose market efficiency'),
-                    t('investasi_page.features.franchise', 'Franchise Intelligence Suite -> Lock down franchise-wide margin safety'),
-                    t('investasi_page.features.velocity', 'Change Point Detection -> Track exact velocity of profit leakage over time'),
-                    t('investasi_page.features.pathology', 'Pathology Evolution Scanner -> Detect shifts in structural risk trajectories'),
-                    t('investasi_page.features.risk', '12-Month Risk Projection™ -> Foresee cash flow collapse before it hits'),
-                    t('investasi_page.features.scenario', 'Scenario Simulator -> Test "what-if" survival and recovery models'),
-                    t('investasi_page.features.network_report', 'Network Report (30-50 pages) -> Master plan to plug network-wide cash drains')
+                    { key: 'investasi_page.features.forensic_short', default: 'Everything in FORENSIC' },
+                    { key: 'investasi_page.features.multi_outlet', default: 'Multi-Outlet Analysis (up to 50) -> Compare locations, expose the bleeders' },
+                    { key: 'investasi_page.features.network_health', default: 'Network Health Index -> See which branches are silently failing' },
+                    { key: 'investasi_page.features.territory', default: 'Territory Productivity Mapping -> Know exactly where you lose market efficiency' },
+                    { key: 'investasi_page.features.franchise', default: 'Franchise Intelligence Suite -> Lock down franchise-wide margin safety' },
+                    { key: 'investasi_page.features.velocity', default: 'Change Point Detection -> Track exact velocity of profit leakage over time', highlight: true },
+                    { key: 'investasi_page.features.pathology', default: 'Pathology Evolution Scanner -> Detect shifts in structural risk trajectories' },
+                    { key: 'investasi_page.features.risk', default: '12-Month Risk Projection™ -> Foresee cash flow collapse before it hits', highlight: true },
+                    { key: 'investasi_page.features.scenario', default: 'Scenario Simulator -> Test "what-if" survival and recovery models', highlight: true },
+                    { key: 'investasi_page.features.network_report', default: 'Network Report (30-50 pages) -> Master plan to plug network-wide cash drains' }
                 ],
                 excluded: [
                     t('investasi_page.features.ai_neural', 'AI neural pattern learning'),
@@ -159,15 +159,15 @@ function InvestasiPage() {
             },
             features: {
                 included: [
-                    t('investasi_page.features.network_short', 'Everything in NETWORK'),
-                    t('investasi_page.features.neural', 'AI Neural Pattern Learning -> Self-updating defense against leakage'),
-                    t('investasi_page.features.predictive', 'Predictive Intelligence Engine -> Neutralize threats before they manifest'),
-                    t('investasi_page.features.monte_carlo', 'Monte Carlo Stress Testing -> Ensure survival under extreme market chaos'),
-                    t('investasi_page.features.cascade', 'Syndrome Cascade Maps -> Map the chronological spread of disease states'),
-                    t('investasi_page.features.wealth', 'Founder Wealth Impact Analysis™ -> Protect cash that belongs in your account'),
-                    t('investasi_page.features.unlimited', 'Unlimited Outlet Profiles -> Full visibility across infinite locations'),
-                    t('investasi_page.features.priority', 'Priority Strategic Access -> Direct intervention when massive leaks occur'),
-                    t('investasi_page.features.security', 'Enterprise-grade security')
+                    { key: 'investasi_page.features.network_short', default: 'Everything in NETWORK' },
+                    { key: 'investasi_page.features.neural', default: 'AI Neural Pattern Learning -> Self-updating defense against leakage', highlight: true },
+                    { key: 'investasi_page.features.predictive', default: 'Predictive Intelligence Engine -> Neutralize threats before they manifest', highlight: true },
+                    { key: 'investasi_page.features.monte_carlo', default: 'Monte Carlo Stress Testing -> Ensure survival under extreme market chaos' },
+                    { key: 'investasi_page.features.cascade', default: 'Syndrome Cascade Maps -> Map the chronological spread of disease states' },
+                    { key: 'investasi_page.features.wealth', default: 'Founder Wealth Impact Analysis™ -> Protect cash that belongs in your account', highlight: true },
+                    { key: 'investasi_page.features.unlimited', default: 'Unlimited Outlet Profiles -> Full visibility across infinite locations' },
+                    { key: 'investasi_page.features.priority', default: 'Priority Strategic Access -> Direct intervention when massive leaks occur' },
+                    { key: 'investasi_page.features.security', default: 'Enterprise-grade security' }
                 ],
                 excluded: []
             },
@@ -420,14 +420,23 @@ function InvestasiPage() {
                                         <div className="mb-4">
                                             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">{t('investasi_page.labels.key_features', 'Key Features')}</p>
                                             <ul className="space-y-4">
-                                                {tier.features.included.slice(0, 5).map((feature, i) => {
-                                                    const parts = feature.split(' -> ');
+                                                {tier.features.included.slice(0, 10).map((featureObj, i) => {
+                                                    const parts = t(featureObj.key, featureObj.default).split(' -> ');
+                                                    const isHighlighted = featureObj.highlight;
+
                                                     return (
-                                                    <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                                                        <ShieldCheck className={`w-4 h-4 ${theme.text} shrink-0 mt-0.5`} />
+                                                    <li key={i} className={`flex items-start gap-3 text-sm transition-all duration-300 ${isHighlighted ? 'bg-amber-500/5 -mx-2 px-2 py-1 rounded-md border-l border-amber-500/30' : 'text-gray-300'}`}>
+                                                        {isHighlighted ? (
+                                                            <Star className="w-4 h-4 text-amber-500 shrink-0 mt-0.5 fill-amber-500 animate-pulse-slow" />
+                                                        ) : (
+                                                            <ShieldCheck className={`w-4 h-4 ${theme.text} shrink-0 mt-0.5`} />
+                                                        )}
                                                         <div className="leading-snug">
-                                                            <span className="text-white font-medium">{parts[0]}</span>
-                                                            {parts[1] && <span className="block text-[11px] text-muted-foreground/80 italic mt-0.5">{parts[1]}</span>}
+                                                            <span className={`${isHighlighted ? 'text-amber-400 font-bold' : 'text-white font-medium'}`}>
+                                                                {parts[0]}
+                                                                {isHighlighted && <span className="ml-1 text-[10px] opacity-70">★</span>}
+                                                            </span>
+                                                            {parts[1] && <span className={`block text-[11px] italic mt-0.5 ${isHighlighted ? 'text-amber-200/60' : 'text-muted-foreground/80'}`}>{parts[1]}</span>}
                                                         </div>
                                                     </li>
                                                 )})}
@@ -462,28 +471,67 @@ function InvestasiPage() {
                                 <thead>
                                     <tr className="border-b border-white/10">
                                         <th className="p-3 text-muted-foreground font-bold text-xs uppercase tracking-wider">{t('investasi_page.labels.feature', 'Feature')}</th>
-                                        <th className="p-3 text-center text-muted-foreground font-bold text-xs uppercase tracking-wider">{t('investasi_page.tiers.diagnostic.name', 'DIAGNOSTIC')}</th>
-                                        <th className="p-3 text-center text-muted-foreground font-bold text-xs uppercase tracking-wider">{t('investasi_page.tiers.forensic.name', 'FORENSIC')}</th>
-                                        <th className="p-3 text-center text-muted-foreground font-bold text-xs uppercase tracking-wider">{t('investasi_page.tiers.network.name', 'NETWORK')}</th>
-                                        <th className="p-3 text-center text-muted-foreground font-bold text-xs uppercase tracking-wider">{t('investasi_page.tiers.sovereign.name', 'SOVEREIGN')}</th>
+                                        {tiers.map(tier => (
+                                            <th key={tier.id} className="p-3 text-center text-muted-foreground font-bold text-xs uppercase tracking-wider whitespace-nowrap">{tier.name}</th>
+                                        ))}
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {allFeatures.map(feature => {
-                                        const parts = feature.split(' -> ');
-                                        return (
-                                        <tr key={feature} className="border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors">
-                                            <td className="p-3">
-                                                <span className="text-white font-medium block">{parts[0]}</span>
-                                                {parts[1] && <span className="text-[11px] text-muted-foreground/60 italic block mt-0.5 leading-snug">{parts[1]}</span>}
-                                            </td>
-                                            {tiers.map(tier => (
-                                                <td key={tier.id} className="p-3 text-center">
-                                                    {isFeatureAvailable(feature, tier.id) ? '✅' : <span className="opacity-20 text-xs">❌</span>}
-                                                </td>
-                                            ))}
-                                        </tr>
-                                    )})}
+                                    {(() => {
+                                        // 1. Define tier order
+                                        const tierOrder = ['diagnostic', 'forensic', 'network', 'sovereign'];
+                                        
+                                        // 2. Identify all unique features and their minimum tier
+                                        const featureMap = new Map();
+                                        
+                                        tiers.forEach(tier => {
+                                            const rank = tierOrder.indexOf(tier.id);
+                                            tier.features.included.forEach(f => {
+                                                // Ignore summary/placeholder features in the detailed table
+                                                if (f.key.endsWith('_short') || f.key.endsWith('_short_base')) return;
+                                                
+                                                if (!featureMap.has(f.key) || rank < featureMap.get(f.key).rank) {
+                                                    featureMap.set(f.key, { ...f, rank });
+                                                }
+                                            });
+                                        });
+
+                                        // 3. Render unique features sorted by their original introduction tier
+                                        return Array.from(featureMap.values())
+                                            .sort((a, b) => a.rank - b.rank)
+                                            .map(featureObj => {
+                                                const translated = t(featureObj.key, featureObj.default);
+                                                const parts = translated.split(' -> ');
+                                                const isHighlighted = featureObj.highlight;
+
+                                                return (
+                                                <tr key={featureObj.key} className={`border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors ${isHighlighted ? 'bg-amber-500/[0.03]' : ''}`}>
+                                                    <td className="p-3">
+                                                        <div className="flex items-center gap-2">
+                                                            {isHighlighted && <Star className="w-3 h-3 text-amber-500 fill-amber-500 shrink-0" />}
+                                                            <span className={`font-medium block ${isHighlighted ? 'text-amber-400' : 'text-white'}`}>{parts[0]}</span>
+                                                        </div>
+                                                        {parts[1] && <span className={`text-[11px] italic block mt-0.5 leading-snug ${isHighlighted ? 'text-amber-200/40' : 'text-muted-foreground/60'}`}>{parts[1]}</span>}
+                                                    </td>
+                                                    {tiers.map(tier => {
+                                                        const tierRank = tierOrder.indexOf(tier.id);
+                                                        const featureMinRank = featureObj.rank;
+                                                        const isAvailable = tierRank >= featureMinRank;
+
+                                                        return (
+                                                            <td key={tier.id} className="p-3 text-center">
+                                                                {isAvailable ? (
+                                                                    <span className={isHighlighted ? 'text-lg' : ''}>✅</span>
+                                                                ) : (
+                                                                    <span className="opacity-20 text-xs text-white">❌</span>
+                                                                )}
+                                                            </td>
+                                                        );
+                                                    })}
+                                                </tr>
+                                            );
+                                        });
+                                    })()}
                                 </tbody>
                             </table>
                         </div>
