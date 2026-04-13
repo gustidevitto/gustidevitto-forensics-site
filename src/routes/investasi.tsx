@@ -180,63 +180,7 @@ function InvestasiPage() {
         }
     ]
 
-
-    const featureTiers: Record<string, string> = {
-        // Diagnostic Features
-        [t('investasi_page.features.pillars_8', '8 Core Forensic Pillars -> Locate trapped cash across your operation')]: 'diagnostic',
-        [t('investasi_page.features.syndrome', 'Syndrome Detection -> Prevent recurring margin erosion')]: 'diagnostic',
-        [t('investasi_page.features.anomaly', 'Anomaly Detection -> Flag suspicious financial behavior instantly')]: 'diagnostic',
-        [t('investasi_page.features.health', 'Basic Health Score -> Reveal how fast your cash is burning')]: 'diagnostic',
-        [t('investasi_page.features.summary', 'Executive Summary PDF -> Actionable hit-list of profit leaks')]: 'diagnostic',
-        [t('investasi_page.features.multi_currency', 'Multi-currency support')]: 'diagnostic',
-        [t('investasi_page.features.bilingual', 'Bilingual reports (EN/ID)')]: 'diagnostic',
-
-        // Forensic Features
-        [t('investasi_page.features.pillars_25', 'Full 25 Forensic Pillars -> Map every single vulnerability point')]: 'forensic',
-        [t('investasi_page.features.logic', 'Logic Trace Analysis -> Expose how money exits your business')]: 'forensic',
-        [t('investasi_page.features.decision', 'Decision Intelligence Engine -> Turn raw data into recovery decisions')]: 'forensic',
-        [t('investasi_page.features.integrity', 'Data Integrity Scoring -> Detect manipulated financial reporting')]: 'forensic',
-        [t('investasi_page.features.analytics', 'Advanced Analytics™ -> Deep-dive into operational friction')]: 'forensic',
-        [t('investasi_page.features.detailed_report', 'Detailed Report (15-20 pages) -> Your blueprint to recover stranded capital')]: 'forensic',
-
-        // Network Features
-        [t('investasi_page.features.multi_outlet', 'Multi-Outlet Analysis (up to 50) -> Compare locations, expose the bleeders')]: 'network',
-        [t('investasi_page.features.network_health', 'Network Health Index -> See which branches are silently failing')]: 'network',
-        [t('investasi_page.features.territory', 'Territory Productivity Mapping -> Know exactly where you lose market efficiency')]: 'network',
-        [t('investasi_page.features.franchise', 'Franchise Intelligence Suite -> Lock down franchise-wide margin safety')]: 'network',
-        [t('investasi_page.features.velocity', 'Change Point Detection -> Track exact velocity of profit leakage over time')]: 'network',
-        [t('investasi_page.features.pathology', 'Pathology Evolution Scanner -> Detect shifts in structural risk trajectories')]: 'network',
-        [t('investasi_page.features.risk', '12-Month Risk Projection™ -> Foresee cash flow collapse before it hits')]: 'network',
-        [t('investasi_page.features.scenario', 'Scenario Simulator -> Test "what-if" survival and recovery models')]: 'network',
-        [t('investasi_page.features.network_report', 'Network Report (30-50 pages) -> Master plan to plug network-wide cash drains')]: 'network',
-
-        // Sovereign Features
-        [t('investasi_page.features.neural', 'AI Neural Pattern Learning -> Self-updating defense against leakage')]: 'sovereign',
-        [t('investasi_page.features.predictive', 'Predictive Intelligence Engine -> Neutralize threats before they manifest')]: 'sovereign',
-        [t('investasi_page.features.monte_carlo', 'Monte Carlo Stress Testing -> Ensure survival under extreme market chaos')]: 'sovereign',
-        [t('investasi_page.features.cascade', 'Syndrome Cascade Maps -> Map the chronological spread of disease states')]: 'sovereign',
-        [t('investasi_page.features.wealth', 'Founder Wealth Impact Analysis™ -> Protect cash that belongs in your account')]: 'sovereign',
-        [t('investasi_page.features.unlimited', 'Unlimited Outlet Profiles -> Full visibility across infinite locations')]: 'sovereign',
-        [t('investasi_page.features.priority', 'Priority Strategic Access -> Direct intervention when massive leaks occur')]: 'sovereign',
-        [t('investasi_page.features.security', 'Enterprise-grade security')]: 'sovereign',
-    };
-
-    const tierHierarchy = ['diagnostic', 'forensic', 'network', 'sovereign'];
-
-    const isFeatureAvailable = (featureName: string, tierId: string) => {
-        const requiredTier = featureTiers[featureName];
-        if (!requiredTier) return false;
-
-        const requiredTierIndex = tierHierarchy.indexOf(requiredTier);
-        const currentTierIndex = tierHierarchy.indexOf(tierId);
-
-        return currentTierIndex >= requiredTierIndex;
-    };
-
-    const allFeatures = Object.keys(featureTiers);
-
     return (
-
         <div
             onMouseMove={handleMouseMove}
             className="flex-1 flex flex-col bg-[#0a0a0a] text-white relative transition-colors duration-500"
@@ -421,7 +365,7 @@ function InvestasiPage() {
                                             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">{t('investasi_page.labels.key_features', 'Key Features')}</p>
                                             <ul className="space-y-4">
                                                 {tier.features.included.slice(0, 10).map((featureObj, i) => {
-                                                    const parts = t(featureObj.key, featureObj.default).split(' -> ');
+                                                    const parts = (t(featureObj.key, featureObj.default) as string).split(' -> ');
                                                     const isHighlighted = featureObj.highlight;
 
                                                     return (
@@ -500,7 +444,7 @@ function InvestasiPage() {
                                         return Array.from(featureMap.values())
                                             .sort((a, b) => a.rank - b.rank)
                                             .map(featureObj => {
-                                                const translated = t(featureObj.key, featureObj.default);
+                                                const translated = t(featureObj.key, featureObj.default) as string;
                                                 const parts = translated.split(' -> ');
                                                 const isHighlighted = featureObj.highlight;
 
