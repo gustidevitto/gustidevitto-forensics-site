@@ -105,13 +105,16 @@ function BlogPost() {
         else entry.default = content as string
     })
 
-    // Find entry where either default or en has matching slug in frontmatter
+    // Find entry where either default or en has matching slug in frontmatter or matches filename
     let selectedContent = ''
-    for (const entry of blogMap.values()) {
+    for (const [baseId, entry] of blogMap.entries()) {
         const { data: defaultData } = parseFrontmatter(entry.default)
         const { data: enData } = entry.en ? parseFrontmatter(entry.en) : { data: null }
 
-        if (defaultData?.slug === slug || enData?.slug === slug) {
+        const defaultSlug = defaultData?.slug || baseId
+        const enSlug = enData?.slug || baseId
+
+        if (defaultSlug === slug || enSlug === slug) {
             selectedContent = (isEn && entry.en) ? entry.en : entry.default
             break
         }

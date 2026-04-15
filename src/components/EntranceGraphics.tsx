@@ -49,19 +49,19 @@ export function SingleEntityGraphic() {
                 </g>
 
                 {/* Scanning Vertical Line */}
-                <line x1="100" y1="0" x2="100" y2="400" stroke="currentColor" strokeWidth="0.5" className="text-primary/20 animate-scanline" />
+                    <circle cx="200" cy="200" r="5" className="fill-primary" />
+                </g>
             </svg>
         </div>
     )
 }
 
+import React from 'react';
+// EntranceGraphics — stripped of HUD elements per macOS reskin.
 export function NetworkGraphic() {
     return (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
             <svg width="100%" height="100%" viewBox="0 0 400 400" className="opacity-30">
-                <defs>
-                    <radialGradient id="grad-red" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                        <stop offset="0%" stopColor="#ef4444" stopOpacity="0.15" />
                         <stop offset="100%" stopColor="#ef4444" stopOpacity="0" />
                     </radialGradient>
                 </defs>

@@ -16,8 +16,9 @@ function FipLiteHub() {
             title: t('fip_lite_hub.card_cash_title', 'Cash Autopsy'),
             desc: t('fip_lite_hub.card_cash_desc', 'Revenue looks good, but the bank account is empty. Find your actual runway, burn rate, and calculate immediate insolvency risk.'),
             icon: ShieldAlert,
-            color: 'text-red-500',
-            bg: 'from-red-500/10 to-transparent',
+            accentClass: 'text-red-400',
+            glassTint: 'bg-red-500/[0.06]',
+            borderTint: 'border-red-500/[0.12]',
             cta: t('fip_lite_hub.card_cash_cta', 'Run Survival Scan'),
             href: '/cash-autopsy'
         },
@@ -26,8 +27,9 @@ function FipLiteHub() {
             title: t('fip_lite_hub.card_margin_title', 'Margin Audit'),
             desc: t('fip_lite_hub.card_margin_desc', 'Your team is busy, but profit is flat. Isolate your exact GP Leakage, labor inefficiency, and unrecorded operational waste.'),
             icon: Activity,
-            color: 'text-amber-500',
-            bg: 'from-amber-500/10 to-transparent',
+            accentClass: 'text-[#BFA26A]',
+            glassTint: 'bg-[#BFA26A]/[0.05]',
+            borderTint: 'border-[#BFA26A]/[0.12]',
             cta: t('fip_lite_hub.card_margin_cta', 'Run Efficiency Audit'),
             href: '/margin-audit'
         },
@@ -36,81 +38,83 @@ function FipLiteHub() {
             title: t('fip_lite_hub.card_growth_title', 'Scalability Scan'),
             desc: t('fip_lite_hub.card_growth_desc', 'You want to expand, but something feels off. Calculate your true contribution margin, dynamic break-even, and acquisition viability.'),
             icon: Zap,
-            color: 'text-emerald-500',
-            bg: 'from-emerald-500/10 to-transparent',
+            accentClass: 'text-[#0A84FF]',
+            glassTint: 'bg-[#0A84FF]/[0.05]',
+            borderTint: 'border-[#0A84FF]/[0.12]',
             cta: t('fip_lite_hub.card_growth_cta', 'Run Growth Scan'),
             href: '/growth-scan'
         }
     ]
 
     return (
-        <div className="min-h-screen bg-black text-white font-sans selection:bg-white/20">
+        <div className="min-h-screen bg-[#1c1c1e] text-white font-sans selection:bg-[#0A84FF]/20">
             <title>{t('fip_lite_hub.seo_title', 'Free Diagnostics | Gusti Devitto')}</title>
             <meta name="description" content={t('fip_lite_hub.seo_desc', 'Specialized free forensic diagnostics for your business operations.')} />
 
             <div className="relative pt-32 pb-24 overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(50,50,50,0.4),rgba(0,0,0,1)_70%)]" />
-                
+                {/* Ambient background */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#0A84FF]/[0.05] rounded-full blur-[160px] animate-subtle-glow" />
+                </div>
+
                 <div className="container mx-auto px-6 relative z-10 max-w-5xl">
-                    <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
+                    <motion.div
+                        initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="text-center space-y-6"
+                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        className="text-center space-y-5"
                     >
-                        <div className="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.2em] text-white/70 mb-4 backdrop-blur-md">
+                        {/* Glass pill badge */}
+                        <div className="inline-flex items-center px-3 py-1.5 glass rounded-squircle-sm text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55 mb-4">
                             {t('fip_lite_hub.hero_badge', 'FIP™ Lite Triage')}
                         </div>
-                        
+
                         <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9]">
                             <Trans i18nKey="fip_lite_hub.hero_title">
-                                Where is the <span className="text-white/40 italic">leak?</span>
+                                Where is the <span className="text-white/35 italic">leak?</span>
                             </Trans>
                         </h1>
-                        
-                        <p className="text-xl md:text-2xl text-white/50 leading-relaxed max-w-3xl mx-auto font-light">
+
+                        <p className="text-xl md:text-2xl text-white/40 leading-relaxed max-w-3xl mx-auto font-light">
                             {t('fip_lite_hub.hero_subtitle', 'Standard calculators give you generic numbers. Our forensic triage analyzes your specific blindspots. Choose your focus area.')}
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+                    {/* Diagnostic cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
                         {diagnostics.map((diag, i) => (
                             <motion.div
                                 key={diag.id}
-                                initial={{ opacity: 0, y: 30 }}
+                                initial={{ opacity: 0, y: 24 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: i * 0.15 }}
-                                className="group relative"
+                                transition={{ duration: 0.45, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                                className="group"
                             >
                                 <Link to={diag.href} className="block h-full">
-                                    <div className="h-full bg-white/[0.02] border border-white/5 hover:border-white/20 transition-all duration-300 p-8 flex flex-col relative overflow-hidden backdrop-blur-sm">
-                                        
-                                        <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${diag.bg} opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-500`} />
-                                        
-                                        <div className={`w-12 h-12 flex items-center justify-center bg-black border border-white/10 mb-8 z-10 ${diag.color}`}>
-                                            <diag.icon className="w-6 h-6" strokeWidth={1.5} />
+                                    <div className={`h-full glass rounded-squircle-xl p-7 flex flex-col relative overflow-hidden hover:glass-elevated transition-all duration-300 group-hover:scale-[1.01] border ${diag.borderTint}`}>
+
+                                        {/* Subtle tinted corner */}
+                                        <div className={`absolute top-0 right-0 w-48 h-48 ${diag.glassTint} rounded-full blur-2xl pointer-events-none`} />
+
+                                        {/* Icon — squircle container */}
+                                        <div className={`w-11 h-11 flex items-center justify-center glass rounded-squircle-sm mb-7 z-10 border ${diag.borderTint}`}>
+                                            <diag.icon className={`w-5 h-5 ${diag.accentClass}`} strokeWidth={1.5} />
                                         </div>
 
-                                        <h3 className="text-2xl font-black uppercase tracking-tight mb-4 z-10 group-hover:text-white transition-colors duration-300">
+                                        <h3 className={`text-xl font-black uppercase tracking-tight mb-3 z-10 ${diag.accentClass}`}>
                                             {diag.title}
                                         </h3>
-                                        
-                                        <p className="text-white/40 leading-relaxed mb-8 z-10 flex-grow font-light">
+
+                                        <p className="text-white/40 leading-relaxed mb-8 z-10 flex-grow font-light text-sm">
                                             {diag.desc}
                                         </p>
 
                                         <div className="z-10 mt-auto">
-                                            <div className="flex items-center text-sm font-black uppercase tracking-widest text-white/60 group-hover:text-white transition-colors">
+                                            <div className={`flex items-center text-sm font-semibold uppercase tracking-widest ${diag.accentClass} opacity-60 group-hover:opacity-100 transition-opacity`}>
                                                 {diag.cta}
-                                                <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform" />
+                                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" strokeWidth={2} />
                                             </div>
                                         </div>
-                                        
-                                        {/* Corner Accents */}
-                                        <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20" />
-                                        <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/20" />
-                                        <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/20" />
-                                        <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20" />
                                     </div>
                                 </Link>
                             </motion.div>
@@ -118,11 +122,11 @@ function FipLiteHub() {
                     </div>
                 </div>
             </div>
-            
-            <div className="bg-white/[0.01] border-t border-white/5 py-12 text-center mt-12">
+
+            <div className="bg-white/[0.015] border-t border-white/[0.05] py-10 text-center mt-8">
                 <div className="container mx-auto px-6">
-                    <p className="text-[10px] uppercase font-mono tracking-widest text-white/30">
-                        {t('global.nav_status', 'System: Operational')} // {t('fip_lite_hub.badge', 'Forensic Diagnostics')}
+                    <p className="text-[10px] font-medium uppercase tracking-widest text-white/20">
+                        {t('global.nav_status', 'System: Operational')} · {t('fip_lite_hub.badge', 'Forensic Diagnostics')}
                     </p>
                 </div>
             </div>

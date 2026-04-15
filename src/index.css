@@ -4,60 +4,83 @@
 
 @layer base {
     :root {
-        /* Default Light Mode */
+        /* Light Mode — kept for compatibility */
         --background: 0 0% 100%;
         --foreground: 222 47% 11%;
         --card: 0 0% 100%;
         --card-foreground: 222 47% 11%;
         --popover: 0 0% 100%;
         --popover-foreground: 222 47% 11%;
-        --primary: 222 47% 11%;
-        --primary-foreground: 210 40% 98%;
-        --secondary: 45 60% 50%;
+        --primary: 211 100% 53%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 210 40% 96%;
         --secondary-foreground: 222 47% 11%;
-        --muted: 210 40% 96.1%;
-        --muted-foreground: 215.4 16.3% 46.9%;
-        --accent: 210 40% 96.1%;
+        --muted: 210 40% 96%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 36 39% 56%;
         --accent-foreground: 222 47% 11%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 210 40% 98%;
-        --border: 214.3 31.8% 91.4%;
-        --input: 214.3 31.8% 91.4%;
-        --ring: 222 47% 11%;
-        --radius: 0.5rem;
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 214 32% 91%;
+        --input: 214 32% 91%;
+        --ring: 211 100% 53%;
+        --radius: 1rem;
+        --chart-1: 212 80% 55%;
+        --chart-2: 160 60% 45%;
         --chart-3: 197 37% 24%;
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
     }
 
     .dark {
-        /* Dark Navy Theme */
-        --background: 222 47% 11%;
-        --foreground: 210 40% 98%;
-        --card: 217 33% 17%;
-        --card-foreground: 210 40% 98%;
-        --popover: 222 47% 11%;
-        --popover-foreground: 210 40% 98%;
-        --primary: 45 93% 47%;
-        --primary-foreground: 222 47% 11%;
-        --secondary: 217 33% 17%;
-        --secondary-foreground: 210 40% 98%;
-        --muted: 217 33% 17%;
-        --muted-foreground: 215 20.2% 65.1%;
-        --accent: 217 33% 17%;
-        --accent-foreground: 210 40% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 210 40% 98%;
-        --border: 217 33% 17%;
-        --input: 217 33% 17%;
-        --ring: 45 93% 47%;
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
+        /* ── macOS Dark Mode Design Tokens ── */
+
+        /* Backgrounds — Apple System Gray scale */
+        --background: 240 5% 11%;         /* #1c1c1e — System Gray 6 (warm charcoal) */
+        --foreground: 0 0% 98%;            /* #fafafa — near white */
+
+        /* Card surfaces — elevated above background like macOS windows */
+        --card: 240 4% 15%;               /* #242426 — elevated surface */
+        --card-foreground: 0 0% 98%;
+
+        /* Popovers / tooltips — even more elevated */
+        --popover: 240 4% 18%;            /* #2c2c2e */
+        --popover-foreground: 0 0% 98%;
+
+        /* Primary — macOS System Blue */
+        --primary: 211 100% 53%;          /* #0A84FF */
+        --primary-foreground: 0 0% 100%;
+
+        /* Secondary — surface variant */
+        --secondary: 240 4% 18%;          /* #2c2c2e */
+        --secondary-foreground: 0 0% 98%;
+
+        /* Muted — subdued containers */
+        --muted: 240 4% 18%;
+        --muted-foreground: 0 0% 60%;     /* #999 — secondary text */
+
+        /* Accent — Muted Institutional Gold (brand only, not interactive) */
+        --accent: 36 39% 56%;             /* #BFA26A — refined gold */
+        --accent-foreground: 0 0% 98%;
+
+        /* Destructive */
+        --destructive: 0 70% 50%;
+        --destructive-foreground: 0 0% 100%;
+
+        /* Borders — very subtle, Apple-style */
+        --border: 240 4% 22%;             /* #383838 */
+        --input: 240 4% 20%;
+        --ring: 211 100% 53%;             /* matches primary blue */
+
+        /* Border radius — squircle base (16px continuous curvature) */
+        --radius: 1rem;
+
+        /* Chart colors — refined palette */
+        --chart-1: 211 100% 53%;          /* blue */
+        --chart-2: 160 60% 45%;           /* green */
+        --chart-3: 36 39% 56%;            /* gold */
+        --chart-4: 280 50% 60%;           /* purple */
+        --chart-5: 0 70% 50%;             /* red */
     }
 }
 
@@ -77,8 +100,11 @@
         min-height: 100%;
         overflow-x: hidden;
         overflow-y: visible;
-        /* Let html handle the vertical scroll */
         width: 100%;
+        /* Improved text rendering for Inter / SF Pro */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
     }
 
     #root {
@@ -86,353 +112,180 @@
     }
 }
 
+/* ═══════════════════════════════════════════════
+   GLASSMORPHISM UTILITIES — macOS Material System
+   ═══════════════════════════════════════════════ */
 @layer utilities {
 
-    /* Slide Up Animation */
+    /* Base glass — standard cards, section containers */
+    .glass {
+        background: rgba(255, 255, 255, 0.036);
+        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    /* Elevated glass — modals, important cards, pricing */
+    .glass-elevated {
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(40px) saturate(200%);
+        -webkit-backdrop-filter: blur(40px) saturate(200%);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(255, 255, 255, 0.05) inset;
+    }
+
+    /* Subtle glass — very light surfaces, hover states */
+    .glass-subtle {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Glass with blue tint — interactive / primary elements */
+    .glass-blue {
+        background: rgba(10, 132, 255, 0.08);
+        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        border: 1px solid rgba(10, 132, 255, 0.15);
+    }
+
+    /* Glass with gold tint — brand/accent elements */
+    .glass-gold {
+        background: rgba(191, 162, 106, 0.06);
+        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        border: 1px solid rgba(191, 162, 106, 0.15);
+    }
+
+    /* ── Squircle border-radius helpers ── */
+    /* These approximate iOS/macOS continuous curvature */
+    .squircle-sm  { border-radius: 0.75rem; }   /* 12px */
+    .squircle     { border-radius: 1rem; }       /* 16px */
+    .squircle-md  { border-radius: 1.25rem; }    /* 20px */
+    .squircle-lg  { border-radius: 1.75rem; }    /* 28px */
+    .squircle-xl  { border-radius: 2.25rem; }    /* 36px — modal, hero cards */
+
+    /* ── Animation: Slide Up ── */
     @keyframes slide-up {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(16px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
-
     .animate-slide-up {
-        animation: slide-up 0.6s ease-out forwards;
+        animation: slide-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
-    /* Fade In Animation */
+    /* ── Animation: Fade In ── */
     @keyframes fade-in {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
+        from { opacity: 0; }
+        to   { opacity: 1; }
     }
-
     .animate-fade-in {
-        animation: fade-in 0.8s ease-out forwards;
+        animation: fade-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
-    /* Fade In Up Animation */
+    /* ── Animation: Fade In Up ── */
     @keyframes fade-in-up {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
-
     .animate-fade-in-up {
-        animation: fade-in-up 0.6s ease-out forwards;
-        animation-delay: 0.2s;
+        animation: fade-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        animation-delay: 0.15s;
         opacity: 0;
     }
 
-    /* Floating Animation - Subtle */
-    @keyframes float {
-
-        0%,
-        100% {
-            transform: translateY(0);
-        }
-
-        50% {
-            transform: translateY(-15px);
-        }
-    }
-
-    .animate-float {
-        animation: float 6s ease-in-out infinite;
-    }
-
-    /* Glow Pulse for Buttons */
-    @keyframes glow-pulse {
-
-        0%,
-        100% {
-            box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
-        }
-
-        50% {
-            box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
-        }
-    }
-
-    .animate-glow {
-        animation: glow-pulse 2s ease-in-out infinite;
-    }
-
-    /* Subtle Scale on Scroll */
+    /* ── Animation: Scale In (spring-like) ── */
     @keyframes scale-in {
-        from {
-            opacity: 0;
-            transform: scale(0.95);
-        }
-
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
+        from { opacity: 0; transform: scale(0.96); }
+        to   { opacity: 1; transform: scale(1); }
     }
-
     .animate-scale-in {
-        animation: scale-in 0.5s ease-out forwards;
+        animation: scale-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
-    /* Gradient text animation */
+    /* ── Animation: Float (very subtle — for ambient orbs) ── */
+    @keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        33%  { transform: translateY(-8px) rotate(0.5deg); }
+        66%  { transform: translateY(-4px) rotate(-0.5deg); }
+    }
+    .animate-float {
+        animation: float 10s ease-in-out infinite;
+    }
+
+    /* ── Animation: Pulse Slow (ambient only) ── */
+    @keyframes pulse-slow {
+        0%, 100% { opacity: 0.4; }
+        50%       { opacity: 0.65; }
+    }
+    .animate-pulse-slow {
+        animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* ── Animation: Gradient Shift (for accent highlights) ── */
     @keyframes gradient-shift {
-        0% {
-            background-position: 0% 50%;
-        }
-
-        50% {
-            background-position: 100% 50%;
-        }
-
-        100% {
-            background-position: 0% 50%;
-        }
+        0%   { background-position: 0% 50%; }
+        50%  { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
-
     .animate-gradient-text {
         background-size: 200% auto;
-        animation: gradient-shift 4s ease infinite;
+        animation: gradient-shift 5s ease infinite;
     }
 
-    /* Status Blink */
-    @keyframes status-blink {
-
-        0%,
-        100% {
-            opacity: 1;
-        }
-
-        50% {
-            opacity: 0.3;
-        }
+    /* ── Animation: Status Dot Pulse (for live indicators) ── */
+    @keyframes status-pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50%       { opacity: 0.5; transform: scale(0.85); }
     }
-
     .animate-status-blink {
-        animation: status-blink 2s ease-in-out infinite;
+        animation: status-pulse 2.5s ease-in-out infinite;
     }
 
-    /* Subtle Moving Light Background */
-    @keyframes subtle-glow {
-
-        0%,
-        100% {
-            transform: translate(0, 0) scale(1);
-            opacity: 0.3;
-        }
-
-        33% {
-            transform: translate(5%, 10%) scale(1.1);
-            opacity: 0.4;
-        }
-
-        66% {
-            transform: translate(-5%, 5%) scale(0.9);
-            opacity: 0.2;
-        }
-    }
-
-    .animate-subtle-glow {
-        animation: subtle-glow 20s ease-in-out infinite;
-    }
-
-    @keyframes scanline {
-        0% {
-            transform: translateX(0);
-            opacity: 0;
-        }
-
-        5% {
-            opacity: 0.5;
-        }
-
-        95% {
-            opacity: 0.5;
-        }
-
-        100% {
-            transform: translateX(300px);
-            opacity: 0;
-        }
-    }
-
-    .animate-scanline {
-        animation: scanline 8s linear infinite;
-    }
-
-    @keyframes scanline-vertical {
-        from {
-            transform: translateY(-100%);
-        }
-
-        to {
-            transform: translateY(100%);
-        }
-    }
-
-    .animate-scanline-vertical {
-        animation: scanline-vertical 6s linear infinite;
-    }
-
-    /* Pulse Color Animation (No Opacity) */
-    @keyframes pulse-color {
-
-        0%,
-        100% {
-            color: white;
-        }
-
-        50% {
-            color: #ef4444;
-            /* red-500 */
-        }
-    }
-
-    .animate-pulse-color {
-        animation: pulse-color 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-
-    /* Pulse Slow */
-    @keyframes pulse-slow {
-
-        0%,
-        100% {
-            opacity: 0.5;
-        }
-
-        50% {
-            opacity: 0.8;
-        }
-    }
-
-    .animate-pulse-slow {
-        animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-
-    /* Spotlight Roam */
+    /* ── Animation: Spotlight Roam (reduced — used for neural mesh) ── */
     @keyframes spotlight-roam {
-        0% {
-            transform: translate(0, 0);
-        }
-
-        25% {
-            transform: translate(10%, 10%);
-        }
-
-        50% {
-            transform: translate(-5%, 15%);
-        }
-
-        75% {
-            transform: translate(-10%, -5%);
-        }
-
-        100% {
-            transform: translate(0, 0);
-        }
+        0%   { transform: translate(0, 0); }
+        25%  { transform: translate(6%, 8%); }
+        50%  { transform: translate(-4%, 12%); }
+        75%  { transform: translate(-8%, -4%); }
+        100% { transform: translate(0, 0); }
     }
-
     .animate-spotlight-roam {
-        animation: spotlight-roam 20s ease-in-out infinite;
+        animation: spotlight-roam 25s ease-in-out infinite;
     }
 
-    /* Gold Glow Pulse for Navigation */
-    @keyframes gold-glow-pulse {
-
-        0%,
-        100% {
-            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
-        }
-
-        50% {
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 25px rgba(255, 215, 0, 0.2);
-        }
+    /* ── Animation: Subtle Glow (ambient background orbs) ── */
+    @keyframes subtle-glow {
+        0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+        33%  { transform: translate(4%, 8%) scale(1.05); opacity: 0.35; }
+        66%  { transform: translate(-3%, 4%) scale(0.95); opacity: 0.2; }
+    }
+    .animate-subtle-glow {
+        animation: subtle-glow 24s ease-in-out infinite;
     }
 
-
-    .nav-gold-glow {
-        color: white !important;
-        animation: gold-glow-pulse 3s ease-in-out infinite;
-        font-weight: 700;
+    /* ── Animation: Scan Slow (kept for neural mesh, reduced) ── */
+    @keyframes scan-slow {
+        0%   { transform: translateY(-100%); opacity: 0; }
+        10%  { opacity: 0.2; }
+        90%  { opacity: 0.2; }
+        100% { transform: translateY(1000%); opacity: 0; }
+    }
+    .animate-scan-slow {
+        animation: scan-slow 10s linear infinite;
     }
 
-    .perspective-1000 {
-        perspective: 1000px;
-    }
+    /* ── 3D perspective utils (kept for cards) ── */
+    .perspective-1000 { perspective: 1000px; }
+    .preserve-3d      { transform-style: preserve-3d; }
+    .backface-hidden  { backface-visibility: hidden; }
 
-    .preserve-3d {
-        transform-style: preserve-3d;
-    }
-
-    .backface-hidden {
-        backface-visibility: hidden;
-    }
-
-    /* Grain/Noise Animation */
-    @keyframes grain {
-
-        0%,
-        100% {
-            transform: translate(0, 0);
-        }
-
-        10% {
-            transform: translate(-5%, -10%);
-        }
-
-        20% {
-            transform: translate(-15%, 5%);
-        }
-
-        30% {
-            transform: translate(7%, -25%);
-        }
-
-        40% {
-            transform: translate(-5%, 25%);
-        }
-
-        50% {
-            transform: translate(-15%, 10%);
-        }
-
-        60% {
-            transform: translate(15%, 0%);
-        }
-
-        70% {
-            transform: translate(0%, 15%);
-        }
-
-        80% {
-            transform: translate(3%, 35%);
-        }
-
-        90% {
-            transform: translate(-10%, 10%);
-        }
-    }
-
+    /* ── Ambient noise texture (very subtle, 3% opacity) ── */
     .bg-grain {
         position: relative;
         overflow: hidden;
     }
-
     .bg-grain::before {
         content: "";
         position: absolute;
@@ -440,37 +293,33 @@
         left: -100%;
         width: 300%;
         height: 300%;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        opacity: 0.15;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.03;
         pointer-events: none;
-        animation: grain 8s steps(10) infinite;
         z-index: 0;
     }
 
-    /* Custom Scrollbar for 'Obsidian Spear' feel */
-    ::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
+    /* ── macOS-style scrollbar ── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb {
-        background: hsl(var(--primary) / 0.3);
+        background: rgba(255, 255, 255, 0.12);
         border-radius: 10px;
     }
-
     ::-webkit-scrollbar-thumb:hover {
-        background: hsl(var(--primary));
+        background: rgba(255, 255, 255, 0.22);
     }
-    @keyframes scan-slow {
-        0% { transform: translateY(-100%); opacity: 0; }
-        10% { opacity: 0.5; }
-        90% { opacity: 0.5; }
-        100% { transform: translateY(1000%); opacity: 0; }
-    }
-    .animate-scan-slow {
-        animation: scan-slow 8s linear infinite;
+
+    /* ── Gold glow — brand-only, very restrained ── */
+    .brand-gold { color: #BFA26A; }
+    .brand-gold-text { color: hsl(var(--accent)); }
+
+    /* ── macOS blue — primary interactive ── */
+    .sys-blue { color: #0A84FF; }
+
+    /* ── Divider line utility ── */
+    .divider-subtle {
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(255,255,255,0.07), transparent);
     }
 }

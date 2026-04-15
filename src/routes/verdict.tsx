@@ -10,15 +10,15 @@ export const Route = createFileRoute('/verdict')({
 function VerdictPage() {
     const { t } = useTranslation()
     return (
-        <div className="flex-1 flex flex-col bg-[#060a12] text-white relative">
+        <div className="flex-1 flex flex-col bg-[#1c1c1e] text-white relative">
             <title>{t('verdict_page.seo_title')}</title>
 
             {/* ═══ HERO ═══ */}
             <section className="pt-32 pb-20 px-6 md:px-12 lg:px-20 border-b border-white/[0.05]">
                 <div className="max-w-5xl">
                     <div className="flex items-center gap-4 mb-8">
-                        <div className="w-8 h-px bg-amber-400/60" />
-                        <p className="text-[10px] text-white/30 font-medium tracking-[0.3em] uppercase">
+                        <div className="w-8 h-px bg-[#BFA26A]/40" />
+                        <p className="text-[10px] text-[#BFA26A]/60 font-semibold tracking-[0.3em] uppercase">
                             {t('verdict_page.hero_badge')}
                         </p>
                     </div>
@@ -38,8 +38,8 @@ function VerdictPage() {
                     {/* Dimension A: Oksigen — Left */}
                     <div className="max-w-2xl">
                         <div className="flex items-center gap-4 mb-6">
-                            <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                            <span className="text-yellow-500 font-mono text-xs tracking-widest uppercase">{t('verdict_page.dim_a_title')}</span>
+                            <div className="w-2 h-2 rounded-full bg-yellow-500" />
+                            <span className="text-yellow-500 font-semibold text-xs tracking-widest uppercase">{t('verdict_page.dim_a_title')}</span>
                         </div>
                         <div className="grid md:grid-cols-2 gap-8 mt-8">
                             <div>
@@ -56,8 +56,8 @@ function VerdictPage() {
                     {/* Dimension B: Penyakit — Right */}
                     <div className="max-w-2xl md:ml-auto">
                         <div className="flex items-center gap-4 mb-6 md:justify-end">
-                            <div className="w-3 h-3 rounded-full bg-red-500" />
-                            <span className="text-red-500 font-mono text-xs tracking-widest uppercase">{t('verdict_page.dim_b_title')}</span>
+                            <div className="w-2 h-2 rounded-full bg-red-500" />
+                            <span className="text-red-500 font-semibold text-xs tracking-widest uppercase">{t('verdict_page.dim_b_title')}</span>
                         </div>
                         <div className="grid md:grid-cols-2 gap-8 mt-8">
                             <div className="md:text-right">
@@ -72,10 +72,10 @@ function VerdictPage() {
                     </div>
 
                     {/* Dimension C: Masa Depan — Left, with border emphasis */}
-                    <div className="max-w-2xl border-l-2 border-green-500/30 pl-6">
+                    <div className="max-w-2xl border-l-2 border-green-500/20 pl-6">
                         <div className="flex items-center gap-4 mb-6">
-                            <div className="w-3 h-3 rounded-full bg-green-500" />
-                            <span className="text-green-500 font-mono text-xs tracking-widest uppercase">{t('verdict_page.dim_c_title')}</span>
+                            <div className="w-2 h-2 rounded-full bg-green-500" />
+                            <span className="text-green-500 font-semibold text-xs tracking-widest uppercase">{t('verdict_page.dim_c_title')}</span>
                         </div>
                         <div className="grid md:grid-cols-2 gap-8 mt-8">
                             <div>
@@ -92,7 +92,7 @@ function VerdictPage() {
             </section>
 
             {/* ═══ Disclaimer ═══ */}
-            <section className="py-12 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] bg-[#03060a]">
+            <section className="py-12 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] bg-[#161618]">
                 <div className="max-w-3xl mx-auto">
                     <p className="text-sm text-white/30 leading-relaxed italic">
                         <strong className="text-white/50 not-italic">{t('verdict_page.disclaimer_title')}</strong> {t('verdict_page.disclaimer_text')}
@@ -103,13 +103,13 @@ function VerdictPage() {
             {/* ═══ CTA ═══ */}
             <section className="py-24 px-6 md:px-12 lg:px-20">
                 <div className="max-w-5xl">
-                    <Button asChild className="h-auto py-6 px-10 text-lg font-bold bg-amber-500 text-black hover:bg-white transition-colors rounded-none group">
+                    <Button asChild>
                         <Link to="/fip-lite" className="flex flex-col items-start">
                             <span className="flex items-center text-xl font-black">
                                 {t('verdict_page.cta_verdict')}
-                                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-0.5 transition-transform" strokeWidth={2} />
                             </span>
-                            <span className="text-[10px] opacity-70 font-mono tracking-widest uppercase mt-2">
+                            <span className="text-[10px] opacity-70 font-medium tracking-widest uppercase mt-2">
                                 Free Diagnostic Available
                             </span>
                         </Link>

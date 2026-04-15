@@ -50,7 +50,7 @@ function GetAccess() {
     }
 
     return (
-        <div className="flex-1 flex flex-col bg-[#060a12] text-white relative min-h-[calc(100vh-4rem)]">
+        <div className="flex-1 flex flex-col bg-[#1c1c1e] text-white relative min-h-[calc(100vh-4rem)]">
             <title>{t('get_access.seo_title')}</title>
             <meta name="description" content={t('get_access.seo_desc')} />
 
@@ -84,14 +84,14 @@ function GetAccess() {
                     <img
                         src="/assets/images/devitto-forensics.jpg"
                         alt="Gusti Devitto Forensics"
-                        className="absolute inset-0 w-full h-full object-cover opacity-30 grayscale-[0.3] contrast-[1.2]"
+                        className="absolute inset-0 w-full h-full object-cover opacity-25 grayscale-[0.5] contrast-[1.1]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#060a12]/60 via-transparent to-[#060a12]" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#1c1c1e]/70 via-transparent to-[#1c1c1e]" />
 
                     {/* Content — bottom-anchored */}
                     <div className="relative z-10 mt-auto p-12 lg:p-16 space-y-8 max-w-lg">
                         <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight">
-                            <Trans i18nKey="get_access.pain_title">In 15 minutes, <br /> <span className="text-amber-500">you will know where your money goes.</span></Trans>
+                            <Trans i18nKey="get_access.pain_title">In 15 minutes, <br /> <span className="text-[#BFA26A]">you will know where your money goes.</span></Trans>
                         </h2>
 
                         <p className="text-white/40 text-base leading-relaxed font-light">
@@ -99,20 +99,20 @@ function GetAccess() {
                         </p>
 
                         {/* Testimonial — inline quote, not a card */}
-                        <blockquote className="border-l-2 border-amber-500/30 pl-6 py-2 space-y-3">
-                            <p className="text-white/70 text-sm leading-relaxed italic">
-                                <Trans i18nKey="get_access.testimonial_text">Previously, I thought my business was healthy because turnover kept rising. Turns out there was <strong className="text-red-400 font-mono">$2,500/month</strong> leaking without me realizing it. FIP™ Protocol opened my eyes.</Trans>
+                        <blockquote className="border-l-2 border-[#BFA26A]/25 pl-6 py-2 space-y-3">
+                            <p className="text-white/55 text-sm leading-relaxed italic">
+                                <Trans i18nKey="get_access.testimonial_text">Previously, I thought my business was healthy because turnover kept rising. Turns out there was <strong className="text-red-400">$2,500/month</strong> leaking without me realizing it. FIP™ Protocol opened my eyes.</Trans>
                             </p>
                             <footer className="flex items-center gap-3">
-                                <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                                <div className="text-[10px] font-mono text-white/40 uppercase tracking-widest">
+                                <div className="w-1.5 h-1.5 rounded-full bg-[#BFA26A]" />
+                                <div className="text-[10px] font-semibold text-white/30 uppercase tracking-widest">
                                     {t('get_access.testimonial_name')} — {t('get_access.testimonial_role')}
                                 </div>
                             </footer>
                         </blockquote>
 
-                        <div className="flex items-center gap-2 text-[10px] font-mono text-white/20 uppercase tracking-widest">
-                            <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                        <div className="flex items-center gap-2 text-[10px] font-semibold text-white/20 uppercase tracking-widest">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#0A84FF] animate-pulse" />
                             {t('get_access.guarantee')}
                         </div>
                     </div>
@@ -126,71 +126,68 @@ function GetAccess() {
                             <p className="text-sm text-white/30">{t('get_access.form_subtitle')}</p>
                         </div>
 
-                        {/* Capacity — monospace inline, not pill badge */}
+                        {/* Capacity indicator */}
                         <div className="flex items-center gap-3">
-                            <div className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-                            <span className="text-[10px] font-mono text-amber-500/80 uppercase tracking-widest">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#0A84FF] animate-pulse" />
+                            <span className="text-[10px] font-semibold text-[#BFA26A]/70 uppercase tracking-widest">
                                 {t('get_access.slots_left', { count: 3 })}
                             </span>
                         </div>
 
                         {/* Form — minimal, no Card wrapper */}
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form onSubmit={handleSubmit} className="space-y-5">
                             <div className="space-y-2">
-                                <label htmlFor="name" className="text-[10px] font-mono text-white/30 uppercase tracking-widest">{t('get_access.label_name')}</label>
+                                <label htmlFor="name" className="text-[10px] font-semibold text-white/30 uppercase tracking-widest">{t('get_access.label_name')}</label>
                                 <Input
                                     id="name"
                                     name="name"
                                     placeholder={t('get_access.placeholder_name')}
                                     required
-                                    className="h-12 bg-white/[0.03] border-white/[0.08] text-white focus:border-amber-500/50 focus:ring-0 rounded-none"
                                 />
                             </div>
                             <div className="space-y-2">
-                                <label htmlFor="phone" className="text-[10px] font-mono text-white/30 uppercase tracking-widest">{t('get_access.label_phone')}</label>
+                                <label htmlFor="phone" className="text-[10px] font-semibold text-white/30 uppercase tracking-widest">{t('get_access.label_phone')}</label>
                                 <Input
                                     id="phone"
                                     name="phone"
                                     type="tel"
                                     placeholder={t('get_access.placeholder_phone')}
                                     required
-                                    className="h-12 bg-white/[0.03] border-white/[0.08] text-white focus:border-amber-500/50 focus:ring-0 rounded-none"
                                 />
-                                <p className="text-[10px] text-white/20 font-mono">{t('get_access.phone_desc')}</p>
+                                <p className="text-[10px] text-white/20 font-medium">{t('get_access.phone_desc')}</p>
                             </div>
                             <div className="space-y-2">
-                                <label htmlFor="email" className="text-[10px] font-mono text-white/30 uppercase tracking-widest">{t('get_access.label_email')}</label>
+                                <label htmlFor="email" className="text-[10px] font-semibold text-white/30 uppercase tracking-widest">{t('get_access.label_email')}</label>
                                 <Input
                                     id="email"
                                     name="email"
                                     type="email"
                                     placeholder={t('get_access.placeholder_email')}
                                     required
-                                    className="h-12 bg-white/[0.03] border-white/[0.08] text-white focus:border-amber-500/50 focus:ring-0 rounded-none"
                                 />
                             </div>
                             <Button
                                 type="submit"
-                                className="w-full h-14 bg-amber-500 text-black hover:bg-white font-bold uppercase tracking-widest text-xs rounded-none transition-colors group"
+                                className="w-full h-14 group"
                                 disabled={isLoading}
                             >
                                 {isLoading ? (
-                                    <span className="font-mono animate-pulse">{t('get_access.cta_processing')}</span>
+                                    <span className="animate-pulse">{t('get_access.cta_processing')}</span>
                                 ) : (
                                     <span className="flex items-center gap-3">
                                         {t('get_access.cta_run')}
-                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" strokeWidth={2} />
                                     </span>
                                 )}
                             </Button>
                         </form>
 
                         {/* Trust */}
-                        <div className="space-y-2 pt-4 border-t border-white/[0.06]">
-                            <p className="text-[10px] text-white/20 font-mono">
-                                <Trans i18nKey="get_access.privacy_policy">By clicking "Continue", you agree to our <a href="/privacy" className="underline hover:text-amber-500 transition-colors">Privacy Policy</a>.</Trans>
+                        <div className="space-y-2 pt-4 border-t border-white/[0.05]">
+                            <p className="text-[10px] text-white/20 font-medium">
+                                <Trans i18nKey="get_access.privacy_policy">By clicking "Continue", you agree to our <a href="/privacy" className="underline hover:text-[#BFA26A] transition-colors">Privacy Policy</a>.</Trans>
                             </p>
-                            <p className="text-[10px] text-white/15 font-mono">{t('get_access.ssl_text')}</p>
+                            <p className="text-[10px] text-white/15 font-medium">{t('get_access.ssl_text')}</p>
                         </div>
                     </div>
                 </div>

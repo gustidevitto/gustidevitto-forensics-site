@@ -10,10 +10,10 @@ export const Route = createFileRoute('/privacy')({
 function Privacy() {
     const { t } = useTranslation()
     return (
-        <div className="container py-20 max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold mb-8">{t('privacy.title')}</h1>
-            <Card>
-                <CardContent className="p-8 prose dark:prose-invert max-w-none">
+        <div className="flex-1 flex flex-col bg-[#1c1c1e] text-white">
+            <div className="container py-24 max-w-4xl mx-auto px-6">
+            <h1 className="text-4xl font-black tracking-tighter mb-10">{t('privacy.title')}</h1>
+            <div className="glass-elevated rounded-squircle-xl p-8 md:p-12 space-y-8">
                     <h3>{t('privacy.section1_title')}</h3>
                     <p>
                         {t('privacy.section1_desc')}
@@ -65,8 +65,8 @@ function Privacy() {
                             If you have questions regarding this privacy policy or the management of your data, please contact us via the <a href="/contact" className="text-primary hover:underline">Contact</a> page.
                         </Trans>
                     </p>
-                </CardContent>
-            </Card>
+            </div>
+        </div>
         </div>
     )
 }

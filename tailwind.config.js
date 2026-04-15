@@ -7,10 +7,20 @@ export default {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                sans: ['Inter', 'SF Pro Display', 'SF Pro Text', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+                mono: ['SF Mono', 'ui-monospace', 'SFMono-Regular', 'Fira Code', 'monospace'],
+            },
             borderRadius: {
-                lg: 'var(--radius)',
-                md: 'calc(var(--radius) - 2px)',
-                sm: 'calc(var(--radius) - 4px)'
+                // macOS squircle-approximation radii
+                lg: 'var(--radius)',          // 16px — standard card
+                md: 'calc(var(--radius) - 4px)',  // 12px
+                sm: 'calc(var(--radius) - 8px)',  // 8px
+                squircle: 'var(--radius)',
+                'squircle-sm': '0.75rem',     // 12px
+                'squircle-md': '1.25rem',     // 20px
+                'squircle-lg': '1.75rem',     // 28px
+                'squircle-xl': '2.25rem',     // 36px — hero cards, modals
             },
             colors: {
                 background: 'hsl(var(--background))',

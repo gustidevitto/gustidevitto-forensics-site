@@ -13,19 +13,17 @@ export const Route = createRootRoute({
 
 function RootComponent() {
     const { t, i18n } = useTranslation()
+    const location = useLocation()
+    const pathname = location.pathname
 
     useEffect(() => {
-        // Update HTML lang attribute on change
         document.documentElement.lang = i18n.language
-        // Update Page Title dynamically
         document.title = t('global.seo_home_title', 'Gusti Devitto Forensics | Institution-Grade Intelligence')
     }, [i18n.language, t])
 
-    const location = useLocation()
     const canonicalUrl = `https://www.gustidevitto.com${location.pathname === '/' ? '' : location.pathname}`
     const isEntranceGate = location.pathname === '/'
 
-    // Scroll to top on every route change
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [location.pathname])
@@ -83,67 +81,189 @@ function RootComponent() {
                 })}
             </script>
             <link rel="alternate" type="application/ld+json" href="/ontology.jsonld" title="Semantic Knowledge Graph" />
+
             <div className="relative flex-1 flex flex-col z-10">
                 {!isEntranceGate && (
-                    <header className="sticky top-0 z-50 w-full border-b border-white/[0.06] bg-[#060a12]/95 backdrop-blur-xl supports-[backdrop-filter]:bg-[#060a12]/80">
+                    /* ── macOS Menu Bar Style Header ── */
+                    <header className="sticky top-0 z-50 w-full border-b border-white/[0.06] bg-[#1c1c1e]/80 backdrop-blur-2xl supports-[backdrop-filter]:bg-[#1c1c1e]/75">
                         <div className="container flex h-16 items-center justify-between px-4 md:px-8">
-                            {/* Logo */}
+
+                            {/* Logo — clean, no HUD decoration */}
                             <div className="flex items-center gap-3">
-                                <img src="/assets/images/android-chrome-192x192.png" alt="Gusti Devitto Logo" className="h-8 w-8" />
-                                <div className="flex flex-col -space-y-1">
-                                    <a className="font-bold text-xl tracking-tight" href="/">
-                                        Gusti Devitto<span className="text-[#FFD700] italic">™</span>
+                                <img
+                                    src="/assets/images/android-chrome-192x192.png"
+                                    alt="Gusti Devitto Logo"
+                                    className="h-8 w-8 rounded-squircle-sm"
+                                />
+                                <div className="flex flex-col -space-y-0.5">
+                                    <a className="font-bold text-[17px] tracking-tight text-white" href="/">
+                                        Gusti Devitto<span className="text-[#BFA26A]">™</span>
                                     </a>
-                                    <div className="flex items-center gap-1.5">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-status-blink"></div>
-                                        <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/80">{t('nav.status_badge', 'Diagnostic Level: Verified // Forensic Intelligence Access')}</span>
-                                    </div>
+                                    <span className="text-[10px] font-medium text-white/30 tracking-wide">
+                                        Forensic Business Intelligence
+                                    </span>
                                 </div>
                             </div>
 
                             {/* Desktop Navigation */}
-                            <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
+                            <nav className="hidden lg:flex items-center gap-1 text-sm font-medium">
                                 <a
                                     href={typeof window !== 'undefined' && localStorage.getItem('preferredPath') === 'network' ? '/network-intelligence' : '/single-entity'}
-                                    className="transition-colors hover:text-primary font-bold"
+                                    className={`px-3 py-1.5 rounded-squircle-sm transition-all duration-200 ${
+                                        pathname === '/' || pathname === '/single-entity' || pathname === '/network-intelligence' 
+                                        ? 'bg-white/[0.08] text-[#0A84FF] font-semibold shadow-sm' 
+                                        : 'text-white/60 hover:text-white hover:bg-white/[0.06]'
+                                    }`}
                                 >
                                     {t('nav.home')}
                                 </a>
-                                <a href="/fip-lite" className="transition-colors hover:text-primary nav-gold-glow">{t('nav.calculator')}</a>
-                                <a href="/about-gusti-devitto" className="transition-colors hover:text-primary">{t('nav.about')}</a>
-                                <a href="/blog" className="transition-colors hover:text-primary">{t('nav.blog')}</a>
-                                <a href="/forensics-pillars" className="transition-colors hover:text-primary">{t('nav.pillars', '25 Pillars')}</a>
-                                <a href="/investasi" className="transition-colors hover:text-primary font-bold decoration-primary underline-offset-4 decoration-2">{t('nav.pricing', 'Investment')}</a>
-                                <a href="/contact" className="transition-colors hover:text-primary">{t('nav.contact')}</a>
-                                <LanguageToggle />
-                                {/* <ModeToggle /> */}
+                                <a 
+                                    href="/fip-lite" 
+                                    className={`px-3 py-1.5 rounded-squircle-sm transition-all duration-200 font-semibold ${
+                                        pathname.includes('/fip-lite') || pathname.includes('/cash-autopsy') || pathname.includes('/margin-audit') || pathname.includes('/growth-scan')
+                                        ? 'bg-white/[0.08] text-[#0A84FF] shadow-sm' 
+                                        : 'text-[#BFA26A] hover:text-[#D4B87A] hover:bg-[#BFA26A]/[0.08]'
+                                    }`}
+                                >
+                                    {t('nav.calculator')}
+                                </a>
+                                <a 
+                                    href="/about-gusti-devitto" 
+                                    className={`px-3 py-1.5 rounded-squircle-sm transition-all duration-200 ${
+                                        pathname === '/about-gusti-devitto' 
+                                        ? 'bg-white/[0.08] text-[#0A84FF] font-semibold shadow-sm' 
+                                        : 'text-white/60 hover:text-white hover:bg-white/[0.06]'
+                                    }`}
+                                >
+                                    {t('nav.about')}
+                                </a>
+                                <a 
+                                    href="/blog" 
+                                    className={`px-3 py-1.5 rounded-squircle-sm transition-all duration-200 ${
+                                        pathname.startsWith('/blog') 
+                                        ? 'bg-white/[0.08] text-[#0A84FF] font-semibold shadow-sm' 
+                                        : 'text-white/60 hover:text-white hover:bg-white/[0.06]'
+                                    }`}
+                                >
+                                    {t('nav.blog')}
+                                </a>
+                                <a 
+                                    href="/forensics-pillars" 
+                                    className={`px-3 py-1.5 rounded-squircle-sm transition-all duration-200 ${
+                                        pathname.startsWith('/forensics-pillars') || pathname.startsWith('/master-index') || pathname.startsWith('/pilar')
+                                        ? 'bg-white/[0.08] text-[#0A84FF] font-semibold shadow-sm' 
+                                        : 'text-white/60 hover:text-white hover:bg-white/[0.06]'
+                                    }`}
+                                >
+                                    {t('nav.pillars', '25 Pillars')}
+                                </a>
+                                <a 
+                                    href="/investasi" 
+                                    className={`px-3 py-1.5 rounded-squircle-sm transition-all duration-200 font-semibold ${
+                                        pathname === '/investasi' 
+                                        ? 'bg-white/[0.08] text-[#0A84FF] shadow-sm' 
+                                        : 'text-white hover:bg-white/[0.06]'
+                                    }`}
+                                >
+                                    {t('nav.pricing', 'Investment')}
+                                </a>
+                                <a 
+                                    href="/contact" 
+                                    className={`px-3 py-1.5 rounded-squircle-sm transition-all duration-200 ${
+                                        pathname === '/contact' 
+                                        ? 'bg-white/[0.08] text-[#0A84FF] font-semibold shadow-sm' 
+                                        : 'text-white/60 hover:text-white hover:bg-white/[0.06]'
+                                    }`}
+                                >
+                                    {t('nav.contact')}
+                                </a>
+                                <div className="ml-2 pl-2 border-l border-white/[0.08]">
+                                    <LanguageToggle />
+                                </div>
                             </nav>
 
                             {/* Mobile Navigation */}
-                            <div className="lg:hidden flex items-center gap-4">
+                            <div className="lg:hidden flex items-center gap-3">
                                 <LanguageToggle />
-                                {/* <ModeToggle /> */}
                                 <Sheet>
                                     <SheetTrigger asChild>
-                                        <Button variant="ghost" size="icon">
-                                            <Menu className="h-5 w-5" />
+                                        <Button variant="ghost" size="icon" className="h-9 w-9">
+                                            <Menu className="h-4 w-4" />
                                             <span className="sr-only">Toggle Menu</span>
                                         </Button>
                                     </SheetTrigger>
-                                    <SheetContent side="right">
-                                        <div className="flex flex-col space-y-6 mt-6">
+                                    <SheetContent side="right" className="bg-[#1c1c1e]/95 backdrop-blur-2xl border-l border-white/[0.06] w-72">
+                                        <div className="flex flex-col gap-1 mt-8">
                                             <a
                                                 href={typeof window !== 'undefined' && localStorage.getItem('preferredPath') === 'network' ? '/network-intelligence' : '/single-entity'}
-                                                className="text-lg font-medium hover:text-primary font-bold"
+                                                className={`px-4 py-3 rounded-squircle-sm text-base transition-all ${
+                                                    pathname === '/' || pathname === '/single-entity' || pathname === '/network-intelligence' 
+                                                    ? 'bg-white/[0.08] text-[#0A84FF] font-semibold' 
+                                                    : 'font-medium text-white/70 hover:text-white hover:bg-white/[0.06]'
+                                                }`}
                                             >
                                                 {t('nav.home')}
                                             </a>
-                                            <a href="/fip-lite" className="text-lg font-medium hover:text-primary nav-gold-glow">{t('nav.calculator')}</a>
-                                            <a href="/about-gusti-devitto" className="text-lg font-medium hover:text-primary">{t('nav.about')}</a>
-                                            <a href="/blog" className="text-lg font-medium hover:text-primary">{t('nav.blog')}</a>
-                                            <a href="/forensics-pillars" className="text-lg font-medium hover:text-primary">{t('nav.pillars', '25 Pillars')}</a>
-                                            <a href="/investasi" className="text-lg font-medium hover:text-primary">{t('nav.pricing', 'Investment')}</a>
-                                            <a href="/contact" className="text-lg font-medium hover:text-primary">{t('nav.contact')}</a>
+                                            <a 
+                                                href="/fip-lite" 
+                                                className={`px-4 py-3 rounded-squircle-sm text-base transition-all font-semibold ${
+                                                    pathname.includes('/fip-lite') || pathname.includes('/cash-autopsy') || pathname.includes('/margin-audit') || pathname.includes('/growth-scan')
+                                                    ? 'bg-white/[0.08] text-[#0A84FF]' 
+                                                    : 'text-[#BFA26A] hover:bg-[#BFA26A]/[0.08]'
+                                                }`}
+                                            >
+                                                {t('nav.calculator')}
+                                            </a>
+                                            <a 
+                                                href="/about-gusti-devitto" 
+                                                className={`px-4 py-3 rounded-squircle-sm text-base transition-all ${
+                                                    pathname === '/about-gusti-devitto' 
+                                                    ? 'bg-white/[0.08] text-[#0A84FF] font-semibold' 
+                                                    : 'font-medium text-white/70 hover:text-white hover:bg-white/[0.06]'
+                                                }`}
+                                            >
+                                                {t('nav.about')}
+                                            </a>
+                                            <a 
+                                                href="/blog" 
+                                                className={`px-4 py-3 rounded-squircle-sm text-base transition-all ${
+                                                    pathname.startsWith('/blog') 
+                                                    ? 'bg-white/[0.08] text-[#0A84FF] font-semibold' 
+                                                    : 'font-medium text-white/70 hover:text-white hover:bg-white/[0.06]'
+                                                }`}
+                                            >
+                                                {t('nav.blog')}
+                                            </a>
+                                            <a 
+                                                href="/forensics-pillars" 
+                                                className={`px-4 py-3 rounded-squircle-sm text-base transition-all ${
+                                                    pathname.startsWith('/forensics-pillars') || pathname.startsWith('/master-index') || pathname.startsWith('/pilar')
+                                                    ? 'bg-white/[0.08] text-[#0A84FF] font-semibold' 
+                                                    : 'font-medium text-white/70 hover:text-white hover:bg-white/[0.06]'
+                                                }`}
+                                            >
+                                                {t('nav.pillars', '25 Pillars')}
+                                            </a>
+                                            <a 
+                                                href="/investasi" 
+                                                className={`px-4 py-3 rounded-squircle-sm text-base transition-all font-semibold ${
+                                                    pathname === '/investasi' 
+                                                    ? 'bg-white/[0.08] text-[#0A84FF]' 
+                                                    : 'text-white hover:bg-white/[0.06]'
+                                                }`}
+                                            >
+                                                {t('nav.pricing', 'Investment')}
+                                            </a>
+                                            <a 
+                                                href="/contact" 
+                                                className={`px-4 py-3 rounded-squircle-sm text-base transition-all ${
+                                                    pathname === '/contact' 
+                                                    ? 'bg-white/[0.08] text-[#0A84FF] font-semibold' 
+                                                    : 'font-medium text-white/70 hover:text-white hover:bg-white/[0.06]'
+                                                }`}
+                                            >
+                                                {t('nav.contact')}
+                                            </a>
                                         </div>
                                     </SheetContent>
                                 </Sheet>
@@ -151,38 +271,42 @@ function RootComponent() {
                         </div>
                     </header>
                 )}
+
                 <main className="flex-1">
                     <Outlet />
                 </main>
+
                 {!isEntranceGate && (
-                    <footer className="border-t border-white/[0.04] bg-[#03060a] py-8 md:py-0">
-                        <div className="container flex flex-col items-center justify-between gap-6 md:h-20 md:flex-row px-6 md:px-12 lg:px-20">
-                            <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2">
-                                <a href="/about-gusti-devitto" className="text-xs text-white/25 hover:text-white/60 transition-colors">
+                    <footer className="border-t border-white/[0.05] bg-[#161618] py-8 md:py-0">
+                        <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row px-6 md:px-12 lg:px-20">
+                            <div className="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2">
+                                <a href="/about-gusti-devitto" className="text-xs text-white/25 hover:text-white/55 transition-colors">
                                     {t('footer.about')}
                                 </a>
-                                <a href="/master-index" className="text-xs text-white/25 hover:text-white/60 transition-colors">
+                                <a href="/master-index" className="text-xs text-white/25 hover:text-white/55 transition-colors">
                                     {t('footer.index')}
                                 </a>
-                                <a href="/methodology" className="text-xs text-white/25 hover:text-white/60 transition-colors">
+                                <a href="/methodology" className="text-xs text-white/25 hover:text-white/55 transition-colors">
                                     {t('footer.methodology')}
                                 </a>
-                                <a href="/verdict" className="text-xs text-white/25 hover:text-white/60 transition-colors">
+                                <a href="/verdict" className="text-xs text-white/25 hover:text-white/55 transition-colors">
                                     {t('footer.verdict')}
                                 </a>
-                                <a href="/terms" className="text-xs text-white/15 hover:text-white/40 transition-colors">
+                                <a href="/terms" className="text-xs text-white/15 hover:text-white/35 transition-colors">
                                     {t('footer.terms')}
                                 </a>
-                                <a href="/privacy" className="text-xs text-white/15 hover:text-white/40 transition-colors">
+                                <a href="/privacy" className="text-xs text-white/15 hover:text-white/35 transition-colors">
                                     {t('footer.privacy')}
                                 </a>
                             </div>
-                            <p className="text-[10px] font-mono text-white/15 uppercase tracking-[0.3em]">
+                            {/* Copyright — no monospace */}
+                            <p className="text-[10px] font-medium text-white/15 tracking-wide">
                                 © {new Date().getFullYear()} Gusti Devitto™ · FIP™ v4.00
                             </p>
                         </div>
                     </footer>
                 )}
+
                 {!isEntranceGate && <BackToTop />}
                 <ScrollRestoration />
             </div>
@@ -196,41 +320,24 @@ function BackToTop() {
 
     useEffect(() => {
         const toggleVisible = () => {
-            const scrolled = document.documentElement.scrollTop
-            if (scrolled > 300) {
-                setVisible(true)
-            } else if (scrolled <= 300) {
-                setVisible(false)
-            }
+            setVisible(document.documentElement.scrollTop > 300)
         }
         window.addEventListener('scroll', toggleVisible)
         return () => window.removeEventListener('scroll', toggleVisible)
     }, [])
 
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        })
+        window.scrollTo({ top: 0, behavior: 'smooth' })
     }
 
     return (
         <button
             onClick={scrollToTop}
-            className={`fixed bottom-8 right-8 z-[60] p-3 rounded-full bg-primary text-black shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+            className={`fixed bottom-8 right-8 z-[60] h-10 w-10 rounded-squircle-md glass-elevated flex items-center justify-center text-white/70 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
             aria-label={t('global.back_to_top')}
         >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="m18 15-6-6-6 6" />
             </svg>
         </button>

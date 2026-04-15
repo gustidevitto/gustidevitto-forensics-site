@@ -9,7 +9,7 @@ export const Route = createFileRoute('/methodology')({
 function MethodologyPage() {
     const { t } = useTranslation()
     return (
-        <div className="flex-1 flex flex-col bg-[#060a12] text-white relative">
+        <div className="flex-1 flex flex-col bg-[#1c1c1e] text-white relative">
             <title>{t('methodology.seo_title')}</title>
 
             {/* Knowledge Graph Enrichment */}
@@ -39,8 +39,8 @@ function MethodologyPage() {
             <section className="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] min-h-[50vh] flex flex-col justify-end">
                 <div className="max-w-5xl">
                     <div className="flex items-center gap-4 mb-8">
-                        <div className="w-8 h-px bg-amber-400/60" />
-                        <p className="text-[10px] text-white/30 font-medium tracking-[0.3em] uppercase">
+                        <div className="w-8 h-px bg-[#BFA26A]/40" />
+                        <p className="text-[10px] text-[#BFA26A]/60 font-semibold tracking-[0.3em] uppercase">
                             {t('methodology.hero_badge')}
                         </p>
                     </div>
@@ -58,7 +58,7 @@ function MethodologyPage() {
                 <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
                     {/* Left label — sticky */}
                     <div className="lg:sticky lg:top-28">
-                        <span className="text-amber-500 font-mono text-xs tracking-widest uppercase">Definition</span>
+                        <span className="text-[#BFA26A] font-semibold text-xs tracking-widest uppercase">Definition</span>
                         <h2 className="text-2xl md:text-3xl font-black tracking-tight mt-4 leading-tight">
                             {t('methodology.definition_title')}
                         </h2>
@@ -74,11 +74,11 @@ function MethodologyPage() {
             </section>
 
             {/* ═══ VERDICT — Not identical cards. Staggered layout. ═══ */}
-            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] bg-[#03060a]">
+            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] bg-[#161618]">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex items-center gap-4 mb-16">
-                        <span className="text-amber-500 font-mono text-xs tracking-widest uppercase">Verdict Protocol</span>
-                        <div className="w-12 h-[1px] bg-amber-500/30" />
+                        <span className="text-[#BFA26A] font-semibold text-xs tracking-widest uppercase">Verdict Protocol</span>
+                        <div className="w-12 h-px bg-[#BFA26A]/20" />
                     </div>
 
                     <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-20 max-w-xl">
@@ -126,8 +126,8 @@ function MethodologyPage() {
             <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05]">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex items-center gap-4 mb-16">
-                        <span className="text-amber-500 font-mono text-xs tracking-widest uppercase">Comparison</span>
-                        <div className="w-12 h-[1px] bg-amber-500/30" />
+                        <span className="text-[#BFA26A] font-semibold text-xs tracking-widest uppercase">Comparison</span>
+                        <div className="w-12 h-px bg-[#BFA26A]/20" />
                     </div>
 
                     <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4 max-w-xl">
@@ -148,10 +148,10 @@ function MethodologyPage() {
                         </div>
 
                         {/* Row 2: Forensics — highlighted */}
-                        <div className="grid md:grid-cols-[200px_1fr_1fr] gap-4 md:gap-8 py-8 items-start bg-amber-500/[0.03] -mx-4 px-4 md:-mx-8 md:px-8 border-l-2 border-amber-500">
-                            <h3 className="text-sm font-bold text-amber-500 uppercase tracking-widest">{t('methodology.forensics.title')}</h3>
+                        <div className="grid md:grid-cols-[200px_1fr_1fr] gap-4 md:gap-8 py-8 items-start glass-gold -mx-4 px-4 md:-mx-8 md:px-8 border-l-2 border-[#BFA26A]/30">
+                            <h3 className="text-sm font-bold text-[#BFA26A] uppercase tracking-widest">{t('methodology.forensics.title')}</h3>
                             <p className="text-sm text-white/70 leading-relaxed font-medium">{t('methodology.forensics.desc')}</p>
-                            <div className="text-xs text-amber-500/70 italic space-y-1 font-medium">
+                            <div className="text-xs text-[#BFA26A]/60 italic space-y-1 font-medium">
                                 <p>{t('methodology.forensics.f1')}</p>
                                 <p>{t('methodology.forensics.f2')}</p>
                                 <p>{t('methodology.forensics.f3')}</p>
@@ -173,50 +173,50 @@ function MethodologyPage() {
             </section>
 
             {/* ═══ LOOP — Not numbered circles. Horizontal flow. ═══ */}
-            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] bg-[#03060a]">
+            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] bg-[#161618]">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex items-center gap-4 mb-8">
-                        <span className="text-amber-500 font-mono text-xs tracking-widest uppercase">Process</span>
-                        <div className="w-12 h-[1px] bg-amber-500/30" />
+                        <span className="text-[#BFA26A] font-semibold text-xs tracking-widest uppercase">Process</span>
+                        <div className="w-12 h-px bg-[#BFA26A]/20" />
                     </div>
 
                     <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4">
                         {t('methodology.loop_title')}
                     </h2>
-                    <p className="text-white/30 text-sm font-mono uppercase tracking-widest mb-20">
+                    <p className="text-white/25 text-sm font-semibold uppercase tracking-widest mb-20">
                         {t('methodology.loop_subtitle')}
                     </p>
 
                     {/* Horizontal progression — not card grid */}
                     <div className="relative">
                         {/* Connecting line */}
-                        <div className="absolute top-6 left-0 right-0 h-px bg-gradient-to-r from-amber-500/40 via-amber-500/20 to-amber-500/40 hidden md:block" />
+                        <div className="absolute top-6 left-0 right-0 h-px bg-gradient-to-r from-[#0A84FF]/20 via-[#0A84FF]/10 to-[#0A84FF]/20 hidden md:block" />
 
                         <div className="grid md:grid-cols-3 gap-12 md:gap-16">
                             <div className="relative">
-                                <div className="font-mono text-amber-500 text-xs tracking-widest mb-6 flex items-center gap-3">
-                                    <span className="w-3 h-3 rounded-full bg-amber-500 relative z-10" />
-                                    PHASE_01
+                                <div className="text-[#0A84FF] font-semibold text-sm tracking-widest mb-6 flex items-center gap-3">
+                                    <span className="w-2 h-2 rounded-full bg-[#0A84FF] relative z-10" />
+                                    01
                                 </div>
-                                <h3 className="text-lg font-bold text-white/90 mb-3">{t('methodology.loop_stage1_title')}</h3>
+                                <h3 className="text-lg font-bold text-white/85 mb-3">{t('methodology.loop_stage1_title')}</h3>
                                 <p className="text-sm text-white/40 leading-relaxed">{t('methodology.loop_stage1_desc')}</p>
                             </div>
 
                             <div className="relative">
-                                <div className="font-mono text-amber-500 text-xs tracking-widest mb-6 flex items-center gap-3">
-                                    <span className="w-3 h-3 rounded-full bg-amber-500 relative z-10" />
-                                    PHASE_02
+                                <div className="text-[#0A84FF] font-semibold text-sm tracking-widest mb-6 flex items-center gap-3">
+                                    <span className="w-2 h-2 rounded-full bg-[#0A84FF] relative z-10" />
+                                    02
                                 </div>
-                                <h3 className="text-lg font-bold text-white/90 mb-3">{t('methodology.loop_stage2_title')}</h3>
+                                <h3 className="text-lg font-bold text-white/85 mb-3">{t('methodology.loop_stage2_title')}</h3>
                                 <p className="text-sm text-white/40 leading-relaxed">{t('methodology.loop_stage2_desc')}</p>
                             </div>
 
                             <div className="relative">
-                                <div className="font-mono text-amber-500 text-xs tracking-widest mb-6 flex items-center gap-3">
-                                    <span className="w-3 h-3 rounded-full bg-amber-500 relative z-10" />
-                                    PHASE_03
+                                <div className="text-[#0A84FF] font-semibold text-sm tracking-widest mb-6 flex items-center gap-3">
+                                    <span className="w-2 h-2 rounded-full bg-[#0A84FF] relative z-10" />
+                                    03
                                 </div>
-                                <h3 className="text-lg font-bold text-white/90 mb-3">{t('methodology.loop_stage3_title')}</h3>
+                                <h3 className="text-lg font-bold text-white/85 mb-3">{t('methodology.loop_stage3_title')}</h3>
                                 <p className="text-sm text-white/40 leading-relaxed">{t('methodology.loop_stage3_desc')}</p>
                             </div>
                         </div>
@@ -235,17 +235,17 @@ function MethodologyPage() {
                             {t('attribution.text')}
                         </p>
                         <div className="flex flex-wrap gap-4 pt-4">
-                            <Button asChild className="h-auto py-4 px-8 bg-amber-500 text-black hover:bg-white rounded-none font-bold uppercase tracking-widest text-xs transition-colors">
+                            <Button asChild>
                                 <Link to="/forensics-pillars">{t('methodology.cta_pillars')}</Link>
                             </Button>
-                            <Button asChild variant="outline" className="h-auto py-4 px-8 border-white/10 text-white/60 hover:text-white hover:border-white rounded-none font-bold uppercase tracking-widest text-xs transition-colors">
+                            <Button asChild variant="outline">
                                 <Link to="/master-index">{t('methodology.cta_index')}</Link>
                             </Button>
                         </div>
                     </div>
 
                     <div className="shrink-0 hidden md:block">
-                        <div className="text-[9px] font-mono text-white/10 uppercase tracking-[0.4em] space-y-1 text-right">
+                        <div className="text-[9px] font-medium text-white/8 uppercase tracking-[0.4em] space-y-1 text-right">
                             <p>FIP™ PROTOCOL V4.00</p>
                             <p>© 2026 GUSTI DEVITTO</p>
                             <p>ALL RIGHTS RESERVED</p>

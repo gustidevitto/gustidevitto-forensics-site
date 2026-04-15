@@ -105,39 +105,29 @@ function NetworkIntelligencePage() {
 
 
     return (
-        <div
-            className="flex-1 flex flex-col bg-gradient-to-b from-[#0a1628] via-[#0f1f3a] to-[#0a1628] text-white relative"
-        >
+        <div className="flex-1 flex flex-col bg-[#1c1c1e] text-white relative">
             {/* SEO & Authority Meta Tags */}
             <title>{t('network_intelligence.hero_title')} | Gusti Devitto Forensics</title>
             <meta name="description" content={t('network_intelligence.seo_desc')} />
             <meta name="keywords" content={t('network_intelligence.seo_keywords')} />
             <link rel="canonical" href="https://gustidevitto.com/network-intelligence" />
-            
-            {/* Open Graph / social */}
             <meta property="og:site_name" content="Gusti Devitto Forensics" />
             <meta property="og:title" content={`${t('network_intelligence.hero_title')} | Gusti Devitto Forensics`} />
             <meta property="og:description" content={t('network_intelligence.seo_desc')} />
             <meta property="og:image" content="/assets/images/network_monitoring.png" />
             <meta property="og:type" content="website" />
             <meta property="og:url" content="https://gustidevitto.com/network-intelligence" />
-            
-            {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={`${t('network_intelligence.hero_title')} | Gusti Devitto Forensics`} />
             <meta name="twitter:description" content={t('network_intelligence.seo_desc')} />
             <meta name="twitter:image" content="/assets/images/network_monitoring.png" />
             <meta name="twitter:site" content="@gustidevitto" />
-
-            {/* GEO Signals (Global + Local) */}
             <meta name="geo.region" content="US-NY" />
             <meta name="geo.region" content="US-CA" />
             <meta name="geo.region" content="ID-JK" />
             <meta name="geo.placename" content="New York, San Francisco, Jakarta" />
             <meta name="geo.position" content="40.712776;-74.005974" />
             <meta name="ICBM" content="40.712776, -74.005974" />
-
-            {/* JSON-LD Structured Data — Authority Signal */}
             <script type="application/ld+json">
                 {JSON.stringify({
                     "@context": "https://schema.org",
@@ -146,126 +136,72 @@ function NetworkIntelligencePage() {
                     "image": "https://gustidevitto.com/assets/images/aboutme.jpg",
                     "url": "https://gustidevitto.com/network-intelligence",
                     "telephone": "+62-811-XXXX-XXXX",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": "SCBD District",
-                        "addressLocality": "Jakarta",
-                        "addressRegion": "JK",
-                        "postalCode": "12190",
-                        "addressCountry": "ID"
-                    },
-                    "geo": {
-                        "@type": "GeoCoordinates",
-                        "latitude": -6.224,
-                        "longitude": 106.809
-                    },
-                    "founder": {
-                        "@type": "Person",
-                        "name": "Gusti Devitto",
-                        "jobTitle": "Lead Forensic Investigator",
-                        "knowsAbout": ["Business Intelligence", "Forensic Accounting", "Supply Chain Optimization", "Profit Recovery"]
-                    },
-                    "openingHoursSpecification": {
-                        "@type": "OpeningHoursSpecification",
-                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                        "opens": "09:00",
-                        "closes": "18:00"
-                    }
+                    "address": { "@type": "PostalAddress", "streetAddress": "SCBD District", "addressLocality": "Jakarta", "addressRegion": "JK", "postalCode": "12190", "addressCountry": "ID" },
+                    "founder": { "@type": "Person", "name": "Gusti Devitto", "jobTitle": "Lead Forensic Investigator" }
                 })}
             </script>
 
-            {/* Subtle Authority UI Indicator */}
-            <div className="absolute top-6 left-6 md:left-12 lg:left-20 z-50 pointer-events-none flex items-center gap-3">
-                 <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(245,158,11,0.8)]" />
-                 <span className="text-[10px] font-black tracking-[0.3em] text-amber-500/80 uppercase">
-                    Diagnostic Level: Verified // Forensic Access Active
-                 </span>
-            </div>
-
-            {/* Automatic Spotlight Effect */}
-            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-                <div
-                    className="absolute inset-0 animate-spotlight-roam opacity-20"
-                    style={{
-                        background: `radial-gradient(800px circle at center, rgba(245, 158, 11, 0.15), transparent 50%)`
-                    }}
-                />
-            </div>
-
-            {/* Ambient Background Elements */}
+            {/* Ambient background — static, non-interactive */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[120px] animate-pulse-slow"></div>
-                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[100px] animate-pulse delay-700"></div>
-                {/* Grid Pattern */}
-                <div className="absolute inset-0 opacity-[0.05]"
-                    style={{
-                        backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                        backgroundSize: '40px 40px',
-                    }}></div>
+                <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#0A84FF]/[0.04] rounded-full blur-[160px] animate-subtle-glow" />
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#BFA26A]/[0.025] rounded-full blur-[120px] animate-float" />
             </div>
 
-            {/* Hero Section — The Statement Wall (Enterprise Scale) */}
-            <section className="relative pt-32 pb-24 px-6 md:px-12 lg:px-20 overflow-hidden min-h-[90vh] flex flex-col justify-center border-b border-white/[0.05]">
-                {/* Human Anchor Background */}
+            {/* ── HERO ── */}
+            <section className="relative pt-32 pb-24 px-6 md:px-12 lg:px-20 overflow-hidden min-h-[85vh] flex flex-col justify-center border-b border-white/[0.05]">
                 <div className="absolute inset-0 z-0">
-                    <img
-                        src="/assets/images/aboutme.jpg"
-                        alt="Gusti Devitto"
-                        className="w-full h-full object-cover object-[50%_20%] opacity-30 grayscale-[0.6] contrast-[1.2]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/80 to-[#0a1628]/20" />
+                    <img src="/assets/images/aboutme.jpg" alt="Gusti Devitto"
+                        className="w-full h-full object-cover object-[50%_20%] opacity-28 grayscale-[0.5] contrast-[1.1]" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c1e] via-[#1c1c1e]/80 to-[#1c1c1e]/20" />
                 </div>
 
-                {/* 3D Neural Mesh Background — Modular Switch */}
-                <NeuralMesh3D color="245, 158, 11" nodeCount={45} opacity={0.35} />
+                {/* Neural Mesh — reduced opacity */}
+                <NeuralMesh3D color="10, 132, 255" nodeCount={40} opacity={0.10} />
 
                 <div className="max-w-6xl relative z-10">
                     <div className="text-left">
-                        {/* 0. Economic Tension */}
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-amber-500/20 bg-amber-500/10 mb-6 rounded-sm">
-                            <Activity className="w-4 h-4 text-amber-500" />
-                            <span className="text-xs md:text-sm font-bold text-amber-500 uppercase tracking-widest leading-snug">{t('network_intelligence.tension')}</span>
+                        {/* Tension badge — glass pill */}
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-squircle-sm mb-6">
+                            <Activity className="w-3.5 h-3.5 text-[#BFA26A]" strokeWidth={1.5} />
+                            <span className="text-xs font-semibold text-[#BFA26A] uppercase tracking-widest">{t('network_intelligence.tension')}</span>
                         </div>
 
-                        {/* 1. Massive Enterprise Headline */}
                         <h1 className="text-[clamp(3rem,7vw,7rem)] font-black tracking-tighter leading-[0.9] w-full lg:w-[95%] uppercase">
                             <span className="text-white/90">{t('network_intelligence.hero_title')}</span>
                             <br />
-                            <span className="text-amber-500">{t('network_intelligence.hero_title_accent')}</span>
+                            <span className="text-[#0A84FF]">{t('network_intelligence.hero_title_accent')}</span>
                         </h1>
-                        
-                        {/* 2. Subtitle */}
-                        <p className="mt-8 text-xl md:text-2xl text-white/50 leading-relaxed max-w-3xl font-light">
+
+                        <p className="mt-8 text-xl md:text-2xl text-white/40 leading-relaxed max-w-3xl font-light">
                             {t('network_intelligence.hero_desc')}
                         </p>
 
-                        {/* 3. Enterprise Raw Data Strip (Monospace, Amber) */}
-                        <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm md:text-base font-mono text-amber-500 uppercase tracking-widest bg-black/40 backdrop-blur-md p-4 md:p-6 border-l-2 border-amber-500 w-fit">
+                        {/* Data strip — no monospace, semibold only */}
+                        <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-[#BFA26A] uppercase tracking-widest">
                             <div className="flex flex-col">
-                                <span className="text-[10px] text-white/30 mb-1">{t('network_intelligence.social_nodes')}</span>
-                                <span className="font-bold">{t('network_intelligence.social_nodes_val')}</span>
+                                <span className="text-[10px] text-white/20 font-medium mb-1">{t('network_intelligence.social_nodes')}</span>
+                                <span>{t('network_intelligence.social_nodes_val')}</span>
                             </div>
-                            <span className="text-white/10 text-2xl hidden md:block">/</span>
+                            <span className="text-white/10 hidden md:block">·</span>
                             <div className="flex flex-col">
-                                <span className="text-[10px] text-white/30 mb-1">{t('network_intelligence.social_leakage')}</span>
-                                <span className="font-bold">{t('network_intelligence.social_leakage_val')}</span>
+                                <span className="text-[10px] text-white/20 font-medium mb-1">{t('network_intelligence.social_leakage')}</span>
+                                <span>{t('network_intelligence.social_leakage_val')}</span>
                             </div>
-                            <span className="text-white/10 text-2xl hidden md:block">/</span>
+                            <span className="text-white/10 hidden md:block">·</span>
                             <div className="flex flex-col">
-                                <span className="text-[10px] text-white/30 mb-1">{t('network_intelligence.social_compliance')}</span>
-                                <span className="font-bold">{t('network_intelligence.social_compliance_val')}</span>
+                                <span className="text-[10px] text-white/20 font-medium mb-1">{t('network_intelligence.social_compliance')}</span>
+                                <span>{t('network_intelligence.social_compliance_val')}</span>
                             </div>
                         </div>
 
-                        {/* 4. CTA */}
                         <div className="mt-16 flex flex-wrap items-center gap-6">
                             <Link to="/investasi" className="w-full sm:w-auto">
-                                <Button size="lg" className="h-auto py-5 px-10 text-lg font-bold bg-amber-500 text-black hover:bg-white transition-colors rounded-none w-full sm:w-auto leading-tight">
+                                <Button size="xl" className="w-full sm:w-auto h-auto py-5 px-10">
                                     {t('network_intelligence.cta_demo')}
-                                    <ArrowRight className="ml-3 w-5 h-5 flex-shrink-0" />
+                                    <ArrowRight className="ml-3 w-5 h-5 flex-shrink-0" strokeWidth={2} />
                                 </Button>
                             </Link>
-                            <a href="#benefits" className="text-xs font-bold text-white/30 hover:text-white transition-colors uppercase tracking-[0.2em]">
+                            <a href="#benefits" className="text-xs font-semibold text-white/25 hover:text-white/60 transition-colors uppercase tracking-[0.18em]">
                                 {t('network_intelligence.hero_meta')}
                             </a>
                         </div>
@@ -273,41 +209,34 @@ function NetworkIntelligencePage() {
                 </div>
             </section>
 
-            {/* Why This Happens Block */}
-            <section className="py-20 px-6 md:px-12 lg:px-20 bg-[#03060a] border-b border-white/[0.05] relative overflow-hidden">
+            {/* ── WHY THIS HAPPENS ── */}
+            <section className="py-20 px-6 md:px-12 lg:px-20 bg-[#161618] border-b border-white/[0.05]">
                 <div className="max-w-4xl mx-auto text-center space-y-12">
-                    <h2 className="text-3xl md:text-4xl font-black text-white uppercase">{t('network_intelligence.why_reports_title')}</h2>
-                    <div className="grid md:grid-cols-3 gap-8 text-left">
-                        <div className="p-6 border border-white/10 bg-white/[0.02]">
-                            <span className="text-amber-500 font-mono text-xl block mb-4">01</span>
-                            <p className="text-white/80 font-light text-lg">{t('network_intelligence.why_reports_p1')}</p>
-                        </div>
-                        <div className="p-6 border border-white/10 bg-white/[0.02]">
-                            <span className="text-amber-500 font-mono text-xl block mb-4">02</span>
-                            <p className="text-white/80 font-light text-lg">{t('network_intelligence.why_reports_p2')}</p>
-                        </div>
-                        <div className="p-6 border border-white/10 bg-white/[0.02]">
-                            <span className="text-amber-500 font-mono text-xl block mb-4">03</span>
-                            <p className="text-white/80 font-light text-lg">{t('network_intelligence.why_reports_p3')}</p>
-                        </div>
+                    <h2 className="text-3xl md:text-4xl font-black text-white">{t('network_intelligence.why_reports_title')}</h2>
+                    <div className="grid md:grid-cols-3 gap-5 text-left">
+                        {['01','02','03'].map((num, i) => (
+                            <div key={num} className="p-6 glass rounded-squircle-lg">
+                                <span className="text-[#0A84FF] font-semibold text-sm block mb-4">{num}</span>
+                                <p className="text-white/55 font-light text-base leading-relaxed">{t(`network_intelligence.why_reports_p${i+1}`)}</p>
+                            </div>
+                        ))}
                     </div>
-                    <div className="pt-6 border-t border-white/10 text-center">
-                        <p className="text-xl md:text-2xl font-light text-white/50 italic">
+                    <div className="pt-6 border-t border-white/[0.05] text-center">
+                        <p className="text-xl md:text-2xl font-light text-white/40 italic">
                             "{t('network_intelligence.why_reports_close')}"
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* Evidentiary Benefits & Enterprise FAQ Integration */}
-            <section id="benefits" className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] relative bg-[#060a12]">
+            {/* ── BENEFITS ── */}
+            <section id="benefits" className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] relative bg-[#1c1c1e]">
                 <div className="max-w-6xl mx-auto space-y-24 md:space-y-40">
                     
-                    {/* Benefit 1: Left Aligned — Enterprise Visibility */}
                     <div className="max-w-2xl">
                         <div className="flex items-center gap-4 mb-6">
-                            <span className="text-amber-500 font-mono text-sm tracking-widest leading-none">NODE_01</span>
-                            <div className="w-12 h-[1px] bg-amber-500/30" />
+                            <span className="text-[#0A84FF] font-semibold text-sm tracking-widest leading-none">01</span>
+                            <div className="w-12 h-px bg-[#0A84FF]/20" />
                         </div>
                         <h3 className="text-2xl md:text-3xl font-black mb-4 leading-tight uppercase tracking-tight">{t('network_intelligence.benefit1_title')}</h3>
                         <div className="text-white/60 leading-relaxed text-lg font-light">
@@ -315,20 +244,18 @@ function NetworkIntelligencePage() {
                         </div>
                     </div>
 
-                    {/* FAQ Callout 1 - Enterprise Specific */}
-                    <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-amber-500/20 py-2">
-                        <p className="text-xs font-bold text-amber-500/60 mb-3 uppercase tracking-widest">{t('faq.q1')}</p>
+                    <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-[#0A84FF]/15 py-2">
+                        <p className="text-xs font-semibold text-[#BFA26A]/60 mb-3 uppercase tracking-widest">{t('faq.q1')}</p>
                         <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
                             " <Trans i18nKey="faq.a1" components={{ 1: <strong className="text-white font-bold" />, br: <br /> }} /> "
                         </p>
                     </div>
 
-                    {/* Benefit 2: Right Aligned — Fleet Intelligence */}
                     <div className="max-w-xl md:ml-auto">
                         <div className="flex items-center gap-4 mb-6 md:justify-end">
-                            <div className="w-12 h-[1px] bg-amber-500/30 hidden md:block" />
-                            <span className="text-amber-500 font-mono text-sm tracking-widest leading-none">NODE_02</span>
-                            <div className="w-12 h-[1px] bg-amber-500/30 md:hidden" />
+                            <div className="w-12 h-px bg-[#0A84FF]/20 hidden md:block" />
+                            <span className="text-[#0A84FF] font-semibold text-sm tracking-widest leading-none">02</span>
+                            <div className="w-12 h-px bg-[#0A84FF]/20 md:hidden" />
                         </div>
                         <h3 className="text-2xl md:text-3xl font-black mb-4 md:text-right leading-tight uppercase tracking-tight">{t('network_intelligence.benefit2_title')}</h3>
                         <div className="text-white/60 leading-relaxed text-lg font-light md:text-right">
@@ -354,11 +281,10 @@ function NetworkIntelligencePage() {
                         </div>
                     </div>
 
-                    {/* Benefit 3: Left Aligned — Risk Projection */}
                     <div className="max-w-2xl">
                         <div className="flex items-center gap-4 mb-6">
-                            <span className="text-amber-500 font-mono text-sm tracking-widest leading-none">NODE_03</span>
-                            <div className="w-12 h-[1px] bg-amber-500/30" />
+                            <span className="text-[#0A84FF] font-semibold text-sm tracking-widest leading-none">03</span>
+                            <div className="w-12 h-px bg-[#0A84FF]/20" />
                         </div>
                         <h3 className="text-2xl md:text-3xl font-black mb-4 leading-tight uppercase tracking-tight">{t('network_intelligence.benefit3_title')}</h3>
                         <div className="text-white/60 leading-relaxed text-lg font-light">
@@ -366,20 +292,18 @@ function NetworkIntelligencePage() {
                         </div>
                     </div>
 
-                    {/* FAQ Callout 2 */}
-                    <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-amber-500/20 py-2">
-                        <p className="text-xs font-bold text-amber-500/60 mb-3 uppercase tracking-widest">{t('faq.q2')}</p>
+                    <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-[#0A84FF]/15 py-2">
+                        <p className="text-xs font-semibold text-[#BFA26A]/60 mb-3 uppercase tracking-widest">{t('faq.q2')}</p>
                         <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
                             " <Trans i18nKey="faq.a2" components={{ 1: <strong className="text-white font-bold" />, br: <br /> }} /> "
                         </p>
                     </div>
 
-                    {/* Benefit 4: Right Aligned — Data Integrity */}
                     <div className="max-w-xl md:ml-auto">
                         <div className="flex items-center gap-4 mb-6 md:justify-end">
-                            <div className="w-12 h-[1px] bg-amber-500/30 hidden md:block" />
-                            <span className="text-amber-500 font-mono text-sm tracking-widest leading-none">NODE_04</span>
-                            <div className="w-12 h-[1px] bg-amber-500/30 md:hidden" />
+                            <div className="w-12 h-px bg-[#0A84FF]/20 hidden md:block" />
+                            <span className="text-[#0A84FF] font-semibold text-sm tracking-widest leading-none">04</span>
+                            <div className="w-12 h-px bg-[#0A84FF]/20 md:hidden" />
                         </div>
                         <h3 className="text-2xl md:text-3xl font-black mb-4 md:text-right leading-tight uppercase tracking-tight">{t('network_intelligence.benefit4_title')}</h3>
                         <div className="text-white/60 leading-relaxed text-lg font-light md:text-right">
@@ -394,15 +318,15 @@ function NetworkIntelligencePage() {
             <section className="py-24 px-6 md:px-12 lg:px-20 border-b border-white/[0.05]">
                 <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
                     <div className="lg:w-1/2 space-y-8">
-                         <div className="inline-flex items-center gap-2 px-3 py-1 border border-white/10 bg-white/[0.02]">
-                            <Activity className="w-3 h-3 text-amber-500" />
-                            <span className="text-[10px] uppercase tracking-[0.2em] font-black text-amber-500">{t('network_intelligence.demo_badge')}</span>
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.03] rounded-full">
+                            <Activity className="w-3 h-3 text-[#BFA26A]" />
+                            <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#BFA26A]">{t('network_intelligence.demo_badge')}</span>
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-tight">{t('network_intelligence.demo_title')}</h2>
+                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-tight">{t('network_intelligence.demo_title')}</h2>
                         
-                        <div className="relative aspect-video border border-white/10 bg-black">
+                        <div className="relative aspect-video glass rounded-squircle-xl overflow-hidden shadow-xl">
                              <iframe
-                                className="absolute inset-0 w-full h-full grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                className="absolute inset-0 w-full h-full object-cover"
                                 src={t('demo_video.url')}
                                 title="Network Analysis Demo"
                                 frameBorder="0"
@@ -414,24 +338,21 @@ function NetworkIntelligencePage() {
 
                     <div className="lg:w-1/2 space-y-8">
                          {/* CPA Partnership Block */}
-                         <div className="p-8 md:p-12 border border-white/[0.05] bg-white/[0.01] relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                                <ShieldAlert className="w-32 h-32 text-amber-500 -mr-12 -mt-12 rotate-12" />
-                            </div>
+                         <div className="glass-elevated rounded-squircle-xl p-8 md:p-12 relative overflow-hidden flex flex-col justify-center h-full">
 
                             <div className="relative z-10 space-y-6">
-                                <div className="inline-flex items-center gap-2 px-3 py-1 border border-blue-500/30 bg-blue-500/5 text-blue-400 text-[10px] font-bold uppercase tracking-widest">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0A84FF]/10 text-[#0A84FF] rounded-full text-[10px] font-semibold uppercase tracking-widest">
                                     {t('network_intelligence.cpa_partner_badge')}
                                 </div>
                                 <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight leading-tight">{t('network_intelligence.cpa_partner_title')}</h3>
                                 <p className="text-white/50 leading-relaxed text-lg font-light">
                                     <Trans
                                         i18nKey="network_intelligence.cpa_partner_desc"
-                                        components={{ 1: <span className="text-white font-bold" /> }}
+                                        components={{ 1: <span className="text-white font-medium" /> }}
                                     />
                                 </p>
                                 <div className="pt-4">
-                                     <Button asChild variant="outline" className="h-auto py-4 px-8 border-white/20 text-white/70 hover:text-white hover:border-white rounded-none transition-all uppercase tracking-widest font-bold text-xs">
+                                     <Button asChild variant="outline">
                                         <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
                                             {t('network_intelligence.demo_cta')}
                                         </a>
@@ -445,132 +366,91 @@ function NetworkIntelligencePage() {
 
 
 
-            {/* Simplified Pricing — The Network Contracts */}
-            <section className="py-24 px-4 md:px-8 bg-gradient-to-r from-amber-500/5 via-amber-500/10 to-amber-500/5 border-y border-amber-500/20 relative overflow-hidden">
-                <WavingDots color="rgba(245, 158, 11, 0.15)" className="opacity-50" />
+            {/* ── PRICING ── */}
+            <section className="py-24 px-4 md:px-8 bg-[#161618] border-y border-white/[0.05] relative overflow-hidden">
+                <WavingDots color="rgba(10, 132, 255, 0.08)" className="opacity-40" />
                 <div className="container mx-auto max-w-5xl relative z-10 text-center">
-                    <div className="mb-16 text-center space-y-4">
+                    <div className="mb-14 text-center space-y-3">
                         <div className="flex items-center justify-center gap-4 mb-2">
-                            <div className="w-8 h-px bg-amber-500/40" />
-                            <span className="text-[10px] uppercase tracking-[0.3em] text-amber-500 font-bold">{t('network_intelligence.pilot_title')}</span>
-                            <div className="w-8 h-px bg-amber-500/40" />
+                            <div className="w-8 h-px bg-[#BFA26A]/30" />
+                            <span className="text-[10px] uppercase tracking-[0.3em] text-[#BFA26A] font-semibold">{t('network_intelligence.pilot_title')}</span>
+                            <div className="w-8 h-px bg-[#BFA26A]/30" />
                         </div>
                         <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter">{t('network_intelligence.pilot_desc')}</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                         {tiers.map((tier: any) => {
-                            const colorMap: Record<string, { base: string; text: string; bg: string; border: string }> = {
-                                green: { base: 'green', text: 'text-green-400', bg: 'bg-green-500', border: 'border-green-500' },
-                                blue: { base: 'blue', text: 'text-blue-400', bg: 'bg-blue-500', border: 'border-blue-500' },
-                                amber: { base: 'amber', text: 'text-amber-400', bg: 'bg-amber-500', border: 'border-amber-500' },
-                                red: { base: 'red', text: 'text-red-400', bg: 'bg-red-500', border: 'border-red-500' }
+                            const colorMap: Record<string, { accentText: string; accentBg: string; accentBorder: string; glassClass: string }> = {
+                                amber: { accentText: 'text-[#BFA26A]', accentBg: 'bg-[#BFA26A]', accentBorder: 'border-[#BFA26A]/20', glassClass: 'glass-gold' },
+                                red:   { accentText: 'text-red-400',   accentBg: 'bg-red-500',   accentBorder: 'border-red-500/20',   glassClass: 'glass' },
                             };
                             const theme = colorMap[tier.color] || colorMap.amber;
 
                             return (
-                                <div key={tier.id} className={`border rounded-xl p-8 flex flex-col transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] border-${theme.base}-500/20 bg-black/40 hover:shadow-${theme.base}-500/10 relative overflow-hidden group text-left`}>
-                                    <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${theme.base}-500 to-transparent opacity-50 group-hover:opacity-100 transition-opacity`}></div>
-                                    
-                                    <div className="mb-6 text-center">
-                                        <h3 className={`text-3xl font-black ${theme.text} tracking-tight mb-2 uppercase`}>{tier.name}</h3>
-                                        <p className="italic text-muted-foreground font-serif text-lg">{tier.tagline}</p>
+                                <div key={tier.id} className="glass-elevated rounded-squircle-xl p-8 flex flex-col transition-all duration-300 hover:scale-[1.005] relative overflow-hidden group text-left">
+                                    <div className={`absolute top-0 left-8 right-8 h-px ${theme.accentBg} opacity-30 group-hover:opacity-60 transition-opacity`} />
+
+                                    <div className="mb-6">
+                                        <h3 className={`text-2xl font-black ${theme.accentText} tracking-tight mb-1 uppercase`}>{tier.name}</h3>
+                                        <p className="text-white/35 font-light text-sm">{tier.tagline}</p>
                                     </div>
 
-                                    <div className="space-y-4 my-6 flex-grow">
-                                        {/* One-Time Option */}
-                                        <div className="p-5 border border-white/5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-between group/option">
-                                           <div className="text-left">
-                                                <h4 className="font-bold uppercase tracking-widest text-xs text-muted-foreground mb-1 group-hover/option:text-white transition-colors">{t('investasi_page.labels.one_time')}</h4>
-                                                <div className="flex flex-col">
-                                                    <span className="text-2xl font-bold text-white">${tier.pricing.oneTime.toLocaleString()}</span>
-                                                    <span className="text-xs text-muted-foreground">Single Custom Audit</span>
-                                                </div>
-                                           </div>
-                                           <Button variant="outline" size="sm" onClick={() => openModal(tier, 'one-time')} className="border-white/20 hover:border-white hover:bg-white hover:text-black transition-all h-auto py-2">
-                                                {t('investasi_page.labels.select')}
-                                            </Button>
+                                    <div className="space-y-3 my-6 flex-grow">
+                                        <div className="p-4 glass rounded-squircle-sm flex items-center justify-between">
+                                            <div>
+                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/30 mb-1">{t('investasi_page.labels.one_time')}</h4>
+                                                <span className="text-xl font-bold text-white font-mono">${tier.pricing.oneTime.toLocaleString()}</span>
+                                            </div>
+                                            <Button variant="outline" size="sm" onClick={() => openModal(tier, 'one-time')}>{t('investasi_page.labels.select')}</Button>
                                         </div>
-
-                                        {/* Quarterly Option */}
-                                        <div className="p-5 border border-white/5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-between group/option">
-                                           <div className="text-left">
-                                                <div className="flex items-center gap-2 mb-1">
-                                                    <h4 className="font-bold uppercase tracking-widest text-xs text-muted-foreground group-hover/option:text-white transition-colors">{t('investasi_page.labels.quarterly')}</h4>
-                                                    {tier.id === 'sovereign' && <span className="text-[8px] bg-red-500/20 text-red-400 px-1.5 py-0.5 rounded font-black uppercase">Standard</span>}
+                                        <div className="p-4 glass rounded-squircle-sm flex items-center justify-between">
+                                            <div>
+                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/30 mb-1">{t('investasi_page.labels.quarterly')}</h4>
+                                                <div className="flex items-baseline gap-2">
+                                                    <span className="text-xl font-bold text-white font-mono">${tier.pricing.quarterly.total.toLocaleString()}</span>
+                                                    <span className="text-xs text-white/20">Total</span>
                                                 </div>
-                                                <div className="flex flex-col gap-0.5">
-                                                    <div className="flex items-baseline gap-2">
-                                                        <span className="text-xl font-bold text-white">${tier.pricing.quarterly.total.toLocaleString()}</span>
-                                                        <span className="text-xs text-muted-foreground">Total</span>
-                                                    </div>
-                                                    <div className="text-xs text-muted-foreground">
-                                                        ${tier.pricing.quarterly.perAudit.toLocaleString()} / audit
-                                                    </div>
-                                                    <div className="text-xs text-muted-foreground italic">
-                                                        3x Audits Sequence
-                                                    </div>
-                                                </div>
-                                           </div>
-                                           <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')} className="border-white/20 hover:border-white hover:bg-white hover:text-black transition-all h-auto py-2">
-                                                {t('investasi_page.labels.select')}
-                                            </Button>
+                                                <span className="text-xs text-white/20">${tier.pricing.quarterly.perAudit.toLocaleString()} / audit · 3x</span>
+                                            </div>
+                                            <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')}>{t('investasi_page.labels.select')}</Button>
                                         </div>
-
-                                        {/* Annual Option */}
-                                        <div className={`p-5 border border-${theme.base}-500/30 rounded-lg bg-${theme.base}-500/10 hover:bg-${theme.base}-500/20 transition-colors flex items-center justify-between relative ring-1 ring-${theme.base}-500/20`}>
-                                           <div className={`absolute -top-3 right-4 ${theme.bg} text-black text-[10px] font-black px-3 py-1 rounded uppercase tracking-wider shadow-lg`}>Recommended</div>
-                                           <div className="text-left mt-1">
-                                                <h4 className={`font-bold uppercase tracking-widest text-xs ${theme.text} mb-1`}>{t('investasi_page.labels.annual')}</h4>
-                                                <div className="flex flex-col gap-0.5">
-                                                    <div className="flex items-baseline gap-2">
-                                                        <span className="text-2xl font-bold text-white">${tier.pricing.annual.total.toLocaleString()}</span>
-                                                        <span className="text-xs text-muted-foreground">/ Year</span>
-                                                    </div>
-                                                    <div className="text-xs text-muted-foreground">
-                                                        ${tier.pricing.annual.perAudit.toLocaleString()} / audit
-                                                    </div>
-                                                    <div className="text-xs text-green-400 font-bold mt-1">Strategic Retainer Access</div>
+                                        <div className={`p-4 rounded-squircle-sm flex items-center justify-between relative ${theme.glassClass} border ${theme.accentBorder}`}>
+                                            <div className={`absolute -top-3 right-4 ${theme.accentBg} text-black text-[9px] font-black px-3 py-1 rounded-squircle-sm uppercase tracking-wider`}>Recommended</div>
+                                            <div className="mt-1">
+                                                <h4 className={`font-semibold uppercase tracking-widest text-xs ${theme.accentText} mb-1`}>{t('investasi_page.labels.annual')}</h4>
+                                                <div className="flex items-baseline gap-2">
+                                                    <span className="text-xl font-bold text-white font-mono">${tier.pricing.annual.total.toLocaleString()}</span>
+                                                    <span className="text-xs text-white/20">/ Year</span>
                                                 </div>
-                                           </div>
-                                           <Button size="sm" onClick={() => openModal(tier, 'annual')} className={`${theme.bg} text-black hover:bg-white hover:text-black border-none font-bold transition-all shadow-lg shadow-${theme.base}-500/20 h-auto py-2`}>
-                                                {t('investasi_page.labels.select')}
-                                            </Button>
+                                                <span className="text-xs text-emerald-400 font-semibold mt-1 block">Strategic Retainer Access</span>
+                                            </div>
+                                            <Button size="sm" onClick={() => openModal(tier, 'annual')} className={`${theme.accentBg} text-black hover:brightness-110 border-none font-bold`}>{t('investasi_page.labels.select')}</Button>
                                         </div>
                                     </div>
-
-                                    <div className="pt-6 border-t border-white/5 space-y-6">
-                                        <div>
-                                            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">{t('investasi_page.labels.key_features')}</p>
-                                            <ul className="space-y-4">
-                                                {tier.features.included.slice(0, 10).map((featureObj: any, i: number) => {
-                                                    const isHighlighted = featureObj.highlight;
-                                                    const text = typeof featureObj === 'string' ? featureObj : t(featureObj.key, featureObj.default);
-
-                                                    return (
-                                                    <li key={i} className={`flex items-start gap-3 text-sm transition-all duration-300 ${isHighlighted ? 'bg-amber-500/5 -mx-2 px-2 py-1 rounded-md border-l border-amber-500/30' : 'text-gray-300'}`}>
-                                                        {isHighlighted ? (
-                                                            <Star className="w-4 h-4 text-amber-500 shrink-0 mt-0.5 fill-amber-500 animate-pulse-slow" />
-                                                        ) : (
-                                                            <ShieldCheck className={`w-4 h-4 ${theme.text} shrink-0 mt-0.5`} />
-                                                        )}
-                                                        <div className="leading-snug">
-                                                            <span className={`${isHighlighted ? 'text-amber-400 font-bold' : ''}`}>
-                                                                {text}
-                                                                {isHighlighted && <span className="ml-1 text-[10px] opacity-70">★</span>}
-                                                            </span>
-                                                        </div>
+                                    <div className="pt-5 border-t border-white/[0.05]">
+                                        <p className="text-xs font-semibold uppercase tracking-widest text-white/20 mb-3">{t('investasi_page.labels.key_features')}</p>
+                                        <ul className="space-y-3">
+                                            {tier.features.included.slice(0, 10).map((featureObj: any, i: number) => {
+                                                const isHighlighted = featureObj.highlight;
+                                                const text = typeof featureObj === 'string' ? featureObj : t(featureObj.key, featureObj.default);
+                                                return (
+                                                    <li key={i} className={`flex items-start gap-3 text-sm ${isHighlighted ? 'glass-gold -mx-2 px-2 py-1 rounded-squircle-sm border-l-2 border-[#BFA26A]/25' : 'text-white/45'}`}>
+                                                        {isHighlighted
+                                                            ? <Star className="w-3.5 h-3.5 text-[#BFA26A] shrink-0 mt-0.5 fill-[#BFA26A]" strokeWidth={1} />
+                                                            : <ShieldCheck className={`w-3.5 h-3.5 ${theme.accentText} shrink-0 mt-0.5`} strokeWidth={1.5} />
+                                                        }
+                                                        <span className={isHighlighted ? 'text-[#BFA26A] font-semibold' : 'text-white/60'}>{text}</span>
                                                     </li>
-                                                )})}
-                                            </ul>
-                                        </div>
-
-                                        <div className="p-4 bg-black/20 rounded-lg border border-white/5">
-                                            <p className="font-bold text-xs uppercase tracking-widest text-muted-foreground mb-2">{t('investasi_page.labels.best_for')}</p>
+                                                );
+                                            })}
+                                        </ul>
+                                        <div className="mt-4 p-3 glass rounded-squircle-sm">
+                                            <p className="font-semibold text-xs uppercase tracking-widest text-white/20 mb-2">{t('investasi_page.labels.best_for')}</p>
                                             <ul className="space-y-1">
                                                 {tier.bestFor.map((item: string, i: number) => (
-                                                    <li key={i} className="text-xs text-gray-400 flex items-center gap-2">
-                                                        <span className={`w-1 h-1 rounded-full ${theme.bg} opacity-50`}></span>
+                                                    <li key={i} className="text-xs text-white/30 flex items-center gap-2">
+                                                        <span className={`w-1 h-1 rounded-full ${theme.accentBg} opacity-60`} />
                                                         {item}
                                                     </li>
                                                 ))}
@@ -586,39 +466,39 @@ function NetworkIntelligencePage() {
 
 
 
-            {/* Final CTA — Human Identity Anchor */}
-            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-t border-white/[0.05]">
+            {/* ── FINAL CTA ── */}
+            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-t border-white/[0.05] bg-[#1c1c1e]">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-12 lg:gap-24">
                     <div className="flex-1 space-y-8">
                         <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black uppercase tracking-tighter leading-[0.9]">
                             {t('network_intelligence.final_cta_title')} <br />
-                            <span className="text-amber-500">{t('network_intelligence.final_cta_title_accent')}</span>
+                            <span className="text-[#0A84FF]">{t('network_intelligence.final_cta_title_accent')}</span>
                         </h2>
                         <p className="text-white/60 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
                              {t('network_intelligence.final_cta_desc')}
                         </p>
                         <div className="pt-4">
-                            <Button asChild className="h-auto w-full md:w-auto py-6 px-10 text-lg font-bold bg-amber-500 text-black hover:bg-white transition-colors rounded-none shadow-none text-left flex items-center justify-start group">
-                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer" className="flex flex-col items-start justify-center">
+                            <Button asChild size="xl" className="w-full md:w-auto h-auto py-6 px-10 flex flex-col items-start group">
+                                <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer" className="flex flex-col items-start h-full justify-center">
                                     <span className="flex items-center font-black text-xl md:text-2xl whitespace-normal leading-tight">
                                         {t('network_intelligence.cta_demo')}
-                                        <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                                        <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-0.5 transition-transform" strokeWidth={2} />
                                     </span>
-                                    <span className="text-[10px] opacity-70 font-mono tracking-widest uppercase mt-2">Professional Fleet Audit Registration</span>
+                                    <span className="text-[10px] opacity-70 font-medium tracking-widest uppercase mt-2">Professional Fleet Audit Registration</span>
                                 </a>
                             </Button>
                         </div>
                     </div>
 
-                    {/* The Anchor Portrait */}
-                    <div className="w-full md:w-1/3 space-y-6">
-                        <div className="aspect-[3/4] border border-white/10 bg-[#03060a] relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                             <img src="/assets/images/aboutme.jpg" alt="Gusti Devitto" className="w-full h-full object-cover object-top" />
-                             <div className="absolute inset-0 bg-gradient-to-t from-[#060a12] via-transparent to-transparent" />
+                    <div className="hidden md:block w-full md:w-1/3 space-y-4">
+                        <div className="aspect-[3/4] glass rounded-squircle-lg relative overflow-hidden p-0.5">
+                            <img src="/assets/images/aboutme.jpg" alt="Gusti Devitto"
+                                className="w-full h-full object-cover object-top opacity-75 grayscale-[0.5] contrast-[1.1] rounded-squircle-lg" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c1e]/60 via-transparent to-transparent rounded-squircle-lg" />
                         </div>
-                        <div className="space-y-1">
-                            <p className="text-sm font-black uppercase tracking-widest">Gusti Devitto</p>
-                            <p className="text-[10px] text-white/30 uppercase tracking-[0.2em]">{t('entrance_gate.hero_subtitle')}</p>
+                        <div className="glass-elevated rounded-squircle-sm px-4 py-3 space-y-0.5">
+                            <p className="text-sm font-bold text-white">Gusti Devitto</p>
+                            <p className="text-[10px] font-medium text-white/30 uppercase tracking-[0.2em]">{t('entrance_gate.hero_subtitle')}</p>
                         </div>
                     </div>
                 </div>

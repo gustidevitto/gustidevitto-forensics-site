@@ -1,15 +1,22 @@
 import * as React from "react"
-
 import { cn } from "@/lib/utils"
+
+// ── macOS Card System ──
+// Three tiers: default (glass), elevated (stronger blur), flat (no blur)
 
 const Card = React.forwardRef<
     HTMLDivElement,
-    React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+    React.HTMLAttributes<HTMLDivElement> & { elevated?: boolean; flat?: boolean }
+>(({ className, elevated, flat, ...props }, ref) => (
     <div
         ref={ref}
         className={cn(
-            "rounded-lg border bg-card text-card-foreground shadow-sm",
+            "rounded-squircle-lg text-card-foreground transition-all duration-200",
+            elevated
+                ? "glass-elevated"
+                : flat
+                ? "bg-white/[0.03] border border-white/[0.06]"
+                : "glass",
             className
         )}
         {...props}
@@ -35,10 +42,7 @@ const CardTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <h3
         ref={ref}
-        className={cn(
-            "text-2xl font-semibold leading-none tracking-tight",
-            className
-        )}
+        className={cn("text-xl font-bold leading-tight tracking-tight", className)}
         {...props}
     />
 ))
@@ -50,7 +54,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <p
         ref={ref}
-        className={cn("text-sm text-muted-foreground", className)}
+        className={cn("text-sm text-muted-foreground leading-relaxed", className)}
         {...props}
     />
 ))

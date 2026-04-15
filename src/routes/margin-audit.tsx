@@ -84,7 +84,7 @@ function MarginAuditDiagnostic() {
                     name={name}
                     value={inputs[name] === 0 ? '' : inputs[name].toLocaleString()}
                     onChange={handleChange}
-                    className={`w-full bg-white/5 border border-white/10 p-4 ${isPercent ? 'px-4' : 'pl-8'} font-mono text-xl focus:border-white focus:outline-none transition-colors rounded-none`}
+                    className={`w-full glass border border-white/10 p-4 ${isPercent ? 'px-4' : 'pl-8'} font-semibold text-xl focus:border-[#0A84FF] focus:outline-none transition-colors rounded-squircle-md`}
                     placeholder="0"
                 />
             </div>
@@ -95,7 +95,7 @@ function MarginAuditDiagnostic() {
     // Render Wizard
     if (step < 4) {
         return (
-            <div className="min-h-screen bg-black text-white pt-24 pb-12 px-6 flex flex-col relative overflow-hidden">
+            <div className="min-h-screen bg-[#1c1c1e] text-white pt-24 pb-12 px-6 flex flex-col relative overflow-hidden">
                 <title>{t('margin_audit.seo_title', 'Margin Audit | Free Efficiency Scan')}</title>
 
                 
@@ -177,14 +177,14 @@ function MarginAuditDiagnostic() {
                         ) : <div/>}
 
                         {step < 3 ? (
-                            <Button onClick={handleNext} className="rounded-none bg-white text-black hover:bg-white/90 uppercase tracking-widest font-black px-8">
+                            <Button onClick={handleNext} className="bg-white text-black hover:bg-white/90 uppercase tracking-widest font-black px-8">
                                 {t('wizard_shared.btn_next', 'Next Step')} <ChevronRight className="w-4 h-4 ml-2" />
                             </Button>
                         ) : (
                             <Button 
                                 onClick={handleRunDiagnostic} 
                                 disabled={isCalculating}
-                                className="rounded-none bg-amber-600 hover:bg-amber-700 text-white uppercase tracking-widest font-black px-8"
+                                className="bg-amber-600 hover:bg-amber-700 text-white uppercase tracking-widest font-black px-8"
                             >
                                 {isCalculating ? t('wizard_shared.processing', 'Processing Variables...') : t('wizard_shared.btn_submit', 'Reveal My Results')}
                             </Button>
@@ -202,7 +202,7 @@ function MarginAuditDiagnostic() {
     const verdictColor = result.layer2.efficiencyVerdict === 'fortress' ? 'text-emerald-500' : result.layer2.efficiencyVerdict === 'warning' ? 'text-amber-500' : 'text-red-500'
 
     return (
-        <div className="min-h-screen bg-black text-white pt-24 pb-24 px-6 relative overflow-hidden">
+        <div className="min-h-screen bg-[#1c1c1e] text-white pt-24 pb-24 px-6 relative overflow-hidden">
             <title>Diagnostic Complete | Margin Audit</title>
 
             
@@ -220,33 +220,33 @@ function MarginAuditDiagnostic() {
 
                 {/* Layer 1: Numbers */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="p-8 border border-white/10 bg-white/[0.02] backdrop-blur relative overflow-hidden">
+                    <div className="p-8 border border-white/10 glass rounded-squircle-lg relative overflow-hidden">
                         <div className={`absolute top-0 right-0 w-32 h-32 bg-amber-500/20 blur-3xl`} />
                         <h3 className="text-sm uppercase tracking-widest font-black text-white/50 mb-2">{t('margin_audit.results.leakage_label', 'GP Leakage Rate')}</h3>
-                        <div className="text-5xl font-mono font-black mb-2 flex items-end gap-2 text-amber-500">
+                        <div className="text-5xl font-semibold mb-2 flex items-end gap-2 text-amber-500">
                             {result.layer1.gpLeakagePercent.toFixed(1)} <span className="text-2xl mb-1">%</span>
                         </div>
-                        <p className="text-white/40 text-sm font-light uppercase tracking-widest border-t border-white/10 pt-4 mt-4">
+                        <p className="text-white/40 text-sm font-semibold uppercase tracking-widest border-t border-white/10 pt-4 mt-4">
                             Est. Loss: <span className="text-white px-2">{formatCurrency(result.layer2.leakageValue.min)} - {formatCurrency(result.layer2.leakageValue.max)}/mo</span> 
                         </p>
                     </div>
 
-                    <div className="p-8 border border-white/10 bg-white/[0.02] backdrop-blur relative overflow-hidden">
+                    <div className="p-8 border border-white/10 glass rounded-squircle-lg relative overflow-hidden">
                         <h3 className="text-sm uppercase tracking-widest font-black text-white/50 mb-2">{t('margin_audit.results.opex_ratio_label', 'OpEx to GP Ratio')}</h3>
-                        <div className="text-5xl font-mono font-black mb-2">
+                        <div className="text-5xl font-semibold mb-2">
                             {result.layer1.opexToGpRatio.toFixed(1)}<span className="text-2xl text-white/40">%</span>
                         </div>
                     </div>
                 </div>
 
                 {/* Layer 2: Psychological Context & Cliffhanger */}
-                <div className={`p-8 border ${result.layer2.efficiencyVerdict === 'critical' ? 'border-red-500/50 bg-red-500/5' : 'border-white/10 bg-white/5'} flex items-start`}>
+                <div className={`p-8 border rounded-squircle-lg ${result.layer2.efficiencyVerdict === 'critical' ? 'border-red-500/50 bg-red-500/5' : 'border-white/10 glass'} flex items-start`}>
                     <VerdictIcon className={`w-8 h-8 mr-6 flex-shrink-0 ${verdictColor}`} />
                     <div>
-                        <h3 className={`text-xl font-black uppercase tracking-tight mb-4 ${verdictColor}`}>
+                        <h3 className={`text-xl font-bold tracking-tight mb-4 ${verdictColor}`}>
                             System Classification: {result.layer2.efficiencyVerdict.toUpperCase()}
                         </h3>
-                        <p className="text-lg text-white/80 font-light leading-relaxed mb-6">
+                        <p className="text-lg text-white/80 font-medium leading-relaxed mb-6">
                             {t('margin_audit.results.cliffhanger', 'We found significant operational friction. The specific Phantom Drain is isolated in the restricted report below...')}
                         </p>
                     </div>
@@ -254,7 +254,7 @@ function MarginAuditDiagnostic() {
 
                 {/* Layer 3: The Gatekeeper */}
                 {!isUnlocked ? (
-                    <div className="border border-white/10 p-1 bg-[url('/noise.png')] relative overflow-hidden">
+                    <div className="border border-white/10 rounded-squircle-xl p-1 bg-[url('/noise.png')] relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90 pointer-events-none" />
                         <div className="p-8 pb-12 text-center relative z-10 flex flex-col items-center">
                             <Lock className="w-12 h-12 text-white/30 mb-6" />
@@ -275,7 +275,7 @@ function MarginAuditDiagnostic() {
                                     required 
                                     value={leadData.name}
                                     onChange={e => setLeadData({...leadData, name: e.target.value})}
-                                    className="w-full bg-black/50 border border-white/20 p-4 font-light text-white placeholder-white/40 focus:outline-none focus:border-white transition-colors"
+                                    className="w-full glass border border-white/20 rounded-squircle-md p-4 font-semibold text-white placeholder-white/40 focus:outline-none focus:border-[#0A84FF] transition-colors"
                                 />
                                 <input 
                                     type="email" 
@@ -283,12 +283,12 @@ function MarginAuditDiagnostic() {
                                     required 
                                     value={leadData.email}
                                     onChange={e => setLeadData({...leadData, email: e.target.value})}
-                                    className="w-full bg-black/50 border border-white/20 p-4 font-light text-white placeholder-white/40 focus:outline-none focus:border-white transition-colors"
+                                    className="w-full glass border border-white/20 rounded-squircle-md p-4 font-semibold text-white placeholder-white/40 focus:outline-none focus:border-[#0A84FF] transition-colors"
                                 />
                                 <Button 
                                     type="submit" 
                                     disabled={isSubmitting}
-                                    className="w-full rounded-none bg-white text-black hover:bg-white/90 uppercase tracking-widest font-black p-6 h-auto"
+                                    className="w-full bg-white text-black hover:bg-white/90 uppercase tracking-widest font-black p-6 h-auto"
                                 >
                                     {isSubmitting ? 'Authenticating...' : t('margin_audit.gatekeeper.btn', 'Unlock Report')}
                                 </Button>
@@ -317,15 +317,15 @@ function MarginAuditDiagnostic() {
                         </div>
                         <div className="space-y-4">
                             {result.layer3.pillars.map(pillar => (
-                                <div key={pillar.id} className="p-6 border border-white/10 bg-white/5 space-y-3">
+                                <div key={pillar.id} className="p-6 border border-white/10 glass rounded-squircle-md space-y-3">
                                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-3">
                                         <div className="flex-1">
                                             <div className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-1">{pillar.category.replace(/-/g, ' ')}</div>
                                             <div className="text-lg font-bold">{pillar.name}</div>
                                         </div>
                                         <div className="flex items-center gap-3 flex-shrink-0">
-                                            <div className="text-2xl font-mono font-black tracking-tight">{pillar.computedValue}</div>
-                                            <div className={`text-[10px] font-black uppercase tracking-widest px-2 py-1 border ${pillar.status === 'critical' ? 'text-red-500 border-red-500/30 bg-red-500/10' : pillar.status === 'warning' ? 'text-amber-500 border-amber-500/30 bg-amber-500/10' : 'text-emerald-500 border-emerald-500/30 bg-emerald-500/10'}`}>
+                                            <div className="text-2xl font-bold tracking-tight">{pillar.computedValue}</div>
+                                            <div className={`text-[10px] font-black uppercase tracking-widest px-2 py-1 border rounded-full ${pillar.status === 'critical' ? 'text-red-500 border-red-500/30 bg-red-500/10' : pillar.status === 'warning' ? 'text-amber-500 border-amber-500/30 bg-amber-500/10' : 'text-emerald-500 border-emerald-500/30 bg-emerald-500/10'}`}>
                                                 {pillar.status}
                                             </div>
                                         </div>
@@ -359,35 +359,35 @@ function MarginAuditDiagnostic() {
                             
                             
                         {/* The "Now What?" Gap - Explicit Medical Analogy */}
-                        <div className="mt-16 p-8 bg-black border-l-4 border-amber-500 border-y border-r border-white/10 relative">
+                        <div className="mt-16 p-8 glass-elevated rounded-squircle-xl border-l-4 border-amber-500 relative">
                             <h4 className="text-amber-500 text-sm font-black uppercase tracking-widest flex items-center mb-6">
                                 <AlertTriangle className="w-5 h-5 mr-3" /> The Prescription Gap
                             </h4>
-                            <div className="space-y-4 text-sm font-light leading-relaxed">
+                            <div className="space-y-4 text-sm font-semibold leading-relaxed">
                                 <p className="text-white/90">
-                                    You now know <strong className="text-white font-medium italic">where</strong> you are bleeding. But you still don't know <strong className="text-white font-medium italic">why it's happening—or how to stop it.</strong>
+                                    You now know <strong className="text-white font-bold italic">where</strong> you are bleeding. But you still don't know <strong className="text-white font-bold italic">why it's happening—or how to stop it.</strong>
                                 </p>
                                 <p className="text-white/60">
                                     A doctor doesn't just tell you "your heart is failing." They identify exactly which valve is damaged, prescribe the right medication and dosage, tell you how long recovery takes, and schedule follow-up checkups to track whether you're actually healing—or getting worse.
                                 </p>
                                 <p className="text-white/60">
-                                    That's what our full forensic audit does for your business. You get the <strong className="text-emerald-400 font-medium">exact root cause</strong>, a prioritized action plan with specific steps your team can execute this week, and a monitoring framework to measure whether each fix is working. <span className="text-white/40">Not vague advice. Not a generic report. A surgical operating manual built from your numbers.</span>
+                                    That's what our full forensic audit does for your business. You get the <strong className="text-emerald-400 font-bold">exact root cause</strong>, a prioritized action plan with specific steps your team can execute this week, and a monitoring framework to measure whether each fix is working. <span className="text-white/40">Not vague advice. Not a generic report. A surgical operating manual built from your numbers.</span>
                                 </p>
                             </div>
                         </div>
 
  {/* Premium CTA Block */}
-                            <div className="mt-6 p-8 relative border-t-0 border border-white/20 bg-black overflow-hidden group">
+                            <div className="mt-8 p-8 relative glass-elevated border border-white/20 rounded-squircle-xl overflow-hidden group">
                                 <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                                 <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
                                     <div className="text-left flex-1">
-                                        <div className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500 mb-2">Exclusive Deep Dive</div>
+                                        <div className="text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-500 mb-2">Exclusive Deep Dive</div>
                                         <h4 className="text-2xl font-black uppercase tracking-tighter mb-2 text-white">Full Forensic Audit</h4>
-                                        <p className="text-sm text-white/60 font-light leading-relaxed">
+                                        <p className="text-sm text-white/60 font-semibold leading-relaxed">
                                             Move beyond surface symptoms. Book a surgical, 19-pillar operational audit to permanently map, isolate, and structurally resolve the exact blindspots slowly eroding your bottom line.
                                         </p>
                                     </div>
-                                    <Link to="/investasi" className="flex-shrink-0 bg-white text-black hover:bg-emerald-500 hover:text-white transition-colors duration-300 font-black uppercase tracking-widest text-xs px-8 py-4 flex items-center">
+                                    <Link to="/investasi" className="flex-shrink-0 bg-white text-black hover:bg-emerald-500 hover:text-white transition-colors duration-300 font-black uppercase tracking-widest text-xs px-8 py-4 flex items-center rounded-squircle-md">
                                         Commission Audit <ArrowRight className="w-4 h-4 ml-2" />
                                     </Link>
                                 </div>
