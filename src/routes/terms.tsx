@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Card, CardContent } from "@/components/ui/card"
+
 import { useTranslation, Trans } from 'react-i18next'
 
 // @ts-ignore

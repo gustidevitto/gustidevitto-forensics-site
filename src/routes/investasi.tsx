@@ -14,7 +14,7 @@ export const Route = createFileRoute('/investasi')({
 function InvestasiPage() {
     const { t } = useTranslation()
     const currentYear = new Date().getFullYear()
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedTier, setSelectedTier] = useState<any>(null);
     const [commitmentType, setCommitmentType] = useState<any>(null);
@@ -31,12 +31,6 @@ function InvestasiPage() {
         setCommitmentType(null);
     };
 
-    const handleMouseMove = (e: React.MouseEvent) => {
-        if (typeof window === 'undefined') return
-        const x = (e.clientX / window.innerWidth) - 0.5
-        const y = (e.clientY / window.innerHeight) - 0.5
-        setMousePos({ x, y })
-    }
 
     const tiers = [
         {

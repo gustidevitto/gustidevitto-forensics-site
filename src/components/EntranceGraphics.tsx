@@ -55,7 +55,6 @@ export function SingleEntityGraphic() {
     )
 }
 
-import React from 'react';
 // EntranceGraphics — stripped of HUD elements per macOS reskin.
 export function NetworkGraphic() {
     return (

@@ -451,7 +451,7 @@ function SingleEntityPage() {
                                                             ? <Star className="w-3.5 h-3.5 text-[#BFA26A] shrink-0 mt-0.5 fill-[#BFA26A]" strokeWidth={1} />
                                                             : <ShieldCheck className={`w-3.5 h-3.5 ${theme.accentText} shrink-0 mt-0.5`} strokeWidth={1.5} />
                                                         }
-                                                        <span className={isHighlighted ? 'text-[#BFA26A] font-semibold' : ''}>{text}</span>
+                                                        <span className={isHighlighted ? 'text-[#BFA26A] font-semibold' : ''}>{text as string}</span>
                                                     </li>
                                                 );
                                             })}

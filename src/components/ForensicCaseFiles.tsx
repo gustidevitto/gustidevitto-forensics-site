@@ -1,4 +1,4 @@
-import { ShieldCheck, Star } from "lucide-react"
+import { ShieldCheck } from "lucide-react"
 import { useTranslation, Trans } from 'react-i18next'
 
 export function ForensicCaseFiles() {
