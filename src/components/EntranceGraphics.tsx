@@ -49,8 +49,7 @@ export function SingleEntityGraphic() {
                 </g>
 
                 {/* Scanning Vertical Line */}
-                    <circle cx="200" cy="200" r="5" className="fill-primary" />
-                </g>
+                <circle cx="200" cy="200" r="5" className="fill-primary" />
             </svg>
         </div>
     )
@@ -62,6 +61,9 @@ export function NetworkGraphic() {
     return (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
             <svg width="100%" height="100%" viewBox="0 0 400 400" className="opacity-30">
+                <defs>
+                    <radialGradient id="grad-red" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                        <stop offset="0%" stopColor="#ef4444" stopOpacity="0.2" />
                         <stop offset="100%" stopColor="#ef4444" stopOpacity="0" />
                     </radialGradient>
                 </defs>
