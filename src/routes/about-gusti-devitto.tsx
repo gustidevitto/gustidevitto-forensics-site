@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
-import { useTranslation, Trans } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 export const Route = createFileRoute('/about-gusti-devitto')({
     component: AboutGustiDevitto,
