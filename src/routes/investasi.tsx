@@ -348,9 +348,10 @@ function InvestasiPage() {
                 <div className="container mx-auto max-w-4xl">
                     <div className="space-y-4">
                         <h2 className="text-3xl font-black text-center">{t('investasi_page.labels.analysis_title', 'Deeper Analysis')}</h2>
-                        <div className="border rounded-lg p-4">
-                            <h3 className="font-bold">{t('investasi_page.labels.feature_comparison', 'See Detailed Feature Comparison')}</h3>
-                            <table className="w-full text-left mt-4">
+                        <div className="border border-white/10 glass rounded-squircle-lg p-6 md:p-8">
+                            <h3 className="font-bold text-white uppercase tracking-widest text-sm mb-6">{t('investasi_page.labels.feature_comparison', 'See Detailed Feature Comparison')}</h3>
+                            <div className="overflow-x-auto -mx-6 md:mx-0 px-6 md:px-0 pb-4">
+                                <table className="w-full text-left min-w-[760px] border-collapse">
                                 <thead>
                                     <tr className="border-b border-white/10">
                                         <th className="p-3 text-muted-foreground font-bold text-xs uppercase tracking-wider">{t('investasi_page.labels.feature', 'Feature')}</th>
@@ -417,37 +418,38 @@ function InvestasiPage() {
                                     })()}
                                 </tbody>
                             </table>
+                            </div>
                         </div>
-                        <div className="border rounded-lg p-4">
-                            <h3 className="font-bold">{t('investasi_page.labels.which_tier_title', 'Which Tier Is Right For Me?')}</h3>
-                            <div className="text-muted-foreground grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                        <div className="border border-white/10 glass rounded-squircle-lg p-6 md:p-8">
+                            <h3 className="font-bold text-white uppercase tracking-widest text-sm">{t('investasi_page.labels.which_tier_title', 'Which Tier Is Right For Me?')}</h3>
+                            <div className="text-white/60 grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
                                 <div>
-                                    <h4 className="font-bold text-white">{t('investasi_page.labels.choose_if', { tier: t('investasi_page.tiers.diagnostic.name', 'DIAGNOSTIC') })}</h4>
-                                    <ul className="list-disc list-inside">
+                                    <h4 className="font-bold text-white mb-3">{t('investasi_page.labels.choose_if', { tier: t('investasi_page.tiers.diagnostic.name', 'DIAGNOSTIC') })}</h4>
+                                    <ul className="list-disc list-inside space-y-2">
                                         {(t('investasi_page.comparison.diagnostic_if', { returnObjects: true }) as string[]).map((item: string, i: number) => (
                                             <li key={i}>{item}</li>
                                         ))}
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white">{t('investasi_page.labels.choose_if', { tier: t('investasi_page.tiers.forensic.name', 'FORENSIC') })}</h4>
-                                    <ul className="list-disc list-inside">
+                                    <h4 className="font-bold text-white mb-3">{t('investasi_page.labels.choose_if', { tier: t('investasi_page.tiers.forensic.name', 'FORENSIC') })}</h4>
+                                    <ul className="list-disc list-inside space-y-2">
                                         {(t('investasi_page.comparison.forensic_if', { returnObjects: true }) as string[]).map((item: string, i: number) => (
                                             <li key={i}>{item}</li>
                                         ))}
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white">{t('investasi_page.labels.choose_if', { tier: t('investasi_page.tiers.network.name', 'NETWORK') })}</h4>
-                                    <ul className="list-disc list-inside">
+                                    <h4 className="font-bold text-white mb-3">{t('investasi_page.labels.choose_if', { tier: t('investasi_page.tiers.network.name', 'NETWORK') })}</h4>
+                                    <ul className="list-disc list-inside space-y-2">
                                         {(t('investasi_page.comparison.network_if', { returnObjects: true }) as string[]).map((item: string, i: number) => (
                                             <li key={i}>{item}</li>
                                         ))}
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white">{t('investasi_page.labels.choose_if', { tier: t('investasi_page.tiers.sovereign.name', 'SOVEREIGN') })}</h4>
-                                    <ul className="list-disc list-inside">
+                                    <h4 className="font-bold text-white mb-3">{t('investasi_page.labels.choose_if', { tier: t('investasi_page.tiers.sovereign.name', 'SOVEREIGN') })}</h4>
+                                    <ul className="list-disc list-inside space-y-2">
                                         {(t('investasi_page.comparison.sovereign_if', { returnObjects: true }) as string[]).map((item: string, i: number) => (
                                             <li key={i}>{item}</li>
                                         ))}
@@ -455,36 +457,36 @@ function InvestasiPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="border rounded-lg p-4">
-                            <h3 className="font-bold">{t('investasi_page.labels.time_commitment_title', 'Understanding Time Commitment Options')}</h3>
-                            <div className="text-muted-foreground mt-4 space-y-6">
+                        <div className="border border-white/10 glass rounded-squircle-lg p-6 md:p-8">
+                            <h3 className="font-bold text-white uppercase tracking-widest text-sm">{t('investasi_page.labels.time_commitment_title', 'Understanding Time Commitment Options')}</h3>
+                            <div className="text-white/60 mt-6 space-y-8">
                                 <div>
-                                    <h4 className="font-bold text-white">{t('investasi_page.commitment_details.one_time.title', 'ONE-TIME AUDIT')}</h4>
-                                    <ul className="list-disc list-inside">
+                                    <h4 className="font-bold text-white mb-3">{t('investasi_page.commitment_details.one_time.title', 'ONE-TIME AUDIT')}</h4>
+                                    <ul className="list-disc list-inside space-y-2">
                                         {(t('investasi_page.commitment_details.one_time.items', { returnObjects: true }) as string[]).map((item: string, i: number) => (
                                             <li key={i}>{item}</li>
                                         ))}
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white">{t('investasi_page.commitment_details.quarterly.title', 'QUARTERLY PROGRAM (3 audits)')}</h4>
-                                    <ul className="list-disc list-inside">
+                                    <h4 className="font-bold text-white mb-3">{t('investasi_page.commitment_details.quarterly.title', 'QUARTERLY PROGRAM (3 audits)')}</h4>
+                                    <ul className="list-disc list-inside space-y-2">
                                         {(t('investasi_page.commitment_details.quarterly.items', { returnObjects: true }) as string[]).map((item: string, i: number) => (
                                             <li key={i}>{item}</li>
                                         ))}
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white">{t('investasi_page.commitment_details.annual.title', 'ANNUAL PARTNERSHIP (4 audits + access)')}</h4>
-                                    <ul className="list-disc list-inside">
+                                    <h4 className="font-bold text-white mb-3">{t('investasi_page.commitment_details.annual.title', 'ANNUAL PARTNERSHIP (4 audits + access)')}</h4>
+                                    <ul className="list-disc list-inside space-y-2">
                                         {(t('investasi_page.commitment_details.annual.items', { returnObjects: true }) as string[]).map((item: string, i: number) => (
                                             <li key={i}>{item}</li>
                                         ))}
                                     </ul>
                                 </div>
-                                <div className="p-4 bg-zinc-800 rounded-lg">
-                                    <h5 className="font-bold text-white">{t('investasi_page.labels.savings_example', 'SAVINGS EXAMPLE (FORENSIC tier):')}</h5>
-                                    <ul className="list-disc list-inside">
+                                <div className="p-6 bg-[#BFA26A]/5 border border-[#BFA26A]/20 rounded-squircle-md">
+                                    <h5 className="font-black text-[#BFA26A] uppercase tracking-widest text-xs mb-3">{t('investasi_page.labels.savings_example', 'SAVINGS EXAMPLE (FORENSIC tier):')}</h5>
+                                    <ul className="list-disc list-inside space-y-2 text-[#BFA26A]/80 font-medium">
                                         <li>One-time: $3,500/audit</li>
                                         <li>Quarterly: $2,975/audit (save $525)</li>
                                         <li>Annual: $2,625/audit + access (save $875 + benefits)</li>
