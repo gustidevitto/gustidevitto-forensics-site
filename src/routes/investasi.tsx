@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
-import { ShieldCheck, Lock, Star } from "lucide-react"
+import { ShieldCheck, Lock, Star, ArrowRight } from "lucide-react"
 import { useTranslation } from 'react-i18next'
 import { HowFIPWorks } from "@/components/HowFIPWorks"
 import PricingModal from "@/components/PricingModal"
@@ -348,10 +348,16 @@ function InvestasiPage() {
                 <div className="container mx-auto max-w-4xl">
                     <div className="space-y-4">
                         <h2 className="text-3xl font-black text-center">{t('investasi_page.labels.analysis_title', 'Deeper Analysis')}</h2>
-                        <div className="border border-white/10 glass rounded-squircle-lg p-6 md:p-8">
-                            <h3 className="font-bold text-white uppercase tracking-widest text-sm mb-6">{t('investasi_page.labels.feature_comparison', 'See Detailed Feature Comparison')}</h3>
-                            <div className="overflow-x-auto -mx-6 md:mx-0 px-6 md:px-0 pb-4">
-                                <table className="w-full text-left min-w-[760px] border-collapse">
+                        <div className="border border-white/10 glass rounded-squircle-lg p-6 md:p-8 relative">
+                            <div className="flex items-center justify-between gap-4 mb-6">
+                                <h3 className="font-bold text-white uppercase tracking-widest text-sm">{t('investasi_page.labels.feature_comparison', 'See Detailed Feature Comparison')}</h3>
+                                <div className="md:hidden flex items-center shrink-0 text-[10px] text-white/60 uppercase tracking-widest font-bold bg-white/5 px-2 py-1 rounded-squircle-sm border border-white/10">
+                                    {t('global.swipe', 'Swipe')} <ArrowRight className="w-3 h-3 ml-1 animate-[pulse_2s_ease-in-out_infinite]" />
+                                </div>
+                            </div>
+                            <div className="overflow-x-auto -mx-6 md:mx-0 px-6 md:px-0 pb-4 relative">
+                                <div className="absolute top-0 right-0 bottom-4 w-12 bg-gradient-to-l from-black/20 to-transparent pointer-events-none md:hidden z-10" />
+                                <table className="w-full text-left min-w-[760px] border-collapse relative">
                                 <thead>
                                     <tr className="border-b border-white/10">
                                         <th className="p-3 text-muted-foreground font-bold text-xs uppercase tracking-wider">{t('investasi_page.labels.feature', 'Feature')}</th>
