@@ -100,18 +100,18 @@ function GetAccess() {
 
                         {/* Testimonial — inline quote, not a card */}
                         <blockquote className="border-l-2 border-[#BFA26A]/25 pl-6 py-2 space-y-3">
-                            <p className="text-white/55 text-sm leading-relaxed italic">
+                            <p className="text-white/60 text-sm leading-relaxed italic">
                                 <Trans i18nKey="get_access.testimonial_text">Previously, I thought my business was healthy because turnover kept rising. Turns out there was <strong className="text-red-400">$2,500/month</strong> leaking without me realizing it. FIP™ Protocol opened my eyes.</Trans>
                             </p>
                             <footer className="flex items-center gap-3">
                                 <div className="w-1.5 h-1.5 rounded-full bg-[#BFA26A]" />
-                                <div className="text-[10px] font-semibold text-white/30 uppercase tracking-widest">
+                                <div className="text-[10px] font-semibold text-white/40 uppercase tracking-widest">
                                     {t('get_access.testimonial_name')} — {t('get_access.testimonial_role')}
                                 </div>
                             </footer>
                         </blockquote>
 
-                        <div className="flex items-center gap-2 text-[10px] font-semibold text-white/20 uppercase tracking-widest">
+                        <div className="flex items-center gap-2 text-[10px] font-semibold text-white/40 uppercase tracking-widest">
                             <div className="w-1.5 h-1.5 rounded-full bg-[#0A84FF] animate-pulse" />
                             {t('get_access.guarantee')}
                         </div>
@@ -123,7 +123,7 @@ function GetAccess() {
                     <div className="w-full max-w-md space-y-10">
                         <div className="space-y-4">
                             <h1 className="text-2xl font-black tracking-tight">{t('get_access.form_title')}</h1>
-                            <p className="text-sm text-white/30">{t('get_access.form_subtitle')}</p>
+                            <p className="text-sm text-white/40">{t('get_access.form_subtitle')}</p>
                         </div>
 
                         {/* Capacity indicator */}
@@ -137,7 +137,7 @@ function GetAccess() {
                         {/* Form — minimal, no Card wrapper */}
                         <form onSubmit={handleSubmit} className="space-y-5">
                             <div className="space-y-2">
-                                <label htmlFor="name" className="text-[10px] font-semibold text-white/30 uppercase tracking-widest">{t('get_access.label_name')}</label>
+                                <label htmlFor="name" className="text-[10px] font-semibold text-white/40 uppercase tracking-widest">{t('get_access.label_name')}</label>
                                 <Input
                                     id="name"
                                     name="name"
@@ -146,7 +146,7 @@ function GetAccess() {
                                 />
                             </div>
                             <div className="space-y-2">
-                                <label htmlFor="phone" className="text-[10px] font-semibold text-white/30 uppercase tracking-widest">{t('get_access.label_phone')}</label>
+                                <label htmlFor="phone" className="text-[10px] font-semibold text-white/40 uppercase tracking-widest">{t('get_access.label_phone')}</label>
                                 <Input
                                     id="phone"
                                     name="phone"
@@ -154,10 +154,10 @@ function GetAccess() {
                                     placeholder={t('get_access.placeholder_phone')}
                                     required
                                 />
-                                <p className="text-[10px] text-white/20 font-medium">{t('get_access.phone_desc')}</p>
+                                <p className="text-[10px] text-white/40 font-medium">{t('get_access.phone_desc')}</p>
                             </div>
                             <div className="space-y-2">
-                                <label htmlFor="email" className="text-[10px] font-semibold text-white/30 uppercase tracking-widest">{t('get_access.label_email')}</label>
+                                <label htmlFor="email" className="text-[10px] font-semibold text-white/40 uppercase tracking-widest">{t('get_access.label_email')}</label>
                                 <Input
                                     id="email"
                                     name="email"
@@ -184,10 +184,10 @@ function GetAccess() {
 
                         {/* Trust */}
                         <div className="space-y-2 pt-4 border-t border-white/[0.05]">
-                            <p className="text-[10px] text-white/20 font-medium">
+                            <p className="text-[10px] text-white/40 font-medium">
                                 <Trans i18nKey="get_access.privacy_policy">By clicking "Continue", you agree to our <a href="/privacy" className="underline hover:text-[#BFA26A] transition-colors">Privacy Policy</a>.</Trans>
                             </p>
-                            <p className="text-[10px] text-white/15 font-medium">{t('get_access.ssl_text')}</p>
+                            <p className="text-[10px] text-white/40 font-medium">{t('get_access.ssl_text')}</p>
                         </div>
                     </div>
                 </div>

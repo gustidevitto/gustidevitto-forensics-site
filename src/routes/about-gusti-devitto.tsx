@@ -75,7 +75,7 @@ function AboutGustiDevitto() {
                     <div className="max-w-5xl">
                         <div className="flex items-center gap-4 mb-6">
                             <div className="w-8 h-px bg-[#0A84FF]/40" />
-                            <p className="text-[10px] text-white/30 font-medium tracking-[0.3em] uppercase">
+                            <p className="text-[10px] text-white/40 font-medium tracking-[0.3em] uppercase">
                                 {t('about_page.hero_badge')}
                             </p>
                         </div>
@@ -85,7 +85,7 @@ function AboutGustiDevitto() {
                                 <span className="text-[#0A84FF]">Precision Behind Numbers</span>
                             </Trans>
                         </h1>
-                        <p className="mt-8 text-lg md:text-xl text-white/45 max-w-xl leading-relaxed font-light">
+                        <p className="mt-8 text-lg md:text-xl text-white/60 max-w-xl leading-relaxed font-light">
                             <Trans i18nKey="about_page.hero_intro">Hello, I am <strong className="text-white">Gusti Devitto</strong>.</Trans>
                         </p>
                     </div>
@@ -98,14 +98,14 @@ function AboutGustiDevitto() {
                 <div className="max-w-6xl mx-auto">
                     <div className="grid lg:grid-cols-[2fr_1fr] gap-16 lg:gap-24 items-start">
                         {/* Prose */}
-                        <div className="space-y-10 text-white/55 text-lg leading-relaxed font-light">
+                        <div className="space-y-10 text-white/60 text-lg leading-relaxed font-light">
                             <p>
                                 <Trans i18nKey="about_page.hero_p1">Saya bukan akuntan pajak, dan saya bukan perencana keuangan konvensional. Saya adalah seorang <strong className="text-white font-bold">Financial Forensics Specialist</strong> yang berdedikasi membantu <em>founder</em> bisnis multi-outlet dan <em>brand owners</em> untuk membedah apa yang sebenarnya terjadi di balik laporan keuangan mereka.</Trans>
                             </p>
                             <p>
                                 <Trans i18nKey="about_page.hero_p2">Dalam dunia bisnis yang bergerak cepat, seringkali "bocor halus" tidak terlihat di permukaan. Fokus saya adalah menemukan kebocoran tersebut—apa yang saya sebut sebagai <strong className="text-white underline decoration-[#BFA26A] decoration-2 underline-offset-4">Phantom Costs</strong>—dan memperbaikinya sebelum menjadi pendarahan fatal.</Trans>
                             </p>
-                            <blockquote className="pl-6 border-l-2 border-[#0A84FF]/20 text-xl md:text-2xl text-white/70 font-light italic leading-snug py-4">
+                            <blockquote className="pl-6 border-l-2 border-[#0A84FF]/20 text-xl md:text-2xl text-white/60 font-light italic leading-snug py-4">
                                 {t('about_page.evolution_quote')}
                             </blockquote>
                             <p>
@@ -122,15 +122,15 @@ function AboutGustiDevitto() {
                                     { label: 'Focus', value: t('about_page.focus') },
                                 ].map(({ label, value }) => (
                                     <div key={label}>
-                                        <p className="text-[10px] font-medium text-white/20 uppercase tracking-[0.3em] mb-1">{label}</p>
-                                        <p className="text-sm text-white/65 font-medium">{value}</p>
+                                        <p className="text-[10px] font-medium text-white/40 uppercase tracking-[0.3em] mb-1">{label}</p>
+                                        <p className="text-sm text-white/60 font-medium">{value}</p>
                                     </div>
                                 ))}
                                 <div>
-                                    <p className="text-[10px] font-medium text-white/20 uppercase tracking-[0.3em] mb-1">Status</p>
+                                    <p className="text-[10px] font-medium text-white/40 uppercase tracking-[0.3em] mb-1">Status</p>
                                     <div className="flex items-center gap-2">
                                         <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-slow" />
-                                        <p className="text-sm text-white/65 font-medium">{t('about_page.auth_level')}</p>
+                                        <p className="text-sm text-white/60 font-medium">{t('about_page.auth_level')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@ function AboutGustiDevitto() {
                                         { label: 'Protocol', value: 'v4.00' },
                                     ].map(({ label, value }) => (
                                         <div key={label} className="flex justify-between items-baseline">
-                                            <span className="text-xs text-white/25">{label}</span>
+                                            <span className="text-xs text-white/40">{label}</span>
                                             <span className="text-sm font-bold text-[#BFA26A] font-mono">{value}</span>
                                         </div>
                                     ))}
@@ -166,7 +166,7 @@ function AboutGustiDevitto() {
                     <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.95] mb-16 max-w-3xl">
                         {t('about_page.evolution_title')}
                     </h2>
-                    <div className="space-y-8 max-w-2xl text-white/45 text-lg leading-relaxed font-light">
+                    <div className="space-y-8 max-w-2xl text-white/60 text-lg leading-relaxed font-light">
                         <p>
                             <Trans i18nKey="about_page.evolution_p1">Perjalanan saya tidak dimulai di ruang rapat korporat, melainkan dari lapangan. Saya mendirikan <strong className="text-white font-bold">LAPA</strong>, sebuah inisiatif yang awalnya menargetkan UMKM dan solopreneur rumahan.</Trans>
                         </p>
@@ -193,15 +193,15 @@ function AboutGustiDevitto() {
                         </p>
                         <div className="space-y-6 pt-4">
                             {[
-                                { num: '01', titleKey: 'about_page.card_anomaly_title', descKey: 'about_page.card_anomaly_desc', descComponents: { 1: <strong className="text-white/55" /> } },
-                                { num: '02', titleKey: 'about_page.card_cash_title', descKey: 'about_page.card_cash_desc', descComponents: { 1: <strong className="text-white/55 uppercase tracking-tighter" /> } },
-                                { num: '03', titleKey: 'about_page.card_eff_title', descKey: 'about_page.card_eff_desc', descComponents: { 1: <strong className="text-white/55" /> } },
+                                { num: '01', titleKey: 'about_page.card_anomaly_title', descKey: 'about_page.card_anomaly_desc', descComponents: { 1: <strong className="text-white/60" /> } },
+                                { num: '02', titleKey: 'about_page.card_cash_title', descKey: 'about_page.card_cash_desc', descComponents: { 1: <strong className="text-white/60 uppercase tracking-tighter" /> } },
+                                { num: '03', titleKey: 'about_page.card_eff_title', descKey: 'about_page.card_eff_desc', descComponents: { 1: <strong className="text-white/60" /> } },
                             ].map(({ num, titleKey, descKey, descComponents }) => (
                                 <div key={num} className="flex items-start gap-4">
                                     <span className="text-[#0A84FF] font-semibold text-xs mt-1.5 shrink-0 w-8">{num}</span>
                                     <div>
-                                        <h3 className="text-base font-bold text-white/85 mb-1">{t(titleKey)}</h3>
-                                        <p className="text-sm text-white/35 leading-relaxed">
+                                        <h3 className="text-base font-bold text-white/90 mb-1">{t(titleKey)}</h3>
+                                        <p className="text-sm text-white/40 leading-relaxed">
                                             <Trans i18nKey={descKey} components={descComponents} />
                                         </p>
                                     </div>
@@ -210,7 +210,7 @@ function AboutGustiDevitto() {
                         </div>
                         <div className="pt-6 border-t border-white/[0.05]">
                             <p className="text-[10px] font-semibold text-[#BFA26A]/50 uppercase tracking-[0.2em] mb-2">{t('about_page.proprietary_badge')}</p>
-                            <p className="text-sm text-white/35 leading-relaxed">
+                            <p className="text-sm text-white/40 leading-relaxed">
                                 <Trans i18nKey="about_page.proprietary_text" components={{ 1: <strong className="text-white/60" /> }} />
                             </p>
                         </div>
@@ -224,7 +224,7 @@ function AboutGustiDevitto() {
                         <div className="absolute inset-0 bg-gradient-to-r from-[#1c1c1e] via-[#1c1c1e]/30 to-transparent" />
                         <div className="absolute bottom-8 right-8 text-right">
                             <p className="text-[10px] font-semibold text-[#BFA26A]/60 uppercase tracking-[0.2em]">{t('about_page.visual_interface')}</p>
-                            <p className="text-[9px] font-medium text-white/15 uppercase tracking-[0.3em] mt-1">{t('about_page.neural_status')}</p>
+                            <p className="text-[9px] font-medium text-white/40 uppercase tracking-[0.3em] mt-1">{t('about_page.neural_status')}</p>
                         </div>
                     </div>
                 </div>
@@ -242,7 +242,7 @@ function AboutGustiDevitto() {
                         <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-[0.95] mb-8 md:text-right">
                             {t('about_page.why_surgeon_title')}
                         </h2>
-                        <div className="space-y-6 text-white/45 text-lg leading-relaxed font-light md:text-right">
+                        <div className="space-y-6 text-white/60 text-lg leading-relaxed font-light md:text-right">
                             <p>
                                 <Trans i18nKey="about_page.why_surgeon_p1" components={{ 1: <strong className="text-white" /> }} />
                             </p>
@@ -261,10 +261,10 @@ function AboutGustiDevitto() {
                         <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.9] tracking-tighter">
                             {t('about_page.final_cta_title')}
                         </h2>
-                        <p className="text-white/35 text-xl leading-relaxed max-w-lg font-light">
+                        <p className="text-white/40 text-xl leading-relaxed max-w-lg font-light">
                             {t('about_page.final_cta_p1')}
                         </p>
-                        <p className="text-white/65 text-xl font-medium italic">
+                        <p className="text-white/60 text-xl font-medium italic">
                             {t('about_page.final_cta_quote')}
                         </p>
                         <div className="pt-6">
@@ -288,11 +288,11 @@ function AboutGustiDevitto() {
                             <div className="flex items-center gap-3">
                                 <div className="w-1.5 h-1.5 rounded-full bg-[#BFA26A] animate-pulse-slow" />
                                 <div className="text-[10px] leading-tight">
-                                    <span className="text-white/25 uppercase tracking-widest block">VERIFIED BY</span>
+                                    <span className="text-white/40 uppercase tracking-widest block">VERIFIED BY</span>
                                     <span className="text-white font-bold uppercase tracking-widest">GUSTI DEVITTO</span>
                                 </div>
                             </div>
-                            <div className="text-[9px] font-medium text-white/12 uppercase tracking-[0.3em]">
+                            <div className="text-[9px] font-medium text-white/40 uppercase tracking-[0.3em]">
                                 FIP™ PROTOCOL V4.00
                             </div>
                         </div>

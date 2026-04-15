@@ -42,14 +42,14 @@ function ForensicsPillars() {
                 <div className="max-w-5xl relative z-10">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="w-8 h-px bg-[#BFA26A]/50" />
-                        <p className="text-[10px] text-white/30 font-medium tracking-[0.3em] uppercase">
+                        <p className="text-[10px] text-white/40 font-medium tracking-[0.3em] uppercase">
                             {t('pillars_page.badge')}
                         </p>
                     </div>
                     <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-black tracking-tighter leading-[0.9] uppercase max-w-4xl">
                         {t('pillars_page.title')}
                     </h1>
-                    <p className="mt-6 text-lg md:text-xl text-white/35 max-w-2xl font-light leading-relaxed">
+                    <p className="mt-6 text-lg md:text-xl text-white/40 max-w-2xl font-light leading-relaxed">
                         {t('pillars_page.subtitle')}
                     </p>
                 </div>
@@ -118,22 +118,22 @@ function ForensicsPillars() {
 
                                 {/* Title + Layer1 */}
                                 <div className="flex-1 min-w-0">
-                                    <h3 className="text-base md:text-lg font-semibold text-white/70 group-hover:text-white transition-colors truncate">
+                                    <h3 className="text-base md:text-lg font-semibold text-white/60 group-hover:text-white transition-colors truncate">
                                         {t(`pillars.${pillar.id}.title`)}
                                     </h3>
-                                    <p className="text-xs text-white/25 mt-0.5 truncate font-light">
+                                    <p className="text-xs text-white/40 mt-0.5 truncate font-light">
                                         {t(`pillars.${pillar.id}.layer1`)}
                                     </p>
                                 </div>
 
                                 {/* Definition — hidden on mobile */}
-                                <p className="hidden lg:block text-sm text-white/20 max-w-xs truncate shrink-0 group-hover:text-white/35 transition-colors font-light">
+                                <p className="hidden lg:block text-sm text-white/40 max-w-xs truncate shrink-0 group-hover:text-white/40 transition-colors font-light">
                                     {t(`pillars.${pillar.id}.definition`)}
                                 </p>
 
                                 {/* Arrow */}
                                 <div className="w-7 h-7 rounded-squircle-sm glass flex items-center justify-center shrink-0 group-hover:glass-blue transition-all duration-200">
-                                    <ArrowRight className="w-3.5 h-3.5 text-white/20 group-hover:text-[#0A84FF] group-hover:translate-x-0.5 transition-all" strokeWidth={2} />
+                                    <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-[#0A84FF] group-hover:translate-x-0.5 transition-all" strokeWidth={2} />
                                 </div>
                             </Link>
                         ))}
@@ -148,7 +148,7 @@ function ForensicsPillars() {
                         <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-tight">
                             {t('pillars_page.cta_title')}
                         </h2>
-                        <p className="text-white/35 text-lg leading-relaxed font-light italic max-w-xl">
+                        <p className="text-white/40 text-lg leading-relaxed font-light italic max-w-xl">
                             {t('pillars_page.cta_quote')}
                         </p>
                         <div className="flex flex-wrap gap-4 pt-4">

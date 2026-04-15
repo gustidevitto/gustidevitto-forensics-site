@@ -94,8 +94,8 @@ function VerdictPage() {
             {/* ═══ Disclaimer ═══ */}
             <section className="py-12 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] bg-[#161618]">
                 <div className="max-w-3xl mx-auto">
-                    <p className="text-sm text-white/30 leading-relaxed italic">
-                        <strong className="text-white/50 not-italic">{t('verdict_page.disclaimer_title')}</strong> {t('verdict_page.disclaimer_text')}
+                    <p className="text-sm text-white/40 leading-relaxed italic">
+                        <strong className="text-white/60 not-italic">{t('verdict_page.disclaimer_title')}</strong> {t('verdict_page.disclaimer_text')}
                     </p>
                 </div>
             </section>

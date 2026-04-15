@@ -16,7 +16,7 @@ const buttonVariants = cva(
                     "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-squircle-md",
                 // Outline — glass style
                 outline:
-                    "glass border border-white/10 text-white/80 hover:text-white hover:border-white/20 rounded-squircle-md",
+                    "glass border border-white/10 text-white/90 hover:text-white hover:border-white/20 rounded-squircle-md",
                 // Secondary — muted surface
                 secondary:
                     "bg-white/[0.06] text-white hover:bg-white/[0.10] rounded-squircle-md border border-white/[0.08]",

@@ -179,17 +179,17 @@ function NetworkIntelligencePage() {
                         {/* Data strip — no monospace, semibold only */}
                         <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-[#BFA26A] uppercase tracking-widest">
                             <div className="flex flex-col">
-                                <span className="text-[10px] text-white/20 font-medium mb-1">{t('network_intelligence.social_nodes')}</span>
+                                <span className="text-[10px] text-white/40 font-medium mb-1">{t('network_intelligence.social_nodes')}</span>
                                 <span>{t('network_intelligence.social_nodes_val')}</span>
                             </div>
-                            <span className="text-white/10 hidden md:block">·</span>
+                            <span className="text-white/40 hidden md:block">·</span>
                             <div className="flex flex-col">
-                                <span className="text-[10px] text-white/20 font-medium mb-1">{t('network_intelligence.social_leakage')}</span>
+                                <span className="text-[10px] text-white/40 font-medium mb-1">{t('network_intelligence.social_leakage')}</span>
                                 <span>{t('network_intelligence.social_leakage_val')}</span>
                             </div>
-                            <span className="text-white/10 hidden md:block">·</span>
+                            <span className="text-white/40 hidden md:block">·</span>
                             <div className="flex flex-col">
-                                <span className="text-[10px] text-white/20 font-medium mb-1">{t('network_intelligence.social_compliance')}</span>
+                                <span className="text-[10px] text-white/40 font-medium mb-1">{t('network_intelligence.social_compliance')}</span>
                                 <span>{t('network_intelligence.social_compliance_val')}</span>
                             </div>
                         </div>
@@ -201,7 +201,7 @@ function NetworkIntelligencePage() {
                                     <ArrowRight className="ml-3 w-5 h-5 flex-shrink-0" strokeWidth={2} />
                                 </Button>
                             </Link>
-                            <a href="#benefits" className="text-xs font-semibold text-white/25 hover:text-white/60 transition-colors uppercase tracking-[0.18em]">
+                            <a href="#benefits" className="text-xs font-semibold text-white/40 hover:text-white/60 transition-colors uppercase tracking-[0.18em]">
                                 {t('network_intelligence.hero_meta')}
                             </a>
                         </div>
@@ -217,7 +217,7 @@ function NetworkIntelligencePage() {
                         {['01','02','03'].map((num, i) => (
                             <div key={num} className="p-6 glass rounded-squircle-lg">
                                 <span className="text-[#0A84FF] font-semibold text-sm block mb-4">{num}</span>
-                                <p className="text-white/55 font-light text-base leading-relaxed">{t(`network_intelligence.why_reports_p${i+1}`)}</p>
+                                <p className="text-white/60 font-light text-base leading-relaxed">{t(`network_intelligence.why_reports_p${i+1}`)}</p>
                             </div>
                         ))}
                     </div>
@@ -272,7 +272,7 @@ function NetworkIntelligencePage() {
                                 {t('network_intelligence.master_lab_badge')}
                             </div>
                             <h4 className="text-xl md:text-2xl font-black text-white/90 uppercase tracking-tight">{t('network_intelligence.master_lab_title')}</h4>
-                            <p className="text-white/50 text-sm mt-2 max-w-lg font-light">{t('network_intelligence.master_lab_desc')}</p>
+                            <p className="text-white/60 text-sm mt-2 max-w-lg font-light">{t('network_intelligence.master_lab_desc')}</p>
                         </div>
                         {/* Hover Metadata Scan Effect */}
                         <div className="absolute inset-x-0 top-0 h-[1px] bg-amber-500/40 -translate-y-full group-hover:animate-scan-slow" />
@@ -345,7 +345,7 @@ function NetworkIntelligencePage() {
                                     {t('network_intelligence.cpa_partner_badge')}
                                 </div>
                                 <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight leading-tight">{t('network_intelligence.cpa_partner_title')}</h3>
-                                <p className="text-white/50 leading-relaxed text-lg font-light">
+                                <p className="text-white/60 leading-relaxed text-lg font-light">
                                     <Trans
                                         i18nKey="network_intelligence.cpa_partner_desc"
                                         components={{ 1: <span className="text-white font-medium" /> }}
@@ -393,25 +393,25 @@ function NetworkIntelligencePage() {
 
                                     <div className="mb-6">
                                         <h3 className={`text-2xl font-black ${theme.accentText} tracking-tight mb-1 uppercase`}>{tier.name}</h3>
-                                        <p className="text-white/35 font-light text-sm">{tier.tagline}</p>
+                                        <p className="text-white/40 font-light text-sm">{tier.tagline}</p>
                                     </div>
 
                                     <div className="space-y-3 my-6 flex-grow">
                                         <div className="p-4 glass rounded-squircle-sm flex items-center justify-between">
                                             <div>
-                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/30 mb-1">{t('investasi_page.labels.one_time')}</h4>
+                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/40 mb-1">{t('investasi_page.labels.one_time')}</h4>
                                                 <span className="text-xl font-bold text-white font-mono">${tier.pricing.oneTime.toLocaleString()}</span>
                                             </div>
                                             <Button variant="outline" size="sm" onClick={() => openModal(tier, 'one-time')}>{t('investasi_page.labels.select')}</Button>
                                         </div>
                                         <div className="p-4 glass rounded-squircle-sm flex items-center justify-between">
                                             <div>
-                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/30 mb-1">{t('investasi_page.labels.quarterly')}</h4>
+                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/40 mb-1">{t('investasi_page.labels.quarterly')}</h4>
                                                 <div className="flex items-baseline gap-2">
                                                     <span className="text-xl font-bold text-white font-mono">${tier.pricing.quarterly.total.toLocaleString()}</span>
-                                                    <span className="text-xs text-white/20">Total</span>
+                                                    <span className="text-xs text-white/40">Total</span>
                                                 </div>
-                                                <span className="text-xs text-white/20">${tier.pricing.quarterly.perAudit.toLocaleString()} / audit · 3x</span>
+                                                <span className="text-xs text-white/40">${tier.pricing.quarterly.perAudit.toLocaleString()} / audit · 3x</span>
                                             </div>
                                             <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')}>{t('investasi_page.labels.select')}</Button>
                                         </div>
@@ -421,7 +421,7 @@ function NetworkIntelligencePage() {
                                                 <h4 className={`font-semibold uppercase tracking-widest text-xs ${theme.accentText} mb-1`}>{t('investasi_page.labels.annual')}</h4>
                                                 <div className="flex items-baseline gap-2">
                                                     <span className="text-xl font-bold text-white font-mono">${tier.pricing.annual.total.toLocaleString()}</span>
-                                                    <span className="text-xs text-white/20">/ Year</span>
+                                                    <span className="text-xs text-white/40">/ Year</span>
                                                 </div>
                                                 <span className="text-xs text-emerald-400 font-semibold mt-1 block">Strategic Retainer Access</span>
                                             </div>
@@ -429,13 +429,13 @@ function NetworkIntelligencePage() {
                                         </div>
                                     </div>
                                     <div className="pt-5 border-t border-white/[0.05]">
-                                        <p className="text-xs font-semibold uppercase tracking-widest text-white/20 mb-3">{t('investasi_page.labels.key_features')}</p>
+                                        <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-3">{t('investasi_page.labels.key_features')}</p>
                                         <ul className="space-y-3">
                                             {tier.features.included.slice(0, 10).map((featureObj: any, i: number) => {
                                                 const isHighlighted = featureObj.highlight;
                                                 const text = typeof featureObj === 'string' ? featureObj : t(featureObj.key, featureObj.default);
                                                 return (
-                                                    <li key={i} className={`flex items-start gap-3 text-sm ${isHighlighted ? 'glass-gold -mx-2 px-2 py-1 rounded-squircle-sm border-l-2 border-[#BFA26A]/25' : 'text-white/45'}`}>
+                                                    <li key={i} className={`flex items-start gap-3 text-sm ${isHighlighted ? 'glass-gold -mx-2 px-2 py-1 rounded-squircle-sm border-l-2 border-[#BFA26A]/25' : 'text-white/60'}`}>
                                                         {isHighlighted
                                                             ? <Star className="w-3.5 h-3.5 text-[#BFA26A] shrink-0 mt-0.5 fill-[#BFA26A]" strokeWidth={1} />
                                                             : <ShieldCheck className={`w-3.5 h-3.5 ${theme.accentText} shrink-0 mt-0.5`} strokeWidth={1.5} />
@@ -446,10 +446,10 @@ function NetworkIntelligencePage() {
                                             })}
                                         </ul>
                                         <div className="mt-4 p-3 glass rounded-squircle-sm">
-                                            <p className="font-semibold text-xs uppercase tracking-widest text-white/20 mb-2">{t('investasi_page.labels.best_for')}</p>
+                                            <p className="font-semibold text-xs uppercase tracking-widest text-white/40 mb-2">{t('investasi_page.labels.best_for')}</p>
                                             <ul className="space-y-1">
                                                 {tier.bestFor.map((item: string, i: number) => (
-                                                    <li key={i} className="text-xs text-white/30 flex items-center gap-2">
+                                                    <li key={i} className="text-xs text-white/40 flex items-center gap-2">
                                                         <span className={`w-1 h-1 rounded-full ${theme.accentBg} opacity-60`} />
                                                         {item}
                                                     </li>
@@ -498,7 +498,7 @@ function NetworkIntelligencePage() {
                         </div>
                         <div className="glass-elevated rounded-squircle-sm px-4 py-3 space-y-0.5">
                             <p className="text-sm font-bold text-white">Gusti Devitto</p>
-                            <p className="text-[10px] font-medium text-white/30 uppercase tracking-[0.2em]">{t('entrance_gate.hero_subtitle')}</p>
+                            <p className="text-[10px] font-medium text-white/40 uppercase tracking-[0.2em]">{t('entrance_gate.hero_subtitle')}</p>
                         </div>
                     </div>
                 </div>

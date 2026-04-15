@@ -24,7 +24,7 @@ export function LanguageSlider() {
                 onClick={() => changeLanguage('en')}
                 className={cn(
                     "flex-1 text-[10px] font-black tracking-widest uppercase z-10 transition-colors duration-300",
-                    currentLang === 'en' ? "text-black" : "text-white/40 hover:text-white/70"
+                    currentLang === 'en' ? "text-black" : "text-white/40 hover:text-white/60"
                 )}
             >
                 ENGLISH
@@ -35,7 +35,7 @@ export function LanguageSlider() {
                 onClick={() => changeLanguage('id')}
                 className={cn(
                     "flex-1 text-[10px] font-black tracking-widest uppercase z-10 transition-colors duration-300",
-                    currentLang === 'id' ? "text-black" : "text-white/40 hover:text-white/70"
+                    currentLang === 'id' ? "text-black" : "text-white/40 hover:text-white/60"
                 )}
             >
                 BAHASA

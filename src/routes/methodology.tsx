@@ -65,7 +65,7 @@ function MethodologyPage() {
                     </div>
 
                     {/* Right — prose */}
-                    <div className="text-white/50 text-lg leading-relaxed font-light">
+                    <div className="text-white/60 text-lg leading-relaxed font-light">
                         <Trans i18nKey="methodology.definition_text">
                             Financial Forensics is a diagnostic discipline that combines operational data analysis, statistical patterns, and cash flow audits to detect <strong className="text-white">Phantom Costs</strong> (invisible leaks) and systemic inefficiencies. Unlike conventional audits, this discipline focuses not just on "what" happened in the past, but "why" leakage occurred and "how" to stop it in <em className="text-amber-500/80">real-time</em>.
                         </Trans>
@@ -92,7 +92,7 @@ function MethodologyPage() {
                                 <div className="w-3 h-3 rounded-full bg-green-500" />
                                 <span className="text-green-400 font-black text-xs uppercase tracking-widest">{t('methodology.verdict_fortress_title')}</span>
                             </div>
-                            <p className="text-white/50 leading-relaxed">
+                            <p className="text-white/60 leading-relaxed">
                                 {t('methodology.verdict_fortress_desc')}
                             </p>
                         </div>
@@ -103,7 +103,7 @@ function MethodologyPage() {
                                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
                                 <span className="text-yellow-400 font-black text-xs uppercase tracking-widest">{t('methodology.verdict_vulnerable_title')}</span>
                             </div>
-                            <p className="text-white/50 leading-relaxed md:text-right">
+                            <p className="text-white/60 leading-relaxed md:text-right">
                                 {t('methodology.verdict_vulnerable_desc')}
                             </p>
                         </div>
@@ -114,7 +114,7 @@ function MethodologyPage() {
                                 <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
                                 <span className="text-red-400 font-black text-xs uppercase tracking-widest">{t('methodology.verdict_critical_title')}</span>
                             </div>
-                            <p className="text-white/50 leading-relaxed">
+                            <p className="text-white/60 leading-relaxed">
                                 {t('methodology.verdict_critical_desc')}
                             </p>
                         </div>
@@ -139,8 +139,8 @@ function MethodologyPage() {
                         {/* Row 1: Accounting */}
                         <div className="grid md:grid-cols-[200px_1fr_1fr] gap-4 md:gap-8 py-8 items-start">
                             <h3 className="text-sm font-bold text-white/40 uppercase tracking-widest">{t('methodology.accounting.title')}</h3>
-                            <p className="text-sm text-white/50 leading-relaxed">{t('methodology.accounting.desc')}</p>
-                            <div className="text-xs text-white/30 italic space-y-1">
+                            <p className="text-sm text-white/60 leading-relaxed">{t('methodology.accounting.desc')}</p>
+                            <div className="text-xs text-white/40 italic space-y-1">
                                 <p>{t('methodology.accounting.f1')}</p>
                                 <p>{t('methodology.accounting.f2')}</p>
                                 <p>{t('methodology.accounting.f3')}</p>
@@ -150,7 +150,7 @@ function MethodologyPage() {
                         {/* Row 2: Forensics — highlighted */}
                         <div className="grid md:grid-cols-[200px_1fr_1fr] gap-4 md:gap-8 py-8 items-start glass-gold -mx-4 px-4 md:-mx-8 md:px-8 border-l-2 border-[#BFA26A]/30">
                             <h3 className="text-sm font-bold text-[#BFA26A] uppercase tracking-widest">{t('methodology.forensics.title')}</h3>
-                            <p className="text-sm text-white/70 leading-relaxed font-medium">{t('methodology.forensics.desc')}</p>
+                            <p className="text-sm text-white/60 leading-relaxed font-medium">{t('methodology.forensics.desc')}</p>
                             <div className="text-xs text-[#BFA26A]/60 italic space-y-1 font-medium">
                                 <p>{t('methodology.forensics.f1')}</p>
                                 <p>{t('methodology.forensics.f2')}</p>
@@ -161,8 +161,8 @@ function MethodologyPage() {
                         {/* Row 3: Consulting */}
                         <div className="grid md:grid-cols-[200px_1fr_1fr] gap-4 md:gap-8 py-8 items-start">
                             <h3 className="text-sm font-bold text-white/40 uppercase tracking-widest">{t('methodology.consulting.title')}</h3>
-                            <p className="text-sm text-white/50 leading-relaxed">{t('methodology.consulting.desc')}</p>
-                            <div className="text-xs text-white/30 italic space-y-1">
+                            <p className="text-sm text-white/60 leading-relaxed">{t('methodology.consulting.desc')}</p>
+                            <div className="text-xs text-white/40 italic space-y-1">
                                 <p>{t('methodology.consulting.f1')}</p>
                                 <p>{t('methodology.consulting.f2')}</p>
                                 <p>{t('methodology.consulting.f3')}</p>
@@ -183,7 +183,7 @@ function MethodologyPage() {
                     <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4">
                         {t('methodology.loop_title')}
                     </h2>
-                    <p className="text-white/25 text-sm font-semibold uppercase tracking-widest mb-20">
+                    <p className="text-white/40 text-sm font-semibold uppercase tracking-widest mb-20">
                         {t('methodology.loop_subtitle')}
                     </p>
 
@@ -198,7 +198,7 @@ function MethodologyPage() {
                                     <span className="w-2 h-2 rounded-full bg-[#0A84FF] relative z-10" />
                                     01
                                 </div>
-                                <h3 className="text-lg font-bold text-white/85 mb-3">{t('methodology.loop_stage1_title')}</h3>
+                                <h3 className="text-lg font-bold text-white/90 mb-3">{t('methodology.loop_stage1_title')}</h3>
                                 <p className="text-sm text-white/40 leading-relaxed">{t('methodology.loop_stage1_desc')}</p>
                             </div>
 
@@ -207,7 +207,7 @@ function MethodologyPage() {
                                     <span className="w-2 h-2 rounded-full bg-[#0A84FF] relative z-10" />
                                     02
                                 </div>
-                                <h3 className="text-lg font-bold text-white/85 mb-3">{t('methodology.loop_stage2_title')}</h3>
+                                <h3 className="text-lg font-bold text-white/90 mb-3">{t('methodology.loop_stage2_title')}</h3>
                                 <p className="text-sm text-white/40 leading-relaxed">{t('methodology.loop_stage2_desc')}</p>
                             </div>
 
@@ -216,7 +216,7 @@ function MethodologyPage() {
                                     <span className="w-2 h-2 rounded-full bg-[#0A84FF] relative z-10" />
                                     03
                                 </div>
-                                <h3 className="text-lg font-bold text-white/85 mb-3">{t('methodology.loop_stage3_title')}</h3>
+                                <h3 className="text-lg font-bold text-white/90 mb-3">{t('methodology.loop_stage3_title')}</h3>
                                 <p className="text-sm text-white/40 leading-relaxed">{t('methodology.loop_stage3_desc')}</p>
                             </div>
                         </div>
@@ -231,7 +231,7 @@ function MethodologyPage() {
                         <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-tight">
                             {t('attribution.title')}
                         </h2>
-                        <p className="text-white/50 text-lg leading-relaxed font-light italic max-w-xl">
+                        <p className="text-white/60 text-lg leading-relaxed font-light italic max-w-xl">
                             {t('attribution.text')}
                         </p>
                         <div className="flex flex-wrap gap-4 pt-4">
@@ -245,7 +245,7 @@ function MethodologyPage() {
                     </div>
 
                     <div className="shrink-0 hidden md:block">
-                        <div className="text-[9px] font-medium text-white/8 uppercase tracking-[0.4em] space-y-1 text-right">
+                        <div className="text-[9px] font-medium text-white/40 uppercase tracking-[0.4em] space-y-1 text-right">
                             <p>FIP™ PROTOCOL V4.00</p>
                             <p>© 2026 GUSTI DEVITTO</p>
                             <p>ALL RIGHTS RESERVED</p>

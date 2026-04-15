@@ -164,16 +164,16 @@ function SingleEntityPage() {
                         </h1>
 
                         {/* Subtitle */}
-                        <p className="mt-8 text-xl md:text-2xl text-white/45 leading-relaxed max-w-2xl font-light">
+                        <p className="mt-8 text-xl md:text-2xl text-white/60 leading-relaxed max-w-2xl font-light">
                             {t('single_entity.hero_desc')}
                         </p>
 
                         {/* Data strip — NO monospace, just semibold */}
                         <div className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold text-[#BFA26A] uppercase tracking-widest">
                             <span>{t('single_entity.social_leaks_val')} {t('single_entity.social_leaks')}</span>
-                            <span className="text-white/15">/</span>
+                            <span className="text-white/40">/</span>
                             <span>{t('single_entity.social_verdict_val')} {t('single_entity.social_verdict')}</span>
-                            <span className="text-white/15">/</span>
+                            <span className="text-white/40">/</span>
                             <span>{t('single_entity.social_diagnosed_val')} {t('single_entity.social_diagnosed')}</span>
                         </div>
 
@@ -185,7 +185,7 @@ function SingleEntityPage() {
                                     <ArrowRight className="ml-2 w-4 h-4 flex-shrink-0" strokeWidth={2} />
                                 </Button>
                             </Link>
-                            <a href="#benefits" className="hidden sm:block text-sm font-semibold text-white/25 hover:text-white/60 transition-colors uppercase tracking-[0.12em]">
+                            <a href="#benefits" className="hidden sm:block text-sm font-semibold text-white/40 hover:text-white/60 transition-colors uppercase tracking-[0.12em]">
                                 {t('single_entity.cta_see_catch')}
                             </a>
                         </div>
@@ -231,11 +231,11 @@ function SingleEntityPage() {
                             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                             <div className="space-y-8">
                                 <div>
-                                    <label className="text-[10px] font-semibold uppercase tracking-widest text-white/35 mb-3 block">
+                                    <label className="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-3 block">
                                         Enter your monthly revenue
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl font-mono text-white/25">$</span>
+                                        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl font-mono text-white/40">$</span>
                                         <Input
                                             type="number"
                                             placeholder="e.g. 150,000"
@@ -248,10 +248,10 @@ function SingleEntityPage() {
                                 <div className="space-y-3">
                                     <div className="p-5 glass rounded-squircle-sm flex items-center justify-between">
                                         <div>
-                                            <p className="text-[10px] font-semibold uppercase tracking-widest text-white/30 mb-1">Est. Daily Leakage</p>
-                                            <p className="text-xl font-bold text-white/85 font-mono">${(networkSize * 0.0006).toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
+                                            <p className="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-1">Est. Daily Leakage</p>
+                                            <p className="text-xl font-bold text-white/90 font-mono">${(networkSize * 0.0006).toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
                                         </div>
-                                        <ArrowRight className="w-4 h-4 text-white/10" />
+                                        <ArrowRight className="w-4 h-4 text-white/40" />
                                     </div>
 
                                     <div className="p-6 glass-blue rounded-squircle-sm">
@@ -259,7 +259,7 @@ function SingleEntityPage() {
                                         <p className="text-4xl font-bold text-white tracking-tight font-mono">
                                             $<span className="text-white/90">{(networkSize * 0.018 * 12).toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
                                         </p>
-                                        <p className="text-[10px] font-medium text-white/25 mt-3 uppercase tracking-widest">
+                                        <p className="text-[10px] font-medium text-white/40 mt-3 uppercase tracking-widest">
                                             *Based on avg 1.8% trapped cost rate
                                         </p>
                                     </div>
@@ -278,7 +278,7 @@ function SingleEntityPage() {
                         {['01', '02', '03'].map((num, i) => (
                             <div key={i} className="p-6 glass rounded-squircle-lg">
                                 <span className="text-[#0A84FF] font-semibold text-sm block mb-4">{num}</span>
-                                <p className="text-white/70 font-light text-base leading-relaxed">
+                                <p className="text-white/60 font-light text-base leading-relaxed">
                                     {t(`single_entity.why_reports_p${i + 1}`)}
                                 </p>
                             </div>
@@ -303,7 +303,7 @@ function SingleEntityPage() {
                             <div className="w-12 h-px bg-[#0A84FF]/20" />
                         </div>
                         <h3 className="text-2xl md:text-3xl font-black mb-4 leading-tight">{t('single_entity.benefit1_title')}</h3>
-                        <div className="text-white/55 leading-relaxed text-lg">
+                        <div className="text-white/60 leading-relaxed text-lg">
                             <Trans i18nKey="single_entity.benefit1_desc" components={{ 1: <span className="text-white font-bold" /> }} />
                         </div>
                     </div>
@@ -311,7 +311,7 @@ function SingleEntityPage() {
                     {/* FAQ 1 */}
                     <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-[#0A84FF]/15 py-2">
                         <p className="text-xs font-semibold text-[#BFA26A]/60 mb-3 uppercase tracking-widest">{t('faq.q1')}</p>
-                        <p className="text-xl md:text-2xl text-white/85 font-light leading-relaxed">
+                        <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
                             " <Trans i18nKey="faq.a1" components={{ 1: <strong className="text-white font-bold" />, br: <br /> }} /> "
                         </p>
                     </div>
@@ -324,7 +324,7 @@ function SingleEntityPage() {
                             <div className="w-12 h-px bg-[#0A84FF]/20 md:hidden" />
                         </div>
                         <h3 className="text-2xl md:text-3xl font-black mb-4 md:text-right leading-tight">{t('single_entity.benefit2_title')}</h3>
-                        <div className="text-white/55 leading-relaxed text-lg md:text-right">
+                        <div className="text-white/60 leading-relaxed text-lg md:text-right">
                             <Trans i18nKey="single_entity.benefit2_desc" components={{ 1: <span className="text-white font-bold" /> }} />
                         </div>
                     </div>
@@ -335,7 +335,7 @@ function SingleEntityPage() {
                         <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#161618] to-transparent pointer-events-none" />
                         <div className="absolute bottom-6 left-6 md:left-12">
                             <p className="text-[10px] font-semibold text-[#BFA26A] mb-2 uppercase tracking-widest">{t('single_entity.benefits_img_badge')}</p>
-                            <p className="text-sm md:text-base text-white/85 font-bold">{t('single_entity.benefits_img_text')}</p>
+                            <p className="text-sm md:text-base text-white/90 font-bold">{t('single_entity.benefits_img_text')}</p>
                         </div>
                         <div className="absolute top-0 right-12 md:right-32 w-px h-full bg-gradient-to-b from-[#BFA26A]/0 via-[#BFA26A]/15 to-[#BFA26A]/0" />
                     </div>
@@ -347,7 +347,7 @@ function SingleEntityPage() {
                             <div className="w-12 h-px bg-[#0A84FF]/20" />
                         </div>
                         <h3 className="text-2xl md:text-3xl font-black mb-4 leading-tight">{t('single_entity.benefit3_title')}</h3>
-                        <div className="text-white/55 leading-relaxed text-lg">
+                        <div className="text-white/60 leading-relaxed text-lg">
                             <Trans i18nKey="single_entity.benefit3_desc" components={{ 1: <span className="text-white font-bold" /> }} />
                         </div>
                     </div>
@@ -355,7 +355,7 @@ function SingleEntityPage() {
                     {/* FAQ 2 */}
                     <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-[#0A84FF]/15 py-2">
                         <p className="text-xs font-semibold text-[#BFA26A]/60 mb-3 uppercase tracking-widest">{t('faq.q2')}</p>
-                        <p className="text-xl md:text-2xl text-white/85 font-light leading-relaxed">
+                        <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
                             " <Trans i18nKey="faq.a2" components={{ 1: <strong className="text-white font-bold" />, br: <br /> }} /> "
                         </p>
                     </div>
@@ -368,7 +368,7 @@ function SingleEntityPage() {
                             <div className="w-12 h-px bg-[#0A84FF]/20 md:hidden" />
                         </div>
                         <h3 className="text-2xl md:text-3xl font-black mb-4 md:text-right leading-tight">{t('single_entity.benefit4_title')}</h3>
-                        <div className="text-white/55 leading-relaxed text-lg md:text-right">
+                        <div className="text-white/60 leading-relaxed text-lg md:text-right">
                             <Trans i18nKey="single_entity.benefit4_desc" components={{ 1: <span className="text-white font-bold" /> }} />
                         </div>
                     </div>
@@ -401,9 +401,9 @@ function SingleEntityPage() {
                                         {/* One-Time */}
                                         <div className="p-4 glass rounded-squircle-sm flex items-center justify-between">
                                             <div className="text-left">
-                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/35 mb-1">One-Time Audit</h4>
+                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/40 mb-1">One-Time Audit</h4>
                                                 <span className="text-xl font-bold text-white">${tier.pricing.oneTime.toLocaleString()}</span>
-                                                <span className="text-xs text-white/25 block">Single Comprehensive Audit</span>
+                                                <span className="text-xs text-white/40 block">Single Comprehensive Audit</span>
                                             </div>
                                             <Button variant="outline" size="sm" onClick={() => openModal(tier, 'one-time')}>Select</Button>
                                         </div>
@@ -411,12 +411,12 @@ function SingleEntityPage() {
                                         {/* Quarterly */}
                                         <div className="p-4 glass rounded-squircle-sm flex items-center justify-between">
                                             <div className="text-left">
-                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/35 mb-1">Quarterly Program</h4>
+                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/40 mb-1">Quarterly Program</h4>
                                                 <div className="flex items-baseline gap-2">
                                                     <span className="text-xl font-bold text-white">${tier.pricing.quarterly.total.toLocaleString()}</span>
-                                                    <span className="text-xs text-white/25">Total</span>
+                                                    <span className="text-xs text-white/40">Total</span>
                                                 </div>
-                                                <span className="text-xs text-white/25">${tier.pricing.quarterly.perAudit.toLocaleString()} / audit · 3x Monthly</span>
+                                                <span className="text-xs text-white/40">${tier.pricing.quarterly.perAudit.toLocaleString()} / audit · 3x Monthly</span>
                                                 <span className="text-xs text-emerald-400 font-semibold block mt-1">Save ${(tier.pricing.oneTime * 3 - tier.pricing.quarterly.total).toLocaleString()}</span>
                                             </div>
                                             <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')}>Select</Button>
@@ -429,9 +429,9 @@ function SingleEntityPage() {
                                                 <h4 className={`font-semibold uppercase tracking-widest text-xs ${theme.accentText} mb-1`}>Annual Partnership</h4>
                                                 <div className="flex items-baseline gap-2">
                                                     <span className="text-xl font-bold text-white">${tier.pricing.annual.total.toLocaleString()}</span>
-                                                    <span className="text-xs text-white/25">/ Year</span>
+                                                    <span className="text-xs text-white/40">/ Year</span>
                                                 </div>
-                                                <span className="text-xs text-white/25">${tier.pricing.annual.perAudit.toLocaleString()} / audit · 4x Quarterly</span>
+                                                <span className="text-xs text-white/40">${tier.pricing.annual.perAudit.toLocaleString()} / audit · 4x Quarterly</span>
                                                 <span className="text-xs text-emerald-400 font-semibold block mt-1">Save ${(tier.pricing.oneTime * 4 - tier.pricing.annual.total).toLocaleString()} + Benefits</span>
                                             </div>
                                             <Button size="sm" className={`${theme.accentBg} text-black hover:brightness-110 border-none font-bold`} onClick={() => openModal(tier, 'annual')}>Select</Button>
@@ -440,13 +440,13 @@ function SingleEntityPage() {
 
                                     {/* Features */}
                                     <div className="pt-5 border-t border-white/[0.05]">
-                                        <p className="text-xs font-semibold uppercase tracking-widest text-white/25 mb-3">Key Features</p>
+                                        <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-3">Key Features</p>
                                         <ul className="space-y-3">
                                             {tier.features.included.slice(0, 10).map((featureObj: any, i: number) => {
                                                 const isHighlighted = featureObj.highlight;
                                                 const text = typeof featureObj === 'string' ? featureObj : t(featureObj.key, featureObj.default);
                                                 return (
-                                                    <li key={i} className={`flex items-start gap-3 text-sm ${isHighlighted ? 'glass-gold -mx-2 px-2 py-1 rounded-squircle-sm border-l-2 border-[#BFA26A]/25' : 'text-white/50'}`}>
+                                                    <li key={i} className={`flex items-start gap-3 text-sm ${isHighlighted ? 'glass-gold -mx-2 px-2 py-1 rounded-squircle-sm border-l-2 border-[#BFA26A]/25' : 'text-white/60'}`}>
                                                         {isHighlighted
                                                             ? <Star className="w-3.5 h-3.5 text-[#BFA26A] shrink-0 mt-0.5 fill-[#BFA26A]" strokeWidth={1} />
                                                             : <ShieldCheck className={`w-3.5 h-3.5 ${theme.accentText} shrink-0 mt-0.5`} strokeWidth={1.5} />
@@ -457,10 +457,10 @@ function SingleEntityPage() {
                                             })}
                                         </ul>
                                         <div className="mt-5 p-3 glass rounded-squircle-sm border border-white/[0.04]">
-                                            <p className="font-semibold text-xs uppercase tracking-widest text-white/25 mb-2">Best for:</p>
+                                            <p className="font-semibold text-xs uppercase tracking-widest text-white/40 mb-2">Best for:</p>
                                             <ul className="space-y-1">
                                                 {tier.bestFor.slice(0, 2).map((item, i) => (
-                                                    <li key={i} className="text-xs text-white/35 flex items-center gap-2">
+                                                    <li key={i} className="text-xs text-white/40 flex items-center gap-2">
                                                         <span className={`w-1 h-1 rounded-full ${theme.accentBg} opacity-60`}></span>
                                                         {item}
                                                     </li>
@@ -519,7 +519,7 @@ function SingleEntityPage() {
 
             {/* Cross-link */}
             <section className="py-10 border-t border-white/[0.05] bg-[#1c1c1e] text-center">
-                <p className="text-sm text-white/30">
+                <p className="text-sm text-white/40">
                     {t('single_entity.cross_link_label')}{' '}
                     <Link to="/network-intelligence" className="text-[#0A84FF] font-semibold hover:underline px-1">
                         {t('single_entity.cross_link_cta')}
@@ -529,7 +529,7 @@ function SingleEntityPage() {
 
             {/* Footer badge */}
             <section className="py-6 border-t border-white/[0.04] text-center">
-                <p className="text-[10px] font-medium uppercase tracking-widest text-white/20">
+                <p className="text-[10px] font-medium uppercase tracking-widest text-white/40">
                     {t('single_entity.footer_badge')}
                 </p>
             </section>

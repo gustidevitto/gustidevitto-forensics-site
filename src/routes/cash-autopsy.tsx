@@ -73,7 +73,7 @@ function CashAutopsyDiagnostic() {
 
     const renderInputField = (name: keyof CashAutopsyInputs, labelKey: string, hintKey: string) => (
         <div className="space-y-2">
-            <label className="text-sm font-black tracking-widest uppercase text-white/70 block">
+            <label className="text-sm font-black tracking-widest uppercase text-white/60 block">
                 {t(`cash_autopsy.form.${labelKey}`, labelKey)}
             </label>
             <div className="relative">
@@ -109,7 +109,7 @@ function CashAutopsyDiagnostic() {
                             <ShieldAlert className="w-10 h-10 mr-4 text-red-500" />
                             {t('cash_autopsy.title', 'Cash Autopsy')}
                         </h1>
-                        <p className="text-white/50 text-xl font-light">
+                        <p className="text-white/60 text-xl font-light">
                             {t('cash_autopsy.intro', 'Find out exactly how long your business can survive on current reserves.')}
                         </p>
                     </div>
@@ -136,7 +136,7 @@ function CashAutopsyDiagnostic() {
                         >
                             {step === 1 && (
                                 <>
-                                    <div className="p-4 bg-white/5 border-l-2 border-red-500 text-sm font-light text-white/70 italic">
+                                    <div className="p-4 bg-white/5 border-l-2 border-red-500 text-sm font-light text-white/60 italic">
                                         "{t('cash_autopsy.encouragement.0', "Let's get the absolute basics.")}"
                                     </div>
                                     {renderInputField("revenue", "revenue.label", "revenue.hint")}
@@ -146,7 +146,7 @@ function CashAutopsyDiagnostic() {
                             
                             {step === 2 && (
                                 <>
-                                    <div className="p-4 bg-white/5 border-l-2 border-red-500 text-sm font-light text-white/70 italic">
+                                    <div className="p-4 bg-white/5 border-l-2 border-red-500 text-sm font-light text-white/60 italic">
                                         "{t('cash_autopsy.encouragement.1', "Halfway there. Just a few more numbers.")}"
                                     </div>
                                     {renderInputField("opex", "opex.label", "opex.hint")}
@@ -156,7 +156,7 @@ function CashAutopsyDiagnostic() {
 
                             {step === 3 && (
                                 <>
-                                    <div className="p-4 bg-white/5 border-l-2 border-red-500 text-sm font-light text-white/70 italic">
+                                    <div className="p-4 bg-white/5 border-l-2 border-red-500 text-sm font-light text-white/60 italic">
                                         "{t('cash_autopsy.encouragement.2', "Last step before the verdict.")}"
                                     </div>
                                     {renderInputField("shortDebt", "short_debt.label", "short_debt.hint")}
@@ -169,7 +169,7 @@ function CashAutopsyDiagnostic() {
                     {/* Navigation */}
                     <div className="flex justify-between items-center mt-12 pt-8 border-t border-white/10">
                         {step > 1 ? (
-                            <button onClick={handlePrev} className="text-white/50 hover:text-white uppercase tracking-widest font-black text-sm px-6 py-4">
+                            <button onClick={handlePrev} className="text-white/60 hover:text-white uppercase tracking-widest font-black text-sm px-6 py-4">
                                 {t('wizard_shared.btn_prev', 'Go Back')}
                             </button>
                         ) : <div/>}
@@ -208,7 +208,7 @@ function CashAutopsyDiagnostic() {
             <div className="max-w-4xl mx-auto space-y-12 relative z-10">
                 {/* Header */}
                 <div className="text-center space-y-4">
-                    <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.2em] text-white/70">
+                    <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.2em] text-white/60">
                         Diagnostic Engine Halted
                     </div>
                     <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
@@ -220,14 +220,14 @@ function CashAutopsyDiagnostic() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="p-8 border border-white/10 glass rounded-squircle-lg relative overflow-hidden">
                         <div className={`absolute top-0 right-0 w-32 h-32 bg-red-500/20 blur-3xl`} />
-                        <h3 className="text-sm uppercase tracking-widest font-black text-white/50 mb-2">{t('cash_autopsy.results.runway_label', 'Cash Runway')}</h3>
+                        <h3 className="text-sm uppercase tracking-widest font-black text-white/60 mb-2">{t('cash_autopsy.results.runway_label', 'Cash Runway')}</h3>
                         <div className="text-5xl font-semibold mb-2 flex items-end gap-2">
                             {result.layer1.cashRunwayDays} <span className="text-xl text-white/40 mb-1">DAYS</span>
                         </div>
                     </div>
 
                     <div className="p-8 border border-white/10 glass rounded-squircle-lg relative overflow-hidden">
-                        <h3 className="text-sm uppercase tracking-widest font-black text-white/50 mb-2">{t('cash_autopsy.results.burn_label', 'Net Burn Rate')}</h3>
+                        <h3 className="text-sm uppercase tracking-widest font-black text-white/60 mb-2">{t('cash_autopsy.results.burn_label', 'Net Burn Rate')}</h3>
                         <div className="text-5xl font-semibold mb-2">
                             {formatCurrency(result.layer1.netBurnRate)}<span className="text-xl text-white/40">/mo</span>
                         </div>
@@ -241,7 +241,7 @@ function CashAutopsyDiagnostic() {
                         <h3 className={`text-xl font-bold tracking-tight mb-4 ${verdictColor}`}>
                             System Classification: {result.layer2.runwayVerdict.toUpperCase()}
                         </h3>
-                        <p className="text-lg text-white/80 font-medium leading-relaxed mb-6">
+                        <p className="text-lg text-white/90 font-medium leading-relaxed mb-6">
                             {t('cash_autopsy.results.cliffhanger', 'We also detected a potential Liquidity Trap syndrome forming. Specific details on this anomaly are locked in your full report below...')}
                         </p>
                     </div>
@@ -252,7 +252,7 @@ function CashAutopsyDiagnostic() {
                     <div className="border border-white/10 rounded-squircle-xl p-1 bg-[url('/noise.png')] relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90 pointer-events-none" />
                         <div className="p-8 pb-12 text-center relative z-10 flex flex-col items-center">
-                            <Lock className="w-12 h-12 text-white/30 mb-6" />
+                            <Lock className="w-12 h-12 text-white/40 mb-6" />
                             <h3 className="text-3xl font-black uppercase tracking-tighter mb-4">
                                 {t('cash_autopsy.gatekeeper.title', 'Unlock Deep Cash Analysis')}
                             </h3>
@@ -291,7 +291,7 @@ function CashAutopsyDiagnostic() {
                                     <div className="text-emerald-400 font-black tracking-widest">THIS IS NOT A TRAP. ZERO OBLIGATIONS.</div>
                                     <div className="font-light leading-relaxed">
                                         Your specific vector data will be instantly unlocked on this exact page.<br/>
-                                        <span className="text-white/20">We protect your privacy & will never spam you.</span>
+                                        <span className="text-white/40">We protect your privacy & will never spam you.</span>
                                     </div>
                                 </div>
                             </form>
@@ -303,10 +303,10 @@ function CashAutopsyDiagnostic() {
                         className="space-y-6"
                     >
                         <h3 className="text-2xl font-black uppercase tracking-tighter flex items-center mb-6 border-b border-white/10 pb-4">
-                            <FileBarChart2 className="w-6 h-6 mr-3 text-white/50" />
+                            <FileBarChart2 className="w-6 h-6 mr-3 text-white/60" />
                             Unsealed Vectors
                         </h3>
-                        <div className="mb-10 p-6 bg-white/5 border border-white/10 text-white/80 font-light leading-relaxed space-y-4 text-sm">
+                        <div className="mb-10 p-6 bg-white/5 border border-white/10 text-white/90 font-light leading-relaxed space-y-4 text-sm">
                             <p>Based on your profile, our engine has isolated the four exact vectors driving your current <strong className="text-white font-medium">Cash Runway</strong> and <strong className="text-white font-medium">Net Burn Rate</strong>. The red bars indicate active capital hemorrhaging points that require immediate executive action.</p>
                             <p>Understanding these surface metrics is the first step to survival. However, structurally fixing a critical bleed—whether it's trapped working capital or lethal debt coverage—requires tracking these symptoms back to their source. <span className="text-emerald-400 font-medium">True financial turnaround begins with deep root-cause isolation.</span></p>
                         </div>
@@ -315,7 +315,7 @@ function CashAutopsyDiagnostic() {
                                 <div key={pillar.id} className="p-6 border border-white/10 glass rounded-squircle-md space-y-3">
                                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-3">
                                         <div className="flex-1">
-                                            <div className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-1">{pillar.category.replace(/-/g, ' ')}</div>
+                                            <div className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">{pillar.category.replace(/-/g, ' ')}</div>
                                             <div className="text-lg font-bold">{pillar.name}</div>
                                         </div>
                                         <div className="flex items-center gap-3 flex-shrink-0">
@@ -325,7 +325,7 @@ function CashAutopsyDiagnostic() {
                                             </div>
                                         </div>
                                     </div>
-                                    <p className="text-xs text-white/50 font-light leading-relaxed">{pillar.computedLabel}</p>
+                                    <p className="text-xs text-white/60 font-light leading-relaxed">{pillar.computedLabel}</p>
                                     <div className="w-full h-1 bg-white/5 overflow-hidden">
                                         <motion.div
                                             initial={{ width: 0 }}
@@ -340,7 +340,7 @@ function CashAutopsyDiagnostic() {
 
                         {/* Cross Links non-hierarchical */}
                         <div className="mt-16 pt-16 border-t border-white/10 border-dashed text-center">
-                            <h3 className="text-sm font-black uppercase tracking-widest text-white/50 mb-8">
+                            <h3 className="text-sm font-black uppercase tracking-widest text-white/60 mb-8">
                                 {t('wizard_shared.cross_links_title', 'Explore Other Blindspots')}
                             </h3>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">

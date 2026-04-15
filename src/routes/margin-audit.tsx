@@ -74,7 +74,7 @@ function MarginAuditDiagnostic() {
 
     const renderInputField = (name: keyof MarginAuditInputs, labelKey: string, hintKey: string, isPercent = false) => (
         <div className="space-y-2">
-            <label className="text-sm font-black tracking-widest uppercase text-white/70 block">
+            <label className="text-sm font-black tracking-widest uppercase text-white/60 block">
                 {t(`margin_audit.form.${labelKey}`, labelKey)}
             </label>
             <div className="relative">
@@ -110,7 +110,7 @@ function MarginAuditDiagnostic() {
                             <Activity className="w-10 h-10 mr-4 text-amber-500" />
                             {t('margin_audit.title', 'Margin Audit')}
                         </h1>
-                        <p className="text-white/50 text-xl font-light">
+                        <p className="text-white/60 text-xl font-light">
                             {t('margin_audit.intro', 'Where is your margin disappearing before it reaches the bank?')}
                         </p>
                     </div>
@@ -137,7 +137,7 @@ function MarginAuditDiagnostic() {
                         >
                             {step === 1 && (
                                 <>
-                                    <div className="p-4 bg-white/5 border-l-2 border-amber-500 text-sm font-light text-white/70 italic">
+                                    <div className="p-4 bg-white/5 border-l-2 border-amber-500 text-sm font-light text-white/60 italic">
                                         "{t('margin_audit.encouragement.0', "Let's look at the top line.")}"
                                     </div>
                                     {renderInputField("revenue", "revenue.label", "revenue.hint")}
@@ -148,7 +148,7 @@ function MarginAuditDiagnostic() {
                             
                             {step === 2 && (
                                 <>
-                                    <div className="p-4 bg-white/5 border-l-2 border-amber-500 text-sm font-light text-white/70 italic">
+                                    <div className="p-4 bg-white/5 border-l-2 border-amber-500 text-sm font-light text-white/60 italic">
                                         "{t('margin_audit.encouragement.1', "Now let's find the leakage.")}"
                                     </div>
                                     {renderInputField("labor", "labor.label", "labor.hint")}
@@ -159,7 +159,7 @@ function MarginAuditDiagnostic() {
 
                             {step === 3 && (
                                 <>
-                                    <div className="p-4 bg-white/5 border-l-2 border-amber-500 text-sm font-light text-white/70 italic">
+                                    <div className="p-4 bg-white/5 border-l-2 border-amber-500 text-sm font-light text-white/60 italic">
                                         "{t('margin_audit.encouragement.2', "Almost done. Let's analyze your overhead.")}"
                                     </div>
                                     {renderInputField("opex", "opex.label", "opex.hint")}
@@ -171,7 +171,7 @@ function MarginAuditDiagnostic() {
                     {/* Navigation */}
                     <div className="flex justify-between items-center mt-12 pt-8 border-t border-white/10">
                         {step > 1 ? (
-                            <button onClick={handlePrev} className="text-white/50 hover:text-white uppercase tracking-widest font-black text-sm px-6 py-4">
+                            <button onClick={handlePrev} className="text-white/60 hover:text-white uppercase tracking-widest font-black text-sm px-6 py-4">
                                 {t('wizard_shared.btn_prev', 'Go Back')}
                             </button>
                         ) : <div/>}
@@ -210,7 +210,7 @@ function MarginAuditDiagnostic() {
             <div className="max-w-4xl mx-auto space-y-12 relative z-10">
                 {/* Header */}
                 <div className="text-center space-y-4">
-                    <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.2em] text-white/70">
+                    <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.2em] text-white/60">
                         Diagnostic Engine Halted
                     </div>
                     <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
@@ -222,7 +222,7 @@ function MarginAuditDiagnostic() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="p-8 border border-white/10 glass rounded-squircle-lg relative overflow-hidden">
                         <div className={`absolute top-0 right-0 w-32 h-32 bg-amber-500/20 blur-3xl`} />
-                        <h3 className="text-sm uppercase tracking-widest font-black text-white/50 mb-2">{t('margin_audit.results.leakage_label', 'GP Leakage Rate')}</h3>
+                        <h3 className="text-sm uppercase tracking-widest font-black text-white/60 mb-2">{t('margin_audit.results.leakage_label', 'GP Leakage Rate')}</h3>
                         <div className="text-5xl font-semibold mb-2 flex items-end gap-2 text-amber-500">
                             {result.layer1.gpLeakagePercent.toFixed(1)} <span className="text-2xl mb-1">%</span>
                         </div>
@@ -232,7 +232,7 @@ function MarginAuditDiagnostic() {
                     </div>
 
                     <div className="p-8 border border-white/10 glass rounded-squircle-lg relative overflow-hidden">
-                        <h3 className="text-sm uppercase tracking-widest font-black text-white/50 mb-2">{t('margin_audit.results.opex_ratio_label', 'OpEx to GP Ratio')}</h3>
+                        <h3 className="text-sm uppercase tracking-widest font-black text-white/60 mb-2">{t('margin_audit.results.opex_ratio_label', 'OpEx to GP Ratio')}</h3>
                         <div className="text-5xl font-semibold mb-2">
                             {result.layer1.opexToGpRatio.toFixed(1)}<span className="text-2xl text-white/40">%</span>
                         </div>
@@ -246,7 +246,7 @@ function MarginAuditDiagnostic() {
                         <h3 className={`text-xl font-bold tracking-tight mb-4 ${verdictColor}`}>
                             System Classification: {result.layer2.efficiencyVerdict.toUpperCase()}
                         </h3>
-                        <p className="text-lg text-white/80 font-medium leading-relaxed mb-6">
+                        <p className="text-lg text-white/90 font-medium leading-relaxed mb-6">
                             {t('margin_audit.results.cliffhanger', 'We found significant operational friction. The specific Phantom Drain is isolated in the restricted report below...')}
                         </p>
                     </div>
@@ -257,7 +257,7 @@ function MarginAuditDiagnostic() {
                     <div className="border border-white/10 rounded-squircle-xl p-1 bg-[url('/noise.png')] relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90 pointer-events-none" />
                         <div className="p-8 pb-12 text-center relative z-10 flex flex-col items-center">
-                            <Lock className="w-12 h-12 text-white/30 mb-6" />
+                            <Lock className="w-12 h-12 text-white/40 mb-6" />
                             <h3 className="text-3xl font-black uppercase tracking-tighter mb-4">
                                 {t('margin_audit.gatekeeper.title', 'Unlock Full Efficiency Report')}
                             </h3>
@@ -296,7 +296,7 @@ function MarginAuditDiagnostic() {
                                     <div className="text-emerald-400 font-black tracking-widest">THIS IS NOT A TRAP. ZERO OBLIGATIONS.</div>
                                     <div className="font-light leading-relaxed">
                                         Your specific vector data will be instantly unlocked on this exact page.<br/>
-                                        <span className="text-white/20">We protect your privacy & will never spam you.</span>
+                                        <span className="text-white/40">We protect your privacy & will never spam you.</span>
                                     </div>
                                 </div>
                             </form>
@@ -308,10 +308,10 @@ function MarginAuditDiagnostic() {
                         className="space-y-6"
                     >
                         <h3 className="text-2xl font-black uppercase tracking-tighter flex items-center mb-6 border-b border-white/10 pb-4">
-                            <FileBarChart2 className="w-6 h-6 mr-3 text-white/50" />
+                            <FileBarChart2 className="w-6 h-6 mr-3 text-white/60" />
                             Unsealed Vectors
                         </h3>
-                        <div className="mb-10 p-6 bg-white/5 border border-white/10 text-white/80 font-light leading-relaxed space-y-4 text-sm">
+                        <div className="mb-10 p-6 bg-white/5 border border-white/10 text-white/90 font-light leading-relaxed space-y-4 text-sm">
                             <p>Based on your profile, our engine has unsealed the four specific vectors calculating your <strong className="text-white font-medium">GP Leakage</strong>. The red and amber bars indicate the exact operational sectors where your invisible margin drain is actively occurring.</p>
                             <p>Locating the leak gives you power over it. However, patching it permanently—without breaking other operational flows—requires an objective, surgical intervention. <span className="text-emerald-400 font-medium">True profitability is reclaimed by treating the operational root cause, not just the isolated symptom.</span></p>
                         </div>
@@ -320,7 +320,7 @@ function MarginAuditDiagnostic() {
                                 <div key={pillar.id} className="p-6 border border-white/10 glass rounded-squircle-md space-y-3">
                                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-3">
                                         <div className="flex-1">
-                                            <div className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-1">{pillar.category.replace(/-/g, ' ')}</div>
+                                            <div className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">{pillar.category.replace(/-/g, ' ')}</div>
                                             <div className="text-lg font-bold">{pillar.name}</div>
                                         </div>
                                         <div className="flex items-center gap-3 flex-shrink-0">
@@ -330,7 +330,7 @@ function MarginAuditDiagnostic() {
                                             </div>
                                         </div>
                                     </div>
-                                    <p className="text-xs text-white/50 font-light leading-relaxed">{pillar.computedLabel}</p>
+                                    <p className="text-xs text-white/60 font-light leading-relaxed">{pillar.computedLabel}</p>
                                     <div className="w-full h-1 bg-white/5 overflow-hidden">
                                         <motion.div
                                             initial={{ width: 0 }}
@@ -345,7 +345,7 @@ function MarginAuditDiagnostic() {
 
                         {/* Cross Links non-hierarchical */}
                         <div className="mt-16 pt-16 border-t border-white/10 border-dashed text-center">
-                            <h3 className="text-sm font-black uppercase tracking-widest text-white/50 mb-8">
+                            <h3 className="text-sm font-black uppercase tracking-widest text-white/60 mb-8">
                                 {t('wizard_shared.cross_links_title', 'Explore Other Blindspots')}
                             </h3>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">

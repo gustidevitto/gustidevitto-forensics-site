@@ -99,7 +99,7 @@ function RootComponent() {
                                     <a className="font-bold text-[17px] tracking-tight text-white" href="/">
                                         Gusti Devitto<span className="text-[#BFA26A]">™</span>
                                     </a>
-                                    <span className="text-[10px] font-medium text-white/30 tracking-wide">
+                                    <span className="text-[10px] font-medium text-white/40 tracking-wide">
                                         Forensic Business Intelligence
                                     </span>
                                 </div>
@@ -199,7 +199,7 @@ function RootComponent() {
                                                 className={`px-4 py-3 rounded-squircle-sm text-base transition-all ${
                                                     pathname === '/' || pathname === '/single-entity' || pathname === '/network-intelligence' 
                                                     ? 'bg-white/[0.08] text-[#0A84FF] font-semibold' 
-                                                    : 'font-medium text-white/70 hover:text-white hover:bg-white/[0.06]'
+                                                    : 'font-medium text-white/60 hover:text-white hover:bg-white/[0.06]'
                                                 }`}
                                             >
                                                 {t('nav.home')}
@@ -219,7 +219,7 @@ function RootComponent() {
                                                 className={`px-4 py-3 rounded-squircle-sm text-base transition-all ${
                                                     pathname === '/about-gusti-devitto' 
                                                     ? 'bg-white/[0.08] text-[#0A84FF] font-semibold' 
-                                                    : 'font-medium text-white/70 hover:text-white hover:bg-white/[0.06]'
+                                                    : 'font-medium text-white/60 hover:text-white hover:bg-white/[0.06]'
                                                 }`}
                                             >
                                                 {t('nav.about')}
@@ -229,7 +229,7 @@ function RootComponent() {
                                                 className={`px-4 py-3 rounded-squircle-sm text-base transition-all ${
                                                     pathname.startsWith('/blog') 
                                                     ? 'bg-white/[0.08] text-[#0A84FF] font-semibold' 
-                                                    : 'font-medium text-white/70 hover:text-white hover:bg-white/[0.06]'
+                                                    : 'font-medium text-white/60 hover:text-white hover:bg-white/[0.06]'
                                                 }`}
                                             >
                                                 {t('nav.blog')}
@@ -239,7 +239,7 @@ function RootComponent() {
                                                 className={`px-4 py-3 rounded-squircle-sm text-base transition-all ${
                                                     pathname.startsWith('/forensics-pillars') || pathname.startsWith('/master-index') || pathname.startsWith('/pilar')
                                                     ? 'bg-white/[0.08] text-[#0A84FF] font-semibold' 
-                                                    : 'font-medium text-white/70 hover:text-white hover:bg-white/[0.06]'
+                                                    : 'font-medium text-white/60 hover:text-white hover:bg-white/[0.06]'
                                                 }`}
                                             >
                                                 {t('nav.pillars', '25 Pillars')}
@@ -259,7 +259,7 @@ function RootComponent() {
                                                 className={`px-4 py-3 rounded-squircle-sm text-base transition-all ${
                                                     pathname === '/contact' 
                                                     ? 'bg-white/[0.08] text-[#0A84FF] font-semibold' 
-                                                    : 'font-medium text-white/70 hover:text-white hover:bg-white/[0.06]'
+                                                    : 'font-medium text-white/60 hover:text-white hover:bg-white/[0.06]'
                                                 }`}
                                             >
                                                 {t('nav.contact')}
@@ -280,27 +280,27 @@ function RootComponent() {
                     <footer className="border-t border-white/[0.05] bg-[#161618] py-8 md:py-0">
                         <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row px-6 md:px-12 lg:px-20">
                             <div className="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2">
-                                <a href="/about-gusti-devitto" className="text-xs text-white/25 hover:text-white/55 transition-colors">
+                                <a href="/about-gusti-devitto" className="text-xs text-white/40 hover:text-white/60 transition-colors">
                                     {t('footer.about')}
                                 </a>
-                                <a href="/master-index" className="text-xs text-white/25 hover:text-white/55 transition-colors">
+                                <a href="/master-index" className="text-xs text-white/40 hover:text-white/60 transition-colors">
                                     {t('footer.index')}
                                 </a>
-                                <a href="/methodology" className="text-xs text-white/25 hover:text-white/55 transition-colors">
+                                <a href="/methodology" className="text-xs text-white/40 hover:text-white/60 transition-colors">
                                     {t('footer.methodology')}
                                 </a>
-                                <a href="/verdict" className="text-xs text-white/25 hover:text-white/55 transition-colors">
+                                <a href="/verdict" className="text-xs text-white/40 hover:text-white/60 transition-colors">
                                     {t('footer.verdict')}
                                 </a>
-                                <a href="/terms" className="text-xs text-white/15 hover:text-white/35 transition-colors">
+                                <a href="/terms" className="text-xs text-white/40 hover:text-white/40 transition-colors">
                                     {t('footer.terms')}
                                 </a>
-                                <a href="/privacy" className="text-xs text-white/15 hover:text-white/35 transition-colors">
+                                <a href="/privacy" className="text-xs text-white/40 hover:text-white/40 transition-colors">
                                     {t('footer.privacy')}
                                 </a>
                             </div>
                             {/* Copyright — no monospace */}
-                            <p className="text-[10px] font-medium text-white/15 tracking-wide">
+                            <p className="text-[10px] font-medium text-white/40 tracking-wide">
                                 © {new Date().getFullYear()} Gusti Devitto™ · FIP™ v4.00
                             </p>
                         </div>
@@ -333,7 +333,7 @@ function BackToTop() {
     return (
         <button
             onClick={scrollToTop}
-            className={`fixed bottom-8 right-8 z-[60] h-10 w-10 rounded-squircle-md glass-elevated flex items-center justify-center text-white/70 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
+            className={`fixed bottom-8 right-8 z-[60] h-10 w-10 rounded-squircle-md glass-elevated flex items-center justify-center text-white/60 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
             aria-label={t('global.back_to_top')}
         >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"

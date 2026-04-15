@@ -50,16 +50,16 @@ function MultiOutletPage() {
                             <span className="text-primary">{t('multi_outlet.hero_title_accent')}</span>
                         </h1>
 
-                        <p className="mt-8 text-xl md:text-2xl text-white/50 leading-relaxed max-w-2xl font-light">
+                        <p className="mt-8 text-xl md:text-2xl text-white/60 leading-relaxed max-w-2xl font-light">
                             {t('multi_outlet.hero_desc')}
                         </p>
 
                         {/* Raw Data Strip — monospace, not centered stats */}
                         <div className="mt-12 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm md:text-base font-mono text-amber-500 uppercase tracking-widest">
                             <span className="font-bold">{t('multi_outlet.social_leaks_val')} {t('multi_outlet.social_leaks')}</span>
-                            <span className="text-white/20">/</span>
+                            <span className="text-white/40">/</span>
                             <span className="font-bold">{t('multi_outlet.social_verdict_val')} {t('multi_outlet.social_verdict')}</span>
-                            <span className="text-white/20">/</span>
+                            <span className="text-white/40">/</span>
                             <span className="font-bold">{t('multi_outlet.social_diagnosed_val')} {t('multi_outlet.social_diagnosed')}</span>
                         </div>
 
@@ -71,7 +71,7 @@ function MultiOutletPage() {
                                     <ArrowRight className="ml-3 w-5 h-5 flex-shrink-0" />
                                 </Button>
                             </Link>
-                            <a href="#benefits" className="hidden sm:block text-sm font-bold text-white/30 hover:text-white transition-colors uppercase tracking-[0.15em]">
+                            <a href="#benefits" className="hidden sm:block text-sm font-bold text-white/40 hover:text-white transition-colors uppercase tracking-[0.15em]">
                                 {t('multi_outlet.cta_see_catch')}
                             </a>
                         </div>
@@ -121,7 +121,7 @@ function MultiOutletPage() {
                                             <p className="text-[10px] uppercase font-mono tracking-widest text-white/40 mb-1">{t('multi_outlet.calc_daily')}</p>
                                             <p className="text-xl font-mono text-white/90">{i18n.language === 'id' ? `Rp ${(networkSize * 450000).toLocaleString('id-ID')}` : `$${(networkSize * 32).toLocaleString()}`}</p>
                                         </div>
-                                        <ArrowRight className="w-4 h-4 text-white/10" />
+                                        <ArrowRight className="w-4 h-4 text-white/40" />
                                     </div>
 
                                     <div className="p-6 border border-white/[0.05] bg-white/[0.01]">
@@ -129,7 +129,7 @@ function MultiOutletPage() {
                                         <p className="text-4xl font-mono font-black text-white tracking-tight">
                                             {i18n.language === 'id' ? `Rp ${(networkSize * 450000 * 30).toLocaleString('id-ID')}` : `$${(networkSize * 32 * 30).toLocaleString()}`}
                                         </p>
-                                        <p className="text-[10px] font-mono text-white/30 mt-3 uppercase tracking-widest">
+                                        <p className="text-[10px] font-mono text-white/40 mt-3 uppercase tracking-widest">
                                             *Based on avg trapped cost per outlet/day
                                         </p>
                                     </div>
@@ -247,7 +247,7 @@ function MultiOutletPage() {
                         <p className="text-white/40 text-lg leading-relaxed font-light">
                             {t('multi_outlet.demo_disclaimer')}
                         </p>
-                        <Button asChild variant="outline" className="h-auto py-4 px-8 border-white/20 text-white/70 hover:text-white hover:border-white rounded-none transition-all uppercase tracking-widest font-bold text-xs">
+                        <Button asChild variant="outline" className="h-auto py-4 px-8 border-white/20 text-white/60 hover:text-white hover:border-white rounded-none transition-all uppercase tracking-widest font-bold text-xs">
                             <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer">
                                 {t('multi_outlet.demo_cta')}
                             </a>
@@ -266,7 +266,7 @@ function MultiOutletPage() {
                         <p className="text-white/40 text-lg leading-relaxed max-w-lg font-light">
                             {t('multi_outlet.pricing_desc')}
                         </p>
-                        <div className="flex items-center gap-1.5 text-white/20">
+                        <div className="flex items-center gap-1.5 text-white/40">
                             <ShieldCheck className="w-3 h-3" />
                             <span className="text-[9px] font-mono uppercase tracking-widest">{t('multi_outlet.pricing_guarantee')}</span>
                         </div>
@@ -294,7 +294,7 @@ function MultiOutletPage() {
                         <h2 className="text-[clamp(2.75rem,5vw,5rem)] font-black leading-[0.9] tracking-tighter w-full lg:w-[120%] z-10 relative">
                             <Trans i18nKey="multi_outlet.final_cta_title" components={{ 1: <span className="text-amber-500" /> }} />
                         </h2>
-                        <p className="text-white/50 text-xl md:text-2xl leading-relaxed max-w-xl font-light">
+                        <p className="text-white/60 text-xl md:text-2xl leading-relaxed max-w-xl font-light">
                             <Trans i18nKey="multi_outlet.final_cta_desc" components={{ 1: <strong className="text-white" />, br: <br /> }} />
                         </p>
                         <div className="pt-8">

@@ -236,7 +236,7 @@ function InvestasiPage() {
                         {[1,2,3,4].map(n => (
                             <div key={n} className="glass rounded-squircle-lg p-6 text-left hover:glass-elevated transition-all duration-300 group">
                                 <span className="text-[#0A84FF]/60 font-semibold text-xs uppercase tracking-[0.2em] block mb-3">{t(`investasi.bridge_s${n}_title`)}</span>
-                                <p className="text-white/55 font-light leading-relaxed text-sm group-hover:text-white/75 transition-colors">{t(`investasi.bridge_s${n}_desc`)}</p>
+                                <p className="text-white/60 font-light leading-relaxed text-sm group-hover:text-white/60 transition-colors">{t(`investasi.bridge_s${n}_desc`)}</p>
                             </div>
                         ))}
                     </div>
@@ -262,16 +262,16 @@ function InvestasiPage() {
 
                                     <div className="mb-6">
                                         <h3 className={`text-2xl font-black ${theme.accentText} tracking-tight mb-1`}>{tier.name}</h3>
-                                        <p className="text-white/35 font-light text-sm">{tier.tagline}</p>
+                                        <p className="text-white/40 font-light text-sm">{tier.tagline}</p>
                                     </div>
 
                                     <div className="space-y-3 my-6 flex-grow">
                                         {/* One-Time */}
                                         <div className="p-4 glass rounded-squircle-sm flex items-center justify-between hover:glass-elevated transition-all group/opt">
                                             <div className="text-left">
-                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/30 mb-1 group-hover/opt:text-white/60 transition-colors">{t('investasi_page.labels.one_time', 'One-Time Audit')}</h4>
+                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/40 mb-1 group-hover/opt:text-white/60 transition-colors">{t('investasi_page.labels.one_time', 'One-Time Audit')}</h4>
                                                 <span className="text-xl font-bold text-white font-mono">${tier.pricing.oneTime.toLocaleString()}</span>
-                                                <span className="text-xs text-white/20 block mt-0.5">{t('investasi_page.labels.one_time_child', 'Single Comprehensive Audit')}</span>
+                                                <span className="text-xs text-white/40 block mt-0.5">{t('investasi_page.labels.one_time_child', 'Single Comprehensive Audit')}</span>
                                             </div>
                                             <Button variant="outline" size="sm" onClick={() => openModal(tier, 'one-time')}>{t('investasi_page.labels.select', 'Select')}</Button>
                                         </div>
@@ -279,12 +279,12 @@ function InvestasiPage() {
                                         {/* Quarterly */}
                                         <div className="p-4 glass rounded-squircle-sm flex items-center justify-between hover:glass-elevated transition-all group/opt">
                                             <div className="text-left">
-                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/30 mb-1 group-hover/opt:text-white/60 transition-colors">{t('investasi_page.labels.quarterly', 'Quarterly Program')}</h4>
+                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/40 mb-1 group-hover/opt:text-white/60 transition-colors">{t('investasi_page.labels.quarterly', 'Quarterly Program')}</h4>
                                                 <div className="flex items-baseline gap-2">
                                                     <span className="text-xl font-bold text-white font-mono">${tier.pricing.quarterly.total.toLocaleString()}</span>
-                                                    <span className="text-xs text-white/20">{t('investasi_page.labels.total', 'Total')}</span>
+                                                    <span className="text-xs text-white/40">{t('investasi_page.labels.total', 'Total')}</span>
                                                 </div>
-                                                <span className="text-xs text-white/20">${tier.pricing.quarterly.perAudit.toLocaleString()} / {t('investasi_page.labels.per_audit', 'audit')} · {t('investasi_page.labels.quarterly_sub', '3x Monthly')}</span>
+                                                <span className="text-xs text-white/40">${tier.pricing.quarterly.perAudit.toLocaleString()} / {t('investasi_page.labels.per_audit', 'audit')} · {t('investasi_page.labels.quarterly_sub', '3x Monthly')}</span>
                                                 <span className="text-xs text-emerald-400 font-semibold mt-1 block">{t('investasi_page.labels.save', { amount: `$${(tier.pricing.oneTime * 3 - tier.pricing.quarterly.total).toLocaleString()}` })}</span>
                                             </div>
                                             <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')}>{t('investasi_page.labels.select', 'Select')}</Button>
@@ -297,9 +297,9 @@ function InvestasiPage() {
                                                 <h4 className={`font-semibold uppercase tracking-widest text-xs ${theme.accentText} mb-1`}>{t('investasi_page.labels.annual', 'Annual Partnership')}</h4>
                                                 <div className="flex items-baseline gap-2">
                                                     <span className="text-xl font-bold text-white font-mono">${tier.pricing.annual.total.toLocaleString()}</span>
-                                                    <span className="text-xs text-white/20">/ {t('investasi_page.labels.year', 'Year')}</span>
+                                                    <span className="text-xs text-white/40">/ {t('investasi_page.labels.year', 'Year')}</span>
                                                 </div>
-                                                <span className="text-xs text-white/20">${tier.pricing.annual.perAudit.toLocaleString()} / audit · {t('investasi_page.labels.annual_sub', '4x Quarterly')}</span>
+                                                <span className="text-xs text-white/40">${tier.pricing.annual.perAudit.toLocaleString()} / audit · {t('investasi_page.labels.annual_sub', '4x Quarterly')}</span>
                                                 <span className="text-xs text-emerald-400 font-semibold mt-1 block">{t('investasi_page.labels.save', { amount: `$${(tier.pricing.oneTime * 4 - tier.pricing.annual.total).toLocaleString()}` })} + Benefits</span>
                                             </div>
                                             <Button size="sm" onClick={() => openModal(tier, 'annual')} className={`${theme.accentBg} text-black hover:brightness-110 border-none font-bold`}>{t('investasi_page.labels.select', 'Select')}</Button>
@@ -307,30 +307,30 @@ function InvestasiPage() {
                                     </div>
 
                                     <div className="pt-5 border-t border-white/[0.05]">
-                                        <p className="text-xs font-semibold uppercase tracking-widest text-white/20 mb-3">{t('investasi_page.labels.key_features', 'Key Features')}</p>
+                                        <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-3">{t('investasi_page.labels.key_features', 'Key Features')}</p>
                                         <ul className="space-y-3">
                                             {tier.features.included.slice(0, 10).map((featureObj, i) => {
                                                 const parts = (t(featureObj.key, featureObj.default) as string).split(' -> ');
                                                 const isHighlighted = featureObj.highlight;
                                                 return (
-                                                    <li key={i} className={`flex items-start gap-3 text-sm ${isHighlighted ? 'glass-gold -mx-2 px-2 py-1 rounded-squircle-sm border-l-2 border-[#BFA26A]/25' : 'text-white/45'}`}>
+                                                    <li key={i} className={`flex items-start gap-3 text-sm ${isHighlighted ? 'glass-gold -mx-2 px-2 py-1 rounded-squircle-sm border-l-2 border-[#BFA26A]/25' : 'text-white/60'}`}>
                                                         {isHighlighted
                                                             ? <Star className="w-3.5 h-3.5 text-[#BFA26A] shrink-0 mt-0.5 fill-[#BFA26A]" strokeWidth={1} />
                                                             : <ShieldCheck className={`w-3.5 h-3.5 ${theme.accentText} shrink-0 mt-0.5`} strokeWidth={1.5} />
                                                         }
                                                         <div className="leading-snug">
-                                                            <span className={isHighlighted ? 'text-[#BFA26A] font-semibold' : 'text-white/65'}>{parts[0]}</span>
-                                                            {parts[1] && <span className="block text-[11px] mt-0.5 text-white/25 italic">{parts[1]}</span>}
+                                                            <span className={isHighlighted ? 'text-[#BFA26A] font-semibold' : 'text-white/60'}>{parts[0]}</span>
+                                                            {parts[1] && <span className="block text-[11px] mt-0.5 text-white/40 italic">{parts[1]}</span>}
                                                         </div>
                                                     </li>
                                                 );
                                             })}
                                         </ul>
                                         <div className="mt-5 p-3 glass rounded-squircle-sm">
-                                            <p className="font-semibold text-xs uppercase tracking-widest text-white/20 mb-2">{t('investasi_page.labels.best_for', 'Best for:')}</p>
+                                            <p className="font-semibold text-xs uppercase tracking-widest text-white/40 mb-2">{t('investasi_page.labels.best_for', 'Best for:')}</p>
                                             <ul className="space-y-1">
                                                 {tier.bestFor.slice(0, 2).map((item, i) => (
-                                                    <li key={i} className="text-xs text-white/30 flex items-center gap-2">
+                                                    <li key={i} className="text-xs text-white/40 flex items-center gap-2">
                                                         <span className={`w-1 h-1 rounded-full ${theme.accentBg} opacity-60`}></span>
                                                         {item}
                                                     </li>
@@ -505,7 +505,7 @@ function InvestasiPage() {
                     {/* Micro Proof Block */}
                     <div className="mb-10 p-8 glass-gold rounded-squircle-lg text-left max-w-3xl mx-auto relative overflow-hidden">
                         <div className="absolute left-0 top-4 bottom-4 w-0.5 bg-[#BFA26A]/30 rounded-full" />
-                        <p className="text-white/65 italic text-lg leading-relaxed pl-6">
+                        <p className="text-white/60 italic text-lg leading-relaxed pl-6">
                             "{t('investasi.micro_proof')}"
                         </p>
                     </div>
@@ -520,7 +520,7 @@ function InvestasiPage() {
             </section>
 
             <footer className="py-8 border-t border-white/[0.04] text-center">
-                <p className="text-[9px] font-medium text-white/12 uppercase tracking-[0.4em]">
+                <p className="text-[9px] font-medium text-white/40 uppercase tracking-[0.4em]">
                     {t('investasi_page.labels.footer_rights', { year: currentYear })}
                 </p>
             </footer>

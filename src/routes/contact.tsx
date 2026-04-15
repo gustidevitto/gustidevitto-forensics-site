@@ -40,12 +40,12 @@ function Contact() {
                         <div className="space-y-8 max-w-md">
                             <div className="flex items-center gap-4">
                                 <div className="w-8 h-px bg-[#0A84FF]/40" />
-                                <p className="text-[10px] text-white/30 font-medium tracking-[0.3em] uppercase">Direct Line</p>
+                                <p className="text-[10px] text-white/40 font-medium tracking-[0.3em] uppercase">Direct Line</p>
                             </div>
                             <h1 className="text-3xl md:text-4xl font-black tracking-tighter leading-[0.95] uppercase">
                                 {t('contact_page.title')}
                             </h1>
-                            <p className="text-white/35 text-base leading-relaxed font-light">
+                            <p className="text-white/40 text-base leading-relaxed font-light">
                                 {t('contact_page.subtitle')}
                             </p>
 
@@ -59,8 +59,8 @@ function Contact() {
                                     <div key={labelKey}>
                                         <p className="text-[10px] font-semibold text-[#0A84FF]/55 uppercase tracking-[0.2em] mb-1">{t(labelKey)}</p>
                                         {isHtml
-                                            ? <p className="text-sm text-white/45" dangerouslySetInnerHTML={{ __html: val }} />
-                                            : <p className="text-sm text-white/45">{val}</p>
+                                            ? <p className="text-sm text-white/60" dangerouslySetInnerHTML={{ __html: val }} />
+                                            : <p className="text-sm text-white/60">{val}</p>
                                         }
                                     </div>
                                 ))}
@@ -74,13 +74,13 @@ function Contact() {
                     <div className="w-full max-w-md space-y-10">
                         <div>
                             <h2 className="text-xl font-bold mb-2">{t('contact_page.form_title')}</h2>
-                            <p className="text-sm text-white/30 font-light">{t('contact_page.form_subtitle')}</p>
+                            <p className="text-sm text-white/40 font-light">{t('contact_page.form_subtitle')}</p>
                         </div>
 
                         <form onSubmit={handleSubmit} className="space-y-5">
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="space-y-2">
-                                    <label htmlFor="first-name" className="text-[10px] font-semibold text-white/25 uppercase tracking-widest">
+                                    <label htmlFor="first-name" className="text-[10px] font-semibold text-white/40 uppercase tracking-widest">
                                         {t('contact_page.label_first_name')}
                                     </label>
                                     <Input
@@ -91,7 +91,7 @@ function Contact() {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label htmlFor="last-name" className="text-[10px] font-semibold text-white/25 uppercase tracking-widest">
+                                    <label htmlFor="last-name" className="text-[10px] font-semibold text-white/40 uppercase tracking-widest">
                                         {t('contact_page.label_last_name')}
                                     </label>
                                     <Input
@@ -103,13 +103,13 @@ function Contact() {
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <label htmlFor="email" className="text-[10px] font-semibold text-white/25 uppercase tracking-widest">
+                                <label htmlFor="email" className="text-[10px] font-semibold text-white/40 uppercase tracking-widest">
                                     {t('contact_page.label_email')}
                                 </label>
                                 <Input id="email" name="email" type="email" placeholder={t('contact_page.placeholder_email')} required />
                             </div>
                             <div className="space-y-2">
-                                <label htmlFor="message" className="text-[10px] font-semibold text-white/25 uppercase tracking-widest">
+                                <label htmlFor="message" className="text-[10px] font-semibold text-white/40 uppercase tracking-widest">
                                     {t('contact_page.label_message')}
                                 </label>
                                 <Textarea id="message" name="message" placeholder={t('contact_page.placeholder_message')} className="min-h-[120px]" required />
@@ -126,7 +126,7 @@ function Contact() {
                         <div className="pt-5 border-t border-white/[0.05]">
                             <div className="flex items-center gap-2">
                                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-slow" />
-                                <p className="text-[10px] font-medium text-white/20 uppercase tracking-[0.18em]">
+                                <p className="text-[10px] font-medium text-white/40 uppercase tracking-[0.18em]">
                                     End-to-End Encrypted · WhatsApp Direct
                                 </p>
                             </div>

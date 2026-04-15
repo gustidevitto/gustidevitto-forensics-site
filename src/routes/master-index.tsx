@@ -46,7 +46,7 @@ function MasterIndex() {
                         <p className="text-white/40 text-base leading-relaxed max-w-md font-light">
                             by <Link to="/about-gusti-devitto" className="text-[#BFA26A] hover:text-white transition-colors font-semibold">{t('master_index.by_author')}</Link>
                         </p>
-                        <p className="text-white/30 text-base leading-relaxed max-w-md font-light">
+                        <p className="text-white/40 text-base leading-relaxed max-w-md font-light">
                             {t('master_index.hero_subtitle')}
                         </p>
                     </div>
@@ -80,13 +80,13 @@ function MasterIndex() {
                                 params={{ slug: pillar.id }}
                                 className="group flex items-center gap-6 py-4 hover:glass -mx-4 px-4 rounded-squircle-sm transition-all duration-200"
                             >
-                                <span className="text-white/70 font-semibold group-hover:text-white transition-colors flex-1 truncate">
+                                <span className="text-white/60 font-semibold group-hover:text-white transition-colors flex-1 truncate">
                                     {t(`pillars.${pillar.id}.title`)}
                                 </span>
-                                <span className="text-xs text-white/20 hidden md:block truncate max-w-xs">
+                                <span className="text-xs text-white/40 hidden md:block truncate max-w-xs">
                                     {t(`pillars.${pillar.id}.layer1`)}
                                 </span>
-                                <ArrowRight className="w-3 h-3 text-white/10 group-hover:text-[#0A84FF] group-hover:translate-x-0.5 transition-all shrink-0" strokeWidth={2} />
+                                <ArrowRight className="w-3 h-3 text-white/40 group-hover:text-[#0A84FF] group-hover:translate-x-0.5 transition-all shrink-0" strokeWidth={2} />
                             </Link>
                         ))}
                     </div>

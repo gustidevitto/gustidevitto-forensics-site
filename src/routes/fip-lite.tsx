@@ -65,13 +65,13 @@ function FipLiteHub() {
                         className="text-center space-y-5"
                     >
                         {/* Glass pill badge */}
-                        <div className="inline-flex items-center px-3 py-1.5 glass rounded-squircle-sm text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55 mb-4">
+                        <div className="inline-flex items-center px-3 py-1.5 glass rounded-squircle-sm text-[10px] font-semibold uppercase tracking-[0.2em] text-white/60 mb-4">
                             {t('fip_lite_hub.hero_badge', 'FIP™ Lite Triage')}
                         </div>
 
                         <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9]">
                             <Trans i18nKey="fip_lite_hub.hero_title">
-                                Where is the <span className="text-white/35 italic">leak?</span>
+                                Where is the <span className="text-white/40 italic">leak?</span>
                             </Trans>
                         </h1>
 
@@ -125,7 +125,7 @@ function FipLiteHub() {
 
             <div className="bg-white/[0.015] border-t border-white/[0.05] py-10 text-center mt-8">
                 <div className="container mx-auto px-6">
-                    <p className="text-[10px] font-medium uppercase tracking-widest text-white/20">
+                    <p className="text-[10px] font-medium uppercase tracking-widest text-white/40">
                         {t('global.nav_status', 'System: Operational')} · {t('fip_lite_hub.badge', 'Forensic Diagnostics')}
                     </p>
                 </div>
