@@ -264,24 +264,33 @@ function NetworkIntelligencePage() {
                     </div>
 
                     {/* Master Lab Anchor — Bleeding off Right */}
-                    <div className="relative w-full md:w-[90%] md:ml-auto aspect-[16/10] md:aspect-[3/1] bg-[#03060a] border border-white/[0.05] rounded-squircle-xl overflow-hidden md:-mx-0 md:translate-x-12 lg:translate-x-20 group cursor-crosshair" onClick={() => setShowMasterLab(true)}>
+                    <div className="relative w-full md:w-[90%] md:ml-auto aspect-[4/5] sm:aspect-[16/10] md:aspect-[3/1] bg-[#03060a] border border-white/[0.05] rounded-squircle-xl overflow-hidden md:-mx-0 md:translate-x-12 lg:translate-x-20 group cursor-crosshair" onClick={() => setShowMasterLab(true)}>
                         <img src="/assets/images/ffdv4masterlab.png" alt="Forensic Master Lab" className="w-full h-full object-cover opacity-20 grayscale contrast-125 object-top" />
                         <div className="absolute inset-y-0 left-0 w-full md:w-1/3 bg-gradient-to-r from-[#03060a] via-[#03060a]/80 to-transparent pointer-events-none" />
                         
-                        {/* Mobile Expand Indicator */}
-                        <div className="absolute top-4 right-4 md:hidden z-20">
-                            <div className="glass px-3 py-1.5 rounded-full flex items-center gap-1.5">
-                                <Maximize2 className="w-3 h-3 text-[#0A84FF]" />
-                                <span className="text-[9px] font-bold text-white/60 uppercase tracking-widest">Tap to focus</span>
+                        {/* COMMAND CENTER Badge - Top Left */}
+                        <div className="absolute top-6 left-6 md:top-8 md:left-16 z-20">
+                            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#5E5CE6] text-white text-[10px] font-bold uppercase tracking-widest rounded-squircle-sm shadow-xl shadow-indigo-500/10 backdrop-blur-md">
+                                {t('network_intelligence.master_lab_badge')}
                             </div>
                         </div>
 
-                        <div className="absolute bottom-6 left-6 md:bottom-8 md:left-16 z-10 pr-6">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#5E5CE6] text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-squircle-sm">
-                                {t('network_intelligence.master_lab_badge')}
+                        {/* Mobile Expand Indicator - Top Right */}
+                        <div className="absolute top-6 right-6 md:hidden z-20">
+                            <div className="glass-subtle px-3 py-1.5 rounded-full flex items-center gap-1.5 border border-white/10">
+                                <Maximize2 className="w-3 h-3 text-[#0A84FF]" />
+                                <span className="text-[9px] font-bold text-white/50 uppercase tracking-widest">Tap to focus</span>
                             </div>
-                            <h4 className="text-xl md:text-2xl font-bold text-white/90 uppercase tracking-tight leading-tight">{t('network_intelligence.master_lab_title')}</h4>
-                            <p className="text-white/40 text-xs md:text-sm mt-2 max-w-lg font-light leading-relaxed">{t('network_intelligence.master_lab_desc')}</p>
+                        </div>
+
+                        {/* Title & Description - Bottom Left */}
+                        <div className="absolute bottom-6 left-6 md:bottom-8 md:left-16 z-10 pr-6">
+                            <h4 className="text-xl md:text-2xl font-bold text-white/90 uppercase tracking-tight leading-tight mb-2">
+                                {t('network_intelligence.master_lab_title')}
+                            </h4>
+                            <p className="text-white/40 text-[11px] md:text-sm max-w-lg font-light leading-relaxed">
+                                {t('network_intelligence.master_lab_desc')}
+                            </p>
                         </div>
                         {/* Hover Metadata Scan Effect */}
                         <div className="absolute inset-x-0 top-0 h-[1px] bg-amber-500/40 -translate-y-full group-hover:animate-scan-slow" />
