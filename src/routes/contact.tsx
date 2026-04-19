@@ -42,7 +42,7 @@ function Contact() {
                                 <div className="w-8 h-px bg-[#0A84FF]/40" />
                                 <p className="text-[10px] text-white/40 font-medium tracking-[0.3em] uppercase">Direct Line</p>
                             </div>
-                            <h1 className="text-3xl md:text-4xl font-black tracking-tighter leading-[0.95] uppercase">
+                            <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-[0.95] uppercase">
                                 {t('contact_page.title')}
                             </h1>
                             <p className="text-white/40 text-base leading-relaxed font-light">
@@ -125,7 +125,7 @@ function Contact() {
                         {/* Encryption badge */}
                         <div className="pt-5 border-t border-white/[0.05]">
                             <div className="flex items-center gap-2">
-                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-slow" />
+                                <div className="w-1.5 h-1.5 rounded-full bg-[#0A84FF] animate-pulse-slow" />
                                 <p className="text-[10px] font-medium text-white/40 uppercase tracking-[0.18em]">
                                     End-to-End Encrypted · WhatsApp Direct
                                 </p>

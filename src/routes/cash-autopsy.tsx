@@ -73,7 +73,7 @@ function CashAutopsyDiagnostic() {
 
     const renderInputField = (name: keyof CashAutopsyInputs, labelKey: string, hintKey: string) => (
         <div className="space-y-2">
-            <label className="text-sm font-black tracking-widest uppercase text-white/60 block">
+            <label className="text-sm font-bold tracking-widest uppercase text-white/60 block">
                 {t(`cash_autopsy.form.${labelKey}`, labelKey)}
             </label>
             <div className="relative">
@@ -101,11 +101,11 @@ function CashAutopsyDiagnostic() {
                 <NeuralMeshBackground colorClass="text-red-500" />
                 <div className="max-w-2xl mx-auto w-full flex-grow flex flex-col relative z-10">
                     <div className="mb-12">
-                        <Link to="/fip-lite" className="text-white/40 hover:text-white uppercase tracking-widest text-xs font-black inline-flex items-center transition-colors mb-6">
+                        <Link to="/fip-lite" className="text-white/40 hover:text-white uppercase tracking-widest text-xs font-bold inline-flex items-center transition-colors mb-6">
                             <ChevronLeft className="w-4 h-4 mr-2" />
                             {t('global.back', 'Return')}
                         </Link>
-                        <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4 flex items-center">
+                        <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4 flex items-center">
                             <ShieldAlert className="w-10 h-10 mr-4 text-red-500" />
                             {t('cash_autopsy.title', 'Cash Autopsy')}
                         </h1>
@@ -122,7 +122,7 @@ function CashAutopsyDiagnostic() {
                             animate={{ width: `${(step / 3) * 100}%` }}
                         />
                     </div>
-                    <p className="text-xs text-white/40 uppercase tracking-widest font-black text-right mb-12">
+                    <p className="text-xs text-white/40 uppercase tracking-widest font-bold text-right mb-12">
                         {t('wizard_shared.step_of', { current: step, total: 3 })}
                     </p>
 
@@ -169,20 +169,20 @@ function CashAutopsyDiagnostic() {
                     {/* Navigation */}
                     <div className="flex justify-between items-center mt-12 pt-8 border-t border-white/10">
                         {step > 1 ? (
-                            <button onClick={handlePrev} className="text-white/60 hover:text-white uppercase tracking-widest font-black text-sm px-6 py-4">
+                            <button onClick={handlePrev} className="text-white/60 hover:text-white uppercase tracking-widest font-bold text-sm px-6 py-4">
                                 {t('wizard_shared.btn_prev', 'Go Back')}
                             </button>
                         ) : <div/>}
 
                         {step < 3 ? (
-                            <Button onClick={handleNext} className="bg-white text-black hover:bg-white/90 uppercase tracking-widest font-black px-8">
+                            <Button onClick={handleNext} className="bg-white text-black hover:bg-white/90 uppercase tracking-widest font-bold px-8">
                                 {t('wizard_shared.btn_next', 'Next Step')} <ChevronRight className="w-4 h-4 ml-2" />
                             </Button>
                         ) : (
                             <Button 
                                 onClick={handleRunDiagnostic} 
                                 disabled={isCalculating}
-                                className="bg-red-600 hover:bg-red-700 text-white uppercase tracking-widest font-black px-8"
+                                className="bg-red-600 hover:bg-red-700 text-white uppercase tracking-widest font-bold px-8"
                             >
                                 {isCalculating ? t('wizard_shared.processing', 'Processing Variables...') : t('wizard_shared.btn_submit', 'Reveal My Results')}
                             </Button>
@@ -208,10 +208,10 @@ function CashAutopsyDiagnostic() {
             <div className="max-w-4xl mx-auto space-y-12 relative z-10">
                 {/* Header */}
                 <div className="text-center space-y-4">
-                    <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.2em] text-white/60">
+                    <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">
                         Diagnostic Engine Halted
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
+                    <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tight">
                         {t('cash_autopsy.results.layer12_title', 'Immediate Verdict')}
                     </h1>
                 </div>
@@ -220,14 +220,14 @@ function CashAutopsyDiagnostic() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="p-8 border border-white/10 glass rounded-squircle-lg relative overflow-hidden">
                         <div className={`absolute top-0 right-0 w-32 h-32 bg-red-500/20 blur-3xl`} />
-                        <h3 className="text-sm uppercase tracking-widest font-black text-white/60 mb-2">{t('cash_autopsy.results.runway_label', 'Cash Runway')}</h3>
+                        <h3 className="text-sm uppercase tracking-widest font-bold text-white/60 mb-2">{t('cash_autopsy.results.runway_label', 'Cash Runway')}</h3>
                         <div className="text-5xl font-semibold mb-2 flex items-end gap-2">
                             {result.layer1.cashRunwayDays} <span className="text-xl text-white/40 mb-1">DAYS</span>
                         </div>
                     </div>
 
                     <div className="p-8 border border-white/10 glass rounded-squircle-lg relative overflow-hidden">
-                        <h3 className="text-sm uppercase tracking-widest font-black text-white/60 mb-2">{t('cash_autopsy.results.burn_label', 'Net Burn Rate')}</h3>
+                        <h3 className="text-sm uppercase tracking-widest font-bold text-white/60 mb-2">{t('cash_autopsy.results.burn_label', 'Net Burn Rate')}</h3>
                         <div className="text-5xl font-semibold mb-2">
                             {formatCurrency(result.layer1.netBurnRate)}<span className="text-xl text-white/40">/mo</span>
                         </div>
@@ -253,14 +253,14 @@ function CashAutopsyDiagnostic() {
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90 pointer-events-none" />
                         <div className="p-8 pb-12 text-center relative z-10 flex flex-col items-center">
                             <Lock className="w-12 h-12 text-white/40 mb-6" />
-                            <h3 className="text-3xl font-black uppercase tracking-tighter mb-4">
+                            <h3 className="text-3xl font-bold uppercase tracking-tight mb-4">
                                 {t('cash_autopsy.gatekeeper.title', 'Unlock Deep Cash Analysis')}
                             </h3>
                             <p className="text-white/60 mb-8 max-w-lg mx-auto font-light">
                                 {t('cash_autopsy.gatekeeper.desc', 'Enter your email to reveal the exact severity of your structural cash risk and the locked vectors.')}
                             </p>
                             
-                            <div className="inline-flex items-center justify-center gap-2 mb-8 text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] border border-emerald-500/30 bg-emerald-500/10 px-4 py-2">
+                            <div className="inline-flex items-center justify-center gap-2 mb-8 text-emerald-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border border-emerald-500/30 bg-emerald-500/10 px-4 py-2">
                                 <CheckCircle2 className="w-4 h-4" /> 100% Free. No Strings Attached.
                             </div>
                             <form onSubmit={handleUnlock} className="w-full max-w-md space-y-4">
@@ -283,12 +283,12 @@ function CashAutopsyDiagnostic() {
                                 <Button 
                                     type="submit" 
                                     disabled={isSubmitting}
-                                    className="w-full bg-white text-black hover:bg-white/90 uppercase tracking-widest font-black p-6 h-auto"
+                                    className="w-full bg-white text-black hover:bg-white/90 uppercase tracking-widest font-bold p-6 h-auto"
                                 >
                                     {isSubmitting ? 'Authenticating...' : t('cash_autopsy.gatekeeper.btn', 'Unlock Report')}
                                 </Button>
                                 <div className="text-[10px] text-white/40 uppercase tracking-widest pt-6 space-y-2">
-                                    <div className="text-emerald-400 font-black tracking-widest">THIS IS NOT A TRAP. ZERO OBLIGATIONS.</div>
+                                    <div className="text-emerald-400 font-bold tracking-widest">THIS IS NOT A TRAP. ZERO OBLIGATIONS.</div>
                                     <div className="font-light leading-relaxed">
                                         Your specific vector data will be instantly unlocked on this exact page.<br/>
                                         <span className="text-white/40">We protect your privacy & will never spam you.</span>
@@ -302,7 +302,7 @@ function CashAutopsyDiagnostic() {
                         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} 
                         className="space-y-6"
                     >
-                        <h3 className="text-2xl font-black uppercase tracking-tighter flex items-center mb-6 border-b border-white/10 pb-4">
+                        <h3 className="text-2xl font-bold uppercase tracking-tight flex items-center mb-6 border-b border-white/10 pb-4">
                             <FileBarChart2 className="w-6 h-6 mr-3 text-white/60" />
                             Unsealed Vectors
                         </h3>
@@ -315,12 +315,12 @@ function CashAutopsyDiagnostic() {
                                 <div key={pillar.id} className="p-6 border border-white/10 glass rounded-squircle-md space-y-3">
                                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-3">
                                         <div className="flex-1">
-                                            <div className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">{pillar.category.replace(/-/g, ' ')}</div>
+                                            <div className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1">{pillar.category.replace(/-/g, ' ')}</div>
                                             <div className="text-lg font-bold">{pillar.name}</div>
                                         </div>
                                         <div className="flex items-center gap-3 flex-shrink-0">
                                             <div className="text-2xl font-bold tracking-tight">{pillar.computedValue}</div>
-                                            <div className={`text-[10px] font-black uppercase tracking-widest px-2 py-1 border rounded-full ${pillar.status === 'critical' ? 'text-red-500 border-red-500/30 bg-red-500/10' : pillar.status === 'warning' ? 'text-amber-500 border-amber-500/30 bg-amber-500/10' : 'text-emerald-500 border-emerald-500/30 bg-emerald-500/10'}`}>
+                                            <div className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 border rounded-full ${pillar.status === 'critical' ? 'text-red-500 border-red-500/30 bg-red-500/10' : pillar.status === 'warning' ? 'text-amber-500 border-amber-500/30 bg-amber-500/10' : 'text-emerald-500 border-emerald-500/30 bg-emerald-500/10'}`}>
                                                 {pillar.status}
                                             </div>
                                         </div>
@@ -340,14 +340,14 @@ function CashAutopsyDiagnostic() {
 
                         {/* Cross Links non-hierarchical */}
                         <div className="mt-16 pt-16 border-t border-white/10 border-dashed text-center">
-                            <h3 className="text-sm font-black uppercase tracking-widest text-white/60 mb-8">
+                            <h3 className="text-sm font-bold uppercase tracking-widest text-white/60 mb-8">
                                 {t('wizard_shared.cross_links_title', 'Explore Other Blindspots')}
                             </h3>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                                <Link to="/margin-audit" className="px-6 py-4 border border-white/20 hover:bg-white/5 transition-colors uppercase tracking-widest text-xs font-black inline-flex items-center justify-center">
+                                <Link to="/margin-audit" className="px-6 py-4 border border-white/20 hover:bg-white/5 transition-colors uppercase tracking-widest text-xs font-bold inline-flex items-center justify-center">
                                     {t('wizard_shared.cta_margin', 'Check Margin Leakage')} <ArrowRight className="w-4 h-4 ml-2 opacity-50" />
                                 </Link>
-                                <Link to="/growth-scan" className="px-6 py-4 border border-white/20 hover:bg-white/5 transition-colors uppercase tracking-widest text-xs font-black inline-flex items-center justify-center">
+                                <Link to="/growth-scan" className="px-6 py-4 border border-white/20 hover:bg-white/5 transition-colors uppercase tracking-widest text-xs font-bold inline-flex items-center justify-center">
                                     {t('wizard_shared.cta_growth', 'Check Scalability')} <ArrowRight className="w-4 h-4 ml-2 opacity-50" />
                                 </Link>
                             </div>
@@ -355,7 +355,7 @@ function CashAutopsyDiagnostic() {
                             
                         {/* The "Now What?" Gap - Explicit Medical Analogy */}
                         <div className="mt-16 p-8 glass-elevated rounded-squircle-xl border-l-4 border-amber-500 relative">
-                            <h4 className="text-amber-500 text-sm font-black uppercase tracking-widest flex items-center mb-6">
+                            <h4 className="text-amber-500 text-sm font-bold uppercase tracking-widest flex items-center mb-6">
                                 <AlertTriangle className="w-5 h-5 mr-3" /> The Prescription Gap
                             </h4>
                             <div className="space-y-4 text-sm font-semibold leading-relaxed">
@@ -377,12 +377,12 @@ function CashAutopsyDiagnostic() {
                                 <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
                                     <div className="text-left flex-1">
                                         <div className="text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-500 mb-2">Exclusive Deep Dive</div>
-                                        <h4 className="text-2xl font-black uppercase tracking-tighter mb-2 text-white">Full Forensic Audit</h4>
+                                        <h4 className="text-2xl font-bold uppercase tracking-tight mb-2 text-white">Full Forensic Audit</h4>
                                         <p className="text-sm text-white/60 font-semibold leading-relaxed">
                                             Move beyond surface symptoms. Book a surgical, 19-pillar operational audit to permanently map, isolate, and structurally resolve the exact blindspots slowly eroding your bottom line.
                                         </p>
                                     </div>
-                                    <Link to="/investasi" className="flex-shrink-0 bg-white text-black hover:bg-emerald-500 hover:text-white transition-colors duration-300 font-black uppercase tracking-widest text-xs px-8 py-4 flex items-center rounded-squircle-md">
+                                    <Link to="/investasi" className="flex-shrink-0 bg-white text-black hover:bg-emerald-500 hover:text-white transition-colors duration-300 font-bold uppercase tracking-widest text-xs px-8 py-4 flex items-center rounded-squircle-md">
                                         Commission Audit <ArrowRight className="w-4 h-4 ml-2" />
                                     </Link>
                                 </div>

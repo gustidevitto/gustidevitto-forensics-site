@@ -212,7 +212,7 @@ function PilarPage() {
                         <span className="mx-2">/</span>
                         <span className="text-foreground">{t(`pillars.${pillar.id}.title`)}</span>
                     </div>
-                    <div className="text-xs font-mono text-muted-foreground/60 uppercase tracking-tighter">
+                    <div className="text-xs font-mono text-muted-foreground/60 uppercase tracking-tight">
                         {t('pilar_detail.last_updated')} <time dateTime={(metadata as any).last_updated || "2025-01-02"}>
                             {new Date((metadata as any).last_updated || "2025-01-02").toLocaleDateString(currentLang === 'id' ? 'id-ID' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                         </time>

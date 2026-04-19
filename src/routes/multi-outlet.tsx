@@ -24,7 +24,7 @@ function MultiOutletPage() {
             {/* Subtle Authority UI Indicator */}
             <div className="absolute top-6 left-6 md:left-12 lg:left-20 z-50 pointer-events-none flex items-center gap-3">
                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse shadow-[0_0_10px_rgba(30,58,138,0.8)]" />
-                 <span className="text-[10px] font-black tracking-[0.3em] text-primary/80 uppercase">
+                 <span className="text-[10px] font-bold tracking-[0.3em] text-primary/80 uppercase">
                     Diagnostic Level: Verified // Multi-Outlet Protocol
                  </span>
             </div>
@@ -44,7 +44,7 @@ function MultiOutletPage() {
             <section className="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 overflow-hidden min-h-[85vh] flex flex-col justify-center border-b border-white/[0.05]">
                 <div className="max-w-6xl relative z-10">
                     <div className="text-left">
-                        <h1 className="text-[clamp(3.5rem,8vw,7.5rem)] font-black tracking-tighter leading-[0.9] w-full lg:w-[90%]">
+                        <h1 className="text-[clamp(3.5rem,8vw,7.5rem)] font-bold tracking-tight leading-[0.9] w-full lg:w-[90%]">
                             <span className="text-white/90">{t('multi_outlet.hero_title')}</span>
                             <br />
                             <span className="text-primary">{t('multi_outlet.hero_title_accent')}</span>
@@ -91,7 +91,7 @@ function MultiOutletPage() {
                                 <span className="text-amber-500 font-mono text-sm tracking-widest">ESTIMATE</span>
                                 <div className="w-12 h-[1px] bg-amber-500/30" />
                             </div>
-                            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">
+                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
                                 {t('multi_outlet.calc_title')}
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -126,7 +126,7 @@ function MultiOutletPage() {
 
                                     <div className="p-6 border border-white/[0.05] bg-white/[0.01]">
                                         <p className="text-[10px] uppercase font-mono tracking-widest text-amber-500/80 mb-2">{t('multi_outlet.calc_monthly')}</p>
-                                        <p className="text-4xl font-mono font-black text-white tracking-tight">
+                                        <p className="text-4xl font-mono font-bold text-white tracking-tight">
                                             {i18n.language === 'id' ? `Rp ${(networkSize * 450000 * 30).toLocaleString('id-ID')}` : `$${(networkSize * 32 * 30).toLocaleString()}`}
                                         </p>
                                         <p className="text-[10px] font-mono text-white/40 mt-3 uppercase tracking-widest">
@@ -150,7 +150,7 @@ function MultiOutletPage() {
                             <span className="text-amber-500 font-mono text-sm tracking-widest leading-none">01</span>
                             <div className="w-12 h-[1px] bg-amber-500/30" />
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-black mb-4 leading-tight">{t('multi_outlet.benefit1_title')}</h3>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">{t('multi_outlet.benefit1_title')}</h3>
                         <div className="text-white/60 leading-relaxed text-lg">
                             <Trans i18nKey="multi_outlet.benefit1_desc" components={{ 1: <span className="text-white font-bold" /> }} />
                         </div>
@@ -163,7 +163,7 @@ function MultiOutletPage() {
                             <span className="text-amber-500 font-mono text-sm tracking-widest leading-none">02</span>
                             <div className="w-12 h-[1px] bg-amber-500/30 md:hidden" />
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-black mb-4 md:text-right leading-tight">{t('multi_outlet.benefit2_title')}</h3>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 md:text-right leading-tight">{t('multi_outlet.benefit2_title')}</h3>
                         <div className="text-white/60 leading-relaxed text-lg md:text-right">
                             <Trans i18nKey="multi_outlet.benefit2_desc" components={{ 1: <span className="text-white font-bold" /> }} />
                         </div>
@@ -185,7 +185,7 @@ function MultiOutletPage() {
                             <span className="text-amber-500 font-mono text-sm tracking-widest leading-none">03</span>
                             <div className="w-12 h-[1px] bg-amber-500/30" />
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-black mb-4 leading-tight">{t('multi_outlet.benefit3_title')}</h3>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">{t('multi_outlet.benefit3_title')}</h3>
                         <div className="text-white/60 leading-relaxed text-lg">
                             <Trans i18nKey="multi_outlet.benefit3_desc" components={{ 1: <span className="text-white font-bold" /> }} />
                         </div>
@@ -198,7 +198,7 @@ function MultiOutletPage() {
                             <span className="text-amber-500 font-mono text-sm tracking-widest leading-none">04</span>
                             <div className="w-12 h-[1px] bg-amber-500/30 md:hidden" />
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-black mb-4 md:text-right leading-tight">{t('multi_outlet.benefit4_title')}</h3>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 md:text-right leading-tight">{t('multi_outlet.benefit4_title')}</h3>
                         <div className="text-white/60 leading-relaxed text-lg md:text-right">
                             <Trans i18nKey="multi_outlet.benefit4_desc" components={{ 1: <span className="text-white font-bold" /> }} />
                         </div>
@@ -229,7 +229,7 @@ function MultiOutletPage() {
                             <span className="text-amber-500 font-mono text-xs tracking-widest uppercase">{t('multi_outlet.demo_badge')}</span>
                             <div className="w-12 h-[1px] bg-amber-500/30" />
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-tight">{t('multi_outlet.demo_title')}</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight">{t('multi_outlet.demo_title')}</h2>
 
                         <div className="relative aspect-video border border-white/10 bg-black">
                              <iframe
@@ -260,7 +260,7 @@ function MultiOutletPage() {
             <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-[#03060a] border-b border-white/[0.05]">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start">
                     <div className="flex-1 space-y-8">
-                        <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.95]">
+                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[0.95]">
                             {t('multi_outlet.pricing_title')}
                         </h2>
                         <p className="text-white/40 text-lg leading-relaxed max-w-lg font-light">
@@ -274,7 +274,7 @@ function MultiOutletPage() {
                     <div className="shrink-0">
                         <Button asChild className="h-auto py-6 px-10 text-lg font-bold bg-amber-500 text-black hover:bg-white transition-colors rounded-none group">
                             <Link to="/investasi" className="flex flex-col items-start">
-                                <span className="flex items-center text-xl font-black">
+                                <span className="flex items-center text-xl font-bold">
                                     {t('multi_outlet.cta_health_score')}
                                     <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </span>
@@ -291,7 +291,7 @@ function MultiOutletPage() {
             <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 text-left relative overflow-hidden">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start md:items-stretch">
                     <div className="flex-1 space-y-10 order-2 md:order-1">
-                        <h2 className="text-[clamp(2.75rem,5vw,5rem)] font-black leading-[0.9] tracking-tighter w-full lg:w-[120%] z-10 relative">
+                        <h2 className="text-[clamp(2.75rem,5vw,5rem)] font-bold leading-[0.9] tracking-tight w-full lg:w-[120%] z-10 relative">
                             <Trans i18nKey="multi_outlet.final_cta_title" components={{ 1: <span className="text-amber-500" /> }} />
                         </h2>
                         <p className="text-white/60 text-xl md:text-2xl leading-relaxed max-w-xl font-light">
@@ -300,7 +300,7 @@ function MultiOutletPage() {
                         <div className="pt-8">
                             <Button asChild className="h-auto w-full md:w-auto py-6 px-8 md:px-12 text-lg font-bold bg-amber-500 text-black hover:bg-white transition-colors rounded-none shadow-none text-left flex items-center justify-start max-w-xl">
                                 <Link to="/fip-lite" className="flex flex-col items-start h-full justify-center">
-                                    <span className="text-xl md:text-2xl font-black whitespace-normal leading-tight">{t('multi_outlet.cta_health_score')}</span>
+                                    <span className="text-xl md:text-2xl font-bold whitespace-normal leading-tight">{t('multi_outlet.cta_health_score')}</span>
                                     <span className="text-[10px] opacity-70 font-mono tracking-widest uppercase mt-2">
                                         {t('multi_outlet.final_cta_meta')}
                                     </span>
@@ -339,7 +339,7 @@ function MultiOutletPage() {
 
             {/* Footer Badge */}
             <section className="py-8 border-t border-white/5 text-center">
-                <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/60">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60">
                     {t('multi_outlet.footer_badge')}
                 </p>
             </section>

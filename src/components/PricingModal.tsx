@@ -71,7 +71,7 @@ const PricingModal: React.FC<PricingModalProps> = ({ tier, commitmentType, onClo
             <div className="bg-zinc-900 text-white border border-primary/20 shadow-lg shadow-primary/10 p-8 rounded-lg max-w-2xl w-full relative">
                 <button onClick={onClose} className="absolute top-4 right-4 text-2xl text-muted-foreground hover:text-white">&times;</button>
 
-                <h2 className="text-3xl font-black text-primary">{tier.name}</h2>
+                <h2 className="text-3xl font-bold text-primary">{tier.name}</h2>
                 <p className="text-lg font-bold uppercase tracking-wider">{details.title}</p>
 
                 <div className="my-6 border-y border-white/10 py-4">

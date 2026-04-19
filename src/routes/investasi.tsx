@@ -73,7 +73,7 @@ function InvestasiPage() {
             name: t('investasi_page.tiers.forensic.name', 'FORENSIC'),
             tagline: t('investasi.tier_forensic_focus', 'Focus: depth'),
             positioning: t('investasi.tier_forensic_outcome', 'Outcome: identify structural profit loss'),
-            color: 'blue',
+            color: 'indigo',
             pricing: {
                 oneTime: 3500,
                 quarterly: { total: 8925, perAudit: 2975, audits: 3 },
@@ -179,7 +179,7 @@ function InvestasiPage() {
             {/* Ambient background orbs — static, non-interactive */}
             <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
                 <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#0A84FF]/[0.04] rounded-full blur-[160px] animate-subtle-glow" />
-                <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#BFA26A]/[0.03] rounded-full blur-[120px] animate-float" />
+                <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#82C7A8]/[0.03] rounded-full blur-[120px] animate-float" />
             </div>
 
             {/* SEO & Authority Meta Tags */}
@@ -214,13 +214,13 @@ function InvestasiPage() {
             {/* ── HERO ── */}
             <section className="pt-32 pb-24 px-4 md:px-8 border-b border-white/[0.05] bg-[#1c1c1e] relative z-10">
                 <div className="container mx-auto max-w-4xl text-center space-y-8 animate-fade-in">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-squircle-sm text-[10px] font-semibold uppercase tracking-widest text-[#BFA26A]">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-squircle-sm text-[10px] font-semibold uppercase tracking-widest text-[#82C7A8]">
                         <Lock className="w-3 h-3" strokeWidth={1.5} /> {t('investasi_page.hero_badge', 'Forensic Intelligence Protocol™')}
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
+                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight uppercase leading-none">
                         {t('investasi_page.hero_title', 'Choose How Deep We Go')}
                     </h1>
-                    <p className="text-[#BFA26A] font-semibold text-lg md:text-xl max-w-2xl mx-auto leading-relaxed border-l-2 border-[#BFA26A]/25 pl-8 py-2">
+                    <p className="text-[#82C7A8] font-semibold text-lg md:text-xl max-w-2xl mx-auto leading-relaxed border-l-2 border-[#82C7A8]/25 pl-8 py-2">
                         {t('investasi.outcome_anchor')}
                     </p>
                 </div>
@@ -230,7 +230,7 @@ function InvestasiPage() {
             <section className="py-24 px-4 md:px-8 border-b border-white/[0.05] bg-[#161618] relative">
                 <div className="container mx-auto max-w-5xl">
                     <div className="text-center mb-14 space-y-3">
-                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">{t('investasi.bridge_title')}</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-white">{t('investasi.bridge_title')}</h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                         {[1,2,3,4].map(n => (
@@ -250,8 +250,9 @@ function InvestasiPage() {
                             const colorMap: Record<string, { accentText: string; accentBg: string; accentBorder: string; glassClass: string }> = {
                                 green:  { accentText: 'text-[#0A84FF]',   accentBg: 'bg-[#0A84FF]',   accentBorder: 'border-[#0A84FF]/20',   glassClass: 'glass-blue' },
                                 blue:   { accentText: 'text-[#0A84FF]',   accentBg: 'bg-[#0A84FF]',   accentBorder: 'border-[#0A84FF]/20',   glassClass: 'glass-blue' },
-                                amber:  { accentText: 'text-[#BFA26A]',   accentBg: 'bg-[#BFA26A]',   accentBorder: 'border-[#BFA26A]/20',   glassClass: 'glass-gold' },
-                                red:    { accentText: 'text-red-400',      accentBg: 'bg-red-500',      accentBorder: 'border-red-500/20',      glassClass: 'glass' },
+                                indigo: { accentText: 'text-[#5E5CE6]',   accentBg: 'bg-[#5E5CE6]',   accentBorder: 'border-[#5E5CE6]/20',   glassClass: 'glass-indigo' },
+                                amber:  { accentText: 'text-[#FF9F0A]',   accentBg: 'bg-[#FF9F0A]',   accentBorder: 'border-[#FF9F0A]/20',   glassClass: 'glass-amber' },
+                                red:    { accentText: 'text-[#FF453A]',   accentBg: 'bg-[#FF453A]',   accentBorder: 'border-[#FF453A]/20',   glassClass: 'glass' },
                             };
                             const theme = colorMap[tier.color] || colorMap.blue;
 
@@ -261,7 +262,7 @@ function InvestasiPage() {
                                     <div className={`absolute top-0 left-8 right-8 h-px ${theme.accentBg} opacity-30 group-hover:opacity-60 transition-opacity`} />
 
                                     <div className="mb-6">
-                                        <h3 className={`text-2xl font-black ${theme.accentText} tracking-tight mb-1`}>{tier.name}</h3>
+                                        <h3 className={`text-2xl font-bold ${theme.accentText} tracking-tight mb-1`}>{tier.name}</h3>
                                         <p className="text-white/40 font-light text-sm">{tier.tagline}</p>
                                     </div>
 
@@ -285,14 +286,14 @@ function InvestasiPage() {
                                                     <span className="text-xs text-white/40">{t('investasi_page.labels.total', 'Total')}</span>
                                                 </div>
                                                 <span className="text-xs text-white/40">${tier.pricing.quarterly.perAudit.toLocaleString()} / {t('investasi_page.labels.per_audit', 'audit')} · {t('investasi_page.labels.quarterly_sub', '3x Monthly')}</span>
-                                                <span className="text-xs text-emerald-400 font-semibold mt-1 block">{t('investasi_page.labels.save', { amount: `$${(tier.pricing.oneTime * 3 - tier.pricing.quarterly.total).toLocaleString()}` })}</span>
+                                                <span className={`text-xs ${theme.accentText} font-semibold mt-1 block`}>{t('investasi_page.labels.save', { amount: `$${(tier.pricing.oneTime * 3 - tier.pricing.quarterly.total).toLocaleString()}` })}</span>
                                             </div>
                                             <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')}>{t('investasi_page.labels.select', 'Select')}</Button>
                                         </div>
 
                                         {/* Annual — highlighted */}
                                         <div className={`p-4 rounded-squircle-sm flex items-center justify-between relative ${theme.glassClass} border ${theme.accentBorder}`}>
-                                            <div className={`absolute -top-3 left-4 ${theme.accentBg} text-black text-[9px] font-black px-3 py-1 rounded-squircle-sm uppercase tracking-wider`}>{t('investasi_page.labels.recommended', 'Recommended')}</div>
+                                            <div className={`absolute -top-3 left-4 ${theme.accentBg} text-black text-[9px] font-bold px-3 py-1 rounded-squircle-sm uppercase tracking-wider`}>{t('investasi_page.labels.recommended', 'Recommended')}</div>
                                             <div className="text-left mt-1">
                                                 <h4 className={`font-semibold uppercase tracking-widest text-xs ${theme.accentText} mb-1`}>{t('investasi_page.labels.annual', 'Annual Partnership')}</h4>
                                                 <div className="flex items-baseline gap-2">
@@ -300,7 +301,7 @@ function InvestasiPage() {
                                                     <span className="text-xs text-white/40">/ {t('investasi_page.labels.year', 'Year')}</span>
                                                 </div>
                                                 <span className="text-xs text-white/40">${tier.pricing.annual.perAudit.toLocaleString()} / audit · {t('investasi_page.labels.annual_sub', '4x Quarterly')}</span>
-                                                <span className="text-xs text-emerald-400 font-semibold mt-1 block">{t('investasi_page.labels.save', { amount: `$${(tier.pricing.oneTime * 4 - tier.pricing.annual.total).toLocaleString()}` })} + Benefits</span>
+                                                <span className={`text-xs ${theme.accentText} font-semibold mt-1 block`}>{t('investasi_page.labels.save', { amount: `$${(tier.pricing.oneTime * 4 - tier.pricing.annual.total).toLocaleString()}` })} + Benefits</span>
                                             </div>
                                             <Button size="sm" onClick={() => openModal(tier, 'annual')} className={`${theme.accentBg} text-black hover:brightness-110 border-none font-bold`}>{t('investasi_page.labels.select', 'Select')}</Button>
                                         </div>
@@ -313,13 +314,13 @@ function InvestasiPage() {
                                                 const parts = (t(featureObj.key, featureObj.default) as string).split(' -> ');
                                                 const isHighlighted = featureObj.highlight;
                                                 return (
-                                                    <li key={i} className={`flex items-start gap-3 text-sm ${isHighlighted ? 'glass-gold -mx-2 px-2 py-1 rounded-squircle-sm border-l-2 border-[#BFA26A]/25' : 'text-white/60'}`}>
+                                                    <li key={i} className={`flex items-start gap-3 text-sm ${isHighlighted ? `${theme.glassClass} -mx-2 px-2 py-1 rounded-squircle-sm border-l-2 ${theme.accentBorder}` : 'text-white/60'}`}>
                                                         {isHighlighted
-                                                            ? <Star className="w-3.5 h-3.5 text-[#BFA26A] shrink-0 mt-0.5 fill-[#BFA26A]" strokeWidth={1} />
+                                                            ? <Star className={`w-3.5 h-3.5 ${theme.accentText} shrink-0 mt-0.5 fill-current`} strokeWidth={1} />
                                                             : <ShieldCheck className={`w-3.5 h-3.5 ${theme.accentText} shrink-0 mt-0.5`} strokeWidth={1.5} />
                                                         }
                                                         <div className="leading-snug">
-                                                            <span className={isHighlighted ? 'text-[#BFA26A] font-semibold' : 'text-white/60'}>{parts[0]}</span>
+                                                            <span className={isHighlighted ? `${theme.accentText} font-semibold` : 'text-white/60'}>{parts[0]}</span>
                                                             {parts[1] && <span className="block text-[11px] mt-0.5 text-white/40 italic">{parts[1]}</span>}
                                                         </div>
                                                     </li>
@@ -347,7 +348,7 @@ function InvestasiPage() {
             <section className="py-24 px-4 md:px-8">
                 <div className="container mx-auto max-w-4xl">
                     <div className="space-y-4">
-                        <h2 className="text-3xl font-black text-center">{t('investasi_page.labels.analysis_title', 'Deeper Analysis')}</h2>
+                        <h2 className="text-3xl font-bold text-center">{t('investasi_page.labels.analysis_title', 'Deeper Analysis')}</h2>
                         <div className="border border-white/10 glass rounded-squircle-lg p-6 md:p-8 relative">
                             <div className="flex items-center justify-between gap-4 mb-6">
                                 <h3 className="font-bold text-white uppercase tracking-widest text-sm">{t('investasi_page.labels.feature_comparison', 'See Detailed Feature Comparison')}</h3>
@@ -490,9 +491,9 @@ function InvestasiPage() {
                                         ))}
                                     </ul>
                                 </div>
-                                <div className="p-6 bg-[#BFA26A]/5 border border-[#BFA26A]/20 rounded-squircle-md">
-                                    <h5 className="font-black text-[#BFA26A] uppercase tracking-widest text-xs mb-3">{t('investasi_page.labels.savings_example', 'SAVINGS EXAMPLE (FORENSIC tier):')}</h5>
-                                    <ul className="list-disc list-inside space-y-2 text-[#BFA26A]/80 font-medium">
+                                <div className="p-6 bg-[#82C7A8]/5 border border-[#82C7A8]/20 rounded-squircle-md">
+                                    <h5 className="font-bold text-[#82C7A8] uppercase tracking-widest text-xs mb-3">{t('investasi_page.labels.savings_example', 'SAVINGS EXAMPLE (FORENSIC tier):')}</h5>
+                                    <ul className="list-disc list-inside space-y-2 text-[#82C7A8]/80 font-medium">
                                         <li>One-time: $3,500/audit</li>
                                         <li>Quarterly: $2,975/audit (save $525)</li>
                                         <li>Annual: $2,625/audit + access (save $875 + benefits)</li>
@@ -511,14 +512,14 @@ function InvestasiPage() {
             <section className="py-24 px-4 md:px-8 bg-[#161618] border-t border-white/[0.05]">
                 <div className="container mx-auto max-w-4xl text-center space-y-8">
                     {/* Micro Proof Block */}
-                    <div className="mb-10 p-8 glass-gold rounded-squircle-lg text-left max-w-3xl mx-auto relative overflow-hidden">
-                        <div className="absolute left-0 top-4 bottom-4 w-0.5 bg-[#BFA26A]/30 rounded-full" />
+                    <div className="mb-10 p-8 glass-sage rounded-squircle-lg text-left max-w-3xl mx-auto relative overflow-hidden">
+                        <div className="absolute left-0 top-4 bottom-4 w-0.5 bg-[#82C7A8]/30 rounded-full" />
                         <p className="text-white/60 italic text-lg leading-relaxed pl-6">
                             "{t('investasi.micro_proof')}"
                         </p>
                     </div>
 
-                    <h2 className="text-3xl font-black">{t('investasi_page.labels.not_sure_title', 'Not sure how deep you need us to go?')}</h2>
+                    <h2 className="text-3xl font-bold">{t('investasi_page.labels.not_sure_title', 'Not sure how deep you need us to go?')}</h2>
                     <p className="text-white/40 text-lg font-light">{t('investasi.reassurance')}</p>
 
                     <div className="pt-6">

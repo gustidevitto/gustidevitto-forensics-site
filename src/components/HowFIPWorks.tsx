@@ -45,7 +45,7 @@ export const HowFIPWorks: React.FC = () => {
             <div className="container mx-auto max-w-6xl">
                 {/* Header */}
                 <div className="text-center mb-14 space-y-3">
-                    <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight">
+                    <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight">
                         <Trans
                             i18nKey="investasi.how_it_works.section_title"
                             defaults="The Path to <span>Sovereign Intelligence</span>"
@@ -79,7 +79,7 @@ export const HowFIPWorks: React.FC = () => {
                                         {phase.title}
                                     </h3>
                                 </div>
-                                <div className="text-[10px] font-semibold text-[#BFA26A]/70 uppercase mb-3 tracking-widest glass-gold px-2.5 py-1 rounded-squircle-sm inline-block w-fit">
+                                <div className="text-[10px] font-semibold text-[#82C7A8]/70 uppercase mb-3 tracking-widest glass-sage px-2.5 py-1 rounded-squircle-sm inline-block w-fit">
                                     {phase.actor}
                                 </div>
                                 <p className="text-sm text-white/40 leading-relaxed font-light">
@@ -91,12 +91,12 @@ export const HowFIPWorks: React.FC = () => {
                 </div>
 
                 {/* Strategic note */}
-                <div className="mt-12 p-7 rounded-squircle-xl glass-gold border-[#BFA26A]/15 max-w-3xl mx-auto text-center">
+                <div className="mt-12 p-7 rounded-squircle-xl glass-sage border-[#82C7A8]/15 max-w-3xl mx-auto text-center">
                     <p className="text-sm text-white/60 leading-relaxed">
                         <Trans
                             i18nKey="investasi.how_it_works.tesla_principle"
                             defaults="Strategic Note: we apply the <span>Tesla Principle</span>. Every diagnosis strengthens the FIP™ patterns, making your system smarter every day."
-                            components={{ 1: <span className="text-[#BFA26A] font-semibold" /> }}
+                            components={{ 1: <span className="text-[#82C7A8] font-semibold" /> }}
                         />
                     </p>
                 </div>

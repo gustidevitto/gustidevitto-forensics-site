@@ -41,12 +41,12 @@ function ForensicsPillars() {
                 </div>
                 <div className="max-w-5xl relative z-10">
                     <div className="flex items-center gap-4 mb-8">
-                        <div className="w-8 h-px bg-[#BFA26A]/50" />
+                        <div className="w-8 h-px bg-[#82C7A8]/50" />
                         <p className="text-[10px] text-white/40 font-medium tracking-[0.3em] uppercase">
                             {t('pillars_page.badge')}
                         </p>
                     </div>
-                    <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-black tracking-tighter leading-[0.9] uppercase max-w-4xl">
+                    <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-bold tracking-tight leading-[0.9] uppercase max-w-4xl">
                         {t('pillars_page.title')}
                     </h1>
                     <p className="mt-6 text-lg md:text-xl text-white/40 max-w-2xl font-light leading-relaxed">
@@ -60,15 +60,15 @@ function ForensicsPillars() {
                 <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_1.2fr] items-stretch">
                     <div className="py-20 px-6 md:px-12 lg:px-20 space-y-8">
                         <div className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#BFA26A] animate-pulse-slow" />
-                            <span className="text-[10px] font-semibold text-[#BFA26A]/60 uppercase tracking-[0.2em]">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#82C7A8] animate-pulse-slow" />
+                            <span className="text-[10px] font-semibold text-[#82C7A8]/60 uppercase tracking-[0.2em]">
                                 {t('pillars_page.implementation_badge')}
                             </span>
                         </div>
-                        <h2 className="text-3xl font-black tracking-tighter leading-tight">
+                        <h2 className="text-3xl font-bold tracking-tight leading-tight">
                             <Trans i18nKey="pillars_page.mri_title">
                                 Integrated MRI: <br />
-                                <span className="text-[#BFA26A] text-4xl">FIP™ Digital Mirror</span>
+                                <span className="text-[#82C7A8] text-4xl">FIP™ Digital Mirror</span>
                             </Trans>
                         </h2>
                         <p className="text-white/40 leading-relaxed font-light">
@@ -89,7 +89,7 @@ function ForensicsPillars() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-[#161618] via-[#161618]/25 to-transparent" />
                         <div className="absolute bottom-6 right-6 text-right">
-                            <p className="text-[10px] font-medium text-[#BFA26A]/50 uppercase tracking-[0.2em]">{t('about_page.auth_level')}</p>
+                            <p className="text-[10px] font-medium text-[#82C7A8]/50 uppercase tracking-[0.2em]">{t('about_page.auth_level')}</p>
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,7 @@ function ForensicsPillars() {
             <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-[#161618] border-t border-white/[0.05]">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start">
                     <div className="flex-1 space-y-8">
-                        <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-tight">
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
                             {t('pillars_page.cta_title')}
                         </h2>
                         <p className="text-white/40 text-lg leading-relaxed font-light italic max-w-xl">

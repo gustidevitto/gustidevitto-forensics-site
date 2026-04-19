@@ -44,7 +44,7 @@ function AboutGustiDevitto() {
                             <p className="text-white/60">{t('about_ssot.p4_context')}</p>
                             <p className="text-white/60">{t('about_ssot.p5_context')}</p>
                             <div className="h-2"></div>
-                            <p className="text-[#BFA26A] font-semibold">{t('about_ssot.p6_answer')}</p>
+                            <p className="text-[#0A84FF] font-semibold">{t('about_ssot.p6_answer')}</p>
                             <p className="text-white/60" dangerouslySetInnerHTML={{ __html: t('about_ssot.p7_desc') }}></p>
                             
                             <div className="border-l-2 border-[#0A84FF]/40 pl-6 my-10 py-2">
@@ -63,7 +63,7 @@ function AboutGustiDevitto() {
             <section className="py-24 px-6 md:px-12 lg:px-20 border-t border-white/[0.05] bg-[#161618]">
                 <div className="max-w-4xl mx-auto relative glass rounded-squircle-lg p-8 md:p-16 border border-white/[0.05]">
                    <div className="space-y-8 text-xl leading-relaxed text-white/60 font-light">
-                        <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-4">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">
                             {t('about_ssot.pos_title')}
                         </h2>
                         <p className="text-2xl md:text-3xl font-medium text-white leading-snug tracking-tight">
@@ -126,9 +126,9 @@ function AboutGustiDevitto() {
                 <div className="max-w-4xl mx-auto text-center space-y-12">
                     <div className="space-y-6">
                         <div className="flex items-center gap-4 justify-center mb-8">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#BFA26A] animate-pulse" />
-                            <h2 className="text-xs font-bold text-[#BFA26A] uppercase tracking-[0.2em] mt-0.5">{t('about_ssot.who_title')}</h2>
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#BFA26A] animate-pulse" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#0A84FF] animate-pulse" />
+                            <h2 className="text-xs font-bold text-[#0A84FF] uppercase tracking-[0.2em] mt-0.5">{t('about_ssot.who_title')}</h2>
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#0A84FF] animate-pulse" />
                         </div>
                         <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
                             {t('about_ssot.who_p1_1')}<br />
@@ -143,7 +143,7 @@ function AboutGustiDevitto() {
                     </div>
 
                     <div className="pt-16 mt-8 border-t border-white/[0.05]">
-                        <h3 className="text-3xl md:text-4xl font-black mb-10 tracking-tight">{t('about_ssot.cta_title')}</h3>
+                        <h3 className="text-3xl md:text-4xl font-bold mb-10 tracking-tight">{t('about_ssot.cta_title')}</h3>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button asChild size="xl" className="bg-[#0A84FF] text-white hover:bg-[#0A84FF]/90 font-bold px-8 h-14 rounded-squircle-sm">
                                 <Link to="/fip-lite">{t('about_ssot.cta_btn_scan')}</Link>

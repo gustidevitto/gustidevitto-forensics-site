@@ -49,7 +49,7 @@ export const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputPro
         return (
             <div className="relative">
                 {prefix && (
-                    <span className="absolute left-0 top-1/2 -translate-y-1/2 text-2xl font-black opacity-30">{prefix}</span>
+                    <span className="absolute left-0 top-1/2 -translate-y-1/2 text-2xl font-bold opacity-30">{prefix}</span>
                 )}
                 <Input
                     {...props}

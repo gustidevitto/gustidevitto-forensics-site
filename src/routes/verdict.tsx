@@ -17,12 +17,12 @@ function VerdictPage() {
             <section className="pt-32 pb-20 px-6 md:px-12 lg:px-20 border-b border-white/[0.05]">
                 <div className="max-w-5xl">
                     <div className="flex items-center gap-4 mb-8">
-                        <div className="w-8 h-px bg-[#BFA26A]/40" />
-                        <p className="text-[10px] text-[#BFA26A]/60 font-semibold tracking-[0.3em] uppercase">
+                        <div className="w-8 h-px bg-[#82C7A8]/40" />
+                        <p className="text-[10px] text-[#82C7A8]/60 font-semibold tracking-[0.3em] uppercase">
                             {t('verdict_page.hero_badge')}
                         </p>
                     </div>
-                    <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-black tracking-tighter leading-[0.9] uppercase">
+                    <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-bold tracking-tight leading-[0.9] uppercase">
                         {t('verdict_page.hero_title')}
                     </h1>
                     <p className="mt-6 text-lg text-white/40 max-w-xl font-light leading-relaxed">
@@ -105,7 +105,7 @@ function VerdictPage() {
                 <div className="max-w-5xl">
                     <Button asChild>
                         <Link to="/fip-lite" className="flex flex-col items-start">
-                            <span className="flex items-center text-xl font-black">
+                            <span className="flex items-center text-xl font-bold">
                                 {t('verdict_page.cta_verdict')}
                                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-0.5 transition-transform" strokeWidth={2} />
                             </span>

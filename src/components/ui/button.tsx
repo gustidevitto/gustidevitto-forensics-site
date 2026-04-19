@@ -28,7 +28,7 @@ const buttonVariants = cva(
                     "text-[#0A84FF] underline-offset-4 hover:underline",
                 // Gold — brand accent only (use sparingly)
                 gold:
-                    "bg-[#BFA26A] text-black font-bold hover:bg-[#D4B87A] active:scale-[0.98] rounded-squircle-md shadow-[0_1px_3px_rgba(0,0,0,0.3)]",
+                    "bg-[#82C7A8] text-black font-bold hover:bg-[#A4E0C4] active:scale-[0.98] rounded-squircle-md shadow-[0_1px_3px_rgba(0,0,0,0.3)]",
             },
             size: {
                 default: "h-10 px-4 py-2",

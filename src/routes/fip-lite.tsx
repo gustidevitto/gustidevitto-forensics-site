@@ -27,9 +27,9 @@ function FipLiteHub() {
             title: t('fip_lite_hub.card_margin_title', 'Margin Audit'),
             desc: t('fip_lite_hub.card_margin_desc', 'Your team is busy, but profit is flat. Isolate your exact GP Leakage, labor inefficiency, and unrecorded operational waste.'),
             icon: Activity,
-            accentClass: 'text-[#BFA26A]',
-            glassTint: 'bg-[#BFA26A]/[0.05]',
-            borderTint: 'border-[#BFA26A]/[0.12]',
+            accentClass: 'text-[#82C7A8]',
+            glassTint: 'bg-[#82C7A8]/[0.05]',
+            borderTint: 'border-[#82C7A8]/[0.12]',
             cta: t('fip_lite_hub.card_margin_cta', 'Run Efficiency Audit'),
             href: '/margin-audit'
         },
@@ -69,7 +69,7 @@ function FipLiteHub() {
                             {t('fip_lite_hub.hero_badge', 'FIP™ Lite Triage')}
                         </div>
 
-                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9]">
+                        <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[0.9]">
                             <Trans i18nKey="fip_lite_hub.hero_title">
                                 Where is the <span className="text-white/40 italic">leak?</span>
                             </Trans>
@@ -101,7 +101,7 @@ function FipLiteHub() {
                                             <diag.icon className={`w-5 h-5 ${diag.accentClass}`} strokeWidth={1.5} />
                                         </div>
 
-                                        <h3 className={`text-xl font-black uppercase tracking-tight mb-3 z-10 ${diag.accentClass}`}>
+                                        <h3 className={`text-xl font-bold uppercase tracking-tight mb-3 z-10 ${diag.accentClass}`}>
                                             {diag.title}
                                         </h3>
 

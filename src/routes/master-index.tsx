@@ -35,16 +35,16 @@ function MasterIndex() {
                     {/* Left — Title */}
                     <div className="pt-32 pb-20 px-6 md:px-12 lg:px-20 space-y-6">
                         <div className="flex items-center gap-4 mb-4">
-                            <div className="w-8 h-px bg-[#BFA26A]/40" />
-                            <p className="text-[10px] text-[#BFA26A]/60 font-semibold tracking-[0.3em] uppercase">
+                            <div className="w-8 h-px bg-[#82C7A8]/40" />
+                            <p className="text-[10px] text-[#82C7A8]/60 font-semibold tracking-[0.3em] uppercase">
                                 {t('master_index.hero_badge')}
                             </p>
                         </div>
-                        <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-black tracking-tighter leading-[0.9] uppercase">
+                        <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-bold tracking-tight leading-[0.9] uppercase">
                             <Trans i18nKey="master_index.hero_title">Financial Forensics <br />Framework</Trans>
                         </h1>
                         <p className="text-white/40 text-base leading-relaxed max-w-md font-light">
-                            by <Link to="/about-gusti-devitto" className="text-[#BFA26A] hover:text-white transition-colors font-semibold">{t('master_index.by_author')}</Link>
+                            by <Link to="/about-gusti-devitto" className="text-[#0A84FF] hover:text-white transition-colors font-semibold">{t('master_index.by_author')}</Link>
                         </p>
                         <p className="text-white/40 text-base leading-relaxed max-w-md font-light">
                             {t('master_index.hero_subtitle')}
@@ -67,10 +67,10 @@ function MasterIndex() {
             <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05]">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex items-center gap-4 mb-12">
-                        <span className="text-[#BFA26A] font-semibold text-xs tracking-widest uppercase">Pillar Index</span>
-                        <div className="w-12 h-px bg-[#BFA26A]/20" />
+                        <span className="text-[#0A84FF] font-semibold text-xs tracking-widest uppercase">Pillar Index</span>
+                        <div className="w-12 h-px bg-[#0A84FF]/20" />
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-black tracking-tighter mb-12">{t('master_index.pillars_title')}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-12">{t('master_index.pillars_title')}</h2>
 
                     <div className="divide-y divide-white/[0.04]">
                         {sortedPillars.map((pillar) => (
@@ -97,15 +97,15 @@ function MasterIndex() {
             <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] bg-[#161618]">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex items-center gap-4 mb-12">
-                        <span className="text-[#BFA26A] font-semibold text-xs tracking-widest uppercase">Core Concepts</span>
-                        <div className="w-12 h-px bg-[#BFA26A]/20" />
+                        <span className="text-[#0A84FF] font-semibold text-xs tracking-widest uppercase">Core Concepts</span>
+                        <div className="w-12 h-px bg-[#0A84FF]/20" />
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-black tracking-tighter mb-16">{t('master_index.concepts_title')}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-16">{t('master_index.concepts_title')}</h2>
 
                     <div className="space-y-12">
                         {coreConcepts.map((concept, i) => (
                             <div key={concept.name} className={`grid md:grid-cols-[200px_1fr] gap-4 md:gap-8 ${i % 2 !== 0 ? 'md:ml-24' : ''}`}>
-                                <h3 className="text-sm font-semibold text-[#BFA26A]/70 uppercase tracking-wider">{concept.name}</h3>
+                                <h3 className="text-sm font-semibold text-[#0A84FF]/70 uppercase tracking-wider">{concept.name}</h3>
                                 <p className="text-white/40 leading-relaxed font-light">{concept.desc}</p>
                             </div>
                         ))}
@@ -120,7 +120,7 @@ function MasterIndex() {
                         <span className="text-red-400 font-semibold text-xs tracking-widest uppercase">Warning Patterns</span>
                         <div className="w-12 h-px bg-red-500/20" />
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-black tracking-tighter mb-16">{t('master_index.narrative_title')}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-16">{t('master_index.narrative_title')}</h2>
 
                     <div className="space-y-16">
                         {narrativePatterns.map((pattern, i) => (
@@ -140,7 +140,7 @@ function MasterIndex() {
             <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start">
                     <div className="flex-1 space-y-8">
-                        <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-tight">{t('master_index.footer_title')}</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">{t('master_index.footer_title')}</h2>
                         <p className="text-white/40 text-lg font-light leading-relaxed max-w-xl">
                             {t('master_index.footer_desc')}
                         </p>

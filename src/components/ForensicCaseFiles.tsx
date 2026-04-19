@@ -24,8 +24,8 @@ export function ForensicCaseFiles() {
             sector: t('case_files.sector_retail', "Retail Fashion"),
             status: "RESOLVED",
             type: t('case_files.type_phantom_labor', "Phantom Labor"),
-            accentColor: "text-[#BFA26A]",
-            dotColor: "bg-[#BFA26A]",
+            accentColor: "text-[#5E5CE6]",
+            dotColor: "bg-[#5E5CE6]",
         },
         {
             id: "FIP-7714-A",
@@ -35,8 +35,8 @@ export function ForensicCaseFiles() {
             sector: t('case_files.sector_automotive', "Automotive Service"),
             status: "RESOLVED",
             type: t('case_files.type_pricing_leakage', "Pricing Leakage"),
-            accentColor: "text-emerald-400",
-            dotColor: "bg-emerald-400",
+            accentColor: "text-[#FF9F0A]",
+            dotColor: "bg-[#FF9F0A]",
         }
     ]
 
@@ -45,10 +45,10 @@ export function ForensicCaseFiles() {
             <div className="container mx-auto max-w-6xl relative z-10">
                 {/* Section header */}
                 <div className="text-center space-y-3 mb-16 max-w-3xl mx-auto">
-                    <p className="text-xs font-semibold text-[#BFA26A] uppercase tracking-[0.2em] mb-3">
+                    <p className="text-xs font-semibold text-[#82C7A8] uppercase tracking-[0.2em] mb-3">
                         {t('case_files.badge', "Case Files")}
                     </p>
-                    <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white/90">
+                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white/90">
                         {t('case_files.title')}
                     </h2>
                     <p className="text-lg text-white/40 font-light mt-4 leading-relaxed">

@@ -68,7 +68,7 @@ function Index() {
                 <div className="relative z-10 px-6 md:px-12 lg:px-20 pb-12 md:pb-20 pt-[25vh] md:pt-[30vh]">
                     <div className="max-w-6xl">
                         {/* Name — massive, left-aligned, uppercase */}
-                        <h1 className="text-[clamp(3.5rem,12vw,10rem)] font-black tracking-[-0.04em] leading-[0.85] uppercase">
+                        <h1 className="text-[clamp(3.5rem,12vw,10rem)] font-bold tracking-[-0.04em] leading-[0.85] uppercase">
                             <Trans i18nKey="entrance_gate.hero_title">
                                 GUSTI <br />
                                 DEVITTO
@@ -125,7 +125,7 @@ function Index() {
                                 </p>
                             </div>
                             <div className="flex items-center gap-3 shrink-0 ml-8">
-                                <span className="hidden md:block text-[10px] tracking-[0.15em] uppercase text-white/40 group-hover:text-[#BFA26A]/70 transition-colors duration-300 font-medium">
+                                <span className="hidden md:block text-[10px] tracking-[0.15em] uppercase text-white/40 group-hover:text-[#82C7A8]/70 transition-colors duration-300 font-medium">
                                     {t('entrance_gate.multi_outlet_cta')}
                                 </span>
                                 <div className="w-8 h-8 rounded-squircle-sm glass-blue flex items-center justify-center group-hover:bg-[#0A84FF]/20 transition-colors">
@@ -149,7 +149,7 @@ function Index() {
                                 </p>
                             </div>
                             <div className="flex items-center gap-3 shrink-0 ml-8">
-                                <span className="hidden md:block text-[10px] tracking-[0.15em] uppercase text-white/40 group-hover:text-[#BFA26A]/70 transition-colors duration-300 font-medium">
+                                <span className="hidden md:block text-[10px] tracking-[0.15em] uppercase text-white/40 group-hover:text-[#82C7A8]/70 transition-colors duration-300 font-medium">
                                     {t('entrance_gate.enterprise_cta')}
                                 </span>
                                 <div className="w-8 h-8 rounded-squircle-sm glass-blue flex items-center justify-center group-hover:bg-[#0A84FF]/20 transition-colors">
@@ -161,7 +161,7 @@ function Index() {
                         {/* Emergency scan — inline link */}
                         <Link
                             to="/fip-lite"
-                            className="group inline-flex items-center gap-3 mt-6 md:mt-10 text-xs text-white/40 hover:text-[#BFA26A] transition-colors duration-300"
+                            className="group inline-flex items-center gap-3 mt-6 md:mt-10 text-xs text-white/40 hover:text-[#82C7A8] transition-colors duration-300"
                         >
                             <span className="font-medium tracking-wider uppercase">
                                 {t('entrance_gate.emergency_cta', 'Free Emergency Scan')}

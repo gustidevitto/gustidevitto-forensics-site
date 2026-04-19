@@ -5,6 +5,7 @@ interface NeuralMesh3DProps {
   color?: string; // e.g. "56, 189, 248" (RGB without alpha)
   nodeCount?: number;
   opacity?: number;
+  trappedProfitCount?: number;
 }
 
 // Pseudo-random seeded generator for deterministic initial positions
@@ -32,6 +33,7 @@ interface Node3D {
   pulseSpeed: number;
   pulsePhase: number;
   baseRadius: number;
+  isTrapped: boolean;
 }
 
 export const NeuralMesh3D: React.FC<NeuralMesh3DProps> = ({
@@ -39,6 +41,7 @@ export const NeuralMesh3D: React.FC<NeuralMesh3DProps> = ({
   color = "56, 189, 248",
   nodeCount = 50,
   opacity = 0.4,
+  trappedProfitCount = 0,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -104,6 +107,7 @@ export const NeuralMesh3D: React.FC<NeuralMesh3DProps> = ({
         pulseSpeed: 0.5 + seededRandom(i * 17) * 1.5,
         pulsePhase: seededRandom(i * 19) * Math.PI * 2,
         baseRadius: 1.2 + seededRandom(i * 23) * 2.0,
+        isTrapped: trappedProfitCount > 0 && i % Math.floor(nodeCount / trappedProfitCount) === 0 && i / Math.floor(nodeCount / trappedProfitCount) < trappedProfitCount,
       });
     }
 
@@ -220,26 +224,38 @@ export const NeuralMesh3D: React.FC<NeuralMesh3DProps> = ({
         const n = nodes[p.idx];
 
         // Pulse
-        const pulse = 1 + Math.sin(time * n.pulseSpeed + n.pulsePhase) * 0.35;
+        let pulseIntensity = 0.35;
+        let pSpeed = n.pulseSpeed;
+        let nodeColor = color;
+
+        if (n.isTrapped) {
+          nodeColor = "255, 69, 58"; // Apple Red #FF453A
+          pulseIntensity = 0.7; // Stronger pulse
+          pSpeed = n.pulseSpeed * 2.5; // Faster pulse
+        }
+
+        const pulse = 1 + Math.sin(time * pSpeed + n.pulsePhase) * pulseIntensity;
         const r = n.baseRadius * p.scale * pulse;
 
         // Depth-dependent opacity
-        const nodeAlpha = Math.max(0.05, Math.min(0.9, (p.scale - 0.3) * 1.2)) * opacity;
+        let nodeAlpha = Math.max(0.05, Math.min(0.9, (p.scale - 0.3) * 1.2)) * opacity;
+        if (n.isTrapped) nodeAlpha = Math.max(0.4, nodeAlpha * 1.5); // Trapped nodes are always more visible
+        
         if (nodeAlpha < 0.02) continue;
 
         // Outer glow
         ctx.beginPath();
-        ctx.arc(p.sx, p.sy, r * 3, 0, Math.PI * 2);
-        const glowGrad = ctx.createRadialGradient(p.sx, p.sy, 0, p.sx, p.sy, r * 3);
-        glowGrad.addColorStop(0, `rgba(${color}, ${nodeAlpha * 0.5})`);
-        glowGrad.addColorStop(1, `rgba(${color}, 0)`);
+        ctx.arc(p.sx, p.sy, r * (n.isTrapped ? 5 : 3), 0, Math.PI * 2);
+        const glowGrad = ctx.createRadialGradient(p.sx, p.sy, 0, p.sx, p.sy, r * (n.isTrapped ? 5 : 3));
+        glowGrad.addColorStop(0, `rgba(${nodeColor}, ${nodeAlpha * (n.isTrapped ? 0.8 : 0.5)})`);
+        glowGrad.addColorStop(1, `rgba(${nodeColor}, 0)`);
         ctx.fillStyle = glowGrad;
         ctx.fill();
 
         // Core dot
         ctx.beginPath();
         ctx.arc(p.sx, p.sy, r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${color}, ${nodeAlpha})`;
+        ctx.fillStyle = `rgba(${nodeColor}, ${nodeAlpha})`;
         ctx.fill();
       }
 

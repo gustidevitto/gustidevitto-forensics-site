@@ -144,7 +144,7 @@ function NetworkIntelligencePage() {
             {/* Ambient background — static, non-interactive */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
                 <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#0A84FF]/[0.04] rounded-full blur-[160px] animate-subtle-glow" />
-                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#BFA26A]/[0.025] rounded-full blur-[120px] animate-float" />
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#82C7A8]/[0.025] rounded-full blur-[120px] animate-float" />
             </div>
 
             {/* ── HERO ── */}
@@ -162,11 +162,11 @@ function NetworkIntelligencePage() {
                     <div className="text-left">
                         {/* Tension badge — glass pill */}
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-squircle-sm mb-6">
-                            <Activity className="w-3.5 h-3.5 text-[#BFA26A]" strokeWidth={1.5} />
-                            <span className="text-xs font-semibold text-[#BFA26A] uppercase tracking-widest">{t('network_intelligence.tension')}</span>
+                            <Activity className="w-3.5 h-3.5 text-[#82C7A8]" strokeWidth={1.5} />
+                            <span className="text-xs font-semibold text-[#82C7A8] uppercase tracking-widest">{t('network_intelligence.tension')}</span>
                         </div>
 
-                        <h1 className="text-[clamp(3rem,7vw,7rem)] font-black tracking-tighter leading-[0.9] w-full lg:w-[95%] uppercase">
+                        <h1 className="text-[clamp(3rem,7vw,7rem)] font-bold tracking-tight leading-[0.9] w-full lg:w-[95%] uppercase">
                             <span className="text-white/90">{t('network_intelligence.hero_title')}</span>
                             <br />
                             <span className="bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] bg-clip-text text-transparent pr-2 pb-1">{t('network_intelligence.hero_title_accent')}</span>
@@ -177,7 +177,7 @@ function NetworkIntelligencePage() {
                         </p>
 
                         {/* Data strip — no monospace, semibold only */}
-                        <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-[#BFA26A] uppercase tracking-widest">
+                        <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-[#82C7A8] uppercase tracking-widest">
                             <div className="flex flex-col">
                                 <span className="text-[10px] text-white/40 font-medium mb-1">{t('network_intelligence.social_nodes')}</span>
                                 <span>{t('network_intelligence.social_nodes_val')}</span>
@@ -212,7 +212,7 @@ function NetworkIntelligencePage() {
             {/* ── WHY THIS HAPPENS ── */}
             <section className="py-20 px-6 md:px-12 lg:px-20 bg-[#161618] border-b border-white/[0.05]">
                 <div className="max-w-4xl mx-auto text-center space-y-12">
-                    <h2 className="text-3xl md:text-4xl font-black text-white">{t('network_intelligence.why_reports_title')}</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white">{t('network_intelligence.why_reports_title')}</h2>
                     <div className="grid md:grid-cols-3 gap-5 text-left">
                         {['01','02','03'].map((num, i) => (
                             <div key={num} className="p-6 glass rounded-squircle-lg">
@@ -238,14 +238,14 @@ function NetworkIntelligencePage() {
                             <span className="text-[#0A84FF] font-semibold text-sm tracking-widest leading-none">01</span>
                             <div className="w-12 h-px bg-[#0A84FF]/20" />
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-black mb-4 leading-tight uppercase tracking-tight">{t('network_intelligence.benefit1_title')}</h3>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight uppercase tracking-tight">{t('network_intelligence.benefit1_title')}</h3>
                         <div className="text-white/60 leading-relaxed text-lg font-light">
                             <Trans i18nKey="network_intelligence.benefit1_desc" components={{ 1: <span className="text-white font-bold" /> }} />
                         </div>
                     </div>
 
                     <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-[#0A84FF]/15 py-2">
-                        <p className="text-xs font-semibold text-[#BFA26A]/60 mb-3 uppercase tracking-widest">{t('faq.q1')}</p>
+                        <p className="text-xs font-semibold text-[#82C7A8]/60 mb-3 uppercase tracking-widest">{t('faq.q1')}</p>
                         <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
                             " <Trans i18nKey="faq.a1" components={{ 1: <strong className="text-white font-bold" />, br: <br /> }} /> "
                         </p>
@@ -257,21 +257,21 @@ function NetworkIntelligencePage() {
                             <span className="text-[#0A84FF] font-semibold text-sm tracking-widest leading-none">02</span>
                             <div className="w-12 h-px bg-[#0A84FF]/20 md:hidden" />
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-black mb-4 md:text-right leading-tight uppercase tracking-tight">{t('network_intelligence.benefit2_title')}</h3>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 md:text-right leading-tight uppercase tracking-tight">{t('network_intelligence.benefit2_title')}</h3>
                         <div className="text-white/60 leading-relaxed text-lg font-light md:text-right">
                             <Trans i18nKey="network_intelligence.benefit2_desc" components={{ 1: <span className="text-white font-bold" /> }} />
                         </div>
                     </div>
 
                     {/* Master Lab Anchor — Bleeding off Right */}
-                    <div className="relative w-[112%] md:w-[90%] md:ml-auto aspect-[21/9] md:aspect-[3/1] bg-[#03060a] border-y md:border-l border-white/[0.05] overflow-hidden -mx-6 md:mx-0 -translate-x-6 md:translate-x-12 lg:translate-x-20 group cursor-crosshair" onClick={() => setShowMasterLab(true)}>
+                    <div className="relative w-[112%] md:w-[90%] md:ml-auto aspect-[21/9] md:aspect-[3/1] bg-[#03060a] border border-white/[0.05] rounded-squircle-xl overflow-hidden -mx-6 md:mx-0 -translate-x-6 md:translate-x-12 lg:translate-x-20 group cursor-crosshair" onClick={() => setShowMasterLab(true)}>
                         <img src="/assets/images/ffdv4masterlab.png" alt="Forensic Master Lab" className="w-full h-full object-cover opacity-20 grayscale contrast-125 object-top" />
                         <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#060a12] via-[#060a12]/80 to-transparent pointer-events-none" />
                         <div className="absolute bottom-8 left-8 md:left-16 z-10">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500 text-black text-[10px] font-black uppercase tracking-widest mb-4">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#5E5CE6] text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-squircle-sm">
                                 {t('network_intelligence.master_lab_badge')}
                             </div>
-                            <h4 className="text-xl md:text-2xl font-black text-white/90 uppercase tracking-tight">{t('network_intelligence.master_lab_title')}</h4>
+                            <h4 className="text-xl md:text-2xl font-bold text-white/90 uppercase tracking-tight">{t('network_intelligence.master_lab_title')}</h4>
                             <p className="text-white/60 text-sm mt-2 max-w-lg font-light">{t('network_intelligence.master_lab_desc')}</p>
                         </div>
                         {/* Hover Metadata Scan Effect */}
@@ -286,14 +286,14 @@ function NetworkIntelligencePage() {
                             <span className="text-[#0A84FF] font-semibold text-sm tracking-widest leading-none">03</span>
                             <div className="w-12 h-px bg-[#0A84FF]/20" />
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-black mb-4 leading-tight uppercase tracking-tight">{t('network_intelligence.benefit3_title')}</h3>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight uppercase tracking-tight">{t('network_intelligence.benefit3_title')}</h3>
                         <div className="text-white/60 leading-relaxed text-lg font-light">
                             <Trans i18nKey="network_intelligence.benefit3_desc" components={{ 1: <span className="text-white font-bold" /> }} />
                         </div>
                     </div>
 
                     <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-[#0A84FF]/15 py-2">
-                        <p className="text-xs font-semibold text-[#BFA26A]/60 mb-3 uppercase tracking-widest">{t('faq.q2')}</p>
+                        <p className="text-xs font-semibold text-[#82C7A8]/60 mb-3 uppercase tracking-widest">{t('faq.q2')}</p>
                         <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
                             " <Trans i18nKey="faq.a2" components={{ 1: <strong className="text-white font-bold" />, br: <br /> }} /> "
                         </p>
@@ -305,7 +305,7 @@ function NetworkIntelligencePage() {
                             <span className="text-[#0A84FF] font-semibold text-sm tracking-widest leading-none">04</span>
                             <div className="w-12 h-px bg-[#0A84FF]/20 md:hidden" />
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-black mb-4 md:text-right leading-tight uppercase tracking-tight">{t('network_intelligence.benefit4_title')}</h3>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 md:text-right leading-tight uppercase tracking-tight">{t('network_intelligence.benefit4_title')}</h3>
                         <div className="text-white/60 leading-relaxed text-lg font-light md:text-right">
                             <Trans i18nKey="network_intelligence.benefit4_desc" components={{ 1: <span className="text-white font-bold" /> }} />
                         </div>
@@ -319,10 +319,10 @@ function NetworkIntelligencePage() {
                 <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
                     <div className="lg:w-1/2 space-y-8">
                         <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.03] rounded-full">
-                            <Activity className="w-3 h-3 text-[#BFA26A]" />
-                            <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#BFA26A]">{t('network_intelligence.demo_badge')}</span>
+                            <Activity className="w-3 h-3 text-[#0A84FF]" />
+                            <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#0A84FF]">{t('network_intelligence.demo_badge')}</span>
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-tight">{t('network_intelligence.demo_title')}</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight">{t('network_intelligence.demo_title')}</h2>
                         
                         <div className="relative aspect-video glass rounded-squircle-xl overflow-hidden shadow-xl">
                              <iframe
@@ -344,7 +344,7 @@ function NetworkIntelligencePage() {
                                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0A84FF]/10 text-[#0A84FF] rounded-full text-[10px] font-semibold uppercase tracking-widest">
                                     {t('network_intelligence.cpa_partner_badge')}
                                 </div>
-                                <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight leading-tight">{t('network_intelligence.cpa_partner_title')}</h3>
+                                <h3 className="text-2xl md:text-3xl font-bold text-white uppercase tracking-tight leading-tight">{t('network_intelligence.cpa_partner_title')}</h3>
                                 <p className="text-white/60 leading-relaxed text-lg font-light">
                                     <Trans
                                         i18nKey="network_intelligence.cpa_partner_desc"
@@ -372,17 +372,17 @@ function NetworkIntelligencePage() {
                 <div className="container mx-auto max-w-5xl relative z-10 text-center">
                     <div className="mb-14 text-center space-y-3">
                         <div className="flex items-center justify-center gap-4 mb-2">
-                            <div className="w-8 h-px bg-[#BFA26A]/30" />
-                            <span className="text-[10px] uppercase tracking-[0.3em] text-[#BFA26A] font-semibold">{t('network_intelligence.pilot_title')}</span>
-                            <div className="w-8 h-px bg-[#BFA26A]/30" />
+                            <div className="w-8 h-px bg-[#82C7A8]/30" />
+                            <span className="text-[10px] uppercase tracking-[0.3em] text-[#82C7A8] font-semibold">{t('network_intelligence.pilot_title')}</span>
+                            <div className="w-8 h-px bg-[#82C7A8]/30" />
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter">{t('network_intelligence.pilot_desc')}</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight">{t('network_intelligence.pilot_desc')}</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                         {tiers.map((tier: any) => {
                             const colorMap: Record<string, { accentText: string; accentBg: string; accentBorder: string; glassClass: string }> = {
-                                amber: { accentText: 'text-[#BFA26A]', accentBg: 'bg-[#BFA26A]', accentBorder: 'border-[#BFA26A]/20', glassClass: 'glass-gold' },
+                                amber: { accentText: 'text-[#82C7A8]', accentBg: 'bg-[#82C7A8]', accentBorder: 'border-[#82C7A8]/20', glassClass: 'glass-sage' },
                                 red:   { accentText: 'text-red-400',   accentBg: 'bg-red-500',   accentBorder: 'border-red-500/20',   glassClass: 'glass' },
                             };
                             const theme = colorMap[tier.color] || colorMap.amber;
@@ -392,7 +392,7 @@ function NetworkIntelligencePage() {
                                     <div className={`absolute top-0 left-8 right-8 h-px ${theme.accentBg} opacity-30 group-hover:opacity-60 transition-opacity`} />
 
                                     <div className="mb-6">
-                                        <h3 className={`text-2xl font-black ${theme.accentText} tracking-tight mb-1 uppercase`}>{tier.name}</h3>
+                                        <h3 className={`text-2xl font-bold ${theme.accentText} tracking-tight mb-1 uppercase`}>{tier.name}</h3>
                                         <p className="text-white/40 font-light text-sm">{tier.tagline}</p>
                                     </div>
 
@@ -416,7 +416,7 @@ function NetworkIntelligencePage() {
                                             <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')}>{t('investasi_page.labels.select')}</Button>
                                         </div>
                                         <div className={`p-4 rounded-squircle-sm flex items-center justify-between relative ${theme.glassClass} border ${theme.accentBorder}`}>
-                                            <div className={`absolute -top-3 right-4 ${theme.accentBg} text-black text-[9px] font-black px-3 py-1 rounded-squircle-sm uppercase tracking-wider`}>Recommended</div>
+                                            <div className={`absolute -top-3 right-4 ${theme.accentBg} text-black text-[9px] font-bold px-3 py-1 rounded-squircle-sm uppercase tracking-wider`}>Recommended</div>
                                             <div className="mt-1">
                                                 <h4 className={`font-semibold uppercase tracking-widest text-xs ${theme.accentText} mb-1`}>{t('investasi_page.labels.annual')}</h4>
                                                 <div className="flex items-baseline gap-2">
@@ -435,12 +435,12 @@ function NetworkIntelligencePage() {
                                                 const isHighlighted = featureObj.highlight;
                                                 const text = typeof featureObj === 'string' ? featureObj : t(featureObj.key, featureObj.default);
                                                 return (
-                                                    <li key={i} className={`flex items-start gap-3 text-sm ${isHighlighted ? 'glass-gold -mx-2 px-2 py-1 rounded-squircle-sm border-l-2 border-[#BFA26A]/25' : 'text-white/60'}`}>
+                                                    <li key={i} className={`flex items-start gap-3 text-sm ${isHighlighted ? `${theme.glassClass} -mx-2 px-2 py-1 rounded-squircle-sm border-l-2 ${theme.accentBorder}` : 'text-white/60'}`}>
                                                         {isHighlighted
-                                                            ? <Star className="w-3.5 h-3.5 text-[#BFA26A] shrink-0 mt-0.5 fill-[#BFA26A]" strokeWidth={1} />
+                                                            ? <Star className={`w-3.5 h-3.5 ${theme.accentText} shrink-0 mt-0.5 fill-current`} strokeWidth={1} />
                                                             : <ShieldCheck className={`w-3.5 h-3.5 ${theme.accentText} shrink-0 mt-0.5`} strokeWidth={1.5} />
                                                         }
-                                                        <span className={isHighlighted ? 'text-[#BFA26A] font-semibold' : 'text-white/60'}>{text as string}</span>
+                                                        <span className={isHighlighted ? `${theme.accentText} font-semibold` : 'text-white/60'}>{text as string}</span>
                                                     </li>
                                                 );
                                             })}
@@ -470,7 +470,7 @@ function NetworkIntelligencePage() {
             <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-t border-white/[0.05] bg-[#1c1c1e]">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-12 lg:gap-24">
                     <div className="flex-1 space-y-8">
-                        <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black uppercase tracking-tighter leading-[0.9]">
+                        <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-bold uppercase tracking-tight leading-[0.9]">
                             {t('network_intelligence.final_cta_title')} <br />
                             <span className="bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] bg-clip-text text-transparent pr-2 pb-1">{t('network_intelligence.final_cta_title_accent')}</span>
                         </h2>
@@ -480,7 +480,7 @@ function NetworkIntelligencePage() {
                         <div className="pt-4">
                             <Button asChild size="xl" className="w-full md:w-auto h-auto py-6 px-10 flex flex-col items-start group bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] text-white border-none shadow-[0_0_20px_rgba(10,132,255,0.3)] hover:shadow-[0_0_30px_rgba(10,132,255,0.5)] transition-all">
                                 <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer" className="flex flex-col items-start h-full justify-center">
-                                    <span className="flex items-center font-black text-xl md:text-2xl whitespace-normal leading-tight">
+                                    <span className="flex items-center font-bold text-xl md:text-2xl whitespace-normal leading-tight">
                                         {t('network_intelligence.cta_demo')}
                                         <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-0.5 transition-transform" strokeWidth={2} />
                                     </span>
@@ -490,15 +490,9 @@ function NetworkIntelligencePage() {
                         </div>
                     </div>
 
-                    <div className="hidden md:block w-full md:w-1/3 space-y-4">
-                        <div className="aspect-[3/4] glass rounded-squircle-lg relative overflow-hidden p-0.5">
-                            <img src="/assets/images/aboutme.jpg" alt="Gusti Devitto"
-                                className="w-full h-full object-cover object-top opacity-75 grayscale-[0.5] contrast-[1.1] rounded-squircle-lg" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c1e]/60 via-transparent to-transparent rounded-squircle-lg" />
-                        </div>
-                        <div className="glass-elevated rounded-squircle-sm px-4 py-3 space-y-0.5">
-                            <p className="text-sm font-bold text-white">Gusti Devitto</p>
-                            <p className="text-[10px] font-medium text-white/40 uppercase tracking-[0.2em]">{t('entrance_gate.hero_subtitle')}</p>
+                    <div className="hidden md:flex w-full md:w-1/2 items-center justify-center relative min-h-[400px]">
+                        <div className="absolute inset-0 pointer-events-none">
+                            <NeuralMesh3D color="94, 92, 230" nodeCount={60} opacity={0.5} trappedProfitCount={3} />
                         </div>
                     </div>
                 </div>

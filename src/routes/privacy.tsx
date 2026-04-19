@@ -12,7 +12,7 @@ function Privacy() {
     return (
         <div className="flex-1 flex flex-col bg-[#1c1c1e] text-white">
             <div className="container py-24 max-w-4xl mx-auto px-6">
-            <h1 className="text-4xl font-black tracking-tighter mb-10">{t('privacy.title')}</h1>
+            <h1 className="text-4xl font-bold tracking-tight mb-10">{t('privacy.title')}</h1>
             <div className="glass-elevated rounded-squircle-xl p-8 md:p-12 space-y-8">
                     <h3>{t('privacy.section1_title')}</h3>
                     <p>

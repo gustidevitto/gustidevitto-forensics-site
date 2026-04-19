@@ -60,7 +60,7 @@
         --muted-foreground: 0 0% 60%;     /* #999 — secondary text */
 
         /* Accent — Muted Institutional Gold (brand only, not interactive) */
-        --accent: 36 39% 56%;             /* #BFA26A — refined gold */
+        --accent: 36 39% 56%;             /* #82C7A8 — refined gold */
         --accent-foreground: 0 0% 98%;
 
         /* Destructive */
@@ -150,12 +150,36 @@
         border: 1px solid rgba(10, 132, 255, 0.15);
     }
 
-    /* Glass with gold tint — brand/accent elements */
-    .glass-gold {
-        background: rgba(191, 162, 106, 0.06);
+    /* Glass with sage tint */
+    .glass-sage {
+        background: rgba(130, 199, 168, 0.06);
         backdrop-filter: blur(24px) saturate(180%);
         -webkit-backdrop-filter: blur(24px) saturate(180%);
-        border: 1px solid rgba(191, 162, 106, 0.15);
+        border: 1px solid rgba(130, 199, 168, 0.15);
+    }
+
+    /* Glass with indigo tint */
+    .glass-indigo {
+        background: rgba(94, 92, 230, 0.08);
+        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        border: 1px solid rgba(94, 92, 230, 0.15);
+    }
+
+    /* Glass with amber tint */
+    .glass-amber {
+        background: rgba(255, 159, 10, 0.05);
+        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        border: 1px solid rgba(255, 159, 10, 0.15);
+    }
+
+    /* Glass with red tint */
+    .glass-red {
+        background: rgba(255, 69, 58, 0.05);
+        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        border: 1px solid rgba(255, 69, 58, 0.15);
     }
 
     /* ── Squircle border-radius helpers ── */
@@ -311,7 +335,7 @@
     }
 
     /* ── Gold glow — brand-only, very restrained ── */
-    .brand-gold { color: #BFA26A; }
+    .brand-gold { color: #82C7A8; }
     .brand-gold-text { color: hsl(var(--accent)); }
 
     /* ── macOS blue — primary interactive ── */
