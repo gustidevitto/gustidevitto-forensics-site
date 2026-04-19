@@ -169,7 +169,7 @@ function NetworkIntelligencePage() {
                         <h1 className="text-[clamp(3rem,7vw,7rem)] font-black tracking-tighter leading-[0.9] w-full lg:w-[95%] uppercase">
                             <span className="text-white/90">{t('network_intelligence.hero_title')}</span>
                             <br />
-                            <span className="text-[#0A84FF]">{t('network_intelligence.hero_title_accent')}</span>
+                            <span className="bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] bg-clip-text text-transparent pr-2 pb-1">{t('network_intelligence.hero_title_accent')}</span>
                         </h1>
 
                         <p className="mt-8 text-xl md:text-2xl text-white/40 leading-relaxed max-w-3xl font-light">
@@ -196,7 +196,7 @@ function NetworkIntelligencePage() {
 
                         <div className="mt-16 flex flex-wrap items-center gap-6">
                             <Link to="/investasi" className="w-full sm:w-auto">
-                                <Button size="xl" className="w-full sm:w-auto h-auto py-5 px-10">
+                                <Button size="xl" className="w-full sm:w-auto h-auto py-5 px-10 bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] text-white border-none shadow-[0_0_20px_rgba(10,132,255,0.3)] hover:shadow-[0_0_30px_rgba(10,132,255,0.5)] transition-all">
                                     {t('network_intelligence.cta_demo')}
                                     <ArrowRight className="ml-3 w-5 h-5 flex-shrink-0" strokeWidth={2} />
                                 </Button>
@@ -472,13 +472,13 @@ function NetworkIntelligencePage() {
                     <div className="flex-1 space-y-8">
                         <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black uppercase tracking-tighter leading-[0.9]">
                             {t('network_intelligence.final_cta_title')} <br />
-                            <span className="text-[#0A84FF]">{t('network_intelligence.final_cta_title_accent')}</span>
+                            <span className="bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] bg-clip-text text-transparent pr-2 pb-1">{t('network_intelligence.final_cta_title_accent')}</span>
                         </h2>
                         <p className="text-white/60 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
                              {t('network_intelligence.final_cta_desc')}
                         </p>
                         <div className="pt-4">
-                            <Button asChild size="xl" className="w-full md:w-auto h-auto py-6 px-10 flex flex-col items-start group">
+                            <Button asChild size="xl" className="w-full md:w-auto h-auto py-6 px-10 flex flex-col items-start group bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] text-white border-none shadow-[0_0_20px_rgba(10,132,255,0.3)] hover:shadow-[0_0_30px_rgba(10,132,255,0.5)] transition-all">
                                 <a href="https://calendly.com/gustidevitto/15min" target="_blank" rel="noopener noreferrer" className="flex flex-col items-start h-full justify-center">
                                     <span className="flex items-center font-black text-xl md:text-2xl whitespace-normal leading-tight">
                                         {t('network_intelligence.cta_demo')}
