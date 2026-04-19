@@ -329,16 +329,6 @@ function SingleEntityPage() {
                         </div>
                     </div>
 
-                    {/* Photo bleed */}
-                    <div className="relative w-[110%] md:w-[85%] md:ml-auto aspect-[21/9] md:aspect-[2.5/1] bg-[#161618] border-y md:border-l border-white/[0.05] overflow-hidden -mx-6 md:mx-0 -translate-x-6 md:translate-x-12 lg:translate-x-20 rounded-squircle-md">
-                        <img src="/assets/images/devitto-forensics.jpg" alt="Forensic Analysis" className="w-full h-full object-cover opacity-25 grayscale contrast-125 mix-blend-screen object-[50%_0%]" />
-                        <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#161618] to-transparent pointer-events-none" />
-                        <div className="absolute bottom-6 left-6 md:left-12">
-                            <p className="text-[10px] font-semibold text-[#82C7A8] mb-2 uppercase tracking-widest">{t('single_entity.benefits_img_badge')}</p>
-                            <p className="text-sm md:text-base text-white/90 font-bold">{t('single_entity.benefits_img_text')}</p>
-                        </div>
-                        <div className="absolute top-0 right-12 md:right-32 w-px h-full bg-gradient-to-b from-[#82C7A8]/0 via-[#82C7A8]/15 to-[#82C7A8]/0" />
-                    </div>
 
                     {/* Benefit 3 */}
                     <div className="max-w-2xl">
