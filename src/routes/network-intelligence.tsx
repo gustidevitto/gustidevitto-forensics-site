@@ -196,7 +196,7 @@ function NetworkIntelligencePage() {
 
                         <div className="mt-16 flex flex-wrap items-center gap-6">
                             <Link to="/investasi" className="w-full sm:w-auto">
-                                <Button size="xl" className="w-full sm:w-auto h-auto py-5 px-10 bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] text-white border-none shadow-[0_0_20px_rgba(10,132,255,0.3)] hover:shadow-[0_0_30px_rgba(10,132,255,0.5)] transition-all">
+                                <Button size="xl" className="w-full sm:w-auto h-auto py-5 px-10 bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] text-white border-none shadow-[0_0_20px_rgba(10,132,255,0.3)] hover:shadow-[0_0_30px_rgba(10,132,255,0.5)] transition-all flex flex-wrap items-center justify-center text-center sm:text-left whitespace-normal leading-tight">
                                     {t('network_intelligence.cta_demo')}
                                     <ArrowRight className="ml-3 w-5 h-5 flex-shrink-0" strokeWidth={2} />
                                 </Button>
@@ -264,15 +264,24 @@ function NetworkIntelligencePage() {
                     </div>
 
                     {/* Master Lab Anchor — Bleeding off Right */}
-                    <div className="relative w-[112%] md:w-[90%] md:ml-auto aspect-[21/9] md:aspect-[3/1] bg-[#03060a] border border-white/[0.05] rounded-squircle-xl overflow-hidden -mx-6 md:mx-0 -translate-x-6 md:translate-x-12 lg:translate-x-20 group cursor-crosshair" onClick={() => setShowMasterLab(true)}>
+                    <div className="relative w-full md:w-[90%] md:ml-auto aspect-[16/10] md:aspect-[3/1] bg-[#03060a] border border-white/[0.05] rounded-squircle-xl overflow-hidden md:-mx-0 md:translate-x-12 lg:translate-x-20 group cursor-crosshair" onClick={() => setShowMasterLab(true)}>
                         <img src="/assets/images/ffdv4masterlab.png" alt="Forensic Master Lab" className="w-full h-full object-cover opacity-20 grayscale contrast-125 object-top" />
-                        <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#060a12] via-[#060a12]/80 to-transparent pointer-events-none" />
-                        <div className="absolute bottom-8 left-8 md:left-16 z-10">
+                        <div className="absolute inset-y-0 left-0 w-full md:w-1/3 bg-gradient-to-r from-[#03060a] via-[#03060a]/80 to-transparent pointer-events-none" />
+                        
+                        {/* Mobile Expand Indicator */}
+                        <div className="absolute top-4 right-4 md:hidden z-20">
+                            <div className="glass px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                                <Maximize2 className="w-3 h-3 text-[#0A84FF]" />
+                                <span className="text-[9px] font-bold text-white/60 uppercase tracking-widest">Tap to focus</span>
+                            </div>
+                        </div>
+
+                        <div className="absolute bottom-6 left-6 md:bottom-8 md:left-16 z-10 pr-6">
                             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#5E5CE6] text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-squircle-sm">
                                 {t('network_intelligence.master_lab_badge')}
                             </div>
-                            <h4 className="text-xl md:text-2xl font-bold text-white/90 uppercase tracking-tight">{t('network_intelligence.master_lab_title')}</h4>
-                            <p className="text-white/60 text-sm mt-2 max-w-lg font-light">{t('network_intelligence.master_lab_desc')}</p>
+                            <h4 className="text-xl md:text-2xl font-bold text-white/90 uppercase tracking-tight leading-tight">{t('network_intelligence.master_lab_title')}</h4>
+                            <p className="text-white/40 text-xs md:text-sm mt-2 max-w-lg font-light leading-relaxed">{t('network_intelligence.master_lab_desc')}</p>
                         </div>
                         {/* Hover Metadata Scan Effect */}
                         <div className="absolute inset-x-0 top-0 h-[1px] bg-amber-500/40 -translate-y-full group-hover:animate-scan-slow" />

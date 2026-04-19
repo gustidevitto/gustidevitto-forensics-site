@@ -85,7 +85,7 @@ function RootComponent() {
             <div className="relative flex-1 flex flex-col z-10">
                 {!isEntranceGate && (
                     /* ── macOS Menu Bar Style Header ── */
-                    <header className="sticky top-0 z-50 w-full border-b border-white/[0.06] bg-[#1c1c1e]/80 backdrop-blur-2xl supports-[backdrop-filter]:bg-[#1c1c1e]/75">
+                    <header className="fixed top-0 z-50 w-full border-b border-white/[0.06] bg-[#1c1c1e]/80 backdrop-blur-2xl supports-[backdrop-filter]:bg-[#1c1c1e]/75">
                         <div className="container flex h-16 items-center justify-between px-4 md:px-8">
 
                             {/* Logo — clean, no HUD decoration */}
@@ -272,7 +272,7 @@ function RootComponent() {
                     </header>
                 )}
 
-                <main className="flex-1">
+                <main className="flex-1 pt-16">
                     <Outlet />
                 </main>
 

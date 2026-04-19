@@ -180,7 +180,7 @@ function SingleEntityPage() {
                         {/* CTA */}
                         <div className="mt-16 flex items-center gap-5">
                             <Link to="/fip-lite" className="w-full sm:w-auto">
-                                <Button size="xl" className="w-full sm:w-auto h-auto py-5 px-8 md:px-10 text-base font-bold whitespace-normal text-left sm:text-center leading-snug bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] text-white border-none shadow-[0_0_20px_rgba(10,132,255,0.3)] hover:shadow-[0_0_30px_rgba(10,132,255,0.5)] transition-all">
+                                <Button size="xl" className="w-full sm:w-auto h-auto py-5 px-8 md:px-10 text-base font-bold whitespace-normal flex flex-wrap items-center justify-center text-center sm:text-left leading-snug bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] text-white border-none shadow-[0_0_20px_rgba(10,132,255,0.3)] hover:shadow-[0_0_30px_rgba(10,132,255,0.5)] transition-all">
                                     {t('single_entity.cta_health_score')}
                                     <ArrowRight className="ml-2 w-4 h-4 flex-shrink-0" strokeWidth={2} />
                                 </Button>
@@ -480,17 +480,17 @@ function SingleEntityPage() {
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start md:items-stretch">
                     {/* Left: Copy */}
                     <div className="flex-1 space-y-10 order-2 md:order-1">
-                        <h2 className="text-[clamp(2.75rem,5vw,5rem)] font-bold leading-[0.9] tracking-tight w-full lg:w-[120%] z-10 relative">
+                        <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-bold leading-[1.1] md:leading-[0.9] tracking-tight w-full lg:w-[120%] z-10 relative break-words uppercase">
                             <Trans i18nKey="single_entity.final_cta_title" components={{ 1: <span className="bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] bg-clip-text text-transparent pr-2 pb-1" /> }} />
                         </h2>
                         <p className="text-white/40 text-xl md:text-2xl leading-relaxed max-w-xl font-light">
                             <Trans i18nKey="single_entity.final_cta_desc" components={{ 1: <strong className="text-white" />, br: <br /> }} />
                         </p>
-                        <div className="pt-8">
-                            <Button asChild size="xl" className="w-full md:w-auto max-w-xl flex flex-col items-start h-auto py-6 px-8 md:px-12 bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] text-white border-none shadow-[0_0_20px_rgba(10,132,255,0.3)] hover:shadow-[0_0_30px_rgba(10,132,255,0.5)] transition-all">
-                                <Link to="/fip-lite" className="flex flex-col items-start h-full justify-center">
-                                    <span className="text-xl md:text-2xl font-bold whitespace-normal leading-tight">{t('single_entity.cta_health_score')}</span>
-                                    <span className="text-[10px] opacity-70 font-medium tracking-widest uppercase mt-2">
+                        <div className="pt-8 w-full">
+                            <Button asChild size="xl" className="w-full md:w-auto max-w-full flex flex-col items-start h-auto py-6 px-8 md:px-12 bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] text-white border-none shadow-[0_0_20px_rgba(10,132,255,0.3)] hover:shadow-[0_0_30px_rgba(10,132,255,0.5)] transition-all whitespace-normal">
+                                <Link to="/fip-lite" className="flex flex-col items-start h-full justify-center w-full">
+                                    <span className="text-xl md:text-2xl font-bold whitespace-normal leading-tight text-left">{t('single_entity.cta_health_score')}</span>
+                                    <span className="text-[10px] opacity-70 font-medium tracking-widest uppercase mt-2 text-left">
                                         {t('single_entity.final_cta_meta')}
                                     </span>
                                 </Link>
