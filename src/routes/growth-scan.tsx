@@ -100,7 +100,7 @@ function GrowthScanDiagnostic() {
                 <title>{t('growth_scan.seo_title', 'Scalability Scan | Free Growth Viability')}</title>
 
                 
-                <NeuralMeshBackground colorClass="text-emerald-500" />
+                <NeuralMeshBackground colorClass="text-[#0A84FF]" />
                 <div className="max-w-2xl mx-auto w-full flex-grow flex flex-col relative z-10">
                     <div className="mb-12">
                         <Link to="/fip-lite" className="text-white/40 hover:text-white uppercase tracking-widest text-xs font-bold inline-flex items-center transition-colors mb-6">
@@ -108,7 +108,7 @@ function GrowthScanDiagnostic() {
                             {t('global.back', 'Return')}
                         </Link>
                         <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4 flex items-center">
-                            <Zap className="w-10 h-10 mr-4 text-emerald-500" />
+                            <Zap className="w-10 h-10 mr-4 text-[#0A84FF]" />
                             {t('growth_scan.title', 'Scalability Scan')}
                         </h1>
                         <p className="text-white/60 text-xl font-light">
@@ -119,7 +119,7 @@ function GrowthScanDiagnostic() {
                     {/* Progress Bar */}
                     <div className="w-full h-1 bg-white/10 mb-8 relative">
                         <motion.div 
-                            className="absolute top-0 left-0 h-full bg-emerald-500"
+                            className="absolute top-0 left-0 h-full bg-[#0A84FF]"
                             initial={{ width: `${((step - 1) / 3) * 100}%` }}
                             animate={{ width: `${(step / 3) * 100}%` }}
                         />
@@ -138,7 +138,7 @@ function GrowthScanDiagnostic() {
                         >
                             {step === 1 && (
                                 <>
-                                    <div className="p-4 bg-white/5 border-l-2 border-emerald-500 text-sm font-light text-white/60 italic">
+                                    <div className="p-4 bg-white/5 border-l-2 border-[#0A84FF] text-sm font-light text-white/60 italic">
                                         "{t('growth_scan.encouragement.0', "Let's establish your baseline.")}"
                                     </div>
                                     {renderInputField("revenue", "revenue.label", "")}
@@ -152,7 +152,7 @@ function GrowthScanDiagnostic() {
                             
                             {step === 2 && (
                                 <>
-                                    <div className="p-4 bg-white/5 border-l-2 border-emerald-500 text-sm font-light text-white/60 italic">
+                                    <div className="p-4 bg-white/5 border-l-2 border-[#0A84FF] text-sm font-light text-white/60 italic">
                                         "{t('growth_scan.encouragement.1', "Let's look at your variable costs.")}"
                                     </div>
                                     {renderInputField("opex", "opex.label", "")}
@@ -161,7 +161,7 @@ function GrowthScanDiagnostic() {
 
                             {step === 3 && (
                                 <>
-                                    <div className="p-4 bg-white/5 border-l-2 border-emerald-500 text-sm font-light text-white/60 italic">
+                                    <div className="p-4 bg-white/5 border-l-2 border-[#0A84FF] text-sm font-light text-white/60 italic">
                                         "{t('growth_scan.encouragement.2', "Finally, your acquisition engine.")}"
                                     </div>
                                     {renderInputField("marketing", "marketing.label", "")}
@@ -188,7 +188,7 @@ function GrowthScanDiagnostic() {
                             <Button 
                                 onClick={handleRunDiagnostic} 
                                 disabled={isCalculating}
-                                className="bg-emerald-600 hover:bg-emerald-700 text-white uppercase tracking-widest font-bold px-8"
+                                className="bg-[#0A84FF] hover:bg-[#0A84FF]/90 text-white uppercase tracking-widest font-bold px-8"
                             >
                                 {isCalculating ? t('wizard_shared.processing', 'Processing Variables...') : t('wizard_shared.btn_submit', 'Reveal My Results')}
                             </Button>
@@ -210,7 +210,7 @@ function GrowthScanDiagnostic() {
             <title>Diagnostic Complete | Scalability Scan</title>
 
             
-                <NeuralMeshBackground colorClass="text-emerald-500" />
+                <NeuralMeshBackground colorClass="text-[#0A84FF]" />
             <div className="max-w-4xl mx-auto space-y-12 relative z-10">
                 {/* Header */}
                 <div className="text-center space-y-4">
@@ -218,16 +218,16 @@ function GrowthScanDiagnostic() {
                         Diagnostic Engine Halted
                     </div>
                     <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tight">
-                        {t('growth_scan.results.layer12_title', 'Growth Diagnostics')}
+                        {t('growth_scan.results.verdict_title', 'Scalability Scan: Diagnostic Verdict')}
                     </h1>
                 </div>
 
                 {/* Layer 1: Numbers */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="p-8 border border-white/10 glass rounded-squircle-lg relative overflow-hidden">
-                        <div className={`absolute top-0 right-0 w-32 h-32 bg-emerald-500/20 blur-3xl`} />
+                        <div className={`absolute top-0 right-0 w-32 h-32 bg-[#0A84FF]/20 blur-3xl`} />
                         <h3 className="text-sm uppercase tracking-widest font-bold text-white/60 mb-2">{t('growth_scan.results.ratio_label', 'LTV:CAC Ratio')}</h3>
-                        <div className="text-5xl font-semibold mb-2 flex items-end gap-2 text-emerald-500">
+                        <div className="text-5xl font-semibold mb-2 flex items-end gap-2 text-white">
                             {result.layer1.ltvCacRatio.toFixed(1)} <span className="text-2xl mb-1">x</span>
                         </div>
                         <p className="text-white/40 text-sm font-semibold uppercase tracking-widest border-t border-white/10 pt-4 mt-4">
@@ -320,7 +320,7 @@ function GrowthScanDiagnostic() {
                         </h3>
                         <div className="mb-10 p-6 bg-white/5 border border-white/10 text-white/90 font-light leading-relaxed space-y-4 text-sm">
                             <p>Based on your profile, our engine has unsealed the critical vectors defining your <strong className="text-white font-medium">LTV:CAC ratio</strong> and <strong className="text-white font-medium">Break-Even capability</strong>. The exposed red and amber bars identify specific growth mechanisms that are structurally compromised.</p>
-                            <p>Recognizing a death spiral risk before expanding allows you to abort lethal scaling decisions. But scaling safely requires fundamentally rewiring the broken mechanics behind your pricing power and market resilience. <span className="text-emerald-400 font-medium">Sustainable scaling requires a mathematically verified, flawless foundation.</span></p>
+                            <p>Recognizing a death spiral risk before expanding allows you to abort lethal scaling decisions. But scaling safely requires fundamentally rewiring the broken mechanics behind your pricing power and market resilience. <span className="text-[#0A84FF] font-medium">Sustainable scaling requires a mathematically verified, flawless foundation.</span></p>
                         </div>
                         <div className="space-y-4">
                             {result.layer3.pillars.map(pillar => (
@@ -356,18 +356,18 @@ function GrowthScanDiagnostic() {
                                 {t('wizard_shared.cross_links_title', 'Explore Other Blindspots')}
                             </h3>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                                <Link to="/cash-autopsy" className="px-6 py-4 border border-white/20 hover:bg-white/5 transition-colors uppercase tracking-widest text-xs font-bold inline-flex items-center justify-center">
+                                <Link to="/cash-autopsy" className="px-6 py-4 border border-white/20 hover:bg-white/5 transition-colors uppercase tracking-widest text-xs font-bold inline-flex items-center justify-center rounded-squircle-md">
                                     {t('wizard_shared.cta_cash', 'Check Cash Runway')} <ArrowRight className="w-4 h-4 ml-2 opacity-50" />
                                 </Link>
-                                <Link to="/margin-audit" className="px-6 py-4 border border-white/20 hover:bg-white/5 transition-colors uppercase tracking-widest text-xs font-bold inline-flex items-center justify-center">
+                                <Link to="/margin-audit" className="px-6 py-4 border border-white/20 hover:bg-white/5 transition-colors uppercase tracking-widest text-xs font-bold inline-flex items-center justify-center rounded-squircle-md">
                                     {t('wizard_shared.cta_margin', 'Check Margin Leakage')} <ArrowRight className="w-4 h-4 ml-2 opacity-50" />
                                 </Link>
                             </div>
                             
                             
                         {/* The "Now What?" Gap - Explicit Medical Analogy */}
-                        <div className="mt-16 p-8 glass-elevated rounded-squircle-xl border-l-4 border-amber-500 relative">
-                            <h4 className="text-amber-500 text-sm font-bold uppercase tracking-widest flex items-center mb-6">
+                        <div className="mt-16 p-8 glass-elevated rounded-squircle-xl border-l-4 border-[#0A84FF] relative text-left">
+                            <h4 className="text-[#0A84FF] text-sm font-bold uppercase tracking-widest flex items-center mb-6">
                                 <AlertTriangle className="w-5 h-5 mr-3" /> The Prescription Gap
                             </h4>
                             <div className="space-y-4 text-sm font-semibold leading-relaxed">
@@ -378,7 +378,7 @@ function GrowthScanDiagnostic() {
                                     A doctor doesn't just tell you "your heart is failing." They identify exactly which valve is damaged, prescribe the right medication and dosage, tell you how long recovery takes, and schedule follow-up checkups to track whether you're actually healing—or getting worse.
                                 </p>
                                 <p className="text-white/60">
-                                    That's what our full forensic audit does for your business. You get the <strong className="text-emerald-400 font-bold">exact root cause</strong>, a prioritized action plan with specific steps your team can execute this week, and a monitoring framework to measure whether each fix is working. <span className="text-white/40">Not vague advice. Not a generic report. A surgical operating manual built from your numbers.</span>
+                                    That's what our full forensic audit does for your business. You get the <strong className="text-[#0A84FF] font-bold">exact root cause</strong>, a prioritized action plan with specific steps your team can execute this week, and a monitoring framework to measure whether each fix is working. <span className="text-white/40">Not vague advice. Not a generic report. A surgical operating manual built from your numbers.</span>
                                 </p>
                             </div>
                         </div>
@@ -394,7 +394,7 @@ function GrowthScanDiagnostic() {
                                             Move beyond surface symptoms. Book a surgical, 19-pillar operational audit to permanently map, isolate, and structurally resolve the exact blindspots slowly eroding your bottom line.
                                         </p>
                                     </div>
-                                    <Link to="/investasi" className="flex-shrink-0 bg-white text-black hover:bg-emerald-500 hover:text-white transition-colors duration-300 font-bold uppercase tracking-widest text-xs px-8 py-4 flex items-center rounded-squircle-md">
+                                    <Link to="/investasi" className="flex-shrink-0 bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] text-white hover:brightness-110 transition-all font-bold uppercase tracking-widest text-xs px-8 py-4 flex items-center rounded-squircle-md shadow-[0_0_20px_rgba(10,132,255,0.2)]">
                                         Commission Audit <ArrowRight className="w-4 h-4 ml-2" />
                                     </Link>
                                 </div>

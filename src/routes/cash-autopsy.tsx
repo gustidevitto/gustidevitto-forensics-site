@@ -204,7 +204,7 @@ function CashAutopsyDiagnostic() {
             <title>Diagnostic Complete | Cash Autopsy</title>
 
             
-                <NeuralMeshBackground colorClass="text-red-500" />
+                <NeuralMeshBackground colorClass="text-[#0A84FF]" />
             <div className="max-w-4xl mx-auto space-y-12 relative z-10">
                 {/* Header */}
                 <div className="text-center space-y-4">
@@ -212,14 +212,14 @@ function CashAutopsyDiagnostic() {
                         Diagnostic Engine Halted
                     </div>
                     <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tight">
-                        {t('cash_autopsy.results.layer12_title', 'Immediate Verdict')}
+                        {t('cash_autopsy.results.verdict_title', 'Cash Autopsy: Diagnostic Verdict')}
                     </h1>
                 </div>
 
                 {/* Layer 1: Numbers */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="p-8 border border-white/10 glass rounded-squircle-lg relative overflow-hidden">
-                        <div className={`absolute top-0 right-0 w-32 h-32 bg-red-500/20 blur-3xl`} />
+                        <div className={`absolute top-0 right-0 w-32 h-32 bg-[#0A84FF]/10 blur-3xl`} />
                         <h3 className="text-sm uppercase tracking-widest font-bold text-white/60 mb-2">{t('cash_autopsy.results.runway_label', 'Cash Runway')}</h3>
                         <div className="text-5xl font-semibold mb-2 flex items-end gap-2">
                             {result.layer1.cashRunwayDays} <span className="text-xl text-white/40 mb-1">DAYS</span>
@@ -308,7 +308,7 @@ function CashAutopsyDiagnostic() {
                         </h3>
                         <div className="mb-10 p-6 bg-white/5 border border-white/10 text-white/90 font-light leading-relaxed space-y-4 text-sm">
                             <p>Based on your profile, our engine has isolated the four exact vectors driving your current <strong className="text-white font-medium">Cash Runway</strong> and <strong className="text-white font-medium">Net Burn Rate</strong>. The red bars indicate active capital hemorrhaging points that require immediate executive action.</p>
-                            <p>Understanding these surface metrics is the first step to survival. However, structurally fixing a critical bleed—whether it's trapped working capital or lethal debt coverage—requires tracking these symptoms back to their source. <span className="text-emerald-400 font-medium">True financial turnaround begins with deep root-cause isolation.</span></p>
+                            <p>Understanding these surface metrics is the first step to survival. However, structurally fixing a critical bleed—whether it's trapped working capital or lethal debt coverage—requires tracking these symptoms back to their source. <span className="text-[#0A84FF] font-medium">True financial turnaround begins with deep root-cause isolation.</span></p>
                         </div>
                         <div className="space-y-4">
                             {result.layer3.pillars.map(pillar => (
@@ -344,18 +344,18 @@ function CashAutopsyDiagnostic() {
                                 {t('wizard_shared.cross_links_title', 'Explore Other Blindspots')}
                             </h3>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                                <Link to="/margin-audit" className="px-6 py-4 border border-white/20 hover:bg-white/5 transition-colors uppercase tracking-widest text-xs font-bold inline-flex items-center justify-center">
+                                <Link to="/margin-audit" className="px-6 py-4 border border-white/20 hover:bg-white/5 transition-colors uppercase tracking-widest text-xs font-bold inline-flex items-center justify-center rounded-squircle-md">
                                     {t('wizard_shared.cta_margin', 'Check Margin Leakage')} <ArrowRight className="w-4 h-4 ml-2 opacity-50" />
                                 </Link>
-                                <Link to="/growth-scan" className="px-6 py-4 border border-white/20 hover:bg-white/5 transition-colors uppercase tracking-widest text-xs font-bold inline-flex items-center justify-center">
+                                <Link to="/growth-scan" className="px-6 py-4 border border-white/20 hover:bg-white/5 transition-colors uppercase tracking-widest text-xs font-bold inline-flex items-center justify-center rounded-squircle-md">
                                     {t('wizard_shared.cta_growth', 'Check Scalability')} <ArrowRight className="w-4 h-4 ml-2 opacity-50" />
                                 </Link>
                             </div>
                             
                             
                         {/* The "Now What?" Gap - Explicit Medical Analogy */}
-                        <div className="mt-16 p-8 glass-elevated rounded-squircle-xl border-l-4 border-amber-500 relative">
-                            <h4 className="text-amber-500 text-sm font-bold uppercase tracking-widest flex items-center mb-6">
+                        <div className="mt-16 p-8 glass-elevated rounded-squircle-xl border-l-4 border-[#0A84FF] relative text-left">
+                            <h4 className="text-[#0A84FF] text-sm font-bold uppercase tracking-widest flex items-center mb-6">
                                 <AlertTriangle className="w-5 h-5 mr-3" /> The Prescription Gap
                             </h4>
                             <div className="space-y-4 text-sm font-semibold leading-relaxed">
@@ -366,7 +366,7 @@ function CashAutopsyDiagnostic() {
                                     A doctor doesn't just tell you "your heart is failing." They identify exactly which valve is damaged, prescribe the right medication and dosage, tell you how long recovery takes, and schedule follow-up checkups to track whether you're actually healing—or getting worse.
                                 </p>
                                 <p className="text-white/60">
-                                    That's what our full forensic audit does for your business. You get the <strong className="text-emerald-400 font-bold">exact root cause</strong>, a prioritized action plan with specific steps your team can execute this week, and a monitoring framework to measure whether each fix is working. <span className="text-white/40">Not vague advice. Not a generic report. A surgical operating manual built from your numbers.</span>
+                                    That's what our full forensic audit does for your business. You get the <strong className="text-[#0A84FF] font-bold">exact root cause</strong>, a prioritized action plan with specific steps your team can execute this week, and a monitoring framework to measure whether each fix is working. <span className="text-white/40">Not vague advice. Not a generic report. A surgical operating manual built from your numbers.</span>
                                 </p>
                             </div>
                         </div>
@@ -382,7 +382,7 @@ function CashAutopsyDiagnostic() {
                                             Move beyond surface symptoms. Book a surgical, 19-pillar operational audit to permanently map, isolate, and structurally resolve the exact blindspots slowly eroding your bottom line.
                                         </p>
                                     </div>
-                                    <Link to="/investasi" className="flex-shrink-0 bg-white text-black hover:bg-emerald-500 hover:text-white transition-colors duration-300 font-bold uppercase tracking-widest text-xs px-8 py-4 flex items-center rounded-squircle-md">
+                                    <Link to="/investasi" className="flex-shrink-0 bg-gradient-to-br from-[#0A84FF] to-[#5E5CE6] text-white hover:brightness-110 transition-all font-bold uppercase tracking-widest text-xs px-8 py-4 flex items-center rounded-squircle-md shadow-[0_0_20px_rgba(10,132,255,0.2)]">
                                         Commission Audit <ArrowRight className="w-4 h-4 ml-2" />
                                     </Link>
                                 </div>
