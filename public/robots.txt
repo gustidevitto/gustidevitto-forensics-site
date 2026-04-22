@@ -1,33 +1,68 @@
 User-agent: *
 Allow: /
 
-# Explicitly invite AI Crawlers for GEO Optimization
+# ─── Standard Search Engines ───────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Applebot
+Allow: /
+
+# ─── AI / LLM Crawlers ─────────────────────────────────────
+# OpenAI
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google AI
 User-agent: Google-Extended
 Allow: /
 
-User-agent: CCBot
-Allow: /
-
+# Anthropic (Claude)
 User-agent: anthropic-ai
 Allow: /
 
 User-agent: Claude-Web
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
+# Common Crawl (training data)
+User-agent: CCBot
+Allow: /
+
+# You.com
 User-agent: YouBot
 Allow: /
 
-# Sitemap Location
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# ─── Discovery ─────────────────────────────────────────────
+# Sitemap
 Sitemap: https://www.gustidevitto.com/sitemap.xml
 
-# Knowledge Graph Reference
+# LLM Context File (https://llmstxt.org)
+LLMs: https://www.gustidevitto.com/llms.txt
+
+# Knowledge Graph / Semantic Ontology
 # Ontology: https://www.gustidevitto.com/ontology.jsonld

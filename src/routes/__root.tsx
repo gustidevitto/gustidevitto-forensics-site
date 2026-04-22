@@ -45,7 +45,6 @@ function RootComponent() {
             <link rel="alternate" href={canonicalUrl} hrefLang="x-default" />
             <link rel="alternate" href={canonicalUrl} hrefLang="id-ID" />
             <link rel="alternate" href={canonicalUrl} hrefLang="en-US" />
-            <link rel="alternate" type="application/ld+json" href="/ontology.jsonld" />
 
             {/* JSON-LD Global Schema */}
             <script type="application/ld+json">

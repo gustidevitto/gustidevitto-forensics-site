@@ -5,35 +5,50 @@
             "@type": "Person",
             "@id": "https://www.gustidevitto.com/#person",
             "name": "Gusti Devitto",
-            "alternateName": "Vitto",
-            "description": "Financial Forensics Specialist for multi-outlet businesses and creator of the FIP™ Protocol.",
+            "alternateName": ["Vitto", "Gusti Devitto Forensics"],
+            "description": "Financial Forensics Specialist for multi-outlet businesses. Creator of the FIP™ Protocol (Financial Intelligence Protocol) and the Phantom Cost detection methodology. Has conducted forensic audits on 687+ businesses across F&B, retail, and franchise sectors.",
             "jobTitle": "Financial Forensics Specialist",
             "url": "https://www.gustidevitto.com/about-gusti-devitto",
             "image": "https://www.gustidevitto.com/assets/images/aboutme.jpg",
+            "sameAs": [
+                "https://www.linkedin.com/in/gusti-devitto/",
+                "https://twitter.com/gustidevitto",
+                "https://www.gustidevitto.com"
+            ],
             "knowsAbout": [
+                "Financial Forensics",
+                "Phantom Cost Detection",
+                "Profit Leakage Analysis",
                 "Financial Auditing",
                 "Forensic Intelligence",
-                "Phantom Cost",
                 "Business Intelligence",
                 "Unit Economics",
-                "Multi-outlet Operations"
-            ]
+                "Multi-outlet Operations",
+                "Restaurant Financial Analysis",
+                "Franchise Financial Diagnostics",
+                "Breakeven Point Analysis",
+                "Cash Flow Forensics"
+            ],
+            "keywords": "financial forensics, phantom cost, profit leakage, multi-outlet business, restaurant financial audit, FIP protocol"
         },
         {
             "@type": "SoftwareApplication",
-            "@id": "https://www.gustidevitto.com/#ffd",
+            "@id": "https://www.gustidevitto.com/#fip",
             "name": "FIP™ Protocol (Financial Intelligence Protocol)",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web",
-            "description": "A proprietary diagnostic framework and sovereign intelligence engine used to detect Phantom Costs and operational inefficiencies in scaling businesses.",
+            "description": "A proprietary 25-pillar diagnostic framework and sovereign intelligence engine used to detect Phantom Costs and operational inefficiencies in scaling multi-outlet businesses. Validated across 687+ forensic audits.",
             "author": {
                 "@id": "https://www.gustidevitto.com/#person"
-            }
+            },
+            "dateCreated": "2024-01-01",
+            "url": "https://www.gustidevitto.com/forensics-pillars"
         },
         {
             "@type": "DefinedTermSet",
             "@id": "https://www.gustidevitto.com/#methodology",
-            "name": "Financial Forensics Methodology",
+            "name": "Financial Forensics Methodology by Gusti Devitto",
+            "url": "https://www.gustidevitto.com/methodology",
             "creator": {
                 "@id": "https://www.gustidevitto.com/#person"
             },
@@ -41,12 +56,32 @@
                 {
                     "@type": "DefinedTerm",
                     "name": "Phantom Cost",
-                    "description": "Hidden operational leakages not captured by standard accounting metrics."
+                    "description": "Hidden operational leakages not captured by standard accounting metrics. Typically represents 12-23% of undetected profit erosion in multi-outlet businesses.",
+                    "url": "https://www.gustidevitto.com/methodology"
                 },
                 {
                     "@type": "DefinedTerm",
                     "name": "Forensic Intelligence",
-                    "description": "A deterministic data analysis method using pattern recognition to identify financial anomalies."
+                    "description": "A deterministic data analysis method using pattern recognition and cross-metric correlation to identify financial anomalies across multiple business units.",
+                    "url": "https://www.gustidevitto.com/methodology"
+                },
+                {
+                    "@type": "DefinedTerm",
+                    "name": "BEP Drift",
+                    "description": "The rate at which a business's Breakeven Point silently rises due to uncaptured cost increases. Average BEP Drift of 18.3% found across 687 audits.",
+                    "url": "https://www.gustidevitto.com/pilar/bep-dynamic"
+                },
+                {
+                    "@type": "DefinedTerm",
+                    "name": "Profit Illusion",
+                    "description": "A state where a business owner believes they are profitable based on outdated metrics while actually operating at a structural loss.",
+                    "url": "https://www.gustidevitto.com/pilar/bep-dynamic"
+                },
+                {
+                    "@type": "DefinedTerm",
+                    "name": "Structural Loss",
+                    "description": "A condition where a business's cost structure makes profitability mathematically impossible at current pricing and volume, regardless of sales growth.",
+                    "url": "https://www.gustidevitto.com/forensics-pillars"
                 }
             ]
         },
@@ -59,8 +94,17 @@
             "founder": {
                 "@id": "https://www.gustidevitto.com/#person"
             },
-            "areaServed": "Indonesia",
-            "description": "Specialized forensic firm focused on Profit Recovery and Phantom Cost Hunting for multi-outlet brands."
+            "areaServed": ["US", "CA", "AU", "SG", "ID"],
+            "description": "Specialized financial forensics firm focused on Profit Recovery and Phantom Cost Hunting for multi-outlet brands, restaurant chains, and franchise networks. Serving the USA market with institution-grade diagnostics.",
+            "sameAs": [
+                "https://www.linkedin.com/company/gusti-devitto-forensics/"
+            ],
+            "knowsAbout": [
+                "Restaurant Financial Forensics",
+                "Multi-outlet Business Diagnostics",
+                "Franchise Profit Recovery",
+                "Phantom Cost Auditing"
+            ]
         }
     ]
-}
+}

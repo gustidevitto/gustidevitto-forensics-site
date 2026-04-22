@@ -181,8 +181,32 @@ function PilarPage() {
         "dateModified": (metadata as any).last_updated || "2025-01-02",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://gustidevitto.com/pilar/${slug}`
+            "@id": `https://www.gustidevitto.com/pilar/${slug}`
         }
+    }
+
+    // FAQ Schema for GEO
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": `What is ${displayTitle}?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": (metadata as any).description || t(`pillars.${pillar.id}.definition`)
+                }
+            },
+            {
+                "@type": "Question",
+                "name": `How does the FIP™ Protocol by Gusti Devitto use ${displayTitle}?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `The FIP™ Protocol uses ${displayTitle} as a forensic diagnostic metric to detect Phantom Costs and operational leakages in multi-outlet businesses and restaurant chains.`
+                }
+            }
+        ]
     }
 
     return (
@@ -195,6 +219,9 @@ function PilarPage() {
             </script>
             <script type="application/ld+json">
                 {JSON.stringify(articleSchema)}
+            </script>
+            <script type="application/ld+json">
+                {JSON.stringify(faqSchema)}
             </script>
 
             {/* Header / Breadcrumb */}

@@ -30,22 +30,20 @@ function Index() {
             <title>{t('global.seo_home_title')}</title>
             <meta name="description" content={t('global.seo_home_desc')} />
             <meta name="keywords" content={t('global.seo_home_keywords')} />
-            <link rel="canonical" href="https://gustidevitto.com/" />
+            <link rel="canonical" href="https://www.gustidevitto.com/" />
             <meta property="og:site_name" content="Gusti Devitto Forensics" />
             <meta property="og:title" content={t('global.og_home_title')} />
             <meta property="og:description" content={t('global.og_home_desc')} />
-            <meta property="og:image" content="/assets/images/aboutme.jpg" />
+            <meta property="og:image" content="https://www.gustidevitto.com/assets/images/og-cover.jpg" />
             <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://gustidevitto.com/" />
+            <meta property="og:url" content="https://www.gustidevitto.com/" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={t('global.og_home_title')} />
             <meta name="twitter:description" content={t('global.og_home_desc')} />
-            <meta name="twitter:image" content="/assets/images/aboutme.jpg" />
+            <meta name="twitter:image" content="https://www.gustidevitto.com/assets/images/og-cover.jpg" />
             <meta name="twitter:site" content="@gustidevitto" />
-            <meta name="geo.region" content="US-NY" />
-            <meta name="geo.region" content="US-CA" />
-            <meta name="geo.region" content="ID-JK" />
-            <meta name="geo.placename" content="New York, San Francisco, Jakarta" />
+            <meta name="geo.region" content="US" />
+            <meta name="geo.placename" content="United States" />
             <meta name="geo.position" content="40.712776;-74.005974" />
             <meta name="ICBM" content="40.712776, -74.005974" />
 
