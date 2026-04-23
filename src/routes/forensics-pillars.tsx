@@ -41,7 +41,7 @@ function ForensicsPillars() {
                 </div>
                 <div className="max-w-5xl relative z-10">
                     <div className="flex items-center gap-4 mb-8">
-                        <div className="w-8 h-px bg-[#82C7A8]/50" />
+                        <div className="w-8 h-px bg-[#AF52DE]/50" />
                         <p className="text-[10px] text-white/40 font-medium tracking-[0.3em] uppercase">
                             {t('pillars_page.badge')}
                         </p>
@@ -60,15 +60,15 @@ function ForensicsPillars() {
                 <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_1.2fr] items-stretch">
                     <div className="py-20 px-6 md:px-12 lg:px-20 space-y-8">
                         <div className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#82C7A8] animate-pulse-slow" />
-                            <span className="text-[10px] font-semibold text-[#82C7A8]/60 uppercase tracking-[0.2em]">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#AF52DE] animate-pulse-slow" />
+                            <span className="text-[10px] font-semibold text-[#AF52DE]/60 uppercase tracking-[0.2em]">
                                 {t('pillars_page.implementation_badge')}
                             </span>
                         </div>
                         <h2 className="text-3xl font-bold tracking-tight leading-tight">
                             <Trans i18nKey="pillars_page.mri_title">
                                 Integrated MRI: <br />
-                                <span className="text-[#82C7A8] text-4xl">FIP™ Digital Mirror</span>
+                                <span className="text-[#AF52DE] text-4xl">FIP™ Digital Mirror</span>
                             </Trans>
                         </h2>
                         <p className="text-white/40 leading-relaxed font-light">
@@ -89,7 +89,7 @@ function ForensicsPillars() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-[#161618] via-[#161618]/25 to-transparent" />
                         <div className="absolute bottom-6 right-6 text-right">
-                            <p className="text-[10px] font-medium text-[#82C7A8]/50 uppercase tracking-[0.2em]">{t('about_page.auth_level')}</p>
+                            <p className="text-[10px] font-medium text-[#AF52DE]/50 uppercase tracking-[0.2em]">{t('about_page.auth_level')}</p>
                         </div>
                     </div>
                 </div>

@@ -138,7 +138,7 @@ function SingleEntityPage() {
             <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
                 {/* Warm blue orb — replaces scanline/spotlight */}
                 <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#0A84FF]/[0.05] rounded-full blur-[160px] animate-subtle-glow" />
-                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#82C7A8]/[0.03] rounded-full blur-[120px] animate-float" />
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#AF52DE]/[0.03] rounded-full blur-[120px] animate-float" />
             </div>
 
             {/* ── HERO SECTION ── */}
@@ -150,8 +150,8 @@ function SingleEntityPage() {
                     <div className="animate-fade-in text-left">
                         {/* Tension badge — glass pill */}
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-squircle-sm mb-6">
-                            <Activity className="w-3.5 h-3.5 text-[#82C7A8]" strokeWidth={1.5} />
-                            <span className="text-xs font-semibold text-[#82C7A8] uppercase tracking-widest leading-snug">
+                            <Activity className="w-3.5 h-3.5 text-[#AF52DE]" strokeWidth={1.5} />
+                            <span className="text-xs font-semibold text-[#AF52DE] uppercase tracking-widest leading-snug">
                                 {t('single_entity.tension')}
                             </span>
                         </div>
@@ -169,7 +169,7 @@ function SingleEntityPage() {
                         </p>
 
                         {/* Data strip — NO monospace, just semibold */}
-                        <div className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold text-[#82C7A8] uppercase tracking-widest">
+                        <div className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold text-[#AF52DE] uppercase tracking-widest">
                             <span>{t('single_entity.social_leaks_val')} {t('single_entity.social_leaks')}</span>
                             <span className="text-white/40">/</span>
                             <span>{t('single_entity.social_verdict_val')} {t('single_entity.social_verdict')}</span>
@@ -202,8 +202,8 @@ function SingleEntityPage() {
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8 text-left">
                             <div className="inline-flex items-center gap-2 px-3 py-1 glass rounded-squircle-sm">
-                                <Activity className="w-3 h-3 text-[#82C7A8]" strokeWidth={1.5} />
-                                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#82C7A8]">Quick Estimate</span>
+                                <Activity className="w-3 h-3 text-[#AF52DE]" strokeWidth={1.5} />
+                                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#AF52DE]">Quick Estimate</span>
                             </div>
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
                                 {t('single_entity.calc_title')}
@@ -255,7 +255,7 @@ function SingleEntityPage() {
                                     </div>
 
                                     <div className="p-6 glass-blue rounded-squircle-sm">
-                                        <p className="text-[10px] font-semibold uppercase tracking-widest text-[#82C7A8]/80 mb-2">Projected Annual Loss</p>
+                                        <p className="text-[10px] font-semibold uppercase tracking-widest text-[#AF52DE]/80 mb-2">Projected Annual Loss</p>
                                         <p className="text-4xl font-bold text-white tracking-tight font-mono">
                                             $<span className="text-white/90">{(networkSize * 0.018 * 12).toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
                                         </p>
@@ -310,7 +310,7 @@ function SingleEntityPage() {
 
                     {/* FAQ 1 */}
                     <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-[#0A84FF]/15 py-2">
-                        <p className="text-xs font-semibold text-[#82C7A8]/60 mb-3 uppercase tracking-widest">{t('faq.q1')}</p>
+                        <p className="text-xs font-semibold text-[#AF52DE]/60 mb-3 uppercase tracking-widest">{t('faq.q1')}</p>
                         <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
                             " <Trans i18nKey="faq.a1" components={{ 1: <strong className="text-white font-bold" />, br: <br /> }} /> "
                         </p>
@@ -344,7 +344,7 @@ function SingleEntityPage() {
 
                     {/* FAQ 2 */}
                     <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-[#0A84FF]/15 py-2">
-                        <p className="text-xs font-semibold text-[#82C7A8]/60 mb-3 uppercase tracking-widest">{t('faq.q2')}</p>
+                        <p className="text-xs font-semibold text-[#AF52DE]/60 mb-3 uppercase tracking-widest">{t('faq.q2')}</p>
                         <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
                             " <Trans i18nKey="faq.a2" components={{ 1: <strong className="text-white font-bold" />, br: <br /> }} /> "
                         </p>
@@ -499,7 +499,7 @@ function SingleEntityPage() {
                             <div className="absolute inset-0 bg-[#0A84FF]/[0.02] rounded-full blur-3xl animate-pulse"></div>
                             
                             {/* Fixed Nucleus */}
-                            <div className="w-24 h-24 border border-[#82C7A8]/20 rounded-full flex items-center justify-center bg-white/[0.01] backdrop-blur-md relative z-10 shadow-[0_0_30px_rgba(10,132,255,0.05)]">
+                            <div className="w-24 h-24 border border-[#AF52DE]/20 rounded-full flex items-center justify-center bg-white/[0.01] backdrop-blur-md relative z-10 shadow-[0_0_30px_rgba(10,132,255,0.05)]">
                                 <Activity className="w-8 h-8 text-[#0A84FF] opacity-40" strokeWidth={1} />
                             </div>
                         </div>

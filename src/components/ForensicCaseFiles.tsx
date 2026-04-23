@@ -45,7 +45,7 @@ export function ForensicCaseFiles() {
             <div className="container mx-auto max-w-6xl relative z-10">
                 {/* Section header */}
                 <div className="text-center space-y-3 mb-16 max-w-3xl mx-auto">
-                    <p className="text-xs font-semibold text-[#82C7A8] uppercase tracking-[0.2em] mb-3">
+                    <p className="text-xs font-semibold text-[#AF52DE] uppercase tracking-[0.2em] mb-3">
                         {t('case_files.badge', "Case Files")}
                     </p>
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white/90">

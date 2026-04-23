@@ -17,8 +17,8 @@ function VerdictPage() {
             <section className="pt-32 pb-20 px-6 md:px-12 lg:px-20 border-b border-white/[0.05]">
                 <div className="max-w-5xl">
                     <div className="flex items-center gap-4 mb-8">
-                        <div className="w-8 h-px bg-[#82C7A8]/40" />
-                        <p className="text-[10px] text-[#82C7A8]/60 font-semibold tracking-[0.3em] uppercase">
+                        <div className="w-8 h-px bg-[#AF52DE]/40" />
+                        <p className="text-[10px] text-[#AF52DE]/60 font-semibold tracking-[0.3em] uppercase">
                             {t('verdict_page.hero_badge')}
                         </p>
                     </div>
@@ -103,8 +103,8 @@ function VerdictPage() {
             {/* ═══ CTA ═══ */}
             <section className="py-24 px-6 md:px-12 lg:px-20">
                 <div className="max-w-5xl">
-                    <Button asChild>
-                        <Link to="/fip-lite" className="flex flex-col items-start">
+                    <Button asChild size="xl" className="h-auto py-5 px-8 bg-[#0A84FF] text-white hover:bg-[#0A84FF]/90 transition-all border-none shadow-[0_0_20px_rgba(10,132,255,0.2)]">
+                        <Link to="/fip-lite" className="flex flex-col items-center text-center">
                             <span className="flex items-center text-xl font-bold">
                                 {t('verdict_page.cta_verdict')}
                                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-0.5 transition-transform" strokeWidth={2} />

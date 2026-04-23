@@ -35,8 +35,8 @@ function MasterIndex() {
                     {/* Left — Title */}
                     <div className="pt-32 pb-20 px-6 md:px-12 lg:px-20 space-y-6">
                         <div className="flex items-center gap-4 mb-4">
-                            <div className="w-8 h-px bg-[#82C7A8]/40" />
-                            <p className="text-[10px] text-[#82C7A8]/60 font-semibold tracking-[0.3em] uppercase">
+                            <div className="w-8 h-px bg-[#AF52DE]/40" />
+                            <p className="text-[10px] text-[#AF52DE]/60 font-semibold tracking-[0.3em] uppercase">
                                 {t('master_index.hero_badge')}
                             </p>
                         </div>

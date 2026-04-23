@@ -84,7 +84,7 @@ function MarginAuditDiagnostic() {
                     name={name}
                     value={inputs[name] === 0 ? '' : inputs[name].toLocaleString()}
                     onChange={handleChange}
-                    className={`w-full glass border border-white/10 p-4 ${isPercent ? 'px-4' : 'pl-8'} font-semibold text-xl focus:border-[#82C7A8] focus:outline-none transition-colors rounded-squircle-md`}
+                    className={`w-full glass border border-white/10 p-4 ${isPercent ? 'px-4' : 'pl-8'} font-semibold text-xl focus:border-[#AF52DE] focus:outline-none transition-colors rounded-squircle-md`}
                     placeholder="0"
                 />
             </div>
@@ -99,7 +99,7 @@ function MarginAuditDiagnostic() {
                 <title>{t('margin_audit.seo_title', 'Margin Audit | Free Efficiency Scan')}</title>
 
                 
-                <NeuralMeshBackground colorClass="text-[#82C7A8]" />
+                <NeuralMeshBackground colorClass="text-[#AF52DE]" />
                 <div className="max-w-2xl mx-auto w-full flex-grow flex flex-col relative z-10">
                     <div className="mb-12">
                         <Link to="/fip-lite" className="text-white/40 hover:text-white uppercase tracking-widest text-xs font-bold inline-flex items-center transition-colors mb-6">
@@ -107,7 +107,7 @@ function MarginAuditDiagnostic() {
                             {t('global.back', 'Return')}
                         </Link>
                         <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4 flex items-center">
-                            <Activity className="w-10 h-10 mr-4 text-[#82C7A8]" />
+                            <Activity className="w-10 h-10 mr-4 text-[#AF52DE]" />
                             {t('margin_audit.title', 'Margin Audit')}
                         </h1>
                         <p className="text-white/60 text-xl font-light">
@@ -118,7 +118,7 @@ function MarginAuditDiagnostic() {
                     {/* Progress Bar */}
                     <div className="w-full h-1 bg-white/10 mb-8 relative">
                         <motion.div 
-                            className="absolute top-0 left-0 h-full bg-[#82C7A8]"
+                            className="absolute top-0 left-0 h-full bg-[#AF52DE]"
                             initial={{ width: `${((step - 1) / 3) * 100}%` }}
                             animate={{ width: `${(step / 3) * 100}%` }}
                         />
@@ -137,7 +137,7 @@ function MarginAuditDiagnostic() {
                         >
                             {step === 1 && (
                                 <>
-                                    <div className="p-4 bg-white/5 border-l-2 border-[#82C7A8] text-sm font-light text-white/60 italic">
+                                    <div className="p-4 bg-white/5 border-l-2 border-[#AF52DE] text-sm font-light text-white/60 italic">
                                         "{t('margin_audit.encouragement.0', "Let's look at the top line.")}"
                                     </div>
                                     {renderInputField("revenue", "revenue.label", "revenue.hint")}
@@ -148,7 +148,7 @@ function MarginAuditDiagnostic() {
                             
                             {step === 2 && (
                                 <>
-                                    <div className="p-4 bg-white/5 border-l-2 border-[#82C7A8] text-sm font-light text-white/60 italic">
+                                    <div className="p-4 bg-white/5 border-l-2 border-[#AF52DE] text-sm font-light text-white/60 italic">
                                         "{t('margin_audit.encouragement.1', "Now let's find the leakage.")}"
                                     </div>
                                     {renderInputField("labor", "labor.label", "labor.hint")}
@@ -159,7 +159,7 @@ function MarginAuditDiagnostic() {
 
                             {step === 3 && (
                                 <>
-                                    <div className="p-4 bg-white/5 border-l-2 border-[#82C7A8] text-sm font-light text-white/60 italic">
+                                    <div className="p-4 bg-white/5 border-l-2 border-[#AF52DE] text-sm font-light text-white/60 italic">
                                         "{t('margin_audit.encouragement.2', "Almost done. Let's analyze your overhead.")}"
                                     </div>
                                     {renderInputField("opex", "opex.label", "opex.hint")}
@@ -184,7 +184,7 @@ function MarginAuditDiagnostic() {
                             <Button 
                                 onClick={handleRunDiagnostic} 
                                 disabled={isCalculating}
-                                className="bg-[#82C7A8] hover:bg-[#82C7A8]/90 text-black uppercase tracking-widest font-bold px-8"
+                                className="bg-[#AF52DE] hover:bg-[#AF52DE]/90 text-black uppercase tracking-widest font-bold px-8"
                             >
                                 {isCalculating ? t('wizard_shared.processing', 'Processing Variables...') : t('wizard_shared.btn_submit', 'Reveal My Results')}
                             </Button>
@@ -199,7 +199,7 @@ function MarginAuditDiagnostic() {
     if (!result) return null
 
     const VerdictIcon = result.layer2.efficiencyVerdict === 'fortress' ? CheckCircle2 : result.layer2.efficiencyVerdict === 'warning' ? AlertTriangle : XCircle
-    const verdictColor = result.layer2.efficiencyVerdict === 'fortress' ? 'text-emerald-500' : result.layer2.efficiencyVerdict === 'warning' ? 'text-[#82C7A8]' : 'text-red-500'
+    const verdictColor = result.layer2.efficiencyVerdict === 'fortress' ? 'text-emerald-500' : result.layer2.efficiencyVerdict === 'warning' ? 'text-[#AF52DE]' : 'text-red-500'
 
     return (
         <div className="min-h-screen bg-[#1c1c1e] text-white pt-24 pb-24 px-6 relative overflow-hidden">
@@ -325,7 +325,7 @@ function MarginAuditDiagnostic() {
                                         </div>
                                         <div className="flex items-center gap-3 flex-shrink-0">
                                             <div className="text-2xl font-bold tracking-tight">{pillar.computedValue}</div>
-                                            <div className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 border rounded-full ${pillar.status === 'critical' ? 'text-red-500 border-red-500/30 bg-red-500/10' : pillar.status === 'warning' ? 'text-[#82C7A8] border-[#82C7A8]/30 bg-[#82C7A8]/10' : 'text-emerald-500 border-emerald-500/30 bg-emerald-500/10'}`}>
+                                            <div className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 border rounded-full ${pillar.status === 'critical' ? 'text-red-500 border-red-500/30 bg-red-500/10' : pillar.status === 'warning' ? 'text-[#AF52DE] border-[#AF52DE]/30 bg-[#AF52DE]/10' : 'text-emerald-500 border-emerald-500/30 bg-emerald-500/10'}`}>
                                                 {pillar.status}
                                             </div>
                                         </div>
@@ -336,7 +336,7 @@ function MarginAuditDiagnostic() {
                                             initial={{ width: 0 }}
                                             animate={{ width: `${pillar.barWidth}%` }}
                                             transition={{ duration: 1.2, ease: 'easeOut' }}
-                                            className={`h-full ${pillar.status === 'critical' ? 'bg-red-500' : pillar.status === 'warning' ? 'bg-[#82C7A8]' : 'bg-emerald-500'}`}
+                                            className={`h-full ${pillar.status === 'critical' ? 'bg-red-500' : pillar.status === 'warning' ? 'bg-[#AF52DE]' : 'bg-emerald-500'}`}
                                         />
                                     </div>
                                 </div>
@@ -359,8 +359,8 @@ function MarginAuditDiagnostic() {
                             
                             
                         {/* The "Now What?" Gap - Explicit Medical Analogy */}
-                        <div className="mt-16 p-8 glass-elevated rounded-squircle-xl border-l-4 border-[#82C7A8] relative">
-                            <h4 className="text-[#82C7A8] text-sm font-bold uppercase tracking-widest flex items-center mb-6">
+                        <div className="mt-16 p-8 glass-elevated rounded-squircle-xl border-l-4 border-[#AF52DE] relative">
+                            <h4 className="text-[#AF52DE] text-sm font-bold uppercase tracking-widest flex items-center mb-6">
                                 <AlertTriangle className="w-5 h-5 mr-3" /> The Prescription Gap
                             </h4>
                             <div className="space-y-4 text-sm font-semibold leading-relaxed">

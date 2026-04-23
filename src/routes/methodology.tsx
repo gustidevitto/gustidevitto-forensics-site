@@ -39,8 +39,8 @@ function MethodologyPage() {
             <section className="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] min-h-[50vh] flex flex-col justify-end">
                 <div className="max-w-5xl">
                     <div className="flex items-center gap-4 mb-8">
-                        <div className="w-8 h-px bg-[#82C7A8]/40" />
-                        <p className="text-[10px] text-[#82C7A8]/60 font-semibold tracking-[0.3em] uppercase">
+                        <div className="w-8 h-px bg-[#AF52DE]/40" />
+                        <p className="text-[10px] text-[#AF52DE]/60 font-semibold tracking-[0.3em] uppercase">
                             {t('methodology.hero_badge')}
                         </p>
                     </div>
@@ -58,7 +58,7 @@ function MethodologyPage() {
                 <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
                     {/* Left label — sticky */}
                     <div className="lg:sticky lg:top-28">
-                        <span className="text-[#82C7A8] font-semibold text-xs tracking-widest uppercase">Definition</span>
+                        <span className="text-[#AF52DE] font-semibold text-xs tracking-widest uppercase">Definition</span>
                         <h2 className="text-2xl md:text-3xl font-bold tracking-tight mt-4 leading-tight">
                             {t('methodology.definition_title')}
                         </h2>
@@ -77,8 +77,8 @@ function MethodologyPage() {
             <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] bg-[#161618]">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex items-center gap-4 mb-16">
-                        <span className="text-[#82C7A8] font-semibold text-xs tracking-widest uppercase">Verdict Protocol</span>
-                        <div className="w-12 h-px bg-[#82C7A8]/20" />
+                        <span className="text-[#AF52DE] font-semibold text-xs tracking-widest uppercase">Verdict Protocol</span>
+                        <div className="w-12 h-px bg-[#AF52DE]/20" />
                     </div>
 
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-20 max-w-xl">
@@ -126,8 +126,8 @@ function MethodologyPage() {
             <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05]">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex items-center gap-4 mb-16">
-                        <span className="text-[#82C7A8] font-semibold text-xs tracking-widest uppercase">Comparison</span>
-                        <div className="w-12 h-px bg-[#82C7A8]/20" />
+                        <span className="text-[#AF52DE] font-semibold text-xs tracking-widest uppercase">Comparison</span>
+                        <div className="w-12 h-px bg-[#AF52DE]/20" />
                     </div>
 
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 max-w-xl">
@@ -176,8 +176,8 @@ function MethodologyPage() {
             <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] bg-[#161618]">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex items-center gap-4 mb-8">
-                        <span className="text-[#82C7A8] font-semibold text-xs tracking-widest uppercase">Process</span>
-                        <div className="w-12 h-px bg-[#82C7A8]/20" />
+                        <span className="text-[#AF52DE] font-semibold text-xs tracking-widest uppercase">Process</span>
+                        <div className="w-12 h-px bg-[#AF52DE]/20" />
                     </div>
 
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">

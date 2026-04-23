@@ -96,7 +96,7 @@ function RootComponent() {
                                 />
                                 <div className="flex flex-col -space-y-0.5">
                                     <a className="font-bold text-[17px] tracking-tight text-white" href="/">
-                                        Gusti Devitto<span className="text-[#82C7A8]">™</span>
+                                        Gusti Devitto<span className="text-[#AF52DE]">™</span>
                                     </a>
                                     <span className="text-[10px] font-medium text-white/40 tracking-wide">
                                         Forensic Business Intelligence
@@ -121,7 +121,7 @@ function RootComponent() {
                                     className={`px-3 py-1.5 rounded-squircle-sm transition-all duration-200 font-semibold ${
                                         pathname.includes('/fip-lite') || pathname.includes('/cash-autopsy') || pathname.includes('/margin-audit') || pathname.includes('/growth-scan')
                                         ? 'bg-white/[0.08] text-[#0A84FF] shadow-sm' 
-                                        : 'text-[#82C7A8] hover:text-[#A4E0C4] hover:bg-[#82C7A8]/[0.08]'
+                                        : 'text-[#AF52DE] hover:text-[#D085FF] hover:bg-[#AF52DE]/[0.08]'
                                     }`}
                                 >
                                     {t('nav.calculator')}
@@ -208,7 +208,7 @@ function RootComponent() {
                                                 className={`px-4 py-3 rounded-squircle-sm text-base transition-all font-semibold ${
                                                     pathname.includes('/fip-lite') || pathname.includes('/cash-autopsy') || pathname.includes('/margin-audit') || pathname.includes('/growth-scan')
                                                     ? 'bg-white/[0.08] text-[#0A84FF]' 
-                                                    : 'text-[#82C7A8] hover:bg-[#82C7A8]/[0.08]'
+                                                    : 'text-[#AF52DE] hover:bg-[#AF52DE]/[0.08]'
                                                 }`}
                                             >
                                                 {t('nav.calculator')}

@@ -179,7 +179,7 @@ function InvestasiPage() {
             {/* Ambient background orbs — static, non-interactive */}
             <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
                 <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#0A84FF]/[0.04] rounded-full blur-[160px] animate-subtle-glow" />
-                <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#82C7A8]/[0.03] rounded-full blur-[120px] animate-float" />
+                <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#AF52DE]/[0.03] rounded-full blur-[120px] animate-float" />
             </div>
 
             {/* SEO & Authority Meta Tags */}
@@ -214,13 +214,13 @@ function InvestasiPage() {
             {/* ── HERO ── */}
             <section className="pt-32 pb-24 px-4 md:px-8 border-b border-white/[0.05] bg-[#1c1c1e] relative z-10">
                 <div className="container mx-auto max-w-4xl text-center space-y-8 animate-fade-in">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-squircle-sm text-[10px] font-semibold uppercase tracking-widest text-[#82C7A8]">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-squircle-sm text-[10px] font-semibold uppercase tracking-widest text-[#AF52DE]">
                         <Lock className="w-3 h-3" strokeWidth={1.5} /> {t('investasi_page.hero_badge', 'Forensic Intelligence Protocol™')}
                     </div>
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight uppercase leading-none">
                         {t('investasi_page.hero_title', 'Choose How Deep We Go')}
                     </h1>
-                    <p className="text-[#82C7A8] font-semibold text-lg md:text-xl max-w-2xl mx-auto leading-relaxed border-l-2 border-[#82C7A8]/25 pl-8 py-2">
+                    <p className="text-[#AF52DE] font-semibold text-lg md:text-xl max-w-2xl mx-auto leading-relaxed border-l-2 border-[#AF52DE]/25 pl-8 py-2">
                         {t('investasi.outcome_anchor')}
                     </p>
                 </div>
@@ -491,9 +491,9 @@ function InvestasiPage() {
                                         ))}
                                     </ul>
                                 </div>
-                                <div className="p-6 bg-[#82C7A8]/5 border border-[#82C7A8]/20 rounded-squircle-md">
-                                    <h5 className="font-bold text-[#82C7A8] uppercase tracking-widest text-xs mb-3">{t('investasi_page.labels.savings_example', 'SAVINGS EXAMPLE (FORENSIC tier):')}</h5>
-                                    <ul className="list-disc list-inside space-y-2 text-[#82C7A8]/80 font-medium">
+                                <div className="p-6 bg-[#AF52DE]/5 border border-[#AF52DE]/20 rounded-squircle-md">
+                                    <h5 className="font-bold text-[#AF52DE] uppercase tracking-widest text-xs mb-3">{t('investasi_page.labels.savings_example', 'SAVINGS EXAMPLE (FORENSIC tier):')}</h5>
+                                    <ul className="list-disc list-inside space-y-2 text-[#AF52DE]/80 font-medium">
                                         <li>One-time: $3,500/audit</li>
                                         <li>Quarterly: $2,975/audit (save $525)</li>
                                         <li>Annual: $2,625/audit + access (save $875 + benefits)</li>
@@ -513,7 +513,7 @@ function InvestasiPage() {
                 <div className="container mx-auto max-w-4xl text-center space-y-8">
                     {/* Micro Proof Block */}
                     <div className="mb-10 p-8 glass-sage rounded-squircle-lg text-left max-w-3xl mx-auto relative overflow-hidden">
-                        <div className="absolute left-0 top-4 bottom-4 w-0.5 bg-[#82C7A8]/30 rounded-full" />
+                        <div className="absolute left-0 top-4 bottom-4 w-0.5 bg-[#AF52DE]/30 rounded-full" />
                         <p className="text-white/60 italic text-lg leading-relaxed pl-6">
                             "{t('investasi.micro_proof')}"
                         </p>

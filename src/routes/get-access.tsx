@@ -91,7 +91,7 @@ function GetAccess() {
                     {/* Content — bottom-anchored */}
                     <div className="relative z-10 mt-auto p-12 lg:p-16 space-y-8 max-w-lg">
                         <h2 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight">
-                            <Trans i18nKey="get_access.pain_title">In 15 minutes, <br /> <span className="text-[#82C7A8]">you will know where your money goes.</span></Trans>
+                            <Trans i18nKey="get_access.pain_title">In 15 minutes, <br /> <span className="text-[#AF52DE]">you will know where your money goes.</span></Trans>
                         </h2>
 
                         <p className="text-white/40 text-base leading-relaxed font-light">
@@ -99,12 +99,12 @@ function GetAccess() {
                         </p>
 
                         {/* Testimonial — inline quote, not a card */}
-                        <blockquote className="border-l-2 border-[#82C7A8]/25 pl-6 py-2 space-y-3">
+                        <blockquote className="border-l-2 border-[#AF52DE]/25 pl-6 py-2 space-y-3">
                             <p className="text-white/60 text-sm leading-relaxed italic">
                                 <Trans i18nKey="get_access.testimonial_text">Previously, I thought my business was healthy because turnover kept rising. Turns out there was <strong className="text-red-400">$2,500/month</strong> leaking without me realizing it. FIP™ Protocol opened my eyes.</Trans>
                             </p>
                             <footer className="flex items-center gap-3">
-                                <div className="w-1.5 h-1.5 rounded-full bg-[#82C7A8]" />
+                                <div className="w-1.5 h-1.5 rounded-full bg-[#AF52DE]" />
                                 <div className="text-[10px] font-semibold text-white/40 uppercase tracking-widest">
                                     {t('get_access.testimonial_name')} — {t('get_access.testimonial_role')}
                                 </div>
@@ -129,7 +129,7 @@ function GetAccess() {
                         {/* Capacity indicator */}
                         <div className="flex items-center gap-3">
                             <div className="w-1.5 h-1.5 rounded-full bg-[#0A84FF] animate-pulse" />
-                            <span className="text-[10px] font-semibold text-[#82C7A8]/70 uppercase tracking-widest">
+                            <span className="text-[10px] font-semibold text-[#AF52DE]/70 uppercase tracking-widest">
                                 {t('get_access.slots_left', { count: 3 })}
                             </span>
                         </div>
@@ -185,7 +185,7 @@ function GetAccess() {
                         {/* Trust */}
                         <div className="space-y-2 pt-4 border-t border-white/[0.05]">
                             <p className="text-[10px] text-white/40 font-medium">
-                                <Trans i18nKey="get_access.privacy_policy">By clicking "Continue", you agree to our <a href="/privacy" className="underline hover:text-[#82C7A8] transition-colors">Privacy Policy</a>.</Trans>
+                                <Trans i18nKey="get_access.privacy_policy">By clicking "Continue", you agree to our <a href="/privacy" className="underline hover:text-[#AF52DE] transition-colors">Privacy Policy</a>.</Trans>
                             </p>
                             <p className="text-[10px] text-white/40 font-medium">{t('get_access.ssl_text')}</p>
                         </div>

@@ -60,7 +60,7 @@
         --muted-foreground: 0 0% 60%;     /* #999 — secondary text */
 
         /* Accent — Muted Institutional Gold (brand only, not interactive) */
-        --accent: 36 39% 56%;             /* #82C7A8 — refined gold */
+        --accent: 36 39% 56%;             /* #AF52DE — refined gold */
         --accent-foreground: 0 0% 98%;
 
         /* Destructive */
@@ -335,7 +335,7 @@
     }
 
     /* ── Gold glow — brand-only, very restrained ── */
-    .brand-gold { color: #82C7A8; }
+    .brand-gold { color: #AF52DE; }
     .brand-gold-text { color: hsl(var(--accent)); }
 
     /* ── macOS blue — primary interactive ── */

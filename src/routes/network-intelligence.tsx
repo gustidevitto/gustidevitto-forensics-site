@@ -144,7 +144,7 @@ function NetworkIntelligencePage() {
             {/* Ambient background — static, non-interactive */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
                 <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#0A84FF]/[0.04] rounded-full blur-[160px] animate-subtle-glow" />
-                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#82C7A8]/[0.025] rounded-full blur-[120px] animate-float" />
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#AF52DE]/[0.025] rounded-full blur-[120px] animate-float" />
             </div>
 
             {/* ── HERO ── */}
@@ -162,8 +162,8 @@ function NetworkIntelligencePage() {
                     <div className="text-left">
                         {/* Tension badge — glass pill */}
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-squircle-sm mb-6">
-                            <Activity className="w-3.5 h-3.5 text-[#82C7A8]" strokeWidth={1.5} />
-                            <span className="text-xs font-semibold text-[#82C7A8] uppercase tracking-widest">{t('network_intelligence.tension')}</span>
+                            <Activity className="w-3.5 h-3.5 text-[#AF52DE]" strokeWidth={1.5} />
+                            <span className="text-xs font-semibold text-[#AF52DE] uppercase tracking-widest">{t('network_intelligence.tension')}</span>
                         </div>
 
                         <h1 className="text-[clamp(3rem,7vw,7rem)] font-bold tracking-tight leading-[0.9] w-full lg:w-[95%] uppercase">
@@ -177,7 +177,7 @@ function NetworkIntelligencePage() {
                         </p>
 
                         {/* Data strip — no monospace, semibold only */}
-                        <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-[#82C7A8] uppercase tracking-widest">
+                        <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-[#AF52DE] uppercase tracking-widest">
                             <div className="flex flex-col">
                                 <span className="text-[10px] text-white/40 font-medium mb-1">{t('network_intelligence.social_nodes')}</span>
                                 <span>{t('network_intelligence.social_nodes_val')}</span>
@@ -245,7 +245,7 @@ function NetworkIntelligencePage() {
                     </div>
 
                     <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-[#0A84FF]/15 py-2">
-                        <p className="text-xs font-semibold text-[#82C7A8]/60 mb-3 uppercase tracking-widest">{t('faq.q1')}</p>
+                        <p className="text-xs font-semibold text-[#AF52DE]/60 mb-3 uppercase tracking-widest">{t('faq.q1')}</p>
                         <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
                             " <Trans i18nKey="faq.a1" components={{ 1: <strong className="text-white font-bold" />, br: <br /> }} /> "
                         </p>
@@ -311,7 +311,7 @@ function NetworkIntelligencePage() {
                     </div>
 
                     <div className="max-w-3xl ml-auto mr-auto pl-6 border-l-2 border-[#0A84FF]/15 py-2">
-                        <p className="text-xs font-semibold text-[#82C7A8]/60 mb-3 uppercase tracking-widest">{t('faq.q2')}</p>
+                        <p className="text-xs font-semibold text-[#AF52DE]/60 mb-3 uppercase tracking-widest">{t('faq.q2')}</p>
                         <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
                             " <Trans i18nKey="faq.a2" components={{ 1: <strong className="text-white font-bold" />, br: <br /> }} /> "
                         </p>
@@ -390,9 +390,9 @@ function NetworkIntelligencePage() {
                 <div className="container mx-auto max-w-5xl relative z-10 text-center">
                     <div className="mb-14 text-center space-y-3">
                         <div className="flex items-center justify-center gap-4 mb-2">
-                            <div className="w-8 h-px bg-[#82C7A8]/30" />
-                            <span className="text-[10px] uppercase tracking-[0.3em] text-[#82C7A8] font-semibold">{t('network_intelligence.pilot_title')}</span>
-                            <div className="w-8 h-px bg-[#82C7A8]/30" />
+                            <div className="w-8 h-px bg-[#AF52DE]/30" />
+                            <span className="text-[10px] uppercase tracking-[0.3em] text-[#AF52DE] font-semibold">{t('network_intelligence.pilot_title')}</span>
+                            <div className="w-8 h-px bg-[#AF52DE]/30" />
                         </div>
                         <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight">{t('network_intelligence.pilot_desc')}</h2>
                     </div>
@@ -400,7 +400,7 @@ function NetworkIntelligencePage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                         {tiers.map((tier: any) => {
                             const colorMap: Record<string, { accentText: string; accentBg: string; accentBorder: string; glassClass: string }> = {
-                                amber: { accentText: 'text-[#82C7A8]', accentBg: 'bg-[#82C7A8]', accentBorder: 'border-[#82C7A8]/20', glassClass: 'glass-sage' },
+                                amber: { accentText: 'text-[#AF52DE]', accentBg: 'bg-[#AF52DE]', accentBorder: 'border-[#AF52DE]/20', glassClass: 'glass-sage' },
                                 red:   { accentText: 'text-red-400',   accentBg: 'bg-red-500',   accentBorder: 'border-red-500/20',   glassClass: 'glass' },
                             };
                             const theme = colorMap[tier.color] || colorMap.amber;

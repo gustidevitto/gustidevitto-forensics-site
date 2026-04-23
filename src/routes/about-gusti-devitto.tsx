@@ -19,7 +19,7 @@ function AboutGustiDevitto() {
             <section className="relative min-h-[85vh] flex flex-col justify-end overflow-hidden pb-24 md:pb-32">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="/assets/images/aboutme.jpg"
+                        src="/assets/images/v3.jpg"
                         alt="Gusti Devitto"
                         className="w-full h-full object-cover object-[50%_20%] opacity-45 grayscale-[0.2] contrast-[1.08]"
                     />

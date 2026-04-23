@@ -27,9 +27,9 @@ function FipLiteHub() {
             title: t('fip_lite_hub.card_margin_title', 'Margin Audit'),
             desc: t('fip_lite_hub.card_margin_desc', 'Your team is busy, but profit is flat. Isolate your exact GP Leakage, labor inefficiency, and unrecorded operational waste.'),
             icon: Activity,
-            accentClass: 'text-[#82C7A8]',
-            glassTint: 'bg-[#82C7A8]/[0.05]',
-            borderTint: 'border-[#82C7A8]/[0.12]',
+            accentClass: 'text-[#AF52DE]',
+            glassTint: 'bg-[#AF52DE]/[0.05]',
+            borderTint: 'border-[#AF52DE]/[0.12]',
             cta: t('fip_lite_hub.card_margin_cta', 'Run Efficiency Audit'),
             href: '/margin-audit'
         },
