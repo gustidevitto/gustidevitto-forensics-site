@@ -177,7 +177,7 @@ function InvestasiPage() {
     return (
         <div className="flex-1 flex flex-col bg-[#1c1c1e] text-white relative">
             {/* Ambient background orbs — static, non-interactive */}
-            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden hidden md:block">
                 <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#0A84FF]/[0.04] rounded-full blur-[160px] animate-subtle-glow" />
                 <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#AF52DE]/[0.03] rounded-full blur-[120px] animate-float" />
             </div>

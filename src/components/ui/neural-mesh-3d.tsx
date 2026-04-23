@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface NeuralMesh3DProps {
   className?: string;
@@ -44,6 +44,16 @@ export const NeuralMesh3D: React.FC<NeuralMesh3DProps> = ({
   trappedProfitCount = 0,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const activeNodeCount = isMobile ? Math.max(10, Math.floor(nodeCount * 0.4)) : nodeCount;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -80,9 +90,9 @@ export const NeuralMesh3D: React.FC<NeuralMesh3DProps> = ({
     const spreadY = Math.min(h, 900) * 0.45;
     const spreadZ = 350;
 
-    for (let i = 0; i < nodeCount; i++) {
+    for (let i = 0; i < activeNodeCount; i++) {
       // Fibonacci sphere distribution for even spread
-      const phi = Math.acos(1 - 2 * (i + 0.5) / nodeCount);
+      const phi = Math.acos(1 - 2 * (i + 0.5) / activeNodeCount);
       const theta = Math.PI * (1 + Math.sqrt(5)) * i;
 
       // Vary radius so some nodes are inner, some outer
@@ -107,16 +117,16 @@ export const NeuralMesh3D: React.FC<NeuralMesh3DProps> = ({
         pulseSpeed: 0.5 + seededRandom(i * 17) * 1.5,
         pulsePhase: seededRandom(i * 19) * Math.PI * 2,
         baseRadius: 1.2 + seededRandom(i * 23) * 2.0,
-        isTrapped: trappedProfitCount > 0 && i % Math.floor(nodeCount / trappedProfitCount) === 0 && i / Math.floor(nodeCount / trappedProfitCount) < trappedProfitCount,
+        isTrapped: trappedProfitCount > 0 && i % Math.floor(activeNodeCount / trappedProfitCount) === 0 && i / Math.floor(activeNodeCount / trappedProfitCount) < trappedProfitCount,
       });
     }
 
     // Pre-compute connection pairs (connect nearby nodes in 3D)
     const connectionPairs: [number, number][] = [];
     const maxDist = spreadX * 0.55;
-    for (let i = 0; i < nodeCount; i++) {
+    for (let i = 0; i < activeNodeCount; i++) {
       const distances: { idx: number; dist: number }[] = [];
-      for (let j = 0; j < nodeCount; j++) {
+      for (let j = 0; j < activeNodeCount; j++) {
         if (i === j) continue;
         const dx = nodes[i].baseX - nodes[j].baseX;
         const dy = nodes[i].baseY - nodes[j].baseY;
@@ -176,7 +186,7 @@ export const NeuralMesh3D: React.FC<NeuralMesh3DProps> = ({
       const camAngleX = Math.sin(time * 0.15) * 0.15;
 
       // Update node positions with organic drift
-      for (let i = 0; i < nodeCount; i++) {
+      for (let i = 0; i < activeNodeCount; i++) {
         const n = nodes[i];
         const t = time + n.driftPhase;
         n.x = n.baseX + Math.sin(t * n.driftSpeedX) * n.driftAmplitude;
@@ -187,7 +197,7 @@ export const NeuralMesh3D: React.FC<NeuralMesh3DProps> = ({
       // Transform & project all nodes
       projectedMap.clear();
       const sortedProjected: { sx: number; sy: number; scale: number; behind: boolean; idx: number }[] = [];
-      for (let i = 0; i < nodeCount; i++) {
+      for (let i = 0; i < activeNodeCount; i++) {
         const n = nodes[i];
         const [rx, rz] = rotateY(n.x, n.z, camAngleY);
         const [ry, rz2] = rotateX(n.y, rz, camAngleX);
@@ -268,7 +278,7 @@ export const NeuralMesh3D: React.FC<NeuralMesh3DProps> = ({
       window.removeEventListener('resize', resize);
       cancelAnimationFrame(animId);
     };
-  }, [color, nodeCount, opacity]);
+  }, [color, activeNodeCount, opacity]);
 
   return (
     <div className={`absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center ${className}`}>

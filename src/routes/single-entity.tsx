@@ -135,7 +135,7 @@ function SingleEntityPage() {
             </script>
 
             {/* ── Ambient background — very subtle, non-HUD ── */}
-            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden hidden md:block">
                 {/* Warm blue orb — replaces scanline/spotlight */}
                 <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#0A84FF]/[0.05] rounded-full blur-[160px] animate-subtle-glow" />
                 <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#AF52DE]/[0.03] rounded-full blur-[120px] animate-float" />
