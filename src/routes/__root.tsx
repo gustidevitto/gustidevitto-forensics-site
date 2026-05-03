@@ -300,7 +300,7 @@ function RootComponent() {
                             </div>
                             {/* Copyright — no monospace */}
                             <p className="text-[10px] font-medium text-white/40 tracking-wide">
-                                © {new Date().getFullYear()} Gusti Devitto™ · FIP™ v4.00
+                                © {new Date().getFullYear()} Gusti Devitto™
                             </p>
                         </div>
                     </footer>

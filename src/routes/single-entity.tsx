@@ -407,14 +407,12 @@ function SingleEntityPage() {
                                                     <span className="text-xs text-white/40">Total</span>
                                                 </div>
                                                 <span className="text-xs text-white/40">${tier.pricing.quarterly.perAudit.toLocaleString()} / audit · 3x Monthly</span>
-                                                <span className={`text-xs ${theme.accentText} font-semibold mt-1 block`}>{t('investasi_page.labels.save', { amount: `$${(tier.pricing.oneTime * 3 - tier.pricing.quarterly.total).toLocaleString()}` })}</span>
                                             </div>
                                             <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')}>Select</Button>
                                         </div>
 
                                         {/* Annual — highlighted */}
                                         <div className={`p-4 rounded-squircle-sm flex items-center justify-between relative ${theme.glassClass} border ${theme.accentBorder}`}>
-                                            <div className={`absolute -top-3 left-4 ${theme.accentBg} text-black text-[9px] font-bold px-3 py-1 rounded-squircle-sm uppercase tracking-wider shadow-lg`}>Recommended</div>
                                             <div className="text-left mt-1">
                                                 <h4 className={`font-semibold uppercase tracking-widest text-xs ${theme.accentText} mb-1`}>Annual Partnership</h4>
                                                 <div className="flex items-baseline gap-2">
@@ -422,7 +420,6 @@ function SingleEntityPage() {
                                                     <span className="text-xs text-white/40">/ Year</span>
                                                 </div>
                                                 <span className="text-xs text-white/40">${tier.pricing.annual.perAudit.toLocaleString()} / audit · 4x Quarterly</span>
-                                                <span className={`text-xs ${theme.accentText} font-semibold mt-1 block`}>{t('investasi_page.labels.save', { amount: `$${(tier.pricing.oneTime * 4 - tier.pricing.annual.total).toLocaleString()}` })} + Benefits</span>
                                             </div>
                                             <Button size="sm" className={`${theme.accentBg} text-black hover:brightness-110 border-none font-bold`} onClick={() => openModal(tier, 'annual')}>Select</Button>
                                         </div>

@@ -286,14 +286,14 @@ function InvestasiPage() {
                                                     <span className="text-xs text-white/40">{t('investasi_page.labels.total', 'Total')}</span>
                                                 </div>
                                                 <span className="text-xs text-white/40">${tier.pricing.quarterly.perAudit.toLocaleString()} / {t('investasi_page.labels.per_audit', 'audit')} · {t('investasi_page.labels.quarterly_sub', '3x Monthly')}</span>
-                                                <span className={`text-xs ${theme.accentText} font-semibold mt-1 block`}>{t('investasi_page.labels.save', { amount: `$${(tier.pricing.oneTime * 3 - tier.pricing.quarterly.total).toLocaleString()}` })}</span>
+
                                             </div>
                                             <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')}>{t('investasi_page.labels.select', 'Select')}</Button>
                                         </div>
 
                                         {/* Annual — highlighted */}
                                         <div className={`p-4 rounded-squircle-sm flex items-center justify-between relative ${theme.glassClass} border ${theme.accentBorder}`}>
-                                            <div className={`absolute -top-3 left-4 ${theme.accentBg} text-black text-[9px] font-bold px-3 py-1 rounded-squircle-sm uppercase tracking-wider`}>{t('investasi_page.labels.recommended', 'Recommended')}</div>
+
                                             <div className="text-left mt-1">
                                                 <h4 className={`font-semibold uppercase tracking-widest text-xs ${theme.accentText} mb-1`}>{t('investasi_page.labels.annual', 'Annual Partnership')}</h4>
                                                 <div className="flex items-baseline gap-2">
@@ -301,7 +301,7 @@ function InvestasiPage() {
                                                     <span className="text-xs text-white/40">/ {t('investasi_page.labels.year', 'Year')}</span>
                                                 </div>
                                                 <span className="text-xs text-white/40">${tier.pricing.annual.perAudit.toLocaleString()} / audit · {t('investasi_page.labels.annual_sub', '4x Quarterly')}</span>
-                                                <span className={`text-xs ${theme.accentText} font-semibold mt-1 block`}>{t('investasi_page.labels.save', { amount: `$${(tier.pricing.oneTime * 4 - tier.pricing.annual.total).toLocaleString()}` })} + Benefits</span>
+
                                             </div>
                                             <Button size="sm" onClick={() => openModal(tier, 'annual')} className={`${theme.accentBg} text-black hover:brightness-110 border-none font-bold`}>{t('investasi_page.labels.select', 'Select')}</Button>
                                         </div>
@@ -494,9 +494,8 @@ function InvestasiPage() {
                                 <div className="p-6 bg-[#AF52DE]/5 border border-[#AF52DE]/20 rounded-squircle-md">
                                     <h5 className="font-bold text-[#AF52DE] uppercase tracking-widest text-xs mb-3">{t('investasi_page.labels.savings_example', 'SAVINGS EXAMPLE (FORENSIC tier):')}</h5>
                                     <ul className="list-disc list-inside space-y-2 text-[#AF52DE]/80 font-medium">
-                                        <li>One-time: $3,500/audit</li>
-                                        <li>Quarterly: $2,975/audit (save $525)</li>
-                                        <li>Annual: $2,625/audit + access (save $875 + benefits)</li>
+                                        <li>Quarterly: $2,975/audit</li>
+                                        <li>Annual: $2,625/audit + strategic access</li>
                                     </ul>
                                 </div>
                             </div>

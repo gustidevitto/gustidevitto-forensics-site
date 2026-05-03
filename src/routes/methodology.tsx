@@ -246,7 +246,7 @@ function MethodologyPage() {
 
                     <div className="shrink-0 hidden md:block">
                         <div className="text-[9px] font-medium text-white/40 uppercase tracking-[0.4em] space-y-1 text-right">
-                            <p>FIP™ PROTOCOL V4.00</p>
+                            <p>FORENSIC PROTOCOL</p>
                             <p>© 2026 GUSTI DEVITTO</p>
                             <p>ALL RIGHTS RESERVED</p>
                         </div>

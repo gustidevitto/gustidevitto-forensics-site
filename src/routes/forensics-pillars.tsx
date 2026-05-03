@@ -68,12 +68,12 @@ function ForensicsPillars() {
                         <h2 className="text-3xl font-bold tracking-tight leading-tight">
                             <Trans i18nKey="pillars_page.mri_title">
                                 Integrated MRI: <br />
-                                <span className="text-[#AF52DE] text-4xl">FIP™ Digital Mirror</span>
+                                <span className="text-[#AF52DE] text-4xl">Forensic Diagnostic Mirror</span>
                             </Trans>
                         </h2>
                         <p className="text-white/40 leading-relaxed font-light">
                             <Trans i18nKey="pillars_page.mri_desc">
-                                Ke-25 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <strong className="text-white/60">FIP™ Protocol Interface</strong> — sebuah mesin diagnosis yang memetakan kesehatan finansial Anda secara real-time.
+                                Ke-25 pilar di bawah ini bukan sekadar teori. Semuanya terintegrasi ke dalam <strong className="text-white/60">Forensic Diagnostic Interface</strong> — sebuah mesin diagnosis yang memetakan kesehatan finansial Anda secara real-time.
                             </Trans>
                         </p>
                         <Button asChild size="lg">
@@ -84,7 +84,7 @@ function ForensicsPillars() {
                     <div className="relative min-h-[300px] lg:min-h-0 border-l border-white/[0.04]">
                         <img
                             src="/assets/images/ffd1.png"
-                            alt="FIP™ Protocol Interface"
+                            alt="Forensic Diagnostic Interface"
                             className="absolute inset-0 w-full h-full object-cover object-left opacity-35 grayscale-[0.3] contrast-[1.1]"
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-[#161618] via-[#161618]/25 to-transparent" />

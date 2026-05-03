@@ -6,7 +6,7 @@ export function ForensicCaseFiles() {
 
     const cases = [
         {
-            id: "FIP-8821-X",
+            id: "DIAGNOSTIC-REF-8821",
             titleKey: "case_files.case1_title",
             descKey: "case_files.case1_desc",
             impactKey: "case_files.case1_impact",
@@ -17,7 +17,7 @@ export function ForensicCaseFiles() {
             dotColor: "bg-[#0A84FF]",
         },
         {
-            id: "FIP-9920-Z",
+            id: "DIAGNOSTIC-REF-9920",
             titleKey: "case_files.case2_title",
             descKey: "case_files.case2_desc",
             impactKey: "case_files.case2_impact",
@@ -28,7 +28,7 @@ export function ForensicCaseFiles() {
             dotColor: "bg-[#5E5CE6]",
         },
         {
-            id: "FIP-7714-A",
+            id: "DIAGNOSTIC-REF-7714",
             titleKey: "case_files.case3_title",
             descKey: "case_files.case3_desc",
             impactKey: "case_files.case3_impact",

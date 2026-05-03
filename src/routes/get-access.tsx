@@ -101,7 +101,7 @@ function GetAccess() {
                         {/* Testimonial — inline quote, not a card */}
                         <blockquote className="border-l-2 border-[#AF52DE]/25 pl-6 py-2 space-y-3">
                             <p className="text-white/60 text-sm leading-relaxed italic">
-                                <Trans i18nKey="get_access.testimonial_text">Previously, I thought my business was healthy because turnover kept rising. Turns out there was <strong className="text-red-400">$2,500/month</strong> leaking without me realizing it. FIP™ Protocol opened my eyes.</Trans>
+                                <Trans i18nKey="get_access.testimonial_text">Previously, I thought my business was healthy because turnover kept rising. Turns out there was <strong className="text-red-400">$2,500/month</strong> leaking without me realizing it. The Forensic Diagnostic opened my eyes.</Trans>
                             </p>
                             <footer className="flex items-center gap-3">
                                 <div className="w-1.5 h-1.5 rounded-full bg-[#AF52DE]" />

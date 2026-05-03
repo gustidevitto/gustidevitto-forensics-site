@@ -434,7 +434,6 @@ function NetworkIntelligencePage() {
                                             <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')}>{t('investasi_page.labels.select')}</Button>
                                         </div>
                                         <div className={`p-4 rounded-squircle-sm flex items-center justify-between relative ${theme.glassClass} border ${theme.accentBorder}`}>
-                                            <div className={`absolute -top-3 right-4 ${theme.accentBg} text-black text-[9px] font-bold px-3 py-1 rounded-squircle-sm uppercase tracking-wider`}>Recommended</div>
                                             <div className="mt-1">
                                                 <h4 className={`font-semibold uppercase tracking-widest text-xs ${theme.accentText} mb-1`}>{t('investasi_page.labels.annual')}</h4>
                                                 <div className="flex items-baseline gap-2">

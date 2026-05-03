@@ -172,7 +172,7 @@ function Index() {
 
             {/* Footer credential */}
             <div className="px-6 md:px-12 lg:px-20 pb-8 flex justify-between items-center text-white/[0.06]">
-                <span className="text-[9px] font-medium uppercase tracking-[0.35em]">FIP™ V4.00</span>
+                <span className="text-[9px] font-medium uppercase tracking-[0.35em]">© 2026 GUSTI DEVITTO</span>
                 <span className="text-[9px] font-medium uppercase tracking-[0.35em] hidden md:block">© 2026 GUSTI DEVITTO</span>
             </div>
 
