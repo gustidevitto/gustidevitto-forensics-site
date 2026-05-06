@@ -1,20 +1,8 @@
-import type {
-    FIPLiteInputs,
-    FIPLiteResult,
-    IndustryType,
-    IndustryBenchmarks,
-    Layer1Numbers,
-    Layer2Comparison,
-    Layer3LockedXray,
-    LockedPillar,
-    PillarCategory,
-    CashAutopsyInputs,
-    CashAutopsyResult,
-    MarginAuditInputs,
-    MarginAuditResult,
-    GrowthScanInputs,
-    GrowthScanResult
-} from '@/types/fip-lite';
+import { IndustryBenchmarks, IndustryType, PillarCategory, FIPLiteInputs, Layer1Numbers, Layer2Comparison, LockedPillar, Layer3LockedXray, FIPLiteResult, CashAutopsyInputs, CashAutopsyResult, MarginAuditInputs, MarginAuditResult, GrowthScanInputs, GrowthScanResult } from '../types/fip-lite';
+import { runLiquidityStressTest, calculateRunway } from './liquidity';
+import { calculateMarginMetrics } from './efficiency';
+import { WisdomKernel, JudicialData } from './WisdomKernel';
+import { calculateAdjustedEBITDA } from './wealthImpact';
 
 export type TierLevel = 'diagnostic' | 'forensic' | 'network' | 'sovereign';
 
@@ -121,58 +109,105 @@ const INDUSTRY_BENCHMARKS: Record<IndustryType, IndustryBenchmarks> = {
 // ============================================================================
 // MAIN CALCULATION FUNCTION
 // ============================================================================
-
 export function calculateFIPLiteResults(inputs: FIPLiteInputs): FIPLiteResult {
     const benchmark = INDUSTRY_BENCHMARKS[inputs.industryType];
 
     // Layer 1: The Numbers (Specific, Scary)
     const layer1 = calculateLayer1Numbers(inputs);
 
-    // Layer 2: The Comparison (Vague, Creates Gap)
+    // Layer 2: The Comparison (Gap Analysis)
     const layer2 = calculateLayer2Comparison(inputs, layer1, benchmark);
 
     // Layer 3: Locked X-Ray (Conversion Engine)
     const layer3 = generateLayer3LockedXray(inputs, layer1, layer2, benchmark);
 
+    // --- WISDOM KERNEL INTEGRATION (THE JUDGE) ---
+    const laborValue = inputs.actualMonthlyLaborCost || (inputs.monthlyOpEx * 0.4);
+    const stressTest = runLiquidityStressTest(inputs);
+    const marginMetrics = calculateMarginMetrics({
+        revenue: inputs.monthlyRevenue,
+        idealCogs: inputs.monthlyCOGS * 0.95, // Assumption for Lite
+        actualCogs: inputs.monthlyCOGS,
+        labor: laborValue,
+        opex: inputs.monthlyOpEx,
+        workingHours: inputs.teamSize * 160,
+        headcount: inputs.teamSize
+    });
+
+    // Mock valuation for MRI
+    const valuationAudit = calculateAdjustedEBITDA({
+        ebitda: inputs.monthlyRevenue - inputs.monthlyCOGS - inputs.monthlyOpEx,
+        ownerDraw: inputs.monthlyOpEx * 0.1,
+        capex: 0,
+        isOwnerDrawInOpex: true,
+        isCapexInOpex: false,
+        industryMultiplier: 3.5,
+        marketReplacementSalary: inputs.monthlyRevenue * 0.08 // Wisdom Buffer
+    });
+
+    const judicialData: JudicialData = {
+        stressedRunwayDays: stressTest.stressedRunwayDays,
+        originalRunwayDays: layer1.cashRunwayDays,
+        coordinationTaxPercent: marginMetrics.coordinationTaxPercent,
+        teamSize: inputs.teamSize,
+        gpLeakagePercent: marginMetrics.gpLeakagePercent,
+        isInventoryOptimized: marginMetrics.gpLeakagePercent < 2,
+        originalValuation: valuationAudit.ebitdaBeforeReplacement * 3.5,
+        adjustedValuation: valuationAudit.valuation,
+        replacementCostTax: valuationAudit.replacementCostTax
+    };
+
+    const wisdom = WisdomKernel.judge(judicialData);
+
+    // Calculate Summary Scores for PDF
+    const categoryScores = {
+        revenueProfitability: Math.round(layer1.grossProfitPercent),
+        cashFlow: Math.min(100, Math.round((layer1.cashRunwayDays / 365) * 100)),
+        operationalEfficiency: Math.round(100 - (marginMetrics.gpLeakagePercent * 5)),
+        growthRisk: Math.round(layer2.efficiencyIndex)
+    };
+
     return {
         layer1,
         layer2,
-        layer3
+        layer3,
+        wisdom,
+        categoryScores,
+        overallScore: Math.round((categoryScores.revenueProfitability + categoryScores.cashFlow + categoryScores.operationalEfficiency + categoryScores.growthRisk) / 4)
     };
 }
+
 
 // ============================================================================
 // LAYER 1: THE NUMBERS
 // ============================================================================
-
-function calculateLayer1Numbers(inputs: FIPLiteInputs): Layer1Numbers {
+export function calculateLayer1Numbers(inputs: FIPLiteInputs): Layer1Numbers {
     const grossProfit = inputs.monthlyRevenue - inputs.monthlyCOGS;
     const grossProfitPercent = inputs.monthlyRevenue > 0
         ? (grossProfit / inputs.monthlyRevenue) * 100
         : 0;
 
-    const netBurnRate = inputs.monthlyOpEx + inputs.monthlyDebtService;
-
-    const cashRunwayDays = netBurnRate > 0
-        ? Math.floor((inputs.currentCash / netBurnRate) * 30)
-        : 999;
+    const totalOutflow = inputs.monthlyCOGS + inputs.monthlyOpEx + inputs.monthlyDebtService;
+    const cashRunwayDays = calculateRunway(inputs.currentCash, inputs.monthlyRevenue, totalOutflow);
 
     const cashZeroDate = new Date();
-    cashZeroDate.setDate(cashZeroDate.getDate() + cashRunwayDays);
+    cashZeroDate.setDate(cashZeroDate.getDate() + (cashRunwayDays === 9999 ? 3650 : cashRunwayDays));
 
-    // Break-even calculation
+    // Break-even calculation: Fixed Costs / GP Margin
+    const fixedCosts = inputs.monthlyOpEx + inputs.monthlyDebtService;
     const gpMargin = inputs.monthlyRevenue > 0 ? grossProfit / inputs.monthlyRevenue : 0;
-    const breakEvenRevenue = gpMargin > 0 ? netBurnRate / gpMargin : 0;
+    const breakEvenRevenue = gpMargin > 0 ? fixedCosts / gpMargin : 0;
 
     return {
         cashRunwayDays,
         cashZeroDate: cashZeroDate.toISOString(),
         grossProfitPercent: Math.round(grossProfitPercent * 10) / 10,
-        netBurnRate: Math.round(netBurnRate),
+        netBurnRate: Math.max(0, Math.round(totalOutflow - inputs.monthlyRevenue)),
         breakEvenRevenue: Math.round(breakEvenRevenue),
         currentRevenue: inputs.monthlyRevenue
     };
 }
+
 
 // ============================================================================
 // LAYER 2: THE COMPARISON
@@ -395,18 +430,24 @@ export function calculateFIPLiteResultsLegacy(_formData: any): any {
 // ============================================================================
 
 export function calculateCashAutopsy(inputs: CashAutopsyInputs): CashAutopsyResult {
-    const netBurnRate = inputs.opex + inputs.shortDebt;
     const currentLiabilities = inputs.ap + inputs.shortDebt;
     
     // Quick ratio matches FIP logic: Cash / Current Liabilities
     const quickRatio = currentLiabilities > 0 ? inputs.cash / currentLiabilities : 99;
     
-    // Runway based on total cash outflows
+    // Correction: Runway now uses Net Burn Rate (Outflow - Inflow)
+    // If Inflow > Outflow, Runway should be flagged as 'Infinite/Stable'
     const totalOutflow = inputs.cogs + inputs.opex + inputs.shortDebt;
-    const cashRunwayDays = totalOutflow > 0 ? Math.floor((inputs.cash / totalOutflow) * 30) : 999;
+    const netBurnRateValue = totalOutflow - inputs.revenue;
+    
+    const cashRunwayDays = netBurnRateValue <= 0 
+        ? 9999 // Infinite/Stable
+        : Math.floor((inputs.cash / netBurnRateValue) * 30);
     
     const cashZeroDateObj = new Date();
-    cashZeroDateObj.setDate(cashZeroDateObj.getDate() + cashRunwayDays);
+    // For Infinite/Stable, we set zero date to far future
+    const daysToAdd = cashRunwayDays === 9999 ? 3650 : cashRunwayDays;
+    cashZeroDateObj.setDate(cashZeroDateObj.getDate() + daysToAdd);
     const cashZeroDate = cashZeroDateObj.toISOString();
 
     const runwayVerdict = cashRunwayDays < 60 ? 'critical' : cashRunwayDays < 180 ? 'warning' : 'fortress';
@@ -428,10 +469,28 @@ export function calculateCashAutopsy(inputs: CashAutopsyInputs): CashAutopsyResu
         { id: 'operating-leverage', name: 'Operating Leverage Index', category: 'operational-efficiency', status: leverageStatus, barWidth: Math.max(5, 100 - burnAsPercentOfRevenue), isLocked: true, computedValue: `${burnAsPercentOfRevenue.toFixed(1)}%`, computedLabel: 'Fixed costs consuming this share of your revenue' }
     ];
 
+    const wisdom = WisdomKernel.judge({
+        stressedRunwayDays: runLiquidityStressTest(inputs).stressedRunwayDays,
+        originalRunwayDays: cashRunwayDays,
+        coordinationTaxPercent: inputs.opex * 0.015, // Heuristic for standalone
+        teamSize: 1, // Assumption for standalone if not provided
+        gpLeakagePercent: 0,
+        isInventoryOptimized: false,
+        originalValuation: 0,
+        adjustedValuation: 0,
+        replacementCostTax: 0
+    });
+
     return {
-        layer1: { cashRunwayDays, cashZeroDate, netBurnRate, quickRatio },
+        layer1: {
+            cashRunwayDays,
+            cashZeroDate,
+            netBurnRate: Math.max(0, Math.round(netBurnRateValue)),
+            quickRatio,
+        },
         layer2: { runwayVerdict, quickRatioVerdict, liquidityTrapRisk },
-        layer3: { pillars }
+        layer3: { pillars },
+        wisdom
     };
 }
 
@@ -441,7 +500,10 @@ export function calculateMarginAudit(inputs: MarginAuditInputs): MarginAuditResu
     const grossProfitPercent = inputs.revenue > 0 ? (grossProfit / inputs.revenue) * 100 : 0;
     
     const opexToGpRatio = grossProfit > 0 ? (inputs.opex / grossProfit) * 100 : 999;
-    const gpPerLaborHour = inputs.workingHours > 0 ? grossProfit / inputs.workingHours : 0;
+    
+    // Correction: Labor Productivity uses GP BEFORE Labor Costs
+    const gpBeforeLabor = grossProfit + inputs.labor;
+    const gpPerLaborHour = inputs.workingHours > 0 ? gpBeforeLabor / inputs.workingHours : 0;
 
     const efficiencyVerdict = gpLeakagePercent > 10 ? 'critical' : gpLeakagePercent > 5 ? 'warning' : 'fortress';
     const phantomDrainRisk = gpLeakagePercent > 5 && opexToGpRatio > 40;
@@ -455,10 +517,23 @@ export function calculateMarginAudit(inputs: MarginAuditInputs): MarginAuditResu
         { id: 'anomaly-detection', name: 'Anomaly Detection Score', category: 'growth-risk', status: efficiencyVerdict === 'fortress' ? 'healthy' : efficiencyVerdict, barWidth: Math.max(5, 100 - opexToGpRatio), isLocked: true, computedValue: `${opexToGpRatio.toFixed(1)}%`, computedLabel: 'How much of your gross profit is consumed by operating expenses' }
     ];
 
+    const wisdom = WisdomKernel.judge({
+        stressedRunwayDays: 999,
+        originalRunwayDays: 999,
+        coordinationTaxPercent: coordinationTaxPercent,
+        teamSize: inputs.headcount,
+        gpLeakagePercent: gpLeakagePercent,
+        isInventoryOptimized: gpLeakagePercent < 1.5,
+        originalValuation: 0,
+        adjustedValuation: 0,
+        replacementCostTax: 0
+    });
+
     return {
         layer1: { grossProfitPercent, gpLeakagePercent, opexToGpRatio, gpPerLaborHour },
         layer2: { efficiencyVerdict, phantomDrainRisk, leakageValue: { min: leakageMin, max: leakageMax } },
-        layer3: { pillars }
+        layer3: { pillars },
+        wisdom
     };
 }
 
@@ -471,6 +546,12 @@ export function calculateGrowthScan(inputs: GrowthScanInputs): GrowthScanResult 
     const breakEvenPoint = cmRatio > 0 ? inputs.opex / cmRatio : 0;
     
     const cac = inputs.newCustomers > 0 ? inputs.marketing / inputs.newCustomers : 0;
+    
+    // Correction: CAC Payback denominator = Net Contribution Margin Per New Customer
+    // Net Contribution Margin Per New Customer = cm / newCustomers
+    const netMarginPerNewCustomer = inputs.newCustomers > 0 ? cm / inputs.newCustomers : 0;
+    const cacPayback = netMarginPerNewCustomer > 0 ? cac / netMarginPerNewCustomer : 99;
+    
     const ltvCacRatio = cac > 0 ? inputs.ltv / cac : 99;
 
     const viabilityVerdict = ltvCacRatio < 2 ? 'critical' : ltvCacRatio < 3 ? 'warning' : 'fortress';
@@ -486,9 +567,22 @@ export function calculateGrowthScan(inputs: GrowthScanInputs): GrowthScanResult 
         { id: 'market-resilience', name: 'Market Resilience Score', category: 'growth-risk', status: cac > inputs.ltv * 0.5 ? 'critical' : cac > inputs.ltv * 0.33 ? 'warning' : 'healthy', barWidth: Math.max(5, Math.min(100, (1 - cac / Math.max(1, inputs.ltv)) * 100)), isLocked: true, computedValue: `$${cac.toFixed(0)}`, computedLabel: 'Your current cost to acquire a single new customer' }
     ];
 
+    const wisdom = WisdomKernel.judge({
+        stressedRunwayDays: 999,
+        originalRunwayDays: 999,
+        coordinationTaxPercent: 0,
+        teamSize: 0,
+        gpLeakagePercent: 0,
+        isInventoryOptimized: false,
+        originalValuation: 1, // Placeholder
+        adjustedValuation: 1,
+        replacementCostTax: 0
+    });
+
     return {
-        layer1: { contributionMarginPercent, breakEvenPoint, cac, ltvCacRatio },
+        layer1: { contributionMarginPercent, breakEvenPoint, cac, ltvCacRatio, cacPayback },
         layer2: { viabilityVerdict, deathSpiralRisk },
-        layer3: { pillars }
+        layer3: { pillars },
+        wisdom
     };
 }

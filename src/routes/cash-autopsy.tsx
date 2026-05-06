@@ -222,7 +222,8 @@ function CashAutopsyDiagnostic() {
                         <div className={`absolute top-0 right-0 w-32 h-32 bg-[#0A84FF]/10 blur-3xl`} />
                         <h3 className="text-sm uppercase tracking-widest font-bold text-white/60 mb-2">{t('cash_autopsy.results.runway_label', 'Cash Runway')}</h3>
                         <div className="text-5xl font-semibold mb-2 flex items-end gap-2">
-                            {result.layer1.cashRunwayDays} <span className="text-xl text-white/40 mb-1">DAYS</span>
+                            {result.layer1.cashRunwayDays === 9999 ? 'Infinite/Stable' : result.layer1.cashRunwayDays} 
+                            {result.layer1.cashRunwayDays !== 9999 && <span className="text-xl text-white/40 mb-1">DAYS</span>}
                         </div>
                     </div>
 
@@ -232,6 +233,33 @@ function CashAutopsyDiagnostic() {
                             {formatCurrency(result.layer1.netBurnRate)}<span className="text-xl text-white/40">/mo</span>
                         </div>
                     </div>
+                {/* Wisdom Intelligence Overlay (The Judge) */}
+                {result.wisdom && result.wisdom.status !== 'PASSED' && (
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className={`p-8 border-2 ${result.wisdom.status === 'VETOED' ? 'border-red-500 bg-red-500/10' : 'border-amber-500/50 bg-amber-500/5'} rounded-squircle-lg relative overflow-hidden`}
+                    >
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className={`w-2 h-2 rounded-full ${result.wisdom.status === 'VETOED' ? 'bg-red-500' : 'bg-amber-500'} animate-pulse`} />
+                            <span className={`text-xs font-bold uppercase tracking-[0.2em] ${result.wisdom.status === 'VETOED' ? 'text-red-500' : 'text-amber-500'}`}>
+                                Wisdom Intelligence: {result.wisdom.status}
+                            </span>
+                        </div>
+                        
+                        <div className="space-y-4">
+                            {result.wisdom.narratives.map((nar, i) => (
+                                <p key={i} className="text-xl font-bold leading-tight text-white/90">
+                                    {nar}
+                                </p>
+                            ))}
+                        </div>
+                        
+                        <div className="mt-6 pt-6 border-t border-white/10 text-[10px] uppercase tracking-widest font-semibold text-white/40">
+                            Strategic Directive: Address these structural fallacies before proceeding with any growth initiatives.
+                        </div>
+                    </motion.div>
+                )}
                 </div>
 
                 {/* Layer 2: Psychological Context & Cliffhanger */}

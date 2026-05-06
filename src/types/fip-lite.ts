@@ -34,11 +34,13 @@ export interface FIPLiteInputs {
     monthlyRevenue: number
     monthlyCOGS: number
     monthlyOpEx: number // Fixed costs
+    actualMonthlyLaborCost?: number // Precision Calibration
+    monthlyDebtService: number
     currentCash: number
-    monthlyDebtService: number // Optional, defaults to 0
+    teamSize: number
+    growthRate: number
     industryType: IndustryType
     businessAge: number // years
-    teamSize: number // headcount
 }
 
 // ============================================================================
@@ -118,7 +120,18 @@ export interface FIPLiteResult {
     layer1: Layer1Numbers
     layer2: Layer2Comparison
     layer3: Layer3LockedXray
-    // Layer 4 is just the CTA in the UI, no data structure needed
+    wisdom?: {
+        status: 'PASSED' | 'VETOED' | 'WARNING'
+        vetos: string[]
+        narratives: string[]
+    }
+    categoryScores: {
+        revenueProfitability: number
+        cashFlow: number
+        operationalEfficiency: number
+        growthRisk: number
+    }
+    overallScore: number
 }
 
 // ============================================================================
@@ -320,6 +333,7 @@ export interface GrowthScanResult {
         breakEvenPoint: number
         cac: number
         ltvCacRatio: number
+        cacPayback: number
     }
     layer2: {
         viabilityVerdict: 'fortress' | 'warning' | 'critical'

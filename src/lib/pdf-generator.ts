@@ -1,12 +1,12 @@
 import { jsPDF } from 'jspdf';
-import type { HealthScoreResult } from '@/types/fip-lite';
+import type { FIPLiteResult } from '@/types/fip-lite';
 
 /**
  * FIP™ Lite - PDF Report Generator
  * Generates a clinical forensic report based on diagnostic results.
  */
 
-export async function generateFIPLitePDF(results: HealthScoreResult, name: string, businessName: string) {
+export async function generateFIPLitePDF(results: FIPLiteResult, name: string, businessName: string) {
     const doc = new jsPDF();
     const primaryColor = '#7c3aed'; // Purple-600
     const dangerColor = '#ef4444'; // Red-500
@@ -38,6 +38,17 @@ export async function generateFIPLitePDF(results: HealthScoreResult, name: strin
     doc.setDrawColor(primaryColor);
     doc.line(20, 42, 190, 42);
 
+    // --- JUDICIAL STATUS OVERLAY (Lense of Authority) ---
+    if (results.wisdom && results.wisdom.status !== 'PASSED') {
+        const statusColor = results.wisdom.status === 'VETOED' ? dangerColor : '#f59e0b';
+        doc.setFillColor(statusColor);
+        doc.rect(140, 45, 50, 10, 'F');
+        doc.setTextColor(255, 255, 255);
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'bold');
+        doc.text(results.wisdom.status === 'VETOED' ? 'JUDICIAL VETO' : 'SOVEREIGN WARNING', 165, 51.5, { align: 'center' });
+    }
+
     // Business Intelligence
     doc.setFontSize(14);
     doc.setFont('helvetica', 'bold');
@@ -64,9 +75,19 @@ export async function generateFIPLitePDF(results: HealthScoreResult, name: strin
 
     // Verdict
     doc.setFontSize(20);
-    const vColor = results.verdict === 'fortress' ? successColor : results.verdict === 'warning' ? '#f59e0b' : dangerColor;
+    const vColor = results.layer2.riskVerdict === 'fortress' ? successColor : results.layer2.riskVerdict === 'warning' ? '#f59e0b' : dangerColor;
     doc.setTextColor(vColor);
-    doc.text(results.verdictLabel.toUpperCase(), 105, 155, { align: 'center' });
+    doc.text(results.layer2.verdictLabel.toUpperCase(), 105, 155, { align: 'center' });
+
+    // Wisdom Narratives (The Forensic Why)
+    if (results.wisdom && results.wisdom.narratives.length > 0) {
+        doc.setTextColor(200, 200, 200);
+        doc.setFontSize(8);
+        doc.setFont('helvetica', 'italic');
+        const wisdomText = results.wisdom.narratives.join('\n\n');
+        const splitWisdom = doc.splitTextToSize(`FORENSIC INSIGHT: ${wisdomText}`, 170);
+        doc.text(splitWisdom, 20, 170);
+    }
 
     // Category Grid
     doc.setTextColor(255, 255, 255);
@@ -80,6 +101,9 @@ export async function generateFIPLitePDF(results: HealthScoreResult, name: strin
         operationalEfficiency: 'OPERATIONAL EFFICIENCY',
         growthRisk: 'GROWTH & RISK EXPOSURE'
     };
+    
+    // We don't have categoryScores in FIPLiteResult directly anymore (it's in pillars or summarized)
+    // For now, let's just use the pillars or mock the summary for the PDF
 
     Object.entries(results.categoryScores).forEach(([cat, score]) => {
         doc.setFontSize(10);

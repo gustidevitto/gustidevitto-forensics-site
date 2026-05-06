@@ -239,6 +239,34 @@ function MarginAuditDiagnostic() {
                     </div>
                 </div>
 
+                {/* Wisdom Intelligence Overlay (The Judge) */}
+                {result.wisdom && result.wisdom.status !== 'PASSED' && (
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className={`p-8 border-2 ${result.wisdom.status === 'VETOED' ? 'border-red-500 bg-red-500/10' : 'border-[#AF52DE]/50 bg-[#AF52DE]/5'} rounded-squircle-lg relative overflow-hidden`}
+                    >
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className={`w-2 h-2 rounded-full ${result.wisdom.status === 'VETOED' ? 'bg-red-500' : 'bg-[#AF52DE]'} animate-pulse`} />
+                            <span className={`text-xs font-bold uppercase tracking-[0.2em] ${result.wisdom.status === 'VETOED' ? 'text-red-500' : 'text-[#AF52DE]'}`}>
+                                Wisdom Intelligence: {result.wisdom.status}
+                            </span>
+                        </div>
+                        
+                        <div className="space-y-4">
+                            {result.wisdom.narratives.map((nar, i) => (
+                                <p key={i} className="text-xl font-bold leading-tight text-white/90">
+                                    {nar}
+                                </p>
+                            ))}
+                        </div>
+                        
+                        <div className="mt-6 pt-6 border-t border-white/10 text-[10px] uppercase tracking-widest font-semibold text-white/40">
+                            Strategic Directive: Address these organizational fallacies before proceeding with any headcount adjustments.
+                        </div>
+                    </motion.div>
+                )}
+
                 {/* Layer 2: Psychological Context & Cliffhanger */}
                 <div className={`p-8 border rounded-squircle-lg ${result.layer2.efficiencyVerdict === 'critical' ? 'border-red-500/50 bg-red-500/5' : 'border-white/10 glass'} flex items-start`}>
                     <VerdictIcon className={`w-8 h-8 mr-6 flex-shrink-0 ${verdictColor}`} />
