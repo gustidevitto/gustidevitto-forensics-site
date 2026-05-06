@@ -357,5 +357,10 @@ export interface GrowthScanResult {
     layer3: {
         pillars: LockedPillar[]
     }
+    wisdom?: {
+        status: 'PASSED' | 'VETOED' | 'WARNING'
+        vetos: string[]
+        narratives: string[]
+    }
 }
 
