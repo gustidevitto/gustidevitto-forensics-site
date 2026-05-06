@@ -1,4 +1,4 @@
-import { MarginAuditInputs, MarginAuditResult } from '../types/fip-lite';
+import type { MarginAuditInputs } from '../types/fip-lite';
 
 /**
  * FIP™ Operational Efficiency Engine

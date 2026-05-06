@@ -1,4 +1,4 @@
-import { GrowthScanInputs, GrowthScanResult } from '../types/fip-lite';
+import type { GrowthScanInputs, GrowthScanResult } from '../types/fip-lite';
 
 /**
  * FIP™ Unit Economics Engine
@@ -23,8 +23,6 @@ export function calculateGrowthMetrics(inputs: GrowthScanInputs): GrowthScanResu
     const viabilityVerdict = ltvCacRatio < 2 ? 'critical' : ltvCacRatio < 3 ? 'warning' : 'fortress';
     const deathSpiralRisk = viabilityVerdict === 'critical' && inputs.revenue < breakEvenPoint;
 
-    // Revenue gap from break-even
-    const revenueGapPercent = breakEvenPoint > 0 ? ((inputs.revenue - breakEvenPoint) / breakEvenPoint) * 100 : 0;
 
     return {
         layer1: { contributionMarginPercent, breakEvenPoint, cac, ltvCacRatio, cacPayback },

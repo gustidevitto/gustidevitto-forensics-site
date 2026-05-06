@@ -1,5 +1,5 @@
 import { calculateFIPLiteResults } from '../lib/fip-engine';
-import { FIPLiteInputs } from '../types/fip-lite';
+import type { FIPLiteInputs } from '../types/fip-lite';
 
 /**
  * FIP™ ENGINE STRESS TEST & INTEGRITY AUDIT
@@ -71,5 +71,5 @@ function runSimulation() {
     console.log("\n--- SIMULATION COMPLETE ---");
 }
 
-// In a real environment, we'd run this.
 // runSimulation();
+runSimulation();

@@ -85,11 +85,13 @@ export interface LockedPillar {
     id: string
     name: string
     category: PillarCategory
-    status: 'healthy' | 'warning' | 'critical' // Color only, no score
-    barWidth: number // 0-100, for visual only (blurred)
+    status: 'healthy' | 'warning' | 'critical'
+    barWidth: number
     isLocked: true
-    computedValue: string // The actual calculated metric, e.g. "0.6x", "12.3%"
-    computedLabel: string // Human-readable context, e.g. "Quick Ratio", "GP per Hour"
+    computedValue: string
+    computedLabel: string
+    score: number // Added for PDF
+    recommendation?: string // Added for PDF
 }
 
 export interface Layer3LockedXray {
@@ -132,6 +134,9 @@ export interface FIPLiteResult {
         growthRisk: number
     }
     overallScore: number
+    pillars: LockedPillar[]
+    topRisks: LockedPillar[]
+    strengths: LockedPillar[]
 }
 
 // ============================================================================
@@ -279,6 +284,11 @@ export interface CashAutopsyResult {
     layer3: {
         pillars: LockedPillar[]
     }
+    wisdom?: {
+        status: 'PASSED' | 'VETOED' | 'WARNING'
+        vetos: string[]
+        narratives: string[]
+    }
 }
 
 // ============================================================================
@@ -309,6 +319,11 @@ export interface MarginAuditResult {
     }
     layer3: {
         pillars: LockedPillar[]
+    }
+    wisdom?: {
+        status: 'PASSED' | 'VETOED' | 'WARNING'
+        vetos: string[]
+        narratives: string[]
     }
 }
 

@@ -1,4 +1,4 @@
-import { CashAutopsyInputs, CashAutopsyResult, FIPLiteInputs, Layer1Numbers } from '../types/fip-lite';
+import type { CashAutopsyInputs, FIPLiteInputs } from '../types/fip-lite';
 
 /**
  * FIP™ Liquidity & Solvency Engine

@@ -254,7 +254,7 @@ function MarginAuditDiagnostic() {
                         </div>
                         
                         <div className="space-y-4">
-                            {result.wisdom.narratives.map((nar, i) => (
+                            {result.wisdom.narratives.map((nar: string, i: number) => (
                                 <p key={i} className="text-xl font-bold leading-tight text-white/90">
                                     {nar}
                                 </p>

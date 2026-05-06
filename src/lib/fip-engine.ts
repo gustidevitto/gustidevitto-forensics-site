@@ -1,7 +1,24 @@
-import { IndustryBenchmarks, IndustryType, PillarCategory, FIPLiteInputs, Layer1Numbers, Layer2Comparison, LockedPillar, Layer3LockedXray, FIPLiteResult, CashAutopsyInputs, CashAutopsyResult, MarginAuditInputs, MarginAuditResult, GrowthScanInputs, GrowthScanResult } from '../types/fip-lite';
+import type { 
+    IndustryBenchmarks, 
+    IndustryType, 
+    PillarCategory, 
+    FIPLiteInputs, 
+    Layer1Numbers, 
+    Layer2Comparison, 
+    LockedPillar, 
+    Layer3LockedXray, 
+    FIPLiteResult, 
+    CashAutopsyInputs, 
+    CashAutopsyResult, 
+    MarginAuditInputs, 
+    MarginAuditResult, 
+    GrowthScanInputs, 
+    GrowthScanResult 
+} from '../types/fip-lite';
 import { runLiquidityStressTest, calculateRunway } from './liquidity';
 import { calculateMarginMetrics } from './efficiency';
-import { WisdomKernel, JudicialData } from './WisdomKernel';
+import { WisdomKernel } from './WisdomKernel';
+import type { JudicialData } from './WisdomKernel';
 import { calculateAdjustedEBITDA } from './wealthImpact';
 
 export type TierLevel = 'diagnostic' | 'forensic' | 'network' | 'sovereign';
@@ -173,7 +190,10 @@ export function calculateFIPLiteResults(inputs: FIPLiteInputs): FIPLiteResult {
         layer3,
         wisdom,
         categoryScores,
-        overallScore: Math.round((categoryScores.revenueProfitability + categoryScores.cashFlow + categoryScores.operationalEfficiency + categoryScores.growthRisk) / 4)
+        overallScore: Math.round((categoryScores.revenueProfitability + categoryScores.cashFlow + categoryScores.operationalEfficiency + categoryScores.growthRisk) / 4),
+        pillars: layer3.pillars,
+        topRisks: layer3.pillars.filter(p => p.status === 'critical' || p.status === 'warning'),
+        strengths: layer3.pillars.filter(p => p.status === 'healthy')
     };
 }
 
@@ -377,7 +397,13 @@ function generateLayer3LockedXray(
             barWidth: Math.round(barWidth),
             isLocked: true,
             computedValue: '—',
-            computedLabel: 'Full analysis available in paid report'
+            computedLabel: 'Full analysis available in paid report',
+            score: Math.round(barWidth),
+            recommendation: status === 'critical' 
+                ? `Critical structural failure detected in ${config.name}. IMMEDIATE corrective intervention required to prevent systemic collapse.` 
+                : status === 'warning'
+                ? `Marginal deficiency in ${config.name}. Optimization recommended to restore fortress-level stability.`
+                : `Baseline integrity for ${config.name} is stable. Continue monitoring for variance.`
         });
     });
 
@@ -459,7 +485,7 @@ export function calculateCashAutopsy(inputs: CashAutopsyInputs): CashAutopsyResu
     const wcStatus = workingCapitalRatio < 0.5 ? 'critical' : workingCapitalRatio < 1.5 ? 'warning' : 'healthy';
 
     // Operating leverage: burn rate as % of revenue
-    const burnAsPercentOfRevenue = inputs.revenue > 0 ? (netBurnRate / inputs.revenue) * 100 : 100;
+    const burnAsPercentOfRevenue = inputs.revenue > 0 ? (netBurnRateValue / inputs.revenue) * 100 : 100;
     const leverageStatus = burnAsPercentOfRevenue > 50 ? 'critical' : burnAsPercentOfRevenue > 30 ? 'warning' : 'healthy';
 
     const pillars: LockedPillar[] = [
@@ -516,6 +542,8 @@ export function calculateMarginAudit(inputs: MarginAuditInputs): MarginAuditResu
         { id: 'inventory-decay', name: 'Inventory Decay Rate', category: 'operational-efficiency', status: phantomDrainRisk ? 'critical' : gpLeakagePercent > 3 ? 'warning' : 'healthy', barWidth: Math.max(5, 100 - gpLeakagePercent * 8), isLocked: true, computedValue: `${gpLeakagePercent.toFixed(1)}%`, computedLabel: 'Revenue lost to the gap between ideal and actual material costs' },
         { id: 'anomaly-detection', name: 'Anomaly Detection Score', category: 'growth-risk', status: efficiencyVerdict === 'fortress' ? 'healthy' : efficiencyVerdict, barWidth: Math.max(5, 100 - opexToGpRatio), isLocked: true, computedValue: `${opexToGpRatio.toFixed(1)}%`, computedLabel: 'How much of your gross profit is consumed by operating expenses' }
     ];
+
+    const coordinationTaxPercent = inputs.headcount * 0.015;
 
     const wisdom = WisdomKernel.judge({
         stressedRunwayDays: 999,

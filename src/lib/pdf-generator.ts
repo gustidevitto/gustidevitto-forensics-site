@@ -1,5 +1,5 @@
 import { jsPDF } from 'jspdf';
-import type { FIPLiteResult } from '@/types/fip-lite';
+import type { FIPLiteResult, LockedPillar } from '@/types/fip-lite';
 
 /**
  * FIP™ Lite - PDF Report Generator
@@ -105,7 +105,7 @@ export async function generateFIPLitePDF(results: FIPLiteResult, name: string, b
     // We don't have categoryScores in FIPLiteResult directly anymore (it's in pillars or summarized)
     // For now, let's just use the pillars or mock the summary for the PDF
 
-    Object.entries(results.categoryScores).forEach(([cat, score]) => {
+    Object.entries(results.categoryScores).forEach(([cat, score]: [string, number]) => {
         doc.setFontSize(10);
         doc.setTextColor(200, 200, 200);
         doc.text(catLabels[cat] || cat.toUpperCase(), 20, y);
@@ -132,7 +132,7 @@ export async function generateFIPLitePDF(results: FIPLiteResult, name: string, b
     doc.text('25-PILLAR GRANULAR AUDIT', 20, 25);
 
     y = 40;
-    results.pillars.forEach((p, i) => {
+    results.pillars.forEach((p: LockedPillar, i: number) => {
         if (i === 8) { // Split to Page 3 if needed, but we'll try to fit or add page
             // For 25, we will definitely need a 3rd page or smaller rows. 
             // Let's use two columns per page maybe? No, let's just make rows compact.
@@ -174,7 +174,7 @@ export async function generateFIPLitePDF(results: FIPLiteResult, name: string, b
     doc.text('CRITICAL VULNERABILITIES', 20, 25);
 
     y = 40;
-    results.topRisks.forEach((risk) => {
+    results.topRisks.forEach((risk: LockedPillar) => {
         doc.setDrawColor(dangerColor);
         doc.rect(20, y, 170, 35, 'S');
 
@@ -198,7 +198,7 @@ export async function generateFIPLitePDF(results: FIPLiteResult, name: string, b
     doc.text('PRIMARY FORTIFICATIONS', 20, y);
     y += 15;
 
-    results.strengths.forEach((s) => {
+    results.strengths.forEach((s: LockedPillar) => {
         doc.setFontSize(10);
         doc.setTextColor(successColor);
         doc.text(`[+] ${s.name.toUpperCase()}`, 20, y);
