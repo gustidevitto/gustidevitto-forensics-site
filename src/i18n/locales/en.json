@@ -1360,6 +1360,11 @@
         "name": "SOVEREIGN",
         "tagline": "Own the intelligence",
         "positioning": "I control the machine"
+      },
+      "imperium": {
+        "name": "IMPERIUM",
+        "tagline": "The Ultimate Truth.",
+        "positioning": "Strategic Dominance"
       }
     },
     "labels": {
@@ -1380,6 +1385,10 @@
       "key_findings": "Key Findings",
       "analysis_title": "Clinical Diagnostic Scopes",
       "feature_comparison": "See Detailed Feature Comparison",
+      "feature": "Feature",
+      "institutional_access": "Institutional Access",
+      "contact_for_price": "Bespoke diagnostic protocols for high-stakes environments.",
+      "contact_button": "Contact for Price",
       "which_tier_title": "Which Tier Is Right For Me?",
       "choose_if": "Choose {{tier}} if:",
       "time_commitment_title": "Understanding Time Commitment Options",
@@ -1413,6 +1422,13 @@
       "unlimited_short": "Unlimited Outlet Profiles",
       "priority_short": "Priority Strategic Access",
       "security_short": "Enterprise-grade security",
+      "sovereign_short": "Everything in SOVEREIGN",
+      "wisdom_kernel": "Wisdom Kernel Core -> Access the \"Ultimate Truth\" via neural-symbolic deduction",
+      "chaos_coefficient": "Chaos Coefficient Analysis -> Measure structural entropy and systemic fragility",
+      "jump_diffusion": "Jump Diffusion Modeling -> Quantify risks of sudden non-linear market shocks",
+      "inertia": "Business Inertia Audit -> Calculate the kinetic energy of current operational drift",
+      "malliavin": "Malliavin Sensitivity Index -> Stochastic volatility mapping for cash flow resilience",
+      "mask_off": "Command Center (Mask-Off) -> Full forensic transparency for the Global Sovereign",
       "pillars_8": "8 Core Forensic Pillars -> Locate trapped cash across your operation",
       "syndrome": "Operational Leakage Detection -> Stop profit from leaking like a broken pipe",
       "anomaly": "Anomaly Detection -> Flag suspicious financial behavior instantly",
@@ -1463,7 +1479,10 @@
       "outlets_50_500": "50-500 outlets",
       "rev_100m": "$100M+ revenue",
       "enterprise_soph": "Enterprise sophistication",
-      "exit_planning": "Wealth preservation & exit planning"
+      "exit_planning": "Wealth preservation & exit planning",
+      "outlets_global": "Global Institutional Operators",
+      "sovereign_wealth": "Sovereign Wealth & Private Equity",
+      "ultimate_control": "The need for absolute strategic control"
     },
     "comparison": {
       "diagnostic_if": [

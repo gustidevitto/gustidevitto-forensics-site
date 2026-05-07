@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-
 import { useTranslation, Trans } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 
 // @ts-ignore
 export const Route = createFileRoute('/privacy')({
@@ -11,6 +11,11 @@ function Privacy() {
     const { t } = useTranslation()
     return (
         <div className="flex-1 flex flex-col bg-[#1c1c1e] text-white">
+            <Helmet>
+                <title>{`${t('privacy.title')} | Gusti Devitto Forensics`}</title>
+                <meta name="description" content="Privacy Policy and Data Protection standards for the FIP™ Forensic Protocol and consultancy services by Gusti Devitto." />
+                <link rel="canonical" href="https://www.gustidevitto.com/privacy" />
+            </Helmet>
             <div className="container py-24 max-w-4xl mx-auto px-6">
             <h1 className="text-4xl font-bold tracking-tight mb-10">{t('privacy.title')}</h1>
             <div className="glass-elevated rounded-squircle-xl p-8 md:p-12 space-y-8">

@@ -1,7 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button"
 import { ShieldCheck, Lock, Star, ArrowRight } from "lucide-react"
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 import { HowFIPWorks } from "@/components/HowFIPWorks"
 import PricingModal from "@/components/PricingModal"
 
@@ -171,6 +172,36 @@ function InvestasiPage() {
                 t('investasi_page.best_for_items.enterprise_soph', 'Enterprise sophistication'),
                 t('investasi_page.best_for_items.exit_planning', 'Wealth preservation & exit planning')
             ]
+        },
+        {
+            id: 'imperium',
+            name: t('investasi_page.tiers.imperium.name', 'IMPERIUM'),
+            tagline: t('investasi_page.tiers.imperium.tagline', 'The ultimate truth'),
+            positioning: t('investasi_page.tiers.imperium.positioning', 'Strategic Dominance'),
+            color: 'black',
+            isInstitutional: true,
+            pricing: {
+                oneTime: 0,
+                quarterly: { total: 0, perAudit: 0, audits: 3 },
+                annual: { total: 0, perAudit: 0, audits: 4, access: true }
+            },
+            features: {
+                included: [
+                    { key: 'investasi_page.features.sovereign_short', default: 'Everything in SOVEREIGN' },
+                    { key: 'investasi_page.features.wisdom_kernel', default: 'Wisdom Kernel Core -> Access the "Ultimate Truth" via neural-symbolic deduction', highlight: true },
+                    { key: 'investasi_page.features.chaos_coefficient', default: 'Chaos Coefficient Analysis -> Measure structural entropy and systemic fragility', highlight: true },
+                    { key: 'investasi_page.features.jump_diffusion', default: 'Jump Diffusion Modeling -> Quantify risks of sudden non-linear market shocks', highlight: true },
+                    { key: 'investasi_page.features.inertia', default: 'Business Inertia Audit -> Calculate the kinetic energy of current operational drift' },
+                    { key: 'investasi_page.features.malliavin', default: 'Malliavin Sensitivity Index -> Stochastic volatility mapping for cash flow resilience', highlight: true },
+                    { key: 'investasi_page.features.mask_off', default: 'Command Center (Mask-Off) -> Full forensic transparency for the Global Sovereign', highlight: true }
+                ],
+                excluded: []
+            },
+            bestFor: [
+                t('investasi_page.best_for_items.outlets_global', 'Global Institutional Operators'),
+                t('investasi_page.best_for_items.sovereign_wealth', 'Sovereign Wealth & Private Equity'),
+                t('investasi_page.best_for_items.ultimate_control', 'The need for absolute strategic control')
+            ]
         }
     ]
 
@@ -183,33 +214,35 @@ function InvestasiPage() {
             </div>
 
             {/* SEO & Authority Meta Tags */}
-            <title>{t('investasi.seo_title')} | Gusti Devitto Forensics</title>
-            <meta name="description" content={t('investasi.seo_desc')} />
-            <meta name="keywords" content={t('investasi.seo_keywords')} />
-            <link rel="canonical" href="https://gustidevitto.com/investasi" />
-            
-            {/* Open Graph / social */}
-            <meta property="og:site_name" content="Gusti Devitto Forensics" />
-            <meta property="og:title" content={`${t('investasi.seo_title')} | Gusti Devitto Forensics`} />
-            <meta property="og:description" content={t('investasi.seo_desc')} />
-            <meta property="og:image" content="/assets/images/forensic_dashboard.png" />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://gustidevitto.com/investasi" />
-            
-            {/* Twitter */}
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={`${t('investasi.seo_title')} | Gusti Devitto Forensics`} />
-            <meta name="twitter:description" content={t('investasi.seo_desc')} />
-            <meta name="twitter:image" content="/assets/images/forensic_dashboard.png" />
-            <meta name="twitter:site" content="@gustidevitto" />
+            <Helmet>
+                <title>{t('investasi.seo_title')} | Gusti Devitto Forensics</title>
+                <meta name="description" content={t('investasi.seo_desc')} />
+                <meta name="keywords" content={t('investasi.seo_keywords')} />
+                <link rel="canonical" href="https://gustidevitto.com/investasi" />
 
-            {/* GEO Signals (Global + Local) */}
-            <meta name="geo.region" content="US-NY" />
-            <meta name="geo.region" content="US-CA" />
-            <meta name="geo.region" content="ID-JK" />
-            <meta name="geo.placename" content="New York, San Francisco, Jakarta" />
-            <meta name="geo.position" content="40.712776;-74.005974" />
-            <meta name="ICBM" content="40.712776, -74.005974" />
+                {/* Open Graph / social */}
+                <meta property="og:site_name" content="Gusti Devitto Forensics" />
+                <meta property="og:title" content={`${t('investasi.seo_title')} | Gusti Devitto Forensics`} />
+                <meta property="og:description" content={t('investasi.seo_desc')} />
+                <meta property="og:image" content="/assets/images/forensic_dashboard.png" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://gustidevitto.com/investasi" />
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${t('investasi.seo_title')} | Gusti Devitto Forensics`} />
+                <meta name="twitter:description" content={t('investasi.seo_desc')} />
+                <meta name="twitter:image" content="/assets/images/forensic_dashboard.png" />
+                <meta name="twitter:site" content="@gustidevitto" />
+
+                {/* GEO Signals (Global + Local) */}
+                <meta name="geo.region" content="US-NY" />
+                <meta name="geo.region" content="US-CA" />
+                <meta name="geo.region" content="ID-JK" />
+                <meta name="geo.placename" content="New York, San Francisco, Jakarta" />
+                <meta name="geo.position" content="40.712776;-74.005974" />
+                <meta name="ICBM" content="40.712776, -74.005974" />
+            </Helmet>
 
             {/* ── HERO ── */}
             <section className="pt-32 pb-24 px-4 md:px-8 border-b border-white/[0.05] bg-[#1c1c1e] relative z-10">
@@ -225,7 +258,7 @@ function InvestasiPage() {
                     </p>
                 </div>
             </section>
-            
+
             {/* ── BRIDGE SECTION ── */}
             <section className="py-24 px-4 md:px-8 border-b border-white/[0.05] bg-[#161618] relative">
                 <div className="container mx-auto max-w-5xl">
@@ -233,7 +266,7 @@ function InvestasiPage() {
                         <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-white">{t('investasi.bridge_title')}</h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                        {[1,2,3,4].map(n => (
+                        {[1, 2, 3, 4].map(n => (
                             <div key={n} className="glass rounded-squircle-lg p-6 text-left hover:glass-elevated transition-all duration-300 group">
                                 <span className="text-[#0A84FF]/60 font-semibold text-xs uppercase tracking-[0.2em] block mb-3">{t(`investasi.bridge_s${n}_title`)}</span>
                                 <p className="text-white/60 font-light leading-relaxed text-sm group-hover:text-white/60 transition-colors">{t(`investasi.bridge_s${n}_desc`)}</p>
@@ -244,15 +277,16 @@ function InvestasiPage() {
             </section>
 
             <section className="py-24 px-4 md:px-8 border-b border-white/[0.05] bg-[#1c1c1e] relative z-10">
-                <div className="container mx-auto max-w-5xl">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div className="container mx-auto max-w-6xl">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
                         {tiers.map((tier) => {
                             const colorMap: Record<string, { accentText: string; accentBg: string; accentBorder: string; glassClass: string }> = {
-                                green:  { accentText: 'text-[#0A84FF]',   accentBg: 'bg-[#0A84FF]',   accentBorder: 'border-[#0A84FF]/20',   glassClass: 'glass-blue' },
-                                blue:   { accentText: 'text-[#0A84FF]',   accentBg: 'bg-[#0A84FF]',   accentBorder: 'border-[#0A84FF]/20',   glassClass: 'glass-blue' },
-                                indigo: { accentText: 'text-[#5E5CE6]',   accentBg: 'bg-[#5E5CE6]',   accentBorder: 'border-[#5E5CE6]/20',   glassClass: 'glass-indigo' },
-                                amber:  { accentText: 'text-[#FF9F0A]',   accentBg: 'bg-[#FF9F0A]',   accentBorder: 'border-[#FF9F0A]/20',   glassClass: 'glass-amber' },
-                                red:    { accentText: 'text-[#FF453A]',   accentBg: 'bg-[#FF453A]',   accentBorder: 'border-[#FF453A]/20',   glassClass: 'glass' },
+                                green: { accentText: 'text-[#0A84FF]', accentBg: 'bg-[#0A84FF]', accentBorder: 'border-[#0A84FF]/20', glassClass: 'glass-blue' },
+                                blue: { accentText: 'text-[#0A84FF]', accentBg: 'bg-[#0A84FF]', accentBorder: 'border-[#0A84FF]/20', glassClass: 'glass-blue' },
+                                indigo: { accentText: 'text-[#5E5CE6]', accentBg: 'bg-[#5E5CE6]', accentBorder: 'border-[#5E5CE6]/20', glassClass: 'glass-indigo' },
+                                amber: { accentText: 'text-[#FF9F0A]', accentBg: 'bg-[#FF9F0A]', accentBorder: 'border-[#FF9F0A]/20', glassClass: 'glass-amber' },
+                                red: { accentText: 'text-[#FF453A]', accentBg: 'bg-[#FF453A]', accentBorder: 'border-[#FF453A]/20', glassClass: 'glass' },
+                                black: { accentText: 'text-[#E5E5E7]', accentBg: 'bg-[#E5E5E7]', accentBorder: 'border-[#E5E5E7]/20', glassClass: 'glass-elevated' },
                             };
                             const theme = colorMap[tier.color] || colorMap.blue;
 
@@ -267,44 +301,63 @@ function InvestasiPage() {
                                     </div>
 
                                     <div className="space-y-3 my-6 flex-grow">
-                                        {/* One-Time */}
-                                        <div className="p-4 glass rounded-squircle-sm flex items-center justify-between hover:glass-elevated transition-all group/opt">
-                                            <div className="text-left">
-                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/40 mb-1 group-hover/opt:text-white/60 transition-colors">{t('investasi_page.labels.one_time', 'One-Time Audit')}</h4>
-                                                <span className="text-xl font-bold text-white font-mono">${tier.pricing.oneTime.toLocaleString()}</span>
-                                                <span className="text-xs text-white/40 block mt-0.5">{t('investasi_page.labels.one_time_child', 'Single Comprehensive Audit')}</span>
-                                            </div>
-                                            <Button variant="outline" size="sm" onClick={() => openModal(tier, 'one-time')}>{t('investasi_page.labels.select', 'Select')}</Button>
-                                        </div>
-
-                                        {/* Quarterly */}
-                                        <div className="p-4 glass rounded-squircle-sm flex items-center justify-between hover:glass-elevated transition-all group/opt">
-                                            <div className="text-left">
-                                                <h4 className="font-semibold uppercase tracking-widest text-xs text-white/40 mb-1 group-hover/opt:text-white/60 transition-colors">{t('investasi_page.labels.quarterly', 'Quarterly Program')}</h4>
-                                                <div className="flex items-baseline gap-2">
-                                                    <span className="text-xl font-bold text-white font-mono">${tier.pricing.quarterly.total.toLocaleString()}</span>
-                                                    <span className="text-xs text-white/40">{t('investasi_page.labels.total', 'Total')}</span>
+                                        {tier.isInstitutional ? (
+                                            <div className="p-8 glass-elevated border border-white/10 rounded-squircle-lg flex flex-col items-center justify-center text-center space-y-4 min-h-[300px]">
+                                                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                                                    <Lock className="w-6 h-6 text-white/40" />
                                                 </div>
-                                                <span className="text-xs text-white/40">${tier.pricing.quarterly.perAudit.toLocaleString()} / {t('investasi_page.labels.per_audit', 'audit')} · {t('investasi_page.labels.quarterly_sub', '3x Monthly')}</span>
-
-                                            </div>
-                                            <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')}>{t('investasi_page.labels.select', 'Select')}</Button>
-                                        </div>
-
-                                        {/* Annual — highlighted */}
-                                        <div className={`p-4 rounded-squircle-sm flex items-center justify-between relative ${theme.glassClass} border ${theme.accentBorder}`}>
-
-                                            <div className="text-left mt-1">
-                                                <h4 className={`font-semibold uppercase tracking-widest text-xs ${theme.accentText} mb-1`}>{t('investasi_page.labels.annual', 'Annual Partnership')}</h4>
-                                                <div className="flex items-baseline gap-2">
-                                                    <span className="text-xl font-bold text-white font-mono">${tier.pricing.annual.total.toLocaleString()}</span>
-                                                    <span className="text-xs text-white/40">/ {t('investasi_page.labels.year', 'Year')}</span>
+                                                <div className="space-y-2">
+                                                    <h4 className="text-xl font-bold uppercase tracking-tight text-white">{t('investasi_page.labels.institutional_access', 'Institutional Access')}</h4>
+                                                    <p className="text-sm text-white/40 max-w-[200px] mx-auto">{t('investasi_page.labels.contact_for_price', 'Bespoke diagnostic protocols for high-stakes environments.')}</p>
                                                 </div>
-                                                <span className="text-xs text-white/40">${tier.pricing.annual.perAudit.toLocaleString()} / audit · {t('investasi_page.labels.annual_sub', '4x Quarterly')}</span>
-
+                                                <Link to="/contact" className="w-full">
+                                                    <Button className="w-full h-auto py-5 bg-white text-black hover:bg-white/90 transition-all font-bold uppercase tracking-widest text-xs border-none shadow-xl shadow-white/5">
+                                                        {t('investasi_page.labels.contact_button', 'Contact for Price')}
+                                                    </Button>
+                                                </Link>
                                             </div>
-                                            <Button size="sm" onClick={() => openModal(tier, 'annual')} className={`${theme.accentBg} text-black hover:brightness-110 border-none font-bold`}>{t('investasi_page.labels.select', 'Select')}</Button>
-                                        </div>
+                                        ) : (
+                                            <>
+                                                {/* One-Time */}
+                                                <div className="p-4 glass rounded-squircle-sm flex items-center justify-between hover:glass-elevated transition-all group/opt">
+                                                    <div className="text-left">
+                                                        <h4 className="font-semibold uppercase tracking-widest text-xs text-white/40 mb-1 group-hover/opt:text-white/60 transition-colors">{t('investasi_page.labels.one_time', 'One-Time Audit')}</h4>
+                                                        <span className="text-xl font-bold text-white font-mono">${tier.pricing.oneTime.toLocaleString()}</span>
+                                                        <span className="text-xs text-white/40 block mt-0.5">{t('investasi_page.labels.one_time_child', 'Single Comprehensive Audit')}</span>
+                                                    </div>
+                                                    <Button variant="outline" size="sm" onClick={() => openModal(tier, 'one-time')}>{t('investasi_page.labels.select', 'Select')}</Button>
+                                                </div>
+
+                                                {/* Quarterly */}
+                                                <div className="p-4 glass rounded-squircle-sm flex items-center justify-between hover:glass-elevated transition-all group/opt">
+                                                    <div className="text-left">
+                                                        <h4 className="font-semibold uppercase tracking-widest text-xs text-white/40 mb-1 group-hover/opt:text-white/60 transition-colors">{t('investasi_page.labels.quarterly', 'Quarterly Program')}</h4>
+                                                        <div className="flex items-baseline gap-2">
+                                                            <span className="text-xl font-bold text-white font-mono">${tier.pricing.quarterly.total.toLocaleString()}</span>
+                                                            <span className="text-xs text-white/40">{t('investasi_page.labels.total', 'Total')}</span>
+                                                        </div>
+                                                        <span className="text-xs text-white/40">${tier.pricing.quarterly.perAudit.toLocaleString()} / {t('investasi_page.labels.per_audit', 'audit')} · {t('investasi_page.labels.quarterly_sub', '3x Monthly')}</span>
+
+                                                    </div>
+                                                    <Button variant="outline" size="sm" onClick={() => openModal(tier, 'quarterly')}>{t('investasi_page.labels.select', 'Select')}</Button>
+                                                </div>
+
+                                                {/* Annual — highlighted */}
+                                                <div className={`p-4 rounded-squircle-sm flex items-center justify-between relative ${theme.glassClass} border ${theme.accentBorder}`}>
+
+                                                    <div className="text-left mt-1">
+                                                        <h4 className={`font-semibold uppercase tracking-widest text-xs ${theme.accentText} mb-1`}>{t('investasi_page.labels.annual', 'Annual Partnership')}</h4>
+                                                        <div className="flex items-baseline gap-2">
+                                                            <span className="text-xl font-bold text-white font-mono">${tier.pricing.annual.total.toLocaleString()}</span>
+                                                            <span className="text-xs text-white/40">/ {t('investasi_page.labels.year', 'Year')}</span>
+                                                        </div>
+                                                        <span className="text-xs text-white/40">${tier.pricing.annual.perAudit.toLocaleString()} / audit · {t('investasi_page.labels.annual_sub', '4x Quarterly')}</span>
+
+                                                    </div>
+                                                    <Button size="sm" onClick={() => openModal(tier, 'annual')} className={`${theme.accentBg} text-black hover:brightness-110 border-none font-bold`}>{t('investasi_page.labels.select', 'Select')}</Button>
+                                                </div>
+                                            </>
+                                        )}
                                     </div>
 
                                     <div className="pt-5 border-t border-white/[0.05]">
@@ -359,72 +412,72 @@ function InvestasiPage() {
                             <div className="overflow-x-auto -mx-6 md:mx-0 px-6 md:px-0 pb-4 relative">
                                 <div className="absolute top-0 right-0 bottom-4 w-12 bg-gradient-to-l from-black/20 to-transparent pointer-events-none md:hidden z-10" />
                                 <table className="w-full text-left min-w-[760px] border-collapse relative">
-                                <thead>
-                                    <tr className="border-b border-white/10">
-                                        <th className="p-3 text-muted-foreground font-bold text-xs uppercase tracking-wider">{t('investasi_page.labels.feature', 'Feature')}</th>
-                                        {tiers.map(tier => (
-                                            <th key={tier.id} className="p-3 text-center text-muted-foreground font-bold text-xs uppercase tracking-wider whitespace-nowrap">{tier.name}</th>
-                                        ))}
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {(() => {
-                                        // 1. Define tier order
-                                        const tierOrder = ['diagnostic', 'forensic', 'network', 'sovereign'];
-                                        
-                                        // 2. Identify all unique features and their minimum tier
-                                        const featureMap = new Map();
-                                        
-                                        tiers.forEach(tier => {
-                                            const rank = tierOrder.indexOf(tier.id);
-                                            tier.features.included.forEach(f => {
-                                                // Ignore summary/placeholder features in the detailed table
-                                                if (f.key.endsWith('_short') || f.key.endsWith('_short_base')) return;
-                                                
-                                                if (!featureMap.has(f.key) || rank < featureMap.get(f.key).rank) {
-                                                    featureMap.set(f.key, { ...f, rank });
-                                                }
+                                    <thead>
+                                        <tr className="border-b border-white/10">
+                                            <th className="p-3 text-muted-foreground font-bold text-xs uppercase tracking-wider">{t('investasi_page.labels.feature', 'Feature')}</th>
+                                            {tiers.map(tier => (
+                                                <th key={tier.id} className="p-3 text-center text-muted-foreground font-bold text-xs uppercase tracking-wider whitespace-nowrap">{tier.name}</th>
+                                            ))}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {(() => {
+                                            // 1. Define tier order
+                                            const tierOrder = ['diagnostic', 'forensic', 'network', 'sovereign', 'imperium'];
+
+                                            // 2. Identify all unique features and their minimum tier
+                                            const featureMap = new Map();
+
+                                            tiers.forEach(tier => {
+                                                const rank = tierOrder.indexOf(tier.id);
+                                                tier.features.included.forEach(f => {
+                                                    // Ignore summary/placeholder features in the detailed table
+                                                    if (f.key.endsWith('_short') || f.key.endsWith('_short_base')) return;
+
+                                                    if (!featureMap.has(f.key) || rank < featureMap.get(f.key).rank) {
+                                                        featureMap.set(f.key, { ...f, rank });
+                                                    }
+                                                });
                                             });
-                                        });
 
-                                        // 3. Render unique features sorted by their original introduction tier
-                                        return Array.from(featureMap.values())
-                                            .sort((a, b) => a.rank - b.rank)
-                                            .map(featureObj => {
-                                                const translated = t(featureObj.key, featureObj.default) as string;
-                                                const parts = translated.split(' -> ');
-                                                const isHighlighted = featureObj.highlight;
+                                            // 3. Render unique features sorted by their original introduction tier
+                                            return Array.from(featureMap.values())
+                                                .sort((a, b) => a.rank - b.rank)
+                                                .map(featureObj => {
+                                                    const translated = t(featureObj.key, featureObj.default) as string;
+                                                    const parts = translated.split(' -> ');
+                                                    const isHighlighted = featureObj.highlight;
 
-                                                return (
-                                                <tr key={featureObj.key} className={`border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors ${isHighlighted ? 'bg-amber-500/[0.03]' : ''}`}>
-                                                    <td className="p-3">
-                                                        <div className="flex items-center gap-2">
-                                                            {isHighlighted && <Star className="w-3 h-3 text-amber-500 fill-amber-500 shrink-0" />}
-                                                            <span className={`font-medium block ${isHighlighted ? 'text-amber-400' : 'text-white'}`}>{parts[0]}</span>
-                                                        </div>
-                                                        {parts[1] && <span className={`text-[11px] italic block mt-0.5 leading-snug ${isHighlighted ? 'text-amber-200/40' : 'text-muted-foreground/60'}`}>{parts[1]}</span>}
-                                                    </td>
-                                                    {tiers.map(tier => {
-                                                        const tierRank = tierOrder.indexOf(tier.id);
-                                                        const featureMinRank = featureObj.rank;
-                                                        const isAvailable = tierRank >= featureMinRank;
-
-                                                        return (
-                                                            <td key={tier.id} className="p-3 text-center">
-                                                                {isAvailable ? (
-                                                                    <span className={isHighlighted ? 'text-lg' : ''}>✅</span>
-                                                                ) : (
-                                                                    <span className="opacity-20 text-xs text-white">❌</span>
-                                                                )}
+                                                    return (
+                                                        <tr key={featureObj.key} className={`border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors ${isHighlighted ? 'bg-amber-500/[0.03]' : ''}`}>
+                                                            <td className="p-3">
+                                                                <div className="flex items-center gap-2">
+                                                                    {isHighlighted && <Star className="w-3 h-3 text-amber-500 fill-amber-500 shrink-0" />}
+                                                                    <span className={`font-medium block ${isHighlighted ? 'text-amber-400' : 'text-white'}`}>{parts[0]}</span>
+                                                                </div>
+                                                                {parts[1] && <span className={`text-[11px] italic block mt-0.5 leading-snug ${isHighlighted ? 'text-amber-200/40' : 'text-muted-foreground/60'}`}>{parts[1]}</span>}
                                                             </td>
-                                                        );
-                                                    })}
-                                                </tr>
-                                            );
-                                        });
-                                    })()}
-                                </tbody>
-                            </table>
+                                                            {tiers.map(tier => {
+                                                                const tierRank = tierOrder.indexOf(tier.id);
+                                                                const featureMinRank = featureObj.rank;
+                                                                const isAvailable = tierRank >= featureMinRank;
+
+                                                                return (
+                                                                    <td key={tier.id} className="p-3 text-center">
+                                                                        {isAvailable ? (
+                                                                            <span className={isHighlighted ? 'text-lg' : ''}>✅</span>
+                                                                        ) : (
+                                                                            <span className="opacity-20 text-xs text-white">❌</span>
+                                                                        )}
+                                                                    </td>
+                                                                );
+                                                            })}
+                                                        </tr>
+                                                    );
+                                                });
+                                        })()}
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                         <div className="border border-white/10 glass rounded-squircle-lg p-6 md:p-8">

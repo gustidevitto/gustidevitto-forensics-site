@@ -34,13 +34,11 @@ export interface FIPLiteInputs {
     monthlyRevenue: number
     monthlyCOGS: number
     monthlyOpEx: number // Fixed costs
-    actualMonthlyLaborCost?: number // Precision Calibration
-    monthlyDebtService: number
     currentCash: number
-    teamSize: number
-    growthRate: number
+    monthlyDebtService: number // Optional, defaults to 0
     industryType: IndustryType
     businessAge: number // years
+    teamSize: number // headcount
 }
 
 // ============================================================================
@@ -85,13 +83,11 @@ export interface LockedPillar {
     id: string
     name: string
     category: PillarCategory
-    status: 'healthy' | 'warning' | 'critical'
-    barWidth: number
+    status: 'healthy' | 'warning' | 'critical' // Color only, no score
+    barWidth: number // 0-100, for visual only (blurred)
     isLocked: true
-    computedValue: string
-    computedLabel: string
-    score: number // Added for PDF
-    recommendation?: string // Added for PDF
+    computedValue: string // The actual calculated metric, e.g. "0.6x", "12.3%"
+    computedLabel: string // Human-readable context, e.g. "Quick Ratio", "GP per Hour"
 }
 
 export interface Layer3LockedXray {
@@ -122,21 +118,7 @@ export interface FIPLiteResult {
     layer1: Layer1Numbers
     layer2: Layer2Comparison
     layer3: Layer3LockedXray
-    wisdom?: {
-        status: 'PASSED' | 'VETOED' | 'WARNING'
-        vetos: string[]
-        narratives: string[]
-    }
-    categoryScores: {
-        revenueProfitability: number
-        cashFlow: number
-        operationalEfficiency: number
-        growthRisk: number
-    }
-    overallScore: number
-    pillars: LockedPillar[]
-    topRisks: LockedPillar[]
-    strengths: LockedPillar[]
+    // Layer 4 is just the CTA in the UI, no data structure needed
 }
 
 // ============================================================================
@@ -284,11 +266,6 @@ export interface CashAutopsyResult {
     layer3: {
         pillars: LockedPillar[]
     }
-    wisdom?: {
-        status: 'PASSED' | 'VETOED' | 'WARNING'
-        vetos: string[]
-        narratives: string[]
-    }
 }
 
 // ============================================================================
@@ -320,11 +297,6 @@ export interface MarginAuditResult {
     layer3: {
         pillars: LockedPillar[]
     }
-    wisdom?: {
-        status: 'PASSED' | 'VETOED' | 'WARNING'
-        vetos: string[]
-        narratives: string[]
-    }
 }
 
 // ============================================================================
@@ -348,7 +320,6 @@ export interface GrowthScanResult {
         breakEvenPoint: number
         cac: number
         ltvCacRatio: number
-        cacPayback: number
     }
     layer2: {
         viabilityVerdict: 'fortress' | 'warning' | 'critical'
@@ -356,11 +327,6 @@ export interface GrowthScanResult {
     }
     layer3: {
         pillars: LockedPillar[]
-    }
-    wisdom?: {
-        status: 'PASSED' | 'VETOED' | 'WARNING'
-        vetos: string[]
-        narratives: string[]
     }
 }
 

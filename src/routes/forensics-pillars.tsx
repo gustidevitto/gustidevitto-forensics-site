@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import pillarsData from '@/data/pillarsData.json'
 import { useTranslation, Trans } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 
 export const Route = createFileRoute('/forensics-pillars')({
     component: ForensicsPillars,
@@ -13,25 +14,28 @@ function ForensicsPillars() {
 
     return (
         <div className="flex-1 flex flex-col bg-[#1c1c1e] text-white relative">
-            <title>{t('pillars_page.seo_title')}</title>
-            <meta name="description" content={t('pillars_page.seo_desc')} />
+            <Helmet>
+                <title>{t('pillars_page.seo_title')}</title>
+                <meta name="description" content={t('pillars_page.seo_desc')} />
+                <link rel="canonical" href="https://www.gustidevitto.com/forensics-pillars" />
 
-            {/* JSON-LD DefinedTermSet Schema */}
-            <script type="application/ld+json">
-                {JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "DefinedTermSet",
-                    "@id": "https://www.gustidevitto.com/#methodology",
-                    "name": t('pillars_page.title'),
-                    "creator": { "@id": "https://www.gustidevitto.com/#person" },
-                    "hasDefinedTerm": pillarsData.map((p, i) => ({
-                        "@type": "DefinedTerm",
-                        "name": t(`pillars.${p.id}.title`),
-                        "description": t(`pillars.${p.id}.definition`),
-                        "termCode": `PILLAR-${(i + 1).toString().padStart(2, '0')}`
-                    }))
-                })}
-            </script>
+                {/* JSON-LD DefinedTermSet Schema */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "DefinedTermSet",
+                        "@id": "https://www.gustidevitto.com/#methodology",
+                        "name": t('pillars_page.title'),
+                        "creator": { "@id": "https://www.gustidevitto.com/#person" },
+                        "hasDefinedTerm": pillarsData.map((p, i) => ({
+                            "@type": "DefinedTerm",
+                            "name": t(`pillars.${p.id}.title`),
+                            "description": t(`pillars.${p.id}.definition`),
+                            "termCode": `PILLAR-${(i + 1).toString().padStart(2, '0')}`
+                        }))
+                    })}
+                </script>
+            </Helmet>
 
             {/* ═══ HERO ═══ */}
             <section className="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 border-b border-white/[0.05] min-h-[45vh] flex flex-col justify-end">

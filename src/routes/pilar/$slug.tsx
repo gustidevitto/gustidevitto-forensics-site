@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, ChevronRight, ChevronLeft } from "lucide-react"
 import pillarsData from '@/data/pillarsData.json'
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 
 export const Route = createFileRoute('/pilar/$slug')({
     component: PilarPage,
@@ -211,18 +212,21 @@ function PilarPage() {
 
     return (
         <div className="flex-1 flex flex-col bg-background pb-20">
-            <title>{`${displayTitle} - Financial Forensics Pillar`}</title>
-            <meta name="description" content={(metadata as any).description || t(`pillars.${pillar.id}.definition`)} />
+            <Helmet>
+                <title>{`${displayTitle} - Financial Forensics Pillar`}</title>
+                <meta name="description" content={(metadata as any).description || t(`pillars.${pillar.id}.definition`)} />
+                <link rel="canonical" href={`https://www.gustidevitto.com/pilar/${slug}`} />
 
-            <script type="application/ld+json">
-                {JSON.stringify(breadcrumbSchema)}
-            </script>
-            <script type="application/ld+json">
-                {JSON.stringify(articleSchema)}
-            </script>
-            <script type="application/ld+json">
-                {JSON.stringify(faqSchema)}
-            </script>
+                <script type="application/ld+json">
+                    {JSON.stringify(breadcrumbSchema)}
+                </script>
+                <script type="application/ld+json">
+                    {JSON.stringify(articleSchema)}
+                </script>
+                <script type="application/ld+json">
+                    {JSON.stringify(faqSchema)}
+                </script>
+            </Helmet>
 
             {/* Header / Breadcrumb */}
             <div className="border-b bg-card/30 backdrop-blur-sm sticky top-16 z-40">

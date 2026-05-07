@@ -15,14 +15,14 @@ export const Route = createFileRoute('/cash-autopsy')({
 
 function CashAutopsyDiagnostic() {
     const { t } = useTranslation()
-    
+
     // State
     const [step, setStep] = useState<number>(1)
     const [isCalculating, setIsCalculating] = useState(false)
     const [result, setResult] = useState<CashAutopsyResult | null>(null)
     const [isUnlocked, setIsUnlocked] = useState(false)
     const [isSubmitting, setIsSubmitting] = useState(false)
-    
+
     const [inputs, setInputs] = useState<CashAutopsyInputs>({
         revenue: 0,
         cogs: 0,
@@ -59,14 +59,14 @@ function CashAutopsyDiagnostic() {
     const handleUnlock = async (e: React.FormEvent) => {
         e.preventDefault()
         setIsSubmitting(true)
-        
+
         await submitLead({
             ...leadData,
             phone: '',
             source: 'Autopsy - Cash',
             runwayVerdict: result?.layer2.runwayVerdict
         })
-        
+
         setIsSubmitting(false)
         setIsUnlocked(true)
     }
@@ -78,7 +78,7 @@ function CashAutopsyDiagnostic() {
             </label>
             <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40">$</span>
-                <input 
+                <input
                     type="text"
                     name={name}
                     value={inputs[name] === 0 ? '' : inputs[name].toLocaleString()}
@@ -97,7 +97,7 @@ function CashAutopsyDiagnostic() {
             <div className="min-h-screen bg-[#1c1c1e] text-white pt-24 pb-12 px-6 flex flex-col relative overflow-hidden">
                 <title>{t('cash_autopsy.seo_title', 'Cash Autopsy | Free Survival Scan')}</title>
 
-                
+
                 <NeuralMeshBackground colorClass="text-red-500" />
                 <div className="max-w-2xl mx-auto w-full flex-grow flex flex-col relative z-10">
                     <div className="mb-12">
@@ -116,7 +116,7 @@ function CashAutopsyDiagnostic() {
 
                     {/* Progress Bar */}
                     <div className="w-full h-1 bg-white/10 mb-8 relative">
-                        <motion.div 
+                        <motion.div
                             className="absolute top-0 left-0 h-full bg-red-500"
                             initial={{ width: `${((step - 1) / 3) * 100}%` }}
                             animate={{ width: `${(step / 3) * 100}%` }}
@@ -127,7 +127,7 @@ function CashAutopsyDiagnostic() {
                     </p>
 
                     <AnimatePresence mode="wait">
-                        <motion.div 
+                        <motion.div
                             key={step}
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -143,7 +143,7 @@ function CashAutopsyDiagnostic() {
                                     {renderInputField("cogs", "cogs.label", "cogs.hint")}
                                 </>
                             )}
-                            
+
                             {step === 2 && (
                                 <>
                                     <div className="p-4 bg-white/5 border-l-2 border-red-500 text-sm font-light text-white/60 italic">
@@ -172,15 +172,15 @@ function CashAutopsyDiagnostic() {
                             <button onClick={handlePrev} className="text-white/60 hover:text-white uppercase tracking-widest font-bold text-sm px-6 py-4">
                                 {t('wizard_shared.btn_prev', 'Go Back')}
                             </button>
-                        ) : <div/>}
+                        ) : <div />}
 
                         {step < 3 ? (
                             <Button onClick={handleNext} className="bg-white text-black hover:bg-white/90 uppercase tracking-widest font-bold px-8">
                                 {t('wizard_shared.btn_next', 'Next Step')} <ChevronRight className="w-4 h-4 ml-2" />
                             </Button>
                         ) : (
-                            <Button 
-                                onClick={handleRunDiagnostic} 
+                            <Button
+                                onClick={handleRunDiagnostic}
                                 disabled={isCalculating}
                                 className="bg-red-600 hover:bg-red-700 text-white uppercase tracking-widest font-bold px-8"
                             >
@@ -203,8 +203,8 @@ function CashAutopsyDiagnostic() {
         <div className="min-h-screen bg-[#1c1c1e] text-white pt-24 pb-24 px-6 relative overflow-hidden">
             <title>Diagnostic Complete | Cash Autopsy</title>
 
-            
-                <NeuralMeshBackground colorClass="text-[#0A84FF]" />
+
+            <NeuralMeshBackground colorClass="text-[#0A84FF]" />
             <div className="max-w-4xl mx-auto space-y-12 relative z-10">
                 {/* Header */}
                 <div className="text-center space-y-4">
@@ -222,8 +222,7 @@ function CashAutopsyDiagnostic() {
                         <div className={`absolute top-0 right-0 w-32 h-32 bg-[#0A84FF]/10 blur-3xl`} />
                         <h3 className="text-sm uppercase tracking-widest font-bold text-white/60 mb-2">{t('cash_autopsy.results.runway_label', 'Cash Runway')}</h3>
                         <div className="text-5xl font-semibold mb-2 flex items-end gap-2">
-                            {result.layer1.cashRunwayDays === 9999 ? 'Infinite/Stable' : result.layer1.cashRunwayDays} 
-                            {result.layer1.cashRunwayDays !== 9999 && <span className="text-xl text-white/40 mb-1">DAYS</span>}
+                            {result.layer1.cashRunwayDays} <span className="text-xl text-white/40 mb-1">DAYS</span>
                         </div>
                     </div>
 
@@ -233,33 +232,6 @@ function CashAutopsyDiagnostic() {
                             {formatCurrency(result.layer1.netBurnRate)}<span className="text-xl text-white/40">/mo</span>
                         </div>
                     </div>
-                {/* Wisdom Intelligence Overlay (The Judge) */}
-                {result.wisdom && result.wisdom.status !== 'PASSED' && (
-                    <motion.div 
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className={`p-8 border-2 ${result.wisdom.status === 'VETOED' ? 'border-red-500 bg-red-500/10' : 'border-amber-500/50 bg-amber-500/5'} rounded-squircle-lg relative overflow-hidden`}
-                    >
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className={`w-2 h-2 rounded-full ${result.wisdom.status === 'VETOED' ? 'bg-red-500' : 'bg-amber-500'} animate-pulse`} />
-                            <span className={`text-xs font-bold uppercase tracking-[0.2em] ${result.wisdom.status === 'VETOED' ? 'text-red-500' : 'text-amber-500'}`}>
-                                Wisdom Intelligence: {result.wisdom.status}
-                            </span>
-                        </div>
-                        
-                        <div className="space-y-4">
-                            {result.wisdom.narratives.map((nar: string, i: number) => (
-                                <p key={i} className="text-xl font-bold leading-tight text-white/90">
-                                    {nar}
-                                </p>
-                            ))}
-                        </div>
-                        
-                        <div className="mt-6 pt-6 border-t border-white/10 text-[10px] uppercase tracking-widest font-semibold text-white/40">
-                            Strategic Directive: Address these structural fallacies before proceeding with any growth initiatives.
-                        </div>
-                    </motion.div>
-                )}
                 </div>
 
                 {/* Layer 2: Psychological Context & Cliffhanger */}
@@ -287,29 +259,29 @@ function CashAutopsyDiagnostic() {
                             <p className="text-white/60 mb-8 max-w-lg mx-auto font-light">
                                 {t('cash_autopsy.gatekeeper.desc', 'Enter your email to reveal the exact severity of your structural cash risk and the locked vectors.')}
                             </p>
-                            
+
                             <div className="inline-flex items-center justify-center gap-2 mb-8 text-emerald-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border border-emerald-500/30 bg-emerald-500/10 px-4 py-2">
                                 <CheckCircle2 className="w-4 h-4" /> 100% Free. No Strings Attached.
                             </div>
                             <form onSubmit={handleUnlock} className="w-full max-w-md space-y-4">
-                                <input 
-                                    type="text" 
-                                    placeholder="Your Name" 
-                                    required 
+                                <input
+                                    type="text"
+                                    placeholder="Your Name"
+                                    required
                                     value={leadData.name}
-                                    onChange={e => setLeadData({...leadData, name: e.target.value})}
+                                    onChange={e => setLeadData({ ...leadData, name: e.target.value })}
                                     className="w-full glass border border-white/20 rounded-squircle-md p-4 font-semibold text-white placeholder-white/40 focus:outline-none focus:border-[#0A84FF] transition-colors"
                                 />
-                                <input 
-                                    type="email" 
-                                    placeholder="Professional Email" 
-                                    required 
+                                <input
+                                    type="email"
+                                    placeholder="Professional Email"
+                                    required
                                     value={leadData.email}
-                                    onChange={e => setLeadData({...leadData, email: e.target.value})}
+                                    onChange={e => setLeadData({ ...leadData, email: e.target.value })}
                                     className="w-full glass border border-white/20 rounded-squircle-md p-4 font-semibold text-white placeholder-white/40 focus:outline-none focus:border-[#0A84FF] transition-colors"
                                 />
-                                <Button 
-                                    type="submit" 
+                                <Button
+                                    type="submit"
                                     disabled={isSubmitting}
                                     className="w-full bg-white text-black hover:bg-white/90 uppercase tracking-widest font-bold p-6 h-auto"
                                 >
@@ -318,7 +290,7 @@ function CashAutopsyDiagnostic() {
                                 <div className="text-[10px] text-white/40 uppercase tracking-widest pt-6 space-y-2">
                                     <div className="text-emerald-400 font-bold tracking-widest">THIS IS NOT A TRAP. ZERO OBLIGATIONS.</div>
                                     <div className="font-light leading-relaxed">
-                                        Your specific vector data will be instantly unlocked on this exact page.<br/>
+                                        Your specific vector data will be instantly unlocked on this exact page.<br />
                                         <span className="text-white/40">We protect your privacy & will never spam you.</span>
                                     </div>
                                 </div>
@@ -326,8 +298,8 @@ function CashAutopsyDiagnostic() {
                         </div>
                     </div>
                 ) : (
-                    <motion.div 
-                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} 
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                         className="space-y-6"
                     >
                         <h3 className="text-2xl font-bold uppercase tracking-tight flex items-center mb-6 border-b border-white/10 pb-4">
@@ -379,27 +351,27 @@ function CashAutopsyDiagnostic() {
                                     {t('wizard_shared.cta_growth', 'Check Scalability')} <ArrowRight className="w-4 h-4 ml-2 opacity-50" />
                                 </Link>
                             </div>
-                            
-                            
-                        {/* The "Now What?" Gap - Explicit Medical Analogy */}
-                        <div className="mt-16 p-8 glass-elevated rounded-squircle-xl border-l-4 border-[#0A84FF] relative text-left">
-                            <h4 className="text-[#0A84FF] text-sm font-bold uppercase tracking-widest flex items-center mb-6">
-                                <AlertTriangle className="w-5 h-5 mr-3" /> The Prescription Gap
-                            </h4>
-                            <div className="space-y-4 text-sm font-semibold leading-relaxed">
-                                <p className="text-white/90">
-                                    You now know <strong className="text-white font-bold italic">where</strong> you are bleeding. But you still don't know <strong className="text-white font-bold italic">why it's happening—or how to stop it.</strong>
-                                </p>
-                                <p className="text-white/60">
-                                    A doctor doesn't just tell you "your heart is failing." They identify exactly which valve is damaged, prescribe the right medication and dosage, tell you how long recovery takes, and schedule follow-up checkups to track whether you're actually healing—or getting worse.
-                                </p>
-                                <p className="text-white/60">
-                                    That's what our full forensic audit does for your business. You get the <strong className="text-[#0A84FF] font-bold">exact root cause</strong>, a prioritized action plan with specific steps your team can execute this week, and a monitoring framework to measure whether each fix is working. <span className="text-white/40">Not vague advice. Not a generic report. A surgical operating manual built from your numbers.</span>
-                                </p>
-                            </div>
-                        </div>
 
- {/* Premium CTA Block */}
+
+                            {/* The "Now What?" Gap - Explicit Medical Analogy */}
+                            <div className="mt-16 p-8 glass-elevated rounded-squircle-xl border-l-4 border-[#0A84FF] relative text-left">
+                                <h4 className="text-[#0A84FF] text-sm font-bold uppercase tracking-widest flex items-center mb-6">
+                                    <AlertTriangle className="w-5 h-5 mr-3" /> The Prescription Gap
+                                </h4>
+                                <div className="space-y-4 text-sm font-semibold leading-relaxed">
+                                    <p className="text-white/90">
+                                        You now know <strong className="text-white font-bold italic">where</strong> you are bleeding. But you still don't know <strong className="text-white font-bold italic">why it's happening—or how to stop it.</strong>
+                                    </p>
+                                    <p className="text-white/60">
+                                        A doctor doesn't just tell you "your heart is failing." They identify exactly which valve is damaged, prescribe the right medication and dosage, tell you how long recovery takes, and schedule follow-up checkups to track whether you're actually healing—or getting worse.
+                                    </p>
+                                    <p className="text-white/60">
+                                        That's what our full forensic audit does for your business. You get the <strong className="text-[#0A84FF] font-bold">exact root cause</strong>, a prioritized action plan with specific steps your team can execute this week, and a monitoring framework to measure whether each fix is working. <span className="text-white/40">Not vague advice. Not a generic report. A surgical operating manual built from your numbers.</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Premium CTA Block */}
                             <div className="mt-8 p-8 relative glass-elevated border border-white/20 rounded-squircle-xl overflow-hidden group">
                                 <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                                 <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">

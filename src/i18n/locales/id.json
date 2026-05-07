@@ -1404,6 +1404,11 @@
         "name": "SOVEREIGN",
         "tagline": "Kuasai intelijennya",
         "positioning": "Saya mengendalikan mesinnya"
+      },
+      "imperium": {
+        "name": "IMPERIUM",
+        "tagline": "Kebenaran Mutlak.",
+        "positioning": "Dominasi Strategis"
       }
     },
     "labels": {
@@ -1423,7 +1428,11 @@
       "best_for": "Terbaik untuk:",
       "key_findings": "Temuan Kunci",
       "analysis_title": "Clinical Diagnostic Scopes",
-      "feature_comparison": "Lihat Perbandingan Fitur Detail",
+      "feature_comparison": "Lihat Perbandingan Fitur Terperinci",
+      "feature": "Fitur",
+      "institutional_access": "Akses Institusional",
+      "contact_for_price": "Protokol diagnostik khusus untuk lingkungan dengan risiko tinggi.",
+      "contact_button": "Hubungi untuk Penawaran",
       "which_tier_title": "Mana Tingkatan yang Tepat Untuk Saya?",
       "choose_if": "Pilih {{tier}} jika:",
       "time_commitment_title": "Memahami Opsi Komitmen Waktu",
@@ -1457,6 +1466,13 @@
       "unlimited_short": "Profil Outlet Tanpa Batas",
       "priority_short": "Akses Strategis Prioritas",
       "security_short": "Keamanan kelas enterprise",
+      "sovereign_short": "Seluruh fitur SOVEREIGN",
+      "wisdom_kernel": "Wisdom Kernel Core -> Akses \"Kebenaran Mutlak\" melalui deduksi neural-simbolik",
+      "chaos_coefficient": "Chaos Coefficient Analysis -> Ukur entropi struktural dan fragilitas sistemik",
+      "jump_diffusion": "Jump Diffusion Modeling -> Kuantifikasi risiko guncangan pasar non-linear yang mendadak",
+      "inertia": "Audit Inersia Bisnis -> Hitung energi kinetik dari penyimpangan operasional saat ini",
+      "malliavin": "Indeks Sensitivitas Malliavin -> Pemetaan volatilitas stokastik untuk ketahanan arus kas",
+      "mask_off": "Command Center (Mask-Off) -> Transparansi forensik penuh bagi Global Sovereign",
       "pillars_8": "8 Pilar Forensik Utama -> Temukan kas tersangkut di seluruh operasi Anda",
       "syndrome": "Deteksi Kebocoran Operasional -> Hentikan profit yang menguap seperti pipa bocor",
       "anomaly": "Deteksi Anomali -> Tandai perilaku finansial mencurigakan secara instan",
@@ -1482,7 +1498,7 @@
       "monte_carlo": "Monte Carlo Stress Testing -> Pastikan bertahan di bawah kekacauan pasar ekstrem",
       "wealth": "Founder Wealth Impact Analysis™ -> Lindungi kas yang milik Anda",
       "unlimited": "Profil Outlet Tanpa Batas -> Visibilitas penuh di seluruh lokasi tak terbatas",
-      "priority": "Akses Strategis Prioritas -> Intervensi langsung saat kebocoran besar terjadi",
+      "priority": "Priority Strategic Access -> Intervensi langsung saat kebocoran masif terdeteksi",
       "security": "Keamanan tingkat enterprise",
       "full_25": "Full 25 pilar",
       "logic_trace": "Analisis jejak logika",
@@ -1505,9 +1521,12 @@
       "franchise_chain": "Operator franchise/rantai",
       "network_opt": "Optimasi jaringan",
       "outlets_50_500": "50-500 outlet",
-      "rev_100m": "$100M+ pendapatan",
-      "enterprise_soph": "Kecanggihan enterprise",
-      "exit_planning": "Pelestarian kekayaan & perencanaan exit"
+      "rev_100m": "Pendapatan Rp 1 Triliun+",
+      "enterprise_soph": "Kecanggihan tingkat korporat",
+      "exit_planning": "Preservasi kekayaan & perencanaan exit",
+      "outlets_global": "Operator Institusi Global",
+      "sovereign_wealth": "Sovereign Wealth & Private Equity",
+      "ultimate_control": "Kebutuhan akan kontrol strategis absolut"
     },
     "comparison": {
       "diagnostic_if": [
