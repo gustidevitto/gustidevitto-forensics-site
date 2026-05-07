@@ -320,6 +320,7 @@ export interface GrowthScanResult {
         breakEvenPoint: number
         cac: number
         ltvCacRatio: number
+        cacPayback: number
     }
     layer2: {
         viabilityVerdict: 'fortress' | 'warning' | 'critical'

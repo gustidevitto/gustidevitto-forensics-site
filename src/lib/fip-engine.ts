@@ -473,6 +473,9 @@ export function calculateGrowthScan(inputs: GrowthScanInputs): GrowthScanResult 
     const cac = inputs.newCustomers > 0 ? inputs.marketing / inputs.newCustomers : 0;
     const ltvCacRatio = cac > 0 ? inputs.ltv / cac : 99;
 
+    const netMarginPerNewCustomer = inputs.newCustomers > 0 ? cm / inputs.newCustomers : 0;
+    const cacPayback = netMarginPerNewCustomer > 0 ? cac / netMarginPerNewCustomer : 99;
+
     const viabilityVerdict = ltvCacRatio < 2 ? 'critical' : ltvCacRatio < 3 ? 'warning' : 'fortress';
     const deathSpiralRisk = viabilityVerdict === 'critical' && inputs.revenue < breakEvenPoint;
 
@@ -487,7 +490,7 @@ export function calculateGrowthScan(inputs: GrowthScanInputs): GrowthScanResult 
     ];
 
     return {
-        layer1: { contributionMarginPercent, breakEvenPoint, cac, ltvCacRatio },
+        layer1: { contributionMarginPercent, breakEvenPoint, cac, ltvCacRatio, cacPayback },
         layer2: { viabilityVerdict, deathSpiralRisk },
         layer3: { pillars }
     };

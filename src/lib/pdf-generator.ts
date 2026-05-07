@@ -10,6 +10,7 @@ export async function generateFIPLitePDF(results: FIPLiteResult, name: string, b
     const doc = new jsPDF();
     const primaryColor = '#7c3aed'; // Purple-600
     const dangerColor = '#ef4444'; // Red-500
+    const warningColor = '#f59e0b'; // Amber-500
     const successColor = '#10b981'; // Emerald-500
 
     const addFooter = (pageNum: number) => {
@@ -38,17 +39,6 @@ export async function generateFIPLitePDF(results: FIPLiteResult, name: string, b
     doc.setDrawColor(primaryColor);
     doc.line(20, 42, 190, 42);
 
-    // --- JUDICIAL STATUS OVERLAY (Lense of Authority) ---
-    if (results.wisdom && results.wisdom.status !== 'PASSED') {
-        const statusColor = results.wisdom.status === 'VETOED' ? dangerColor : '#f59e0b';
-        doc.setFillColor(statusColor);
-        doc.rect(140, 45, 50, 10, 'F');
-        doc.setTextColor(255, 255, 255);
-        doc.setFontSize(10);
-        doc.setFont('helvetica', 'bold');
-        doc.text(results.wisdom.status === 'VETOED' ? 'JUDICIAL VETO' : 'SOVEREIGN WARNING', 165, 51.5, { align: 'center' });
-    }
-
     // Business Intelligence
     doc.setFontSize(14);
     doc.setFont('helvetica', 'bold');
@@ -59,69 +49,55 @@ export async function generateFIPLitePDF(results: FIPLiteResult, name: string, b
     doc.text(`OWNER/OPERATOR: ${name.toUpperCase()}`, 20, 62);
     doc.text(`DIAGNOSTIC DATE: ${new Date().toLocaleDateString()}`, 20, 67);
 
-    // Overall Score Gauge
+    // Efficiency Index Gauge
     doc.setLineWidth(2);
     doc.setDrawColor(primaryColor);
     doc.circle(105, 115, 30, 'S');
 
     doc.setTextColor(255, 255, 255);
-    doc.setFontSize(48);
+    doc.setFontSize(36);
     doc.setFont('helvetica', 'bold');
-    doc.text(`${results.overallScore}`, 105, 120, { align: 'center' });
+    doc.text(`${results.layer2.efficiencyIndex.toFixed(0)}%`, 105, 120, { align: 'center' });
 
     doc.setFontSize(10);
     doc.setTextColor(primaryColor);
-    doc.text('TOTAL HEALTH SCORE', 105, 132, { align: 'center' });
+    doc.text('EFFICIENCY INDEX', 105, 132, { align: 'center' });
 
     // Verdict
     doc.setFontSize(20);
-    const vColor = results.layer2.riskVerdict === 'fortress' ? successColor : results.layer2.riskVerdict === 'warning' ? '#f59e0b' : dangerColor;
+    const vColor = results.layer2.riskVerdict === 'fortress' ? successColor : results.layer2.riskVerdict === 'warning' ? warningColor : dangerColor;
     doc.setTextColor(vColor);
     doc.text(results.layer2.verdictLabel.toUpperCase(), 105, 155, { align: 'center' });
 
-    // Wisdom Narratives (The Forensic Why)
-    if (results.wisdom && results.wisdom.narratives.length > 0) {
-        doc.setTextColor(200, 200, 200);
-        doc.setFontSize(8);
-        doc.setFont('helvetica', 'italic');
-        const wisdomText = results.wisdom.narratives.join('\n\n');
-        const splitWisdom = doc.splitTextToSize(`FORENSIC INSIGHT: ${wisdomText}`, 170);
-        doc.text(splitWisdom, 20, 170);
-    }
-
-    // Category Grid
+    // Key Metrics Grid
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(14);
-    doc.text('DIAGNOSTIC VECTORS', 20, 185);
+    doc.text('CORE FINANCIAL VECTORS', 20, 185);
 
     let y = 200;
-    const catLabels: Record<string, string> = {
-        revenueProfitability: 'REVENUE & PROFITABILITY',
-        cashFlow: 'CASH FLOW & LIQUIDITY',
-        operationalEfficiency: 'OPERATIONAL EFFICIENCY',
-        growthRisk: 'GROWTH & RISK EXPOSURE'
-    };
     
-    // We don't have categoryScores in FIPLiteResult directly anymore (it's in pillars or summarized)
-    // For now, let's just use the pillars or mock the summary for the PDF
+    const metrics = [
+        { label: 'CASH RUNWAY', value: `${results.layer1.cashRunwayDays} DAYS` },
+        { label: 'GROSS PROFIT MARGIN', value: `${results.layer1.grossProfitPercent.toFixed(1)}%` },
+        { label: 'MONTHLY BURN RATE', value: `$${results.layer1.netBurnRate.toLocaleString()}` },
+        { label: 'BREAK-EVEN REVENUE', value: `$${results.layer1.breakEvenRevenue.toLocaleString()}` }
+    ];
 
-    Object.entries(results.categoryScores).forEach(([cat, score]: [string, number]) => {
+    metrics.forEach((m) => {
         doc.setFontSize(10);
         doc.setTextColor(200, 200, 200);
-        doc.text(catLabels[cat] || cat.toUpperCase(), 20, y);
+        doc.text(m.label, 20, y);
         doc.setTextColor(255, 255, 255);
-        doc.text(`${score}/100`, 175, y);
+        doc.text(m.value, 190, y, { align: 'right' });
 
         doc.setFillColor(40, 40, 40);
-        doc.rect(20, y + 2, 170, 2, 'F');
-        doc.setFillColor(primaryColor);
-        doc.rect(20, y + 2, (score / 100) * 170, 2, 'F');
-        y += 18;
+        doc.rect(20, y + 2, 170, 1, 'F');
+        y += 15;
     });
 
     addFooter(1);
 
-    // --- PAGE 2: THE 25 PILLARS BREAKDOWN ---
+    // --- PAGE 2: DIAGNOSTIC X-RAY ---
     doc.addPage();
     doc.setFillColor(0, 0, 0);
     doc.rect(0, 0, 210, 297, 'F');
@@ -129,84 +105,54 @@ export async function generateFIPLitePDF(results: FIPLiteResult, name: string, b
     doc.setTextColor(primaryColor);
     doc.setFontSize(18);
     doc.setFont('helvetica', 'bold');
-    doc.text('25-PILLAR GRANULAR AUDIT', 20, 25);
+    doc.text('FORENSIC X-RAY: 8 CORE PILLARS', 20, 25);
 
     y = 40;
-    results.pillars.forEach((p: LockedPillar, i: number) => {
-        if (i === 8) { // Split to Page 3 if needed, but we'll try to fit or add page
-            // For 25, we will definitely need a 3rd page or smaller rows. 
-            // Let's use two columns per page maybe? No, let's just make rows compact.
-        }
-
+    results.layer3.pillars.forEach((p: LockedPillar, i: number) => {
         doc.setFontSize(9);
         doc.setTextColor(200, 200, 200);
-        doc.text(`${i + 1}. ${p.name}`, 20, y);
+        doc.setFont('helvetica', 'bold');
+        doc.text(`${i + 1}. ${p.name.toUpperCase()}`, 20, y);
 
-        const pScore = p.score;
-        const pColor = pScore > 80 ? successColor : pScore > 50 ? '#f59e0b' : dangerColor;
+        const pColor = p.status === 'healthy' ? successColor : p.status === 'warning' ? warningColor : dangerColor;
 
         doc.setTextColor(pColor);
-        doc.text(`${pScore}%`, 180, y, { align: 'right' });
+        doc.setFont('helvetica', 'normal');
+        doc.text(p.computedValue, 190, y, { align: 'right' });
+
+        doc.setFontSize(8);
+        doc.setTextColor(150, 150, 150);
+        doc.text(p.computedLabel, 20, y + 5);
 
         doc.setFillColor(30, 30, 30);
-        doc.rect(20, y + 2, 170, 1, 'F');
+        doc.rect(20, y + 8, 170, 2, 'F');
         doc.setFillColor(pColor);
-        doc.rect(20, y + 2, (pScore / 100) * 170, 1, 'F');
+        doc.rect(20, y + 8, (p.barWidth / 100) * 170, 2, 'F');
 
-        y += 12;
-
-        if (y > 270) {
-            addFooter(2);
-            doc.addPage(); y = 25;
-            doc.setFillColor(0, 0, 0); doc.rect(0, 0, 210, 297, 'F');
-            doc.setTextColor(primaryColor); doc.setFontSize(18); doc.text('25-PILLAR AUDIT (CONT.)', 20, 25);
-            y = 40;
-        }
+        y += 18;
     });
 
-    // --- PAGE 3: RECOMMENDATIONS ---
-    doc.addPage();
-    doc.setFillColor(0, 0, 0);
-    doc.rect(0, 0, 210, 297, 'F');
+    // Leakage Summary
+    y += 10;
+    doc.setDrawColor(dangerColor);
+    doc.rect(20, y, 170, 35, 'S');
 
     doc.setTextColor(dangerColor);
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'bold');
+    doc.text('ESTIMATED ANNUAL PROFIT LEAKAGE', 25, y + 10);
+
+    doc.setTextColor(255, 255, 255);
     doc.setFontSize(18);
-    doc.text('CRITICAL VULNERABILITIES', 20, 25);
+    doc.text(`$${results.layer3.estimatedAnnualImpact.min.toLocaleString()} - $${results.layer3.estimatedAnnualImpact.max.toLocaleString()}`, 25, y + 22);
 
-    y = 40;
-    results.topRisks.forEach((risk: LockedPillar) => {
-        doc.setDrawColor(dangerColor);
-        doc.rect(20, y, 170, 35, 'S');
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(200, 200, 200);
+    doc.text('Based on industry benchmarking and structural inefficiency mapping.', 25, y + 30);
 
-        doc.setTextColor(dangerColor);
-        doc.setFontSize(11);
-        doc.setFont('helvetica', 'bold');
-        doc.text(risk.name.toUpperCase(), 25, y + 8);
-
-        doc.setTextColor(255, 255, 255);
-        doc.setFontSize(9);
-        doc.setFont('helvetica', 'normal');
-        const lines = doc.splitTextToSize(`PRESCRIPTION: ${risk.recommendation}`, 160);
-        doc.text(lines, 25, y + 16);
-
-        y += 42;
-    });
-
-    y += 10;
-    doc.setTextColor(successColor);
-    doc.setFontSize(18);
-    doc.text('PRIMARY FORTIFICATIONS', 20, y);
-    y += 15;
-
-    results.strengths.forEach((s: LockedPillar) => {
-        doc.setFontSize(10);
-        doc.setTextColor(successColor);
-        doc.text(`[+] ${s.name.toUpperCase()}`, 20, y);
-        y += 8;
-    });
-
-    addFooter(3);
+    addFooter(2);
 
     // Save
-    doc.save(`FIP_Forensic_Report_${businessName.replace(/\s+/g, '_')}.pdf`);
+    doc.save(`FIP_Diagnostic_${businessName.replace(/\s+/g, '_')}.pdf`);
 }
